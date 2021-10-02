@@ -1,7 +1,7 @@
 ---
 title: MAXScript ドキュメンテーションコメント
 date: 2017-02-27 00:16:00
-updated: 2020-06-25 15:20:00
+updated: 2021-10-03 00:03:00
 categories: document
 tags: maxscript
 toc: true
@@ -92,7 +92,8 @@ struct SampleStruct (
 "/*-" , { text } , { tag } , "*/"
 ```
 
-* 開始記号の`*`は2つ必要。
+* ~~開始記号の`*`は2つ必要。~~
+  VSCodeの構文ハイライトが崩れるため開始記号を`/*-`に変更。
 
 * 開始記号直後のテキストは「概要」になる。
 
@@ -151,12 +152,12 @@ struct SampleStruct (
 
 型表記は次の4種類の形式の組み合わせで表現する。
 
-| 形式                                     | 構文                                                       | 例                                         |
-| ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------ |
-| `accessor_def`{:.code .language-ebnf}    | `identifier , class_form`{:.code .language-ebnf}           | `Foo<Bar>`<br>`Foo<Bar<Baz>>`              |
-| `class_def`{:.code .language-ebnf}       | `identifier ,  ":" , class_name`{:.code .language-ebnf}    | `Class:Foo`<br>`Class:Foo.Bar`             |
-| `class_name`{:.code .language-ebnf}      | `identifier , { "." , identifier }`{:.code .language-ebnf} | `Foo`<br>`Foo.Bar`                         |
-| `constructor_def`{:.code .language-ebnf} | `identifier , { parameter }+`{:.code .language-ebnf}       | `Foo <Bar> <Baz>`<br>`Foo x:<Bar> y:<Baz>` |
+| 形式                                     | 構文                                                         | 例                                         |
+| ---------------------------------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| `accessor_def`{:.code .language-ebnf}    | `identifier , "[" , class_form , "]"`{:.code .language-ebnf} | `Foo[<Bar>]`<br>`Foo[<Bar[<Baz>]>]`        |
+| `class_def`{:.code .language-ebnf}       | `identifier ,  ":" , class_name`{:.code .language-ebnf}      | `Class:Foo`<br>`Class:Foo.Bar`             |
+| `class_name`{:.code .language-ebnf}      | `identifier , { "." , identifier }`{:.code .language-ebnf}   | `Foo`<br>`Foo.Bar`                         |
+| `constructor_def`{:.code .language-ebnf} | `identifier , { parameter }+`{:.code .language-ebnf}         | `Foo <Bar> <Baz>`<br>`Foo x:<Bar> y:<Baz>` |
 
 ###### 識別子の調査方法
 {:#structure-tag-class-form-identifier-search-method}
@@ -200,9 +201,9 @@ DataPair値
   | `constructor_def`{:.code .language-ebnf} | `"DataPair" , class_form , class_form`{:.code .language-ebnf}<br>`"DataPair" , var_name , ":" , class_form , var_name , ":" , class_form`{:.code .language-ebnf} |
 
 配列
-: | 形式                                  | 構文                                          |
-  | ------------------------------------- | --------------------------------------------- |
-  | `accessor_def`{:.code .language-ebnf} | `"Array" , class_form`{:.code .language-ebnf} |
+: | 形式                                  | 構文                                                      |
+  | ------------------------------------- | --------------------------------------------------------- |
+  | `accessor_def`{:.code .language-ebnf} | `"Array" , "[" , class_form , "]"`{:.code .language-ebnf} |
 
 構造体
 : | 種類                   | 形式                                | 構文                                                    |
@@ -231,7 +232,7 @@ DataPair値
 
 ```maxscript
 /*-
-Array<Array<DataPair key:<String> value:<Any>>>
+Array[<Array[<DataPair key:<String> value:<Any>>]>]
 */
 ```
 
@@ -340,7 +341,7 @@ doc.ebnf
                       | doc_seq
                       ;
 
-          simple_doc = doc_comment , { keyword_delimiter } , { keyword , { keyword_delimiter } } , var_name ;
+           simple_doc = doc_comment , { keyword_delimiter } , { keyword , { keyword_delimiter } } , var_name ;
 
               doc_seq = "(" , { doc_delimiter } , { doc , { doc_delimiter } }+ , ")" ;
 
@@ -348,19 +349,19 @@ doc.ebnf
 
     keyword_delimiter = ? Any tokens except keyword or var_name ? ;
 
-            var_name = identifier - keyword
+             var_name = identifier - keyword
                       | quoted_name
                       ;
 
-      string_literal = '@"' , { any_char - '"' } , '"'
+       string_literal = '@"' , { any_char - '"' } , '"'
                       | '"' , { any_char - '"' | '\"' | "\n" | "\r" | "\t" | "\*" | "\?" | "\\" | "\%" | "\x" , [ hex_digits ] } , '"'
                       ;
 
     path_name_literal = "$" , [ path ] ;
 
-                path = [ objectset ] , [ "/" ] , [ levels ] , level ;
+                 path = [ objectset ] , [ "/" ] , [ levels ] , level ;
 
-              levels = level , { "/" , level } ;
+               levels = level , { "/" , level } ;
 
                 level = { alphanumeric | "_" | "*" | "?" | "\" }
                       | "'" , { level_character } , "'"
@@ -379,11 +380,11 @@ doc.ebnf
 
       level_character = any_char - "'" | "\'" | "\*" | "\?" | "\\" ;
 
-          identifier = ( letter | "_" ) , { alphanumeric | "_" } ;
+           identifier = ( letter | "_" ) , { alphanumeric | "_" } ;
 
           quoted_name = "'" , { any_char - "'" | "\'" } , "'" ;
 
-        alphanumeric = letter | digit ;
+         alphanumeric = letter | digit ;
 
               decimal = digits , "." , [ digits ]
                       | "." , digits
@@ -391,15 +392,15 @@ doc.ebnf
 
           hexadecimal = "0" , ( "x" | "X" ) , [ hex_digits ] ;
 
-              digits = { digit }+ ;
+               digits = { digit }+ ;
 
-          hex_digits = { hex_digit }+ ;
+           hex_digits = { hex_digit }+ ;
 
                 digit = ? 0-9 ? ;
 
             hex_digit = ? a-fA-F0-9 ? ;
 
-              letter = ? a-zA-Z ? ;
+               letter = ? a-zA-Z ? ;
 
           doc_comment = "/*-" , { any_char - "*/" } , "*/" ;
 
@@ -407,15 +408,15 @@ doc.ebnf
 
   single_line_comment = "--" , { any_char - new_line } ;
 
-          whitespace = { space }+ | "\" , { space } , { new_line }+ ;
+           whitespace = { space }+ | "\" , { space } , { new_line }+ ;
 
                 space = " " | "\t" ;
 
             delimiter = new_line | ";" ;
 
-            new_line = "\n" ;
+             new_line = "\n" ;
 
-            operator = "!="
+             operator = "!="
                       | "&"
                       | "*"
                       | "*="
@@ -433,7 +434,7 @@ doc.ebnf
                       | ">="
                       ;
 
-          punctuator = "#"
+           punctuator = "#"
                       | "$"
                       | "("
                       | ")"
@@ -504,7 +505,7 @@ doc.ebnf
 
                   eof = ? End of file ? ;
 
-            any_char = ? Any visible characters ? ;
+             any_char = ? Any visible characters ? ;
   ```
 
 doc_comment.ebnf
@@ -513,47 +514,47 @@ doc_comment.ebnf
 
                 tag = tag_type , [ whitespace ] , [ param_name ] , [ whitespace ] , [ class_form ] , { text } ;
 
-          tag_type = "@" , keyword ;
+           tag_type = "@" , keyword ;
 
-        param_name = var_name , [ ":" ] ;
+         param_name = var_name , [ ":" ] ;
 
-          var_name = [ "&" ] , ( identifier | quoted_name ) ;
+         class_form = "<" , class_decl , { "|" , class_decl } , ">" ;
 
-        class_form = "<" , class_decl , { "|" , class_decl } , ">" ;
-
-        class_decl = accessor_def
+         class_decl = constructor_def
+                    | accessor_def
                     | class_def
                     | class_name
-                    | constructor_def
                     ;
 
-      accessor_def = identifier , class_form ;
+    constructor_def = var_name , { [ whitespace ] , parameter }+ ;
 
-          class_def = identifier , ":" , class_name ;
+       accessor_def = var_name , "[" , class_form , "]" ;
 
-        class_name = identifier , { "." , identifier } ;
+          class_def = var_name , ":" , class_name ;
 
-    constructor_def = identifier , { [ whitespace ] , parameter }+ ;
+         class_name = var_name , { "." , var_name } ;
 
           parameter = class_form
                     | keyword_parameter
                     ;
 
-  keyword_parameter = identifier , ":" , class_form ;
+  keyword_parameter = var_name , ":" , class_form ;
 
-              text = ? Any characters between start, tag_type or class_form and the next param_name or end ? ;
+           var_name = [ "&" ] , ( identifier | quoted_name | keyword ) ;
 
-        identifier = ( letter | "_" ) , { alphanumeric | "_" } ;
+               text = ? Any characters between start, tag_type or class_form and the next param_name or end ? ;
+
+         identifier = ( letter | "_" ) , { alphanumeric | "_" } ;
 
         quoted_name = "'" , { any_char - "'" | "\'" } , "'" ;
 
-      alphanumeric = letter | digit ;
+       alphanumeric = letter | digit ;
 
               digit = ? 0-9 ? ;
 
-            letter = ? a-zA-Z ? ;
+             letter = ? a-zA-Z ? ;
 
-        whitespace = { space | new_line }+ ;
+         whitespace = { space | new_line }+ ;
 
               start = "/*-" ;
 
@@ -563,9 +564,9 @@ doc_comment.ebnf
                     | "\t"
                     ;
 
-          new_line = "\n" ;
+           new_line = "\n" ;
 
-        punctuator = "&"
+         punctuator = "&"
                     | "."
                     | ":"
                     | "<"
@@ -582,5 +583,5 @@ doc_comment.ebnf
 
                 eof = ? End of file ? ;
 
-          any_char = ? Any visible characters ? ;
+           any_char = ? Any visible characters ? ;
   ```
