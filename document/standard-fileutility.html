@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.FileUtility.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">FileUtility.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2021-11-25</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#fileutilitystruct">FileUtilityStruct</a><ul><li><a href="#directoryclass">directoryClass</a></li><li><a href="#directoryinfoclass">directoryInfoClass</a></li><li><a href="#fileattributesenum">fileAttributesEnum</a></li><li><a href="#fileclass">fileClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#searchoptionenum">searchOptionEnum</a></li><li><a href="#copydirectory">CopyDirectory</a></li><li><a href="#copyfile">CopyFile</a></li><li><a href="#createdirectory">CreateDirectory</a></li><li><a href="#createtextfile">CreateTextFile</a></li><li><a href="#deletedirectory">DeleteDirectory</a></li><li><a href="#deletefile">DeleteFile</a></li><li><a href="#directoryexists">DirectoryExists</a></li><li><a href="#evaluatefile">EvaluateFile</a></li><li><a href="#fileexists">FileExists</a></li><li><a href="#getcreationtime">GetCreationTime</a></li><li><a href="#getdirectories">GetDirectories</a></li><li><a href="#getfiles">GetFiles</a></li><li><a href="#getlastaccesstime">GetLastAccessTime</a></li><li><a href="#getlastwritetime">GetLastWriteTime</a></li><li><a href="#getmaxversion">GetMaxVersion</a></li><li><a href="#ishidden">IsHidden</a></li><li><a href="#ismaxfile">IsMaxFile</a></li><li><a href="#isreadonly">IsReadOnly</a></li><li><a href="#isscriptfile">IsScriptFile</a></li><li><a href="#movedirectory">MoveDirectory</a></li><li><a href="#opentextfile">OpenTextFile</a></li><li><a href="#readalllines">ReadAllLines</a></li><li><a href="#readalltext">ReadAllText</a></li><li><a href="#renamedirectory">RenameDirectory</a></li><li><a href="#renamefile">RenameFile</a></li><li><a href="#writealllines">WriteAllLines</a></li><li><a href="#writealltext">WriteAllText</a></li><li><a href="#copydirectoryrecursive">copyDirectoryRecursive</a></li><li><a href="#createdirectoryinfo">createDirectoryInfo</a></li><li><a href="#createencoding">createEncoding</a></li><li><a href="#createsearchoption">createSearchOption</a></li><li><a href="#getattributes">getAttributes</a></li><li><a href="#getpathtype">getPathType</a></li><li><a href="#isfileattributesobject">isFileAttributesObject</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-register.html">comparer</a></code></li>
+<li><code><a href="standard-register.html">dotNetUtility</a></code></li>
+<li><code><a href="standard-encoding.html">EncodingStruct</a></code></li>
+<li><code><a href="standard-enum.html">EnumStruct</a></code></li>
+<li><code>isMaxFile</code><ul>
+</ul></li>
+<li><code><a href="standard-pathutility.html">PathUtilityStruct</a></code></li>
+</ul></dd></dl>
+<h3 id="fileutilitystruct">struct&nbsp;FileUtilityStruct</h3>
+<p>一般的なファイルおよびディレクトリの操作に加えてスクリプトファイルやシーンファイルの操作を行うメソッドも提供する。</p><dl>
+<dt>補足</dt>
+<dd><p>エンコーディングは指定がない限りUTF-8（BOM無し）を使用する。</p></dd>
+</dl>
+<h4 id="directoryclass">private&nbsp;directoryClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directory?view=netframework-4.8">System.IO.Directory</a>&gt;</code></dd>
+</dl>
+<h4 id="directoryinfoclass">private&nbsp;directoryInfoClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo?view=netframework-4.8">System.IO.DirectoryInfo</a>&gt;</code></dd>
+</dl>
+<h4 id="fileattributesenum">private&nbsp;fileAttributesEnum</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
+<dd><p><code>&quot;System.IO.FileAttributes&quot;</code>列挙型。</p></dd>
+</dl>
+<h4 id="fileclass">private&nbsp;fileClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file?view=netframework-4.8">System.IO.File</a>&gt;</code></dd>
+</dl>
+<h4 id="pathutility">private&nbsp;pathUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
+</dl>
+<h4 id="searchoptionenum">private&nbsp;searchOptionEnum</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
+<dd><p><code>&quot;System.IO.SearchOption&quot;</code>列挙型。</p></dd>
+</dl>
+<h4 id="copydirectory">public&nbsp;fn&nbsp;CopyDirectory</h4>
+<p>ディレクトリをコピーする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピーするディレクトリのパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピー先のパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>overwrite:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>上書きする場合は<code>true</code>、それ以外の場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="copyfile">public&nbsp;fn&nbsp;CopyFile</h4>
+<p>ファイルをコピーする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピーするファイルのパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピー先のパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>overwrite:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>上書きする場合は<code>true</code>、それ以外の場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="createdirectory">public&nbsp;fn&nbsp;CreateDirectory</h4>
+<p>指定されたパスに全てのディレクトリとサブディレクトリを作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo?view=netframework-4.8">System.IO.DirectoryInfo</a>&gt;</code></dd>
+</dl>
+<h4 id="createtextfile">public&nbsp;fn&nbsp;CreateTextFile</h4>
+<p>テキストファイルを作成、または上書きする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>access:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>実行可能な操作。既定値は<code>#Write</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;FileStream|UndefinedClass&gt;</code></dd>
+<dd><p>MAXScriptの<code>FileStream</code>値。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>指定可能な値は<code>OpenTextFile</code>を参照。</p></dd>
+</dl>
+<h4 id="deletedirectory">public&nbsp;fn&nbsp;DeleteDirectory</h4>
+<p>ディレクトリを削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>recursive:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>サブディレクトリ、およびファイルを削除する場合は<code>true</code>、それ以外の場合は<code>false</code>。既定値は<code>true</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>recursive</code>が<code>false</code>の時、指定されたディレクトリが空でない場合は削除しない。<br />
+ゴミ箱には移動しないので使用の際は注意すること。</p></dd>
+</dl>
+<h4 id="deletefile">public&nbsp;fn&nbsp;DeleteFile</h4>
+<p>ファイルを削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ゴミ箱には移動しないので使用の際は注意すること。</p></dd>
+</dl>
+<h4 id="directoryexists">public&nbsp;fn&nbsp;DirectoryExists</h4>
+<p>ディレクトリが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="evaluatefile">public&nbsp;fn&nbsp;EvaluateFile</h4>
+<p>MAXScriptファイルを評価する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any|UndefinedClass&gt;</code></dd>
+<dd><p>msファイルでない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>msファイルのみが対象。</p></dd>
+</dl>
+<h4 id="fileexists">public&nbsp;fn&nbsp;FileExists</h4>
+<p>ファイルが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getcreationtime">public&nbsp;fn&nbsp;GetCreationTime</h4>
+<p>ディレクトリまたはファイルの作成日時を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>asUtc:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>世界協定時刻（UTC）で取得する場合は<code>true</code>、現在時刻で取得する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
+</dl>
+<h4 id="getdirectories">public&nbsp;fn&nbsp;GetDirectories</h4>
+<p>パターンに一致したサブディレクトリを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>pattern</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>リテラル文字とワイルドカード文字の組み合わせ。大文字と小文字を区別しない。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>recursive:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>全てのサブディレクトリから検索する場合は<code>true</code>、現在のディレクトリからのみ検索する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Struct:Path&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>パスは自然順にソートされる。<br />
+パターン照合は<code>&quot;*&quot;</code>で全てのサブディレクトリを取得した後、<code>matchPattern</code>関数によって照合される。<br />
+よってパスの中間部分で選別する場合はパターン文字列の前後にワイルドカードが必要となる点に注意する。</p>
+<table>
+<thead>
+<tr>
+<th>基点</th>
+<th>取得したいパス</th>
+<th>検索パターン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@&quot;C:\Foo\Bar&quot;</code></td>
+<td><code>@&quot;C:\Foo\Bar\Hoge\Piyo&quot;</code></td>
+<td><code>&quot;*\Hoge*&quot;</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="getfiles">public&nbsp;fn&nbsp;GetFiles</h4>
+<p>パターンに一致したファイルを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>pattern</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>リテラル文字とワイルドカード文字の組み合わせ。大文字と小文字を区別しない。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>recursive:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>全てのサブディレクトリから検索する場合は<code>true</code>、現在のディレクトリからのみ検索する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Struct:Path&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>パスは自然順にソートされる。<br />
+パターン照合は<code>&quot;*&quot;</code>で全てのサブディレクトリを取得した後、<code>matchPattern</code>関数によって照合される。<br />
+よってパスの中間部分で選別する場合はパターン文字列の前後にワイルドカードが必要となる点に注意する。</p>
+<table>
+<thead>
+<tr>
+<th>基点</th>
+<th>取得したいパス</th>
+<th>検索パターン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@&quot;C:\Foo\Bar&quot;</code></td>
+<td><code>@&quot;C:\Foo\Bar\Hoge\Piyo.txt&quot;</code></td>
+<td><code>&quot;*\Hoge*.txt&quot;</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="getlastaccesstime">public&nbsp;fn&nbsp;GetLastAccessTime</h4>
+<p>ディレクトリまたはファイルの最終アクセス日時を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>asUtc:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>世界協定時刻（UTC）で取得する場合は<code>true</code>、現在時刻で取得する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
+</dl>
+<h4 id="getlastwritetime">public&nbsp;fn&nbsp;GetLastWriteTime</h4>
+<p>ディレクトリまたはファイルの最終書き込み日時を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>asUtc:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>世界協定時刻（UTC）で取得する場合は<code>true</code>、現在時刻で取得する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
+</dl>
+<h4 id="getmaxversion">public&nbsp;fn&nbsp;GetMaxVersion</h4>
+<p>Maxシーンファイルのバージョンを西暦形式の整数で取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ファイルが存在しない等でバージョンが取得できない場合は<code>0</code>を返す。<br />
+3ds Max 9以前のバージョンについても一律西暦形式で扱う。</p></dd>
+</dl>
+<h4 id="ishidden">public&nbsp;fn&nbsp;IsHidden</h4>
+<p>ディレクトリまたはファイルが隠し属性かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ismaxfile">public&nbsp;fn&nbsp;IsMaxFile</h4>
+<p>ファイルがMaxシーンファイルかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isreadonly">public&nbsp;fn&nbsp;IsReadOnly</h4>
+<p>ディレクトリまたはファイルが読み取り専用かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>Windowsのディレクトリを読み取り専用に設定するためにはPowerShell等を利用する必要がある。</p>
+<pre><code class="language-powershell">Set-ItemProperty -Path .\foo -Name Attributes -Value &quot;ReadOnly&quot;
+</code></pre>
+<pre><code class="language-dos">attrib foo +R
+</code></pre></dd>
+</dl>
+<h4 id="isscriptfile">public&nbsp;fn&nbsp;IsScriptFile</h4>
+<p>ファイルがスクリプトファイルかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>msファイルのみが対象。</p></dd>
+</dl>
+<h4 id="movedirectory">public&nbsp;fn&nbsp;MoveDirectory</h4>
+<p>ディレクトリまたはファイルのディレクトリ部分を変更する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>ディレクトリまたはファイルのパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>移動先のディレクトリまたはファイルのパス。ファイルパスを指定した場合はディレクトリ部分が使用される。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="opentextfile">public&nbsp;fn&nbsp;OpenTextFile</h4>
+<p>テキストファイルを開く。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>access:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>実行可能な操作を以下の値で指定する。既定値は<code>#Read</code>。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>操作</th>
+<th><code>openFile</code>関数の<code>mode</code>パラメータの対応</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Read</code></td>
+<td>読み取り</td>
+<td><code>&quot;rt&quot;</code></td>
+</tr>
+<tr>
+<td><code>#ReadWrite</code></td>
+<td>読み取り/書き込み</td>
+<td><code>&quot;r+&quot;</code></td>
+</tr>
+<tr>
+<td><code>#Write</code></td>
+<td>書き込み</td>
+<td><code>&quot;wt&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>これ以外の値を指定した場合は<code>#Read</code>が使用される。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;FileStream|UndefinedClass&gt;</code></dd>
+<dd><p>MAXScriptの<code>FileStream</code>値。</p></dd>
+</dl>
+<h4 id="readalllines">public&nbsp;fn&nbsp;ReadAllLines</h4>
+<p>ファイルの全ての行を読み取る。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]|UndefinedClass&gt;</code></dd>
+<dd><p>ファイルが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="readalltext">public&nbsp;fn&nbsp;ReadAllText</h4>
+<p>ファイルの全てのテキストを読み取る。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>ファイルが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="renamedirectory">public&nbsp;fn&nbsp;RenameDirectory</h4>
+<p>ディレクトリ名を変更する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>newName</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>新しいディレクトリ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="renamefile">public&nbsp;fn&nbsp;RenameFile</h4>
+<p>ファイル名を変更する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>newName</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>新しいファイル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>拡張子が含まれている場合は全て変更し、含まれていない場合は拡張子を引き継ぐ。</p></dd>
+</dl>
+<h4 id="writealllines">public&nbsp;fn&nbsp;WriteAllLines</h4>
+<p>ファイルを作成して行を書き込む。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>contents</code></dd>
+<dd><code>&lt;Array[&lt;Any&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>eol:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>改行コード。既定値は<code>&quot;\n&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>既存のファイルは上書きされる。<br />
+ディレクトリが存在しない場合は作成に失敗する。</p></dd>
+</dl>
+<h4 id="writealltext">public&nbsp;fn&nbsp;WriteAllText</h4>
+<p>ファイルを作成して文字列を書き込む。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>contents</code></dd>
+<dd><code>&lt;String|StringStream&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>encoding:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>エンコーディングの名前。既定値は<code>&quot;utf-8&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>BOMの有無。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>既存のファイルは上書きされる。<br />
+ディレクトリが存在しない場合は作成に失敗する。</p></dd>
+</dl>
+<h4 id="copydirectoryrecursive">private&nbsp;fn&nbsp;copyDirectoryRecursive</h4>
+<p>ディレクトリを再帰的にコピーする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピーするディレクトリのパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピー先パス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>overwrite</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="createdirectoryinfo">private&nbsp;fn&nbsp;createDirectoryInfo</h4>
+<p><code>&quot;System.IO.DirectoryInfo&quot;</code>オブジェクトを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo?view=netframework-4.8">System.IO.DirectoryInfo</a>&gt;</code></dd>
+</dl>
+<h4 id="createencoding">private&nbsp;fn&nbsp;createEncoding</h4>
+<p>エンコーディングオブジェクトを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>encoding</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>bom</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:Encoding&gt;</code></dd>
+</dl>
+<h4 id="createsearchoption">private&nbsp;fn&nbsp;createSearchOption</h4>
+<p><code>&quot;System.IO.SearchOption&quot;</code>オブジェクトを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>recursive</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.searchoption?view=netframework-4.8">System.IO.SearchOption</a>&gt;</code></dd>
+</dl>
+<h4 id="getattributes">private&nbsp;fn&nbsp;getAttributes</h4>
+<p>ディレクトリまたはファイルの<code>FileAttributes</code>オブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.fileattributes?view=netframework-4.8">System.IO.FileAttributes</a>&gt;</code></dd>
+</dl>
+<h4 id="getpathtype">private&nbsp;fn&nbsp;getPathType</h4>
+<p>パスの種類を判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>種類</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ディレクトリ</td>
+<td><code>#Directory</code></td>
+</tr>
+<tr>
+<td>ファイル</td>
+<td><code>#File</code></td>
+</tr>
+<tr>
+<td>不明</td>
+<td><code>#Unknown</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="isfileattributesobject">private&nbsp;fn&nbsp;isFileAttributesObject</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

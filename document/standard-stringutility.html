@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.StringUtility.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">StringUtility.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2021-11-25</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#stringutilitystruct">StringUtilityStruct</a><ul><li><a href="#regexclass">regexClass</a></li><li><a href="#regexoptionsenum">regexOptionsEnum</a></li><li><a href="#stringclass">stringClass</a></li><li><a href="#stringsplitoptionsenum">stringSplitOptionsEnum</a></li><li><a href="#backslashregex">backslashRegex</a></li><li><a href="#camelregex">camelRegex</a></li><li><a href="#commaregex">commaRegex</a></li><li><a href="#crregex">crRegex</a></li><li><a href="#doublequoteregex">doubleQuoteRegex</a></li><li><a href="#formatregex">formatRegex</a></li><li><a href="#lfregex">lfRegex</a></li><li><a href="#nonwordregex">nonWordRegex</a></li><li><a href="#percentregex">percentRegex</a></li><li><a href="#tabregex">tabRegex</a></li><li><a href="#clipstring">ClipString</a></li><li><a href="#createregex">CreateRegex</a></li><li><a href="#escapebackslash">EscapeBackslash</a></li><li><a href="#escapewhitespace">EscapeWhiteSpace</a></li><li><a href="#formatstring">FormatString</a></li><li><a href="#fromcodepoint">FromCodePoint</a></li><li><a href="#getregexoptions">GetRegexOptions</a></li><li><a href="#getregexpattern">GetRegexPattern</a></li><li><a href="#getunicodecodepointfromsurrogatepair">GetUnicodeCodePointFromSurrogatePair</a></li><li><a href="#getvalidunicodecodepoint">GetValidUnicodeCodePoint</a></li><li><a href="#isregexobject">IsRegexObject</a></li><li><a href="#join">Join</a></li><li><a href="#padleft">PadLeft</a></li><li><a href="#padright">PadRight</a></li><li><a href="#split">Split</a></li><li><a href="#splitbylf">SplitByLF</a></li><li><a href="#tochararray">ToCharArray</a></li><li><a href="#topascalcase">ToPascalCase</a></li><li><a href="#trim">Trim</a></li><li><a href="#trimend">TrimEnd</a></li><li><a href="#trimstart">TrimStart</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-register.html">dotNetUtility</a></code></li>
+<li><code><a href="standard-enum.html">EnumStruct</a></code></li>
+</ul></dd></dl>
+<h3 id="stringutilitystruct">struct&nbsp;StringUtilityStruct</h3>
+<p>文字列操作を行うためのメソッドを提供する。</p><h4 id="regexclass">private&nbsp;regexClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+</dl>
+<h4 id="regexoptionsenum">private&nbsp;regexOptionsEnum</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
+<dd><p><code>&quot;System.Text.RegularExpressions.RegexOptions&quot;</code>列挙型。</p></dd>
+</dl>
+<h4 id="stringclass">private&nbsp;stringClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.string?view=netframework-4.8">System.String</a>&gt;</code></dd>
+</dl>
+<h4 id="stringsplitoptionsenum">private&nbsp;stringSplitOptionsEnum</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
+<dd><p><code>&quot;System.StringSplitOptions&quot;</code>列挙型。</p></dd>
+</dl>
+<h4 id="backslashregex">private&nbsp;backslashRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="camelregex">private&nbsp;camelRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>(?&lt;=\b)\w|(?&lt;=[a-z])[A-Z]|(?&lt;=[0-9])[a-z]</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="commaregex">private&nbsp;commaRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\s*,\s*</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="crregex">private&nbsp;crRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\r</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="doublequoteregex">private&nbsp;doubleQuoteRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\&quot;</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="formatregex">private&nbsp;formatRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>(?&lt;!\\\\)%</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="lfregex">private&nbsp;lfRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\n</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="nonwordregex">private&nbsp;nonWordRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\W</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="percentregex">private&nbsp;percentRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\\\\%</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="tabregex">private&nbsp;tabRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\t</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="clipstring">public&nbsp;fn&nbsp;ClipString</h4>
+<p>入力文字列を指定の桁数に収まるよう省略する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>digit:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>桁数。既定値は<code>40</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="createregex">public&nbsp;fn&nbsp;CreateRegex</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>pattern</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>正規表現パターン文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>options:</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+<dd><p>正規表現のオプション。既定値は<code>#(#IgnoreCase, #Singleline)</code>。<br />
+有効な値は次の通り。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>効果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Compiled</code></td>
+<td>正規表現をアセンブリにコンパイルする。</td>
+</tr>
+<tr>
+<td><code>#CultureInvariant</code></td>
+<td>言語のカルチャの違いを無視する。</td>
+</tr>
+<tr>
+<td><code>#ECMAScript</code></td>
+<td>式のECMAScript準拠の動作を有効にする。</td>
+</tr>
+<tr>
+<td><code>#ExplicitCapture</code></td>
+<td>名前のないグループをキャプチャしない。<code>(?&lt;name&gt;subexpression)</code>という形式で、明示的に名前または番号が付加されたグループのみを有効なキャプチャ対象とする。</td>
+</tr>
+<tr>
+<td><code>#IgnoreCase</code></td>
+<td>大文字と小文字を区別しない一致を使用する。</td>
+</tr>
+<tr>
+<td><code>#IgnorePatternWhitespace</code></td>
+<td>エスケープされていない空白をパターンから除外し、シャープ記号<code>#</code>の後ろのコメントを有効にする。</td>
+</tr>
+<tr>
+<td><code>#Multiline</code></td>
+<td>複数行モードを使用する。<code>^</code>と<code>$</code>は、(入力文字列の先頭および末尾ではなく)各行の先頭および末尾と一致する。</td>
+</tr>
+<tr>
+<td><code>#None</code></td>
+<td>既定の動作を使用する。</td>
+</tr>
+<tr>
+<td><code>#RightToLeft</code></td>
+<td>検索の方向を変更する。左から右ではなく、右から左に検索する。</td>
+</tr>
+<tr>
+<td><code>#Singleline</code></td>
+<td>単一行モードを使用する。このモードでは、ピリオド<code>.</code>は任意の1文字と一致する(<code>\n</code>を除くすべての文字の代用)。</td>
+</tr>
+</tbody>
+</table>
+<p>詳細は<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regexoptions?view=netframework-4.8">RegexOptions 列挙型</a>、および<a href="https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-options">正規表現のオプション</a>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+</dl>
+<h4 id="escapebackslash">public&nbsp;fn&nbsp;EscapeBackslash</h4>
+<p>入力文字列中の<code>\</code>、<code>\%</code>、<code>\&quot;</code>、<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="escapewhitespace">public&nbsp;fn&nbsp;EscapeWhiteSpace</h4>
+<p>入力文字列中の<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="formatstring">public&nbsp;fn&nbsp;FormatString</h4>
+<p><code>format</code>関数のパラメータを配列で渡せるようにしたメソッド。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>フォーマット文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>values</code></dd>
+<dd><code>&lt;Array[&lt;Any&gt;]&gt;</code></dd>
+<dd><p>フォーマット文字列中の<code>%</code>の数に対応した配列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="fromcodepoint">public&nbsp;fn&nbsp;FromCodePoint</h4>
+<p>Unicodeコードポイントの配列を文字列に変換する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>codePoints</code></dd>
+<dd><code>&lt;Array[&lt;Integer&gt;]&gt;</code></dd>
+<dd><p>10進数、または16進数のコードポイント配列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>0x10000</code>以上は補助コードポイントとして処理する。</p></dd>
+</dl>
+<h4 id="getregexoptions">public&nbsp;fn&nbsp;GetRegexOptions</h4>
+<p>正規表現オブジェクトのオプションを配列として取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p>正規表現オブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>asStringArray:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>文字列配列として取得する場合は<code>true</code>、名前配列として取得する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]|Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getregexpattern">public&nbsp;fn&nbsp;GetRegexPattern</h4>
+<p>正規表現オブジェクトの正規表現パターン文字列を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p>正規表現オブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getunicodecodepointfromsurrogatepair">public&nbsp;fn&nbsp;GetUnicodeCodePointFromSurrogatePair</h4>
+<p>サロゲートペアからUnicodeコードポイントを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>highSurrogate</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>上位サロゲートコードポイント。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>lowSurrogate</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>下位サロゲートコードポイント。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>Unicodeコードポイント。</p></dd>
+</dl>
+<h4 id="getvalidunicodecodepoint">public&nbsp;fn&nbsp;GetValidUnicodeCodePoint</h4>
+<p>Unicodeコードポイントから正しい文字に変換可能なUnicodeコードポイントの配列を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>codePoint</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>10進数、または16進数の整数値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Integer&gt;]&gt;</code></dd>
+<dd><p><code>codePoint</code>が<code>0x10000</code>以上の場合は1番目が上位サロゲートコードポイント、2番目が下位サロゲートコードポイントの配列、<code>0xFFFF</code>以下の場合は渡されたコードポイントのみの配列。</p></dd>
+</dl>
+<h4 id="isregexobject">public&nbsp;fn&nbsp;IsRegexObject</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p>正規表現オブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="join">public&nbsp;fn&nbsp;Join</h4>
+<p>文字列配列の全ての要素を連結する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+<dd><p>文字列配列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>separator:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>区切り文字。既定値は<code>&quot;&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="padleft">public&nbsp;fn&nbsp;PadLeft</h4>
+<p>文字列の左側に任意の文字を埋め込むことで現在の文字列を右寄せした新しい文字列を生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>width</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>生成される文字列の文字数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>char</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>埋め込み文字。二文字以上の文字列を指定した場合は一文字目を使用する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><table>
+<thead>
+<tr>
+<th><code>input</code></th>
+<th><code>width</code></th>
+<th><code>char</code></th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;foo&quot;</code></td>
+<td><code>10</code></td>
+<td><code>-</code></td>
+<td><code>&quot;-------foo&quot;</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="padright">public&nbsp;fn&nbsp;PadRight</h4>
+<p>文字列の右側に任意の文字を埋め込むことで現在の文字列を左寄せした新しい文字列を生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>width</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>生成される文字列の文字数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>char</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>埋め込み文字。二文字以上の文字列を指定した場合は一文字目を使用する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><table>
+<thead>
+<tr>
+<th><code>input</code></th>
+<th><code>width</code></th>
+<th><code>char</code></th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;foo&quot;</code></td>
+<td><code>10</code></td>
+<td><code>-</code></td>
+<td><code>&quot;foo-------&quot;</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="split">public&nbsp;fn&nbsp;Split</h4>
+<p>文字列を部分文字列に分割する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>separator</code></dd>
+<dd><code>&lt;String|Array[&lt;String&gt;]&gt;</code></dd>
+<dd><p>区切り文字として使用する文字列、もしくは文字列配列。<br />
+文字列を指定した場合は文字一つ一つが区切り文字となる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>removeEmpty:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>空の配列要素を省略する場合は<code>true</code>、空の配列要素も含める場合は<code>false</code>。既定値は<code>true</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>removeEmpty</code>が<code>false</code>の時、一致する区切り文字が一つの場合は空要素が省略される。</p>
+<pre><code class="language-maxscript">(
+  format &quot;%\n&quot; ((::StringUtilityStruct()).Split &quot;foo.bar.baz&quot; &quot;.a&quot; removeEmpty:false)
+  -- 結果
+  #(&quot;foo&quot;, &quot;b&quot;, &quot;r&quot;, &quot;b&quot;, &quot;z&quot;)
+)
+</code></pre>
+<p>一致する区切り文字が二つ以上連続する場合、空要素は省略されない。<br />
+ただしこの場合もそれぞれの区切り文字が個別の空要素になるのではなく、一つの空要素にまとめられる。</p>
+<pre><code class="language-maxscript">(
+  format &quot;%\n&quot; ((::StringUtilityStruct()).Split &quot;foo.bar.baz&quot; &quot;.b&quot; removeEmpty:false)
+  -- 結果
+  #(&quot;foo&quot;, &quot;&quot;, &quot;ar&quot;, &quot;&quot;, &quot;az&quot;)
+)
+</code></pre>
+<p>文字列配列の指定に対しても同様の法則が適用される。</p>
+<pre><code class="language-maxscript">(
+  format &quot;%\n&quot; ((::StringUtilityStruct()).Split &quot;foo.bar.baz&quot; #(&quot;.b&quot;) removeEmpty:false)
+  -- 結果
+  #(&quot;foo&quot;, &quot;ar&quot;, &quot;az&quot;)
+)
+</code></pre></dd>
+</dl>
+<h4 id="splitbylf">public&nbsp;fn&nbsp;SplitByLF</h4>
+<p><code>\n</code>の位置で部分文字列に分割する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="tochararray">public&nbsp;fn&nbsp;ToCharArray</h4>
+<p>入力値の各文字を要素とする配列に変換する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>空文字列の場合は空配列を返す。</p></dd>
+</dl>
+<h4 id="topascalcase">public&nbsp;fn&nbsp;ToPascalCase</h4>
+<p>入力値をパスカル形式の文字列に変換する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>BooleanClass</code>、<code>OkClass</code>、<code>UndefinedClass</code>、<code>UnsuppliedClass</code>のリテラルは全て小文字になる。<br />
+文字列リテラル中のエスケープシーケンスのエスケープ処理は行わない。</p></dd>
+</dl>
+<h4 id="trim">public&nbsp;fn&nbsp;Trim</h4>
+<p>先頭および末尾の空白文字を全て削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="trimend">public&nbsp;fn&nbsp;TrimEnd</h4>
+<p>末尾から指定した文字セットを全て削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>chars</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>削除する文字の文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="trimstart">public&nbsp;fn&nbsp;TrimStart</h4>
+<p>先頭から指定した文字セットを全て削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>chars</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>削除する文字の文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

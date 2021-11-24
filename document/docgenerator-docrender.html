@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.DocRender.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">DocRender.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2021-11-25</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#docrenderstruct">DocRenderStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#template">template</a></li><li><a href="#toc">toc</a></li><li><a href="#defaulttemplate">defaultTemplate</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#spaceregex">spaceRegex</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#render">Render</a></li><li><a href="#renderindex">RenderIndex</a></li><li><a href="#adjustindent">adjustIndent</a></li><li><a href="#dependenttohtml">dependentToHtml</a></li><li><a href="#doccommenttohtml">docCommentToHtml</a></li><li><a href="#doctohtml">docToHtml</a></li><li><a href="#generatenowdate">generateNowDate</a></li><li><a href="#isastnode">isAstNode</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#isvaliddependent">isValidDependent</a></li><li><a href="#markdowndefines">markdownDefines</a></li><li><a href="#readtemplate">readTemplate</a></li><li><a href="#sanitize">sanitize</a></li><li><a href="#writetocbordertag">writeTocBorderTag</a></li><li><a href="#writetocendtag">writeTocEndTag</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-register.html">fileUtility</a></code></li>
+<li><code><a href="markdown-register.html">markdown</a></code></li>
+<li><code><a href="standard-pathutility.html">PathUtilityStruct</a></code></li>
+<li><code><a href="standard-register.html">stringUtility</a></code></li>
+</ul></dd></dl>
+<h3 id="docrenderstruct">struct&nbsp;DocRenderStruct</h3>
+<p>ドキュメントの構文木をHTMLコードに変換する。</p><dl>
+<dt>補足</dt>
+<dd><p>テンプレートHTML内で使用可能な変数は以下の通り。</p>
+<table>
+<thead>
+<tr>
+<th>変数</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site.title</code></td>
+<td>全体のタイトル。</td>
+</tr>
+<tr>
+<td><code>site.url</code></td>
+<td>インデックスページのURL。</td>
+</tr>
+<tr>
+<td><code>doc.title</code></td>
+<td>ドキュメントのタイトル。</td>
+</tr>
+<tr>
+<td><code>doc.toc</code></td>
+<td>目次。</td>
+</tr>
+<tr>
+<td><code>doc.update</code></td>
+<td>ドキュメントの更新日時。書式は<code>Options.DateFormat</code>プロパティで指定する。</td>
+</tr>
+<tr>
+<td><code>doc.content</code></td>
+<td>ドキュメント本文。</td>
+</tr>
+</tbody>
+</table>
+<p>変数は<code>{{{変数}}}</code>のように波括弧で括って使用する。</p></dd>
+</dl>
+<h4 id="options">public&nbsp;Options</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:DocOptionsStruct&gt;</code></dd>
+<dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
+</dl>
+<h4 id="template">private&nbsp;template</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>テンプレートHTMLコード。</p></dd>
+</dl>
+<h4 id="toc">private&nbsp;toc</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StringStream&gt;</code></dd>
+<dd><p>TOC生成用の一時変数。</p></dd>
+</dl>
+<h4 id="defaulttemplate">private&nbsp;defaultTemplate</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>テンプレートHTMLが使用できない場合に使用する既定のテンプレートHTMLコード。</p></dd>
+</dl>
+<h4 id="pathutility">private&nbsp;pathUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
+</dl>
+<h4 id="spaceregex">private&nbsp;spaceRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>(?&lt;=\n) +</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="uriclass">private&nbsp;uriClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.uri?view=netframework-4.8">System.Uri</a>&gt;</code></dd>
+</dl>
+<h4 id="render">public&nbsp;fn&nbsp;Render</h4>
+<p>構文木からHTMLコードを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>astNode</code></dd>
+<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><p>パース結果の構文木。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>docTitle:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>ドキュメントのタイトル。既定値は<code>&quot;Untitled&quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>dependent:</code></dd>
+<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><p><code>DocDependentTableStruct</code>から取得した依存情報。既定値は<code>unsupplied</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>HTMLコード。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>依存情報を含める場合は<code>dependent</code>を指定する。</p></dd>
+</dl>
+<h4 id="renderindex">public&nbsp;fn&nbsp;RenderIndex</h4>
+<p>インデックスページ用のHTMLコードを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>docContent</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>各ドキュメントへのアンカーで更生されたHTMLコード。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>HTMLコード。</p></dd>
+</dl>
+<h4 id="adjustindent">private&nbsp;fn&nbsp;adjustIndent</h4>
+<p>テキストのインデントを指定したインデントに置き換える。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>最終的なインデント。既定値は<code>&quot;  &quot;</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="dependenttohtml">private&nbsp;fn&nbsp;dependentToHtml</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>dependent</code></dd>
+<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;|UnsuppliedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="doccommenttohtml">private&nbsp;fn&nbsp;docCommentToHtml</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>n</code></dd>
+<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>dependent</code></dd>
+<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><p><code>DocDependentTableStruct</code>から取得した依存情報。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="doctohtml">private&nbsp;fn&nbsp;docToHtml</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>n</code></dd>
+<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>h</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>現在のヘッダレベル。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>dependent</code></dd>
+<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><p><code>DocDependentTableStruct</code>から取得した依存情報。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="generatenowdate">private&nbsp;fn&nbsp;generateNowDate</h4>
+<p>現在の日付を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="isastnode">private&nbsp;fn&nbsp;isAstNode</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdocoptions">private&nbsp;fn&nbsp;isDocOptions</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvaliddependent">private&nbsp;fn&nbsp;isValidDependent</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="markdowndefines">private&nbsp;fn&nbsp;markdownDefines</h4>
+<p>グローバル変数<code>::markdown</code>が定義されているかどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="readtemplate">private&nbsp;fn&nbsp;readTemplate</h4>
+<p>テンプレートHTMLファイルの内容を読み込んで<code>template</code>に割り当てる。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ファイルが読み込めなかった場合や内容が空の場合は<code>defaultTemplate</code>の内容を返す。</p></dd>
+</dl>
+<h4 id="sanitize">private&nbsp;fn&nbsp;sanitize</h4>
+<p><code>&amp;</code>、<code>&quot;</code>、<code>&lt;</code>、<code>&gt;</code>、<code> </code>を文字実体参照に置換する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="writetocbordertag">private&nbsp;fn&nbsp;writeTocBorderTag</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>n</code></dd>
+<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>i</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="writetocendtag">private&nbsp;fn&nbsp;writeTocEndTag</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>n</code></dd>
+<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>i</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
