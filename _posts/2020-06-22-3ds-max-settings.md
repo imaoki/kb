@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00
-updated: 2021-01-29 19:46:00
+updated: 2021-11-29 10:53:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -224,6 +224,6 @@ MXS_Editor.properties
   -#user.context.menu=\
   -#||\
   +user.context.menu=\
-  | +      |                      | \ |
-  | +UTF-8 | IDM_ENCODING_UCOOKIE |   |
+  +||\
+  +UTF-8|IDM_ENCODING_UCOOKIE|
   ```
