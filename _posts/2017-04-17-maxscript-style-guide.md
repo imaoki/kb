@@ -1,7 +1,7 @@
 ---
 title: MAXScript スタイルガイド
 date: 2017-04-17 23:28:00
-updated: 2021-01-29 19:50:00
+updated: 2021-12-11 12:31:00
 categories: document
 tags: maxscript
 toc: true
@@ -14,13 +14,14 @@ published: true
 {:#language-prohibited}
 
 * セミコロン
-  構文規則が曖昧なので無しで統一する。
+  構文規則が曖昧なので使用しない。
 
 * 永続グローバル変数
+  不具合の温床になりやすいので使用しない。
   シーンに値を保存する場合はカスタムアトリビュートを使用する。
 
 * `break`{:.code .language-maxscript}、`continue`{:.code .language-maxscript}、`exit`{:.code .language-maxscript}、および`return`{:.code .language-maxscript}式
-  低速なので使用しないこと。
+  低速なので使用しない。
 
 #### 変数の可視性
 {:#language-variable-visibility}
@@ -52,120 +53,120 @@ published: true
 以下の成功例の中から状況に応じた方法を選択し実装する。
 
 SampleGlobalDecl.ms
-: ```maxscript
-  global sample = 0
-  ```
+:   ```maxscript
+    global sample = 0
+    ```
 
 失敗
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  同一のローカルスコープ内で`fileIn`{:.code .language-maxscript}関数を単独で呼び出し、その後グローバル変数を直接参照する。
-  初回実行時にエラーが出るのでこの形式による実装は行わないこと。
-
-  コード
-  : ```maxscript
-    if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
-
-    (
-      fileIn "SampleGlobalDecl.ms"
-      assert (classOf sample == Integer)
-      assert (sample == 0)
-      format "sample:%\n" sample
-    )
-    ```
-
-  結果
-  : ```maxscript
-    Maxscript Assert Failed: DefinitionIsFailure1.ms (line 5)
-    Maxscript Assert Failed: DefinitionIsFailure1.ms (line 6)
-    sample:undefined
-    ```
-
-成功1
-: <span/>{:.invisible}
-
-  スクリプト冒頭のグローバルスコープで評価する。
-
-  コード
-  : ```maxscript
-    if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
-
-    fileIn "SampleGlobalDecl.ms"
-    (
-      assert (classOf sample == Integer)
-      assert (sample == 0)
-      format "sample:%\n" sample
-    )
-    ```
-
-  結果
-  : ```maxscript
-    sample:0
-    ```
-
-成功2
-: <span/>{:.invisible}
-
-  `::`{:.code .language-maxscript}演算子を用いて明示的にグローバル変数を参照する。
-
-  コード
-  : ```maxscript
-    if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
-
-    (
-      fileIn "SampleGlobalDecl.ms"
-      assert (classOf ::sample == Integer)
-      assert (::sample == 0)
-      format "sample:%\n" sample
-    )
-    ```
-
-  結果
-  : ```maxscript
-    sample:0
-    ```
-
-    一度`::`{:.code .language-maxscript}演算子で参照すると、それ以降は変数が可視化される。
+    同一のローカルスコープ内で`fileIn`{:.code .language-maxscript}関数を単独で呼び出し、その後グローバル変数を直接参照する。
+    初回実行時にエラーが出るのでこの形式による実装は行わないこと。
 
     コード
-    : ```maxscript
-      if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
+    :   ```maxscript
+        if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
 
-      (
-        fileIn "SampleGlobalDecl.ms"
-        ::sample
-        format "sample:%\n" sample
-      )
-      ```
+        (
+          fileIn "SampleGlobalDecl.ms"
+          assert (classOf sample == Integer)
+          assert (sample == 0)
+          format "sample:%\n" sample
+        )
+        ```
 
     結果
-    : ```maxscript
-      sample:0
-      ```
+    :   ```maxscript
+        Maxscript Assert Failed: DefinitionIsFailure1.ms (line 5)
+        Maxscript Assert Failed: DefinitionIsFailure1.ms (line 6)
+        sample:undefined
+        ```
+
+成功1
+:   <span/>{:.invisible}
+
+    スクリプト冒頭のグローバルスコープで評価する。
+
+    コード
+    :   ```maxscript
+        if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
+
+        fileIn "SampleGlobalDecl.ms"
+        (
+          assert (classOf sample == Integer)
+          assert (sample == 0)
+          format "sample:%\n" sample
+        )
+        ```
+
+    結果
+    :   ```maxscript
+        sample:0
+        ```
+
+成功2（推奨）
+:   <span/>{:.invisible}
+
+    `::`{:.code .language-maxscript}演算子を用いて明示的にグローバル変数を参照する。
+
+    コード
+    :   ```maxscript
+        if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
+
+        (
+          fileIn "SampleGlobalDecl.ms"
+          assert (classOf ::sample == Integer)
+          assert (::sample == 0)
+          format "sample:%\n" sample
+        )
+        ```
+
+    結果
+    :   ```maxscript
+        sample:0
+        ```
+
+        一度`::`{:.code .language-maxscript}演算子で参照すると、それ以降は変数が可視化される。
+
+        コード
+        :   ```maxscript
+            if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
+
+            (
+              fileIn "SampleGlobalDecl.ms"
+              ::sample
+              format "sample:%\n" sample
+            )
+            ```
+
+        結果
+        :   ```maxscript
+            sample:0
+            ```
 
 成功3
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  `GlobalVars`{:.code .language-maxscript}構造体を利用して参照する。
+    `GlobalVars`{:.code .language-maxscript}構造体を利用して参照する。
 
-  コード
-  : ```maxscript
-    if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
+    コード
+    :   ```maxscript
+        if GlobalVars.IsGlobal "sample" do GlobalVars.Remove "sample"
 
-    (
-      fileIn "SampleGlobalDecl.ms"
-      assert (classOf (GlobalVars.Get "sample") == Integer)
-      assert (GlobalVars.Get "sample" == 0)
-      format "sample:%\n" sample
-    )
-    ```
+        (
+          fileIn "SampleGlobalDecl.ms"
+          assert (classOf (GlobalVars.Get "sample") == Integer)
+          assert (GlobalVars.Get "sample" == 0)
+          format "sample:%\n" sample
+        )
+        ```
 
-  結果
-  : ```maxscript
-    sample:undefined
-    ```
+    結果
+    :   ```maxscript
+        sample:undefined
+        ```
 
-    `GlobalVars`{:.code .language-maxscript}経由では可視化されない。
+        `GlobalVars`{:.code .language-maxscript}経由では可視化されない。
 
 ##### 戻り値の代入
 {:#language-filein-assignment-of-return-value}
@@ -173,90 +174,90 @@ SampleGlobalDecl.ms
 `fileIn`{:.code .language-maxscript}関数の戻り値は通常の関数とは異なるようなので、以下の成功例を基に適宜対策を講じる。
 
 SampleInteger.ms
-: ```maxscript
-  0
-  ```
+:   ```maxscript
+    0
+    ```
 
 失敗
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  直接代入すると関数や演算子を利用した際にエラーが出る。
+    直接代入すると関数や演算子を利用した際にエラーが出る。
 
-  コード
-  : ```maxscript
-    (
-      local var = fileIn "SampleInteger.ms"
-      assert (classOf var == Integer)
-      assert (var == 0)
-      assert (abs var == 0)
-      format "var:%\n" var
-    )
-    ```
+    コード
+    :   ```maxscript
+        (
+          local var = fileIn "SampleInteger.ms"
+          assert (classOf var == Integer)
+          assert (var == 0)
+          assert (abs var == 0)
+          format "var:%\n" var
+        )
+        ```
 
-  結果
-  : ```maxscript
-    Maxscript Assert Failed: AssignmentIsFailure1.ms (line 4)
-    -- Error occurred in anonymous codeblock; filename: AssignmentIsFailure1.ms; position: 120; line: 4
-    --  Frame:
-    --   var: 0
-    -- Error occurred during fileIn in "AssignmentIsFailure1.ms"; line number: 4
-    >> MAXScript FileIn Exception:
-    -- No ""abs"" function for 0 <<
-    ```
+    結果
+    :   ```maxscript
+        Maxscript Assert Failed: AssignmentIsFailure1.ms (line 4)
+        -- Error occurred in anonymous codeblock; filename: AssignmentIsFailure1.ms; position: 120; line: 4
+        --  Frame:
+        --   var: 0
+        -- Error occurred during fileIn in "AssignmentIsFailure1.ms"; line number: 4
+        >> MAXScript FileIn Exception:
+        -- No ""abs"" function for 0 <<
+        ```
 
 成功1
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  評価ファイルのコードをブロック式で囲む。
+    評価ファイルのコードをブロック式で囲む。
 
-  SampleIntegerBlock.ms
-  : <span/>{:.invisible}
+    SampleIntegerBlock.ms
+    :   <span/>{:.invisible}
 
-    SampleInteger.msの内容をブロック式で囲んだもの。
+        SampleInteger.msの内容をブロック式で囲んだもの。
 
-    ```maxscript
-    (0)
-    ```
+        ```maxscript
+        (0)
+        ```
 
-  コード
-  : ```maxscript
-    (
-      local var = fileIn "SampleIntegerBlock.ms"
-      assert (classOf var == Integer)
-      assert (var == 0)
-      assert (abs var == 0)
-      format "var:%\n" var
-    )
-    ```
+    コード
+    :   ```maxscript
+        (
+          local var = fileIn "SampleIntegerBlock.ms"
+          assert (classOf var == Integer)
+          assert (var == 0)
+          assert (abs var == 0)
+          format "var:%\n" var
+        )
+        ```
 
-  結果
-  : ```maxscript
-    var:0
-    ```
+    結果
+    :   ```maxscript
+        var:0
+        ```
 
 成功2（推奨）
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  関数を中継して`fileIn`{:.code .language-maxscript}関数を実行する。
+    関数を中継して`fileIn`{:.code .language-maxscript}関数を実行する。
 
-  コード
-  : ```maxscript
-    (
-      fn evaluateFile = (
-        fileIn "SampleInteger.ms"
-      )
-      local var = evaluateFile()
-      assert (classOf var == Integer)
-      assert (var == 0)
-      assert (abs var == 0)
-      format "var:%\n" var
-    )
-    ```
+    コード
+    :   ```maxscript
+        (
+          fn evaluateFile = (
+            fileIn "SampleInteger.ms"
+          )
+          local var = evaluateFile()
+          assert (classOf var == Integer)
+          assert (var == 0)
+          assert (abs var == 0)
+          format "var:%\n" var
+        )
+        ```
 
-  結果
-  : ```maxscript
-    var:0
-    ```
+    結果
+    :   ```maxscript
+        var:0
+        ```
 
 ##### 直接代入の定義毎の可否
 {:#language-filein-whether-direct-assignment-per-definition-is-possible}
@@ -282,70 +283,70 @@ SampleInteger.ms
 {:#language-exponentiation-measurement}
 
 コード
-: ```maxscript
-  (
-    clearListener()
+:   ```maxscript
+    (
+      clearListener()
 
-    local sw = DotNetObject "System.Diagnostics.Stopwatch"
+      local sw = DotNetObject "System.Diagnostics.Stopwatch"
 
-    local iteration = 1000000
-    local b = 2.0
+      local iteration = 1000000
+      local b = 2.0
 
-    sw.Restart()
-    for i = 1 to iteration do (
-      b ^ 10
+      sw.Restart()
+      for i = 1 to iteration do (
+        b ^ 10
+      )
+      sw.Stop()
+      format "  ^:%\n" sw.Elapsed.TotalMilliseconds
+
+      sw.Restart()
+      for i = 1 to iteration do (
+        pow b 10
+      )
+      sw.Stop()
+      format "pow:%\n" sw.Elapsed.TotalMilliseconds
+
+      sw.Restart()
+      for i = 1 to iteration do (
+        b * b * b * b * b * b * b * b * b * b
+      )
+      sw.Stop()
+      format "  *:%\n" sw.Elapsed.TotalMilliseconds
+
+      ok
     )
-    sw.Stop()
-    format "  ^:%\n" sw.Elapsed.TotalMilliseconds
-
-    sw.Restart()
-    for i = 1 to iteration do (
-      pow b 10
-    )
-    sw.Stop()
-    format "pow:%\n" sw.Elapsed.TotalMilliseconds
-
-    sw.Restart()
-    for i = 1 to iteration do (
-      b * b * b * b * b * b * b * b * b * b
-    )
-    sw.Stop()
-    format "  *:%\n" sw.Elapsed.TotalMilliseconds
-
-    ok
-  )
-  ```
+    ```
 
 結果
-: ```maxscript
-    ^:2538.33d0
-  pow:2661.85d0
-    *:9412.6d0
-  ```
+:   ```maxscript
+      ^:2538.33d0
+    pow:2661.85d0
+      *:9412.6d0
+    ```
 
 #### 関数の戻り値
 {:#language-function-return-value}
 
 配列要素の追加・削除やファイルの作成・削除において真偽値を返す関数
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  動作の成否ではなく結果の成否を返す。
+    動作の成否ではなく結果の成否を返す。
 
-  追加・作成
-  : <span/>{:.invisible}
+    追加・作成
+    :   <span/>{:.invisible}
 
-    成功もしくは既に存在する場合は`true`{:.code .language-maxscript}、失敗した場合は`false`{:.code .language-maxscript}。
+        成功もしくは既に存在する場合は`true`{:.code .language-maxscript}、失敗した場合は`false`{:.code .language-maxscript}。
 
-  削除
-  : <span/>{:.invisible}
+    削除
+    :   <span/>{:.invisible}
 
-    成功もしくは存在しなかった場合は`true`{:.code .language-maxscript}、失敗した場合は`false`{:.code .language-maxscript}。
+        成功もしくは存在しなかった場合は`true`{:.code .language-maxscript}、失敗した場合は`false`{:.code .language-maxscript}。
 
 配列インデックスを返す関数
-: <span/>{:.invisible}
+:   <span/>{:.invisible}
 
-  `findItem`{:.code .language-maxscript}関数に合わせる。
-  存在する場合はその要素のインデックス、存在しない場合は`0`{:.code .language-maxscript}。
+    `findItem`{:.code .language-maxscript}関数に合わせる。
+    存在する場合はその要素のインデックス、存在しない場合は`0`{:.code .language-maxscript}。
 
 ### 名前
 {:#name}
@@ -364,7 +365,7 @@ SampleInteger.ms
   | `camelCase`  | `snake_case` | 全て小文字           |
 
 * チェイン形式は使用しない。
-  Web関連のファイル等、慣例的にチェイン形式が利用されているものは除く。
+  ファイル名等、慣例的にチェイン形式が利用されているものは除く。
 
 #### 略語
 {:#name-abbreviation-and-acronym}
@@ -393,23 +394,23 @@ SampleInteger.ms
 
 | 種類                                        | 形式   | 例                                              | 備考                                                   |
 | ------------------------------------------- | ------ | ----------------------------------------------- | ------------------------------------------------------ |
-| `attributes`{:.code .language-maxscript}    | Pascal | `TestAttribute`{:.code .language-maxscript}     |                                                        |
-| `macroscript`{:.code .language-maxscript}   | Pascal | `TestMacro`{:.code .language-maxscript}         |                                                        |
-| `parameters`{:.code .language-maxscript}    | Pascal | `TestParameter`{:.code .language-maxscript}     |                                                        |
-| `plugin`{:.code .language-maxscript}        | Pascal | `TestPlugin`{:.code .language-maxscript}        |                                                        |
-| `private`{:.code .language-maxscript}メンバ | Camel  | `TestProperty`{:.code .language-maxscript}      |                                                        |
-| `public`{:.code .language-maxscript}メンバ  | Pascal | `testProperty`{:.code .language-maxscript}      |                                                        |
-| `rcmenu`{:.code .language-maxscript}        | Pascal | `MnuTest`{:.code .language-maxscript}           | 構造体定義と同様の扱い                                 |
-| `rollout`{:.code .language-maxscript}       | Pascal | `RltTest`{:.code .language-maxscript}           | 構造体定義と同様の扱い                                 |
-| `struct`{:.code .language-maxscript}        | Pascal | `TestStruct`{:.code .language-maxscript}        |                                                        |
-| `tool`{:.code .language-maxscript}          | Pascal | `TestTool`{:.code .language-maxscript}          |                                                        |
-| UIコントロール                              | Pascal | `BtnTest`{:.code .language-maxscript}           | `public`{:.code .language-maxscript}メンバと同様の扱い |
+| `attributes`{:.code .language-maxscript}    | Pascal | `FooAttribute`{:.code .language-maxscript}      |                                                        |
+| `macroscript`{:.code .language-maxscript}   | Pascal | `FooMacro`{:.code .language-maxscript}          |                                                        |
+| `parameters`{:.code .language-maxscript}    | Pascal | `FooParameter`{:.code .language-maxscript}      |                                                        |
+| `plugin`{:.code .language-maxscript}        | Pascal | `FooPlugin`{:.code .language-maxscript}         |                                                        |
+| `private`{:.code .language-maxscript}メンバ | Camel  | `FooProperty`{:.code .language-maxscript}       |                                                        |
+| `public`{:.code .language-maxscript}メンバ  | Pascal | `FooProperty`{:.code .language-maxscript}       |                                                        |
+| `rcmenu`{:.code .language-maxscript}        | Pascal | `MnuFoo`{:.code .language-maxscript}            | 構造体定義と同様の扱い                                 |
+| `rollout`{:.code .language-maxscript}       | Pascal | `RltFoo`{:.code .language-maxscript}            | 構造体定義と同様の扱い                                 |
+| `struct`{:.code .language-maxscript}        | Pascal | `FooStruct`{:.code .language-maxscript}         |                                                        |
+| `tool`{:.code .language-maxscript}          | Pascal | `FooTool`{:.code .language-maxscript}           |                                                        |
+| UIコントロール                              | Pascal | `BtnFoo`{:.code .language-maxscript}            | `public`{:.code .language-maxscript}メンバと同様の扱い |
 | イベントハンドラ                            | Pascal | `Pressed`{:.code .language-maxscript}           | `public`{:.code .language-maxscript}メンバと同様の扱い |
 | インタフェース                              | Pascal | `InstanceMgr`{:.code .language-maxscript}       |                                                        |
-| 関数                                        | Camel  | `testFunction`{:.code .language-maxscript}      |                                                        |
+| 関数                                        | Camel  | `fooBar`{:.code .language-maxscript}            |                                                        |
 | 記号パス                                    | Pascal | `"$StartupScripts"`{:.code .language-maxscript} |                                                        |
-| 変数                                        | Camel  | `testVariable`{:.code .language-maxscript}      |                                                        |
-| 名前値リテラル                              | Pascal | `#TestName`{:.code .language-maxscript}         |                                                        |
+| 変数                                        | Camel  | `fooBar`{:.code .language-maxscript}            |                                                        |
+| 名前値リテラル                              | Pascal | `#FooBar`{:.code .language-maxscript}           |                                                        |
 | 予約キーワード                              | Camel  | `true`{:.code .language-maxscript}              |                                                        |
 
 #### UIコントロールの変数名
@@ -556,69 +557,69 @@ UIコントロールの変数名の先頭には以下に定めた識別子を使
 {:#style-whitespace}
 
 演算子の前後
-: * 前後とも入れる
+:   * 前後とも入れる
 
-    ```maxscript
-    x + y == z
-    foo and bar
-    ```
+      ```maxscript
+      x + y == z
+      foo and bar
+      ```
 
 `:`{:.code .language-maxscript}の前後
-: * 前には入れない
+:   * 前には入れない
 
-    ```maxscript
-    varname:
-    ```
+      ```maxscript
+      varname:
+      ```
 
-  * `case`{:.code .language-maxscript}式のラベルの後には入れる
+    * `case`{:.code .language-maxscript}式のラベルの後には入れる
 
-    ```maxscript
-    case of (
-      (#Name): expr
-      default: expr
-    )
-    ```
+      ```maxscript
+      case of (
+        (#Name): expr
+        default: expr
+      )
+      ```
 
-  * キーワードパラメータの後には入れない
+    * キーワードパラメータの後には入れない
 
-    ```maxscript
-    fn foo x:0 y: = (
-      -- ...
-    )
-    foo x:1
-    ```
+      ```maxscript
+      fn foo x:0 y: = (
+        -- ...
+      )
+      foo x:1
+      ```
 
 括弧の内側
-: * 括弧の内側には入れない
+:   * 括弧の内側には入れない
 
-    ```maxscript
-    #(foo, bar)
-    [x, y, z]
-    foo[1]
-    ```
+      ```maxscript
+      #(foo, bar)
+      [x, y, z]
+      foo[1]
+      ```
 
 `,`{:.code .language-maxscript}の前後
-: * 前には入れない
+:   * 前には入れない
 
-    ```maxscript
-    [x, y, z]
-    ```
+      ```maxscript
+      [x, y, z]
+      ```
 
-  * 改行しない場合は後に入れる
+    * 改行しない場合は後に入れる
 
-    ```maxscript
-    #(foo, bar, baz)
-    ```
+      ```maxscript
+      #(foo, bar, baz)
+      ```
 
-  * 改行する場合は後には入れない
+    * 改行する場合は後には入れない
 
-    ```maxscript
-    #(
-      foo,
-      bar,
-      baz
-    )
-    ```
+      ```maxscript
+      #(
+        foo,
+        bar,
+        baz
+      )
+      ```
 
 #### 比較式
 {:#style-comparison-expression}
@@ -638,14 +639,14 @@ currentTime == 0
 値が範囲内、または範囲外かどうかをテストする場合は視覚的に分かりやすい順序で記述する。
 
 範囲内
-: ```maxscript
-  20 <= currentTime and currentTime <= 60
-  ```
+:   ```maxscript
+    20 <= currentTime and currentTime <= 60
+    ```
 
 範囲外
-: ```maxscript
-  currentTime < 20 and 60 < currentTime
-  ```
+:   ```maxscript
+    currentTime < 20 and 60 < currentTime
+    ```
 
 #### ブロック式
 {:#style-block-expression}
@@ -713,58 +714,77 @@ currentTime == 0
 * `default`{:.code .language-maxscript}以外のラベルは必ずブロック式にする。
   リテラルのみだとエラーになる場合があるため。
 
+  ```maxscript
+  case input of (
+    (0): ()
+    (#Name): ()
+    ("Foo"): ()
+    default: ()
+  )
+  ```
+
 #### 定義構文
 {:#style-definition-syntax}
 
 構造体、カスタムアトリビュート、ロールアウト等の定義構文は制御文や関数定義と同様にキャメル形式で記述する。
 
 ```maxscript
-struct Foo (
+struct FooStruct (
   on Create do ()
 )
 
-attributes Foo version:1 (
+attributes FooAttribute version:1 (
 )
 
-rollout rlt "Foo" rolledUp:false (
+rollout RltFoo "Foo" rolledUp:false (
   spinner spnValue "Value:" range:[0, 100, 0] type:#Integer
 )
 
-rcMenu mnu (
+rcMenu MnuFoo (
   menuItem mi "Item"
 )
 
-macroScript Macro buttonText:"Macro" (
+macroScript FooMacro buttonText:"Macro" (
 )
 ```
 
 #### 構造体メンバの宣言順序
 {:#style-declarative-order-of-structure-members}
 
-1.  プロパティ
+大枠は以下の通り。
+その上でアルファベット昇順に並べる。
 
-    1.  `public`{:.code .language-maxscript}
+01. `public`{:.code .language-maxscript}プロパティ
 
-    2.  `private`{:.code .language-maxscript}
+02. 変動する`private`{:.code .language-maxscript}プロパティ
 
-2.  メソッド
+03. 変動しない`private`{:.code .language-maxscript}プロパティ
 
-    1.  `public`{:.code .language-maxscript}
+04. `public`{:.code .language-maxscript}メソッド
 
-    2.  `private`{:.code .language-maxscript}
+05. `private`{:.code .language-maxscript}メソッド
 
-3.  `OnClone`{:.code .language-maxscript}メソッド
-    `public`{:.code .language-maxscript}関数ではあるがイベントハンドラに近い扱いなのでこの位置に記述する。
+06. 共通プロパティやメソッド
 
-     ```maxscript
-     public fn OnClone obj = (
-       this = obj
-       this.prop = mxs.RecursiveCopy this.prop
-       ok
-     ),
-     ```
+    * `public fn StructName`{:.code .language-maxscript}
 
-4. イベントハンドラ
+    * `public fn Dump`{:.code .language-maxscript}
+
+    * `public fn Equals`{:.code .language-maxscript}
+
+    * `private observers`{:.code .language-maxscript}
+
+    * `public fn AddObserver`{:.code .language-maxscript}
+
+    * `public fn RemoveObserver`{:.code .language-maxscript}
+
+    * `private fn findObserver`{:.code .language-maxscript}
+
+    * `private fn notify`{:.code .language-maxscript}
+
+07. `Clone`イベントハンドラ
+
+08. `Create`イベントハンドラ
 
 #### assert関数
 {:#style-assert-function}
@@ -787,12 +807,6 @@ assert (actual == expected)
   /* テキスト */
   ```
 
-  ただし、コードのコメントアウトには空白を挟まない。
-
-  ```maxscript
-  --format "%\n" foo
-  ```
-
 * 複数行のブロックコメントにおいてテキストのインデントは行わないこと。
 
   ```maxscript
@@ -810,7 +824,7 @@ assert (actual == expected)
 #### ドキュメンテーションコメント
 {:#style-documentation-comment}
 
-詳細は[MAXScript ドキュメンテーションコメント](2017-02-27-specification-of-documentation-comment)を参照。
+詳細は[ドキュメントコメント](https://github.com/imaoki/DocGenerator/blob/main/README.md#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88)を参照。
 
 ##### 文体
 {:#style-documentation-comment-style}
