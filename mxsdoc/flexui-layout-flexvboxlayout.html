@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.FlexVBoxLayout.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">FlexVBoxLayout.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#flexvboxlayoutstruct">FlexVBoxLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addspace">AddSpace</a></li><li><a href="#addstretch">AddStretch</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="flexvboxlayoutstruct">struct&nbsp;FlexVBoxLayoutStruct</h3>
+<p>垂直方向にアイテムを配置する。</p><dl>
+<dt>補足</dt>
+<dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p></dd>
+</dl>
+<h4 id="options">public&nbsp;Options</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:FlexLayoutOptionsStruct&gt;</code></dd>
+<dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
+</dl>
+<h4 id="cells">private&nbsp;cells</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><p>セルのアイテム。既定値は<code>#()</code>。</p></dd>
+</dl>
+<h4 id="boxcelldef">private&nbsp;boxCellDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StructDef:FlexBoxCellStruct&gt;</code></dd>
+</dl>
+<h4 id="addlayout">public&nbsp;fn&nbsp;AddLayout</h4>
+<p>レイアウトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>layout</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>minimum:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>stretch:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="addspace">public&nbsp;fn&nbsp;AddSpace</h4>
+<p>固定スペースを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>1</code>以上の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="addstretch">public&nbsp;fn&nbsp;AddStretch</h4>
+<p>ストレッチ可能なスペースを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>stretch:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="addwidget">public&nbsp;fn&nbsp;AddWidget</h4>
+<p>ウィジェットを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>widget</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>minimum:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>stretch:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。<br />
+ウィジェットの重複登録は出来ない。</p></dd>
+</dl>
+<h4 id="getcells">public&nbsp;fn&nbsp;GetCells</h4>
+<p>セルのアイテムを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="setrect">public&nbsp;fn&nbsp;SetRect</h4>
+<p>レイアウトの矩形を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>rect</code></dd>
+<dd><code>&lt;Box2&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
+</dl>
+<h4 id="findwidget">private&nbsp;fn&nbsp;findWidget</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>widget</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="ismatchstructname">private&nbsp;fn&nbsp;isMatchStructName</h4>
+<p>構造体名が指定したパターンに一致するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>pattern</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidlayoutoptions">private&nbsp;fn&nbsp;isValidLayoutOptions</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidwidget">private&nbsp;fn&nbsp;isValidWidget</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="observers">private&nbsp;observers</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="addobserver">public&nbsp;fn&nbsp;AddObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="removeobserver">public&nbsp;fn&nbsp;RemoveObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="notify">private&nbsp;fn&nbsp;notify</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]|Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>type:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

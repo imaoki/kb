@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.TestValue.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">TestValue.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#testvaluestruct">TestValueStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#ignorecase">IgnoreCase</a></li><li><a href="#v">v</a></li><li><a href="#regexclass">regexClass</a></li><li><a href="#regextype">regexType</a></li><li><a href="#countequals">CountEquals</a></li><li><a href="#countgreaterorequals">CountGreaterOrEquals</a></li><li><a href="#countgreaterthan">CountGreaterThan</a></li><li><a href="#countlessorequals">CountLessOrEquals</a></li><li><a href="#countlessthan">CountLessThan</a></li><li><a href="#getvalue">GetValue</a></li><li><a href="#hasequals">HasEquals</a></li><li><a href="#hasprop">HasProp</a></li><li><a href="#isangleaxis">IsAngleAxis</a></li><li><a href="#isarray">IsArray</a></li><li><a href="#isarrayorarrayparameter">IsArrayOrArrayParameter</a></li><li><a href="#isarrayparameter">IsArrayParameter</a></li><li><a href="#isattributedef">IsAttributeDef</a></li><li><a href="#isbigmatrix">IsBigMatrix</a></li><li><a href="#isbinstream">IsBinStream</a></li><li><a href="#isbitarray">IsBitArray</a></li><li><a href="#isbitmap">IsBitmap</a></li><li><a href="#isboolean">IsBoolean</a></li><li><a href="#isbox2">IsBox2</a></li><li><a href="#isbox3">IsBox3</a></li><li><a href="#iscolor">IsColor</a></li><li><a href="#isdatapair">IsDataPair</a></li><li><a href="#isdictionary">IsDictionary</a></li><li><a href="#isdotnetclass">IsDotNetClass</a></li><li><a href="#isdotnetmethod">IsDotNetMethod</a></li><li><a href="#isdotnetobject">IsDotNetObject</a></li><li><a href="#iseulerangles">IsEulerAngles</a></li><li><a href="#isfilestream">IsFileStream</a></li><li><a href="#isfloat">IsFloat</a></li><li><a href="#isinteger">IsInteger</a></li><li><a href="#isinterval">IsInterval</a></li><li><a href="#ismatrix3">IsMatrix3</a></li><li><a href="#ismaxkey">IsMAXKey</a></li><li><a href="#ismaxscriptfunction">IsMAXScriptFunction</a></li><li><a href="#isname">IsName</a></li><li><a href="#isnumber">IsNumber</a></li><li><a href="#isok">IsOk</a></li><li><a href="#ispoint2">IsPoint2</a></li><li><a href="#ispoint3">IsPoint3</a></li><li><a href="#ispoint4">IsPoint4</a></li><li><a href="#isquat">IsQuat</a></li><li><a href="#isray">IsRay</a></li><li><a href="#isregexobject">IsRegexObject</a></li><li><a href="#isrollout">IsRollout</a></li><li><a href="#isstring">IsString</a></li><li><a href="#isstringstream">IsStringStream</a></li><li><a href="#isstructdefinition">IsStructDefinition</a></li><li><a href="#isstructinstance">IsStructInstance</a></li><li><a href="#istestvalue">IsTestValue</a></li><li><a href="#istime">IsTime</a></li><li><a href="#isundefined">IsUndefined</a></li><li><a href="#isunsupplied">IsUnsupplied</a></li><li><a href="#iswindowstream">IsWindowStream</a></li><li><a href="#escapebackslash">escapeBackslash</a></li><li><a href="#valuetostring">valueToString</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="testvaluestruct">struct&nbsp;TestValueStruct</h3>
+<p>各種アサーション用の機能を提供するテスト用の構造体。</p><h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>作成パラメータ1。初期化用の値。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="ignorecase">public&nbsp;IgnoreCase</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>文字列の比較の際に大文字と小文字を区別しない場合は<code>true</code>、区別する場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="v">private&nbsp;v</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<h4 id="regexclass">private&nbsp;regexClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+</dl>
+<h4 id="regextype">private&nbsp;regexType</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.type?view=netframework-4.8">System.Type</a>&gt;</code></dd>
+</dl>
+<h4 id="countequals">public&nbsp;fn&nbsp;CountEquals</h4>
+<p>コレクションの要素数が指定の数と等しいかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>count</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="countgreaterorequals">public&nbsp;fn&nbsp;CountGreaterOrEquals</h4>
+<p>コレクションの要素数が指定の数以上かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>count</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="countgreaterthan">public&nbsp;fn&nbsp;CountGreaterThan</h4>
+<p>コレクションの要素数が指定の数を超えるかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>count</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="countlessorequals">public&nbsp;fn&nbsp;CountLessOrEquals</h4>
+<p>コレクションの要素数が指定の数以下かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>count</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="countlessthan">public&nbsp;fn&nbsp;CountLessThan</h4>
+<p>コレクションの要素数が指定の数未満かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>count</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getvalue">public&nbsp;fn&nbsp;GetValue</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<h4 id="hasequals">public&nbsp;fn&nbsp;HasEquals</h4>
+<p><code>Equals</code>メソッドを持っているかどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="hasprop">public&nbsp;fn&nbsp;HasProp</h4>
+<p>現在のオブジェクトの値が指定したプロパティを持っているかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>propName</code></dd>
+<dd><code>&lt;String|Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isangleaxis">public&nbsp;fn&nbsp;IsAngleAxis</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isarray">public&nbsp;fn&nbsp;IsArray</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isarrayorarrayparameter">public&nbsp;fn&nbsp;IsArrayOrArrayParameter</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isarrayparameter">public&nbsp;fn&nbsp;IsArrayParameter</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isattributedef">public&nbsp;fn&nbsp;IsAttributeDef</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbigmatrix">public&nbsp;fn&nbsp;IsBigMatrix</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbinstream">public&nbsp;fn&nbsp;IsBinStream</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbitarray">public&nbsp;fn&nbsp;IsBitArray</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbitmap">public&nbsp;fn&nbsp;IsBitmap</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isboolean">public&nbsp;fn&nbsp;IsBoolean</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbox2">public&nbsp;fn&nbsp;IsBox2</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isbox3">public&nbsp;fn&nbsp;IsBox3</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="iscolor">public&nbsp;fn&nbsp;IsColor</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdatapair">public&nbsp;fn&nbsp;IsDataPair</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdictionary">public&nbsp;fn&nbsp;IsDictionary</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdotnetclass">public&nbsp;fn&nbsp;IsDotNetClass</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdotnetmethod">public&nbsp;fn&nbsp;IsDotNetMethod</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isdotnetobject">public&nbsp;fn&nbsp;IsDotNetObject</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="iseulerangles">public&nbsp;fn&nbsp;IsEulerAngles</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isfilestream">public&nbsp;fn&nbsp;IsFileStream</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isfloat">public&nbsp;fn&nbsp;IsFloat</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isinteger">public&nbsp;fn&nbsp;IsInteger</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isinterval">public&nbsp;fn&nbsp;IsInterval</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ismatrix3">public&nbsp;fn&nbsp;IsMatrix3</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ismaxkey">public&nbsp;fn&nbsp;IsMAXKey</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ismaxscriptfunction">public&nbsp;fn&nbsp;IsMAXScriptFunction</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isname">public&nbsp;fn&nbsp;IsName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isnumber">public&nbsp;fn&nbsp;IsNumber</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isok">public&nbsp;fn&nbsp;IsOk</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ispoint2">public&nbsp;fn&nbsp;IsPoint2</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ispoint3">public&nbsp;fn&nbsp;IsPoint3</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ispoint4">public&nbsp;fn&nbsp;IsPoint4</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isquat">public&nbsp;fn&nbsp;IsQuat</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isray">public&nbsp;fn&nbsp;IsRay</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isregexobject">public&nbsp;fn&nbsp;IsRegexObject</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isrollout">public&nbsp;fn&nbsp;IsRollout</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isstring">public&nbsp;fn&nbsp;IsString</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isstringstream">public&nbsp;fn&nbsp;IsStringStream</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isstructdefinition">public&nbsp;fn&nbsp;IsStructDefinition</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isstructinstance">public&nbsp;fn&nbsp;IsStructInstance</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="istestvalue">public&nbsp;fn&nbsp;IsTestValue</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="istime">public&nbsp;fn&nbsp;IsTime</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isundefined">public&nbsp;fn&nbsp;IsUndefined</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isunsupplied">public&nbsp;fn&nbsp;IsUnsupplied</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="iswindowstream">public&nbsp;fn&nbsp;IsWindowStream</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="escapebackslash">private&nbsp;fn&nbsp;escapeBackslash</h4>
+<p>エスケープシーケンスの<code>\</code>をエスケープする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String|StringStream&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="valuetostring">private&nbsp;fn&nbsp;valueToString</h4>
+<p>値を文字列に変換してエスケープシーケンスをエスケープする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<p>指定したオブジェクトが現在のオブジェクトと等しいかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:TestValueStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>比較は型によって異なる方法で行われる。</p>
+<ul>
+<li><p>配列や<code>DataPair</code>等の複合型は再帰的に比較する。</p>
+</li>
+<li><p>数値で構成される複合型は各要素の数値を<code>==</code>演算子ではなく<code>close_enough</code>関数を用いて比較する。</p>
+</li>
+<li><p><code>Equals</code>メソッドを持っているオブジェクトは<code>Equals</code>メソッドを使用して比較する。</p>
+</li>
+<li><p>正規表現オブジェクトは<code>ToString</code>メソッドによるパターン文字列と<code>Options</code>プロパティをそれぞれ比較する。</p>
+</li>
+<li><p>プロパティアクセスによる<code>MAXScriptFunction</code>値の比較は失敗する。<br />
+そのため関数値を比較する場合は一旦変数に格納し、その変数を用いてインスタンスを生成する。</p>
+<dl>
+<dt>アサーション失敗</dt>
+<dd>
+<pre><code class="language-maxscript">actual = ::TestValueStruct foo.Bar
+expected = ::TestValueStruct foo.Bar
+assert (actual.Equals expected == true)
+</code></pre>
+</dd>
+<dt>アサーション成功</dt>
+<dd>
+<pre><code class="language-maxscript">local f = foo.Bar
+actual = ::TestValueStruct f
+expected = ::TestValueStruct f
+assert (actual.Equals expected == true)
+</code></pre>
+</dd>
+</dl>
+</li>
+<li><p><code>DotNetMethod</code>の比較は常に<code>false</code>になる。</p>
+</li>
+</ul></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

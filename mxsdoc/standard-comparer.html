@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.Comparer.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">Comparer.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#comparer">comparer</a></li><li><a href="#comparerstruct">ComparerStruct</a><ul><li><a href="#stringlogicalcomparer">stringLogicalComparer</a></li><li><a href="#comparename">CompareName</a></li><li><a href="#comparenodehandle">CompareNodeHandle</a></li><li><a href="#compareproperty">CompareProperty</a></li><li><a href="#comparestringlogical">CompareStringLogical</a></li><li><a href="#simplecompare">simpleCompare</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="comparer">global&nbsp;comparer</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;Struct:ComparerStruct&gt;</code></dd>
+</dl>
+<h3 id="comparerstruct">struct&nbsp;ComparerStruct</h3>
+<p>2つのオブジェクトが等しいかどうかを比較する。</p><dl>
+<dt>補足</dt>
+<dd><p>戻り値が以下のような関係になるように実装する。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>関係</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-1</code></td>
+<td><code>a</code>は<code>b</code>より小さい</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>a</code>と<code>b</code>は等しい</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>a</code>は<code>b</code>より大きい</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="stringlogicalcomparer">private&nbsp;stringLogicalComparer</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetMethod&gt;</code></dd>
+</dl>
+<h4 id="comparename">public&nbsp;fn&nbsp;CompareName</h4>
+<p><code>Name</code>プロパティを比較する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>値が文字列の場合は<code>CompareStringLogical</code>を利用する。</p></dd>
+</dl>
+<h4 id="comparenodehandle">public&nbsp;fn&nbsp;CompareNodeHandle</h4>
+<p>ノードハンドルを比較する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Node&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Node&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="compareproperty">public&nbsp;fn&nbsp;CompareProperty</h4>
+<p>任意のプロパティを比較する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>propName:</code></dd>
+<dd><code>&lt;Name|String&gt;</code></dd>
+<dd><p>プロパティ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>値が文字列の場合は<code>CompareStringLogical</code>を利用する。</p></dd>
+</dl>
+<h4 id="comparestringlogical">public&nbsp;fn&nbsp;CompareStringLogical</h4>
+<p>文字列中の数字を数値として比較する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="simplecompare">private&nbsp;fn&nbsp;simpleCompare</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

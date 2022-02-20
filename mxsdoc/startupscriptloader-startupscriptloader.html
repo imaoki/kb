@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.StartupScriptLoader.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">StartupScriptLoader.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#startupscriptloaderstruct">StartupScriptLoaderStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#globalvarname">globalVarName</a></li><li><a href="#hassystemshutdownstarted">hasSystemShutdownStarted</a></li><li><a href="#scriptfiles">scriptFiles</a></li><li><a href="#startupfilename">startupFileName</a></li><li><a href="#startupfilepath">startupFilePath</a></li><li><a href="#datetimeclass">dateTimeClass</a></li><li><a href="#fileclass">fileClass</a></li><li><a href="#pathclass">pathClass</a></li><li><a href="#utf8withoutbom">utf8withoutBOM</a></li><li><a href="#getglobalvarname">GetGlobalVarName</a></li><li><a href="#getscriptfiles">GetScriptFiles</a></li><li><a href="#getstartupfilename">GetStartupFileName</a></li><li><a href="#getstartupfilepath">GetStartupFilePath</a></li><li><a href="#onpresystemshutdown">OnPreSystemShutdown</a></li><li><a href="#registerscript">RegisterScript</a></li><li><a href="#save">Save</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#unregisterscript">UnregisterScript</a></li><li><a href="#defineglobalvar">defineGlobalVar</a></li><li><a href="#deletestartupfile">deleteStartupFile</a></li><li><a href="#destroyglobalvar">destroyGlobalVar</a></li><li><a href="#existsstartupfile">existsStartupFile</a></li><li><a href="#initializestartupfilepath">initializeStartupFilePath</a></li><li><a href="#registerpresystemshutdown">registerPreSystemShutdown</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="startupscriptloaderstruct">struct&nbsp;StartupScriptLoaderStruct</h3>
+<p>スタートアップスクリプトを管理する。</p>
+<h4>インストール</h4>
+<p><code>install.ms</code>を実行する。</p>
+<h4>アンインストール</h4>
+<p><code>uninstall.ms</code>を実行する。</p>
+<h4>スクリプトをスタートアップに登録する</h4>
+<p>スクリプトの起動処理の最後に以下のコードを配置する。</p>
+<pre><code class="language-maxscript">if isProperty ::startupScriptLoader &quot;RegisterScript&quot; do (
+  ::startupScriptLoader.RegisterScript (getSourceFileName())
+  ::startupScriptLoader.Save()
+)
+</code></pre>
+<h4>スクリプトをスタートアップから登録解除する</h4>
+<p>スクリプトの終了処理の最後に以下のコードを配置する。<br />
+<code>UnregisterScript</code>メソッドの引数には登録時のファイルパスを渡す。</p>
+<pre><code class="language-maxscript">if isProperty ::startupScriptLoader &quot;UnregisterScript&quot; do (
+  ::startupScriptLoader.UnregisterScript (getSourceFileName())
+  ::startupScriptLoader.Save()
+)
+</code></pre><h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>作成パラメータ1。<br />
+自己のインスタンスを格納するグローバル変数の名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="globalvarname">private&nbsp;globalVarName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>自己のインスタンスを格納するグローバル変数の名前。既定値は<code>&quot;startupScriptLoader&quot;</code>。</p></dd>
+</dl>
+<h4 id="hassystemshutdownstarted">private&nbsp;hasSystemShutdownStarted</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>シャットダウンプロセスが開始されたかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="scriptfiles">private&nbsp;scriptFiles</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+<dd><p>登録スクリプトファイル。</p></dd>
+</dl>
+<h4 id="startupfilename">private&nbsp;startupFileName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>スタートアップファイルのファイル名（拡張子は含まない）。既定値は<code>&quot;StartupScriptLoader&quot;</code>。</p></dd>
+</dl>
+<h4 id="startupfilepath">private&nbsp;startupFilePath</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>スタートアップファイルのパス。</p></dd>
+</dl>
+<h4 id="datetimeclass">private&nbsp;dateTimeClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
+</dl>
+<h4 id="fileclass">private&nbsp;fileClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file?view=netframework-4.8">System.IO.File</a>&gt;</code></dd>
+</dl>
+<h4 id="pathclass">private&nbsp;pathClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.path?view=netframework-4.8">System.IO.Path</a>&gt;</code></dd>
+</dl>
+<h4 id="utf8withoutbom">private&nbsp;utf8withoutBOM</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.utf8encoding?view=netframework-4.8">System.Text.UTF8Encoding</a>&gt;</code></dd>
+</dl>
+<h4 id="getglobalvarname">public&nbsp;fn&nbsp;GetGlobalVarName</h4>
+<p>グローバル変数名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getscriptfiles">public&nbsp;fn&nbsp;GetScriptFiles</h4>
+<p>全ての登録スクリプトファイルを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getstartupfilename">public&nbsp;fn&nbsp;GetStartupFileName</h4>
+<p>スタートアップファイルのファイル名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getstartupfilepath">public&nbsp;fn&nbsp;GetStartupFilePath</h4>
+<p>スタートアップファイルのパスを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="onpresystemshutdown">public&nbsp;fn&nbsp;OnPreSystemShutdown</h4>
+<p>#PreSystemShutdownコールバックによって呼び出されるメソッド。</p><h4 id="registerscript">public&nbsp;fn&nbsp;RegisterScript</h4>
+<p>スクリプトファイルを登録する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>scriptFilePath</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合（既に登録済みの場合も）は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="save">public&nbsp;fn&nbsp;Save</h4>
+<p>内部状態をスタートアップファイルに書き出す。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
+<p>アンインストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unregisterscript">public&nbsp;fn&nbsp;UnregisterScript</h4>
+<p>スクリプトファイルを登録解除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>scriptFilePath</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合（元から登録されていない場合も）は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>シャットダウンプロセス中は処理を行わない。</p></dd>
+</dl>
+<h4 id="defineglobalvar">private&nbsp;fn&nbsp;defineGlobalVar</h4>
+<p>グローバル変数を定義する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="deletestartupfile">private&nbsp;fn&nbsp;deleteStartupFile</h4>
+<p>スタートアップファイルを削除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="destroyglobalvar">private&nbsp;fn&nbsp;destroyGlobalVar</h4>
+<p>グローバル変数を破棄する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>安全性を鑑みて変数名は削除せず、値のみ<code>undefined</code>で上書きする。</p></dd>
+</dl>
+<h4 id="existsstartupfile">private&nbsp;fn&nbsp;existsStartupFile</h4>
+<p>スタートアップファイルが存在するかどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="initializestartupfilepath">private&nbsp;fn&nbsp;initializeStartupFilePath</h4>
+<p>スタートアップファイルのファイル名を初期化する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="registerpresystemshutdown">private&nbsp;fn&nbsp;registerPreSystemShutdown</h4>
+<p>#PreSystemShutdownコールバックを登録する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="observers">private&nbsp;observers</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="addobserver">public&nbsp;fn&nbsp;AddObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="removeobserver">public&nbsp;fn&nbsp;RemoveObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="notify">private&nbsp;fn&nbsp;notify</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]|Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>type:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

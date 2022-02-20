@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.Easing.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">Easing.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#easingstruct">EasingStruct</a><ul><li><a href="#backin">BackIn</a></li><li><a href="#backinout">BackInOut</a></li><li><a href="#backout">BackOut</a></li><li><a href="#bezier">Bezier</a></li><li><a href="#bouncein">BounceIn</a></li><li><a href="#bounceinout">BounceInOut</a></li><li><a href="#bounceout">BounceOut</a></li><li><a href="#circularin">CircularIn</a></li><li><a href="#circularinout">CircularInOut</a></li><li><a href="#circularout">CircularOut</a></li><li><a href="#cubicin">CubicIn</a></li><li><a href="#cubicinout">CubicInOut</a></li><li><a href="#cubicout">CubicOut</a></li><li><a href="#elasticin">ElasticIn</a></li><li><a href="#elasticinout">ElasticInOut</a></li><li><a href="#elasticout">ElasticOut</a></li><li><a href="#exponentialin">ExponentialIn</a></li><li><a href="#exponentialinout">ExponentialInOut</a></li><li><a href="#exponentialout">ExponentialOut</a></li><li><a href="#linear">Linear</a></li><li><a href="#quadraticin">QuadraticIn</a></li><li><a href="#quadraticinout">QuadraticInOut</a></li><li><a href="#quadraticout">QuadraticOut</a></li><li><a href="#quarticin">QuarticIn</a></li><li><a href="#quarticinout">QuarticInOut</a></li><li><a href="#quarticout">QuarticOut</a></li><li><a href="#quinticin">QuinticIn</a></li><li><a href="#quinticinout">QuinticInOut</a></li><li><a href="#quinticout">QuinticOut</a></li><li><a href="#sigmoid">Sigmoid</a></li><li><a href="#sinein">SineIn</a></li><li><a href="#sineinout">SineInOut</a></li><li><a href="#sineout">SineOut</a></li><li><a href="#clamp">clamp</a></li><li><a href="#isnormalized">isNormalized</a></li><li><a href="#solvecubicequation">solveCubicEquation</a></li><li><a href="#solvequadraticequation">solveQuadraticEquation</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code>pi</code><ul>
+</ul></li>
+</ul></dd></dl>
+<h3 id="easingstruct">struct&nbsp;EasingStruct</h3>
+<p>各種イージングメソッドを提供する。</p><h4 id="backin">public&nbsp;fn&nbsp;BackIn</h4>
+<p>逆方向の変化を伴う。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="backinout">public&nbsp;fn&nbsp;BackInOut</h4>
+<p>逆方向の変化を伴う。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="backout">public&nbsp;fn&nbsp;BackOut</h4>
+<p>逆方向の変化を伴う。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="bezier">public&nbsp;fn&nbsp;Bezier</h4>
+<p>ベジェ曲線を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>tangent1</code></dd>
+<dd><code>&lt;Point2|Point3&gt;</code></dd>
+<dd><p>始点のアウトタンジェント。<code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>tangent2</code></dd>
+<dd><code>&lt;Point2|Point3&gt;</code></dd>
+<dd><p>終点のインタンジェント。<code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>start:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>始点の値。<code>0.0</code>から<code>1.0</code>の範囲の値。既定値は<code>0.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>end:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>終点の値。<code>0.0</code>から<code>1.0</code>の範囲の値。既定値は<code>1.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><dl>
+<dt>参考</dt>
+<dd><a href="https://stackoverflow.com/questions/5883264/interpolating-values-between-interval-interpolation-as-per-bezier-curve">math - Interpolating values between interval, interpolation as per Bezier curve - Stack Overflow</a></dd>
+</dl></dd>
+</dl>
+<h4 id="bouncein">public&nbsp;fn&nbsp;BounceIn</h4>
+<p>バウンス効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="bounceinout">public&nbsp;fn&nbsp;BounceInOut</h4>
+<p>バウンス効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="bounceout">public&nbsp;fn&nbsp;BounceOut</h4>
+<p>バウンス効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="circularin">public&nbsp;fn&nbsp;CircularIn</h4>
+<p>円弧状に変化する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="circularinout">public&nbsp;fn&nbsp;CircularInOut</h4>
+<p>円弧状に変化する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="circularout">public&nbsp;fn&nbsp;CircularOut</h4>
+<p>円弧状に変化する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="cubicin">public&nbsp;fn&nbsp;CubicIn</h4>
+<p>三次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="cubicinout">public&nbsp;fn&nbsp;CubicInOut</h4>
+<p>三次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="cubicout">public&nbsp;fn&nbsp;CubicOut</h4>
+<p>三次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="elasticin">public&nbsp;fn&nbsp;ElasticIn</h4>
+<p>弾性効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>frequency:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>振動数。<code>0</code>から<code>100</code>の範囲の値。既定値は<code>3</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>damping:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>減衰。<code>0.0</code>から<code>100.0</code>の範囲の値。既定値は<code>10.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>flat:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>始点と終点を<code>1.0</code>にする場合は<code>true</code>、始点を<code>0.0</code>、終点を<code>1.0</code>にする場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="elasticinout">public&nbsp;fn&nbsp;ElasticInOut</h4>
+<p>弾性効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>frequency:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>振動数。<code>0</code>から<code>100</code>の範囲の値。既定値は<code>3</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>damping:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>減衰。<code>0.0</code>から<code>100.0</code>の範囲の値。既定値は<code>10.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>flat:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>始点と終点を<code>1.0</code>にする場合は<code>true</code>、始点を<code>0.0</code>、終点を<code>1.0</code>にする場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="elasticout">public&nbsp;fn&nbsp;ElasticOut</h4>
+<p>弾性効果を作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>frequency:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>振動数。<code>0</code>から<code>100</code>の範囲の値。既定値は<code>3</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>damping:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>減衰。<code>0.0</code>から<code>100.0</code>の範囲の値。既定値は<code>10.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>flat:</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>始点と終点を<code>1.0</code>にする場合は<code>true</code>、始点を<code>0.0</code>、終点を<code>1.0</code>にする場合は<code>false</code>。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="exponentialin">public&nbsp;fn&nbsp;ExponentialIn</h4>
+<p>指数関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="exponentialinout">public&nbsp;fn&nbsp;ExponentialInOut</h4>
+<p>指数関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="exponentialout">public&nbsp;fn&nbsp;ExponentialOut</h4>
+<p>指数関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="linear">public&nbsp;fn&nbsp;Linear</h4>
+<p>線形補間。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quadraticin">public&nbsp;fn&nbsp;QuadraticIn</h4>
+<p>二次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quadraticinout">public&nbsp;fn&nbsp;QuadraticInOut</h4>
+<p>二次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quadraticout">public&nbsp;fn&nbsp;QuadraticOut</h4>
+<p>二次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quarticin">public&nbsp;fn&nbsp;QuarticIn</h4>
+<p>四次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quarticinout">public&nbsp;fn&nbsp;QuarticInOut</h4>
+<p>四次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quarticout">public&nbsp;fn&nbsp;QuarticOut</h4>
+<p>四次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quinticin">public&nbsp;fn&nbsp;QuinticIn</h4>
+<p>五次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quinticinout">public&nbsp;fn&nbsp;QuinticInOut</h4>
+<p>五次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="quinticout">public&nbsp;fn&nbsp;QuinticOut</h4>
+<p>五次関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="sigmoid">public&nbsp;fn&nbsp;Sigmoid</h4>
+<p>シグモイド関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>inflection</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>変曲点。<code>-0.5</code>から<code>0.5</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>slope</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>傾き。<code>-0.5</code>から<code>0.5</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="sinein">public&nbsp;fn&nbsp;SineIn</h4>
+<p>サイン関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="sineinout">public&nbsp;fn&nbsp;SineInOut</h4>
+<p>サイン関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="sineout">public&nbsp;fn&nbsp;SineOut</h4>
+<p>サイン関数を使用する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p><code>0.0</code>から<code>1.0</code>の範囲の値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<h4 id="clamp">private&nbsp;fn&nbsp;clamp</h4>
+<p>値を範囲内に収める。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer|Float|Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>lower:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>下限。既定値は<code>0.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>high:</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+<dd><p>上限。既定値は<code>1.0</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer|Float|Point2&gt;</code></dd>
+</dl>
+<h4 id="isnormalized">private&nbsp;fn&nbsp;isNormalized</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="solvecubicequation">private&nbsp;fn&nbsp;solveCubicEquation</h4>
+<p>三次方程式を解決する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>c</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>d</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><dl>
+<dt>参考</dt>
+<dd><a href="https://stackoverflow.com/questions/5883264/interpolating-values-between-interval-interpolation-as-per-bezier-curve">math - Interpolating values between interval, interpolation as per Bezier curve - Stack Overflow</a></dd>
+</dl></dd>
+</dl>
+<h4 id="solvequadraticequation">private&nbsp;fn&nbsp;solveQuadraticEquation</h4>
+<p>二次方程式を解決する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>a</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>b</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>c</code></dd>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Float&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><dl>
+<dt>参考</dt>
+<dd><a href="https://stackoverflow.com/questions/5883264/interpolating-values-between-interval-interpolation-as-per-bezier-curve">math - Interpolating values between interval, interpolation as per Bezier curve - Stack Overflow</a></dd>
+</dl></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

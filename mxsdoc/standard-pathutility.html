@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.PathUtility.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">PathUtility.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#pathutilitystruct">PathUtilityStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#basedirectory">baseDirectory</a></li><li><a href="#directoryclass">directoryClass</a></li><li><a href="#environmentclass">environmentClass</a></li><li><a href="#pathclass">pathClass</a></li><li><a href="#changeextension">ChangeExtension</a></li><li><a href="#extractdirectoryname">ExtractDirectoryName</a></li><li><a href="#getbasedirectory">GetBaseDirectory</a></li><li><a href="#getdirectoryname">GetDirectoryName</a></li><li><a href="#getextension">GetExtension</a></li><li><a href="#getfilename">GetFileName</a></li><li><a href="#getfilenamewithoutextension">GetFileNameWithoutExtension</a></li><li><a href="#getfullpath">GetFullPath</a></li><li><a href="#getinvalidfilenamechars">GetInvalidFileNameChars</a></li><li><a href="#getinvalidpathchars">GetInvalidPathChars</a></li><li><a href="#getpathroot">GetPathRoot</a></li><li><a href="#getrandomfilename">GetRandomFileName</a></li><li><a href="#hasextension">HasExtension</a></li><li><a href="#ispathrooted">IsPathRooted</a></li><li><a href="#setbasedirectory">SetBaseDirectory</a></li><li><a href="#trimendseparator">TrimEndSeparator</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="pathutilitystruct">struct&nbsp;PathUtilityStruct</h3>
+<p>ファイルまたはディレクトリのパス情報を操作する。</p><h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>作成パラメータ1。ベースディレクトリ。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>未指定の場合は本ファイルの配置されたディレクトリがベースディレクトリとなる。</p></dd>
+</dl>
+<h4 id="basedirectory">private&nbsp;baseDirectory</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="directoryclass">private&nbsp;directoryClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directory?view=netframework-4.8">System.IO.Directory</a>&gt;</code></dd>
+</dl>
+<h4 id="environmentclass">private&nbsp;environmentClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.environment?view=netframework-4.8">System.Environment</a>&gt;</code></dd>
+</dl>
+<h4 id="pathclass">private&nbsp;pathClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.path?view=netframework-4.8">System.IO.Path</a>&gt;</code></dd>
+</dl>
+<h4 id="changeextension">public&nbsp;fn&nbsp;ChangeExtension</h4>
+<p>パスの拡張子を変更する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>extension</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>新しい拡張子（先行ピリオド付き、またはなし）。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="extractdirectoryname">public&nbsp;fn&nbsp;ExtractDirectoryName</h4>
+<p>パスからディレクトリ部分を抽出する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getbasedirectory">public&nbsp;fn&nbsp;GetBaseDirectory</h4>
+<p>ベースディレクトリを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getdirectoryname">public&nbsp;fn&nbsp;GetDirectoryName</h4>
+<p>パスのディレクトリ情報を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>ルートディレクトリの場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>取得したディレクトリ情報がルートディレクトリの場合にのみパスの末尾に<code>&quot;\&quot;</code>が付く。</p>
+<table>
+<thead>
+<tr>
+<th>パス</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@&quot;C:\Dir\File.ext&quot;</code></td>
+<td><code>&quot;C:\Dir&quot;</code></td>
+</tr>
+<tr>
+<td><code>@&quot;C:\Dir\&quot;</code></td>
+<td><code>&quot;C:\Dir&quot;</code></td>
+</tr>
+<tr>
+<td><code>@&quot;C:\Dir&quot;</code></td>
+<td><code>&quot;C:\&quot;</code></td>
+</tr>
+<tr>
+<td><code>@&quot;C:\&quot;</code></td>
+<td><code>undefined</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="getextension">public&nbsp;fn&nbsp;GetExtension</h4>
+<p>パスの拡張子（ピリオドを含む）を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>パスが拡張子を持たない場合は<code>&quot;&quot;</code>を返す。</p></dd>
+</dl>
+<h4 id="getfilename">public&nbsp;fn&nbsp;GetFileName</h4>
+<p>パスのファイル名と拡張子を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>パスの最後の文字がディレクトリ区切り記号、またはボリューム区切り記号の場合は<code>&quot;&quot;</code>を返す。</p></dd>
+</dl>
+<h4 id="getfilenamewithoutextension">public&nbsp;fn&nbsp;GetFileNameWithoutExtension</h4>
+<p>パスの拡張子を含まないファイル名を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="getfullpath">public&nbsp;fn&nbsp;GetFullPath</h4>
+<p>絶対パスを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>絶対パスまたは相対パス。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>相対パスを使用する場合はベースディレクトリの実体が存在する必要がある。</p></dd>
+</dl>
+<h4 id="getinvalidfilenamechars">public&nbsp;fn&nbsp;GetInvalidFileNameChars</h4>
+<p>ファイル名に使用できない文字の配列を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getinvalidpathchars">public&nbsp;fn&nbsp;GetInvalidPathChars</h4>
+<p>パス名に使用できない文字の配列を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getpathroot">public&nbsp;fn&nbsp;GetPathRoot</h4>
+<p>パスのルートディレクトリ情報を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>パスにルートディレクトリ情報が含まれていない場合は<code>&quot;&quot;</code>を返す。</p></dd>
+</dl>
+<h4 id="getrandomfilename">public&nbsp;fn&nbsp;GetRandomFileName</h4>
+<p>ランダムなファイル名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="hasextension">public&nbsp;fn&nbsp;HasExtension</h4>
+<p>パスに拡張子が含まれているかどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="ispathrooted">public&nbsp;fn&nbsp;IsPathRooted</h4>
+<p>パスにルートが含まれているかどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="setbasedirectory">public&nbsp;fn&nbsp;SetBaseDirectory</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="trimendseparator">public&nbsp;fn&nbsp;TrimEndSeparator</h4>
+<p>末尾にある区切り文字を全て削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ルートディレクトリの場合は何もしない。</p></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

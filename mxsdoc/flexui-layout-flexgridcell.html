@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.FlexGridCell.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">FlexGridCell.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-02-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#flexgridcellstruct">FlexGridCellStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#_cp5_">_CP5_</a></li><li><a href="#column">column</a></li><li><a href="#columnspan">columnSpan</a></li><li><a href="#item">item</a></li><li><a href="#row">row</a></li><li><a href="#rowspan">rowSpan</a></li><li><a href="#getcolumn">GetColumn</a></li><li><a href="#getcolumnspan">GetColumnSpan</a></li><li><a href="#getitem">GetItem</a></li><li><a href="#getrow">GetRow</a></li><li><a href="#getrowspan">GetRowSpan</a></li><li><a href="#gettype">GetType</a></li><li><a href="#setcolumn">SetColumn</a></li><li><a href="#setcolumnspan">SetColumnSpan</a></li><li><a href="#setitem">SetItem</a></li><li><a href="#setrow">SetRow</a></li><li><a href="#setrowspan">SetRowSpan</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayout">isValidLayout</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#typeof">typeOf</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="flexgridcellstruct">struct&nbsp;FlexGridCellStruct</h3>
+<p>グリッドレイアウトのセル情報を格納する構造体。</p><dl>
+<dt>補足</dt>
+<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
+<pre><code class="language-maxscript">::FlexGridCellStruct item row column rowSpan columnSpan
+</code></pre></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct&gt;</code></dd>
+<dd><p>作成パラメータ1。セルのアイテム。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp2_">public&nbsp;_CP2_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>作成パラメータ2。セルを配置する行。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="_cp3_">public&nbsp;_CP3_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>作成パラメータ3。セルを配置する列。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="_cp4_">public&nbsp;_CP4_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>作成パラメータ4。セルが専有する行数。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="_cp5_">public&nbsp;_CP5_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>作成パラメータ5。セルが専有する列数。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="column">private&nbsp;column</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>セルを配置する列。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="columnspan">private&nbsp;columnSpan</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>セルが専有する列数。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="item">private&nbsp;item</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct&gt;</code></dd>
+<dd><p>セルのアイテム。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="row">private&nbsp;row</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>セルを配置する行。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="rowspan">private&nbsp;rowSpan</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>セルが専有する行数。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="getcolumn">public&nbsp;fn&nbsp;GetColumn</h4>
+<p>セルを配置する列を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="getcolumnspan">public&nbsp;fn&nbsp;GetColumnSpan</h4>
+<p>セルが専有する列数を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="getitem">public&nbsp;fn&nbsp;GetItem</h4>
+<p>セルのアイテムを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<h4 id="getrow">public&nbsp;fn&nbsp;GetRow</h4>
+<p>セルを配置する行を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="getrowspan">public&nbsp;fn&nbsp;GetRowSpan</h4>
+<p>セルが専有する行数を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="gettype">public&nbsp;fn&nbsp;GetType</h4>
+<p>セルの種類を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Layout</code></td>
+<td>レイアウト</td>
+</tr>
+<tr>
+<td><code>#Widget</code></td>
+<td>ウィジェット</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>不明の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="setcolumn">public&nbsp;fn&nbsp;SetColumn</h4>
+<p>セルを配置する列を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>1</code>以上の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="setcolumnspan">public&nbsp;fn&nbsp;SetColumnSpan</h4>
+<p>セルが専有する列数を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>1</code>以上の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="setitem">public&nbsp;fn&nbsp;SetItem</h4>
+<p>セルのアイテムを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="setrow">public&nbsp;fn&nbsp;SetRow</h4>
+<p>セルを配置する行を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>1</code>以上の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="setrowspan">public&nbsp;fn&nbsp;SetRowSpan</h4>
+<p>セルが専有する行数を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>1</code>以上の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="ismatchstructname">private&nbsp;fn&nbsp;isMatchStructName</h4>
+<p>構造体名が指定したパターンに一致するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>pattern</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidlayout">private&nbsp;fn&nbsp;isValidLayout</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidwidget">private&nbsp;fn&nbsp;isValidWidget</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="typeof">private&nbsp;fn&nbsp;typeOf</h4>
+<p>オブジェクトの種類を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>不明な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="observers">private&nbsp;observers</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="addobserver">public&nbsp;fn&nbsp;AddObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="removeobserver">public&nbsp;fn&nbsp;RemoveObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="notify">private&nbsp;fn&nbsp;notify</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]|Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>type:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
