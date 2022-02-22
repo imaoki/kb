@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.FlexVBoxLayout.ms</title>
+<title>mxsdoc.FlexGroupLayout.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,122 +27,86 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">FlexVBoxLayout.ms</a></h2>
+<h2 class="post title"><a class="static" href="">FlexGroupLayout.ms</a></h2>
 <ul class="hlist right post property">
 <li class="item"><time class="icon date updated">2022-02-22</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#flexvboxlayoutstruct">FlexVBoxLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addspace">AddSpace</a></li><li><a href="#addstretch">AddStretch</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#flexgrouplayoutstruct">FlexGroupLayoutStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#cell">cell</a></li><li><a href="#groupboxwidget">groupBoxWidget</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#paddingb">paddingB</a></li><li><a href="#paddingl">paddingL</a></li><li><a href="#paddingr">paddingR</a></li><li><a href="#paddingt">paddingT</a></li><li><a href="#getcell">GetCell</a></li><li><a href="#getgroupboxwidget">GetGroupBoxWidget</a></li><li><a href="#setcell">SetCell</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#isvalidboxcell">isValidBoxCell</a></li><li><a href="#isvalidgroupboxcontrolwidget">isValidGroupBoxControlWidget</a></li><li><a href="#setgroupboxwidget">setGroupBoxWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<h3 id="flexvboxlayoutstruct">struct&nbsp;FlexVBoxLayoutStruct</h3>
-<p>垂直方向にアイテムを配置する。</p><dl>
+<h3 id="flexgrouplayoutstruct">struct&nbsp;FlexGroupLayoutStruct</h3>
+<p><code>GroupBoxControl</code>用のレイアウト。</p><dl>
 <dt>補足</dt>
-<dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p></dd>
+<dd><p>レイアウトオプションの状態に関係なく上側<code>15</code>ピクセル、下側と左右にそれぞれ<code>5</code>ピクセルの余白を設ける。<br />
+矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p></dd>
 </dl>
-<h4 id="options">public&nbsp;Options</h4>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:FlexLayoutOptionsStruct&gt;</code></dd>
-<dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
+<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct&gt;</code></dd>
+<dd><p>作成パラメータ1。<code>GroupBoxControl</code>ウィジェット。既定値は<code>undefined</code>。</p></dd>
 </dl>
-<h4 id="cells">private&nbsp;cells</h4>
+<h4 id="cell">private&nbsp;cell</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
-<dd><p>セルのアイテム。既定値は<code>#()</code>。</p></dd>
+<dd><code>&lt;Struct:FlexBoxCellStruct&gt;</code></dd>
+<dd><p>セルのアイテム。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="groupboxwidget">private&nbsp;groupBoxWidget</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct&gt;</code></dd>
+<dd><p><code>GroupBoxControl</code>ウィジェット。</p></dd>
 </dl>
 <h4 id="boxcelldef">private&nbsp;boxCellDef</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;StructDef:FlexBoxCellStruct&gt;</code></dd>
 </dl>
-<h4 id="addlayout">public&nbsp;fn&nbsp;AddLayout</h4>
-<p>レイアウトを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>layout</code></dd>
-<dd><code>&lt;Struct&gt;</code></dd>
-</dl>
+<h4 id="paddingb">private&nbsp;paddingB</h4>
 <dl>
-<dt>パラメータ</dt>
-<dd><code>minimum:</code></dd>
+<dt>プロパティ</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+<dd><p>レイアウト外周の下側の余白。既定値は<code>5</code>。</p></dd>
 </dl>
+<h4 id="paddingl">private&nbsp;paddingL</h4>
 <dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
+<dt>プロパティ</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+<dd><p>レイアウト外周の左側の余白。既定値は<code>5</code>。</p></dd>
 </dl>
+<h4 id="paddingr">private&nbsp;paddingR</h4>
 <dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
-</dl>
-<h4 id="addspace">public&nbsp;fn&nbsp;AddSpace</h4>
-<p>固定スペースを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>input</code></dd>
+<dt>プロパティ</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p><code>1</code>以上の整数。</p></dd>
+<dd><p>レイアウト外周の右側の余白。既定値は<code>5</code>。</p></dd>
 </dl>
+<h4 id="paddingt">private&nbsp;paddingT</h4>
 <dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
-</dl>
-<h4 id="addstretch">public&nbsp;fn&nbsp;AddStretch</h4>
-<p>ストレッチ可能なスペースを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
+<dt>プロパティ</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+<dd><p>レイアウト外周の上側の余白。既定値は<code>15</code>。</p></dd>
 </dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
-</dl>
-<h4 id="addwidget">public&nbsp;fn&nbsp;AddWidget</h4>
-<p>ウィジェットを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>widget</code></dd>
-<dd><code>&lt;Struct&gt;</code></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>minimum:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。<br />
-ウィジェットの重複登録は出来ない。</p></dd>
-</dl>
-<h4 id="getcells">public&nbsp;fn&nbsp;GetCells</h4>
+<h4 id="getcell">public&nbsp;fn&nbsp;GetCell</h4>
 <p>セルのアイテムを取得する。</p><dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getgroupboxwidget">public&nbsp;fn&nbsp;GetGroupBoxWidget</h4>
+<p><code>GroupBoxControl</code>ウィジェットを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="setcell">public&nbsp;fn&nbsp;SetCell</h4>
+<p>セルのアイテムを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+<dd><p>レイアウトまたはウィジェット。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="setrect">public&nbsp;fn&nbsp;SetRect</h4>
 <p>レイアウトの矩形を設定する。</p><dl>
@@ -154,32 +118,11 @@
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
 </dl>
-<h4 id="findwidget">private&nbsp;fn&nbsp;findWidget</h4>
 <dl>
-<dt>パラメータ</dt>
-<dd><code>widget</code></dd>
-<dd><code>&lt;Struct&gt;</code></dd>
+<dt>補足</dt>
+<dd><p>一貫性のため戻り値は配列で返す。</p></dd>
 </dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Integer&gt;</code></dd>
-</dl>
-<h4 id="ismatchstructname">private&nbsp;fn&nbsp;isMatchStructName</h4>
-<p>構造体名が指定したパターンに一致するかどうかを判定する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>obj</code></dd>
-<dd><code>&lt;Any&gt;</code></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>pattern</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-</dl>
-<h4 id="isvalidlayoutoptions">private&nbsp;fn&nbsp;isValidLayoutOptions</h4>
+<h4 id="isvalidboxcell">private&nbsp;fn&nbsp;isValidBoxCell</h4>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
@@ -189,7 +132,7 @@
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
-<h4 id="isvalidwidget">private&nbsp;fn&nbsp;isValidWidget</h4>
+<h4 id="isvalidgroupboxcontrolwidget">private&nbsp;fn&nbsp;isValidGroupBoxControlWidget</h4>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
@@ -198,6 +141,16 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="setgroupboxwidget">private&nbsp;fn&nbsp;setGroupBoxWidget</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
