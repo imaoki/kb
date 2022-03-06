@@ -29,14 +29,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">JavaScriptRunner.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-02-22</time></li>
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#javascriptrunnerstruct">JavaScriptRunnerStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#id">id</a></li><li><a href="#handlername">handlerName</a></li><li><a href="#instancename">instanceName</a></li><li><a href="#uri">uri</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#webbrowser">webBrowser</a></li><li><a href="#activate">Activate</a></li><li><a href="#documentcompleted">DocumentCompleted</a></li><li><a href="#eval">Eval</a></li><li><a href="#getdocumentmode">GetDocumentMode</a></li><li><a href="#geturi">GetUri</a></li><li><a href="#getuseragent">GetUserAgent</a></li><li><a href="#invoke">Invoke</a></li><li><a href="#seturi">SetUri</a></li><li><a href="#definevariablenames">defineVariableNames</a></li><li><a href="#dispose">dispose</a></li><li><a href="#generateid">generateId</a></li><li><a href="#isinstanceofhtmldocument">isInstanceOfHtmlDocument</a></li><li><a href="#isinstanceofuri">isInstanceOfUri</a></li><li><a href="#isvalidhandler">isValidHandler</a></li><li><a href="#isvalidinstance">isValidInstance</a></li><li><a href="#registerglobals">registerGlobals</a></li><li><a href="#unregisterglobals">unregisterGlobals</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#javascriptrunnerstruct">JavaScriptRunnerStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#id">id</a></li><li><a href="#handlername">handlerName</a></li><li><a href="#instancename">instanceName</a></li><li><a href="#uri">uri</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#webbrowser">webBrowser</a></li><li><a href="#activate">Activate</a></li><li><a href="#documentcompleted">DocumentCompleted</a></li><li><a href="#eval">Eval</a></li><li><a href="#getdocumentmode">GetDocumentMode</a></li><li><a href="#geturi">GetUri</a></li><li><a href="#getuseragent">GetUserAgent</a></li><li><a href="#install">Install</a></li><li><a href="#invoke">Invoke</a></li><li><a href="#seturi">SetUri</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#definevariablenames">defineVariableNames</a></li><li><a href="#dispose">dispose</a></li><li><a href="#generateid">generateId</a></li><li><a href="#isinstanceofhtmldocument">isInstanceOfHtmlDocument</a></li><li><a href="#isinstanceofuri">isInstanceOfUri</a></li><li><a href="#isvalidhandler">isValidHandler</a></li><li><a href="#isvalidinstance">isValidInstance</a></li><li><a href="#registerglobals">registerGlobals</a></li><li><a href="#unregisterglobals">unregisterGlobals</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-dotnetutility.html">dotNetUtility</a></code></li>
-<li><code><a href="standard-pathutility.html">PathUtilityStruct</a></code></li>
+<li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="javascriptrunnerstruct">struct&nbsp;JavaScriptRunnerStruct</h3>
 <p>MAXScriptからJavaScriptを実行する。</p><dl>
@@ -84,7 +84,7 @@
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
+<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
 </dl>
 <h4 id="webbrowser">private&nbsp;webBrowser</h4>
 <dl>
@@ -153,6 +153,15 @@
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
+<h4 id="install">public&nbsp;fn&nbsp;Install</h4>
+<p>インストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
+</dl>
 <h4 id="invoke">public&nbsp;fn&nbsp;Invoke</h4>
 <p><code>uri</code>のHTMLファイルに定義されたJavaScript関数を実行する。</p><dl>
 <dt>パラメータ</dt>
@@ -181,6 +190,15 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.uri?view=netframework-4.8">System.Uri</a>&gt;</code></dd>
+</dl>
+<h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
+<p>アンインストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="definevariablenames">private&nbsp;fn&nbsp;defineVariableNames</h4>
 <p>イベントハンドラ、およびインスタンスの格納先となるグローバル変数の名前を決定する。</p><dl>

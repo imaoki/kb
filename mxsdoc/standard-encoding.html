@@ -29,15 +29,11 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Encoding.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-02-22</time></li>
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#encodingstruct">EncodingStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#allnames">allNames</a></li><li><a href="#bitconverterclass">bitConverterClass</a></li><li><a href="#convertclass">convertClass</a></li><li><a href="#encodingclass">encodingClass</a></li><li><a href="#encodingobject">encodingObject</a></li><li><a href="#hexstringregex">hexStringRegex</a></li><li><a href="#decodehexstring">DecodeHexString</a></li><li><a href="#encodetohexstring">EncodeToHexString</a></li><li><a href="#getbytes">GetBytes</a></li><li><a href="#getcodepage">GetCodePage</a></li><li><a href="#getdisplayname">GetDisplayName</a></li><li><a href="#getencodingobject">GetEncodingObject</a></li><li><a href="#getname">GetName</a></li><li><a href="#getstring">GetString</a></li><li><a href="#isvalidencoding">IsValidEncoding</a></li><li><a href="#setencoding">SetEncoding</a></li><li><a href="#isencodingsubclass">isEncodingSubclass</a></li><li><a href="#isvalidname">isValidName</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#encodingstruct">EncodingStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#allnames">allNames</a></li><li><a href="#bitconverterclass">bitConverterClass</a></li><li><a href="#convertclass">convertClass</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#encodingclass">encodingClass</a></li><li><a href="#encodingobject">encodingObject</a></li><li><a href="#hexstringregex">hexStringRegex</a></li><li><a href="#stringutility">stringUtility</a></li><li><a href="#decodehexstring">DecodeHexString</a></li><li><a href="#encodetohexstring">EncodeToHexString</a></li><li><a href="#getbytes">GetBytes</a></li><li><a href="#getcodepage">GetCodePage</a></li><li><a href="#getdisplayname">GetDisplayName</a></li><li><a href="#getencodingobject">GetEncodingObject</a></li><li><a href="#getname">GetName</a></li><li><a href="#getstring">GetString</a></li><li><a href="#isvalidencoding">IsValidEncoding</a></li><li><a href="#setencoding">SetEncoding</a></li><li><a href="#isencodingsubclass">isEncodingSubclass</a></li><li><a href="#isvalidname">isValidName</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-dotnetutility.html">dotNetUtility</a></code></li>
-<li><code><a href="standard-stringutility.html">stringUtility</a></code></li>
-</ul></dd></dl>
 <h3 id="encodingstruct">struct&nbsp;EncodingStruct</h3>
 <p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.encoding?view=netframework-4.8">Encoding</a>のラッパー。</p><h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
@@ -74,6 +70,11 @@ BOMの有無。既定値は<code>false</code>。</p></dd>
 <dt>プロパティ</dt>
 <dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.convert?view=netframework-4.8">System.Convert</a>&gt;</code></dd>
 </dl>
+<h4 id="dotnetutility">private&nbsp;dotNetUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:DotNetUtilityStruct&gt;</code></dd>
+</dl>
 <h4 id="encodingclass">private&nbsp;encodingClass</h4>
 <dl>
 <dt>プロパティ</dt>
@@ -89,6 +90,11 @@ BOMの有無。既定値は<code>false</code>。</p></dd>
 <dt>プロパティ</dt>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
 <dd><p><code>^([a-fA-F0-9]{2})?(\-[a-fA-F0-9]{2})*$</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="stringutility">private&nbsp;stringUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:StringUtilityStruct&gt;</code></dd>
 </dl>
 <h4 id="decodehexstring">public&nbsp;fn&nbsp;DecodeHexString</h4>
 <p>ハイフンで区切られた16進数文字列を元の文字列にデコードする。</p><dl>

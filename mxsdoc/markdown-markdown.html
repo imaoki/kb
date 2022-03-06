@@ -29,19 +29,21 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Markdown.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-02-22</time></li>
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#markdown">markdown</a></li><li><a href="#markdownstruct">MarkdownStruct</a><ul><li><a href="#usedefinitionlists">UseDefinitionLists</a></li><li><a href="#usepipetables">UsePipeTables</a></li><li><a href="#usesoftlinebreakashardlinebreak">UseSoftlineBreakAsHardlineBreak</a></li><li><a href="#context">context</a></li><li><a href="#markdigassembly">markdigAssembly</a></li><li><a href="#markdownclass">markdownClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#pipeline">pipeline</a></li><li><a href="#markdigdll">markdigDll</a></li><li><a href="#showtypes">ShowTypes</a></li><li><a href="#tohtml">ToHtml</a></li><li><a href="#returns">returns</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#markdown">markdown</a></li><li><a href="#markdownstruct">MarkdownStruct</a><ul><li><a href="#usedefinitionlists">UseDefinitionLists</a></li><li><a href="#usepipetables">UsePipeTables</a></li><li><a href="#usesoftlinebreakashardlinebreak">UseSoftlineBreakAsHardlineBreak</a></li><li><a href="#context">context</a></li><li><a href="#markdigassembly">markdigAssembly</a></li><li><a href="#markdownclass">markdownClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#pipeline">pipeline</a></li><li><a href="#markdigdll">markdigDll</a></li><li><a href="#install">Install</a></li><li><a href="#showtypes">ShowTypes</a></li><li><a href="#tohtml">ToHtml</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#returns">returns</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-pathutility.html">PathUtilityStruct</a></code></li>
-<li><code><a href="standard-stringutility.html">stringUtility</a></code></li>
+<li><code><a href="markdown-markdown.html">markdown</a></code></li>
+<li><code><a href="markdown-markdown.html">MarkdownStruct</a></code></li>
+<li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="markdown">global&nbsp;markdown</h3>
 <dl>
 <dt>変数</dt>
-<dd><code>&lt;Struct:MarkdownStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="markdown-markdown.html">MarkdownStruct</a>&gt;</code></dd>
 </dl>
 <h3 id="markdownstruct">struct&nbsp;MarkdownStruct</h3>
 <p><a href="https://github.com/xoofx/markdig">Markdig 0.26.0</a>のラッパー。</p><h4 id="usedefinitionlists">public&nbsp;UseDefinitionLists</h4>
@@ -80,7 +82,7 @@
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
+<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
 </dl>
 <h4 id="pipeline">private&nbsp;pipeline</h4>
 <dl>
@@ -92,6 +94,15 @@
 <dt>プロパティ</dt>
 <dd><code>&lt;String&gt;</code></dd>
 <dd><p>アセンブリのパス文字列。</p></dd>
+</dl>
+<h4 id="install">public&nbsp;fn&nbsp;Install</h4>
+<p>インストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="showtypes">public&nbsp;fn&nbsp;ShowTypes</h4>
 <p>アセンブリで定義されている全ての型をリスナーに出力する。</p><dl>
@@ -109,6 +120,15 @@
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 <dd><p>変換されたHTMLコード。</p></dd>
+</dl>
+<h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
+<p>アンインストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="returns">returns</h4>
 <p>エスケープ無しではエラーになる&quot;&amp;&quot;、&quot;*&quot;、&quot;_&quot;をエスケープ処理する。</p><dl>

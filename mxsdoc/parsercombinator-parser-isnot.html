@@ -29,14 +29,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">IsNot.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-02-22</time></li>
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#isnotstruct">IsNotStruct</a><ul><li><a href="#parser">Parser</a></li><li><a href="#debug">Debug</a></li><li><a href="#parse">Parse</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="parsercombinator-failure.html">FailureStruct</a></code></li>
-<li><code><a href="parsercombinator-notcollect.html">NotCollectStruct</a></code></li>
+<li><code><a href="parsercombinator-model-failure.html">FailureStruct</a></code></li>
+<li><code><a href="parsercombinator-model-notcollect.html">NotCollectStruct</a></code></li>
 </ul></dd></dl>
 <h3 id="isnotstruct">struct&nbsp;IsNotStruct</h3>
 <p>入力したパーサが成功すれば失敗し、失敗すれば成功するパーサ。</p><dl>
@@ -61,7 +61,7 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:<a href="parsercombinator-notcollect.html">NotCollectStruct</a>|Struct:<a href="parsercombinator-failure.html">FailureStruct</a>&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-notcollect.html">NotCollectStruct</a>|Struct:<a href="parsercombinator-model-failure.html">FailureStruct</a>&gt;</code></dd>
 <dd><p>成功した場合は<code>NotCollectStruct</code>、失敗した場合は<code>FailureStruct</code>を返す。</p></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>

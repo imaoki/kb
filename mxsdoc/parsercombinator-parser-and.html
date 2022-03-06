@@ -29,13 +29,13 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">And.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-02-22</time></li>
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#andstruct">AndStruct</a><ul><li><a href="#parsers">Parsers</a></li><li><a href="#debug">Debug</a></li><li><a href="#parse">Parse</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="parsercombinator-failure.html">FailureStruct</a></code></li>
+<li><code><a href="parsercombinator-model-failure.html">FailureStruct</a></code></li>
 </ul></dd></dl>
 <h3 id="andstruct">struct&nbsp;AndStruct</h3>
 <p>与えられたパーサが全て成功した時、最後のパーサの結果を返すパーサ。</p><dl>
@@ -91,7 +91,7 @@ parser (ContextStruct &quot;abcd&quot;)
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Any|Struct:<a href="parsercombinator-failure.html">FailureStruct</a>&gt;</code></dd>
+<dd><code>&lt;Any|Struct:<a href="parsercombinator-model-failure.html">FailureStruct</a>&gt;</code></dd>
 <dd><p>成功した場合はパース結果、失敗した場合は<code>FailureStruct</code>を返す。</p></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>

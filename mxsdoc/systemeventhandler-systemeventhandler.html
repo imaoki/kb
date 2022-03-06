@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.SystemEventHandler.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">SystemEventHandler.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-03-06</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#systemeventhandler">systemEventHandler</a></li><li><a href="#systemeventhandlerstruct">SystemEventHandlerStruct</a><ul><li><a href="#delaytimertable">delayTimerTable</a></li><li><a href="#eventparamtable">eventParamTable</a></li><li><a href="#observertable">observerTable</a></li><li><a href="#globalvarname">globalVarName</a></li><li><a href="#add">Add</a></li><li><a href="#getregisteredcallbackcount">GetRegisteredCallbackCount</a></li><li><a href="#install">Install</a></li><li><a href="#invokegeneralevent">InvokeGeneralEvent</a></li><li><a href="#invokeobserver">InvokeObserver</a></li><li><a href="#invoketimechange">InvokeTimeChange</a></li><li><a href="#invokeviewportredraw">InvokeViewportRedraw</a></li><li><a href="#remove">Remove</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#createdelaytimer">createDelayTimer</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#generategeneraleventscript">generateGeneralEventScript</a></li><li><a href="#geteventparam">getEventParam</a></li><li><a href="#geteventtypefromtimer">getEventTypeFromTimer</a></li><li><a href="#invoketimer">invokeTimer</a></li><li><a href="#isvalidtimer">isValidTimer</a></li><li><a href="#registergeneraleventcallback">registerGeneralEventCallback</a></li><li><a href="#registertimechangecallback">registerTimeChangeCallback</a></li><li><a href="#registerviewportredrawcallback">registerViewportRedrawCallback</a></li><li><a href="#unregisterallcallbacks">unregisterAllCallbacks</a></li><li><a href="#unregistergeneraleventcallback">unregisterGeneralEventCallback</a></li><li><a href="#unregistertimechangecallback">unregisterTimeChangeCallback</a></li><li><a href="#unregisterviewportredrawcallback">unregisterViewportRedrawCallback</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code>currentTime</code><ul>
+</ul></li>
+<li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
+<li><code><a href="systemeventhandler-systemeventhandler.html">systemEventHandler</a></code></li>
+<li><code><a href="systemeventhandler-systemeventhandler.html">SystemEventHandlerStruct</a></code></li>
+</ul></dd></dl>
+<h3 id="systemeventhandler">global&nbsp;systemEventHandler</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;Struct:<a href="systemeventhandler-systemeventhandler.html">SystemEventHandlerStruct</a>&gt;</code></dd>
+</dl>
+<h3 id="systemeventhandlerstruct">struct&nbsp;SystemEventHandlerStruct</h3>
+<p>イベントコールバックの処理を共通化するための仕組みを提供する。</p><dl>
+<dt>補足</dt>
+<dd><p>対応しているコールバックの種類は以下の通り。</p>
+<ul>
+<li><p>一般イベントコールバック</p>
+</li>
+<li><p>時間変更コールバック</p>
+</li>
+<li><p>ビューポート再描画コールバック</p>
+</li>
+</ul></dd>
+</dl>
+<h4 id="delaytimertable">private&nbsp;delayTimerTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:TimerStruct&gt;&gt;</code></dd>
+<dd><p>イベント毎の遅延タイマー。</p></dd>
+</dl>
+<h4 id="eventparamtable">private&nbsp;eventParamTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Any&gt;&gt;</code></dd>
+<dd><p>イベント毎の補足情報。</p></dd>
+</dl>
+<h4 id="observertable">private&nbsp;observerTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;&gt;</code></dd>
+<dd><p>イベント毎のオブザーバ。</p></dd>
+</dl>
+<h4 id="globalvarname">private&nbsp;globalVarName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>自己のインスタンスを格納するグローバル変数の名前。既定値は<code>&quot;systemEventHandler&quot;</code>。</p></dd>
+</dl>
+<h4 id="add">public&nbsp;fn&nbsp;Add</h4>
+<p>指定したイベントにオブザーバを登録する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>種類</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#TimeChange</code></td>
+<td>時間変更</td>
+</tr>
+<tr>
+<td><code>#ViewportRedraw</code></td>
+<td>ビューポート再描画</td>
+</tr>
+<tr>
+<td>その他</td>
+<td>一般イベント</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+<dd><p><code>Callback</code>プロパティにはイベントコールバック用のメソッドを設定する。詳細は<code>ObserverStruct</code>のドキュメントを参照。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>delayInterval:</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>最後にイベントが通知されてからコールバック関数を呼び出すまでの遅延時間。ミリ秒で指定する。既定値は<code>0</code>。<br />
+遅延時間以内に同じイベントが通知された場合は時間をリセットして計測し直す。<br />
+これにより短い間隔で大量に発生した同一イベントの通知を一度にまとめることができる。<br />
+<code>0</code>を指定した場合はこの遅延処理を行わない。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="getregisteredcallbackcount">public&nbsp;fn&nbsp;GetRegisteredCallbackCount</h4>
+<p>指定したイベントに登録されている<code>SystemEventHandlerStruct</code>由来のコールバックの数を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="install">public&nbsp;fn&nbsp;Install</h4>
+<p>インストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
+</dl>
+<h4 id="invokegeneralevent">public&nbsp;fn&nbsp;InvokeGeneralEvent</h4>
+<p>一般イベントが通知された時に呼ばれる。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>イベントの名前。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>eventParam</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>イベントの補足情報。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="invokeobserver">public&nbsp;fn&nbsp;InvokeObserver</h4>
+<p>イベントに登録したコールバック関数を呼び出す。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>context</code></dd>
+<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]|Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>type:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>タイマーオブジェクトから呼ばれる。</p></dd>
+</dl>
+<h4 id="invoketimechange">public&nbsp;fn&nbsp;InvokeTimeChange</h4>
+<p>アニメーション時間が変更された時に呼ばれる。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>eventParam</code>には現在時間が渡される。</p></dd>
+</dl>
+<h4 id="invokeviewportredraw">public&nbsp;fn&nbsp;InvokeViewportRedraw</h4>
+<p>ビューポートが再描画された時に呼ばれる。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>eventParam</code>には<code>undefined</code>が渡される。</p></dd>
+</dl>
+<h4 id="remove">public&nbsp;fn&nbsp;Remove</h4>
+<p>指定したイベントからオブザーバを登録解除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>種類</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#TimeChange</code></td>
+<td>時間変更</td>
+</tr>
+<tr>
+<td><code>#ViewportRedraw</code></td>
+<td>ビューポート再描画</td>
+</tr>
+<tr>
+<td>その他</td>
+<td>一般イベント</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
+<p>アンインストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="createdelaytimer">private&nbsp;fn&nbsp;createDelayTimer</h4>
+<p>遅延タイマーを作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>delayInterval</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+</dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="generategeneraleventscript">private&nbsp;fn&nbsp;generateGeneralEventScript</h4>
+<p>一般イベント用のコールバックスクリプトを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<h4 id="geteventparam">private&nbsp;fn&nbsp;getEventParam</h4>
+<p>指定したイベントタイプの補足情報を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>イベントタイプが見つからない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="geteventtypefromtimer">private&nbsp;fn&nbsp;getEventTypeFromTimer</h4>
+<p>タイマーオブジェクトからイベントタイプを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>timerObject</code></dd>
+<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>イベントタイプが見つからない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="invoketimer">private&nbsp;fn&nbsp;invokeTimer</h4>
+<p>イベントに登録したコールバック関数を呼び出す。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>eventParam</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidtimer">private&nbsp;fn&nbsp;isValidTimer</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="registergeneraleventcallback">private&nbsp;fn&nbsp;registerGeneralEventCallback</h4>
+<p>一般イベントのコールバック関数を登録する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="registertimechangecallback">private&nbsp;fn&nbsp;registerTimeChangeCallback</h4>
+<p>時間変更のコールバック関数を登録する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="registerviewportredrawcallback">private&nbsp;fn&nbsp;registerViewportRedrawCallback</h4>
+<p>ビューポート再描画のコールバック関数を登録する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unregisterallcallbacks">private&nbsp;fn&nbsp;unregisterAllCallbacks</h4>
+<p>全てのコールバック関数を登録解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unregistergeneraleventcallback">private&nbsp;fn&nbsp;unregisterGeneralEventCallback</h4>
+<p>一般イベントのコールバック関数を登録解除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>eventType</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unregistertimechangecallback">private&nbsp;fn&nbsp;unregisterTimeChangeCallback</h4>
+<p>時間変更のコールバック関数を登録解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unregisterviewportredrawcallback">private&nbsp;fn&nbsp;unregisterViewportRedrawCallback</h4>
+<p>ビューポート再描画のコールバック関数を登録解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
