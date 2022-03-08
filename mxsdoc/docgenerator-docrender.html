@@ -29,13 +29,13 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocRender.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-06</time></li>
+<li class="item"><time class="icon date updated">2022-03-08</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#docrenderstruct">DocRenderStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#template">template</a></li><li><a href="#toc">toc</a></li><li><a href="#defaulttemplate">defaultTemplate</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#spaceregex">spaceRegex</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#render">Render</a></li><li><a href="#renderindex">RenderIndex</a></li><li><a href="#adjustindent">adjustIndent</a></li><li><a href="#dependenttohtml">dependentToHtml</a></li><li><a href="#doccommenttohtml">docCommentToHtml</a></li><li><a href="#doctohtml">docToHtml</a></li><li><a href="#generatenowdate">generateNowDate</a></li><li><a href="#isastnode">isAstNode</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#isvaliddependent">isValidDependent</a></li><li><a href="#markdowndefines">markdownDefines</a></li><li><a href="#readtemplate">readTemplate</a></li><li><a href="#sanitize">sanitize</a></li><li><a href="#writetocbordertag">writeTocBorderTag</a></li><li><a href="#writetocendtag">writeTocEndTag</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#docrenderstruct">DocRenderStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#template">template</a></li><li><a href="#toc">toc</a></li><li><a href="#defaulttemplate">defaultTemplate</a></li><li><a href="#markdown">markdown</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#spaceregex">spaceRegex</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#render">Render</a></li><li><a href="#renderindex">RenderIndex</a></li><li><a href="#adjustindent">adjustIndent</a></li><li><a href="#dependenttohtml">dependentToHtml</a></li><li><a href="#doccommenttohtml">docCommentToHtml</a></li><li><a href="#doctohtml">docToHtml</a></li><li><a href="#generatenowdate">generateNowDate</a></li><li><a href="#isastnode">isAstNode</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#isvaliddependent">isValidDependent</a></li><li><a href="#isvalidmarkdown">isValidMarkdown</a></li><li><a href="#readtemplate">readTemplate</a></li><li><a href="#sanitize">sanitize</a></li><li><a href="#writetocbordertag">writeTocBorderTag</a></li><li><a href="#writetocendtag">writeTocEndTag</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="markdown-markdown.html">markdown</a></code></li>
+<li><code><a href="markdown-markdown.html">MarkdownStruct</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="docrenderstruct">struct&nbsp;DocRenderStruct</h3>
@@ -101,6 +101,11 @@
 <dt>プロパティ</dt>
 <dd><code>&lt;String&gt;</code></dd>
 <dd><p>テンプレートHTMLが使用できない場合に使用する既定のテンプレートHTMLコード。</p></dd>
+</dl>
+<h4 id="markdown">private&nbsp;markdown</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:<a href="markdown-markdown.html">MarkdownStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
@@ -257,8 +262,13 @@
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
-<h4 id="markdowndefines">private&nbsp;fn&nbsp;markdownDefines</h4>
-<p>グローバル変数<code>::markdown</code>が定義されているかどうかを判定する。</p><dl>
+<h4 id="isvalidmarkdown">private&nbsp;fn&nbsp;isValidMarkdown</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>

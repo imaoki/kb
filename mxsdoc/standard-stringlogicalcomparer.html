@@ -29,12 +29,12 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">StringLogicalComparer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-06</time></li>
+<li class="item"><time class="icon date updated">2022-03-08</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><ul><li><a href="#_">_</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><ul><li><a href="#comparemethod">compareMethod</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<h4 id="_">fn&nbsp;_</h4>
+<h4 id="comparemethod">local&nbsp;compareMethod</h4>
 <p>文字列を自然順でソートする。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>a</code></dd>
@@ -50,29 +50,6 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>2つの比較対照値の構文上の関係を示す 32 ビット符号付き整数。</p>
-<table>
-<thead>
-<tr>
-<th>値</th>
-<th>条件</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>0</code>より小さい値</td>
-<td>並べ替え順序において<code>a</code>は<code>b</code>の前になる。</td>
-</tr>
-<tr>
-<td><code>0</code></td>
-<td><code>a</code>は並べ替え順序で、<code>b</code>と同じ位置に出現する。</td>
-</tr>
-<tr>
-<td><code>0</code>より大きい値</td>
-<td>並べ替え順序において<code>a</code>は<code>b</code>の後ろになる。</td>
-</tr>
-</tbody>
-</table></dd>
 </dl>
 <dl>
 <dt>補足</dt>
@@ -95,19 +72,19 @@
   )
   qsort strings compare
 
-  for str in strings do format &quot;\&quot;%\&quot;\n&quot; str
+  for str in strings do format &quot;-- \&quot;%\&quot;\n&quot; str
   ok
 )
 -- 実行結果
-&quot;2string&quot;
-&quot;3string&quot;
-&quot;20string&quot;
-&quot;st2ring&quot;
-&quot;st3ring&quot;
-&quot;st20ring&quot;
-&quot;string2&quot;
-&quot;string3&quot;
-&quot;string20&quot;
+-- &quot;2string&quot;
+-- &quot;3string&quot;
+-- &quot;20string&quot;
+-- &quot;st2ring&quot;
+-- &quot;st3ring&quot;
+-- &quot;st20ring&quot;
+-- &quot;string2&quot;
+-- &quot;string3&quot;
+-- &quot;string20&quot;
 </code></pre>
 </dd>
 </dl></dd>
