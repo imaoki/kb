@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.AnyChar.ms</title>
+<title>mxsdoc.definitionPool.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,68 +27,17 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">AnyChar.ms</a></h2>
+<h2 class="post title"><a class="static" href="">definitionPool.ms</a></h2>
 <ul class="hlist right post property">
 <li class="item"><time class="icon date updated">2022-03-11</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#anycharstruct">AnyCharStruct</a><ul><li><a href="#debug">Debug</a></li><li><a href="#parse">Parse</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="parsercombinator-model-failure.html">FailureStruct</a></code></li>
+<li><code><a href="docgenerator-definitionpool.html">docGeneratorDefinitionPool</a></code></li>
 </ul></dd></dl>
-<h3 id="anycharstruct">struct&nbsp;AnyCharStruct</h3>
-<p>どのような一文字にも一致するパーサ。</p><h4 id="debug">public&nbsp;Debug</h4>
-<dl>
-<dt>プロパティ</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-</dl>
-<h4 id="parse">public&nbsp;fn&nbsp;Parse</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>content</code></dd>
-<dd><code>&lt;Struct:ContextStruct&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;String|Struct:<a href="parsercombinator-model-failure.html">FailureStruct</a>&gt;</code></dd>
-<dd><p>成功した場合は一致した文字列、失敗した場合は<code>FailureStruct</code>を返す。</p></dd>
-</dl>
-<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Name&gt;</code></dd>
-</dl>
-<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>indent:</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>out:</code></dd>
-<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
-<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;OkClass&gt;</code></dd>
-</dl>
-<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>obj</code></dd>
-<dd><code>&lt;Any&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>大文字と小文字を区別する。</p></dd>
-</dl>
+
 </main>
 </article>
 </main>

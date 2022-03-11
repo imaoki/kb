@@ -29,12 +29,13 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocGenerator.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-08</time></li>
+<li class="item"><time class="icon date updated">2022-03-11</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#docgeneratorstruct">DocGeneratorStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#docdependentparser">docDependentParser</a></li><li><a href="#docdependenttable">docDependentTable</a></li><li><a href="#docparser">docParser</a></li><li><a href="#docrender">docRender</a></li><li><a href="#pathmaker">pathMaker</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#fromdirectory">FromDirectory</a></li><li><a href="#fromfile">FromFile</a></li><li><a href="#indexfromdirectory">IndexFromDirectory</a></li><li><a href="#convertfile">convertFile</a></li><li><a href="#comparefilename">compareFileName</a></li><li><a href="#dumppathtree">dumpPathTree</a></li><li><a href="#extractdependent">extractDependent</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#makepathtree">makePathTree</a></li><li><a href="#pathtreetohtml">pathTreeToHtml</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#docgeneratorstruct">DocGeneratorStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#docdependentparser">docDependentParser</a></li><li><a href="#docdependenttable">docDependentTable</a></li><li><a href="#docparser">docParser</a></li><li><a href="#docrender">docRender</a></li><li><a href="#pathmaker">pathMaker</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#fromdirectory">FromDirectory</a></li><li><a href="#fromfile">FromFile</a></li><li><a href="#indexfromdirectory">IndexFromDirectory</a></li><li><a href="#convertfile">convertFile</a></li><li><a href="#comparefilename">compareFileName</a></li><li><a href="#dumppathtree">dumpPathTree</a></li><li><a href="#extractdependent">extractDependent</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#makepathtree">makePathTree</a></li><li><a href="#pathtreetohtml">pathTreeToHtml</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
+<li><code><a href="docgenerator-definitionpool.html">docGeneratorDefinitionPool</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="docgeneratorstruct">struct&nbsp;DocGeneratorStruct</h3>
@@ -247,6 +248,12 @@
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
+<h4 id="version">private&nbsp;version</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>バージョン番号。メジャー、マイナー、パッチの順。</p></dd>
+</dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
 <dt>戻り値</dt>
@@ -281,6 +288,11 @@
 <dl>
 <dt>補足</dt>
 <dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="getversion">public&nbsp;fn&nbsp;GetVersion</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
 </dl>
 </main>
 </article>

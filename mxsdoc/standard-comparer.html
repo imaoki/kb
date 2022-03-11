@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Comparer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-08</time></li>
+<li class="item"><time class="icon date updated">2022-03-11</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#comparerstruct">ComparerStruct</a><ul><li><a href="#stringlogicalcomparer">stringLogicalComparer</a></li><li><a href="#comparename">CompareName</a></li><li><a href="#comparenodehandle">CompareNodeHandle</a></li><li><a href="#compareproperty">CompareProperty</a></li><li><a href="#comparestringlogical">CompareStringLogical</a></li><li><a href="#simplecompare">simpleCompare</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
@@ -139,6 +139,42 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><dl>
+<dt>例</dt>
+<dd>
+<pre><code class="language-maxscript">(
+  local strings = #(
+    &quot;20string&quot;,
+    &quot;2string&quot;,
+    &quot;3string&quot;,
+    &quot;st20ring&quot;,
+    &quot;st2ring&quot;,
+    &quot;st3ring&quot;,
+    &quot;string2&quot;,
+    &quot;string20&quot;,
+    &quot;string3&quot;
+  )
+  qsort strings (::ComparerStruct()).CompareStringLogical
+
+  for str in strings do format &quot;-- \&quot;%\&quot;\n&quot; str
+  ok
+)
+-- 実行結果
+-- &quot;2string&quot;
+-- &quot;3string&quot;
+-- &quot;20string&quot;
+-- &quot;st2ring&quot;
+-- &quot;st3ring&quot;
+-- &quot;st20ring&quot;
+-- &quot;string2&quot;
+-- &quot;string3&quot;
+-- &quot;string20&quot;
+</code></pre>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="simplecompare">private&nbsp;fn&nbsp;simpleCompare</h4>
 <dl>

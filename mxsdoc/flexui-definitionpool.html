@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.StringLogicalComparer.ms</title>
+<title>mxsdoc.definitionPool.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,68 +27,17 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">StringLogicalComparer.ms</a></h2>
+<h2 class="post title"><a class="static" href="">definitionPool.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-08</time></li>
+<li class="item"><time class="icon date updated">2022-03-11</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><ul><li><a href="#comparemethod">compareMethod</a></li></ul></li></ul></div>
+
 <main class="post main" data-pswp>
-<h4 id="comparemethod">local&nbsp;compareMethod</h4>
-<p>文字列を自然順でソートする。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>a</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-<dd><p>比較する最初の文字列。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>b</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-<dd><p>比較する2番目の文字列。</p></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Integer&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><dl>
-<dt>例</dt>
-<dd>
-<pre><code class="language-maxscript">(
-  local compare = fileIn @&quot;StringLogicalComparer.ms&quot;
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
+</ul></dd></dl>
 
-  local strings = #(
-    &quot;20string&quot;,
-    &quot;2string&quot;,
-    &quot;3string&quot;,
-    &quot;st20ring&quot;,
-    &quot;st2ring&quot;,
-    &quot;st3ring&quot;,
-    &quot;string2&quot;,
-    &quot;string20&quot;,
-    &quot;string3&quot;
-  )
-  qsort strings compare
-
-  for str in strings do format &quot;-- \&quot;%\&quot;\n&quot; str
-  ok
-)
--- 実行結果
--- &quot;2string&quot;
--- &quot;3string&quot;
--- &quot;20string&quot;
--- &quot;st2ring&quot;
--- &quot;st3ring&quot;
--- &quot;st20ring&quot;
--- &quot;string2&quot;
--- &quot;string3&quot;
--- &quot;string20&quot;
-</code></pre>
-</dd>
-</dl></dd>
-</dl>
 </main>
 </article>
 </main>
