@@ -29,16 +29,16 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexBoxCell.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-11</time></li>
+<li class="item"><time class="icon date updated">2022-03-13</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#flexboxcellstruct">FlexBoxCellStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#item">item</a></li><li><a href="#minimum">minimum</a></li><li><a href="#stretch">stretch</a></li><li><a href="#getitem">GetItem</a></li><li><a href="#getminimum">GetMinimum</a></li><li><a href="#getstretch">GetStretch</a></li><li><a href="#gettype">GetType</a></li><li><a href="#setitem">SetItem</a></li><li><a href="#setminimum">SetMinimum</a></li><li><a href="#setstretch">SetStretch</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayout">isValidLayout</a></li><li><a href="#isvalidspace">isValidSpace</a></li><li><a href="#isvalidstretch">isValidStretch</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#typeof">typeOf</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#flexboxcellstruct">FlexBoxCellStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#fixedlength">fixedLength</a></li><li><a href="#item">item</a></li><li><a href="#minimum">minimum</a></li><li><a href="#stretch">stretch</a></li><li><a href="#getfixedlength">GetFixedLength</a></li><li><a href="#getitem">GetItem</a></li><li><a href="#getminimum">GetMinimum</a></li><li><a href="#getstretch">GetStretch</a></li><li><a href="#gettype">GetType</a></li><li><a href="#setfixedlength">SetFixedLength</a></li><li><a href="#setitem">SetItem</a></li><li><a href="#setminimum">SetMinimum</a></li><li><a href="#setstretch">SetStretch</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayout">isValidLayout</a></li><li><a href="#isvalidspace">isValidSpace</a></li><li><a href="#isvalidstretch">isValidStretch</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#typeof">typeOf</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="flexboxcellstruct">struct&nbsp;FlexBoxCellStruct</h3>
 <p>ボックスレイアウトのセル情報を格納する構造体。</p><dl>
 <dt>補足</dt>
 <dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
-<pre><code class="language-maxscript">::FlexBoxCellStruct item stretch minimum
+<pre><code class="language-maxscript">::FlexBoxCellStruct item stretch minimum fixedLength
 </code></pre></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
@@ -59,6 +59,18 @@
 <dd><code>&lt;Integer&gt;</code></dd>
 <dd><p>作成パラメータ3。セルの最小値。既定値は<code>1</code>。</p></dd>
 </dl>
+<h4 id="_cp4_">public&nbsp;_CP4_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ4。セルの固定長。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="fixedlength">private&nbsp;fixedLength</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
+<dd><p>セルの固定長。既定値は<code>undefined</code>。</p></dd>
+</dl>
 <h4 id="item">private&nbsp;item</h4>
 <dl>
 <dt>プロパティ</dt>
@@ -76,6 +88,11 @@
 <dt>プロパティ</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 <dd><p>セルのストレッチ係数。既定値は<code>1</code>。</p></dd>
+</dl>
+<h4 id="getfixedlength">public&nbsp;fn&nbsp;GetFixedLength</h4>
+<p>セルの固定長を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getitem">public&nbsp;fn&nbsp;GetItem</h4>
 <p>セルのアイテムを取得する。</p><dl>
@@ -126,6 +143,21 @@
 <dl>
 <dt>補足</dt>
 <dd><p>不明の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="setfixedlength">public&nbsp;fn&nbsp;SetFixedLength</h4>
+<p>セルの固定長を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
+<dd><p><code>1</code>以上の整数、または<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値を指定した場合は何もしない。</p></dd>
 </dl>
 <h4 id="setitem">public&nbsp;fn&nbsp;SetItem</h4>
 <p>セルのアイテムを設定する。</p><dl>
