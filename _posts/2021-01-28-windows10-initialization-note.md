@@ -1,7 +1,7 @@
 ---
 title: Windows 10 初期設定ノート
 date: 2021-01-28 03:46:00
-updated: 2021-11-29 4:42:00
+updated: 2022-03-17 23:53:00
 categories: note
 tags: windows
 toc: true
@@ -31,6 +31,13 @@ SSDの最適化やOneDriveの移動等は行わず、なるべく標準を維持
 
 ### 基本設定
 {:#basic-settings}
+
+#### 自動更新後の再起動抑制
+{:#suppress-reboot-after-update}
+
+gpedit.msc > コンピューターの構成 > 管理用テンプレート > Windows コンポーネント > Windows Update
+:   スケジュールされた自動更新のインストールで、ログインしているユーザーがいる場合には自動的に再起動しない
+    :   有効
 
 #### Thumbs.db抑制化
 {:#suppress-thumbs-db}
