@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.Config.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">Config.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-03-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#configstruct">ConfigStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#filepath">filePath</a></li><li><a href="#table">table</a></li><li><a href="#datetimeclass">dateTimeClass</a></li><li><a href="#fileutility">fileUtility</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#stringutility">stringUtility</a></li><li><a href="#addvalue">AddValue</a></li><li><a href="#clear">Clear</a></li><li><a href="#count">Count</a></li><li><a href="#getfilepath">GetFilePath</a></li><li><a href="#getkeys">GetKeys</a></li><li><a href="#getvalue">GetValue</a></li><li><a href="#hasvalue">HasValue</a></li><li><a href="#load">Load</a></li><li><a href="#save">Save</a></li><li><a href="#setfilepath">SetFilePath</a></li><li><a href="#isvalidfilepath">isValidFilePath</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
+</ul></dd></dl>
+<h3 id="configstruct">struct&nbsp;ConfigStruct</h3>
+<p>設定ファイルの管理を行う。</p><h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ1。保存先ファイルのパス。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="filepath">private&nbsp;filePath</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>保存先ファイルのパス。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="table">private&nbsp;table</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Any&gt;&gt;</code></dd>
+<dd><p>値の辞書。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="datetimeclass">private&nbsp;dateTimeClass</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
+</dl>
+<h4 id="fileutility">private&nbsp;fileUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:FileUtilityStruct&gt;</code></dd>
+</dl>
+<h4 id="pathutility">private&nbsp;pathUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+</dl>
+<h4 id="stringutility">private&nbsp;stringUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:StringUtilityStruct&gt;</code></dd>
+</dl>
+<h4 id="addvalue">public&nbsp;fn&nbsp;AddValue</h4>
+<p>値を追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>v</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>キーが存在する場合は<code>true</code>、存在しない場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="clear">public&nbsp;fn&nbsp;Clear</h4>
+<p>内容を全て消去する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="count">public&nbsp;fn&nbsp;Count</h4>
+<p>値の総数を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="getfilepath">public&nbsp;fn&nbsp;GetFilePath</h4>
+<p>保存先ファイルのパスを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getkeys">public&nbsp;fn&nbsp;GetKeys</h4>
+<p>全てのキーを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>キーの並びは通常の<code>sort</code>関数で昇順にソートされる。</p></dd>
+</dl>
+<h4 id="getvalue">public&nbsp;fn&nbsp;GetValue</h4>
+<p>値を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>default:</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>キーが存在しない場合に返す値。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<h4 id="hasvalue">public&nbsp;fn&nbsp;HasValue</h4>
+<p>キーが存在するかどうかを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="load">public&nbsp;fn&nbsp;Load</h4>
+<p>保存先ファイルの内容を読み込んで内部状態を更新する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>読み込みに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>保存先ファイルのパスが無効の場合は何もしない。</p></dd>
+</dl>
+<h4 id="save">public&nbsp;fn&nbsp;Save</h4>
+<p>内容を保存先ファイルに書き出す。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>書き出しに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>保存先ファイルのパスが無効の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setfilepath">public&nbsp;fn&nbsp;SetFilePath</h4>
+<p>保存先ファイルのパスを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>拡張子を含むファイルパス。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ファイルの拡張子は<code>.mxsconfig</code>に置き換えられる。</p></dd>
+</dl>
+<h4 id="isvalidfilepath">private&nbsp;fn&nbsp;isValidFilePath</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.Dialog.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">Dialog.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-03-20</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#dialogstruct">DialogStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#initposition">initPosition</a></li><li><a href="#initsize">initSize</a></li><li><a href="#lockheight">lockHeight</a></li><li><a href="#lockwidth">lockWidth</a></li><li><a href="#menudef">menuDef</a></li><li><a href="#modal">modal</a></li><li><a href="#rolloutdef">rolloutDef</a></li><li><a href="#styleborder">styleBorder</a></li><li><a href="#stylemaximizebox">styleMaximizeBox</a></li><li><a href="#styleminimizebox">styleMinimizeBox</a></li><li><a href="#styleresizing">styleResizing</a></li><li><a href="#stylesunkenedge">styleSunkenedge</a></li><li><a href="#stylesysmenu">styleSysmenu</a></li><li><a href="#styletitlebar">styleTitleBar</a></li><li><a href="#styletoolwindow">styleToolWindow</a></li><li><a href="#view">view</a></li><li><a href="#create">Create</a></li><li><a href="#destroy">Destroy</a></li><li><a href="#getinitposition">GetInitPosition</a></li><li><a href="#getinitsize">GetInitSize</a></li><li><a href="#getlockheight">GetLockHeight</a></li><li><a href="#getlockwidth">GetLockWidth</a></li><li><a href="#getmenudef">GetMenuDef</a></li><li><a href="#getmodal">GetModal</a></li><li><a href="#getposition">GetPosition</a></li><li><a href="#getrolloutdef">GetRolloutDef</a></li><li><a href="#getsize">GetSize</a></li><li><a href="#getstyleborder">GetStyleBorder</a></li><li><a href="#getstylemaximizebox">GetStyleMaximizeBox</a></li><li><a href="#getstyleminimizebox">GetStyleMinimizeBox</a></li><li><a href="#getstyleresizing">GetStyleResizing</a></li><li><a href="#getstylesunkenedge">GetStyleSunkenedge</a></li><li><a href="#getstylesysmenu">GetStyleSysmenu</a></li><li><a href="#getstyletitlebar">GetStyleTitleBar</a></li><li><a href="#getstyletoolwindow">GetStyleToolWindow</a></li><li><a href="#getview">GetView</a></li><li><a href="#isdisplayed">IsDisplayed</a></li><li><a href="#load">Load</a></li><li><a href="#save">Save</a></li><li><a href="#setinitposition">SetInitPosition</a></li><li><a href="#setinitsize">SetInitSize</a></li><li><a href="#setlockheight">SetLockHeight</a></li><li><a href="#setlockwidth">SetLockWidth</a></li><li><a href="#setmenudef">SetMenuDef</a></li><li><a href="#setmodal">SetModal</a></li><li><a href="#setposition">SetPosition</a></li><li><a href="#setrolloutdef">SetRolloutDef</a></li><li><a href="#setsize">SetSize</a></li><li><a href="#setstyleborder">SetStyleBorder</a></li><li><a href="#setstylemaximizebox">SetStyleMaximizeBox</a></li><li><a href="#setstyleminimizebox">SetStyleMinimizeBox</a></li><li><a href="#setstyleresizing">SetStyleResizing</a></li><li><a href="#setstylesunkenedge">SetStyleSunkenedge</a></li><li><a href="#setstylesysmenu">SetStyleSysmenu</a></li><li><a href="#setstyletitlebar">SetStyleTitleBar</a></li><li><a href="#setstyletoolwindow">SetStyleToolWindow</a></li><li><a href="#setview">SetView</a></li><li><a href="#generateconfigkey">generateConfigKey</a></li><li><a href="#generatestyle">generateStyle</a></li><li><a href="#indialog">inDialog</a></li><li><a href="#isvalidconfig">isValidConfig</a></li><li><a href="#isvalidmenudef">isValidMenuDef</a></li><li><a href="#isvalidrolloutdef">isValidRolloutDef</a></li><li><a href="#isvalidview">isValidView</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="dialogstruct">struct&nbsp;DialogStruct</h3>
+<p>ダイアログの作成と破棄に伴う処理をカプセル化するための構造体。</p><dl>
+<dt>補足</dt>
+<dd><p>MVCで使用する場合、ロールアウト定義の実装は次の条件を満たさなければならない。</p>
+<ul>
+<li><p>ビューのインスタンスを格納するためのローカル変数<code>view</code></p>
+</li>
+<li><p><code>view</code>変数を初期化するための関数<code>Initialize</code></p>
+</li>
+<li><p>変数<code>view</code>の有効性を判定する関数<code>isValidView</code></p>
+</li>
+<li><p>イベントをビューに通知するための関数<code>notify</code></p>
+</li>
+</ul>
+<dl>
+<dt>実装例</dt>
+<dd>
+<pre><code class="language-maxscript">rollout RltFoo &quot;&quot; (
+local view
+
+button BtnBar &quot;Button&quot;
+
+fn isValidView obj = (
+  isStruct obj \
+      and isProperty obj #StructName \
+      and classOf obj.StructName == MAXScriptFunction \
+      and obj.StructName() == #MvcViewStruct \
+      and isProperty obj #EventNotify \
+      and classOf obj.EventNotify == MAXScriptFunction
+)
+
+fn notify eventName controlName params = (
+  if isValidView view do (
+    view.EventNotify eventName controlName params
+  )
+  ok
+)
+
+fn Initialize viewObject = (
+  if isValidView viewObject do (
+    view = viewObject
+  )
+  notify #Open #RltFoo #()
+  ok
+)
+
+on RltFoo Close do notify #Close #RltFoo #()
+on RltFoo Moved v do notify #Moved #RltFoo #(v)
+on RltFoo Resized v do notify #Resized #RltFoo #(v)
+
+on BtnBar Pressed do notify #Pressed #BtnBar #()
+)
+</code></pre>
+</dd>
+</dl></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+<dd><p>作成パラメータ1。ロールアウト定義。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp2_">public&nbsp;_CP2_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+<dd><p>作成パラメータ2。ダイアログの初期サイズ。既定値は<code>[160, 160]</code>。</p></dd>
+</dl>
+<h4 id="_cp3_">public&nbsp;_CP3_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ3。ダイアログの初期位置。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp4_">public&nbsp;_CP4_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ4。タイトルバーに表示されるメニュー定義。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="initposition">private&nbsp;initPosition</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+<dd><p>ダイアログの初期位置。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="initsize">private&nbsp;initSize</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+<dd><p>ダイアログの初期サイズ。既定値は<code>[160, 160]</code>。</p></dd>
+</dl>
+<h4 id="lockheight">private&nbsp;lockHeight</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>高さを固定するかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="lockwidth">private&nbsp;lockWidth</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>幅を固定するかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="menudef">private&nbsp;menuDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
+<dd><p>タイトルバーに表示されるメニュー定義。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="modal">private&nbsp;modal</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>モーダルダイアログにするかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="rolloutdef">private&nbsp;rolloutDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+<dd><p>ロールアウト定義。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="styleborder">private&nbsp;styleBorder</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>二重境界線を持つかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="stylemaximizebox">private&nbsp;styleMaximizeBox</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>最大化ボタンを持つかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="styleminimizebox">private&nbsp;styleMinimizeBox</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>最小化ボタンを持つかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="styleresizing">private&nbsp;styleResizing</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>サイズ変更可能かどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="stylesunkenedge">private&nbsp;styleSunkenedge</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>境界線の内側をくぼませるかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="stylesysmenu">private&nbsp;styleSysmenu</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>タイトルバーに各種ボタンが表示されるかどうか。既定値は<code>true</code>。</p></dd>
+</dl>
+<h4 id="styletitlebar">private&nbsp;styleTitleBar</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>タイトルバーを持つかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<h4 id="styletoolwindow">private&nbsp;styleToolWindow</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>ツールウィンドウにするかどうか。既定値は<code>true</code>。</p></dd>
+</dl>
+<h4 id="view">private&nbsp;view</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MvcViewStruct|UndefinedClass&gt;</code></dd>
+<dd><p>ビューオブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="create">public&nbsp;fn&nbsp;Create</h4>
+<p>ダイアログを作成する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>正常に作成できた場合は<code>true</code>、作成できなかった場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="destroy">public&nbsp;fn&nbsp;Destroy</h4>
+<p>ダイアログを破棄する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>view</code></dd>
+<dd><code>&lt;Struct:MvcViewStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>正常に破棄できた場合は<code>true</code>、破棄できなかった場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="getinitposition">public&nbsp;fn&nbsp;GetInitPosition</h4>
+<p>ダイアログの初期位置を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getinitsize">public&nbsp;fn&nbsp;GetInitSize</h4>
+<p>ダイアログの初期サイズを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<h4 id="getlockheight">public&nbsp;fn&nbsp;GetLockHeight</h4>
+<p>高さを固定するかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getlockwidth">public&nbsp;fn&nbsp;GetLockWidth</h4>
+<p>幅を固定するかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getmenudef">public&nbsp;fn&nbsp;GetMenuDef</h4>
+<p>タイトルバーに表示されるメニュー定義を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getmodal">public&nbsp;fn&nbsp;GetModal</h4>
+<p>モーダルダイアログにするかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getposition">public&nbsp;fn&nbsp;GetPosition</h4>
+<p>ダイアログの現在の位置を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>取得できない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getrolloutdef">public&nbsp;fn&nbsp;GetRolloutDef</h4>
+<p>ロールアウト定義を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+</dl>
+<h4 id="getsize">public&nbsp;fn&nbsp;GetSize</h4>
+<p>ダイアログの現在のサイズを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>取得できない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getstyleborder">public&nbsp;fn&nbsp;GetStyleBorder</h4>
+<p>二重境界線を持つかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstylemaximizebox">public&nbsp;fn&nbsp;GetStyleMaximizeBox</h4>
+<p>最大化ボタンを持つかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstyleminimizebox">public&nbsp;fn&nbsp;GetStyleMinimizeBox</h4>
+<p>最小化ボタンを持つかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstyleresizing">public&nbsp;fn&nbsp;GetStyleResizing</h4>
+<p>サイズ変更可能かどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstylesunkenedge">public&nbsp;fn&nbsp;GetStyleSunkenedge</h4>
+<p>境界線の内側をくぼませるかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstylesysmenu">public&nbsp;fn&nbsp;GetStyleSysmenu</h4>
+<p>タイトルバーに各種ボタンが表示されるかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstyletitlebar">public&nbsp;fn&nbsp;GetStyleTitleBar</h4>
+<p>タイトルバーを持つかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getstyletoolwindow">public&nbsp;fn&nbsp;GetStyleToolWindow</h4>
+<p>ツールウィンドウにするかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="getview">public&nbsp;fn&nbsp;GetView</h4>
+<p>ビューオブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MvcViewStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="isdisplayed">public&nbsp;fn&nbsp;IsDisplayed</h4>
+<p>ダイアログが表示されているかどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="load">public&nbsp;fn&nbsp;Load</h4>
+<p>コンフィグから値を読み込む。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>config</code></dd>
+<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>読み込みに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="save">public&nbsp;fn&nbsp;Save</h4>
+<p>コンフィグに値を書き込む。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>config</code></dd>
+<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>書き出しに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="setinitposition">public&nbsp;fn&nbsp;SetInitPosition</h4>
+<p>ダイアログの初期位置を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setinitsize">public&nbsp;fn&nbsp;SetInitSize</h4>
+<p>ダイアログの初期サイズを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setlockheight">public&nbsp;fn&nbsp;SetLockHeight</h4>
+<p>高さを固定するかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setlockwidth">public&nbsp;fn&nbsp;SetLockWidth</h4>
+<p>幅を固定するかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setmenudef">public&nbsp;fn&nbsp;SetMenuDef</h4>
+<p>タイトルバーに表示されるメニュー定義を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>def</code></dd>
+<dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setmodal">public&nbsp;fn&nbsp;SetModal</h4>
+<p>モーダルダイアログにするかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setposition">public&nbsp;fn&nbsp;SetPosition</h4>
+<p>ダイアログの現在の位置を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setrolloutdef">public&nbsp;fn&nbsp;SetRolloutDef</h4>
+<p>ロールアウト定義を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>def</code></dd>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setsize">public&nbsp;fn&nbsp;SetSize</h4>
+<p>ダイアログの現在のサイズを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Point2&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstyleborder">public&nbsp;fn&nbsp;SetStyleBorder</h4>
+<p>二重境界線を持つかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstylemaximizebox">public&nbsp;fn&nbsp;SetStyleMaximizeBox</h4>
+<p>最大化ボタンを持つかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstyleminimizebox">public&nbsp;fn&nbsp;SetStyleMinimizeBox</h4>
+<p>最小化ボタンを持つかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstyleresizing">public&nbsp;fn&nbsp;SetStyleResizing</h4>
+<p>サイズ変更可能かどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstylesunkenedge">public&nbsp;fn&nbsp;SetStyleSunkenedge</h4>
+<p>境界線の内側をくぼませるかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstylesysmenu">public&nbsp;fn&nbsp;SetStyleSysmenu</h4>
+<p>タイトルバーに各種ボタンが表示されるかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstyletitlebar">public&nbsp;fn&nbsp;SetStyleTitleBar</h4>
+<p>タイトルバーを持つかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setstyletoolwindow">public&nbsp;fn&nbsp;SetStyleToolWindow</h4>
+<p>ツールウィンドウにするかどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setview">public&nbsp;fn&nbsp;SetView</h4>
+<p>ビューオブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MvcViewStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MvcViewStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="generateconfigkey">private&nbsp;fn&nbsp;generateConfigKey</h4>
+<p>コンフィグ用のキーを生成する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="generatestyle">private&nbsp;fn&nbsp;generateStyle</h4>
+<p>プロパティの状態に基づいてスタイルフラグの配列を生成する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<h4 id="indialog">private&nbsp;fn&nbsp;inDialog</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;RolloutClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidconfig">private&nbsp;fn&nbsp;isValidConfig</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmenudef">private&nbsp;fn&nbsp;isValidMenuDef</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrolloutdef">private&nbsp;fn&nbsp;isValidRolloutDef</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidview">private&nbsp;fn&nbsp;isValidView</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="observers">private&nbsp;observers</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="addobserver">public&nbsp;fn&nbsp;AddObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="removeobserver">public&nbsp;fn&nbsp;RemoveObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>observer</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="notify">private&nbsp;fn&nbsp;notify</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;Name&gt;]|Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>type:</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
