@@ -29,10 +29,10 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexGridLayout.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-20</time></li>
+<li class="item"><time class="icon date updated">2022-03-25</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#flexgridlayoutstruct">FlexGridLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#columncells">columnCells</a></li><li><a href="#rowcells">rowCells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#gridcelldef">gridCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcolumncells">GetColumnCells</a></li><li><a href="#getrowcells">GetRowCells</a></li><li><a href="#setcolumnfixedlength">SetColumnFixedLength</a></li><li><a href="#setcolumnminimumwidth">SetColumnMinimumWidth</a></li><li><a href="#setcolumnstretch">SetColumnStretch</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setrowfixedlength">SetRowFixedLength</a></li><li><a href="#setrowminimumheight">SetRowMinimumHeight</a></li><li><a href="#setrowstretch">SetRowStretch</a></li><li><a href="#addgrid">addGrid</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#generatecolumnrects">generateColumnRects</a></li><li><a href="#generaterowrects">generateRowRects</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidstretchcell">isValidStretchCell</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#flexgridlayoutstruct">FlexGridLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#columncells">columnCells</a></li><li><a href="#rowcells">rowCells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#gridcelldef">gridCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcolumncells">GetColumnCells</a></li><li><a href="#getrowcells">GetRowCells</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcolumnfixedlength">SetColumnFixedLength</a></li><li><a href="#setcolumnminimumwidth">SetColumnMinimumWidth</a></li><li><a href="#setcolumnstretch">SetColumnStretch</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setrowfixedlength">SetRowFixedLength</a></li><li><a href="#setrowminimumheight">SetRowMinimumHeight</a></li><li><a href="#setrowstretch">SetRowStretch</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#addgrid">addGrid</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#generatecolumnrects">generateColumnRects</a></li><li><a href="#generaterowrects">generateRowRects</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidstretchcell">isValidStretchCell</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
@@ -166,6 +166,15 @@
 <p>行を構成するセルを取得する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getvisibility">public&nbsp;fn&nbsp;GetVisibility</h4>
+<p>セルのアイテムの可視性を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>値を取得できない場合や真偽混合の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="setcolumnfixedlength">public&nbsp;fn&nbsp;SetColumnFixedLength</h4>
 <p>列の固定幅を設定する。</p><dl>
@@ -302,6 +311,20 @@
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値を指定した場合は何もしない。</p></dd>
+</dl>
+<h4 id="setvisibility">public&nbsp;fn&nbsp;SetVisibility</h4>
+<p>セルのアイテムの可視性を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="addgrid">private&nbsp;fn&nbsp;addGrid</h4>
 <p>グリッドを構成するセルを追加する。</p><dl>

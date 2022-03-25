@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.FlexVBoxLayout.ms</title>
+<title>mxsdoc.FlexStackedLayout.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,22 +27,18 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">FlexVBoxLayout.ms</a></h2>
+<h2 class="post title"><a class="static" href="">FlexStackedLayout.ms</a></h2>
 <ul class="hlist right post property">
 <li class="item"><time class="icon date updated">2022-03-25</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#flexvboxlayoutstruct">FlexVBoxLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addspace">AddSpace</a></li><li><a href="#addstretch">AddStretch</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#flexstackedlayoutstruct">FlexStackedLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#currentindex">currentIndex</a></li><li><a href="#visibility">visibility</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcurrentindex">GetCurrentIndex</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcurrentindex">SetCurrentIndex</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#addcell">addCell</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#updatecellvisibility">updateCellVisibility</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
 </ul></dd></dl>
-<h3 id="flexvboxlayoutstruct">struct&nbsp;FlexVBoxLayoutStruct</h3>
-<p>垂直方向にアイテムを配置する。</p><dl>
-<dt>補足</dt>
-<dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p></dd>
-</dl>
-<h4 id="options">public&nbsp;Options</h4>
+<h3 id="flexstackedlayoutstruct">struct&nbsp;FlexStackedLayoutStruct</h3>
+<p>登録されたアイテムの内一つのみを表示する。</p><h4 id="options">public&nbsp;Options</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;Struct:FlexLayoutOptionsStruct&gt;</code></dd>
@@ -53,6 +49,18 @@
 <dt>プロパティ</dt>
 <dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
 <dd><p>セルのアイテム。既定値は<code>#()</code>。</p></dd>
+</dl>
+<h4 id="currentindex">private&nbsp;currentIndex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>現在表示されているアイテムのインデックス。既定値は<code>0</code>。</p></dd>
+</dl>
+<h4 id="visibility">private&nbsp;visibility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>レイアウトの可視性。既定値は<code>true</code>。</p></dd>
 </dl>
 <h4 id="boxcelldef">private&nbsp;boxCellDef</h4>
 <dl>
@@ -67,51 +75,9 @@
 </dl>
 <dl>
 <dt>パラメータ</dt>
-<dd><code>fixedLength:</code></dd>
+<dd><code>index:</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの固定値。<code>1</code>以上の整数。既定値は<code>undefined</code>。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>minimum:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
-</dl>
-<h4 id="addspace">public&nbsp;fn&nbsp;AddSpace</h4>
-<p>固定スペースを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>input</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p><code>1</code>以上の整数。</p></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
-</dl>
-<dl>
-<dt>補足</dt>
-<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
-</dl>
-<h4 id="addstretch">public&nbsp;fn&nbsp;AddStretch</h4>
-<p>ストレッチ可能なスペースを追加する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+<dd><p>挿入先インデックス。既定値は<code>unsupplied</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -129,21 +95,9 @@
 </dl>
 <dl>
 <dt>パラメータ</dt>
-<dd><code>fixedLength:</code></dd>
+<dd><code>index:</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの固定値。<code>1</code>以上の整数。既定値は<code>undefined</code>。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>minimum:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>高さの最小値。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>stretch:</code></dd>
-<dd><code>&lt;Integer&gt;</code></dd>
-<dd><p>ストレッチ係数。<code>1</code>以上の整数。既定値は<code>1</code>。</p></dd>
+<dd><p>挿入先インデックス。既定値は<code>unsupplied</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -159,14 +113,26 @@
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
 </dl>
-<h4 id="getvisibility">public&nbsp;fn&nbsp;GetVisibility</h4>
-<p>セルのアイテムの可視性を取得する。</p><dl>
+<h4 id="getcurrentindex">public&nbsp;fn&nbsp;GetCurrentIndex</h4>
+<p>現在表示されているアイテムのインデックスを取得する。</p><dl>
 <dt>戻り値</dt>
-<dd><code>&lt;BooleanClass|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="getvisibility">public&nbsp;fn&nbsp;GetVisibility</h4>
+<p>レイアウトの可視性を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="setcurrentindex">public&nbsp;fn&nbsp;SetCurrentIndex</h4>
+<p>現在表示されているアイテムのインデックスを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>index</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p><code>0</code>以上の整数。</p></dd>
 </dl>
 <dl>
-<dt>補足</dt>
-<dd><p>値を取得できない場合や真偽混合の場合は<code>undefined</code>を返す。</p></dd>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="setrect">public&nbsp;fn&nbsp;SetRect</h4>
 <p>レイアウトの矩形を設定する。</p><dl>
@@ -177,6 +143,10 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>一貫性のため戻り値は配列で返す。</p></dd>
 </dl>
 <h4 id="setvisibility">public&nbsp;fn&nbsp;SetVisibility</h4>
 <p>セルのアイテムの可視性を設定する。</p><dl>
@@ -191,6 +161,22 @@
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="addcell">private&nbsp;fn&nbsp;addCell</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>cell</code></dd>
+<dd><code>&lt;Struct:FlexBoxCellStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>index</code></dd>
+<dd><code>&lt;Integer|UnsuppliedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>追加後のセルのインデックス。</p></dd>
 </dl>
 <h4 id="findwidget">private&nbsp;fn&nbsp;findWidget</h4>
 <dl>
@@ -236,6 +222,11 @@
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="updatecellvisibility">private&nbsp;fn&nbsp;updateCellVisibility</h4>
+<p>セルのアイテムの可視性を更新する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
