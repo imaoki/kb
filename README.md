@@ -1,2 +1,1 @@
-# mxskb
-Personal MAXScript Knowledge Base
+[mxskb](https://imaoki.github.io/mxskb/)
