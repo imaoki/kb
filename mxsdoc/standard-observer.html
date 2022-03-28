@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Observer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-25</time></li>
+<li class="item"><time class="icon date updated">2022-03-29</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#observerstruct">ObserverStruct</a><ul><li><a href="#callback">Callback</a></li><li><a href="#context">Context</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
@@ -43,20 +43,12 @@
 </dl>
 <dl>
 <dt>補足</dt>
-<dd><p>用途によって引数の扱いが異なる。</p>
-<dl>
-<dt>構造体用のコールバック関数</dt>
-<dd>
-<p><code>context</code>と<code>params</code>の二つの引数を取る。</p>
-<pre><code class="language-maxscript">fn update context params type: = (
-  if classOf params == Array do (
-    for param in params do (
-      case param of (
-        (#Foo): ()
-        (#Bar): ()
-        default: ()
-      )
-    )
+<dd><p>以下のように実装する。</p>
+<pre><code class="language-maxscript">fn update context type param = (
+  case type of (
+    (#Foo): ()
+    (#Bar): ()
+    default: ()
   )
   ok
 )
@@ -71,62 +63,18 @@
 <tbody>
 <tr>
 <td><code>context</code></td>
-<td>本構造体の<code>Context</code>プロパティに設定した値</td>
+<td><code>Context</code>プロパティに設定した値</td>
 </tr>
 <tr>
-<td><code>params</code></td>
-<td>更新されたパラメータや処理の名前の配列</td>
+<td><code>type</code></td>
+<td>イベント名</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>イベントデータ</td>
 </tr>
 </tbody>
-</table>
-</dd>
-<dt>イベントコールバック用のコールバック関数</dt>
-<dd>
-<p><code>context</code>と<code>params</code>に加えて<code>type:</code>キーワード引数を取る。</p>
-<pre><code class="language-maxscript">fn update context params type: = (
-  if classOf type == Name then (
-    case type of (
-      (#NodeCloned): ()
-      (#NodeCreated): ()
-      default: ()
-    )
-  )
-  else (
-    if classOf params == Array do (
-      for param in params do (
-        case param of (
-          default: ()
-        )
-      )
-    )
-  )
-  ok
-)
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>引数</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>context</code></td>
-<td>本構造体の<code>Context</code>プロパティに設定した値</td>
-</tr>
-<tr>
-<td><code>params</code></td>
-<td>発生したイベントの補足情報</td>
-</tr>
-<tr>
-<td><code>type:</code></td>
-<td>発生したイベントの名前</td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl></dd>
+</table></dd>
 </dl>
 <h4 id="context">public&nbsp;Context</h4>
 <dl>
