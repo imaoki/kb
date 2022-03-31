@@ -29,13 +29,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexStackedLayout.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-29</time></li>
+<li class="item"><time class="icon date updated">2022-04-01</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#flexstackedlayoutstruct">FlexStackedLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#currentindex">currentIndex</a></li><li><a href="#visibility">visibility</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcurrentindex">GetCurrentIndex</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcurrentindex">SetCurrentIndex</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#addcell">addCell</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#updatecellvisibility">updateCellVisibility</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#observers">observers</a></li><li><a href="#addobserver">AddObserver</a></li><li><a href="#removeobserver">RemoveObserver</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#notify">notify</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#flexstackedlayoutstruct">FlexStackedLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#currentindex">currentIndex</a></li><li><a href="#visibility">visibility</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcurrentindex">GetCurrentIndex</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcurrentindex">SetCurrentIndex</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#addcell">addCell</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#updatecellvisibility">updateCellVisibility</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="flexstackedlayoutstruct">struct&nbsp;FlexStackedLayoutStruct</h3>
 <p>登録されたアイテムの内一つのみを表示する。</p><h4 id="options">public&nbsp;Options</h4>
@@ -263,57 +264,10 @@
 <dt>補足</dt>
 <dd><p>大文字と小文字を区別する。</p></dd>
 </dl>
-<h4 id="observers">private&nbsp;observers</h4>
+<h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
-</dl>
-<h4 id="addobserver">public&nbsp;fn&nbsp;AddObserver</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
-</dl>
-<h4 id="removeobserver">public&nbsp;fn&nbsp;RemoveObserver</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
-</dl>
-<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;Integer&gt;</code></dd>
-</dl>
-<h4 id="notify">private&nbsp;fn&nbsp;notify</h4>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>type</code></dd>
-<dd><code>&lt;Name&gt;</code></dd>
-</dl>
-<dl>
-<dt>パラメータ</dt>
-<dd><code>param</code></dd>
-<dd><code>&lt;Any&gt;</code></dd>
-</dl>
-<dl>
-<dt>戻り値</dt>
-<dd><code>&lt;OkClass&gt;</code></dd>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
 </dl>
 </main>
 </article>

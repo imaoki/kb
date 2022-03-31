@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.DotNetUtility.ms</title>
+<title>mxsdoc.Observable.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,59 +27,82 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">DotNetUtility.ms</a></h2>
+<h2 class="post title"><a class="static" href="">Observable.ms</a></h2>
 <ul class="hlist right post property">
 <li class="item"><time class="icon date updated">2022-04-01</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#dotnetutilitystruct">DotNetUtilityStruct</a><ul><li><a href="#isinstanceof">IsInstanceOf</a></li><li><a href="#issubclassof">IsSubclassOf</a></li><li><a href="#typeof">TypeOf</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#observablestruct">ObservableStruct</a><ul><li><a href="#observers">observers</a></li><li><a href="#count">Count</a></li><li><a href="#notify">Notify</a></li><li><a href="#subscribe">Subscribe</a></li><li><a href="#unsubscribe">Unsubscribe</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#isvalidobserver">isValidObserver</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<h3 id="dotnetutilitystruct">struct&nbsp;DotNetUtilityStruct</h3>
-<p>.NET用の追加メソッドを提供する。</p><h4 id="isinstanceof">public&nbsp;fn&nbsp;IsInstanceOf</h4>
-<p>オブジェクトが指定した型のインスタンスかどうかを判定する。</p><dl>
+<h3 id="observablestruct">struct&nbsp;ObservableStruct</h3>
+<p>通知を発行する仕組みを提供する。</p><h4 id="observers">private&nbsp;observers</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+</dl>
+<h4 id="count">public&nbsp;fn&nbsp;Count</h4>
+<p>登録されているオブザーバの数を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="notify">public&nbsp;fn&nbsp;Notify</h4>
+<p>通知を発行する。</p><dl>
 <dt>パラメータ</dt>
-<dd><code>typeName</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-<dd><p>型のアセンブリ修飾名。</p></dd>
+<dd><code>type</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>通知名。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
+<dd><code>param</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>通知データ。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="subscribe">public&nbsp;fn&nbsp;Subscribe</h4>
+<dl>
+<dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>オブザーバが存在する場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
-<h4 id="issubclassof">public&nbsp;fn&nbsp;IsSubclassOf</h4>
-<p>クラス、またはオブジェクトが指定した型から派生しているかどうかを判定する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>typeName</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-<dd><p>型のアセンブリ修飾名。</p></dd>
-</dl>
+<h4 id="unsubscribe">public&nbsp;fn&nbsp;Unsubscribe</h4>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>|DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
-<h4 id="typeof">public&nbsp;fn&nbsp;TypeOf</h4>
-<p>型の完全修飾名を取得する。</p><dl>
+<h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>|DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;String&gt;</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+</dl>
+<h4 id="isvalidobserver">private&nbsp;fn&nbsp;isValidObserver</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
 </dl>
 <dl>
-<dt>補足</dt>
-<dd><p><code>DotNetClass</code>および<code>DotNetObject</code>以外の場合は<code>classOf</code>の結果を文字列化する。</p></dd>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>

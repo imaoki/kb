@@ -29,22 +29,22 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Observer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-03-29</time></li>
+<li class="item"><time class="icon date updated">2022-04-01</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#observerstruct">ObserverStruct</a><ul><li><a href="#callback">Callback</a></li><li><a href="#context">Context</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#observerstruct">ObserverStruct</a><ul><li><a href="#update">Update</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="observerstruct">struct&nbsp;ObserverStruct</h3>
-<p>オブジェクトの状態が変化した際に通知を受け取る。</p><h4 id="callback">public&nbsp;Callback</h4>
+<p>通知を受け取る仕組みを提供する。</p><h4 id="update">public&nbsp;Update</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
-<dd><p>通知を受け取る関数。</p></dd>
+<dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
+<dd><p>通知を受け取る関数。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>以下のように実装する。</p>
-<pre><code class="language-maxscript">fn update context type param = (
+<pre><code class="language-maxscript">fn update type param = (
   case type of (
     (#Foo): ()
     (#Bar): ()
@@ -62,25 +62,15 @@
 </thead>
 <tbody>
 <tr>
-<td><code>context</code></td>
-<td><code>Context</code>プロパティに設定した値</td>
-</tr>
-<tr>
 <td><code>type</code></td>
-<td>イベント名</td>
+<td>通知名</td>
 </tr>
 <tr>
 <td><code>param</code></td>
-<td>イベントデータ</td>
+<td>通知データ</td>
 </tr>
 </tbody>
 </table></dd>
-</dl>
-<h4 id="context">public&nbsp;Context</h4>
-<dl>
-<dt>プロパティ</dt>
-<dd><code>&lt;Any&gt;</code></dd>
-<dd><p>発生した通知を識別するための値。通常は<code>this</code>を指定する。</p></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
