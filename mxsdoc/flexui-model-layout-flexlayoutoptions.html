@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexLayoutOptions.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-01</time></li>
+<li class="item"><time class="icon date updated">2022-04-05</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexlayoutoptionsstruct">FlexLayoutOptionsStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#_cp5_">_CP5_</a></li><li><a href="#_cp6_">_CP6_</a></li><li><a href="#marginh">marginH</a></li><li><a href="#marginv">marginV</a></li><li><a href="#paddingb">paddingB</a></li><li><a href="#paddingl">paddingL</a></li><li><a href="#paddingr">paddingR</a></li><li><a href="#paddingt">paddingT</a></li><li><a href="#getmarginh">GetMarginH</a></li><li><a href="#getmarginv">GetMarginV</a></li><li><a href="#getpaddingb">GetPaddingB</a></li><li><a href="#getpaddingl">GetPaddingL</a></li><li><a href="#getpaddingr">GetPaddingR</a></li><li><a href="#getpaddingt">GetPaddingT</a></li><li><a href="#setmargin">SetMargin</a></li><li><a href="#setmarginh">SetMarginH</a></li><li><a href="#setmarginv">SetMarginV</a></li><li><a href="#setpadding">SetPadding</a></li><li><a href="#setpaddingb">SetPaddingB</a></li><li><a href="#setpaddingl">SetPaddingL</a></li><li><a href="#setpaddingr">SetPaddingR</a></li><li><a href="#setpaddingt">SetPaddingT</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -42,7 +42,53 @@
 <dt>補足</dt>
 <dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
 <pre><code class="language-maxscript">::FlexLayoutOptionsStruct marginH marginV paddingT paddingR paddingB paddingL
-</code></pre></dd>
+</code></pre>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#MarginH</code></td>
+<td>新たな<code>marginH</code>値</td>
+<td><code>marginH</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#MarginV</code></td>
+<td>新たな<code>marginV</code>値</td>
+<td><code>marginV</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PaddingB</code></td>
+<td>新たな<code>paddingB</code>値</td>
+<td><code>paddingB</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PaddingL</code></td>
+<td>新たな<code>paddingL</code>値</td>
+<td><code>paddingL</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PaddingR</code></td>
+<td>新たな<code>paddingR</code>値</td>
+<td><code>paddingR</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PaddingT</code></td>
+<td>新たな<code>paddingT</code>値</td>
+<td><code>paddingT</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

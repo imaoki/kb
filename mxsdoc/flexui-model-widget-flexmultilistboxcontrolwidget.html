@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexMultiListBoxControlWidget.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-01</time></li>
+<li class="item"><time class="icon date updated">2022-04-05</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexmultilistboxcontrolwidgetstruct">FlexMultiListBoxControlWidgetStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#alignmenth">alignmentH</a></li><li><a href="#alignmentv">alignmentV</a></li><li><a href="#captionmargin">captionMargin</a></li><li><a href="#captionposition">captionPosition</a></li><li><a href="#control">control</a></li><li><a href="#explicith">explicitH</a></li><li><a href="#explicitw">explicitW</a></li><li><a href="#defaulth">defaultH</a></li><li><a href="#defaultw">defaultW</a></li><li><a href="#minh">minH</a></li><li><a href="#minw">minW</a></li><li><a href="#resizableh">resizableH</a></li><li><a href="#resizablew">resizableW</a></li><li><a href="#getalignmenth">GetAlignmentH</a></li><li><a href="#getalignmentv">GetAlignmentV</a></li><li><a href="#getcaptionmargin">GetCaptionMargin</a></li><li><a href="#getcaptionposition">GetCaptionPosition</a></li><li><a href="#getcontrol">GetControl</a></li><li><a href="#getdefaulth">GetDefaultH</a></li><li><a href="#getdefaultw">GetDefaultW</a></li><li><a href="#getexplicith">GetExplicitH</a></li><li><a href="#getexplicitw">GetExplicitW</a></li><li><a href="#getminh">GetMinH</a></li><li><a href="#getminw">GetMinW</a></li><li><a href="#getrect">GetRect</a></li><li><a href="#getresizableh">GetResizableH</a></li><li><a href="#getresizablew">GetResizableW</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setalignmenth">SetAlignmentH</a></li><li><a href="#setalignmentv">SetAlignmentV</a></li><li><a href="#setcaptionmargin">SetCaptionMargin</a></li><li><a href="#setcaptionposition">SetCaptionPosition</a></li><li><a href="#setcontrol">SetControl</a></li><li><a href="#setexplicith">SetExplicitH</a></li><li><a href="#setexplicitw">SetExplicitW</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#getclientrect">getClientRect</a></li><li><a href="#isfixedh">isFixedH</a></li><li><a href="#isfixedw">isFixedW</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidexplicith">isValidExplicitH</a></li><li><a href="#isvalidexplicitw">isValidExplicitW</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -50,7 +50,68 @@
 </li>
 <li><p><code>minH</code>および<code>minW</code>を適用</p>
 </li>
-</ol></dd>
+</ol>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#AlignmentH</code></td>
+<td>新たな<code>alignmentH</code>値</td>
+<td><code>alignmentH</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#AlignmentV</code></td>
+<td>新たな<code>alignmentV</code>値</td>
+<td><code>alignmentV</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#CaptionMargin</code></td>
+<td>新たな<code>captionMargin</code>値</td>
+<td><code>captionMargin</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#CaptionPosition</code></td>
+<td>新たな<code>captionPosition</code>値</td>
+<td><code>captionPosition</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Control</code></td>
+<td>新たな<code>control</code>値</td>
+<td><code>control</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ExplicitH</code></td>
+<td>新たな<code>explicitH</code>値</td>
+<td><code>explicitH</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ExplicitW</code></td>
+<td>新たな<code>explicitW</code>値</td>
+<td><code>explicitW</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#RectUpdated</code></td>
+<td>各セルの矩形</td>
+<td>レイアウトの矩形を設定した後</td>
+</tr>
+<tr>
+<td><code>#VisibilityChanged</code></td>
+<td>新たなセルのアイテムの可視性</td>
+<td>セルのアイテムの可視性を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

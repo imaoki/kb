@@ -29,16 +29,47 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Observable.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-01</time></li>
+<li class="item"><time class="icon date updated">2022-04-05</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#observablestruct">ObservableStruct</a><ul><li><a href="#observers">observers</a></li><li><a href="#count">Count</a></li><li><a href="#notify">Notify</a></li><li><a href="#subscribe">Subscribe</a></li><li><a href="#unsubscribe">Unsubscribe</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#isvalidobserver">isValidObserver</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="observablestruct">struct&nbsp;ObservableStruct</h3>
-<p>通知を発行する仕組みを提供する。</p><h4 id="observers">private&nbsp;observers</h4>
+<p>通知を発行する仕組みを提供する。</p><dl>
+<dt>補足</dt>
+<dd><p>通知を受け取る関数は次のように実装する。</p>
+<pre><code class="language-maxscript">fn update type param = (
+  case type of (
+    (#Foo): ()
+    (#Bar): ()
+    default: ()
+  )
+  ok
+)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>通知名</td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>通知データ</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="observers">private&nbsp;observers</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;MAXScriptFunction&gt;]&gt;</code></dd>
 </dl>
 <h4 id="count">public&nbsp;fn&nbsp;Count</h4>
 <p>登録されているオブザーバの数を取得する。</p><dl>
@@ -66,7 +97,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -77,7 +108,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>

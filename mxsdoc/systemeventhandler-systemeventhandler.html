@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">SystemEventHandler.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-01</time></li>
+<li class="item"><time class="icon date updated">2022-04-05</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#systemeventhandler">systemEventHandler</a></li><li><a href="#systemeventhandlerstruct">SystemEventHandlerStruct</a><ul><li><a href="#delaytimertable">delayTimerTable</a></li><li><a href="#eventparamtable">eventParamTable</a></li><li><a href="#observertable">observerTable</a></li><li><a href="#globalvarname">globalVarName</a></li><li><a href="#add">Add</a></li><li><a href="#getregisteredcallbackcount">GetRegisteredCallbackCount</a></li><li><a href="#install">Install</a></li><li><a href="#invokegeneralevent">InvokeGeneralEvent</a></li><li><a href="#invokeobserver">InvokeObserver</a></li><li><a href="#invoketimechange">InvokeTimeChange</a></li><li><a href="#invokeviewportredraw">InvokeViewportRedraw</a></li><li><a href="#remove">Remove</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#createdelaytimer">createDelayTimer</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#generategeneraleventscript">generateGeneralEventScript</a></li><li><a href="#geteventparam">getEventParam</a></li><li><a href="#geteventtypefromtimer">getEventTypeFromTimer</a></li><li><a href="#invoketimer">invokeTimer</a></li><li><a href="#isvalidtimer">isValidTimer</a></li><li><a href="#registergeneraleventcallback">registerGeneralEventCallback</a></li><li><a href="#registertimechangecallback">registerTimeChangeCallback</a></li><li><a href="#registerviewportredrawcallback">registerViewportRedrawCallback</a></li><li><a href="#unregisterallcallbacks">unregisterAllCallbacks</a></li><li><a href="#unregistergeneraleventcallback">unregisterGeneralEventCallback</a></li><li><a href="#unregistertimechangecallback">unregisterTimeChangeCallback</a></li><li><a href="#unregisterviewportredrawcallback">unregisterViewportRedrawCallback</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
@@ -75,7 +75,7 @@
 <h4 id="observertable">private&nbsp;observerTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Array[&lt;Struct:ObserverStruct&gt;]&gt;&gt;</code></dd>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Array[&lt;MAXScriptFunction&gt;]&gt;&gt;</code></dd>
 <dd><p>イベント毎のオブザーバ。</p></dd>
 </dl>
 <h4 id="globalvarname">private&nbsp;globalVarName</h4>
@@ -115,8 +115,8 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
-<dd><p><code>Update</code>プロパティにはイベントコールバック用のメソッドを設定する。詳細は<code>ObserverStruct</code>のドキュメントを参照。</p></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
+<dd><p>イベントコールバック用の関数。詳細は<code>ObservableStruct</code>のドキュメントを参照。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -236,7 +236,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -267,7 +267,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>observer</code></dd>
-<dd><code>&lt;Struct:ObserverStruct&gt;</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>

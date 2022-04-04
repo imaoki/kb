@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexVBoxLayout.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-01</time></li>
+<li class="item"><time class="icon date updated">2022-04-05</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexvboxlayoutstruct">FlexVBoxLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addspace">AddSpace</a></li><li><a href="#addstretch">AddStretch</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -41,7 +41,53 @@
 <h3 id="flexvboxlayoutstruct">struct&nbsp;FlexVBoxLayoutStruct</h3>
 <p>垂直方向にアイテムを配置する。</p><dl>
 <dt>補足</dt>
-<dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p></dd>
+<dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#LayoutAdded</code></td>
+<td>追加したセル</td>
+<td>レイアウトを追加した後</td>
+</tr>
+<tr>
+<td><code>#RectUpdated</code></td>
+<td>各セルの矩形</td>
+<td>レイアウトの矩形を設定した後</td>
+</tr>
+<tr>
+<td><code>#SpaceAdded</code></td>
+<td>追加したセル</td>
+<td>固定スペースを追加した後</td>
+</tr>
+<tr>
+<td><code>#StretchAdded</code></td>
+<td>追加したセル</td>
+<td>ストレッチ可能なスペースを追加した後</td>
+</tr>
+<tr>
+<td><code>#VisibilityChanged</code></td>
+<td>新たなセルのアイテムの可視性</td>
+<td>セルのアイテムの可視性を設定した後</td>
+</tr>
+<tr>
+<td><code>#WidgetAdded</code></td>
+<td>追加したセル</td>
+<td>ウィジェットを追加した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="options">public&nbsp;Options</h4>
 <dl>
