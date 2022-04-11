@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.MxsPack.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">MxsPack.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-04-12</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#mxspackstruct">MxsPackStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#blanklineregex">blankLineRegex</a></li><li><a href="#blockcommentregex">blockCommentRegex</a></li><li><a href="#commabreakregex">commaBreakRegex</a></li><li><a href="#continuationlineregex">continuationLineRegex</a></li><li><a href="#indentationregex">indentationRegex</a></li><li><a href="#installerregex">installerRegex</a></li><li><a href="#lfregex">lfRegex</a></li><li><a href="#linecommentregex">lineCommentRegex</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#appendtext">AppendText</a></li><li><a href="#clipfile">ClipFile</a></li><li><a href="#cliptext">ClipText</a></li><li><a href="#copydirectory">CopyDirectory</a></li><li><a href="#deletedirectory">DeleteDirectory</a></li><li><a href="#inserttext">InsertText</a></li><li><a href="#install">Install</a></li><li><a href="#minify">Minify</a></li><li><a href="#removeinstalleroption">RemoveInstallerOption</a></li><li><a href="#replacetext">ReplaceText</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#writealltext">WriteAllText</a></li><li><a href="#isvalidpathutility">isValidPathUtility</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
+</ul></dd></dl>
+<h3 id="mxspackstruct">struct&nbsp;MxsPackStruct</h3>
+<p>複数のスクリプトファイルを1ファイルに統合するためのメソッドを提供する。</p><dl>
+<dt>補足</dt>
+<dd><p>スクリプトファイルは以下の条件を満たしていることが前提となる。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>状態</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>エンコード</td>
+<td><code>utf-8</code>（BOM無し）</td>
+</tr>
+<tr>
+<td>改行コード</td>
+<td><code>LF</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>作成パラメータ1。相対パスの基準となるディレクトリのパス。必須。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="blanklineregex">private&nbsp;blankLineRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>^ *?\n</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="blockcommentregex">private&nbsp;blockCommentRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>^ ＊/\*(?!!)(.|\n)*?\＊/\n?</code>に一致する正規表現オブジェクト。<code>＊</code>は<code>*</code>に読み替える。</p></dd>
+</dl>
+<h4 id="commabreakregex">private&nbsp;commaBreakRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>(?&lt;=\(|,)\n</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="continuationlineregex">private&nbsp;continuationLineRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code> *\\ *\n *</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="indentationregex">private&nbsp;indentationRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>^ +</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="installerregex">private&nbsp;installerRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>(?&lt;=\.RegisterFile \(getSourceFileName\(\)\)) installer:true</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="lfregex">private&nbsp;lfRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>\n</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="linecommentregex">private&nbsp;lineCommentRegex</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
+<dd><p><code>^ *--.*?\n</code>に一致する正規表現オブジェクト。</p></dd>
+</dl>
+<h4 id="pathutility">private&nbsp;pathUtility</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+</dl>
+<h4 id="appendtext">public&nbsp;fn&nbsp;AppendText</h4>
+<p>末尾に文字列を追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>元の文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>追加する文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="clipfile">public&nbsp;fn&nbsp;ClipFile</h4>
+<p>ファイルから指定された範囲の部分文字列を切り出す。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>ファイルパス。相対パスも可。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>fromPos</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>開始位置。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>stringLength</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>文字列の長さ。負の値を指定した場合は文字列の末尾までが範囲になる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>基準となるディレクトリが未指定の場合、ファイルが存在しない場合、または範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="cliptext">public&nbsp;fn&nbsp;ClipText</h4>
+<p>文字列から指定された範囲の部分文字列を切り出す。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>元の文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>fromPos</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>開始位置。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>stringLength</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>文字列の長さ。負の値を指定した場合は文字列の末尾までが範囲になる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="copydirectory">public&nbsp;fn&nbsp;CopyDirectory</h4>
+<p><code>::std.FileUtility.CopyDirectory</code>メソッドをラップする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピーするディレクトリのパス。相対パスも可。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>コピー先のパス。相対パスも可。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>常に上書きする。<br />
+基準となるディレクトリが未指定の場合は何もしない。</p></dd>
+</dl>
+<h4 id="deletedirectory">public&nbsp;fn&nbsp;DeleteDirectory</h4>
+<p><code>::std.FileUtility.DeleteDirectory</code>メソッドをラップする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>相対パスも可。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>常に再帰的に削除する。<br />
+基準となるディレクトリが未指定の場合は何もしない。</p></dd>
+</dl>
+<h4 id="inserttext">public&nbsp;fn&nbsp;InsertText</h4>
+<p>指定した位置に文字列を挿入する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>元の文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>insertPos</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>挿入位置。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>挿入文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="install">public&nbsp;fn&nbsp;Install</h4>
+<p>インストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
+</dl>
+<h4 id="minify">public&nbsp;fn&nbsp;Minify</h4>
+<p>コードを最小化する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="removeinstalleroption">public&nbsp;fn&nbsp;RemoveInstallerOption</h4>
+<p><code>Install</code>メソッドのインストーラオプションを除去する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="replacetext">public&nbsp;fn&nbsp;ReplaceText</h4>
+<p>指定された範囲の文字列を置換した新たな文字列を返す。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>source</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>元の文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>fromPos</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>開始位置。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>stringLength</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>文字列の長さ。負の値を指定した場合は文字列の末尾までが範囲になる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>置換文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
+<p>アンインストールする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>静的メソッド。</p></dd>
+</dl>
+<h4 id="writealltext">public&nbsp;fn&nbsp;WriteAllText</h4>
+<p><code>::std.FileUtility.WriteAllText</code>メソッドをラップする。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>path</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>相対パスも可。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>contents</code></dd>
+<dd><code>&lt;String|StringStream&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>基準となるディレクトリが未指定の場合は何もしない。</p></dd>
+</dl>
+<h4 id="isvalidpathutility">private&nbsp;fn&nbsp;isValidPathUtility</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="version">private&nbsp;version</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String&gt;</code></dd>
+<dd><p>バージョン番号。メジャー、マイナー、パッチの順。</p></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="getversion">public&nbsp;fn&nbsp;GetVersion</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

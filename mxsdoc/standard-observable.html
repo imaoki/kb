@@ -29,10 +29,10 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Observable.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-05</time></li>
+<li class="item"><time class="icon date updated">2022-04-12</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#observablestruct">ObservableStruct</a><ul><li><a href="#observers">observers</a></li><li><a href="#count">Count</a></li><li><a href="#notify">Notify</a></li><li><a href="#subscribe">Subscribe</a></li><li><a href="#unsubscribe">Unsubscribe</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#isvalidobserver">isValidObserver</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#observablestruct">ObservableStruct</a><ul><li><a href="#observers">observers</a></li><li><a href="#count">Count</a></li><li><a href="#hassubscribed">HasSubscribed</a></li><li><a href="#notify">Notify</a></li><li><a href="#subscribe">Subscribe</a></li><li><a href="#unsubscribe">Unsubscribe</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#isvalidobserver">isValidObserver</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="observablestruct">struct&nbsp;ObservableStruct</h3>
 <p>通知を発行する仕組みを提供する。</p><dl>
@@ -76,6 +76,16 @@
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
+<h4 id="hassubscribed">public&nbsp;fn&nbsp;HasSubscribed</h4>
+<p>オブザーバが登録済みかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
 <h4 id="notify">public&nbsp;fn&nbsp;Notify</h4>
 <p>通知を発行する。</p><dl>
 <dt>パラメータ</dt>
@@ -94,7 +104,7 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="subscribe">public&nbsp;fn&nbsp;Subscribe</h4>
-<dl>
+<p>通知元として購読する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -105,7 +115,7 @@
 <dd><p>オブザーバが存在する場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="unsubscribe">public&nbsp;fn&nbsp;Unsubscribe</h4>
-<dl>
+<p>購読を解除する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
