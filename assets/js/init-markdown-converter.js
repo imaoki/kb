@@ -39,9 +39,10 @@ if (window.mxskb) {
     if (firstH1) firstH1.parentNode.removeChild(firstH1);
     if (firstH2) firstH2.parentNode.removeChild(firstH2);
 
+    // 更新日
     var dateUpdate = document.querySelector(".icon.date.updated");
     var admTitle = document.querySelector(".admonition-title");
-    if(admTitle && admTitle.textContent === "update") {
+    if(admTitle && admTitle.textContent.match(/\bupdate\b/)) {
       dateUpdate.textContent = admTitle.nextElementSibling.textContent
       admTitle.parentNode.parentNode.removeChild(admTitle.parentNode);
     }
