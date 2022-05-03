@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.MwmProperty.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">MwmProperty.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-05-03</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#mwmpropertystruct">MwmPropertyStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#model">model</a></li><li><a href="#modelattribute">modelAttribute</a></li><li><a href="#propertyname">propertyName</a></li><li><a href="#propertyvalue">propertyValue</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getmodelattribute">GetModelAttribute</a></li><li><a href="#getpropertyname">GetPropertyName</a></li><li><a href="#getpropertyvalue">GetPropertyValue</a></li><li><a href="#setmodel">SetModel</a></li><li><a href="#setmodelattribute">SetModelAttribute</a></li><li><a href="#setpropertyname">SetPropertyName</a></li><li><a href="#setpropertyvalue">SetPropertyValue</a></li><li><a href="#synchronizewithmodel">SynchronizeWithModel</a></li><li><a href="#getgettermethod">getGetterMethod</a></li><li><a href="#getmodelobservable">getModelObservable</a></li><li><a href="#getsettermethod">getSetterMethod</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidobservable">isValidObservable</a></li><li><a href="#subscribemodel">subscribeModel</a></li><li><a href="#synchronizepropertyvalue">synchronizePropertyValue</a></li><li><a href="#unsubscribemodel">unsubscribeModel</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-standard.html">std</a></code></li>
+</ul></dd></dl>
+<h3 id="mwmpropertystruct">struct&nbsp;MwmPropertyStruct</h3>
+<p>ビューモデルにプロパティを定義するための構造体。</p><dl>
+<dt>補足</dt>
+<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
+<pre><code class="language-maxscript">::MwmPropertyStruct propertyName propertyValue [modelAttribute]
+</code></pre>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Model</code></td>
+<td>新たな<code>model</code>値</td>
+<td><code>model</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ModelAttribute</code></td>
+<td>新たな<code>modelAttribute</code>値</td>
+<td><code>modelAttribute</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PropertyName</code></td>
+<td>新たな<code>propertyName</code>値</td>
+<td><code>propertyName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PropertyValue</code></td>
+<td>新たな<code>propertyValue</code>値</td>
+<td><code>propertyValue</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>オブザーバ</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>購読先</th>
+<th>メソッド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>modelAttribute</code>で指定した<code>model</code>のプロパティ</td>
+<td><code>SynchronizeWithModel</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ1。プロパティ名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp2_">public&nbsp;_CP2_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>作成パラメータ2。プロパティ値。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp3_">public&nbsp;_CP3_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ3。モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="model">private&nbsp;model</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+<dd><p>モデルオブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="modelattribute">private&nbsp;modelAttribute</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><p>モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="propertyname">private&nbsp;propertyName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>プロパティ名。バインディングのソース名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="propertyvalue">private&nbsp;propertyValue</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>プロパティ値。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="getmodel">public&nbsp;fn&nbsp;GetModel</h4>
+<p>モデルオブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getmodelattribute">public&nbsp;fn&nbsp;GetModelAttribute</h4>
+<p>モデルのプロパティ情報を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getpropertyname">public&nbsp;fn&nbsp;GetPropertyName</h4>
+<p>プロパティ名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="getpropertyvalue">public&nbsp;fn&nbsp;GetPropertyValue</h4>
+<p>プロパティ値を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<h4 id="setmodel">public&nbsp;fn&nbsp;SetModel</h4>
+<p>モデルオブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setmodelattribute">public&nbsp;fn&nbsp;SetModelAttribute</h4>
+<p>モデルのプロパティ情報を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setpropertyname">public&nbsp;fn&nbsp;SetPropertyName</h4>
+<p>プロパティ名を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setpropertyvalue">public&nbsp;fn&nbsp;SetPropertyValue</h4>
+<p>プロパティ値を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="synchronizewithmodel">public&nbsp;fn&nbsp;SynchronizeWithModel</h4>
+<p>自己のプロパティ値をモデルのプロパティ値に同期させる。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>type</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>param</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="getgettermethod">private&nbsp;fn&nbsp;getGetterMethod</h4>
+<p>モデルのプロパティ値取得メソッドを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getmodelobservable">private&nbsp;fn&nbsp;getModelObservable</h4>
+<p>モデルの通知元オブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:ObservableStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getsettermethod">private&nbsp;fn&nbsp;getSetterMethod</h4>
+<p>モデルのプロパティ値設定メソッドを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmodel">private&nbsp;fn&nbsp;isValidModel</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmodelattribute">private&nbsp;fn&nbsp;isValidModelAttribute</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidobservable">private&nbsp;fn&nbsp;isValidObservable</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="subscribemodel">private&nbsp;fn&nbsp;subscribeModel</h4>
+<p>モデルのプロパティ通知を購読する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="synchronizepropertyvalue">private&nbsp;fn&nbsp;synchronizePropertyValue</h4>
+<p>プロパティ値をモデルと同期する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>getterMethod</code></dd>
+<dd><code>&lt;MAXScriptFunction&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unsubscribemodel">private&nbsp;fn&nbsp;unsubscribeModel</h4>
+<p>モデルのプロパティ通知の購読を解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="statechanged">public&nbsp;StateChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

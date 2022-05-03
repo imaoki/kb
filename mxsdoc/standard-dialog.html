@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Dialog.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-04-30</time></li>
+<li class="item"><time class="icon date updated">2022-05-03</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#dialogstruct">DialogStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#initposition">initPosition</a></li><li><a href="#initsize">initSize</a></li><li><a href="#lockheight">lockHeight</a></li><li><a href="#lockwidth">lockWidth</a></li><li><a href="#menudef">menuDef</a></li><li><a href="#modal">modal</a></li><li><a href="#rolloutdef">rolloutDef</a></li><li><a href="#styleborder">styleBorder</a></li><li><a href="#stylemaximizebox">styleMaximizeBox</a></li><li><a href="#styleminimizebox">styleMinimizeBox</a></li><li><a href="#styleresizing">styleResizing</a></li><li><a href="#stylesunkenedge">styleSunkenedge</a></li><li><a href="#stylesysmenu">styleSysmenu</a></li><li><a href="#styletitlebar">styleTitleBar</a></li><li><a href="#styletoolwindow">styleToolWindow</a></li><li><a href="#create">Create</a></li><li><a href="#destroy">Destroy</a></li><li><a href="#getinitposition">GetInitPosition</a></li><li><a href="#getinitsize">GetInitSize</a></li><li><a href="#getlockheight">GetLockHeight</a></li><li><a href="#getlockwidth">GetLockWidth</a></li><li><a href="#getmenudef">GetMenuDef</a></li><li><a href="#getmodal">GetModal</a></li><li><a href="#getposition">GetPosition</a></li><li><a href="#getrolloutdef">GetRolloutDef</a></li><li><a href="#getrolloutname">GetRolloutName</a></li><li><a href="#getsize">GetSize</a></li><li><a href="#getstyleborder">GetStyleBorder</a></li><li><a href="#getstylemaximizebox">GetStyleMaximizeBox</a></li><li><a href="#getstyleminimizebox">GetStyleMinimizeBox</a></li><li><a href="#getstyleresizing">GetStyleResizing</a></li><li><a href="#getstylesunkenedge">GetStyleSunkenedge</a></li><li><a href="#getstylesysmenu">GetStyleSysmenu</a></li><li><a href="#getstyletitlebar">GetStyleTitleBar</a></li><li><a href="#getstyletoolwindow">GetStyleToolWindow</a></li><li><a href="#isdisplayed">IsDisplayed</a></li><li><a href="#load">Load</a></li><li><a href="#save">Save</a></li><li><a href="#setinitposition">SetInitPosition</a></li><li><a href="#setinitsize">SetInitSize</a></li><li><a href="#setlockheight">SetLockHeight</a></li><li><a href="#setlockwidth">SetLockWidth</a></li><li><a href="#setmenudef">SetMenuDef</a></li><li><a href="#setmodal">SetModal</a></li><li><a href="#setposition">SetPosition</a></li><li><a href="#setrolloutdef">SetRolloutDef</a></li><li><a href="#setsize">SetSize</a></li><li><a href="#setstyleborder">SetStyleBorder</a></li><li><a href="#setstylemaximizebox">SetStyleMaximizeBox</a></li><li><a href="#setstyleminimizebox">SetStyleMinimizeBox</a></li><li><a href="#setstyleresizing">SetStyleResizing</a></li><li><a href="#setstylesunkenedge">SetStyleSunkenedge</a></li><li><a href="#setstylesysmenu">SetStyleSysmenu</a></li><li><a href="#setstyletitlebar">SetStyleTitleBar</a></li><li><a href="#setstyletoolwindow">SetStyleToolWindow</a></li><li><a href="#generateconfigkey">generateConfigKey</a></li><li><a href="#generatestyle">generateStyle</a></li><li><a href="#indialog">inDialog</a></li><li><a href="#isvalidconfig">isValidConfig</a></li><li><a href="#isvalidmenudef">isValidMenuDef</a></li><li><a href="#isvalidrolloutdef">isValidRolloutDef</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -146,6 +146,71 @@
 <td><code>#StyleToolWindow</code></td>
 <td>新たな<code>styleToolWindow</code>値</td>
 <td><code>styleToolWindow</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>設定ファイル</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>パス</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#InitPosition]</code></td>
+<td>現在の<code>initPosition</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#InitSize]</code></td>
+<td>現在の<code>initSize</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#LockHeight]</code></td>
+<td>現在の<code>lockHeight</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#LockWidth]</code></td>
+<td>現在の<code>lockWidth</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#Modal]</code></td>
+<td>現在の<code>modal</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleBorder]</code></td>
+<td>現在の<code>styleBorder</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleMaximizeBox]</code></td>
+<td>現在の<code>styleMaximizeBox</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleMinimizeBox]</code></td>
+<td>現在の<code>styleMinimizeBox</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleResizing]</code></td>
+<td>現在の<code>styleResizing</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleSunkenedge]</code></td>
+<td>現在の<code>styleSunkenedge</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleSysmenu]</code></td>
+<td>現在の<code>styleSysmenu</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleTitleBar]</code></td>
+<td>現在の<code>styleTitleBar</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleToolWindow]</code></td>
+<td>現在の<code>styleToolWindow</code>値</td>
 </tr>
 </tbody>
 </table>
@@ -503,7 +568,8 @@
 </dl>
 <dl>
 <dt>補足</dt>
-<dd><p>無効な値の場合は何もしない。</p></dd>
+<dd><p>内部状態は変更しない。<br />
+無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setrolloutdef">public&nbsp;fn&nbsp;SetRolloutDef</h4>
 <p>ロールアウト定義を設定する。</p><dl>
@@ -531,7 +597,8 @@
 </dl>
 <dl>
 <dt>補足</dt>
-<dd><p>無効な値の場合は何もしない。</p></dd>
+<dd><p>内部状態は変更しない。<br />
+無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyleborder">public&nbsp;fn&nbsp;SetStyleBorder</h4>
 <p>二重境界線を持つかどうかを設定する。</p><dl>

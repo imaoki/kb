@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.MwmViewModel.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">MwmViewModel.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-05-03</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#mwmviewmodelstruct">MwmViewModelStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#bindingtable">bindingTable</a></li><li><a href="#commandtable">commandTable</a></li><li><a href="#modeltable">modelTable</a></li><li><a href="#propertytable">propertyTable</a></li><li><a href="#viewmodelname">viewModelName</a></li><li><a href="#addcommand">AddCommand</a></li><li><a href="#addmodel">AddModel</a></li><li><a href="#addproperty">AddProperty</a></li><li><a href="#canexecutecommand">CanExecuteCommand</a></li><li><a href="#clearbinding">ClearBinding</a></li><li><a href="#executecommand">ExecuteCommand</a></li><li><a href="#getbinding">GetBinding</a></li><li><a href="#getbindingsourcenames">GetBindingSourceNames</a></li><li><a href="#getbindingtargetnames">GetBindingTargetNames</a></li><li><a href="#getcommand">GetCommand</a></li><li><a href="#getcommandnames">GetCommandNames</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getmodelnames">GetModelNames</a></li><li><a href="#getproperty">GetProperty</a></li><li><a href="#getpropertynames">GetPropertyNames</a></li><li><a href="#getpropertyvalue">GetPropertyValue</a></li><li><a href="#getviewmodelname">GetViewModelName</a></li><li><a href="#hasbinding">HasBinding</a></li><li><a href="#hasbindingbyname">HasBindingByName</a></li><li><a href="#hascommand">HasCommand</a></li><li><a href="#hasmodel">HasModel</a></li><li><a href="#hasproperty">HasProperty</a></li><li><a href="#raisetargetchanged">RaiseTargetChanged</a></li><li><a href="#refreshbinding">RefreshBinding</a></li><li><a href="#setbinding">SetBinding</a></li><li><a href="#setpropertyvalue">SetPropertyValue</a></li><li><a href="#setviewmodelname">SetViewModelName</a></li><li><a href="#isvalidbinding">isValidBinding</a></li><li><a href="#isvalidcommand">isValidCommand</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidevent">isValidEvent</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidproperty">isValidProperty</a></li><li><a href="#setcommandto">setCommandTo</a></li><li><a href="#setmodelto">setModelTo</a></li><li><a href="#setpropertyto">setPropertyTo</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li><li><a href="#targetchanged">targetChanged</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-standard.html">std</a></code></li>
+</ul></dd></dl>
+<h3 id="mwmviewmodelstruct">struct&nbsp;MwmViewModelStruct</h3>
+<p>ビューモデルを定義するための構造体。</p><dl>
+<dt>補足</dt>
+<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
+<pre><code class="language-maxscript">::MwmViewModelStruct viewModelName
+</code></pre>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#BindingTable</code></td>
+<td>新たな<code>bindingTable</code>値</td>
+<td><code>bindingTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#CommandTable</code></td>
+<td>新たな<code>commandTable</code>値</td>
+<td><code>commandTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ModelTable</code></td>
+<td>新たな<code>modelTable</code>値</td>
+<td><code>modelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PropertyTable</code></td>
+<td>新たな<code>propertyTable</code>値</td>
+<td><code>propertyTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetChanged</code></td>
+<td>イベントオブジェクト</td>
+<td>ターゲットオブジェクトの変更が通知された後</td>
+</tr>
+<tr>
+<td><code>#ViewModelName</code></td>
+<td>新たな<code>viewModelName</code>値</td>
+<td><code>viewModelName</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>注意点</dt>
+<dd>
+<ul>
+<li>コマンドオブジェクトとプロパティオブジェクトの名前はビューモデル内において一意でなければならない。</li>
+</ul>
+</dd>
+</dl></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ1。ビューモデル名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="bindingtable">private&nbsp;bindingTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:MwmBindingStruct&gt;&gt;&gt;</code></dd>
+<dd><p>バインディングオブジェクトをソース名とターゲットオブジェクト名に紐付けて格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="commandtable">private&nbsp;commandTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:MwmCommandStruct&gt;&gt;</code></dd>
+<dd><p>コマンドオブジェクトをコマンド名に紐付けて格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="modeltable">private&nbsp;modelTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct&gt;&gt;</code></dd>
+<dd><p>モデルオブジェクトをモデル名に紐付けて格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="propertytable">private&nbsp;propertyTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:MwmPropertyStruct&gt;&gt;</code></dd>
+<dd><p>プロパティオブジェクトをプロパティ名に紐付けて格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="viewmodelname">private&nbsp;viewModelName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ビューモデル名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="addcommand">public&nbsp;fn&nbsp;AddCommand</h4>
+<p>コマンドオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>command</code></dd>
+<dd><code>&lt;Struct:MwmCommandStruct&gt;</code></dd>
+<dd><p>コマンドオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="addmodel">public&nbsp;fn&nbsp;AddModel</h4>
+<p>モデルオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>modelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>モデル名。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+<dd><p>モデルオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="addproperty">public&nbsp;fn&nbsp;AddProperty</h4>
+<p>プロパティオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>property</code></dd>
+<dd><code>&lt;Struct:MwmPropertyStruct&gt;</code></dd>
+<dd><p>プロパティオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="canexecutecommand">public&nbsp;fn&nbsp;CanExecuteCommand</h4>
+<p>コマンドが実行可能かどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>commandName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>コマンド名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="clearbinding">public&nbsp;fn&nbsp;ClearBinding</h4>
+<p>バインディングオブジェクトを削除する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>binding</code></dd>
+<dd><code>&lt;Struct:MwmBindingStruct&gt;</code></dd>
+<dd><p>バインディングオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="executecommand">public&nbsp;fn&nbsp;ExecuteCommand</h4>
+<p>コマンドを実行する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>commandName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>コマンド名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="getbinding">public&nbsp;fn&nbsp;GetBinding</h4>
+<p>バインディングオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>sourceName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ソース名。プロパティオブジェクトまたはコマンドオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>targetName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ターゲットオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmBindingStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>バインディングオブジェクトが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getbindingsourcenames">public&nbsp;fn&nbsp;GetBindingSourceNames</h4>
+<p>登録されているバインディングオブジェクトのソース名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getbindingtargetnames">public&nbsp;fn&nbsp;GetBindingTargetNames</h4>
+<p>登録されているバインディングオブジェクトのターゲット名を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>sourceName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ソース名。プロパティオブジェクトまたはコマンドオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は空の配列を返す。</p></dd>
+</dl>
+<h4 id="getcommand">public&nbsp;fn&nbsp;GetCommand</h4>
+<p>コマンドオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>commandName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>コマンド名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmCommandStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>コマンドオブジェクトが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getcommandnames">public&nbsp;fn&nbsp;GetCommandNames</h4>
+<p>登録されているコマンドオブジェクトのコマンド名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getmodel">public&nbsp;fn&nbsp;GetModel</h4>
+<p>モデルオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>modelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>モデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>モデルオブジェクトが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getmodelnames">public&nbsp;fn&nbsp;GetModelNames</h4>
+<p>登録されているモデルオブジェクトのモデル名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getproperty">public&nbsp;fn&nbsp;GetProperty</h4>
+<p>プロパティオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>propertyName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>プロパティ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmPropertyStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>プロパティオブジェクトが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getpropertynames">public&nbsp;fn&nbsp;GetPropertyNames</h4>
+<p>登録されているプロパティオブジェクトのプロパティ名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
+</dl>
+<h4 id="getpropertyvalue">public&nbsp;fn&nbsp;GetPropertyValue</h4>
+<p>プロパティオブジェクトのプロパティ値を取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>propertyName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>プロパティ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>プロパティオブジェクトが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getviewmodelname">public&nbsp;fn&nbsp;GetViewModelName</h4>
+<p>ビューモデル名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="hasbinding">public&nbsp;fn&nbsp;HasBinding</h4>
+<p>バインディングオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>binding</code></dd>
+<dd><code>&lt;Struct:MwmBindingStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hasbindingbyname">public&nbsp;fn&nbsp;HasBindingByName</h4>
+<p>名前からバインディングオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>sourceName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ソース名。プロパティオブジェクトまたはコマンドオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>targetName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ターゲットオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hascommand">public&nbsp;fn&nbsp;HasCommand</h4>
+<p>コマンドオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct:MwmCommandStruct|Name&gt;</code></dd>
+<dd><p>コマンドオブジェクトまたはコマンド名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hasmodel">public&nbsp;fn&nbsp;HasModel</h4>
+<p>モデルオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct|Name&gt;</code></dd>
+<dd><p>モデルオブジェクトまたはモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hasproperty">public&nbsp;fn&nbsp;HasProperty</h4>
+<p>プロパティオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct:MwmPropertyStruct|Name&gt;</code></dd>
+<dd><p>プロパティオブジェクトまたはプロパティ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="raisetargetchanged">public&nbsp;fn&nbsp;RaiseTargetChanged</h4>
+<p>ターゲットオブジェクトの変更通知を発行する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>event</code></dd>
+<dd><code>&lt;Struct:MwmEventStruct&gt;</code></dd>
+<dd><p>イベントオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="refreshbinding">public&nbsp;fn&nbsp;RefreshBinding</h4>
+<p>バインディングオブジェクトを更新してターゲットを最新の状態にする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="setbinding">public&nbsp;fn&nbsp;SetBinding</h4>
+<p>バインディングオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>binding</code></dd>
+<dd><code>&lt;Struct:MwmBindingStruct&gt;</code></dd>
+<dd><p>バインディングオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="setpropertyvalue">public&nbsp;fn&nbsp;SetPropertyValue</h4>
+<p>プロパティオブジェクトのプロパティ値を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>propertyName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>プロパティ名。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>propertyValue</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+<dd><p>プロパティ値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>設定に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setviewmodelname">public&nbsp;fn&nbsp;SetViewModelName</h4>
+<p>ビューモデル名を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="isvalidbinding">private&nbsp;fn&nbsp;isValidBinding</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidcommand">private&nbsp;fn&nbsp;isValidCommand</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidcontrol">private&nbsp;fn&nbsp;isValidControl</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidevent">private&nbsp;fn&nbsp;isValidEvent</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmodel">private&nbsp;fn&nbsp;isValidModel</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmodelattribute">private&nbsp;fn&nbsp;isValidModelAttribute</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidproperty">private&nbsp;fn&nbsp;isValidProperty</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="setcommandto">private&nbsp;fn&nbsp;setCommandTo</h4>
+<p>バインディングオブジェクトのソースにコマンドオブジェクトを設定し、コマンドオブジェクトの通知元オブジェクトにバイディングの対応メソッドを購読させる。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmBindingStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>設定に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="setmodelto">private&nbsp;fn&nbsp;setModelTo</h4>
+<p>モデルのプロパティ情報を持つオブジェクトにモデルオブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>設定に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="setpropertyto">private&nbsp;fn&nbsp;setPropertyTo</h4>
+<p>バインディングオブジェクトのソースにプロパティオブジェクトを設定し、プロパティオブジェクトの通知元オブジェクトにバイディングの対応メソッドを購読させる。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmBindingStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>設定に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="statechanged">public&nbsp;StateChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+</dl>
+<h4 id="targetchanged">private&nbsp;targetChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

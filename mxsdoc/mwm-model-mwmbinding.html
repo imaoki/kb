@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.MwmBinding.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">MwmBinding.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-05-03</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#mwmbindingstruct">MwmBindingStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#converter">converter</a></li><li><a href="#source">source</a></li><li><a href="#sourcename">sourceName</a></li><li><a href="#target">target</a></li><li><a href="#targeteventname">targetEventName</a></li><li><a href="#targetpropertyname">targetPropertyName</a></li><li><a href="#getconverter">GetConverter</a></li><li><a href="#getsource">GetSource</a></li><li><a href="#getsourcename">GetSourceName</a></li><li><a href="#getsourcevalue">GetSourceValue</a></li><li><a href="#gettarget">GetTarget</a></li><li><a href="#gettargetenabled">GetTargetEnabled</a></li><li><a href="#gettargeteventname">GetTargetEventName</a></li><li><a href="#gettargetname">GetTargetName</a></li><li><a href="#gettargetpropertyname">GetTargetPropertyName</a></li><li><a href="#gettargetpropertyvalue">GetTargetPropertyValue</a></li><li><a href="#refresh">Refresh</a></li><li><a href="#setconverter">SetConverter</a></li><li><a href="#setsource">SetSource</a></li><li><a href="#setsourcename">SetSourceName</a></li><li><a href="#setsourcevalue">SetSourceValue</a></li><li><a href="#settarget">SetTarget</a></li><li><a href="#settargetenabled">SetTargetEnabled</a></li><li><a href="#settargeteventname">SetTargetEventName</a></li><li><a href="#settargetpropertyname">SetTargetPropertyName</a></li><li><a href="#settargetpropertyvalue">SetTargetPropertyValue</a></li><li><a href="#sourcechanged">SourceChanged</a></li><li><a href="#targetchanged">TargetChanged</a></li><li><a href="#isvalidcommand">isValidCommand</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidconverter">isValidConverter</a></li><li><a href="#isvalidevent">isValidEvent</a></li><li><a href="#isvalidproperty">isValidProperty</a></li><li><a href="#subscribesource">subscribeSource</a></li><li><a href="#unsubscribesource">unsubscribeSource</a></li><li><a href="#updatetargetenabled">updateTargetEnabled</a></li><li><a href="#updatetargetpropertyvalue">updateTargetPropertyValue</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="standard-standard.html">std</a></code></li>
+</ul></dd></dl>
+<h3 id="mwmbindingstruct">struct&nbsp;MwmBindingStruct</h3>
+<p>データバインディングの仕組みを提供する。</p><dl>
+<dt>補足</dt>
+<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
+<pre><code class="language-maxscript">::MwmBindingStruct sourceName target targetEventName [targetPropertyName]
+</code></pre>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Converter</code></td>
+<td>新たな<code>converter</code>値</td>
+<td><code>converter</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Source</code></td>
+<td>新たな<code>source</code>値</td>
+<td><code>source</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#SourceName</code></td>
+<td>新たな<code>sourceName</code>値</td>
+<td><code>sourceName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#SourceValueChanged</code></td>
+<td><code>undefined</code></td>
+<td>ソースの値を設定した後</td>
+</tr>
+<tr>
+<td><code>#Target</code></td>
+<td>新たな<code>target</code>値</td>
+<td><code>target</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetEnabledChanged</code></td>
+<td>ターゲットオブジェクトの<code>Enabled</code>プロパティの値</td>
+<td>ターゲットオブジェクトが使用可能かどうかを設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetEventName</code></td>
+<td>新たな<code>targetEventName</code>値</td>
+<td><code>targetEventName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetPropertyName</code></td>
+<td>新たな<code>targetPropertyName</code>値</td>
+<td><code>targetPropertyName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetPropertyValueChanged</code></td>
+<td>設定後のプロパティ値</td>
+<td>ターゲットオブジェクトのプロパティ値を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>オブザーバ</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>購読先</th>
+<th>メソッド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MwmCommandStruct.CanExecuteChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmCommandStruct.StateChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmPropertyStruct.StateChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmViewModelStruct.targetChanged</code></td>
+<td><code>TargetChanged</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ1。ソース名。プロパティオブジェクトまたはコマンドオブジェクトの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp2_">public&nbsp;_CP2_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><p>作成パラメータ2。ターゲットオブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp3_">public&nbsp;_CP3_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ3。ターゲットオブジェクトのイベント名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp4_">public&nbsp;_CP4_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ4。ターゲットオブジェクトのプロパティ名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="converter">private&nbsp;converter</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmConverterStruct&gt;</code></dd>
+<dd><p>ソース-ターゲット間の値のコンバータ。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="source">private&nbsp;source</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmCommandStruct|Struct:MwmPropertyStruct&gt;</code></dd>
+<dd><p>ソースオブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="sourcename">private&nbsp;sourceName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ソース名。プロパティオブジェクトまたはコマンドオブジェクトの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="target">private&nbsp;target</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><p>ターゲットオブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="targeteventname">private&nbsp;targetEventName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ターゲットオブジェクトのイベント名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="targetpropertyname">private&nbsp;targetPropertyName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+<dd><p>ターゲットオブジェクトのプロパティ名。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="getconverter">public&nbsp;fn&nbsp;GetConverter</h4>
+<p>ソース-ターゲット間の値のコンバータを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getsource">public&nbsp;fn&nbsp;GetSource</h4>
+<p>ソースオブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmCommandStruct|Struct:MwmPropertyStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getsourcename">public&nbsp;fn&nbsp;GetSourceName</h4>
+<p>ソース名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getsourcevalue">public&nbsp;fn&nbsp;GetSourceValue</h4>
+<p>ソースがプロパティオブジェクトの場合に値を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>コンバータが設定されている場合はターゲット用に変換した値を返す。<br />
+ソースがプロパティオブジェクト以外の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="gettarget">public&nbsp;fn&nbsp;GetTarget</h4>
+<p>ターゲットオブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RolloutClass|RolloutControl|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="gettargetenabled">public&nbsp;fn&nbsp;GetTargetEnabled</h4>
+<p>ターゲットオブジェクトが使用可能かどうかを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ターゲットオブジェクトがロールアウトコントロール以外の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="gettargeteventname">public&nbsp;fn&nbsp;GetTargetEventName</h4>
+<p>ターゲットオブジェクトのイベント名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="gettargetname">public&nbsp;fn&nbsp;GetTargetName</h4>
+<p>ターゲットオブジェクトの名前を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="gettargetpropertyname">public&nbsp;fn&nbsp;GetTargetPropertyName</h4>
+<p>ターゲットオブジェクトのプロパティ名を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="gettargetpropertyvalue">public&nbsp;fn&nbsp;GetTargetPropertyValue</h4>
+<p>ターゲットオブジェクトのプロパティ値を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>コンバータが設定されている場合はソース用に変換した値を返す。<br />
+ソースがプロパティオブジェクト以外の場合、および該当のプロパティが存在しない場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="refresh">public&nbsp;fn&nbsp;Refresh</h4>
+<p>ソースオブジェクトの状態をターゲットオブジェクトに反映する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="setconverter">public&nbsp;fn&nbsp;SetConverter</h4>
+<p>ソース-ターゲット間の値のコンバータを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setsource">public&nbsp;fn&nbsp;SetSource</h4>
+<p>ソースオブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmCommandStruct|Struct:MwmPropertyStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmCommandStruct|Struct:MwmPropertyStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setsourcename">public&nbsp;fn&nbsp;SetSourceName</h4>
+<p>ソース名を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>プロパティオブジェクトまたはコマンドオブジェクトの名前。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="setsourcevalue">public&nbsp;fn&nbsp;SetSourceValue</h4>
+<p>ソースがプロパティオブジェクトの場合に値を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ソースがプロパティオブジェクト以外の場合は何もしない。</p></dd>
+</dl>
+<h4 id="settarget">public&nbsp;fn&nbsp;SetTarget</h4>
+<p>ターゲットオブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="settargetenabled">public&nbsp;fn&nbsp;SetTargetEnabled</h4>
+<p>ターゲットオブジェクトが使用可能かどうかを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="settargeteventname">public&nbsp;fn&nbsp;SetTargetEventName</h4>
+<p>ターゲットオブジェクトのイベント名を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="settargetpropertyname">public&nbsp;fn&nbsp;SetTargetPropertyName</h4>
+<p>ターゲットオブジェクトのプロパティ名を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
+</dl>
+<h4 id="settargetpropertyvalue">public&nbsp;fn&nbsp;SetTargetPropertyValue</h4>
+<p>ターゲットオブジェクトのプロパティ値を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ソースがプロパティオブジェクト以外の場合、および入力値とプロパティ値の型が異なる場合は何もしない。</p></dd>
+</dl>
+<h4 id="sourcechanged">public&nbsp;fn&nbsp;SourceChanged</h4>
+<p>ソース更新の通知を受け取る。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>type</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>param</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="targetchanged">public&nbsp;fn&nbsp;TargetChanged</h4>
+<p>ターゲット更新の通知を受け取る。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>type</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>param</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>通常<code>param</code>引数にはイベントデータが渡される。</p></dd>
+</dl>
+<h4 id="isvalidcommand">private&nbsp;fn&nbsp;isValidCommand</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidcontrol">private&nbsp;fn&nbsp;isValidControl</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidconverter">private&nbsp;fn&nbsp;isValidConverter</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidevent">private&nbsp;fn&nbsp;isValidEvent</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidproperty">private&nbsp;fn&nbsp;isValidProperty</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="subscribesource">private&nbsp;fn&nbsp;subscribeSource</h4>
+<p>ソースオブジェクトの通知を購読する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="unsubscribesource">private&nbsp;fn&nbsp;unsubscribeSource</h4>
+<p>ソースオブジェクトの通知の購読を解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="updatetargetenabled">private&nbsp;fn&nbsp;updateTargetEnabled</h4>
+<p>ターゲットオブジェクトが使用可能かどうかの状態を更新する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="updatetargetpropertyvalue">private&nbsp;fn&nbsp;updateTargetPropertyValue</h4>
+<p>ターゲットオブジェクトのプロパティ値の状態を更新する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="statechanged">public&nbsp;StateChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

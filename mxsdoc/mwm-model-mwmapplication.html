@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
+<link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
+<title>mxsdoc.MwmApplication.ms</title>
+<script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-simplify.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/mxskb.min.js"></script>
+<script src="https://imaoki.github.io/mxskb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">mxsdoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">MwmApplication.ms</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2022-05-03</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#mwmapplicationstruct">MwmApplicationStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#applicationfile">applicationFile</a></li><li><a href="#applicationname">applicationName</a></li><li><a href="#config">config</a></li><li><a href="#modeltable">modelTable</a></li><li><a href="#startupviewname">startupViewName</a></li><li><a href="#viewmodeltable">viewModelTable</a></li><li><a href="#viewtable">viewTable</a></li><li><a href="#bindingdef">bindingDef</a></li><li><a href="#commanddef">commandDef</a></li><li><a href="#modelattributedef">modelAttributeDef</a></li><li><a href="#addmodel">AddModel</a></li><li><a href="#addview">AddView</a></li><li><a href="#addviewmodel">AddViewModel</a></li><li><a href="#getapplicationfile">GetApplicationFile</a></li><li><a href="#getapplicationname">GetApplicationName</a></li><li><a href="#getconfig">GetConfig</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getstartupviewname">GetStartupViewName</a></li><li><a href="#getview">GetView</a></li><li><a href="#getviewmodel">GetViewModel</a></li><li><a href="#hasmodel">HasModel</a></li><li><a href="#hasview">HasView</a></li><li><a href="#hasviewmodel">HasViewModel</a></li><li><a href="#readconfig">ReadConfig</a></li><li><a href="#run">Run</a></li><li><a href="#setapplicationfile">SetApplicationFile</a></li><li><a href="#setapplicationname">SetApplicationName</a></li><li><a href="#setstartupviewname">SetStartupViewName</a></li><li><a href="#shutdown">Shutdown</a></li><li><a href="#writeconfig">WriteConfig</a></li><li><a href="#bindrollouteventtoview">bindRolloutEventToView</a></li><li><a href="#initializeconfig">initializeConfig</a></li><li><a href="#isvalidconfig">isValidConfig</a></li><li><a href="#isvaliddialog">isValidDialog</a></li><li><a href="#isvalidevent">isValidEvent</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidview">isValidView</a></li><li><a href="#isvalidviewmodel">isValidViewModel</a></li><li><a href="#onrolloutclose">onRolloutClose</a></li><li><a href="#onrolloutmoved">onRolloutMoved</a></li><li><a href="#onrolloutopen">onRolloutOpen</a></li><li><a href="#onrolloutresized">onRolloutResized</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
+<main class="post main" data-pswp>
+<dl><dt>依存</dt><dd><ul>
+<li><code><a href="mwm-definitionpool.html">mwmDefinitionPool</a></code></li>
+<li><code><a href="standard-standard.html">std</a></code></li>
+</ul></dd></dl>
+<h3 id="mwmapplicationstruct">struct&nbsp;MwmApplicationStruct</h3>
+<p>アプリケーションをカプセル化するための構造体。</p><dl>
+<dt>補足</dt>
+<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
+<pre><code class="language-maxscript">::MwmApplicationStruct applicationName startupViewName applicationFile
+</code></pre>
+<ul>
+<li>設定ファイルを作りたくない場合はアプリケーションファイルを未定義にする。</li>
+</ul>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#ApplicationFile</code></td>
+<td>新たな<code>applicationFile</code>値</td>
+<td><code>applicationFile</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ApplicationName</code></td>
+<td>新たな<code>applicationName</code>値</td>
+<td><code>applicationName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ApplicationRan</code></td>
+<td>ビューオブジェクトの<code>IsDisplayed</code>メソッドの戻り値</td>
+<td>アプリケーションを開始した直後</td>
+</tr>
+<tr>
+<td><code>#ApplicationShutdown</code></td>
+<td>ビューオブジェクトの<code>IsDisplayed</code>メソッドの戻り値</td>
+<td>アプリケーションを終了した直後</td>
+</tr>
+<tr>
+<td><code>#ConfigRead</code></td>
+<td><code>undefined</code></td>
+<td>設定ファイルを読み込んだ後</td>
+</tr>
+<tr>
+<td><code>#ConfigWrote</code></td>
+<td><code>undefined</code></td>
+<td>設定ファイルを書き込んだ後</td>
+</tr>
+<tr>
+<td><code>#ModelTable</code></td>
+<td>新たな<code>modelTable</code>値</td>
+<td><code>modelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StartupViewName</code></td>
+<td>新たな<code>startupViewName</code>値</td>
+<td><code>startupViewName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ViewModelTable</code></td>
+<td>新たな<code>viewModelTable</code>値</td>
+<td><code>viewModelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ViewTable</code></td>
+<td>新たな<code>viewTable</code>値</td>
+<td><code>viewTable</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><code>RolloutClass</code>のイベントを受ける既定のコマンド</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>イベント名</th>
+<th>コマンド名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Close</code></td>
+<td><code>#RolloutClose</code></td>
+</tr>
+<tr>
+<td><code>#Moved</code></td>
+<td><code>#RolloutMoved</code></td>
+</tr>
+<tr>
+<td><code>#Open</code></td>
+<td><code>#RolloutOpen</code></td>
+</tr>
+<tr>
+<td><code>#Resized</code></td>
+<td><code>#RolloutResized</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<ul>
+<li>これらのコマンドは内部的に自動生成される。</li>
+</ul></dd>
+</dl>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ1。アプリケーションの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp2_">public&nbsp;_CP2_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>作成パラメータ2。起動時に表示されるビューの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp3_">public&nbsp;_CP3_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ3。アプリケーションファイルのパス。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="applicationfile">private&nbsp;applicationFile</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+<dd><p>アプリケーションファイルのパス。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="applicationname">private&nbsp;applicationName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>アプリケーションの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="config">private&nbsp;config</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+<dd><p>設定オブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="modeltable">private&nbsp;modelTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct&gt;&gt;</code></dd>
+<dd><p>モデルオブジェクトに名前を付けて格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="startupviewname">private&nbsp;startupViewName</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>起動時に表示されるビューの名前。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="viewmodeltable">private&nbsp;viewModelTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:MwmViewModelStruct&gt;&gt;</code></dd>
+<dd><p>ビューモデルオブジェクトを格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="viewtable">private&nbsp;viewTable</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:DialogStruct&gt;&gt;</code></dd>
+<dd><p>ビューオブジェクトを格納。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="bindingdef">private&nbsp;bindingDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StructDef:MwmBindingStruct&gt;</code></dd>
+</dl>
+<h4 id="commanddef">private&nbsp;commandDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StructDef:MwmCommandStruct&gt;</code></dd>
+</dl>
+<h4 id="modelattributedef">private&nbsp;modelAttributeDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StructDef:MwmModelAttributeStruct&gt;</code></dd>
+</dl>
+<h4 id="addmodel">public&nbsp;fn&nbsp;AddModel</h4>
+<p>モデルオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>modelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>モデル名。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct&gt;</code></dd>
+<dd><p>モデルオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="addview">public&nbsp;fn&nbsp;AddView</h4>
+<p>ビューオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:DialogStruct&gt;</code></dd>
+<dd><p>ビューオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。<br />
+ビューオブジェクトの最小限のデータ構造は以下の通り。</p>
+<ul>
+<li><p><code>::std.DialogStruct</code></p>
+<ul>
+<li><p><code>RolloutClass</code></p>
+<ul>
+<li>
+<pre><code class="language-maxscript">-- 対応するビューモデルオブジェクトの名前で初期化する
+local DataContext = #ViewModelName
+</code></pre>
+</li>
+<li>
+<pre><code class="language-maxscript">fn Initialize obj = (
+  if ::mwm.IsValidViewModel obj do (
+    DataContext = obj
+  )
+  ok
+)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></dd>
+</dl>
+<h4 id="addviewmodel">public&nbsp;fn&nbsp;AddViewModel</h4>
+<p>ビューモデルオブジェクトを追加する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Struct:MwmViewModelStruct&gt;</code></dd>
+<dd><p>ビューモデルオブジェクト。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>追加に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="getapplicationfile">public&nbsp;fn&nbsp;GetApplicationFile</h4>
+<p>アプリケーションファイルのパスを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getapplicationname">public&nbsp;fn&nbsp;GetApplicationName</h4>
+<p>アプリケーションの名前を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getconfig">public&nbsp;fn&nbsp;GetConfig</h4>
+<p>設定オブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:ConfigStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getmodel">public&nbsp;fn&nbsp;GetModel</h4>
+<p>モデルオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>modelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>モデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getstartupviewname">public&nbsp;fn&nbsp;GetStartupViewName</h4>
+<p>起動時に表示されるビューの名前を取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="getview">public&nbsp;fn&nbsp;GetView</h4>
+<p>ビューオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>viewName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ビュー名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:DialogStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="getviewmodel">public&nbsp;fn&nbsp;GetViewModel</h4>
+<p>ビューモデルオブジェクトを取得する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>viewModelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ビューモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmViewModelStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="hasmodel">public&nbsp;fn&nbsp;HasModel</h4>
+<p>モデルオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct|Name&gt;</code></dd>
+<dd><p>モデルオブジェクトまたはモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hasview">public&nbsp;fn&nbsp;HasView</h4>
+<p>ビューオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct:DialogStruct|Name&gt;</code></dd>
+<dd><p>ビューオブジェクトまたはビュー名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="hasviewmodel">public&nbsp;fn&nbsp;HasViewModel</h4>
+<p>ビューモデルオブジェクトが存在するかどうかを判定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>key</code></dd>
+<dd><code>&lt;Struct:MwmViewModelStruct|Name&gt;</code></dd>
+<dd><p>ビューモデルオブジェクトまたはビューモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h4 id="readconfig">public&nbsp;fn&nbsp;ReadConfig</h4>
+<p>設定ファイルから設定を読み込む。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>読み込みに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>アプリケーションファイルのパスが未指定の場合は何もしない。</p></dd>
+</dl>
+<h4 id="run">public&nbsp;fn&nbsp;Run</h4>
+<p>アプリケーションを開始する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="setapplicationfile">public&nbsp;fn&nbsp;SetApplicationFile</h4>
+<p>アプリケーションファイルのパスを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;String|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="setapplicationname">public&nbsp;fn&nbsp;SetApplicationName</h4>
+<p>アプリケーションの名前を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="setstartupviewname">public&nbsp;fn&nbsp;SetStartupViewName</h4>
+<p>起動時に表示されるビューの名前を設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>input</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="shutdown">public&nbsp;fn&nbsp;Shutdown</h4>
+<p>アプリケーションを終了する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="writeconfig">public&nbsp;fn&nbsp;WriteConfig</h4>
+<p>設定ファイルに設定を書き込む。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+<dd><p>書き出しに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>アプリケーションファイルのパスが未指定の場合は何もしない。</p></dd>
+</dl>
+<h4 id="bindrollouteventtoview">private&nbsp;fn&nbsp;bindRolloutEventToView</h4>
+<p><code>RolloutClass</code>のイベントをビューオブジェクトにバインドする。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="initializeconfig">private&nbsp;fn&nbsp;initializeConfig</h4>
+<p>設定オブジェクトを初期化する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>アプリケーションファイルのパスが未指定の場合は設定オブジェクトを作成しない。</p></dd>
+</dl>
+<h4 id="isvalidconfig">private&nbsp;fn&nbsp;isValidConfig</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvaliddialog">private&nbsp;fn&nbsp;isValidDialog</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidevent">private&nbsp;fn&nbsp;isValidEvent</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmodel">private&nbsp;fn&nbsp;isValidModel</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidview">private&nbsp;fn&nbsp;isValidView</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidviewmodel">private&nbsp;fn&nbsp;isValidViewModel</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="onrolloutclose">private&nbsp;fn&nbsp;onRolloutClose</h4>
+<p><code>RolloutClass</code>の<code>Close</code>イベントに対応したコマンド用関数。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>model</code></dd>
+<dd><code>&lt;Struct:DialogStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;Name&gt;&nbsp;Value:&lt;Any&gt;&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>event</code></dd>
+<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="onrolloutmoved">private&nbsp;fn&nbsp;onRolloutMoved</h4>
+<p><code>RolloutClass</code>の<code>Moved</code>イベントに対応したコマンド用関数。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>model</code></dd>
+<dd><code>&lt;Struct:DialogStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;Name&gt;&nbsp;Value:&lt;Any&gt;&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>event</code></dd>
+<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="onrolloutopen">private&nbsp;fn&nbsp;onRolloutOpen</h4>
+<p><code>RolloutClass</code>の<code>Open</code>イベントに対応したコマンド用関数。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>model</code></dd>
+<dd><code>&lt;Struct:DialogStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;Name&gt;&nbsp;Value:&lt;Any&gt;&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>event</code></dd>
+<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="onrolloutresized">private&nbsp;fn&nbsp;onRolloutResized</h4>
+<p><code>RolloutClass</code>の<code>Resized</code>イベントに対応したコマンド用関数。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>model</code></dd>
+<dd><code>&lt;Struct:DialogStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>params</code></dd>
+<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;Name&gt;&nbsp;Value:&lt;Any&gt;&gt;]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>event</code></dd>
+<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<h4 id="dump">public&nbsp;fn&nbsp;Dump</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>indent:</code></dd>
+<dd><code>&lt;String&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>out:</code></dd>
+<dd><code>&lt;FileStream|StringStream|WindowStream&gt;</code></dd>
+<dd><p>出力先。既定値は<code>listener</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>大文字と小文字を区別する。<br />
+<code>applicationFile</code>、<code>applicationName</code>、<code>startupViewName</code>のみ比較する。</p></dd>
+</dl>
+<h4 id="statechanged">public&nbsp;StateChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
