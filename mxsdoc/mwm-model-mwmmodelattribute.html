@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmModelAttribute.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-05</time></li>
+<li class="item"><time class="icon date updated">2022-05-19</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmmodelattributestruct">MwmModelAttributeStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#gettername">getterName</a></li><li><a href="#modelname">modelName</a></li><li><a href="#observablename">observableName</a></li><li><a href="#propertyname">propertyName</a></li><li><a href="#settername">setterName</a></li><li><a href="#getgettername">GetGetterName</a></li><li><a href="#getmodelname">GetModelName</a></li><li><a href="#getobservablename">GetObservableName</a></li><li><a href="#getpropertyname">GetPropertyName</a></li><li><a href="#getsettername">GetSetterName</a></li><li><a href="#setgettername">SetGetterName</a></li><li><a href="#setmodelname">SetModelName</a></li><li><a href="#setobservablename">SetObservableName</a></li><li><a href="#setpropertyname">SetPropertyName</a></li><li><a href="#setsettername">SetSetterName</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -38,52 +38,25 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="mwmmodelattributestruct">struct&nbsp;MwmModelAttributeStruct</h3>
-<p>モデルのプロパティ情報を格納する構造体。</p><dl>
+<p>モデル属性を格納する構造体。</p><dl>
 <dt>補足</dt>
-<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
-<pre><code class="language-maxscript">::MwmModelAttributeStruct modelName propertyName getterName setterName
-</code></pre>
-<dl>
-<dt>通知</dt>
+<dd><dl>
+<dt>作成パラメータ</dt>
 <dd>
-<table>
-<thead>
-<tr>
-<th>通知名</th>
-<th>通知データ</th>
-<th>タイミング</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>#GetterName</code></td>
-<td>新たな<code>getterName</code>値</td>
-<td><code>getterName</code>が設定された後</td>
-</tr>
-<tr>
-<td><code>#ModelName</code></td>
-<td>新たな<code>modelName</code>値</td>
-<td><code>modelName</code>が設定された後</td>
-</tr>
-<tr>
-<td><code>#ObservableName</code></td>
-<td>新たな<code>observableName</code>値</td>
-<td><code>observableName</code>が設定された後</td>
-</tr>
-<tr>
-<td><code>#PropertyName</code></td>
-<td>新たな<code>propertyName</code>値</td>
-<td><code>propertyName</code>が設定された後</td>
-</tr>
-<tr>
-<td><code>#SetterName</code></td>
-<td>新たな<code>setterName</code>値</td>
-<td><code>setterName</code>が設定された後</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="language-maxscript"></code></pre>
 </dd>
-</dl></dd>
+</dl>
+<p>:MwmModelAttributeStruct modelName propertyName getterName setterName</p>
+<pre><code>
+通知
+:   | 通知名          | 通知データ               | タイミング                     |
+| ----------------- | ------------------------ | ------------------------------ |
+| `#GetterName`     | 新たな`getterName`値     | `getterName`が設定された後     |
+| `#ModelName`      | 新たな`modelName`値      | `modelName`が設定された後      |
+| `#ObservableName` | 新たな`observableName`値 | `observableName`が設定された後 |
+| `#PropertyName`   | 新たな`propertyName`値   | `propertyName`が設定された後   |
+| `#SetterName`     | 新たな`setterName`値     | `setterName`が設定された後     |
+</code></pre></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

@@ -29,10 +29,10 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmProperty.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-05</time></li>
+<li class="item"><time class="icon date updated">2022-05-19</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#mwmpropertystruct">MwmPropertyStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#model">model</a></li><li><a href="#modelattribute">modelAttribute</a></li><li><a href="#propertyname">propertyName</a></li><li><a href="#propertyvalue">propertyValue</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getmodelattribute">GetModelAttribute</a></li><li><a href="#getpropertyname">GetPropertyName</a></li><li><a href="#getpropertyvalue">GetPropertyValue</a></li><li><a href="#setmodel">SetModel</a></li><li><a href="#setmodelattribute">SetModelAttribute</a></li><li><a href="#setpropertyname">SetPropertyName</a></li><li><a href="#setpropertyvalue">SetPropertyValue</a></li><li><a href="#synchronizewithmodel">SynchronizeWithModel</a></li><li><a href="#getgettermethod">getGetterMethod</a></li><li><a href="#getmodelobservable">getModelObservable</a></li><li><a href="#getsettermethod">getSetterMethod</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidobservable">isValidObservable</a></li><li><a href="#subscribemodel">subscribeModel</a></li><li><a href="#synchronizepropertyvalue">synchronizePropertyValue</a></li><li><a href="#unsubscribemodel">unsubscribeModel</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#mwmpropertystruct">MwmPropertyStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#enabledcondition">enabledCondition</a></li><li><a href="#model">model</a></li><li><a href="#modelattribute">modelAttribute</a></li><li><a href="#propertyname">propertyName</a></li><li><a href="#propertyvalue">propertyValue</a></li><li><a href="#getenabledcondition">GetEnabledCondition</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getmodelattribute">GetModelAttribute</a></li><li><a href="#getpropertyname">GetPropertyName</a></li><li><a href="#getpropertyvalue">GetPropertyValue</a></li><li><a href="#isenabled">IsEnabled</a></li><li><a href="#load">Load</a></li><li><a href="#raiseenabledchanged">RaiseEnabledChanged</a></li><li><a href="#save">Save</a></li><li><a href="#setenabledcondition">SetEnabledCondition</a></li><li><a href="#setmodel">SetModel</a></li><li><a href="#setmodelattribute">SetModelAttribute</a></li><li><a href="#setpropertyname">SetPropertyName</a></li><li><a href="#setpropertyvalue">SetPropertyValue</a></li><li><a href="#synchronizewithmodel">SynchronizeWithModel</a></li><li><a href="#generateconfigkey">generateConfigKey</a></li><li><a href="#getgettermethod">getGetterMethod</a></li><li><a href="#getmodelobservable">getModelObservable</a></li><li><a href="#getsettermethod">getSetterMethod</a></li><li><a href="#isvalidcondition">isValidCondition</a></li><li><a href="#isvalidconfig">isValidConfig</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidobservable">isValidObservable</a></li><li><a href="#subscribeenabledcondition">subscribeEnabledCondition</a></li><li><a href="#subscribemodel">subscribeModel</a></li><li><a href="#synchronizepropertyvalue">synchronizePropertyValue</a></li><li><a href="#unsubscribeenabledcondition">unsubscribeEnabledCondition</a></li><li><a href="#unsubscribemodel">unsubscribeModel</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#enabledchanged">EnabledChanged</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="standard-standard.html">std</a></code></li>
@@ -40,62 +40,31 @@
 <h3 id="mwmpropertystruct">struct&nbsp;MwmPropertyStruct</h3>
 <p>ビューモデルにプロパティを定義するための構造体。</p><dl>
 <dt>補足</dt>
-<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
-<pre><code class="language-maxscript">::MwmPropertyStruct propertyName propertyValue [modelAttribute]
-</code></pre>
+<dd><p>モデル属性が未定義の場合は設定オブジェクトに値が保存される。</p>
 <dl>
-<dt>通知</dt>
+<dt>作成パラメータ</dt>
 <dd>
-<table>
-<thead>
-<tr>
-<th>通知名</th>
-<th>通知データ</th>
-<th>タイミング</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>#Model</code></td>
-<td>新たな<code>model</code>値</td>
-<td><code>model</code>を設定した後</td>
-</tr>
-<tr>
-<td><code>#ModelAttribute</code></td>
-<td>新たな<code>modelAttribute</code>値</td>
-<td><code>modelAttribute</code>を設定した後</td>
-</tr>
-<tr>
-<td><code>#PropertyName</code></td>
-<td>新たな<code>propertyName</code>値</td>
-<td><code>propertyName</code>を設定した後</td>
-</tr>
-<tr>
-<td><code>#PropertyValue</code></td>
-<td>新たな<code>propertyValue</code>値</td>
-<td><code>propertyValue</code>を設定した後</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="language-maxscript"></code></pre>
 </dd>
-<dt>オブザーバ</dt>
-<dd>
-<table>
-<thead>
-<tr>
-<th>購読先</th>
-<th>メソッド</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>modelAttribute</code>で指定した<code>model</code>のプロパティ</td>
-<td><code>SynchronizeWithModel</code></td>
-</tr>
-</tbody>
-</table>
-</dd>
-</dl></dd>
+</dl>
+<p>:MwmPropertyStruct propertyName [propertyValue] [modelAttribute] [enabledCondition]</p>
+<pre><code>
+通知
+:   | 通知名            | 通知データ                  | タイミング                                  |
+| ------------------- | --------------------------- | ------------------------------------------- |
+| `#EnabledChanged`   | `IsEnabled`メソッドの戻り値 | `RaiseEnabledChanged`メソッドが呼ばれた直後 |
+| `#EnabledCondition` | 新たな`enabledCondition`値  | `enabledCondition`を設定した後              |
+| `#Model`            | 新たな`model`値             | `model`を設定した後                         |
+| `#ModelAttribute`   | 新たな`modelAttribute`値    | `modelAttribute`を設定した後                |
+| `#PropertyName`     | 新たな`propertyName`値      | `propertyName`を設定した後                  |
+| `#PropertyValue`    | 新たな`propertyValue`値     | `propertyValue`を設定した後                 |
+
+オブザーバ
+:   | 購読先                                     | メソッド               |
+| -------------------------------------------- | ---------------------- |
+| `enabledCondition`に設定した条件オブジェクト | `RaiseEnabledChanged`  |
+| `modelAttribute`で指定したモデルオブジェクト | `SynchronizeWithModel` |
+</code></pre></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
@@ -113,7 +82,19 @@
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
-<dd><p>作成パラメータ3。モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+<dd><p>作成パラメータ3。モデル属性。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="_cp4_">public&nbsp;_CP4_</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ4。プロパティが使用可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<h4 id="enabledcondition">private&nbsp;enabledCondition</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><p>プロパティが使用可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="model">private&nbsp;model</h4>
 <dl>
@@ -125,7 +106,7 @@
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
-<dd><p>モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+<dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="propertyname">private&nbsp;propertyName</h4>
 <dl>
@@ -139,13 +120,18 @@
 <dd><code>&lt;Any&gt;</code></dd>
 <dd><p>プロパティ値。既定値は<code>undefined</code>。</p></dd>
 </dl>
+<h4 id="getenabledcondition">public&nbsp;fn&nbsp;GetEnabledCondition</h4>
+<p>プロパティが使用可能かどうかを判定する条件オブジェクトを取得する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+</dl>
 <h4 id="getmodel">public&nbsp;fn&nbsp;GetModel</h4>
 <p>モデルオブジェクトを取得する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getmodelattribute">public&nbsp;fn&nbsp;GetModelAttribute</h4>
-<p>モデルのプロパティ情報を取得する。</p><dl>
+<p>モデル属性を取得する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
 </dl>
@@ -158,6 +144,84 @@
 <p>プロパティ値を取得する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<h4 id="isenabled">public&nbsp;fn&nbsp;IsEnabled</h4>
+<p>プロパティが使用可能かどうかを判定する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>条件式が真偽値以外を返した場合は<code>true</code>を返す。</p></dd>
+</dl>
+<h4 id="load">public&nbsp;fn&nbsp;Load</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>config</code></dd>
+<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>viewModelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ビューモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>モデル属性が未定義の場合にのみ値を読み込む。</p></dd>
+</dl>
+<h4 id="raiseenabledchanged">public&nbsp;fn&nbsp;RaiseEnabledChanged</h4>
+<p>プロパティが使用可能かどうかの変更通知を発行する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>type</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>param</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
+<h4 id="save">public&nbsp;fn&nbsp;Save</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>config</code></dd>
+<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>viewModelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+<dd><p>ビューモデル名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>モデル属性が未定義の場合にのみ値を保存する。</p></dd>
+</dl>
+<h4 id="setenabledcondition">public&nbsp;fn&nbsp;SetEnabledCondition</h4>
+<p>プロパティが使用可能かどうかを判定する条件オブジェクトを設定する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>condition</code></dd>
+<dd><code>&lt;Struct:MwmConditionStruct&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmodel">public&nbsp;fn&nbsp;SetModel</h4>
 <p>モデルオブジェクトを設定する。</p><dl>
@@ -174,7 +238,7 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmodelattribute">public&nbsp;fn&nbsp;SetModelAttribute</h4>
-<p>モデルのプロパティ情報を設定する。</p><dl>
+<p>モデル属性を設定する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
@@ -230,6 +294,16 @@
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
+<h4 id="generateconfigkey">private&nbsp;fn&nbsp;generateConfigKey</h4>
+<p>コンフィグ用のキーを生成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>viewModelName</code></dd>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Name&gt;</code></dd>
+</dl>
 <h4 id="getgettermethod">private&nbsp;fn&nbsp;getGetterMethod</h4>
 <p>モデルのプロパティ値取得メソッドを取得する。</p><dl>
 <dt>戻り値</dt>
@@ -244,6 +318,26 @@
 <p>モデルのプロパティ値設定メソッドを取得する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidcondition">private&nbsp;fn&nbsp;isValidCondition</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidconfig">private&nbsp;fn&nbsp;isValidConfig</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="isvalidmodel">private&nbsp;fn&nbsp;isValidModel</h4>
 <dl>
@@ -275,8 +369,13 @@
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
+<h4 id="subscribeenabledcondition">private&nbsp;fn&nbsp;subscribeEnabledCondition</h4>
+<p>プロパティが使用可能かどうかを判定する条件オブジェクトを購読する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
 <h4 id="subscribemodel">private&nbsp;fn&nbsp;subscribeModel</h4>
-<p>モデルのプロパティ通知を購読する。</p><dl>
+<p>モデルを購読する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -290,8 +389,13 @@
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
+<h4 id="unsubscribeenabledcondition">private&nbsp;fn&nbsp;unsubscribeEnabledCondition</h4>
+<p>プロパティが使用可能かどうかを判定する条件オブジェクトの購読を解除する。</p><dl>
+<dt>戻り値</dt>
+<dd><code>&lt;OkClass&gt;</code></dd>
+</dl>
 <h4 id="unsubscribemodel">private&nbsp;fn&nbsp;unsubscribeModel</h4>
-<p>モデルのプロパティ通知の購読を解除する。</p><dl>
+<p>モデルの購読を解除する。</p><dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -329,6 +433,11 @@
 <dl>
 <dt>補足</dt>
 <dd><p>大文字と小文字を区別する。</p></dd>
+</dl>
+<h4 id="enabledchanged">public&nbsp;EnabledChanged</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
 </dl>
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>

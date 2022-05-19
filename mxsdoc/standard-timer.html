@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Timer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-05</time></li>
+<li class="item"><time class="icon date updated">2022-05-19</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mxsdotnettimertickhandler">mxsDotNetTimerTickHandler</a></li><li><a href="#timerstruct">TimerStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#ticks">ticks</a></li><li><a href="#timer">timer</a></li><li><a href="#getinterval">GetInterval</a></li><li><a href="#getticks">GetTicks</a></li><li><a href="#gettimer">GetTimer</a></li><li><a href="#isenabled">IsEnabled</a></li><li><a href="#reset">Reset</a></li><li><a href="#restart">Restart</a></li><li><a href="#setinterval">SetInterval</a></li><li><a href="#start">Start</a></li><li><a href="#stop">Stop</a></li><li><a href="#updateticks">UpdateTicks</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -59,31 +59,19 @@
 <p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">Timer</a>のラッパー。</p><dl>
 <dt>補足</dt>
 <dd><dl>
-<dt>通知</dt>
+<dt>作成パラメータ</dt>
 <dd>
-<table>
-<thead>
-<tr>
-<th>通知名</th>
-<th>通知データ</th>
-<th>タイミング</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>#Interval</code></td>
-<td>新たな発生間隔（ミリ秒）</td>
-<td><code>Tick</code>イベントの発生間隔を設定した後</td>
-</tr>
-<tr>
-<td><code>#Ticks</code></td>
-<td>自己インスタンス</td>
-<td><code>Tick</code>イベントが発生した直後</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="language-maxscript"></code></pre>
 </dd>
-</dl></dd>
+</dl>
+<p>:TimerStruct [interval]</p>
+<pre><code>
+通知
+:   | 通知名    | 通知データ               | タイミング                           |
+| ----------- | ------------------------ | ------------------------------------ |
+| `#Interval` | 新たな発生間隔（ミリ秒） | `Tick`イベントの発生間隔を設定した後 |
+| `#Ticks`    | 自己インスタンス         | `Tick`イベントが発生した直後         |
+</code></pre></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

@@ -29,22 +29,27 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmEvent.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-05</time></li>
+<li class="item"><time class="icon date updated">2022-05-19</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#mwmeventstruct">MwmEventStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#control">control</a></li><li><a href="#eventname">eventName</a></li><li><a href="#params">params</a></li><li><a href="#getcontrol">GetControl</a></li><li><a href="#geteventname">GetEventName</a></li><li><a href="#getparams">GetParams</a></li><li><a href="#setcontrol">SetControl</a></li><li><a href="#seteventname">SetEventName</a></li><li><a href="#setparams">SetParams</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#mwmeventstruct">MwmEventStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#control">control</a></li><li><a href="#eventname">eventName</a></li><li><a href="#params">params</a></li><li><a href="#getcontrol">GetControl</a></li><li><a href="#geteventname">GetEventName</a></li><li><a href="#getparams">GetParams</a></li><li><a href="#setcontrol">SetControl</a></li><li><a href="#seteventname">SetEventName</a></li><li><a href="#setparams">SetParams</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidmenuitem">isValidMenuItem</a></li><li><a href="#isvalidrcmenu">isValidRCMenu</a></li><li><a href="#isvalidrollout">isValidRollout</a></li><li><a href="#isvalidrolloutcontrol">isValidRolloutControl</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="mwmeventstruct">struct&nbsp;MwmEventStruct</h3>
 <p>ロールアウトコントロールのイベント情報を格納する構造体。</p><dl>
 <dt>補足</dt>
-<dd><p>インスタンス作成時のパラメータ指定順は以下の通り。</p>
-<pre><code class="language-maxscript">::MwmEventStruct control eventName params
-</code></pre></dd>
+<dd><dl>
+<dt>作成パラメータ</dt>
+<dd>
+<pre><code class="language-maxscript"></code></pre>
+</dd>
+</dl>
+<p>:MwmEventStruct control eventName params</p>
+<pre><code></code></pre></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem&gt;</code></dd>
 <dd><p>作成パラメータ1。イベント発生元のロールアウトコントロール。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="_cp2_">public&nbsp;_CP2_</h4>
@@ -62,7 +67,7 @@
 <h4 id="control">private&nbsp;control</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem&gt;</code></dd>
 <dd><p>イベント発生元のロールアウトコントロール。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="eventname">private&nbsp;eventName</h4>
@@ -80,7 +85,7 @@
 <h4 id="getcontrol">public&nbsp;fn&nbsp;GetControl</h4>
 <p>イベント発生元のロールアウトコントロールを取得する。</p><dl>
 <dt>戻り値</dt>
-<dd><code>&lt;RolloutClass|RolloutControl|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="geteventname">public&nbsp;fn&nbsp;GetEventName</h4>
 <p>イベント名を取得する。</p><dl>
@@ -96,11 +101,11 @@
 <p>イベント発生元のロールアウトコントロールを設定する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
-<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;RolloutClass|RolloutControl&gt;</code></dd>
+<dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
@@ -133,6 +138,56 @@
 <dl>
 <dt>補足</dt>
 <dd><p>配列以外の値を指定した場合は配列にして格納する。</p></dd>
+</dl>
+<h4 id="isvalidcontrol">private&nbsp;fn&nbsp;isValidControl</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidmenuitem">private&nbsp;fn&nbsp;isValidMenuItem</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrcmenu">private&nbsp;fn&nbsp;isValidRCMenu</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrollout">private&nbsp;fn&nbsp;isValidRollout</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrolloutcontrol">private&nbsp;fn&nbsp;isValidRolloutControl</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>

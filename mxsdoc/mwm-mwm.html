@@ -29,10 +29,10 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Mwm.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-05</time></li>
+<li class="item"><time class="icon date updated">2022-05-19</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#mwm">mwm</a></li><li><a href="#mwmstruct">MwmStruct</a><ul><li><a href="#convertertable">converterTable</a></li><li><a href="#applicationdef">applicationDef</a></li><li><a href="#bindingdef">bindingDef</a></li><li><a href="#commanddef">commandDef</a></li><li><a href="#converterdef">converterDef</a></li><li><a href="#eventdef">eventDef</a></li><li><a href="#modelattributedef">modelAttributeDef</a></li><li><a href="#propertydef">propertyDef</a></li><li><a href="#viewmodeldef">viewModelDef</a></li><li><a href="#addconverter">AddConverter</a></li><li><a href="#createapplication">CreateApplication</a></li><li><a href="#createcommand">CreateCommand</a></li><li><a href="#createcommandbinding">CreateCommandBinding</a></li><li><a href="#createconverter">CreateConverter</a></li><li><a href="#createevent">CreateEvent</a></li><li><a href="#createmodelattribute">CreateModelAttribute</a></li><li><a href="#createproperty">CreateProperty</a></li><li><a href="#createpropertybinding">CreatePropertyBinding</a></li><li><a href="#createviewmodel">CreateViewModel</a></li><li><a href="#getconverter">GetConverter</a></li><li><a href="#getconverternames">GetConverterNames</a></li><li><a href="#install">Install</a></li><li><a href="#isvalidviewmodel">IsValidViewModel</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidconverter">isValidConverter</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#mwm">mwm</a></li><li><a href="#mwmstruct">MwmStruct</a><ul><li><a href="#convertertable">converterTable</a></li><li><a href="#applicationdef">applicationDef</a></li><li><a href="#bindingdef">bindingDef</a></li><li><a href="#commanddef">commandDef</a></li><li><a href="#conditiondef">conditionDef</a></li><li><a href="#converterdef">converterDef</a></li><li><a href="#eventdef">eventDef</a></li><li><a href="#modelattributedef">modelAttributeDef</a></li><li><a href="#propertydef">propertyDef</a></li><li><a href="#viewmodeldef">viewModelDef</a></li><li><a href="#addconverter">AddConverter</a></li><li><a href="#createapplication">CreateApplication</a></li><li><a href="#createcommand">CreateCommand</a></li><li><a href="#createcommandbinding">CreateCommandBinding</a></li><li><a href="#createcondition">CreateCondition</a></li><li><a href="#createconverter">CreateConverter</a></li><li><a href="#createevent">CreateEvent</a></li><li><a href="#createmodelattribute">CreateModelAttribute</a></li><li><a href="#createproperty">CreateProperty</a></li><li><a href="#createpropertybinding">CreatePropertyBinding</a></li><li><a href="#createviewmodel">CreateViewModel</a></li><li><a href="#getconverter">GetConverter</a></li><li><a href="#getconverternames">GetConverterNames</a></li><li><a href="#install">Install</a></li><li><a href="#isvalidviewmodel">IsValidViewModel</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidconverter">isValidConverter</a></li><li><a href="#isvalidmenuitem">isValidMenuItem</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidrcmenu">isValidRCMenu</a></li><li><a href="#isvalidrollout">isValidRollout</a></li><li><a href="#isvalidrolloutcontrol">isValidRolloutControl</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="mwm-mwm.html">mwm</a></code></li>
@@ -67,6 +67,11 @@
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;StructDef:MwmCommandStruct&gt;</code></dd>
+</dl>
+<h4 id="conditiondef">private&nbsp;conditionDef</h4>
+<dl>
+<dt>プロパティ</dt>
+<dd><code>&lt;StructDef:MwmConditionStruct&gt;</code></dd>
 </dl>
 <h4 id="converterdef">private&nbsp;converterDef</h4>
 <dl>
@@ -157,15 +162,21 @@
 </dl>
 <dl>
 <dt>パラメータ</dt>
-<dd><code>canExecuteFunction:</code></dd>
-<dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
-<dd><p>コマンドが実行可能かどうかを判定する関数。既定値は<code>undefined</code>。</p></dd>
+<dd><code>modelAttribute:</code></dd>
+<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
-<dd><code>modelAttribute:</code></dd>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
-<dd><p>モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+<dd><code>executeCondition:</code></dd>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><p>コマンドで使用するプロパティを格納した条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>canExecuteCondition:</code></dd>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><p>コマンドが実行可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -201,6 +212,17 @@
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
+</dl>
+<h4 id="createcondition">public&nbsp;fn&nbsp;CreateCondition</h4>
+<p>条件オブジェクトを作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>evaluator:</code></dd>
+<dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
+<dd><p>条件式を定義した関数。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="createconverter">public&nbsp;fn&nbsp;CreateConverter</h4>
 <p>コンバータを作成する。</p><dl>
@@ -251,7 +273,7 @@
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createmodelattribute">public&nbsp;fn&nbsp;CreateModelAttribute</h4>
-<p>モデルのプロパティ情報を作成する。</p><dl>
+<p>モデル属性を作成する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>modelName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -300,7 +322,13 @@
 <dt>パラメータ</dt>
 <dd><code>modelAttribute:</code></dd>
 <dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
-<dd><p>モデルのプロパティ情報。既定値は<code>undefined</code>。</p></dd>
+<dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>enabledCondition:</code></dd>
+<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><p>プロパティが使用可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -312,6 +340,39 @@
 </dl>
 <h4 id="createpropertybinding">public&nbsp;fn&nbsp;CreatePropertyBinding</h4>
 <p>ターゲットオブジェクトとプロパティとのバインディングを作成する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>mode</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>バインディングにおけるデータフローの方向。<br />
+有効な値は次の通り。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>名前</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td><code>TwoWay</code></td>
+<td>ソースまたはターゲットのいずれかが変更されるともう一方も更新される。</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>OneWay</code></td>
+<td>ソースが変更されるとターゲットも更新される。</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>OneWayToSource</code></td>
+<td>ターゲットが変更されるとソースも更新される。</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>propertyName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -425,7 +486,47 @@
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
+<h4 id="isvalidmenuitem">private&nbsp;fn&nbsp;isValidMenuItem</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
 <h4 id="isvalidmodelattribute">private&nbsp;fn&nbsp;isValidModelAttribute</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrcmenu">private&nbsp;fn&nbsp;isValidRCMenu</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrollout">private&nbsp;fn&nbsp;isValidRollout</h4>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>obj</code></dd>
+<dd><code>&lt;Any&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;BooleanClass&gt;</code></dd>
+</dl>
+<h4 id="isvalidrolloutcontrol">private&nbsp;fn&nbsp;isValidRolloutControl</h4>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
