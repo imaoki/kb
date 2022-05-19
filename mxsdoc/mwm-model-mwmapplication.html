@@ -44,39 +44,114 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">MwmApplicationStruct applicationName startupViewName applicationFile
+</code></pre>
 </dd>
 </dl>
-<p>:MwmApplicationStruct applicationName startupViewName applicationFile</p>
-<pre><code>
-* アプリケーションファイルの拡張子を`.mxsconfig`に変えたものが設定ファイルのパスとなる。
-
-* 設定ファイルを作りたくない場合はアプリケーションファイルを未定義にする。
-
-通知
-:   | 通知名               | 通知データ                                        | タイミング                     |
-| ---------------------- | ------------------------------------------------- | ------------------------------ |
-| `#ApplicationFile`     | 新たな`applicationFile`値                         | `applicationFile`を設定した後  |
-| `#ApplicationName`     | 新たな`applicationName`値                         | `applicationName`を設定した後  |
-| `#ApplicationRan`      | ビューオブジェクトの`IsDisplayed`メソッドの戻り値 | アプリケーションを開始した直後 |
-| `#ApplicationShutdown` | ビューオブジェクトの`IsDisplayed`メソッドの戻り値 | アプリケーションを終了した直後 |
-| `#ConfigRead`          | `undefined`                                       | 設定ファイルを読み込んだ後     |
-| `#ConfigWrote`         | `undefined`                                       | 設定ファイルを書き込んだ後     |
-| `#ModelTable`          | 新たな`modelTable`値                              | `modelTable`を設定した後       |
-| `#StartupViewName`     | 新たな`startupViewName`値                         | `startupViewName`を設定した後  |
-| `#ViewModelTable`      | 新たな`viewModelTable`値                          | `viewModelTable`を設定した後   |
-| `#ViewTable`           | 新たな`viewTable`値                               | `viewTable`を設定した後        |
-
-`RolloutClass`のイベントを受ける既定のコマンド
-:   | イベント名 | コマンド名      |
-| ---------- | ----------------- |
-| `#Close`   | `#RolloutClose`   |
-| `#Moved`   | `#RolloutMoved`   |
-| `#Open`    | `#RolloutOpen`    |
-| `#Resized` | `#RolloutResized` |
-
-* これらのコマンドは内部的に自動生成される。
-</code></pre></dd>
+<ul>
+<li><p>アプリケーションファイルの拡張子を<code>.mxsconfig</code>に変えたものが設定ファイルのパスとなる。</p>
+</li>
+<li><p>設定ファイルを作りたくない場合はアプリケーションファイルを未定義にする。</p>
+</li>
+</ul>
+<dl>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#ApplicationFile</code></td>
+<td>新たな<code>applicationFile</code>値</td>
+<td><code>applicationFile</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ApplicationName</code></td>
+<td>新たな<code>applicationName</code>値</td>
+<td><code>applicationName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ApplicationRan</code></td>
+<td>ビューオブジェクトの<code>IsDisplayed</code>メソッドの戻り値</td>
+<td>アプリケーションを開始した直後</td>
+</tr>
+<tr>
+<td><code>#ApplicationShutdown</code></td>
+<td>ビューオブジェクトの<code>IsDisplayed</code>メソッドの戻り値</td>
+<td>アプリケーションを終了した直後</td>
+</tr>
+<tr>
+<td><code>#ConfigRead</code></td>
+<td><code>undefined</code></td>
+<td>設定ファイルを読み込んだ後</td>
+</tr>
+<tr>
+<td><code>#ConfigWrote</code></td>
+<td><code>undefined</code></td>
+<td>設定ファイルを書き込んだ後</td>
+</tr>
+<tr>
+<td><code>#ModelTable</code></td>
+<td>新たな<code>modelTable</code>値</td>
+<td><code>modelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StartupViewName</code></td>
+<td>新たな<code>startupViewName</code>値</td>
+<td><code>startupViewName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ViewModelTable</code></td>
+<td>新たな<code>viewModelTable</code>値</td>
+<td><code>viewModelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ViewTable</code></td>
+<td>新たな<code>viewTable</code>値</td>
+<td><code>viewTable</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt><code>RolloutClass</code>のイベントを受ける既定のコマンド</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>イベント名</th>
+<th>コマンド名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Close</code></td>
+<td><code>#RolloutClose</code></td>
+</tr>
+<tr>
+<td><code>#Moved</code></td>
+<td><code>#RolloutMoved</code></td>
+</tr>
+<tr>
+<td><code>#Open</code></td>
+<td><code>#RolloutOpen</code></td>
+</tr>
+<tr>
+<td><code>#Resized</code></td>
+<td><code>#RolloutResized</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<ul>
+<li>これらのコマンドは内部的に自動生成される。</li>
+</ul></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

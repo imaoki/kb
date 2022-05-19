@@ -43,34 +43,107 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">MwmBindingStruct mode sourceName target targetEventName [targetPropertyName]
+</code></pre>
 </dd>
-</dl>
-<p>:MwmBindingStruct mode sourceName target targetEventName [targetPropertyName]</p>
-<pre><code>
-通知
-:   | 通知名                      | 通知データ                                      | タイミング                                           |
-| ----------------------------- | ----------------------------------------------- | ---------------------------------------------------- |
-| `#Converter`                  | 新たな`converter`値                             | `converter`を設定した後                              |
-| `#Mode`                       | 新たな`mode`値                                  | `mode`を設定した後                                   |
-| `#Source`                     | 新たな`source`値                                | `source`を設定した後                                 |
-| `#SourceName`                 | 新たな`sourceName`値                            | `sourceName`を設定した後                             |
-| `#SourceValueChanged`         | `undefined`                                     | ソースの値を設定した後                               |
-| `#Target`                     | 新たな`target`値                                | `target`を設定した後                                 |
-| `#TargetEnabledChanged`       | ターゲットオブジェクトの`Enabled`プロパティの値 | ターゲットオブジェクトが使用可能かどうかを設定した後 |
-| `#TargetEventName`            | 新たな`targetEventName`値                       | `targetEventName`を設定した後                        |
-| `#TargetPropertyName`         | 新たな`targetPropertyName`値                    | `targetPropertyName`を設定した後                     |
-| `#TargetPropertyValueChanged` | 設定後のプロパティ値                            | ターゲットオブジェクトのプロパティ値を設定した後     |
-
-オブザーバ
-:   | 購読先                             | メソッド        |
-| ------------------------------------ | --------------- |
-| `MwmCommandStruct.CanExecuteChanged` | `SourceChanged` |
-| `MwmCommandStruct.StateChanged`      | `SourceChanged` |
-| `MwmPropertyStruct.EnabledChanged`   | `SourceChanged` |
-| `MwmPropertyStruct.StateChanged`     | `SourceChanged` |
-| `MwmViewModelStruct.targetChanged`   | `TargetChanged` |
-</code></pre></dd>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#Converter</code></td>
+<td>新たな<code>converter</code>値</td>
+<td><code>converter</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Mode</code></td>
+<td>新たな<code>mode</code>値</td>
+<td><code>mode</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Source</code></td>
+<td>新たな<code>source</code>値</td>
+<td><code>source</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#SourceName</code></td>
+<td>新たな<code>sourceName</code>値</td>
+<td><code>sourceName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#SourceValueChanged</code></td>
+<td><code>undefined</code></td>
+<td>ソースの値を設定した後</td>
+</tr>
+<tr>
+<td><code>#Target</code></td>
+<td>新たな<code>target</code>値</td>
+<td><code>target</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetEnabledChanged</code></td>
+<td>ターゲットオブジェクトの<code>Enabled</code>プロパティの値</td>
+<td>ターゲットオブジェクトが使用可能かどうかを設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetEventName</code></td>
+<td>新たな<code>targetEventName</code>値</td>
+<td><code>targetEventName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetPropertyName</code></td>
+<td>新たな<code>targetPropertyName</code>値</td>
+<td><code>targetPropertyName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetPropertyValueChanged</code></td>
+<td>設定後のプロパティ値</td>
+<td>ターゲットオブジェクトのプロパティ値を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>オブザーバ</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>購読先</th>
+<th>メソッド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MwmCommandStruct.CanExecuteChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmCommandStruct.StateChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmPropertyStruct.EnabledChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmPropertyStruct.StateChanged</code></td>
+<td><code>SourceChanged</code></td>
+</tr>
+<tr>
+<td><code>MwmViewModelStruct.targetChanged</code></td>
+<td><code>TargetChanged</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

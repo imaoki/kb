@@ -43,23 +43,56 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">MwmConditionStruct evaluator
+</code></pre>
 </dd>
-</dl>
-<p>:MwmConditionStruct evaluator</p>
-<pre><code>
-通知
-:   | 通知名            | 通知データ                       | タイミング                               |
-| ------------------- | -------------------------------- | ---------------------------------------- |
-| `#ConditionChanged` | 新たなプロパティオブジェクトの値 | プロパティオブジェクトの値が変更された後 |
-| `#Evaluator`        | 新たな`evaluator`値              | `evaluator`を設定した後                  |
-| `#Properties`       | 新たな`properties`値             | `properties`を設定した後                 |
-
-オブザーバ
-:   | 購読先                                     | メソッド               |
-| -------------------------------------------- | ---------------------- |
-| `properties`に追加したプロパティオブジェクト | `PropertyValueChanged` |
-</code></pre></dd>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#ConditionChanged</code></td>
+<td>新たなプロパティオブジェクトの値</td>
+<td>プロパティオブジェクトの値が変更された後</td>
+</tr>
+<tr>
+<td><code>#Evaluator</code></td>
+<td>新たな<code>evaluator</code>値</td>
+<td><code>evaluator</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Properties</code></td>
+<td>新たな<code>properties</code>値</td>
+<td><code>properties</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>オブザーバ</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>購読先</th>
+<th>メソッド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>properties</code>に追加したプロパティオブジェクト</td>
+<td><code>PropertyValueChanged</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

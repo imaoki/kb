@@ -43,27 +43,76 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">MwmCommandStruct commandName executeFunction [modelAttribute] [executeCondition] [canExecuteCondition]
+</code></pre>
 </dd>
-</dl>
-<p>:MwmCommandStruct commandName executeFunction [modelAttribute] [executeCondition] [canExecuteCondition]</p>
-<pre><code>
-通知
-:   | 通知名               | 通知データ                    | タイミング                                     |
-| ---------------------- | ----------------------------- | ---------------------------------------------- |
-| `#CanExecuteChanged`   | `CanExecute`メソッドの戻り値  | `RaiseCanExecuteChanged`メソッドが呼ばれた直後 |
-| `#CanExecuteCondition` | 新たな`canExecuteCondition`値 | `canExecuteCondition`を設定した後              |
-| `#CommandName`         | 新たな`commandName`値         | `commandName`を設定した後                      |
-| `#ExecuteCondition`    | 新たな`executeCondition`値    | `executeCondition`を設定した後                 |
-| `#ExecuteFunction`     | 新たな`executeFunction`値     | `executeFunction`を設定した後                  |
-| `#Model`               | 新たな`model`値               | `model`を設定した後                            |
-| `#ModelAttribute`      | 新たな`modelAttribute`値      | `modelAttribute`を設定した後                   |
-
-オブザーバ
-:   | 購読先                                        | メソッド                 |
-| ----------------------------------------------- | ------------------------ |
-| `canExecuteCondition`に設定した条件オブジェクト | `RaiseCanExecuteChanged` |
-</code></pre></dd>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#CanExecuteChanged</code></td>
+<td><code>CanExecute</code>メソッドの戻り値</td>
+<td><code>RaiseCanExecuteChanged</code>メソッドが呼ばれた直後</td>
+</tr>
+<tr>
+<td><code>#CanExecuteCondition</code></td>
+<td>新たな<code>canExecuteCondition</code>値</td>
+<td><code>canExecuteCondition</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#CommandName</code></td>
+<td>新たな<code>commandName</code>値</td>
+<td><code>commandName</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ExecuteCondition</code></td>
+<td>新たな<code>executeCondition</code>値</td>
+<td><code>executeCondition</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ExecuteFunction</code></td>
+<td>新たな<code>executeFunction</code>値</td>
+<td><code>executeFunction</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Model</code></td>
+<td>新たな<code>model</code>値</td>
+<td><code>model</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ModelAttribute</code></td>
+<td>新たな<code>modelAttribute</code>値</td>
+<td><code>modelAttribute</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>オブザーバ</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>購読先</th>
+<th>メソッド</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>canExecuteCondition</code>に設定した条件オブジェクト</td>
+<td><code>RaiseCanExecuteChanged</code></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

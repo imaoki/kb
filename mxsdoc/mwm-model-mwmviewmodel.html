@@ -43,24 +43,60 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">MwmViewModelStruct viewModelName
+</code></pre>
 </dd>
-</dl>
-<p>:MwmViewModelStruct viewModelName</p>
-<pre><code>
-通知
-:   | 通知名         | 通知データ              | タイミング                                 |
-| ---------------- | ----------------------- | ------------------------------------------ |
-| `#BindingTable`  | 新たな`bindingTable`値  | `bindingTable`を設定した後                 |
-| `#CommandTable`  | 新たな`commandTable`値  | `commandTable`を設定した後                 |
-| `#ModelTable`    | 新たな`modelTable`値    | `modelTable`を設定した後                   |
-| `#PropertyTable` | 新たな`propertyTable`値 | `propertyTable`を設定した後                |
-| `#TargetChanged` | イベントオブジェクト    | ターゲットオブジェクトの変更が通知された後 |
-| `#ViewModelName` | 新たな`viewModelName`値 | `viewModelName`を設定した後                |
-
-注意点
-:   * コマンドオブジェクトとプロパティオブジェクトの名前はビューモデル内において一意でなければならない。
-</code></pre></dd>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#BindingTable</code></td>
+<td>新たな<code>bindingTable</code>値</td>
+<td><code>bindingTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#CommandTable</code></td>
+<td>新たな<code>commandTable</code>値</td>
+<td><code>commandTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#ModelTable</code></td>
+<td>新たな<code>modelTable</code>値</td>
+<td><code>modelTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PropertyTable</code></td>
+<td>新たな<code>propertyTable</code>値</td>
+<td><code>propertyTable</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#TargetChanged</code></td>
+<td>イベントオブジェクト</td>
+<td>ターゲットオブジェクトの変更が通知された後</td>
+</tr>
+<tr>
+<td><code>#ViewModelName</code></td>
+<td>新たな<code>viewModelName</code>値</td>
+<td><code>viewModelName</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>注意点</dt>
+<dd>
+<ul>
+<li>コマンドオブジェクトとプロパティオブジェクトの名前はビューモデル内において一意でなければならない。</li>
+</ul>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>

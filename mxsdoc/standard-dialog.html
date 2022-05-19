@@ -43,51 +43,184 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript"></code></pre>
+<pre><code class="language-maxscript">DialogStruct rolloutDef [initSize] [initPosition] [menuDef]
+</code></pre>
 </dd>
-</dl>
-<p>:DialogStruct rolloutDef [initSize] [initPosition] [menuDef]</p>
-<pre><code>
-通知
-:   | 通知名            | 通知データ                 | タイミング                             |
-| ------------------- | -------------------------- | -------------------------------------- |
-| `#DialogCreated`    | `undefined`                | ダイアログを作成した直後               |
-| `#DialogDestroyed`  | `undefined`                | ダイアログを破棄した直後               |
-| `#InitPosition`     | 新たな`initPosition`値     | `initPosition`を設定した後             |
-| `#InitSize`         | 新たな`initSize`値         | `initSize`を設定した後                 |
-| `#LockHeight`       | 新たな`lockHeight`値       | `lockHeight`を設定した後               |
-| `#LockWidth`        | 新たな`lockWidth`値        | `lockWidth`を設定した後                |
-| `#MenuDef`          | 新たな`menuDef`値          | `menuDef`を設定した後                  |
-| `#Modal`            | 新たな`modal`値            | `modal`を設定した後                    |
-| `#PositionChanged`  | `undefined`                | ダイアログの現在の位置を設定した直後   |
-| `#RolloutDef`       | 新たな`rolloutDef`値       | `rolloutDef`を設定した後               |
-| `#SizeChanged`      | `undefined`                | ダイアログの現在のサイズを設定した直後 |
-| `#StyleBorder`      | 新たな`styleBorder`値      | `styleBorder`を設定した後              |
-| `#StyleMaximizeBox` | 新たな`styleMaximizeBox`値 | `styleMaximizeBox`を設定した後         |
-| `#StyleMinimizeBox` | 新たな`styleMinimizeBox`値 | `styleMinimizeBox`を設定した後         |
-| `#StyleResizing`    | 新たな`styleResizing`値    | `styleResizing`を設定した後            |
-| `#StyleSunkenedge`  | 新たな`styleSunkenedge`値  | `styleSunkenedge`を設定した後          |
-| `#StyleSysmenu`     | 新たな`styleSysmenu`値     | `styleSysmenu`を設定した後             |
-| `#StyleTitleBar`    | 新たな`styleTitleBar`値    | `styleTitleBar`を設定した後            |
-| `#StyleToolWindow`  | 新たな`styleToolWindow`値  | `styleToolWindow`を設定した後          |
-
-設定ファイル
-:   | パス                                       | 値                         |
-| -------------------------------------------- | -------------------------- |
-| `[#'RolloutName.Dialog'][#InitPosition]`     | 現在の`initPosition`値     |
-| `[#'RolloutName.Dialog'][#InitSize]`         | 現在の`initSize`値         |
-| `[#'RolloutName.Dialog'][#LockHeight]`       | 現在の`lockHeight`値       |
-| `[#'RolloutName.Dialog'][#LockWidth]`        | 現在の`lockWidth`値        |
-| `[#'RolloutName.Dialog'][#Modal]`            | 現在の`modal`値            |
-| `[#'RolloutName.Dialog'][#StyleBorder]`      | 現在の`styleBorder`値      |
-| `[#'RolloutName.Dialog'][#StyleMaximizeBox]` | 現在の`styleMaximizeBox`値 |
-| `[#'RolloutName.Dialog'][#StyleMinimizeBox]` | 現在の`styleMinimizeBox`値 |
-| `[#'RolloutName.Dialog'][#StyleResizing]`    | 現在の`styleResizing`値    |
-| `[#'RolloutName.Dialog'][#StyleSunkenedge]`  | 現在の`styleSunkenedge`値  |
-| `[#'RolloutName.Dialog'][#StyleSysmenu]`     | 現在の`styleSysmenu`値     |
-| `[#'RolloutName.Dialog'][#StyleTitleBar]`    | 現在の`styleTitleBar`値    |
-| `[#'RolloutName.Dialog'][#StyleToolWindow]`  | 現在の`styleToolWindow`値  |
-</code></pre></dd>
+<dt>通知</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>通知名</th>
+<th>通知データ</th>
+<th>タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#DialogCreated</code></td>
+<td><code>undefined</code></td>
+<td>ダイアログを作成した直後</td>
+</tr>
+<tr>
+<td><code>#DialogDestroyed</code></td>
+<td><code>undefined</code></td>
+<td>ダイアログを破棄した直後</td>
+</tr>
+<tr>
+<td><code>#InitPosition</code></td>
+<td>新たな<code>initPosition</code>値</td>
+<td><code>initPosition</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#InitSize</code></td>
+<td>新たな<code>initSize</code>値</td>
+<td><code>initSize</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#LockHeight</code></td>
+<td>新たな<code>lockHeight</code>値</td>
+<td><code>lockHeight</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#LockWidth</code></td>
+<td>新たな<code>lockWidth</code>値</td>
+<td><code>lockWidth</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#MenuDef</code></td>
+<td>新たな<code>menuDef</code>値</td>
+<td><code>menuDef</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#Modal</code></td>
+<td>新たな<code>modal</code>値</td>
+<td><code>modal</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#PositionChanged</code></td>
+<td><code>undefined</code></td>
+<td>ダイアログの現在の位置を設定した直後</td>
+</tr>
+<tr>
+<td><code>#RolloutDef</code></td>
+<td>新たな<code>rolloutDef</code>値</td>
+<td><code>rolloutDef</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#SizeChanged</code></td>
+<td><code>undefined</code></td>
+<td>ダイアログの現在のサイズを設定した直後</td>
+</tr>
+<tr>
+<td><code>#StyleBorder</code></td>
+<td>新たな<code>styleBorder</code>値</td>
+<td><code>styleBorder</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleMaximizeBox</code></td>
+<td>新たな<code>styleMaximizeBox</code>値</td>
+<td><code>styleMaximizeBox</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleMinimizeBox</code></td>
+<td>新たな<code>styleMinimizeBox</code>値</td>
+<td><code>styleMinimizeBox</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleResizing</code></td>
+<td>新たな<code>styleResizing</code>値</td>
+<td><code>styleResizing</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleSunkenedge</code></td>
+<td>新たな<code>styleSunkenedge</code>値</td>
+<td><code>styleSunkenedge</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleSysmenu</code></td>
+<td>新たな<code>styleSysmenu</code>値</td>
+<td><code>styleSysmenu</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleTitleBar</code></td>
+<td>新たな<code>styleTitleBar</code>値</td>
+<td><code>styleTitleBar</code>を設定した後</td>
+</tr>
+<tr>
+<td><code>#StyleToolWindow</code></td>
+<td>新たな<code>styleToolWindow</code>値</td>
+<td><code>styleToolWindow</code>を設定した後</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>設定ファイル</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>パス</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#InitPosition]</code></td>
+<td>現在の<code>initPosition</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#InitSize]</code></td>
+<td>現在の<code>initSize</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#LockHeight]</code></td>
+<td>現在の<code>lockHeight</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#LockWidth]</code></td>
+<td>現在の<code>lockWidth</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#Modal]</code></td>
+<td>現在の<code>modal</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleBorder]</code></td>
+<td>現在の<code>styleBorder</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleMaximizeBox]</code></td>
+<td>現在の<code>styleMaximizeBox</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleMinimizeBox]</code></td>
+<td>現在の<code>styleMinimizeBox</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleResizing]</code></td>
+<td>現在の<code>styleResizing</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleSunkenedge]</code></td>
+<td>現在の<code>styleSunkenedge</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleSysmenu]</code></td>
+<td>現在の<code>styleSysmenu</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleTitleBar]</code></td>
+<td>現在の<code>styleTitleBar</code>値</td>
+</tr>
+<tr>
+<td><code>[#'RolloutName.Dialog'][#StyleToolWindow]</code></td>
+<td>現在の<code>styleToolWindow</code>値</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl></dd>
 </dl>
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
