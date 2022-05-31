@@ -42,7 +42,7 @@ kramdown:
     disable: true
 gfm_quirks: paragraph_end
 
-plugins:
+plugins_dir:
   - jekyll-paginate
   - jekyll-relative-links
   - jekyll-sitemap
