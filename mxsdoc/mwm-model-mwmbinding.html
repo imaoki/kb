@@ -29,7 +29,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmBinding.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-05-19</time></li>
+<li class="item"><time class="icon date updated">2022-06-01</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmbindingstruct">MwmBindingStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#_cp5_">_CP5_</a></li><li><a href="#converter">converter</a></li><li><a href="#mode">mode</a></li><li><a href="#source">source</a></li><li><a href="#sourcename">sourceName</a></li><li><a href="#target">target</a></li><li><a href="#targeteventname">targetEventName</a></li><li><a href="#targetpropertyname">targetPropertyName</a></li><li><a href="#getconverter">GetConverter</a></li><li><a href="#getmode">GetMode</a></li><li><a href="#getsource">GetSource</a></li><li><a href="#getsourcename">GetSourceName</a></li><li><a href="#getsourcevalue">GetSourceValue</a></li><li><a href="#gettarget">GetTarget</a></li><li><a href="#gettargetenabled">GetTargetEnabled</a></li><li><a href="#gettargeteventname">GetTargetEventName</a></li><li><a href="#gettargetname">GetTargetName</a></li><li><a href="#gettargetpropertyname">GetTargetPropertyName</a></li><li><a href="#gettargetpropertyvalue">GetTargetPropertyValue</a></li><li><a href="#refresh">Refresh</a></li><li><a href="#setconverter">SetConverter</a></li><li><a href="#setmode">SetMode</a></li><li><a href="#setsource">SetSource</a></li><li><a href="#setsourcename">SetSourceName</a></li><li><a href="#setsourcevalue">SetSourceValue</a></li><li><a href="#settarget">SetTarget</a></li><li><a href="#settargetenabled">SetTargetEnabled</a></li><li><a href="#settargeteventname">SetTargetEventName</a></li><li><a href="#settargetpropertyname">SetTargetPropertyName</a></li><li><a href="#settargetpropertyvalue">SetTargetPropertyValue</a></li><li><a href="#sourcechanged">SourceChanged</a></li><li><a href="#targetchanged">TargetChanged</a></li><li><a href="#isvalidcommand">isValidCommand</a></li><li><a href="#isvalidconverter">isValidConverter</a></li><li><a href="#isvalidevent">isValidEvent</a></li><li><a href="#isvalidmenuitem">isValidMenuItem</a></li><li><a href="#isvalidproperty">isValidProperty</a></li><li><a href="#isvalidrcmenu">isValidRCMenu</a></li><li><a href="#isvalidrollout">isValidRollout</a></li><li><a href="#isvalidrolloutcontrol">isValidRolloutControl</a></li><li><a href="#isvalidtarget">isValidTarget</a></li><li><a href="#subscribesource">subscribeSource</a></li><li><a href="#unsubscribesource">unsubscribeSource</a></li><li><a href="#updatetargetenabled">updateTargetEnabled</a></li><li><a href="#updatetargetpropertyvalue">updateTargetPropertyValue</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -43,7 +43,7 @@
 <dd><dl>
 <dt>作成パラメータ</dt>
 <dd>
-<pre><code class="language-maxscript">MwmBindingStruct mode sourceName target targetEventName [targetPropertyName]
+<pre><code class="language-maxscript">MwmBindingStruct mode sourceName target [targetPropertyName] [targetEventName]
 </code></pre>
 </dd>
 <dt>通知</dt>
@@ -166,14 +166,14 @@
 <h4 id="_cp4_">public&nbsp;_CP4_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Name&gt;</code></dd>
-<dd><p>作成パラメータ4。ターゲットオブジェクトのイベント名。既定値は<code>undefined</code>。</p></dd>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
+<dd><p>作成パラメータ4。ターゲットオブジェクトのプロパティ名。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="_cp5_">public&nbsp;_CP5_</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
-<dd><p>作成パラメータ5。ターゲットオブジェクトのプロパティ名。既定値は<code>undefined</code>。</p></dd>
+<dd><p>作成パラメータ5。ターゲットオブジェクトのイベント名。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="converter">private&nbsp;converter</h4>
 <dl>
@@ -208,7 +208,7 @@
 <h4 id="targeteventname">private&nbsp;targetEventName</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Name&gt;</code></dd>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
 <dd><p>ターゲットオブジェクトのイベント名。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="targetpropertyname">private&nbsp;targetPropertyName</h4>
@@ -421,7 +421,7 @@
 <p>ターゲットオブジェクトのイベント名を設定する。</p><dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
-<dd><code>&lt;Name&gt;</code></dd>
+<dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>

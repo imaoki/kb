@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/syntax.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/photoswipe.css">
 <link rel="stylesheet" href="https://imaoki.github.io/mxskb/assets/css/default-skin/default-skin.css">
-<title>mxsdoc.Token.ms</title>
+<title>mxsdoc.ArrayUtility.ms</title>
 <script src="https://imaoki.github.io/mxskb/assets/js/smooth-scroll.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe.min.js"></script>
 <script src="https://imaoki.github.io/mxskb/assets/js/photoswipe-ui-default.min.js"></script>
@@ -27,44 +27,37 @@
 <main class="page main">
 <article class="post wrapper">
 <header class="post header">
-<h2 class="post title"><a class="static" href="">Token.ms</a></h2>
+<h2 class="post title"><a class="static" href="">ArrayUtility.ms</a></h2>
 <ul class="hlist right post property">
 <li class="item"><time class="icon date updated">2022-06-01</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#tokenstruct">TokenStruct</a><ul><li><a href="#pattern">Pattern</a></li><li><a href="#ignorecase">IgnoreCase</a></li><li><a href="#debug">Debug</a></li><li><a href="#parse">Parse</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#arrayutilitystruct">ArrayUtilityStruct</a><ul><li><a href="#moveitems">MoveItems</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<dl><dt>依存</dt><dd><ul>
-<li><code><a href="parsercombinator-model-failure.html">FailureStruct</a></code></li>
-<li><code><a href="standard-standard.html">std</a></code></li>
-</ul></dd></dl>
-<h3 id="tokenstruct">struct&nbsp;TokenStruct</h3>
-<p>入力文字列に一致するパーサ。</p><h4 id="pattern">public&nbsp;Pattern</h4>
-<dl>
-<dt>プロパティ</dt>
-<dd><code>&lt;String&gt;</code></dd>
+<h3 id="arrayutilitystruct">struct&nbsp;ArrayUtilityStruct</h3>
+<p>配列操作の追加メソッドを提供する。</p><h4 id="moveitems">public&nbsp;fn&nbsp;MoveItems</h4>
+<p>インデックスで指定した要素を移動する。</p><dl>
+<dt>パラメータ</dt>
+<dd><code>items</code></dd>
+<dd><code>&lt;Array[&lt;Any&gt;]&gt;</code></dd>
+<dd><p>操作対象の配列。</p></dd>
 </dl>
-<h4 id="ignorecase">public&nbsp;IgnoreCase</h4>
-<dl>
-<dt>プロパティ</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-<dd><p>大文字と小文字を区別しない場合は<code>true</code>、区別する場合は<code>false</code>。既定値は<code>true</code>。</p></dd>
-</dl>
-<h4 id="debug">public&nbsp;Debug</h4>
-<dl>
-<dt>プロパティ</dt>
-<dd><code>&lt;BooleanClass&gt;</code></dd>
-</dl>
-<h4 id="parse">public&nbsp;fn&nbsp;Parse</h4>
 <dl>
 <dt>パラメータ</dt>
-<dd><code>content</code></dd>
-<dd><code>&lt;Struct:ContextStruct&gt;</code></dd>
+<dd><code>targetIndices</code></dd>
+<dd><code>&lt;Array[&lt;Integer&gt;]&gt;</code></dd>
+<dd><p>対象要素のインデックス配列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>destination</code></dd>
+<dd><code>&lt;Integer&gt;</code></dd>
+<dd><p>操作前のインデックスを基にした移動先のインデックス。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;String|Struct:<a href="parsercombinator-model-failure.html">FailureStruct</a>&gt;</code></dd>
-<dd><p>成功した場合は一致した文字列、失敗した場合は<code>FailureStruct</code>を返す。</p></dd>
+<dd><code>&lt;Array[&lt;Integer&gt;]&gt;</code></dd>
+<dd><p>操作後の対象要素のインデックス配列。</p></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
