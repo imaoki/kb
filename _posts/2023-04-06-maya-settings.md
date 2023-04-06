@@ -1,6 +1,6 @@
 ---
 title: Maya 設定
-date: 2023-04-06 10:27:00
+date: 2023-04-06 01:27:00
 updated:
 categories: note
 tags: maya
