@@ -1,13 +1,23 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated:
+updated: 2023-04-27 01:09:00
 categories: note
 tags: maya
 toc: true
 published: true
 ---
 Mayaの設定。
+
+### Preferences
+{:#preferences}
+
+| カテゴリ       | サブカテゴリ | 項目                | 値     |
+| -------------- | ------------ | ------------------- | ------ |
+| Files/Projects | AutoSave     | Enable              | `True` |
+| Files/Projects | AutoSave     | Limit autosaves     | `True` |
+| Files/Projects | AutoSave     | Number of autosaves | `100`  |
+| Files/Projects | AutoSave     | Interval (minutes)  | `5`    |
 
 ### XGenのOneDrive対策
 {:#onedrive-measures-for-xgen}
