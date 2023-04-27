@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00
-updated:
+updated: 2023-04-27 20:23:00
 categories: note
 tags: photoshop
 toc: true
@@ -13,7 +13,7 @@ Photoshopの設定。
 {:#preferences}
 
 設定ファイル
-: `Users\[ユーザー名]\AppData\Roaming\Adobe\Adobe Photoshop [バージョン]\Adobe Photoshop [バージョン] Settings\Adobe Photoshop [バージョン] Prefs.psp`
+: `Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings\Adobe Photoshop <バージョン> Prefs.psp`
 
 | カテゴリ       | 項目                                             | 値      |
 | -------------- | ------------------------------------------------ | ------- |
@@ -32,19 +32,19 @@ Photoshopの設定。
 {:#presets-actions}
 
 設定ファイル
-: `Users\[ユーザー名]\AppData\Roaming\Adobe\Adobe Photoshop [バージョン]\Presets\Actions\[設定名].atn`
+: `Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Presets\Actions\<設定名>.atn`
 
 #### ブラシ
 {:#presets-brushes}
 
 設定ファイル
-: `Users\[ユーザー名]\AppData\Roaming\Adobe\Adobe Photoshop [バージョン]\Presets\Brushes\[設定名].abr`
+: `Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Presets\Brushes\<設定名>.abr`
 
 #### キーボードショートカット
 {:#presets-keyboard-shortcuts}
 
 設定ファイル
-: `Users\[ユーザー名]\AppData\Roaming\Adobe\Adobe Photoshop [バージョン]\Presets\Keyboard Shortcuts\[設定名].kys`
+: `Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Presets\Keyboard Shortcuts\<設定名>.kys`
 
 | エリア | コマンド       | ショートカット |
 | ------ | -------------- | -------------- |
@@ -65,3 +65,23 @@ Photoshopの設定。
 
   サイズに常に筆圧を使用する
   : オン
+
+### トラブルシューティング
+{:#troubleshooting}
+
+#### 筆圧感知が効かない
+{:#troubleshooting-Pressure-sensitivity-not-working}
+
+`PSUserConfig.txt`を作成しバージョン毎の設定フォルダにコピーする。
+`C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings`
+
+`PSUserConfig.txt`の内容
+: ワコムタブレットのデジタルインク機能を使用しない場合
+
+  ```
+  # Use WinTab
+  UseSystemStylus 0
+  ```
+
+参考
+: [タブレットの設定について（Photoshop CC）](https://helpx.adobe.com/jp/photoshop/kb/cq08110039.html)
