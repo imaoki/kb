@@ -5,7 +5,7 @@ updated: 2019-09-23 20:49:00
 categories: note
 tags: blender
 toc: true
-published: true
+published: false
 ---
 3ds Maxの機能に対応する形で記載する。
 Blender 2.8用。随時更新。
