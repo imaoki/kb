@@ -70,7 +70,7 @@ Photoshopの設定。
 {:#troubleshooting}
 
 #### 筆圧感知が効かない
-{:#troubleshooting-Pressure-sensitivity-not-working}
+{:#troubleshooting-pressure-sensitivity-not-working}
 
 `PSUserConfig.txt`を作成しバージョン毎の設定フォルダにコピーする。
 `C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings`
