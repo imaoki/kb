@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-04-27 20:18:00
+updated: 2023-04-30 02:50:00
 categories: note
 tags: maya
 toc: true
@@ -18,6 +18,13 @@ Mayaの設定。
 | Files/Projects | AutoSave     | Limit autosaves     | `True` |
 | Files/Projects | AutoSave     | Number of autosaves | `100`  |
 | Files/Projects | AutoSave     | Interval (minutes)  | `5`    |
+
+### Hotkey
+{:#hotkey}
+
+| Application Command | Runtime Command  | HotKey                    |
+| ------------------- | ---------------- | ------------------------- |
+| Object Xray TGL     | dr_objectXrayTGL | `Ctrl+Alt+Shift+X`{:.key} |
 
 ### トラブルシューティング
 {:#troubleshooting}
