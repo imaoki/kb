@@ -1,7 +1,7 @@
 ---
 title: highlight.js サンプル
 date: 2019-04-14 16:57:00
-updated: 2019-08-25 20:06:00
+updated: 2023-05-01 03:36:00
 categories: sample
 tags: javascript markdown
 toc: true
@@ -432,6 +432,32 @@ struct ClassName (
     -- ...
   )
 )
+```
+
+### MEL
+{:#mel}
+
+```mel
+proc string[] getSelectedLights() {
+  string $selectedLights[];
+
+  string $select[] = `ls -sl -dag -leaf`;
+
+  for ($shape in $select) {
+    // Determine if this is a light.
+    //
+    string $class[] = getClassification(`nodeType $shape`);
+
+    if ((`size $class`) > 0 && ("light" == $class[0])) {
+      $selectedLights[`size $selectedLights`] = $shape;
+    }
+  }
+
+  // Result is an array of all lights included in
+
+  // current selection list.
+  return $selectedLights;
+}
 ```
 
 ### Python

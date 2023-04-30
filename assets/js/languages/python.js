@@ -3,7 +3,8 @@ Language: Python
 Category: common
 */
 
-function(hljs) {
+var hljslang = hljslang || {};
+hljslang.python = function(hljs) {
   var KEYWORDS = {
     keyword:
       'and elif is global as in if from raise for except finally print import pass return ' +
@@ -118,4 +119,4 @@ function(hljs) {
       }
     ]
   };
-}
+};

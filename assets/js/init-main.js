@@ -12,6 +12,8 @@ if (window.mxskb) {
         window.hljs.registerLanguage("javascript", window.hljslang.javascript);
         window.hljs.registerLanguage("markdown", window.hljslang.markdown);
         window.hljs.registerLanguage("maxscript", window.hljslang.maxscript);
+        window.hljs.registerLanguage("mel", window.hljslang.mel);
+        window.hljs.registerLanguage("python", window.hljslang.python);
         window.hljs.registerLanguage("xml", window.hljslang.xml);
       }
 
