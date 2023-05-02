@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-04-30 02:50:00
+updated: 2023-05-02 21:27:00
 categories: note
 tags: maya
 toc: true
@@ -12,19 +12,35 @@ Mayaの設定。
 ### Preferences
 {:#preferences}
 
-| カテゴリ       | サブカテゴリ | 項目                | 値     |
-| -------------- | ------------ | ------------------- | ------ |
-| Files/Projects | AutoSave     | Enable              | `True` |
-| Files/Projects | AutoSave     | Limit autosaves     | `True` |
-| Files/Projects | AutoSave     | Number of autosaves | `100`  |
-| Files/Projects | AutoSave     | Interval (minutes)  | `5`    |
+| カテゴリ | サブカテゴリ   | グループ  | 項目                         | 値                |
+| -------- | -------------- | --------- | ---------------------------- | ----------------- |
+| Settings | Files/Projects | AutoSave  | Enable                       | `true`            |
+| Settings | Files/Projects | AutoSave  | Limit autosaves              | `true`            |
+| Settings | Files/Projects | AutoSave  | Number of autosaves          | `100`             |
+| Settings | Files/Projects | AutoSave  | Interval (minutes)           | `5`               |
+| Settings | Selection      | Modifiers | Selection Child Highlighting | `Never highlight` |
 
 ### Hotkey
 {:#hotkey}
 
 | Application Command | Runtime Command  | HotKey                    |
 | ------------------- | ---------------- | ------------------------- |
+| Hierarchy           | SelectHierarchy  | `Ctrl+Alt+Shift+S`{:.key} |
 | Object Xray TGL     | dr_objectXrayTGL | `Ctrl+Alt+Shift+X`{:.key} |
+
+### Tool Settings
+{:#tool-settings}
+
+#### Tumble Tool
+{:#tool-settings-tumble-tool}
+
+View > Camera Tools > Tumble Tool 🗖
+
+Tumble about
+: `Tumble pivot`
+
+Automatically set tumble pivot
+: `true`
 
 ### トラブルシューティング
 {:#troubleshooting}
