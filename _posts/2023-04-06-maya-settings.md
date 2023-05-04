@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-05-02 21:27:00
+updated: 2023-05-04 12:26:00
 categories: note
 tags: maya
 toc: true
@@ -45,14 +45,14 @@ Automatically set tumble pivot
 ### トラブルシューティング
 {:#troubleshooting}
 
-#### ペンタブのサイドスイッチに割り当てた右クリックが効かない
-{:#troubleshooting-rightclick-assigned-to-sideswitch-of-pentab-not-working}
+#### 英語版で起動
+{:#troubleshooting-launch-in-english}
 
-ワコムタブレットのプロパティ > マッピングタブ > デジタルインク機能を使う
-: オフ
+システムのプロパティ>詳細設定から以下のシステム環境変数を追加する。
 
-参考
-: [Wacomデバイスを使用したMayaおよび3ds Maxでは、マウスの右ボタンとホットキーが機能しない](https://www.autodesk.co.jp/support/technical/article/caas/sfdcarticles/sfdcarticles/JPN/In-Maya-2020-and-2022-the-right-mouse-button-on-a-Ciniq-tablet-is-not-working.html)
+| 変数名             | 値      |
+| ------------------ | ------- |
+| `MAYA_UI_LANGUAGE` | `en_US` |
 
 #### XGenのOneDrive対策
 {:#troubleshooting-onedrive-measures-for-xgen}
@@ -83,3 +83,12 @@ XGen設定ファイルのパスを設定
   : ```
     UserRepo /xgen
     ```
+
+#### ペンタブのサイドスイッチに割り当てた右クリックが効かない
+{:#troubleshooting-rightclick-assigned-to-sideswitch-of-pentab-not-working}
+
+ワコムタブレットのプロパティ > マッピングタブ > デジタルインク機能を使う
+: オフ
+
+参考
+: [Wacomデバイスを使用したMayaおよび3ds Maxでは、マウスの右ボタンとホットキーが機能しない](https://www.autodesk.co.jp/support/technical/article/caas/sfdcarticles/sfdcarticles/JPN/In-Maya-2020-and-2022-the-right-mouse-button-on-a-Ciniq-tablet-is-not-working.html)
