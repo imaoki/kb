@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-05-04 12:26:00
+updated: 2023-05-05 02:11:00
 categories: note
 tags: maya
 toc: true
@@ -23,10 +23,12 @@ Mayaの設定。
 ### Hotkey
 {:#hotkey}
 
-| Application Command | Runtime Command  | HotKey                    |
-| ------------------- | ---------------- | ------------------------- |
-| Hierarchy           | SelectHierarchy  | `Ctrl+Alt+Shift+S`{:.key} |
-| Object Xray TGL     | dr_objectXrayTGL | `Ctrl+Alt+Shift+X`{:.key} |
+| Application Command           | Runtime Command       | HotKey                    |
+| ----------------------------- | --------------------- | ------------------------- |
+| Hierarchy                     | SelectHierarchy       | `Ctrl+Alt+Shift+S`{:.key} |
+| Match All Transforms (Option) | MatchTransformOptions | `Alt+A`{:.key}           |
+| Cycle Display Mode            | CycleDisplayMode      |                           |
+| Object Xray TGL               | dr_objectXrayTGL      | `Ctrl+Alt+Shift+X`{:.key} |
 
 ### Tool Settings
 {:#tool-settings}
