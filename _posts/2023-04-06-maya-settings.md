@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-05-05 02:11:00
+updated: 2023-07-04 10:45:00
 categories: note
 tags: maya
 toc: true
@@ -16,7 +16,7 @@ Mayaの設定。
 | -------- | -------------- | --------- | ---------------------------- | ----------------- |
 | Settings | Files/Projects | AutoSave  | Enable                       | `true`            |
 | Settings | Files/Projects | AutoSave  | Limit autosaves              | `true`            |
-| Settings | Files/Projects | AutoSave  | Number of autosaves          | `100`             |
+| Settings | Files/Projects | AutoSave  | Number of autosaves          | `20`              |
 | Settings | Files/Projects | AutoSave  | Interval (minutes)           | `5`               |
 | Settings | Selection      | Modifiers | Selection Child Highlighting | `Never highlight` |
 
@@ -25,10 +25,15 @@ Mayaの設定。
 
 | Application Command           | Runtime Command       | HotKey                    |
 | ----------------------------- | --------------------- | ------------------------- |
-| Hierarchy                     | SelectHierarchy       | `Ctrl+Alt+Shift+S`{:.key} |
-| Match All Transforms (Option) | MatchTransformOptions | `Alt+A`{:.key}           |
 | Cycle Display Mode            | CycleDisplayMode      |                           |
+| Hierarchy                     | SelectHierarchy       | `Ctrl+Alt+Shift+S`{:.key} |
+| Match All Transforms (Option) | MatchTransformOptions | `Alt+A`{:.key}            |
 | Object Xray TGL               | dr_objectXrayTGL      | `Ctrl+Alt+Shift+X`{:.key} |
+| Pick Color Activate           | PickColorActivate     |                           |
+| Pick Color Deactivate         | PickColorDeactivate   |                           |
+| Play Range End                | GoToMaxFrame          | `Alt+L`{:.key}            |
+| Play Range Start              | GoToMinFrame          | `Alt+K`{:.key}            |
+| Playback Toggle               | PlaybackToggle        | `/`{:.key}                |
 
 ### Tool Settings
 {:#tool-settings}
