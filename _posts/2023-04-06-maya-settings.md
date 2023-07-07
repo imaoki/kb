@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-07-04 10:45:00
+updated: 2023-07-07 11:40:00
 categories: note
 tags: maya
 toc: true
@@ -88,8 +88,11 @@ XGen設定ファイルのパスを設定
 
   `config.txt`の中身
   : ```
-    UserRepo /xgen
+    UserRepo ${XGEN_CONFIG_PATH}/xgen
     ```
+
+  これらの設定を行った上でMayaを起動すると以下の場所に`xgen`ディレクトリが作成される。
+  `C:\Users\<ユーザー名>\OneDrive\Data\Maya\2024\xgen`
 
 #### ペンタブのサイドスイッチに割り当てた右クリックが効かない
 {:#troubleshooting-rightclick-assigned-to-sideswitch-of-pentab-not-working}
