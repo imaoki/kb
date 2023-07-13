@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-07-11 18:27:00
+updated: 2023-07-13 15:22:00
 categories: note
 tags: maya
 toc: true
@@ -15,6 +15,7 @@ Mayaの設定。
 | カテゴリ  | サブカテゴリ   | グループ               | 項目                                          | 値                |
 | --------- | -------------- | ---------------------- | --------------------------------------------- | ----------------- |
 | Interface | UI Elements    | Panel Configurations   | When opening: Restore saved layouts from file | `false`           |
+| Display   |                | Performance            | Render swatches(startup)                      | `false`           |
 | Display   | Manipulators   | Manipulator Visibility | Hide Manipulator: When Ctrl is held           | `true`            |
 | Display   | Manipulators   | Manipulator Visibility | Hide Manipulator: When Shift is held          | `true`            |
 | Display   | Manipulators   | Manipulator Visibility | Hide Manipulator: When Ctrl+Shift is held     | `true`            |
