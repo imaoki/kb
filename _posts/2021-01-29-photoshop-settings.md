@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00
-updated: 2023-04-27 20:23:00
+updated: 2023-07-15 02:39:00
 categories: note
 tags: photoshop
 toc: true
@@ -85,3 +85,12 @@ Photoshopの設定。
 
 参考
 : [タブレットの設定について（Photoshop CC）](https://helpx.adobe.com/jp/photoshop/kb/cq08110039.html)
+
+#### 起動エラー
+{:#troubleshooting-startup-error}
+
+起動すると「回復不能な問題が発生しました。」や、「Photoshopを初期化できません。」といったエラーが発生して起動できない場合がある。
+
+01. 起動直後に`Ctrl+Alt+Shift`{:.key}を押して設定ファイルを削除する。
+
+02. それでも起動しない場合は再インストールする。
