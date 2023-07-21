@@ -1,7 +1,7 @@
 ---
 title: MAXScript スタイルガイド
 date: 2017-04-17 23:28:00
-updated: 2022-04-09 21:50:00
+updated: 2023-07-21 17:57:00
 categories: document
 tags: maxscript
 toc: true
@@ -862,7 +862,7 @@ assert (actual == expected)
 #### ドキュメンテーションコメント
 {:#style-documentation-comment}
 
-詳細は[Syntax of documentation comments](https://github.com/imaoki/DocGenerator#syntax-of-documentation-comments)を参照。
+詳細は[ドキュメントコメントの構文](https://github.com/imaoki/DocGenerator#ドキュメントコメントの構文)を参照。
 
 ##### 文体
 {:#style-documentation-comment-style}
