@@ -1,5 +1,5 @@
 title: kb
-description: MAXScript Knowledge Base
+description: :-)
 
 author:
   name: imaoki
@@ -42,7 +42,7 @@ kramdown:
     disable: true
 gfm_quirks: paragraph_end
 
-plugins_dir:
+plugins:
   - jekyll-paginate
   - jekyll-relative-links
   - jekyll-sitemap
