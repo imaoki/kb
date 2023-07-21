@@ -1,7 +1,7 @@
 ---
 title: Markdown チートシート
 date: 2016-01-05 21:32:00
-updated: 2019-04-20 00:44:00
+updated: 2023-07-21 19:28:00
 categories: document
 tags: markdown
 toc: true
@@ -802,10 +802,10 @@ published: true
 
 記述
 : ```markdown
-  `Ctrl`{:.key}+`A`{:.key}で全て選択し、`Ctrl`{:.key}+`C`{:.key}でコピーする。
+  `Ctrl+A`{:.key}で全て選択し、`Ctrl+C`{:.key}でコピーする。
   ```
 
 表示
 : <span/>{:.invisible}
 
-  `Ctrl`{:.key}+`A`{:.key}で全て選択し、`Ctrl`{:.key}+`C`{:.key}でコピーする。
+  `Ctrl+A`{:.key}で全て選択し、`Ctrl+C`{:.key}でコピーする。
