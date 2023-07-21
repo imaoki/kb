@@ -94,7 +94,7 @@ Orbit & Pan
       | Identifier          | `view3d.select` |
       | Deselect On Nothing | `True`          |
 
-      [![Keymap-Select](/mxskb/assets/images/content/2019-08-08-blender-note/image001t.png)](/mxskb/assets/images/content/2019-08-08-blender-note/image001.png)
+      [![Keymap-Select](/kb/assets/images/content/2019-08-08-blender-note/image001t.png)](/kb/assets/images/content/2019-08-08-blender-note/image001.png)
 
   オートキー切り替え
   : 標準の指定方法が分からないのでトグル用のアドオンを作成して割り当てた。

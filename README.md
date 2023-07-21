@@ -1,1 +1,1 @@
-[mxskb](https://imaoki.github.io/mxskb/)
+[https://imaoki.github.io/kb/](https://imaoki.github.io/kb/)

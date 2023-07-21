@@ -1,6 +1,6 @@
 /*! © 2020 imaoki | MIT License | https://github.com/imaoki */
-if (window.mxskb) {
-  mxskb.addInitHandler(function() {
+if (window.kb) {
+  kb.addInitHandler(function() {
     // タイトル用の見出し
     var firstH1 = document.querySelector(".post.main > h1:first-of-type");
     var firstH2 = document.querySelector(".post.main > h2:first-of-type");
@@ -48,7 +48,7 @@ if (window.mxskb) {
     }
 
     // 空の段落を削除
-    mxskb.each(document.querySelectorAll("p"), function(el, i) {
+    kb.each(document.querySelectorAll("p"), function(el, i) {
       if(el.childNodes.length === 0) {
         el.parentNode.removeChild(el);
       }

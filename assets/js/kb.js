@@ -7,26 +7,26 @@
   } else if (typeof exports === "object") {
     module.exports = factory(root);
   } else {
-    root.mxskb = factory(root);
+    root.kb = factory(root);
   }
 })(typeof global !== "undefined" ? global : typeof window !== "undefined" ? window : this, (function (window) {
   "use strict";
 
-  var mxskb = {};
+  var kb = {};
 
-  mxskb.initHandlers = [];
+  kb.initHandlers = [];
 
-  mxskb.addInitHandler = function(handler) {
-    mxskb.initHandlers.push(handler);
+  kb.addInitHandler = function(handler) {
+    kb.initHandlers.push(handler);
   };
 
-  mxskb.each = function(elements, fn) {
+  kb.each = function(elements, fn) {
     Array.prototype.forEach.call(elements, fn);
   };
 
   // icon.html用
   // テキストをコピーする
-  mxskb.execCopy = function(textValue) {
+  kb.execCopy = function(textValue) {
     var dummy = document.createElement("div");
     dummy.style.position = "fixed";
     dummy.style.right = "200%";
@@ -49,13 +49,13 @@
 
   var init = function() {
     document.addEventListener("DOMContentLoaded", function() {
-      for (var i = 0, len = mxskb.initHandlers.length; i < len; ++i) {
-        mxskb.initHandlers[i]();
+      for (var i = 0, len = kb.initHandlers.length; i < len; ++i) {
+        kb.initHandlers[i]();
       }
     });
   };
 
   init();
 
-  return mxskb;
+  return kb;
 }));

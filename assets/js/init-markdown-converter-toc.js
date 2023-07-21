@@ -1,8 +1,8 @@
 /*! © 2020 imaoki | MIT License | https://github.com/imaoki */
-if (window.mxskb) {
-  mxskb.addInitHandler(function() {
+if (window.kb) {
+  kb.addInitHandler(function() {
     // TOCで生成される見出しのアンカーを削除
-    mxskb.each(document.querySelectorAll("a[for*='toc-anchor']"), function(el, i) {
+    kb.each(document.querySelectorAll("a[for*='toc-anchor']"), function(el, i) {
       el.nextElementSibling.id = el.id;
       el.parentNode.removeChild(el);
     });

@@ -1,13 +1,13 @@
-title: mxskb
+title: kb
 description: MAXScript Knowledge Base
 
 author:
   name: imaoki
 
-copyright: 2016
+copyright: 2023
 
 url: https://imaoki.github.io
-baseurl: "/mxskb"
+baseurl: "/kb"
 
 excerpt_length: 40
 paginate_path: "/page:num"
