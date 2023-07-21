@@ -9,7 +9,7 @@ copyright: 2023
 url: https://imaoki.github.io
 baseurl: "/kb"
 
-excerpt_length: 40
+excerpt_length: 30
 paginate_path: "/page:num"
 paginate: 10
 permalink: /:year-:month-:day-:title
