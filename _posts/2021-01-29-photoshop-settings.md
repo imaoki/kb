@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00
-updated: 2023-07-15 02:39:00
+updated: 2023-07-28 10:46:00
 categories: note
 tags: photoshop
 toc: true
@@ -73,7 +73,11 @@ Photoshopの設定。
 {:#troubleshooting-pressure-sensitivity-not-working}
 
 `PSUserConfig.txt`を作成しバージョン毎の設定フォルダにコピーする。
-`C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings`
+
+設定フォルダ
+: ```
+  C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings
+  ```
 
 `PSUserConfig.txt`の内容
 : ワコムタブレットのデジタルインク機能を使用しない場合
@@ -89,8 +93,14 @@ Photoshopの設定。
 #### 起動エラー
 {:#troubleshooting-startup-error}
 
-起動すると「回復不能な問題が発生しました。」や、「Photoshopを初期化できません。」といったエラーが発生して起動できない場合がある。
+起動すると「回復不能な問題が発生しました。」や、「Photoshopを初期化できません。」といったエラーが発生して起動できない場合は以下を試す。
 
-01. 起動直後に`Ctrl+Alt+Shift`{:.key}を押して設定ファイルを削除する。
+* 起動直後に`Ctrl+Alt+Shift`{:.key}を押して設定ファイルを削除する。
 
-02. それでも起動しない場合は再インストールする。
+* 設定ファイルの削除で効果が無ければ設定フォルダを削除する。
+
+  ```
+  C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings
+  ```
+
+* それでも起動しない場合は再インストールする。
