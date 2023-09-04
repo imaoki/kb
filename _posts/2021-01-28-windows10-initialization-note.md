@@ -1,7 +1,7 @@
 ---
 title: Windows 10 初期設定ノート
 date: 2021-01-28 03:46:00
-updated: 2022-03-17 23:53:00
+updated: 2023-09-04 12:08:00
 categories: note
 tags: windows
 toc: true
@@ -13,15 +13,15 @@ SSDの最適化やOneDriveの移動等は行わず、なるべく標準を維持
 ### チェックリスト
 {:#checklist}
 
-01. Chromeインストール
+01. ブラウザインストール
 
 02. Windows Update
 
 03. 回復ドライブ作成
 
-04. ビデオカードのドライバー更新
+04. ビデオカードのドライバ更新
 
-05. ペンタブレットのドライバーインストール
+05. ペンタブレットのドライバインストール
 
 06. [基本設定](#basic-settings)
 
@@ -76,6 +76,13 @@ gpedit.msc > ユーザーの構成 > 管理用テンプレート > Windows コ�
 
 設定 > Microsoft IME（検索から） > 全般 > 以前のバージョンの Microsoft IME を使う
 :   オン
+
+Microsoft IME の詳細設定 > 全般 > 編集操作 > キー設定
+:   CapsLockキーによる入力モードの切り替えを無効化するため以下を削除
+
+    * 英数 > 入力/変換済み文字なし
+
+    * 英数 > 入力文字のみ
 
 #### スリープモード設定
 {:#sleep-mode-settings}
@@ -225,11 +232,19 @@ gpedit.msc > ユーザーの構成 > 管理用テンプレート > Windows コ�
 
 * [FileZilla](https://filezilla-project.org/)
 
+* [ImageGlass](https://imageglass.org/)
+
 * [MassiGra](http://www.massigra.net/)
+
+* [Microsoft PowerToys](https://learn.microsoft.com/ja-jp/windows/powertoys/)
 
 * [StrokesPlus.net](https://www.strokesplus.net/)
 
 * [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader.html)
+
+* [ウィンドウ位置記憶プログラム](https://www.vector.co.jp/soft/win95/util/se401241.html)
+
+* [マグネットウィンドウ(MagnetWindow)](https://www.vector.co.jp/soft/winnt/util/se175660.html)
 
 #### 開発環境
 {:#install-development-environment}
@@ -275,7 +290,7 @@ gpedit.msc > ユーザーの構成 > 管理用テンプレート > Windows コ�
 参考
 :   * [ブルースクリーン: VIDEO\_TDR\_FAILUREの原因と解決方法 – Windows10](https://itojisan.xyz/trouble/21921/)
 
-    * [ついに解決「ディスプレイ ドライバー nvlddmkm が応答を停止しましたが、正常に回復しました。」問題 \| ひとりアウトプット広場](https://www.losspass.com/article/nvlddmkm.html)
+    * [ついに解決「ディスプレイ ドライバ nvlddmkm が応答を停止しましたが、正常に回復しました。」問題 \| ひとりアウトプット広場](https://www.losspass.com/article/nvlddmkm.html)
 
 設定 > システム > 電源とスリープ > 電源の追加設定
 :   電源ボタンの動作を選択する > シャットダウン設定 > 高速スタートアップを有効にする
