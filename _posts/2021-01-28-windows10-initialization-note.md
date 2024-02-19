@@ -1,7 +1,7 @@
 ---
 title: Windows 10 初期設定ノート
 date: 2021-01-28 03:46:00
-updated: 2023-09-13 09:31:00
+updated: 2024-02-19 18:14:00
 categories: note
 tags: windows
 toc: true
@@ -83,6 +83,11 @@ Microsoft IME の詳細設定 > 全般 > 編集操作 > キー設定
     * 英数 > 入力/変換済み文字なし
 
     * 英数 > 入力文字のみ
+
+Microsoft IME の詳細設定 > 全般 > 編集操作 > 直接入力モードを使用しない
+:   オフ
+
+    アプリ切替で入力モードが勝手に切り替わるのを防ぐ
 
 #### スリープモード設定
 {:#sleep-mode-settings}
