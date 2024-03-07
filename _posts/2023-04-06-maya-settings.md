@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2023-12-14 10:51:00
+updated: 2024-03-07 15:53:00
 categories: note
 tags: maya
 toc: true
@@ -40,6 +40,9 @@ Mayaの設定。
 | Play Range End                | GoToMaxFrame          | `Alt+L`{:.key}            |
 | Play Range Start              | GoToMinFrame          | `Alt+K`{:.key}            |
 | Playback Toggle               | PlaybackToggle        | `/`{:.key}                |
+| Increase Manip Size           | dR_increaseManipSize  |                           |
+| Increase Manip Size           | dR_increaseManipSize  |                           |
+| Decrease Manip Size           | dR_decreaseManipSize  |                           |
 
 ### Tool Settings
 {:#tool-settings}
