@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
+<style>
+* { background-clip: padding-box; box-sizing: border-box; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; margin: 0; padding: 0; text-decoration: inherit; word-wrap: inherit; }
+*:focus { outline: transparent none 0; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+pre { overflow: auto; }
+
+sub, sup { bottom: inherit; font-size: inherit; line-height: inherit; position: static; top: inherit; vertical-align: inherit; }
+
+* { font-family: sans-serif; }
+
+code, kbd, pre, samp { font-family: monospace, monospace; }
+code *, kbd *, pre *, samp * { font-family: monospace, monospace; }
+
+html { font-size: 16px; height: 100%; }
+
+body { font-size: 1rem; font-style: normal; font-weight: normal; letter-spacing: 0.125em; line-height: 1.7; text-decoration: none; word-wrap: break-word; }
+
+h1, h2, h3, h4, h5, h6 { font-size: 1rem; }
+
+::-webkit-resizer, ::-webkit-scrollbar-button, ::-webkit-scrollbar-corner { display: none; height: 0; width: 0; }
+
+::-webkit-scrollbar { background-color: transparent; height: 0.5rem; width: 0.5rem; }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece { background-color: transparent; }
+
+::-webkit-scrollbar-thumb { border-radius: 0; background-color: #2f2f2f; }
+::-webkit-scrollbar-thumb:hover { background-color: #3f3f3f; }
+
+html { background-color: #1f1f1f; color: #bfbfbf; }
+
+a:link { color: #5f7fdf; }
+a:visited { color: #9f7f9f; }
+a:hover { color: #9fdfff; }
+a:active { color: #7f9fbf; }
+a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfbf; }
+
+/* .page.wrapper { display: flex; flex-flow: column nowrap; height: 100%; margin: 0 auto; max-width: 50rem; padding: 0 1rem; }
+.page.header { align-items: center; display: flex; flex-flow: row wrap; flex: 0 0 auto; justify-content: flex-start; margin: 1rem 0 0 0; }
+.page.title { align-items: center; display: flex; flex-flow: row nowrap; margin: 0 0.5rem 0 0; }
+.page.nav .static { padding: 0 0.5rem; color: #404040; }
+.page.nav .static:hover { color: #7f7f7f; }
+.page.nav .static.active { color: #7f9fbf; }
+.page.main { flex: 1 0 auto; margin: 1rem 0 0 0; }
+.page.footer { display: flex; flex-flow: row nowrap; flex: 0 0 auto; justify-content: center; margin: 1rem 0; } */
+
+/* .index.title { padding: 0.25rem 0.5rem; }
+.index.title.home { display: none; }
+.index.title.category { display: none; }
+.index.title.tag::before { content: ""; font-family: "icon"; line-height: 1; vertical-align: baseline; } */
+
+/* .panel.wrapper { border-radius: 0; display: flex; flex-flow: column nowrap; flex: 0 0 auto; padding: 1rem; background-color: #272727; }
+.panel.wrapper:hover { background-color: #373737; }
+.panel.header { align-items: center; display: flex; flex-flow: row wrap; flex: 0 0 auto; justify-content: space-between; }
+.panel.title { font-weight: bold; }
+.panel.property { color: #474747; font-size: 0.8rem; }
+.panel.excerpt { border-color: #474747; border-radius: 0 0 0 0; border-style: solid; border-width: 1px 0 0 0; color: #474747; font-size: 0.8rem; padding: 0 0; } */
+
+/* .pagination span { color: #7f7f7f; }
+.pagination.newer::before { content: ""; font-family: "icon"; margin: 0 0.25rem 0 0; vertical-align: baseline; }
+.pagination.older::after { content: ""; font-family: "icon"; margin: 0 0 0 0.25rem; vertical-align: baseline; }
+.pagination.number { margin: 0 0.5rem; } */
+
+/* .post.wrapper { background-color: #272727; border-radius: 0; display: flex; flex-flow: column nowrap; padding: 1rem; }
+.post.header { align-items: center; border-bottom: 1px solid #474747; display: flex; flex-flow: row wrap; flex: 0 0 auto; justify-content: space-between; margin: 0 0 1rem 0; }
+.post.title { font-weight: bold; }
+.post.property { font-size: 0.8rem; }
+.post.main { flex: 1 0 auto; } */
+
+/* .error { align-items: center; display: flex; flex-flow: column nowrap; height: 100%; justify-content: center; }
+.error > * { flex: 0 0 auto; font-size: 2rem; } */
+
+/* .card.wrapper { display: flex; flex-flow: column nowrap; }
+.card.main { align-items: flex-start; display: flex; flex-flow: row wrap; flex: 0 0 auto; justify-content: flex-start; margin: -1rem; padding: 0.5rem; }
+.card.main ul:not([class*="debug"]) { align-items: stretch; background-color: #272727; border-radius: 0; display: flex; flex-flow: column nowrap; flex: 1 1 auto; margin: 0.5rem; padding: 1rem; }
+.card.main ul:not([class*="debug"]) li { align-items: center; display: flex; flex-flow: row wrap; flex: 1 0 auto; justify-content: space-between; margin: 0.5rem 0 0 0; }
+.card.main ul:not([class*="debug"]) li:first-child { align-self: center; margin: 0; }
+.card.main ul:not([class*="debug"]) li:first-child span { font-size: 2rem; } */
+
+/* .hlist { align-items: center; display: flex; flex-flow: row wrap; margin: 0 -0.5rem; padding: 0.25rem; }
+.hlist.right { justify-content: flex-end; }
+.hlist.around { justify-content: space-around; }
+.hlist.between { justify-content: space-between; }
+.hlist > .item { display: block; flex: 0 1 auto; margin: 0.25rem; }
+.hlist > .item.stretch { flex: 1 1 auto; } */
+
+/* .vlist { align-items: stretch; display: flex; flex-flow: column wrap; }
+.vlist > .item { display: block; flex: 1 1 auto; margin: 0 0 0.5rem 0; }
+.vlist > .item:last-child { margin: 0; } */
+
+/* .icon::before { font-family: "icon"; line-height: 1; vertical-align: baseline; }
+.icon.copy::before { content: ""; }
+.icon.date.published::before { content: ""; }
+.icon.date.updated::before { content: ""; }
+.icon.feed::before { content: ""; }
+.icon.github::before { content: ""; }
+.icon.tag::before { content: ""; } */
+
+/* .button { border-radius: 1rem; display: block; padding: 0.25rem 0.5rem; }
+.button.copy { background-color: #272727; color: #7f7f7f; }
+.button.copy:hover { background-color: #373737; }
+.button.copy:hover { color: #bfbfbf; }
+.button.github { background-color: transparent; color: whitesmoke; }
+.button.github:hover { background-color: whitesmoke; color: #4078c0; }
+.button.feed { background-color: transparent; color: #f26522; }
+.button.feed:hover { background-color: #f26522; color: white; } */
+
+/* .debug { color: #7f7f7f; font-size: 0.5rem; }
+.debug > .item { margin: 0; }
+.debug .template::before { content: "template:"; margin: 0 0.25rem 0 0; } */
+
+.invisible { display: none; }
+
+.table-of-contents > ul { border-radius: 1.5rem; display: flex; flex-flow: column nowrap; height: 3rem; overflow: hidden; padding: 0.5rem; position: fixed; right: 0.5rem; top: 0.5rem; visibility: visible; width: 3rem; z-index: 3; background-color: rgba(0, 0, 0, 0.25); }
+.table-of-contents > ul:hover { background-color: rgba(0, 0, 0, 0.75); }
+.table-of-contents > ul::before { color: #7f7f7f; }
+.table-of-contents > ul:hover::before { color: #bfbfbf; }
+.table-of-contents > ul:hover { border-radius: 0; bottom: 0.5rem; height: auto; max-width: 70%; overflow: scroll; width: auto; }
+.table-of-contents > ul:hover li { visibility: visible; }
+.table-of-contents > ul::before { content: ""; display: block; flex: 0 0 auto; font-family: "icon"; font-size: 1.5rem; line-height: 1; padding: 0.25rem; position: fixed; right: calc(1rem - 2px); top: 1rem; }
+.table-of-contents > ul::-webkit-scrollbar { height: 0.125rem; width: 0.125rem; }
+.table-of-contents > ul ul { display: flex; flex-flow: column nowrap; }
+.table-of-contents > ul li { display: block; flex: 0 0 auto; visibility: hidden; }
+.table-of-contents > ul li > a { border-radius: 0; display: block; line-height: 1.375; overflow: hidden; padding: 0.25rem; text-overflow: ellipsis; white-space: nowrap; background-color: rgba(255, 255, 255, 0); color: #7f7f7f; }
+.table-of-contents > ul li > a:hover { background-color: rgba(255, 255, 255, 0.125); }
+.table-of-contents > ul li > a:hover { color: #bfbfbf; }
+.table-of-contents > ul > li:first-child { margin: 2.5rem 0 0 0; }
+.table-of-contents > ul > li > a { padding-left: 0.25rem; }
+.table-of-contents > ul > li > ul > li > a { padding-left: 1.25rem; }
+.table-of-contents > ul > li > ul > li > ul > li > a { padding-left: 2.25rem; }
+.table-of-contents > ul > li > ul > li > ul > li > ul > li > a { padding-left: 3.25rem; }
+.table-of-contents > ul > li > ul > li > ul > li > ul > li > ul > li > a { padding-left: 4.25rem; }
+.table-of-contents > ul > li > ul > li > ul > li > ul > li > ul > li > ul > li > a { padding-left: 5.25rem; }
+
+.content > * { margin-bottom: 1rem; margin-top: 1rem; }
+.content > *:first-child { margin-bottom: 1rem; margin-top: 1rem; }
+.content > *:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content > *:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content > *:last-child { margin-top: 1rem; }
+.content > *:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content > h1, .content h2, .content h3, .content h4, .content h5, .content h6 { margin-bottom: 1rem; margin-top: 5rem; }
+.content > h1:first-child, .content h2:first-child, .content h3:first-child, .content h4:first-child, .content h5:first-child, .content h6:first-child { margin-bottom: 1rem; }
+.content > h1:first-child[class*="invisible"] + *, .content h2:first-child[class*="invisible"] + *, .content h3:first-child[class*="invisible"] + *, .content h4:first-child[class*="invisible"] + *, .content h5:first-child[class*="invisible"] + *, .content h6:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content > h1:first-child[class*="invisible"] + *:last-child, .content h2:first-child[class*="invisible"] + *:last-child, .content h3:first-child[class*="invisible"] + *:last-child, .content h4:first-child[class*="invisible"] + *:last-child, .content h5:first-child[class*="invisible"] + *:last-child, .content h6:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content > h1:last-child, .content h2:last-child, .content h3:last-child, .content h4:last-child, .content h5:last-child, .content h6:last-child { margin-top: 5rem; }
+.content > h1:last-child:first-child, .content h2:last-child:first-child, .content h3:last-child:first-child, .content h4:last-child:first-child, .content h5:last-child:first-child, .content h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content > h1 + h1, .content > h1 + h2, .content > h1 + h3, .content > h1 + h4, .content > h1 + h5, .content > h1 + h6, .content h2 + h1, .content h2 + h2, .content h2 + h3, .content h2 + h4, .content h2 + h5, .content h2 + h6, .content h3 + h1, .content h3 + h2, .content h3 + h3, .content h3 + h4, .content h3 + h5, .content h3 + h6, .content h4 + h1, .content h4 + h2, .content h4 + h3, .content h4 + h4, .content h4 + h5, .content h4 + h6, .content h5 + h1, .content h5 + h2, .content h5 + h3, .content h5 + h4, .content h5 + h5, .content h5 + h6, .content h6 + h1, .content h6 + h2, .content h6 + h3, .content h6 + h4, .content h6 + h5, .content h6 + h6 { margin-top: 1rem !important; }
+.content a:not([href^="http://localhost:4000"]):not([href^="/kb"]):not([href^="#"]):not([href^="20"])::before { color: #7f7f7f; content: "\e908"; font-family: "icon"; }
+.content a.image { display: inline-block; position: relative; }
+.content a.image::before { bottom: 0; content: ""; display: inline-block; left: 0; line-height: 1; opacity: 0; position: absolute; right: 0; top: 0; z-index: 1; }
+.content a.image:hover::before { background-color: rgba(159, 223, 255, 0.25); opacity: 1; }
+.content a.image:hover > img { opacity: 0.5; }
+.content blockquote { background-color: rgba(255, 255, 255, 0.0625); border-left: 0.25rem solid rgba(255, 255, 255, 0.125); border-radius: 0; padding: 1rem; }
+.content blockquote > * { margin-bottom: 1rem; margin-top: 1rem; }
+.content blockquote > *:first-child { margin-bottom: 1rem; margin-top: 1rem; }
+.content blockquote > *:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content blockquote > *:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content blockquote > *:last-child { margin-top: 1rem; }
+.content blockquote > *:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content blockquote > h1, .content blockquote h2, .content blockquote h3, .content blockquote h4, .content blockquote h5, .content blockquote h6 { margin-bottom: 1rem; margin-top: 5rem; }
+.content blockquote > h1:first-child, .content blockquote h2:first-child, .content blockquote h3:first-child, .content blockquote h4:first-child, .content blockquote h5:first-child, .content blockquote h6:first-child { margin-bottom: 1rem; }
+.content blockquote > h1:first-child[class*="invisible"] + *, .content blockquote h2:first-child[class*="invisible"] + *, .content blockquote h3:first-child[class*="invisible"] + *, .content blockquote h4:first-child[class*="invisible"] + *, .content blockquote h5:first-child[class*="invisible"] + *, .content blockquote h6:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content blockquote > h1:first-child[class*="invisible"] + *:last-child, .content blockquote h2:first-child[class*="invisible"] + *:last-child, .content blockquote h3:first-child[class*="invisible"] + *:last-child, .content blockquote h4:first-child[class*="invisible"] + *:last-child, .content blockquote h5:first-child[class*="invisible"] + *:last-child, .content blockquote h6:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content blockquote > h1:last-child, .content blockquote h2:last-child, .content blockquote h3:last-child, .content blockquote h4:last-child, .content blockquote h5:last-child, .content blockquote h6:last-child { margin-top: 5rem; }
+.content blockquote > h1:last-child:first-child, .content blockquote h2:last-child:first-child, .content blockquote h3:last-child:first-child, .content blockquote h4:last-child:first-child, .content blockquote h5:last-child:first-child, .content blockquote h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content blockquote > h1 + h1, .content blockquote > h1 + h2, .content blockquote > h1 + h3, .content blockquote > h1 + h4, .content blockquote > h1 + h5, .content blockquote > h1 + h6, .content blockquote h2 + h1, .content blockquote h2 + h2, .content blockquote h2 + h3, .content blockquote h2 + h4, .content blockquote h2 + h5, .content blockquote h2 + h6, .content blockquote h3 + h1, .content blockquote h3 + h2, .content blockquote h3 + h3, .content blockquote h3 + h4, .content blockquote h3 + h5, .content blockquote h3 + h6, .content blockquote h4 + h1, .content blockquote h4 + h2, .content blockquote h4 + h3, .content blockquote h4 + h4, .content blockquote h4 + h5, .content blockquote h4 + h6, .content blockquote h5 + h1, .content blockquote h5 + h2, .content blockquote h5 + h3, .content blockquote h5 + h4, .content blockquote h5 + h5, .content blockquote h5 + h6, .content blockquote h6 + h1, .content blockquote h6 + h2, .content blockquote h6 + h3, .content blockquote h6 + h4, .content blockquote h6 + h5, .content blockquote h6 + h6 { margin-top: 1rem !important; }
+.content code, .content kbd { background-color: #1c1f21; color: #c0c5ce; font-size: 1rem; letter-spacing: 0; line-height: 1.7; padding: 0.25rem 0.5rem; }
+.content dt { border-left: 0.5rem solid rgba(255, 255, 255, 0.125); padding: 0 0.5rem; }
+.content dd + dt { margin: 1rem 0 0 0; }
+.content dd { padding: 0.5rem 1rem; }
+.content dd > * { margin-bottom: 1rem; margin-top: 1rem; }
+.content dd > *:first-child { margin-bottom: 1rem; margin-top: 1rem; }
+.content dd > *:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content dd > *:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content dd > *:last-child { margin-top: 1rem; }
+.content dd > *:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content dd > h1, .content dd h2, .content dd h3, .content dd h4, .content dd h5, .content dd h6 { margin-bottom: 1rem; margin-top: 5rem; }
+.content dd > h1:first-child, .content dd h2:first-child, .content dd h3:first-child, .content dd h4:first-child, .content dd h5:first-child, .content dd h6:first-child { margin-bottom: 1rem; }
+.content dd > h1:first-child[class*="invisible"] + *, .content dd h2:first-child[class*="invisible"] + *, .content dd h3:first-child[class*="invisible"] + *, .content dd h4:first-child[class*="invisible"] + *, .content dd h5:first-child[class*="invisible"] + *, .content dd h6:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content dd > h1:first-child[class*="invisible"] + *:last-child, .content dd h2:first-child[class*="invisible"] + *:last-child, .content dd h3:first-child[class*="invisible"] + *:last-child, .content dd h4:first-child[class*="invisible"] + *:last-child, .content dd h5:first-child[class*="invisible"] + *:last-child, .content dd h6:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content dd > h1:last-child, .content dd h2:last-child, .content dd h3:last-child, .content dd h4:last-child, .content dd h5:last-child, .content dd h6:last-child { margin-top: 5rem; }
+.content dd > h1:last-child:first-child, .content dd h2:last-child:first-child, .content dd h3:last-child:first-child, .content dd h4:last-child:first-child, .content dd h5:last-child:first-child, .content dd h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content dd > h1 + h1, .content dd > h1 + h2, .content dd > h1 + h3, .content dd > h1 + h4, .content dd > h1 + h5, .content dd > h1 + h6, .content dd h2 + h1, .content dd h2 + h2, .content dd h2 + h3, .content dd h2 + h4, .content dd h2 + h5, .content dd h2 + h6, .content dd h3 + h1, .content dd h3 + h2, .content dd h3 + h3, .content dd h3 + h4, .content dd h3 + h5, .content dd h3 + h6, .content dd h4 + h1, .content dd h4 + h2, .content dd h4 + h3, .content dd h4 + h4, .content dd h4 + h5, .content dd h4 + h6, .content dd h5 + h1, .content dd h5 + h2, .content dd h5 + h3, .content dd h5 + h4, .content dd h5 + h5, .content dd h5 + h6, .content dd h6 + h1, .content dd h6 + h2, .content dd h6 + h3, .content dd h6 + h4, .content dd h6 + h5, .content dd h6 + h6 { margin-top: 1rem !important; }
+.content dd + dd { border-top: 1px solid rgba(255, 255, 255, 0.125); margin: 0.5rem 0 0 0; padding: 1rem 1rem 0.5rem 1rem; }
+.content em { font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; font-style: italic; }
+.content strong { font-weight: bold; }
+.content del { text-decoration: line-through; }
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 { color: #bfbfbf; font-weight: bold; overflow: hidden; }
+.content h1 { background-color: #3b3b3b; border-radius: 0; margin-left: 0; margin-right: 0; padding: 1.875rem 1rem; position: relative; text-align: left; }
+.content h1::before { color: rgba(0, 0, 0, 0.125); content: "#"; font-family: sans-serif; font-size: 1.75rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content h2 { background-color: #3b3b3b; border-radius: 0; margin-left: 0; margin-right: 0; padding: 1.875rem 1rem; position: relative; text-align: left; }
+.content h2::before { color: rgba(0, 0, 0, 0.125); content: "#"; font-family: sans-serif; font-size: 1.75rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content h3 { background-color: #3b3b3b; border-radius: 0; margin-left: 0; margin-right: 0; padding: 1.875rem 1rem; position: relative; text-align: left; }
+.content h3::before { color: rgba(0, 0, 0, 0.125); content: "#"; font-family: sans-serif; font-size: 1.75rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content h4 { background-color: #373737; border-radius: 0; margin-left: 0; margin-right: 0; padding: 1.5rem 1rem; position: relative; text-align: left; }
+.content h4::before { color: rgba(0, 0, 0, 0.125); content: "##"; font-family: sans-serif; font-size: 1.5rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content h5 { background-color: #333333; border-radius: 0; margin-left: 0; margin-right: 0; padding: 1.125rem 1rem; position: relative; text-align: left; }
+.content h5::before { color: rgba(0, 0, 0, 0.125); content: "###"; font-family: sans-serif; font-size: 1.25rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content h6 { background-color: #2f2f2f; border-radius: 0; margin-left: 0; margin-right: 0; padding: 0.75rem 1rem; position: relative; text-align: left; }
+.content h6::before { color: rgba(0, 0, 0, 0.125); content: "####"; font-family: sans-serif; font-size: 1rem; line-height: 1; margin: 0 0.5rem 0 -0.5rem; vertical-align: baseline; }
+.content hr { border-color: rgba(255, 255, 255, 0.125); border-style: solid; border-width: 1px 0 0 0; display: block; }
+.content iframe { border: 0 none transparent; }
+.content img { display: inline-block; margin: 0.25rem; vertical-align: middle; }
+.content ol, .content ul { padding: 0 0 0 1rem; }
+.content ul > li::before { content: "\2022"; }
+.content ol { counter-reset: order; }
+.content ol > li::before { content: counter(order) "."; counter-increment: order; }
+.content li { display: block; position: relative; }
+.content li > * { margin-bottom: 1rem; margin-top: 1rem; }
+.content li > *:first-child { margin-bottom: 1rem; margin-top: 1rem; }
+.content li > *:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content li > *:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content li > *:last-child { margin-top: 1rem; }
+.content li > *:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content li > h1, .content li h2, .content li h3, .content li h4, .content li h5, .content li h6 { margin-bottom: 1rem; margin-top: 5rem; }
+.content li > h1:first-child, .content li h2:first-child, .content li h3:first-child, .content li h4:first-child, .content li h5:first-child, .content li h6:first-child { margin-bottom: 1rem; }
+.content li > h1:first-child[class*="invisible"] + *, .content li h2:first-child[class*="invisible"] + *, .content li h3:first-child[class*="invisible"] + *, .content li h4:first-child[class*="invisible"] + *, .content li h5:first-child[class*="invisible"] + *, .content li h6:first-child[class*="invisible"] + * { margin-bottom: 1rem; }
+.content li > h1:first-child[class*="invisible"] + *:last-child, .content li h2:first-child[class*="invisible"] + *:last-child, .content li h3:first-child[class*="invisible"] + *:last-child, .content li h4:first-child[class*="invisible"] + *:last-child, .content li h5:first-child[class*="invisible"] + *:last-child, .content li h6:first-child[class*="invisible"] + *:last-child { margin-bottom: 0; margin-top: 0; }
+.content li > h1:last-child, .content li h2:last-child, .content li h3:last-child, .content li h4:last-child, .content li h5:last-child, .content li h6:last-child { margin-top: 5rem; }
+.content li > h1:last-child:first-child, .content li h2:last-child:first-child, .content li h3:last-child:first-child, .content li h4:last-child:first-child, .content li h5:last-child:first-child, .content li h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
+.content li > h1 + h1, .content li > h1 + h2, .content li > h1 + h3, .content li > h1 + h4, .content li > h1 + h5, .content li > h1 + h6, .content li h2 + h1, .content li h2 + h2, .content li h2 + h3, .content li h2 + h4, .content li h2 + h5, .content li h2 + h6, .content li h3 + h1, .content li h3 + h2, .content li h3 + h3, .content li h3 + h4, .content li h3 + h5, .content li h3 + h6, .content li h4 + h1, .content li h4 + h2, .content li h4 + h3, .content li h4 + h4, .content li h4 + h5, .content li h4 + h6, .content li h5 + h1, .content li h5 + h2, .content li h5 + h3, .content li h5 + h4, .content li h5 + h5, .content li h5 + h6, .content li h6 + h1, .content li h6 + h2, .content li h6 + h3, .content li h6 + h4, .content li h6 + h5, .content li h6 + h6 { margin-top: 1rem !important; }
+.content li::before { color: rgba(255, 255, 255, 0.25); display: block; font-family: monospace, monospace; left: -3rem; position: absolute; text-align: right; width: 2.75rem; }
+.content li + li { margin: 1rem 0 0 0; }
+.content pre { background-color: #1c1f21; border-radius: 0; font-size: 1rem; letter-spacing: 0; line-height: 1.375; max-height: 60rem; padding: 0.0rem 0.5rem 0.5rem 0.5rem; position: relative; }
+.content pre::before { background-color: rgba(255, 255, 255, 0.03125); color: #404040; content: attr(data-type); display: block; left: -0.5rem; margin: 0 -0.5rem 0.5rem -0.5rem; padding: 0.25rem; position: sticky; right: 0; text-align: right; top: 0; }
+.content pre > code { background-color: #1c1f21; line-height: 1.375; padding: 0; }
+.content table { display: block; }
+.content th, .content td { padding: 0 0.5rem; vertical-align: baseline; }
+.content th { background-color: rgba(255, 255, 255, 0.0625); border-bottom: 1px solid rgba(255, 255, 255, 0.125); }
+.content th + th { border-left: 1px solid rgba(255, 255, 255, 0.125); }
+.content th:first-child { border-radius: 0 0 0 0; }
+.content th:last-child { border-radius: 0 0 0 0; }
+.content td + td { border-left: 1px solid rgba(255, 255, 255, 0.125); }
+.content tr + tr > td { border-top: 1px solid rgba(255, 255, 255, 0.125); }
+.content .footnote, .content .reversefootnote { line-height: 1; margin: 0 0 0 0.25rem; vertical-align: super; }
+.content .footnote { font-size: 0.75rem; }
+.content .note::before { color: #afbfff; content: ""; font-family: "icon"; margin: 0 0.25rem 0 0; }
+.content .warning::before { color: #dfbf37; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
+.content .key, .content kbd { background-color: rgba(255, 255, 255, 0.0625); border-radius: 0.25rem; box-shadow: 0 0.125rem 0 0.125rem rgba(0, 0, 0, 0.25); margin: 0 0.25rem; }
+
+/* レイアウト */
+.content {
+  background-color: #272727;
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+/* ページタイトル */
+.content h1:first-child {
+  background-color: transparent;
+  font-size: 1rem;
+  margin-top: 0;
+  padding: 0;
+}
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+  font-size: 1rem;
+  margin-top:1rem;
+  padding: 0;
+}
+.content h1:first-child::before,
+.content h1:first-child > a::before,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3)::before,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) > a::before {
+  display: none;
+}
+.content h1:first-child > a:link,
+.content h1:first-child > a:visited,
+.content h1:first-child > a:hover,
+.content h1:first-child > a:active,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) > a:link,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) > a:visited,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) > a:hover,
+.content h1:first-child + dl:nth-child(2) + h2:nth-child(3) > a:active {
+  color: #bfbfbf;
+}
+
+/* 更新日 */
+.content h1:first-child + dl:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+}
+.content h1:first-child + dl:nth-child(2) > dt::after {
+  content: ":";
+}
+.content h1:first-child + dl:nth-child(2) > dd {
+  margin-left: 0.5rem;
+  padding: 0;
+}
+.content h1:first-child + dl:nth-child(2) > dt {
+  border-left: none;
+  padding: 0;
+}
+
+/* toc修正 */
+.table-of-contents ul {
+  padding: 0;
+}
+.table-of-contents > ul {
+  padding: 0.5rem;
+}
+.table-of-contents ul > li::before {
+  content: none;
+}
+.table-of-contents li > *:first-child,
+.table-of-contents li > *:last-child,
+.table-of-contents li + li,
+.table-of-contents ul li > a,
+.table-of-contents ul li > ul {
+  margin: 0;
+}
+
+/* code修正 */
+.content code > code {
+  display: inline-block;
+  line-height: inherit;
+  padding: 0;
+}
+
+/* 追加の文字修飾要素 */
+.content u { font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif; font-style: italic; }
+.content s { text-decoration: line-through; }
+</style>
+<!-- <title>markdown-converter-sample</title> -->
+<title></title>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<body class="content">
+<h1 data-line="0" class="code-line" dir="auto" id="markdown-converter-sample" tabindex="-1"><a href="" data-href="">Markdown Converter Sample</a></h1>
+<dl data-line="2" class="code-line" dir="auto">
+<dt data-line="2" class="code-line" dir="auto">update</dt>
+<dd data-line="3" class="code-line" dir="auto">2024-05-15</dd>
+</dl>
+<h2 data-line="5" class="code-line" dir="auto" id="スタイルシート色見本" tabindex="-1"><a href="" data-href="">スタイルシート色見本</a></h2>
+<p data-line="7" class="code-line" dir="auto"><a href="https://github.github.com/gfm/" data-href="https://github.github.com/gfm/">GFM</a>、<a href="https://kramdown.gettalong.org/" data-href="https://kramdown.gettalong.org/">kramdown</a>、<a href="https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended" data-href="https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended">Markdown Extended</a>に対応した記述のサンプル。</p>
+<p data-line="9" class="code-line" dir="auto"></p><div class="table-of-contents"><ul><li><a href="#block-elements">ブロック要素</a><ul><li><a href="#paragraphs-and-line-breaks">段落と改行</a></li><li><a href="#headers">見出し</a></li></ul></li><li><a href="#header-level3">見出し3</a><ul><li><a href="#header-level4">見出し4</a><ul><li><a href="#header-level5">見出し5</a><ul><li><a href="#header-level6">見出し6</a></li></ul></li></ul></li><li><a href="#blockquotes">引用</a></li><li><a href="#lists">リスト</a></li><li><a href="#definition-lists">定義リスト</a></li><li><a href="#indented-code-blocks">整形済みテキスト</a></li><li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li><li><a href="#tables">テーブル</a></li><li><a href="#horizontal-rules">水平線</a></li></ul></li><li><a href="#inline-elements">インライン要素</a><ul><li><a href="#links">リンク</a></li><li><a href="#footnotes">脚注</a></li><li><a href="#emphasis">文字修飾</a></li><li><a href="#images">画像</a></li></ul></li><li><a href="#kramdown">kramdown</a><ul><li><a href="#kramdown-block-attributes">ブロック要素の属性</a><ul><li><a href="#kramdown-block-attributes-note">ノート</a></li><li><a href="#block-attributes-warning">警告</a></li></ul></li><li><a href="#kramdown-inline-attributes">インライン要素の属性</a><ul><li><a href="#kramdown-inline-attributes-syntax-highlihgt">シンタックスハイライト</a></li><li><a href="#kramdown-inline-attributes-key-button">キーボタン</a></li></ul></li></ul></li><li><a href="#markdown-extended">Markdown Extended</a><ul><li><a href="#markdown-extended-admonition">Admonition</a></li><li><a href="#markdown-extended-markdown-it-attrs">markdown-it-attrs</a></li><li><a href="#markdown-extended-markdown-it-kbd">markdown-it-kbd</a></li></ul></li></ul></div><p></p>
+<h3 id="block-elements" data-line="11" class="code-line" dir="auto" tabindex="-1">ブロック要素</h3>
+<h4 id="paragraphs-and-line-breaks" data-line="13" class="code-line" dir="auto" tabindex="-1">段落と改行</h4>
+<dl data-line="15" class="code-line" dir="auto">
+<dt data-line="15" class="code-line" dir="auto">記述</dt>
+<dd data-line="16" class="code-line" dir="auto">
+<pre><code data-line="16" class="code-line language-markdown" dir="auto"><div>Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
+</div></code></pre>
+</dd>
+<dt data-line="28" class="code-line" dir="auto">結果</dt>
+<dd data-line="28" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="29" dir="auto"><span></span></p>
+<p data-line="31" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。<br>
+cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</p>
+<p data-line="34" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+abcdefghijklmnopqrstuvwxyz<br>
+0123456789</p>
+<p data-line="38" class="code-line" dir="auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6</p>
+</dd>
+</dl>
+<h4 id="headers" data-line="41" class="code-line" dir="auto" tabindex="-1">見出し</h4>
+<dl data-line="43" class="code-line" dir="auto">
+<dt data-line="43" class="code-line" dir="auto">記述</dt>
+<dd data-line="44" class="code-line" dir="auto">
+<pre><code data-line="44" class="code-line language-markdown" dir="auto"><div><span class="hljs-section"># 見出し1</span>
+
+<span class="hljs-section">## 見出し2</span>
+
+<span class="hljs-section">### 見出し3</span>
+
+<span class="hljs-section">#### 見出し4</span>
+
+<span class="hljs-section">##### 見出し5</span>
+
+<span class="hljs-section">###### 見出し6</span>
+</div></code></pre>
+</dd>
+<dt data-line="58" class="code-line" dir="auto">結果</dt>
+<dd data-line="58" class="code-line" dir="auto">
+<h1 id="header-level1" data-line="59" class="code-line" dir="auto" tabindex="-1">見出し1</h1>
+<p data-line="61" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h2 id="header-level2" data-line="63" class="code-line" dir="auto" tabindex="-1">見出し2</h2>
+<p data-line="65" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h3 id="header-level3" data-line="67" class="code-line" dir="auto" tabindex="-1">見出し3</h3>
+<p data-line="69" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h4 id="header-level4" data-line="71" class="code-line" dir="auto" tabindex="-1">見出し4</h4>
+<p data-line="73" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h5 id="header-level5" data-line="75" class="code-line" dir="auto" tabindex="-1">見出し5</h5>
+<p data-line="77" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h6 id="header-level6" data-line="79" class="code-line" dir="auto" tabindex="-1">見出し6</h6>
+<p data-line="81" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<h2 data-line="83" class="code-line" dir="auto" id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua-ut-enim-ad-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-aliquip-ex-ea-commodo-consequat-duis-aute-irure-dolor-in-reprehenderit-in-voluptate-velit-esse-cillum-dolore-eu-fugiat-nulla-pariatur-excepteur-sint-occaecat-cupidatat-non-proident-sunt-in-culpa-qui-officia-deserunt-mollit-anim-id-est-laborum" tabindex="-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+<p data-line="85" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+</dd>
+</dl>
+<h4 id="blockquotes" data-line="87" class="code-line" dir="auto" tabindex="-1">引用</h4>
+<dl data-line="89" class="code-line" dir="auto">
+<dt data-line="89" class="code-line" dir="auto">記述</dt>
+<dd data-line="90" class="code-line" dir="auto">
+<pre><code data-line="90" class="code-line language-markdown" dir="auto"><div><span class="hljs-quote">&gt; Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。</span>
+<span class="hljs-quote">&gt;
+&gt; &gt; cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</span>
+<span class="hljs-quote">&gt; &gt;</span>
+<span class="hljs-quote">&gt; &gt; ```</span>
+<span class="hljs-quote">&gt; &gt; 0123456789</span>
+<span class="hljs-quote">&gt; &gt; ```</span>
+<span class="hljs-quote">&gt;
+&gt; * ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+<span class="hljs-quote">&gt;
+&gt; * abcdefghijklmnopqrstuvwxyz</span>
+<span class="hljs-quote">&gt;
+&gt; ```</span>
+<span class="hljs-quote">&gt; 0123456789</span>
+<span class="hljs-quote">&gt; ```</span>
+<span class="hljs-quote">&gt;
+&gt; 用語</span>
+<span class="hljs-quote">&gt; : 定義</span>
+<span class="hljs-quote">&gt;  Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。</span>
+<span class="hljs-quote">&gt;
+&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+</div></code></pre>
+</dd>
+<dt data-line="114" class="code-line" dir="auto">結果</dt>
+<dd data-line="114" class="code-line" dir="auto">
+<blockquote data-line="115" class="code-line" dir="auto">
+<p data-line="115" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。</p>
+<blockquote data-line="117" class="code-line" dir="auto">
+<p data-line="117" class="code-line" dir="auto">cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</p>
+<pre><code data-line="119" class="code-line" dir="auto"><code><div>0123456789
+</div></code></code></pre>
+</blockquote>
+<ul data-line="123" class="code-line" dir="auto">
+<li data-line="123" class="code-line" dir="auto">
+<p data-line="123" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+</li>
+<li data-line="125" class="code-line" dir="auto">
+<p data-line="125" class="code-line" dir="auto">abcdefghijklmnopqrstuvwxyz</p>
+</li>
+</ul>
+<pre><code data-line="127" class="code-line" dir="auto"><code><div>0123456789
+</div></code></code></pre>
+<dl data-line="131" class="code-line" dir="auto">
+<dt data-line="131" class="code-line" dir="auto">用語</dt>
+<dd data-line="132" class="code-line" dir="auto">定義<br>
+Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。</dd>
+</dl>
+<p data-line="135" class="code-line" dir="auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</blockquote>
+</dd>
+</dl>
+<h4 id="lists" data-line="137" class="code-line" dir="auto" tabindex="-1">リスト</h4>
+<dl data-line="139" class="code-line" dir="auto">
+<dt data-line="139" class="code-line" dir="auto">記述</dt>
+<dd data-line="140" class="code-line" dir="auto">
+<pre><code data-line="140" class="code-line language-markdown" dir="auto"><div><span class="hljs-bullet">*</span> A
+
+<span class="hljs-bullet">*</span> B - start
+
+<span class="hljs-bullet">    *</span> Ba - start
+
+<span class="hljs-code">      段落
+</span>
+<span class="hljs-code">      Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+      cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
+</span>
+<span class="hljs-code">      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      abcdefghijklmnopqrstuvwxyz
+      0123456789
+</span>
+<span class="hljs-code">      Ba - end
+</span>
+<span class="hljs-bullet">      *</span> Baあ
+
+<span class="hljs-bullet">    *</span> Bb - start
+
+<span class="hljs-bullet">        1.</span>  1 - start
+
+<span class="hljs-bullet">            1.</span>  11 - start
+
+<span class="hljs-bullet">                *</span> 11A - start
+
+<span class="hljs-code">                  引用
+</span>
+<span class="hljs-code">                  &gt; ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                  &gt; abcdefghijklmnopqrstuvwxyz
+</span>
+<span class="hljs-code">                  11A - end
+</span>
+<span class="hljs-bullet">                *</span> 11B
+
+<span class="hljs-code">                11 - end
+</span>
+<span class="hljs-bullet">            2.</span>  12 - start
+
+<span class="hljs-code">                整形済みテキスト
+</span>
+<span class="hljs-code">                ```
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                abcdefghijklmnopqrstuvwxyz
+                ```
+</span>
+<span class="hljs-code">                12 - end
+</span>
+<span class="hljs-code">            1 - end
+</span>
+<span class="hljs-bullet">        2.</span>  2 - start
+
+<span class="hljs-code">            テーブル
+</span>
+<span class="hljs-code">            | TH  | TH  |
+            | --- | --- |
+            | TD  | TD  |
+            | TD  | TD  |
+</span>
+<span class="hljs-code">            2 - end
+</span>
+<span class="hljs-bullet">        3.</span>  3
+
+<span class="hljs-code">      Bb - end
+</span>
+  B - end
+
+<span class="hljs-bullet">*</span> C
+
+<span class="hljs-bullet">  01.</span> C.01
+
+<span class="hljs-bullet">  02.</span> C.02
+
+<span class="hljs-bullet">  03.</span> C.03
+
+<span class="hljs-bullet">  04.</span> C.04
+
+<span class="hljs-bullet">  05.</span> C.05
+
+<span class="hljs-bullet">  06.</span> C.06
+
+<span class="hljs-bullet">  07.</span> C.07
+
+<span class="hljs-bullet">  08.</span> C.08
+
+<span class="hljs-bullet">  09.</span> C.09
+
+<span class="hljs-bullet">  10.</span> C.10
+
+<span class="hljs-bullet">*</span> D
+
+<span class="hljs-bullet">*</span> E
+</div></code></pre>
+</dd>
+<dt data-line="236" class="code-line" dir="auto">結果</dt>
+<dd data-line="236" class="code-line" dir="auto">
+<ul data-line="237" class="code-line" dir="auto">
+<li data-line="237" class="code-line" dir="auto">
+<p data-line="237" class="code-line" dir="auto">A</p>
+</li>
+<li data-line="239" class="code-line" dir="auto">
+<p data-line="239" class="code-line" dir="auto">B - start</p>
+<ul data-line="241" class="code-line" dir="auto">
+<li data-line="241" class="code-line" dir="auto">
+<p data-line="241" class="code-line" dir="auto">Ba - start</p>
+<p data-line="243" class="code-line" dir="auto">段落</p>
+<p data-line="245" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。<br>
+cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</p>
+<p data-line="248" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+abcdefghijklmnopqrstuvwxyz<br>
+0123456789</p>
+<p data-line="252" class="code-line" dir="auto">Ba - end</p>
+<ul data-line="254" class="code-line" dir="auto">
+<li data-line="254" class="code-line" dir="auto">Baあ</li>
+</ul>
+</li>
+<li data-line="256" class="code-line" dir="auto">
+<p data-line="256" class="code-line" dir="auto">Bb - start</p>
+<ol data-line="258" class="code-line" dir="auto">
+<li data-line="258" class="code-line" dir="auto">
+<p data-line="258" class="code-line" dir="auto">1 - start</p>
+<ol data-line="260" class="code-line" dir="auto">
+<li data-line="260" class="code-line" dir="auto">
+<p data-line="260" class="code-line" dir="auto">11 - start</p>
+<ul data-line="262" class="code-line" dir="auto">
+<li data-line="262" class="code-line" dir="auto">
+<p data-line="262" class="code-line" dir="auto">11A - start</p>
+<p data-line="264" class="code-line" dir="auto">引用</p>
+<blockquote data-line="266" class="code-line" dir="auto">
+<p data-line="266" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+abcdefghijklmnopqrstuvwxyz</p>
+</blockquote>
+<p data-line="269" class="code-line" dir="auto">11A - end</p>
+</li>
+<li data-line="271" class="code-line" dir="auto">
+<p data-line="271" class="code-line" dir="auto">11B</p>
+</li>
+</ul>
+<p data-line="273" class="code-line" dir="auto">11 - end</p>
+</li>
+<li data-line="275" class="code-line" dir="auto">
+<p data-line="275" class="code-line" dir="auto">12 - start</p>
+<p data-line="277" class="code-line" dir="auto">整形済みテキスト</p>
+<pre><code data-line="279" class="code-line" dir="auto"><code><div>ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+</div></code></code></pre>
+<p data-line="284" class="code-line" dir="auto">12 - end</p>
+</li>
+</ol>
+<p data-line="286" class="code-line" dir="auto">1 - end</p>
+</li>
+<li data-line="288" class="code-line" dir="auto">
+<p data-line="288" class="code-line" dir="auto">2 - start</p>
+<p data-line="290" class="code-line" dir="auto">テーブル</p>
+<table data-line="292" class="code-line" dir="auto">
+<thead data-line="292" class="code-line" dir="auto">
+<tr data-line="292" class="code-line" dir="auto">
+<th data-line="292" class="code-line" dir="auto">TH</th>
+<th data-line="292" class="code-line" dir="auto">TH</th>
+</tr>
+</thead>
+<tbody data-line="294" class="code-line" dir="auto">
+<tr data-line="294" class="code-line" dir="auto">
+<td data-line="294" class="code-line" dir="auto">TD</td>
+<td data-line="294" class="code-line" dir="auto">TD</td>
+</tr>
+<tr data-line="295" class="code-line" dir="auto">
+<td data-line="295" class="code-line" dir="auto">TD</td>
+<td data-line="295" class="code-line" dir="auto">TD</td>
+</tr>
+</tbody>
+</table>
+<p data-line="297" class="code-line" dir="auto">2 - end</p>
+</li>
+<li data-line="299" class="code-line" dir="auto">
+<p data-line="299" class="code-line" dir="auto">3</p>
+</li>
+</ol>
+<p data-line="301" class="code-line" dir="auto">Bb - end</p>
+</li>
+</ul>
+<p data-line="303" class="code-line" dir="auto">B - end</p>
+</li>
+<li data-line="305" class="code-line" dir="auto">
+<p data-line="305" class="code-line" dir="auto">C</p>
+<ol data-line="307" class="code-line" dir="auto">
+<li data-line="307" class="code-line" dir="auto">
+<p data-line="307" class="code-line" dir="auto">C.01</p>
+</li>
+<li data-line="309" class="code-line" dir="auto">
+<p data-line="309" class="code-line" dir="auto">C.02</p>
+</li>
+<li data-line="311" class="code-line" dir="auto">
+<p data-line="311" class="code-line" dir="auto">C.03</p>
+</li>
+<li data-line="313" class="code-line" dir="auto">
+<p data-line="313" class="code-line" dir="auto">C.04</p>
+</li>
+<li data-line="315" class="code-line" dir="auto">
+<p data-line="315" class="code-line" dir="auto">C.05</p>
+</li>
+<li data-line="317" class="code-line" dir="auto">
+<p data-line="317" class="code-line" dir="auto">C.06</p>
+</li>
+<li data-line="319" class="code-line" dir="auto">
+<p data-line="319" class="code-line" dir="auto">C.07</p>
+</li>
+<li data-line="321" class="code-line" dir="auto">
+<p data-line="321" class="code-line" dir="auto">C.08</p>
+</li>
+<li data-line="323" class="code-line" dir="auto">
+<p data-line="323" class="code-line" dir="auto">C.09</p>
+</li>
+<li data-line="325" class="code-line" dir="auto">
+<p data-line="325" class="code-line" dir="auto">C.10</p>
+</li>
+</ol>
+</li>
+<li data-line="327" class="code-line" dir="auto">
+<p data-line="327" class="code-line" dir="auto">D</p>
+</li>
+<li data-line="329" class="code-line" dir="auto">
+<p data-line="329" class="code-line" dir="auto">E</p>
+</li>
+</ul>
+</dd>
+</dl>
+<h4 id="definition-lists" data-line="331" class="code-line" dir="auto" tabindex="-1">定義リスト</h4>
+<dl data-line="333" class="code-line" dir="auto">
+<dt data-line="333" class="code-line" dir="auto">記述</dt>
+<dd data-line="334" class="code-line" dir="auto">
+<pre><code data-line="334" class="code-line language-markdown" dir="auto"><div>用語1
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  定義1
+
+  段落
+
+  Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+  cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+  0123456789
+
+: 定義2
+
+  引用
+
+  &gt; ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  &gt; abcdefghijklmnopqrstuvwxyz
+  &gt; 0123456789
+
+用語2
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  定義1
+
+  整形済みテキスト
+
+  \<span class="hljs-code">```
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+  0123456789
+  \```</span>
+
+: 定義2
+
+  リスト
+
+<span class="hljs-bullet">  *</span> A
+
+<span class="hljs-bullet">  *</span> B
+</div></code></pre>
+</dd>
+<dt data-line="379" class="code-line" dir="auto">結果</dt>
+<dd data-line="379" class="code-line" dir="auto">
+<dl data-line="380" class="code-line" dir="auto">
+<dt data-line="380" class="code-line" dir="auto">用語1</dt>
+<dd data-line="381" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="381" dir="auto"><span></span></p>
+<p data-line="383" class="code-line" dir="auto">定義1</p>
+<p data-line="385" class="code-line" dir="auto">段落</p>
+<p data-line="387" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。<br>
+cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</p>
+<p data-line="390" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+abcdefghijklmnopqrstuvwxyz<br>
+0123456789</p>
+</dd>
+<dd data-line="394" class="code-line" dir="auto">
+<p data-line="394" class="code-line" dir="auto">定義2</p>
+<p data-line="396" class="code-line" dir="auto">引用</p>
+<blockquote data-line="398" class="code-line" dir="auto">
+<p data-line="398" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+abcdefghijklmnopqrstuvwxyz<br>
+0123456789</p>
+</blockquote>
+</dd>
+<dt data-line="402" class="code-line" dir="auto">用語2</dt>
+<dd data-line="402" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="403" dir="auto"><span></span></p>
+<p data-line="405" class="code-line" dir="auto">定義1</p>
+<p data-line="407" class="code-line" dir="auto">整形済みテキスト</p>
+<pre><code data-line="409" class="code-line" dir="auto"><code><div>ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789
+</div></code></code></pre>
+</dd>
+<dd data-line="415" class="code-line" dir="auto">
+<p data-line="415" class="code-line" dir="auto">定義2</p>
+<p data-line="417" class="code-line" dir="auto">リスト</p>
+<ul data-line="419" class="code-line" dir="auto">
+<li data-line="419" class="code-line" dir="auto">
+<p data-line="419" class="code-line" dir="auto">A</p>
+</li>
+<li data-line="421" class="code-line" dir="auto">
+<p data-line="421" class="code-line" dir="auto">B</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="note code-line" data-line="423" dir="auto">最初の定義を段落にできないのでダミー要素を挟むことで対応。</p>
+<h4 id="indented-code-blocks" data-line="426" class="code-line" dir="auto" tabindex="-1">整形済みテキスト</h4>
+<dl data-line="428" class="code-line" dir="auto">
+<dt data-line="428" class="code-line" dir="auto">記述</dt>
+<dd data-line="429" class="code-line" dir="auto">
+<pre><code data-line="429" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">    Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+    cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
+</span>
+<span class="hljs-code">    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    abcdefghijklmnopqrstuvwxyz
+    0123456789
+</span>
+<span class="hljs-code">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    ---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
+</span></div></code></pre>
+</dd>
+<dt data-line="441" class="code-line" dir="auto">結果</dt>
+<dd data-line="441" class="code-line" dir="auto">
+<pre data-line="442" class="code-line" dir="auto"><code>Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
+</code></pre>
+</dd>
+</dl>
+<h4 id="fenced-code-blocks" data-line="452" class="code-line" dir="auto" tabindex="-1">Fenced Code Blocks</h4>
+<dl data-line="454" class="code-line" dir="auto">
+<dt data-line="454" class="code-line" dir="auto">記述</dt>
+<dd data-line="455" class="code-line" dir="auto">
+<pre><code data-line="455" class="code-line language-markdown" dir="auto"><div>\<span class="hljs-code">```maxscript
+global var -- Line Comment
+
+/*
+Block Comment
+*/
+struct TestClass (
+  public Literals = #(
+    1, .1e-2, 1.2, -0., 0x0E, "String", @"Verbatim", #Name, true,
+    2m30s5f2t, 18.25f, 2:10.0, $'Node Name', #{1..3, 5}
+  ),
+
+  private rlt = Rollout rlt "Title" (
+    CheckBox ckbx "Caption" checked:false triState:0
+    on ckbx Changed state do (
+      -- ...
+    )
+  ),
+
+  public fn TestFunction pA &amp;pB pC:false &amp;pD:1.2 pE:#(1, 2) pF: = (
+    -- ...
+  ),
+
+  private mapped fn compare x y = (
+    -- ...
+  ),
+
+  on Create do (
+    -- ...
+  )
+)
+\```</span>
+</div></code></pre>
+</dd>
+<dt data-line="490" class="code-line" dir="auto">結果</dt>
+<dd data-line="490" class="code-line" dir="auto">
+<pre><code data-line="491" class="code-line language-maxscript" dir="auto"><code><div>global var -- Line Comment
+
+/*
+Block Comment
+*/
+struct TestClass (
+  public Literals = #(
+    1, .1e-2, 1.2, -0., 0x0E, "String", @"Verbatim", #Name, true,
+    2m30s5f2t, 18.25f, 2:10.0, $'Node Name', #{1..3, 5}
+  ),
+
+  private rlt = Rollout rlt "Title" (
+    CheckBox ckbx "Caption" checked:false triState:0
+    on ckbx Changed state do (
+      -- ...
+    )
+  ),
+
+  public fn TestFunction pA &amp;pB pC:false &amp;pD:1.2 pE:#(1, 2) pF: = (
+    -- ...
+  ),
+
+  private mapped fn compare x y = (
+    -- ...
+  ),
+
+  on Create do (
+    -- ...
+  )
+)
+</div></code></code></pre>
+</dd>
+</dl>
+<h4 id="tables" data-line="524" class="code-line" dir="auto" tabindex="-1">テーブル</h4>
+<dl data-line="526" class="code-line" dir="auto">
+<dt data-line="526" class="code-line" dir="auto">記述</dt>
+<dd data-line="527" class="code-line" dir="auto">
+<pre><code data-line="527" class="code-line language-markdown" dir="auto"><div>| -   | 左寄せ |               中央寄せ               | 右寄せ |
+| --- | :----- | :----------------------------------: | -----: |
+| 行1 | TD     |                  TD                  |     TD |
+| 行2 | TD     | セル内の改行は<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><span class="hljs-code">`&lt;br&gt;`</span>タグを使う。 |     TD |
+</div></code></pre>
+</dd>
+<dt data-line="534" class="code-line" dir="auto">結果</dt>
+<dd data-line="534" class="code-line" dir="auto">
+<table data-line="535" class="code-line" dir="auto">
+<thead data-line="535" class="code-line" dir="auto">
+<tr data-line="535" class="code-line" dir="auto">
+<th data-line="535" class="code-line" dir="auto">-</th>
+<th style="text-align:left" data-line="535" class="code-line" dir="auto">左寄せ</th>
+<th style="text-align:center" data-line="535" class="code-line" dir="auto">中央寄せ</th>
+<th style="text-align:right" data-line="535" class="code-line" dir="auto">右寄せ</th>
+</tr>
+</thead>
+<tbody data-line="537" class="code-line" dir="auto">
+<tr data-line="537" class="code-line" dir="auto">
+<td data-line="537" class="code-line" dir="auto">行1</td>
+<td style="text-align:left" data-line="537" class="code-line" dir="auto">TD</td>
+<td style="text-align:center" data-line="537" class="code-line" dir="auto">TD</td>
+<td style="text-align:right" data-line="537" class="code-line" dir="auto">TD</td>
+</tr>
+<tr data-line="538" class="code-line" dir="auto">
+<td data-line="538" class="code-line" dir="auto">行2</td>
+<td style="text-align:left" data-line="538" class="code-line" dir="auto">TD</td>
+<td style="text-align:center" data-line="538" class="code-line" dir="auto">セル内の改行は<br><code>&lt;br&gt;</code>タグを使う。</td>
+<td style="text-align:right" data-line="538" class="code-line" dir="auto">TD</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<h4 id="horizontal-rules" data-line="540" class="code-line" dir="auto" tabindex="-1">水平線</h4>
+<dl data-line="542" class="code-line" dir="auto">
+<dt data-line="542" class="code-line" dir="auto">記述</dt>
+<dd data-line="543" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="543" dir="auto"><span></span></p>
+<pre><code data-line="545" class="code-line language-markdown" dir="auto"><div>---
+</div></code></pre>
+</dd>
+<dt data-line="549" class="code-line" dir="auto">結果</dt>
+<dd data-line="549" class="code-line" dir="auto">
+<hr data-line="550" class="code-line" dir="auto">
+</dd>
+</dl>
+<h3 id="inline-elements" data-line="552" class="code-line" dir="auto" tabindex="-1">インライン要素</h3>
+<h4 id="links" data-line="554" class="code-line" dir="auto" tabindex="-1">リンク</h4>
+<dl data-line="556" class="code-line" dir="auto">
+<dt data-line="556" class="code-line" dir="auto">記述</dt>
+<dd data-line="557" class="code-line" dir="auto">
+<pre><code data-line="557" class="code-line language-markdown" dir="auto"><div>[<span class="hljs-string">通常リンク</span>](<span class="hljs-link">/ "ツールチップA"</span>)
+[<span class="hljs-string">参照リンク</span>][<span class="hljs-symbol">ref</span>]
+[<span class="hljs-string">参照リンク（ID省略）</span>][<span class="hljs-symbol"></span>]
+[<span class="hljs-string">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>][<span class="hljs-symbol">ref</span>]
+
+[<span class="hljs-symbol">ref</span>]:<span class="hljs-link">/ "ツールチップB"</span>
+[<span class="hljs-symbol">参照リンク（ID省略）</span>]:<span class="hljs-link">/ "ツールチップC"</span>
+
+外部サイト[<span class="hljs-string">https://github.com/</span>](<span class="hljs-link">https://github.com/</span>)
+自動リンク&lt;/&gt;
+相対リンク[<span class="hljs-string">highlight.js サンプル</span>](<span class="hljs-link">2019-04-14-highlight-js-sample</span>)
+</div></code></pre>
+</dd>
+<dt data-line="571" class="code-line" dir="auto">結果</dt>
+<dd data-line="571" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="572" dir="auto"><span></span></p>
+<p data-line="574" class="code-line" dir="auto"><a href="/" title="ツールチップA" data-href="/">通常リンク</a><br>
+<a href="/" title="ツールチップB" data-href="/">参照リンク</a><br>
+<a href="/" title="ツールチップC" data-href="/">参照リンク（ID省略）</a><br>
+<a href="/" title="ツールチップB" data-href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
+<p data-line="582" class="code-line" dir="auto">外部サイト<a href="https://github.com/" data-href="https://github.com/">https://github.com/</a><br>
+自動リンク&lt;/&gt;<br>
+相対リンク<a href="2019-04-14-highlight-js-sample" data-href="2019-04-14-highlight-js-sample">highlight.js サンプル</a></p>
+</dd>
+</dl>
+<p class="note code-line" data-line="586" dir="auto">参照先の記述は前に一行空ける必要がある。</p>
+<h4 id="footnotes" data-line="589" class="code-line" dir="auto" tabindex="-1">脚注</h4>
+<dl data-line="591" class="code-line" dir="auto">
+<dt data-line="591" class="code-line" dir="auto">記述</dt>
+<dd data-line="592" class="code-line" dir="auto">
+<pre><code data-line="592" class="code-line language-markdown" dir="auto"><div>脚注1[^1]
+脚注2[^a]
+
+[<span class="hljs-symbol">^1</span>]:<span class="hljs-link">脚注1</span>
+[<span class="hljs-symbol">^a</span>]:<span class="hljs-link">脚注2</span>
+</div></code></pre>
+</dd>
+<dt data-line="600" class="code-line" dir="auto">結果</dt>
+<dd data-line="600" class="code-line" dir="auto">
+<p data-line="601" class="code-line" dir="auto">脚注1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+脚注2<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</dd>
+</dl>
+<h4 id="emphasis" data-line="607" class="code-line" dir="auto" tabindex="-1">文字修飾</h4>
+<dl data-line="609" class="code-line" dir="auto">
+<dt data-line="609" class="code-line" dir="auto">記述</dt>
+<dd data-line="610" class="code-line" dir="auto">
+<pre><code data-line="610" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*強調*</span>
+<span class="hljs-emphasis">_強調_</span>
+<span class="hljs-strong">**より強い強調**</span>
+<span class="hljs-strong">__より強い強調__</span>
+<span class="hljs-code">`コード`</span>
+<span class="hljs-code">``中間`</span>の<span class="hljs-code">`エスケープ`</span>`
+<span class="hljs-code">`` `</span>先頭or末尾のエスケープ<span class="hljs-code">` `</span>`
+<span class="hljs-code">`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`</span>
+~~打ち消し線~~
+</div></code></pre>
+</dd>
+<dt data-line="622" class="code-line" dir="auto">結果</dt>
+<dd data-line="622" class="code-line" dir="auto"><em>強調</em><br>
+<u>強調</u><br>
+<strong>より強い強調</strong><br>
+<strong>より強い強調</strong><br>
+<code>コード</code><br>
+<code>中間`の`エスケープ</code><br>
+<code>`先頭or末尾のエスケープ`</code><br>
+<code>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</code><br>
+<s>打ち消し線</s></dd>
+</dl>
+<h4 id="images" data-line="633" class="code-line" dir="auto" tabindex="-1">画像</h4>
+<dl data-line="635" class="code-line" dir="auto">
+<dt data-line="635" class="code-line" dir="auto">記述</dt>
+<dd data-line="636" class="code-line" dir="auto">
+<pre><code data-line="636" class="code-line language-markdown" dir="auto"><div>画像
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  相対アドレス![<span class="hljs-string">代替文字</span>](<span class="hljs-link">images/sample/32x32.png "ツールチップ"</span>)
+
+リンク
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  相対アドレス[<span class="hljs-string">![代替文字</span>](<span class="hljs-link">images/sample/64x64.png "ツールチップ"</span>)](<span class="hljs-link">images/sample/64x64.png</span>)
+  絶対アドレス[<span class="hljs-string">![代替文字</span>](<span class="hljs-link">https://imaoki.github.io/kb/assets/images/sample/128x128.png "ツールチップ"</span>)](<span class="hljs-link">https://imaoki.github.io/kb/assets/images/sample/128x128.png</span>)
+  外部サイト[<span class="hljs-string">![代替文字</span>](<span class="hljs-link">images/sample/128x128.png "ツールチップ"</span>)](<span class="hljs-link">https://github.com/</span>)
+
+参照画像
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  ID指定![<span class="hljs-string">参照画像</span>][<span class="hljs-symbol">img</span>]
+  ID省略![<span class="hljs-string">参照画像（ID省略）</span>][<span class="hljs-symbol"></span>]
+
+  [img]:images/sample/128x128.png "ツールチップA"
+  [参照画像（ID省略）]:images/sample/128x128.png "ツールチップB"
+
+高解像度
+: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
+
+  [<span class="hljs-string">![512x512</span>](<span class="hljs-link">images/sample/512x512t.png</span>)](<span class="hljs-link">images/sample/512x512.png</span>)
+  [<span class="hljs-string">![1024x1024</span>](<span class="hljs-link">images/sample/1024x1024t.png</span>)](<span class="hljs-link">images/sample/1024x1024.png</span>)
+  [<span class="hljs-string">![2048x2048</span>](<span class="hljs-link">images/sample/2048x2048t.png</span>)](<span class="hljs-link">images/sample/2048x2048.png</span>)
+</div></code></pre>
+</dd>
+<dt data-line="666" class="code-line" dir="auto">結果</dt>
+<dd data-line="666" class="code-line" dir="auto">
+<dl data-line="667" class="code-line" dir="auto">
+<dt data-line="667" class="code-line" dir="auto">画像</dt>
+<dd data-line="668" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="668" dir="auto"><span></span></p>
+<p data-line="670" class="code-line" dir="auto">相対アドレス<img src="images/sample/32x32.png" alt="" title="ツールチップ" data-src="images/sample/32x32.png"></p>
+</dd>
+<dt data-line="672" class="code-line" dir="auto">リンク</dt>
+<dd data-line="672" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="673" dir="auto"><span></span></p>
+<p data-line="675" class="code-line" dir="auto">相対アドレス<a href="images/sample/64x64.png" data-href="images/sample/64x64.png"><img src="images/sample/64x64.png" alt="" title="ツールチップ" data-src="images/sample/64x64.png"></a><br>
+絶対アドレス<a href="https://imaoki.github.io/kb/assets/images/sample/128x128.png" data-href="https://imaoki.github.io/kb/assets/images/sample/128x128.png"><img src="https://imaoki.github.io/kb/assets/images/sample/128x128.png" alt="" title="ツールチップ" data-src="https://imaoki.github.io/kb/assets/images/sample/128x128.png"></a><br>
+外部サイト<a href="https://github.com/" data-href="https://github.com/"><img src="images/sample/128x128.png" alt="" title="ツールチップ" data-src="images/sample/128x128.png"></a></p>
+</dd>
+<dt data-line="679" class="code-line" dir="auto">参照画像</dt>
+<dd data-line="679" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="680" dir="auto"><span></span></p>
+<p data-line="682" class="code-line" dir="auto">ID指定<img src="images/sample/128x128.png" alt="" title="ツールチップA" data-src="images/sample/128x128.png"><br>
+ID省略<img src="images/sample/128x128.png" alt="" title="ツールチップB" data-src="images/sample/128x128.png"></p>
+</dd>
+<dt data-line="688" class="code-line" dir="auto">高解像度</dt>
+<dd data-line="688" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="689" dir="auto"><span></span></p>
+<p data-line="691" class="code-line" dir="auto"><a href="images/sample/512x512.png" data-href="images/sample/512x512.png"><img src="images/sample/512x512t.png" alt="" data-src="images/sample/512x512t.png"></a><br>
+<a href="images/sample/1024x1024.png" data-href="images/sample/1024x1024.png"><img src="images/sample/1024x1024t.png" alt="" data-src="images/sample/1024x1024t.png"></a><br>
+<a href="images/sample/2048x2048.png" data-href="images/sample/2048x2048.png"><img src="images/sample/2048x2048t.png" alt="" data-src="images/sample/2048x2048t.png"></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div data-line="695" class="code-line" dir="auto"></div>
+<!--
+### インラインフレーム{#iframes}
+
+<iframe class="iframe-class" src="https://github.com/imaoki/imaoki.github.io" width="520" height="293"></iframe>
+-->
+<h3 id="kramdown" data-line="701" class="code-line" dir="auto" tabindex="-1">kramdown</h3>
+<p data-line="703" class="code-line" dir="auto">Jekyllで有効。</p>
+<h4 id="kramdown-block-attributes" data-line="705" class="code-line" dir="auto" tabindex="-1">ブロック要素の属性</h4>
+<p class="warning code-line" data-line="707" dir="auto">Markdown Extendedとの違いに注意。</p>
+<dl :#block-element-id="" style="color: magenta;" data-line="710" class="code-line" dir="auto">
+<dt data-line="710" class="code-line" dir="auto">記述</dt>
+<dd data-line="711" class="code-line" dir="auto">
+<pre><code data-line="711" class="code-line language-markdown" dir="auto"><div>ブロック要素
+{:#block-element-id style="color: magenta;"}
+</div></code></pre>
+</dd>
+<dt data-line="716" class="code-line" dir="auto">結果</dt>
+<dd data-line="716" class="code-line" dir="auto">
+<pre><code data-line="717" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"block-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: magenta;"</span>&gt;</span>ブロック要素<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<p data-line="721" class="code-line" dir="auto">ブロック要素</p>
+</dd>
+</dl>
+<h5 id="kramdown-block-attributes-note" data-line="724" class="code-line" dir="auto" tabindex="-1">ノート</h5>
+<dl :.note="" data-line="726" class="code-line" dir="auto">
+<dt data-line="726" class="code-line" dir="auto">記述</dt>
+<dd data-line="727" class="code-line" dir="auto">
+<pre><code data-line="727" class="code-line language-markdown" dir="auto"><div>ノート
+{:.note}
+</div></code></pre>
+</dd>
+<dt data-line="732" class="code-line" dir="auto">結果</dt>
+<dd data-line="732" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="733" dir="auto"><span></span></p>
+<p data-line="735" class="code-line" dir="auto">ノート</p>
+</dd>
+</dl>
+<h5 id="block-attributes-warning" data-line="738" class="code-line" dir="auto" tabindex="-1">警告</h5>
+<dl :.warning="" data-line="740" class="code-line" dir="auto">
+<dt data-line="740" class="code-line" dir="auto">記述</dt>
+<dd data-line="741" class="code-line" dir="auto">
+<pre><code data-line="741" class="code-line language-markdown" dir="auto"><div>警告
+{:.warning}
+</div></code></pre>
+</dd>
+<dt data-line="746" class="code-line" dir="auto">結果</dt>
+<dd data-line="746" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="747" dir="auto"><span></span></p>
+<p data-line="749" class="code-line" dir="auto">警告</p>
+</dd>
+</dl>
+<h4 id="kramdown-inline-attributes" data-line="752" class="code-line" dir="auto" tabindex="-1">インライン要素の属性</h4>
+<p class="warning code-line" data-line="754" dir="auto">Markdown Extendedとの違いに注意。</p>
+<dl data-line="757" class="code-line" dir="auto">
+<dt data-line="757" class="code-line" dir="auto">記述</dt>
+<dd data-line="758" class="code-line" dir="auto">
+<pre><code data-line="758" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*インライン要素*</span>{:#inline-element-id style="color: cyan;"}
+</div></code></pre>
+</dd>
+<dt data-line="762" class="code-line" dir="auto">結果</dt>
+<dd data-line="762" class="code-line" dir="auto">
+<pre><code data-line="763" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">em</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inline-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: cyan;"</span>&gt;</span>インライン要素<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
+</div></code></pre>
+<p data-line="767" class="code-line" dir="auto"><em :#inline-element-id="" style="color: cyan;">インライン要素</em></p>
+</dd>
+</dl>
+<h5 id="kramdown-inline-attributes-syntax-highlihgt" data-line="769" class="code-line" dir="auto" tabindex="-1">シンタックスハイライト</h5>
+<dl data-line="771" class="code-line" dir="auto">
+<dt data-line="771" class="code-line" dir="auto">記述</dt>
+<dd data-line="772" class="code-line" dir="auto">
+<pre><code data-line="772" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{:.code .language-html}
+</div></code></pre>
+</dd>
+<dt data-line="776" class="code-line" dir="auto">結果</dt>
+<dd data-line="776" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="777" dir="auto"><span></span></p>
+<p data-line="779" class="code-line" dir="auto"><code :.code="" class="language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
+</dd>
+</dl>
+<h5 id="kramdown-inline-attributes-key-button" data-line="781" class="code-line" dir="auto" tabindex="-1">キーボタン</h5>
+<dl data-line="783" class="code-line" dir="auto">
+<dt data-line="783" class="code-line" dir="auto">記述</dt>
+<dd data-line="784" class="code-line" dir="auto">
+<pre><code data-line="784" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`Ctrl+A`</span>{:.key}で全て選択し、<span class="hljs-code">`Ctrl+C`</span>{:.key}でコピーする。
+</div></code></pre>
+</dd>
+<dt data-line="788" class="code-line" dir="auto">表示</dt>
+<dd data-line="788" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="789" dir="auto"><span></span></p>
+<p data-line="791" class="code-line" dir="auto"><code :.key="">Ctrl+A</code>で全て選択し、<code :.key="">Ctrl+C</code>でコピーする。</p>
+</dd>
+</dl>
+<h3 id="markdown-extended" data-line="793" class="code-line" dir="auto" tabindex="-1">Markdown Extended</h3>
+<p data-line="795" class="code-line" dir="auto">Markdown Converterによる変換で有効。</p>
+<h4 id="markdown-extended-admonition" data-line="797" class="code-line" dir="auto" tabindex="-1">Admonition</h4>
+<dl data-line="799" class="code-line" dir="auto">
+<dt data-line="799" class="code-line" dir="auto">記述</dt>
+<dd data-line="800" class="code-line" dir="auto">
+<pre><code data-line="800" class="code-line language-markdown" dir="auto"><div>!!! ノート
+
+<span class="hljs-code">    Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
+</span></div></code></pre>
+</dd>
+<dt data-line="806" class="code-line" dir="auto">表示</dt>
+<dd data-line="806" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="807" dir="auto"><span></span></p>
+<div data-line="809" class="code-line admonition note" dir="auto">
+<p data-line="809" class="code-line admonition-title" dir="auto">ノート</p>
+<p data-line="811" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+</div>
+</dd>
+</dl>
+<h4 id="markdown-extended-markdown-it-attrs" data-line="813" class="code-line" dir="auto" tabindex="-1">markdown-it-attrs</h4>
+<p class="warning code-line" data-line="815" dir="auto">kramdownとの違いに注意。</p>
+<dl data-line="818" class="code-line" dir="auto">
+<dt data-line="818" class="code-line" dir="auto">記述</dt>
+<dd data-line="819" class="code-line" dir="auto">
+<pre><code data-line="819" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{.code .language-html}
+</div></code></pre>
+</dd>
+<dt data-line="823" class="code-line" dir="auto">表示</dt>
+<dd data-line="823" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="824" dir="auto"><span></span></p>
+<p data-line="826" class="code-line" dir="auto"><code class="code language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
+</dd>
+</dl>
+<h4 id="markdown-extended-markdown-it-kbd" data-line="828" class="code-line" dir="auto" tabindex="-1">markdown-it-kbd</h4>
+<dl data-line="830" class="code-line" dir="auto">
+<dt data-line="830" class="code-line" dir="auto">記述</dt>
+<dd data-line="831" class="code-line" dir="auto">
+<pre><code data-line="831" class="code-line language-markdown" dir="auto"><div>[[Ctrl+A]]で全て選択し、[[Ctrl+C]]でコピーする。
+</div></code></pre>
+</dd>
+<dt data-line="835" class="code-line" dir="auto">表示</dt>
+<dd data-line="835" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="836" dir="auto"><span></span></p>
+<p data-line="838" class="code-line" dir="auto"><kbd>Ctrl+A</kbd>で全て選択し、<kbd>Ctrl+C</kbd>でコピーする。</p>
+</dd>
+</dl>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p data-line="604" class="code-line" dir="auto">脚注1 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p data-line="605" class="code-line" dir="auto">脚注2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+<script>
+var each = function(elements, fn) {
+  Array.prototype.forEach.call(elements, fn);
+};
+
+// TOCで生成される見出しのアンカーを削除
+each(document.querySelectorAll("a[for*='toc-anchor']"), function(el, i) {
+  el.nextElementSibling.id = el.id;
+  el.parentNode.removeChild(el);
+});
+
+// highlight.js初期化
+if (window.hljs) {
+  window.hljs.configure({languages: []});
+
+  if (window.hljslang) {
+    window.hljs.registerLanguage("css", window.hljslang.css);
+    window.hljs.registerLanguage("diff", window.hljslang.diff);
+    window.hljs.registerLanguage("ebnf", window.hljslang.ebnf);
+    window.hljs.registerLanguage("javascript", window.hljslang.javascript);
+    window.hljs.registerLanguage("markdown", window.hljslang.markdown);
+    window.hljs.registerLanguage("maxscript", window.hljslang.maxscript);
+    window.hljs.registerLanguage("mel", window.hljslang.mel);
+    window.hljs.registerLanguage("python", window.hljslang.python);
+    window.hljs.registerLanguage("xml", window.hljslang.xml);
+  }
+
+  window.hljs.initHighlighting();
+
+  each(document.querySelectorAll("code[class^='code language-']"), function(el, i) {
+    window.hljs.highlightBlock(el);
+  });
+}
+
+// // SmoothScroll初期化
+// var scroll = new SmoothScroll("a[href*='#']", {
+//   speed: 50,
+//   easing: "easeOutQuint"
+// });
+
+// SmoothScroll初期化
+if (window.SmoothScroll) {
+  new window.SmoothScroll("a[href*='#']", {
+    speed: 50,
+    easing: "easeOutQuint"
+  })
+}
+
+// リンク画像にクラスを追加
+each(document.getElementsByTagName("a"), function(el, i) {
+  if (el.getElementsByTagName("img").length) {
+    el.classList.add("image");
+  }
+});
+
+// 整形済みテキストの言語情報をクラス化
+each(document.getElementsByTagName("pre"), function(el, i) {
+  var re = /.*\blanguage-(\w+)\b.*/;
+  var elements = el.getElementsByTagName("code");
+  if (elements.length) {
+    var classValue = elements[0].getAttribute("class");
+    var dataType = "text";
+    if (classValue && classValue.match(re)) {
+      dataType = classValue.replace(re, "$1");
+    }
+    el.setAttribute("data-type", dataType);
+  }
+});
+
+// 脚注の空白を除去
+each(document.querySelectorAll("a[class*='reversefootnote']"), function(el, i) {
+  var parentNode = el.parentNode;
+  if (parentNode) {
+    parentNode.innerHTML = parentNode.innerHTML.replace("&nbsp;", "");
+  }
+});
+
+// タイトル用の見出し
+var firstH1 = document.querySelector(".content > h1:first-of-type");
+var firstH2 = document.querySelector(".content > h2:first-of-type");
+
+var headTitleContent = "Title"
+if (firstH1) headTitleContent = firstH1.textContent;
+if (firstH2) headTitleContent += "-" + firstH2.textContent;
+
+// ヘッダタイトル
+var headTitle = document.querySelector("head > title");
+if (headTitle) {
+  headTitle.textContent = headTitleContent;
+}
+
+// 空の段落を削除
+each(document.querySelectorAll("p"), function(el, i) {
+  if(el.childNodes.length === 0) {
+    el.parentNode.removeChild(el);
+  }
+});
+</script>
+</body>
+</html>

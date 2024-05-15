@@ -1,19 +1,17 @@
----
-title: Markdown チートシート
-date: 2016-01-05 21:32:00
-updated: 2024-05-15 16:57:00
-categories: document
-tags: markdown
-toc: true
-published: true
----
+# [Markdown Converter Sample]()
+
+update
+: 2024-05-15
+
+## [スタイルシート色見本]()
+
 [GFM](https://github.github.com/gfm/)、[kramdown](https://kramdown.gettalong.org/)、[Markdown Extended](https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended)に対応した記述のサンプル。
 
-### ブロック要素
-{:#block-elements}
+[[toc]]
 
-#### 段落と改行
-{:#paragraphs-and-line-breaks}
+### ブロック要素{#block-elements}
+
+#### 段落と改行{#paragraphs-and-line-breaks}
 
 記述
 : ```markdown
@@ -29,7 +27,7 @@ published: true
   ```
 
 結果
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
   cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
@@ -41,8 +39,7 @@ published: true
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   ---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
 
-#### 見出し
-{:#headers}
+#### 見出し{#headers}
 
 記述
 : ```markdown
@@ -60,33 +57,27 @@ published: true
   ```
 
 結果
-: # 見出し1
-  {:#header-level1}
+: # 見出し1{#header-level1}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-  ## 見出し2
-  {:#header-level2}
+  ## 見出し2{#header-level2}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-  ### 見出し3
-  {:#header-level3}
+  ### 見出し3{#header-level3}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-  #### 見出し4
-  {:#header-level4}
+  #### 見出し4{#header-level4}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-  ##### 見出し5
-  {:#header-level5}
+  ##### 見出し5{#header-level5}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-  ###### 見出し6
-  {:#header-level6}
+  ###### 見出し6{#header-level6}
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
@@ -94,8 +85,7 @@ published: true
 
   Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-#### 引用
-{:#blockquotes}
+#### 引用{#blockquotes}
 
 記述
 : ```markdown
@@ -145,8 +135,7 @@ published: true
   >
   > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-#### リスト
-{:#lists}
+#### リスト{#lists}
 
 記述
 : ```markdown
@@ -340,13 +329,12 @@ published: true
 
   * E
 
-#### 定義リスト
-{:#definition-lists}
+#### 定義リスト{#definition-lists}
 
 記述
 : ```markdown
   用語1
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     定義1
 
@@ -368,7 +356,7 @@ published: true
     > 0123456789
 
   用語2
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     定義1
 
@@ -391,7 +379,7 @@ published: true
 
 結果
 : 用語1
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     定義1
 
@@ -413,7 +401,7 @@ published: true
     > 0123456789
 
   用語2
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     定義1
 
@@ -434,10 +422,9 @@ published: true
     * B
 
 最初の定義を段落にできないのでダミー要素を挟むことで対応。
-{:.note}
+{.note}
 
-#### 整形済みテキスト
-{:#indented-code-blocks}
+#### 整形済みテキスト{#indented-code-blocks}
 
 記述
 : ```markdown
@@ -463,8 +450,7 @@ published: true
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       ---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
 
-#### Fenced Code Blocks
-{:#fenced-code-blocks}
+#### Fenced Code Blocks{#fenced-code-blocks}
 
 記述
 : ```markdown
@@ -536,8 +522,7 @@ published: true
   )
   ```
 
-#### テーブル
-{:#tables}
+#### テーブル{#tables}
 
 記述
 : ```markdown
@@ -553,22 +538,21 @@ published: true
   | 行1 | TD     |                  TD                  |     TD |
   | 行2 | TD     | セル内の改行は<br>`<br>`タグを使う。 |     TD |
 
-#### 水平線
-{:#horizontal-rules}
+#### 水平線{#horizontal-rules}
 
 記述
-: ```markdown
+: <span/>{.invisible}
+
+  ```markdown
   ---
   ```
 
 結果
 : ---
 
-### インライン要素
-{:#inline-elements}
+### インライン要素{#inline-elements}
 
-#### リンク
-{:#links}
+#### リンク{#links}
 
 記述
 : ```markdown
@@ -586,7 +570,7 @@ published: true
   ```
 
 結果
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   [通常リンク]({{ site.url }}{{ site.baseurl }}/ "ツールチップA")
   [参照リンク][ref]
@@ -601,10 +585,9 @@ published: true
   相対リンク[highlight.js サンプル](2019-04-14-highlight-js-sample)
 
 参照先の記述は前に一行空ける必要がある。
-{:.note}
+{.note}
 
-#### 脚注
-{:#footnotes}
+#### 脚注{#footnotes}
 
 記述
 : ```markdown
@@ -622,8 +605,7 @@ published: true
   [^1]:脚注1
   [^a]:脚注2
 
-#### 文字修飾
-{:#emphasis}
+#### 文字修飾{#emphasis}
 
 記述
 : ```markdown
@@ -649,86 +631,82 @@ published: true
   `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
   ~~打ち消し線~~
 
-#### 画像
-{:#images}
+#### 画像{#images}
 
 記述
 : ```markdown
   画像
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    相対アドレス![代替文字]({{ '/assets/images/sample/32x32.png' | relative_url }} "ツールチップ")
+    相対アドレス![代替文字](images/sample/32x32.png "ツールチップ")
 
   リンク
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    相対アドレス[![代替文字]({{ '/assets/images/sample/64x64.png' | relative_url }} "ツールチップ")]({{ '/assets/images/sample/64x64.png' | relative_url }})
-    絶対アドレス[![代替文字]({{ site.url | append: site.baseurl | append: '/assets/images/sample/128x128.png' }} "ツールチップ")]({{ site.url | append: site.baseurl | append: '/assets/images/sample/128x128.png' }})
-    外部サイト[![代替文字]({{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップ")](https://github.com/)
+    相対アドレス[![代替文字](images/sample/64x64.png "ツールチップ")](images/sample/64x64.png)
+    絶対アドレス[![代替文字](https://imaoki.github.io/kb/assets/images/sample/128x128.png "ツールチップ")](https://imaoki.github.io/kb/assets/images/sample/128x128.png)
+    外部サイト[![代替文字](images/sample/128x128.png "ツールチップ")](https://github.com/)
 
   参照画像
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     ID指定![参照画像][img]
     ID省略![参照画像（ID省略）][]
 
-    [img]:{{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップA"
-    [参照画像（ID省略）]:{{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップB"
+    [img]:images/sample/128x128.png "ツールチップA"
+    [参照画像（ID省略）]:images/sample/128x128.png "ツールチップB"
 
   高解像度
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    [![512x512]({{ '/assets/images/sample/512x512t.png' | relative_url }})]({{ '/assets/images/sample/512x512.png' | relative_url }})
-    [![1024x1024]({{ '/assets/images/sample/1024x1024t.png' | relative_url }})]({{ '/assets/images/sample/1024x1024.png' | relative_url }})
-    [![2048x2048]({{ '/assets/images/sample/2048x2048t.png' | relative_url }})]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
+    [![512x512](images/sample/512x512t.png)](images/sample/512x512.png)
+    [![1024x1024](images/sample/1024x1024t.png)](images/sample/1024x1024.png)
+    [![2048x2048](images/sample/2048x2048t.png)](images/sample/2048x2048.png)
   ```
 
 結果
 : 画像
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    相対アドレス![代替文字]({{ '/assets/images/sample/32x32.png' | relative_url }} "ツールチップ")
+    相対アドレス![代替文字](images/sample/32x32.png "ツールチップ")
 
   リンク
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    相対アドレス[![代替文字]({{ '/assets/images/sample/64x64.png' | relative_url }} "ツールチップ")]({{ '/assets/images/sample/64x64.png' | relative_url }})
-    絶対アドレス[![代替文字]({{ site.url | append: site.baseurl | append: '/assets/images/sample/128x128.png' }} "ツールチップ")]({{ site.url | append: site.baseurl | append: '/assets/images/sample/128x128.png' }})
-    外部サイト[![代替文字]({{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップ")](https://github.com/)
+    相対アドレス[![代替文字](images/sample/64x64.png "ツールチップ")](images/sample/64x64.png)
+    絶対アドレス[![代替文字](https://imaoki.github.io/kb/assets/images/sample/128x128.png "ツールチップ")](https://imaoki.github.io/kb/assets/images/sample/128x128.png)
+    外部サイト[![代替文字](images/sample/128x128.png "ツールチップ")](https://github.com/)
 
   参照画像
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
     ID指定![参照画像][img]
     ID省略![参照画像（ID省略）][]
 
-    [img]:{{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップA"
-    [参照画像（ID省略）]:{{ '/assets/images/sample/128x128.png' | relative_url }} "ツールチップB"
+    [img]:images/sample/128x128.png "ツールチップA"
+    [参照画像（ID省略）]:images/sample/128x128.png "ツールチップB"
 
   高解像度
-  : <span/>{:.invisible}
+  : <span/>{.invisible}
 
-    [![512x512]({{ '/assets/images/sample/512x512t.png' | relative_url }})]({{ '/assets/images/sample/512x512.png' | relative_url }})
-    [![1024x1024]({{ '/assets/images/sample/1024x1024t.png' | relative_url }})]({{ '/assets/images/sample/1024x1024.png' | relative_url }})
-    [![2048x2048]({{ '/assets/images/sample/2048x2048t.png' | relative_url }})]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
+    [![512x512](images/sample/512x512t.png)](images/sample/512x512.png)
+    [![1024x1024](images/sample/1024x1024t.png)](images/sample/1024x1024.png)
+    [![2048x2048](images/sample/2048x2048t.png)](images/sample/2048x2048.png)
 
 <!--
-### インラインフレーム
-{:#iframes}
+### インラインフレーム{#iframes}
 
 <iframe class="iframe-class" src="https://github.com/imaoki/imaoki.github.io" width="520" height="293"></iframe>
 -->
 
-### kramdown
-{:#kramdown}
+### kramdown{#kramdown}
 
 Jekyllで有効。
 
-#### ブロック要素の属性
-{:#kramdown-block-attributes}
+#### ブロック要素の属性{#kramdown-block-attributes}
 
 Markdown Extendedとの違いに注意。
-{:.warning}
+{.warning}
 
 記述
 : ```markdown
@@ -744,8 +722,7 @@ Markdown Extendedとの違いに注意。
   ブロック要素
   {:#block-element-id style="color: magenta;"}
 
-##### ノート
-{:#kramdown-block-attributes-note}
+##### ノート{#kramdown-block-attributes-note}
 
 記述
 : ```markdown
@@ -754,13 +731,12 @@ Markdown Extendedとの違いに注意。
   ```
 
 結果
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   ノート
   {:.note}
 
-##### 警告
-{:#block-attributes-warning}
+##### 警告{#block-attributes-warning}
 
 記述
 : ```markdown
@@ -769,16 +745,15 @@ Markdown Extendedとの違いに注意。
   ```
 
 結果
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   警告
   {:.warning}
 
-#### インライン要素の属性
-{:#kramdown-inline-attributes}
+#### インライン要素の属性{#kramdown-inline-attributes}
 
 Markdown Extendedとの違いに注意。
-{:.warning}
+{.warning}
 
 記述
 : ```markdown
@@ -792,8 +767,7 @@ Markdown Extendedとの違いに注意。
 
   *インライン要素*{:#inline-element-id style="color: cyan;"}
 
-##### シンタックスハイライト
-{:#kramdown-inline-attributes-syntax-highlihgt}
+##### シンタックスハイライト{#kramdown-inline-attributes-syntax-highlihgt}
 
 記述
 : ```markdown
@@ -801,12 +775,11 @@ Markdown Extendedとの違いに注意。
   ```
 
 結果
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   `<style>body {width: 500px;}</style>`{:.code .language-html}
 
-##### キーボタン
-{:#kramdown-inline-attributes-key-button}
+##### キーボタン{#kramdown-inline-attributes-key-button}
 
 記述
 : ```markdown
@@ -814,17 +787,15 @@ Markdown Extendedとの違いに注意。
   ```
 
 表示
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   `Ctrl+A`{:.key}で全て選択し、`Ctrl+C`{:.key}でコピーする。
 
-### Markdown Extended
-{:#markdown-extended}
+### Markdown Extended{#markdown-extended}
 
 Markdown Converterによる変換で有効。
 
-#### Admonition
-{:#markdown-extended-admonition}
+#### Admonition{#markdown-extended-admonition}
 
 記述
 : ```markdown
@@ -834,17 +805,16 @@ Markdown Converterによる変換で有効。
   ```
 
 表示
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   !!! ノート
 
       Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
-#### markdown-it-attrs
-{:#markdown-extended-markdown-it-attrs}
+#### markdown-it-attrs{#markdown-extended-markdown-it-attrs}
 
 kramdownとの違いに注意。
-{:.warning}
+{.warning}
 
 記述
 : ```markdown
@@ -852,12 +822,11 @@ kramdownとの違いに注意。
   ```
 
 表示
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   `<style>body {width: 500px;}</style>`{.code .language-html}
 
-#### markdown-it-kbd
-{:#markdown-extended-markdown-it-kbd}
+#### markdown-it-kbd{#markdown-extended-markdown-it-kbd}
 
 記述
 : ```markdown
@@ -865,6 +834,6 @@ kramdownとの違いに注意。
   ```
 
 表示
-: <span/>{:.invisible}
+: <span/>{.invisible}
 
   [[Ctrl+A]]で全て選択し、[[Ctrl+C]]でコピーする。
