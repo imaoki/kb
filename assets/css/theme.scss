@@ -16,6 +16,7 @@ $header-mark-start: "#";
 $offset-hover-back: 16;
 $offset-hover-fore: 64;
 
+$icon-imaoki: "\e911";
 $icon-alert-triangle: "\e90d";
 $icon-anchor: "\e900";
 $icon-calendar: "\e901";
@@ -29,6 +30,8 @@ $icon-edit: "\e90e";
 $icon-external-link: "\e908";
 $icon-github: "\e906";
 $icon-info: "\e90f";
+$icon-log-in: "\e912";
+$icon-log-out: "\e913";
 $icon-menu: "\e907";
 $icon-feed: "\e909";
 $icon-search: "\e90a";
@@ -352,8 +355,8 @@ $color-toc-item-fore: $color-base-fore-dark;
 $color-content-back: brighten256($color-base-back, 8);
 $color-content-fore: brighten256($color-content-back, 32);
 
-$color-content-l1-back: setAlpha256(rgb(255, 255,255), 16);
-$color-content-l1-fore: setAlpha256(rgb(255, 255,255), 32);
+$color-content-l1-back: setAlpha256(rgb(255, 255, 255), 16);
+$color-content-l1-fore: setAlpha256(rgb(255, 255, 255), 32);
 
 $color-content-l1-back-light: setAlpha256(rgb(255, 255, 255), 64);
 $color-content-l1-back-dark: setAlpha256(rgb(0, 0, 0), 64);
@@ -364,6 +367,8 @@ $color-h4-back: brighten256($color-h5-back, 4);
 $color-h3-back: brighten256($color-h4-back, 4);
 
 $color-h-mark-fore: setAlpha256(rgb(0, 0, 0), 32);
+
+$color-admonition-fore: setAlpha256(rgb(255, 255, 255), 127);
 
 // Code
 // -----------------------------------------------------------------------------
@@ -378,6 +383,8 @@ $color-pre-caption-fore: brighten256($color-base-fore, -128);
 
 $color-note-fore: rgb(175, 191, 255);
 $color-warning-fore: rgb(223, 191, 55);
+$color-input-fore: rgb(255, 95, 127);
+$color-output-fore: rgb(127, 255, 95);
 
 $color-github-back: transparent;
 $color-github-back-h: rgb(245, 245, 245);
@@ -1248,7 +1255,8 @@ a {
     font-size: 0.75rem;
   }
 
-  .note {
+  .note:not(.admonition.note),
+  .note > .admonition-title {
     &::before {
       color: $color-note-fore;
       content: $icon-info;
@@ -1257,10 +1265,35 @@ a {
     }
   }
 
-  .warning {
+  .warning:not(.admonition.warning),
+  .warning > .admonition-title {
     &::before {
       color: $color-warning-fore;
       content: $icon-alert-triangle;
+      font-family: $font-icon;
+      font-size: 1.5rem;
+      margin: 0 0.25rem 0 0;
+      vertical-align: sub;
+    }
+  }
+
+  .input:not(.admonition.input),
+  .input > .admonition-title {
+    &::before {
+      color: $color-input-fore;
+      content: $icon-log-in;
+      font-family: $font-icon;
+      font-size: 1.5rem;
+      margin: 0 0.25rem 0 0;
+      vertical-align: sub;
+    }
+  }
+
+  .output:not(.admonition.output),
+  .output > .admonition-title {
+    &::before {
+      color: $color-output-fore;
+      content: $icon-log-out;
       font-family: $font-icon;
       font-size: 1.5rem;
       margin: 0 0.25rem 0 0;
@@ -1274,5 +1307,16 @@ a {
     border-radius: $radius-key;
     box-shadow: 0 0.125rem 0 0.125rem $color-content-l1-back-dark;
     margin: 0 0.25rem;
+  }
+
+  .admonition {
+    border-radius: $radius-small;
+    border: 1px solid $color-admonition-fore;
+    padding: 1rem;
+
+    @include block-child-margin;
+  }
+  .admonition > .admonition-title {
+    margin: 0;
   }
 }

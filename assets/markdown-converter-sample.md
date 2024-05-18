@@ -1,7 +1,7 @@
 # [Markdown Converter Sample]()
 
 update
-: 2024-05-15
+: 2024-05-19
 
 ## [スタイルシート色見本]()
 
@@ -736,7 +736,7 @@ Markdown Extendedとの違いに注意。
   ノート
   {:.note}
 
-##### 警告{#block-attributes-warning}
+##### 警告{#kramdown-block-attributes-warning}
 
 記述
 : ```markdown
@@ -749,6 +749,34 @@ Markdown Extendedとの違いに注意。
 
   警告
   {:.warning}
+
+##### 入力{#kramdown-block-attributes-input}
+
+記述
+: ```markdown
+  入力
+  {:.input}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  入力
+  {:.input}
+
+##### 出力{#kramdown-block-attributes-output}
+
+記述
+: ```markdown
+  出力
+  {:.output}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  出力
+  {:.output}
 
 #### インライン要素の属性{#kramdown-inline-attributes}
 
@@ -802,6 +830,10 @@ Markdown Converterによる変換で有効。
   !!! ノート
 
       Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
+
+      !!! warning 警告
+
+          Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
   ```
 
 表示
@@ -810,6 +842,10 @@ Markdown Converterによる変換で有効。
   !!! ノート
 
       Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
+
+      !!! warning 警告
+
+          Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 
 #### markdown-it-attrs{#markdown-extended-markdown-it-attrs}
 
@@ -825,6 +861,54 @@ kramdownとの違いに注意。
 : <span/>{.invisible}
 
   `<style>body {width: 500px;}</style>`{.code .language-html}
+
+##### ノート{#markdown-extended-markdown-it-attrs-note}
+
+記述
+: ```markdown
+  ノート{.note}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  ノート{.note}
+
+##### 警告{#markdown-extended-markdown-it-attrs-warning}
+
+記述
+: ```markdown
+  警告{.warning}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  警告{.warning}
+
+##### 入力{#markdown-extended-markdown-it-attrs-input}
+
+記述
+: ```markdown
+  入力{.input}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  入力{.input}
+
+##### 出力{#markdown-extended-markdown-it-attrs-output}
+
+記述
+: ```markdown
+  出力{.output}
+  ```
+
+結果
+: <span/>{.invisible}
+
+  出力{.output}
 
 #### markdown-it-kbd{#markdown-extended-markdown-it-kbd}
 
