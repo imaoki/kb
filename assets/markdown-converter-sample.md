@@ -866,49 +866,49 @@ kramdownとの違いに注意。
 
 記述
 : ```markdown
-  ノート{.note}
+  **ノート**{.note}
   ```
 
 結果
 : <span/>{.invisible}
 
-  ノート{.note}
+  **ノート**{.note}
 
 ##### 警告{#markdown-extended-markdown-it-attrs-warning}
 
 記述
 : ```markdown
-  警告{.warning}
+  **警告**{.warning}
   ```
 
 結果
 : <span/>{.invisible}
 
-  警告{.warning}
+  **警告**{.warning}
 
 ##### 入力{#markdown-extended-markdown-it-attrs-input}
 
 記述
 : ```markdown
-  入力{.input}
+  **入力**{.input}
   ```
 
 結果
 : <span/>{.invisible}
 
-  入力{.input}
+  **入力**{.input}
 
 ##### 出力{#markdown-extended-markdown-it-attrs-output}
 
 記述
 : ```markdown
-  出力{.output}
+  **出力**{.output}
   ```
 
 結果
 : <span/>{.invisible}
 
-  出力{.output}
+  **出力**{.output}
 
 #### markdown-it-kbd{#markdown-extended-markdown-it-kbd}
 
