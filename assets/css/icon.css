@@ -16,7 +16,6 @@
   font-variant: normal;
   font-weight: normal;
   line-height: 1;
-  speak: none;
   text-transform: none;
 
   /* Enable Ligatures ================ */
@@ -34,6 +33,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.icon-imaoki::before {content: "\e911";}
 .icon-alert-triangle::before {content: "\e90d";}
 .icon-anchor::before {content: "\e900";}
 .icon-calendar::before {content: "\e901";}
@@ -47,6 +47,8 @@
 .icon-external-link::before {content: "\e908";}
 .icon-github::before {content: "\e906";}
 .icon-info::before {content: "\e90f";}
+.icon-log-in::before {content: "\e912";}
+.icon-log-out::before {content: "\e913";}
 .icon-menu::before {content: "\e907";}
 .icon-rss::before {content: "\e909";}
 .icon-search::before {content: "\e90a";}

@@ -2,9 +2,55 @@
   "metadata": {
     "name": "icon",
     "lastOpened": 0,
-    "created": 1540347776328
+    "created": 1716055683628
   },
   "iconSets": [
+    {
+      "selection": [
+        {
+          "order": 125,
+          "id": 0,
+          "name": "imaoki",
+          "prevSize": 16,
+          "code": 59665,
+          "tempChar": "",
+          "ligatures": "imaoki"
+        }
+      ],
+      "id": 3,
+      "metadata": {
+        "name": "Original",
+        "importSize": {
+          "width": 683,
+          "height": 683
+        },
+        "designer": "imaoki",
+        "license": "MIT"
+      },
+      "height": 1024,
+      "prevSize": 16,
+      "icons": [
+        {
+          "id": 0,
+          "paths": [
+            "M384 320v64h-384v384h1024v-384h-64v-128h-256v64h-64v-64h-256v64zM576 384v64h192v-128h128v128h64v256h-896v-256h384v-128h128v64z",
+            "M448 576v64h128v-128h-128v64zM768 576v64h128v-128h-128v64z"
+          ],
+          "attrs": [
+            {},
+            {}
+          ],
+          "isMulticolor": false,
+          "isMulticolor2": false,
+          "grid": 24,
+          "tags": [
+            "imaoki"
+          ]
+        }
+      ],
+      "invisible": false,
+      "colorThemes": []
+    },
     {
       "selection": [
         {
@@ -29,7 +75,7 @@
           "prevSize": 16,
           "code": 59661,
           "name": "alert-triangle",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "alert-triangle"
         },
         {
@@ -54,7 +100,7 @@
           "prevSize": 16,
           "code": 59648,
           "name": "anchor",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "anchor"
         },
         {
@@ -179,7 +225,7 @@
           "prevSize": 16,
           "code": 59649,
           "name": "calendar",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "calendar"
         },
         {
@@ -216,7 +262,7 @@
           "prevSize": 16,
           "code": 59650,
           "name": "chevron-left",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "chevron-left"
         },
         {
@@ -225,7 +271,7 @@
           "prevSize": 16,
           "code": 59651,
           "name": "chevron-right",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "chevron-right"
         },
         {
@@ -234,7 +280,7 @@
           "prevSize": 16,
           "code": 59652,
           "name": "chevron-up",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "chevron-up"
         },
         {
@@ -267,7 +313,7 @@
           "prevSize": 16,
           "code": 59664,
           "name": "clipboard",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "clipboard"
         },
         {
@@ -276,7 +322,7 @@
           "prevSize": 16,
           "code": 59653,
           "name": "clock",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "clock"
         },
         {
@@ -329,7 +375,7 @@
           "prevSize": 16,
           "code": 59660,
           "name": "corner-down-left",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "corner-down-left"
         },
         {
@@ -415,7 +461,7 @@
           "prevSize": 16,
           "code": 59662,
           "name": "edit",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "edit"
         },
         {
@@ -432,7 +478,7 @@
           "prevSize": 16,
           "code": 59656,
           "name": "external-link",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "external-link"
         },
         {
@@ -521,7 +567,7 @@
           "prevSize": 16,
           "code": 59654,
           "name": "github",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "github"
         },
         {
@@ -574,7 +620,7 @@
           "prevSize": 16,
           "code": 59663,
           "name": "info",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "info"
         },
         {
@@ -623,11 +669,21 @@
         },
         {
           "id": 137,
-          "order": 0
+          "order": 126,
+          "name": "log-in",
+          "prevSize": 16,
+          "code": 59666,
+          "tempChar": "",
+          "ligatures": "log-in"
         },
         {
           "id": 138,
-          "order": 0
+          "order": 127,
+          "name": "log-out",
+          "prevSize": 16,
+          "code": 59667,
+          "tempChar": "",
+          "ligatures": "log-out"
         },
         {
           "id": 139,
@@ -655,7 +711,7 @@
           "prevSize": 16,
           "code": 59655,
           "name": "menu",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "menu"
         },
         {
@@ -853,7 +909,7 @@
           "prevSize": 16,
           "code": 59657,
           "name": "rss",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "rss"
         },
         {
@@ -870,7 +926,7 @@
           "prevSize": 16,
           "code": 59658,
           "name": "search",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "search"
         },
         {
@@ -979,7 +1035,7 @@
           "prevSize": 16,
           "code": 59659,
           "name": "tag",
-          "tempChar": "",
+          "tempChar": "",
           "ligatures": "tag"
         },
         {
@@ -43958,7 +44014,7 @@
       "metadata": {
         "fontFamily": "icon",
         "majorVersion": 1,
-        "minorVersion": 3,
+        "minorVersion": 4,
         "copyright": "imaoki",
         "license": "MIT",
         "licenseURL": "https://opensource.org/licenses/MIT"
@@ -43973,7 +44029,7 @@
       "ie7": false,
       "showMetrics": false,
       "showSelector": false,
-      "showVersion": false,
+      "showVersion": true,
       "showMetadata": false
     },
     "imagePref": {
@@ -43981,7 +44037,12 @@
       "png": true,
       "useClassSelector": true,
       "color": 0,
-      "bgColor": 16777215
+      "bgColor": 16777215,
+      "name": "icon",
+      "classSelector": ".icon",
+      "height": 32,
+      "columns": 16,
+      "margin": 16
     },
     "historySize": 100,
     "gridSize": 16,
