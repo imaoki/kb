@@ -212,7 +212,7 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content hr { border-color: rgba(255, 255, 255, 0.125); border-style: solid; border-width: 1px 0 0 0; display: block; }
 .content iframe { border: 0 none transparent; }
 .content img { display: inline-block; margin: 0.25rem; vertical-align: middle; }
-.content ol, .content ul { padding: 0 0 0 1rem; }
+.content ol, .content ul { padding: 0 0 0 2.25rem; }
 .content ul > li::before { content: "\2022"; }
 .content ol { counter-reset: order; }
 .content ol > li::before { content: counter(order) "."; counter-increment: order; }
@@ -230,7 +230,7 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content li > h1:last-child, .content li h2:last-child, .content li h3:last-child, .content li h4:last-child, .content li h5:last-child, .content li h6:last-child { margin-top: 5rem; }
 .content li > h1:last-child:first-child, .content li h2:last-child:first-child, .content li h3:last-child:first-child, .content li h4:last-child:first-child, .content li h5:last-child:first-child, .content li h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
 .content li > h1 + h1, .content li > h1 + h2, .content li > h1 + h3, .content li > h1 + h4, .content li > h1 + h5, .content li > h1 + h6, .content li h2 + h1, .content li h2 + h2, .content li h2 + h3, .content li h2 + h4, .content li h2 + h5, .content li h2 + h6, .content li h3 + h1, .content li h3 + h2, .content li h3 + h3, .content li h3 + h4, .content li h3 + h5, .content li h3 + h6, .content li h4 + h1, .content li h4 + h2, .content li h4 + h3, .content li h4 + h4, .content li h4 + h5, .content li h4 + h6, .content li h5 + h1, .content li h5 + h2, .content li h5 + h3, .content li h5 + h4, .content li h5 + h5, .content li h5 + h6, .content li h6 + h1, .content li h6 + h2, .content li h6 + h3, .content li h6 + h4, .content li h6 + h5, .content li h6 + h6 { margin-top: 1rem !important; }
-.content li::before { color: rgba(255, 255, 255, 0.25); display: block; font-family: monospace, monospace; left: -3rem; position: absolute; text-align: right; width: 2.75rem; }
+.content li::before { color: rgba(255, 255, 255, 0.25); display: block; font-family: monospace, monospace; left: -2.25rem; position: absolute; text-align: right; width: 2rem; }
 .content li + li { margin: 1rem 0 0 0; }
 .content pre { background-color: #1c1f21; border-radius: 0; font-size: 1rem; letter-spacing: 0; line-height: 1.375; max-height: 60rem; padding: 0.0rem 0.5rem 0.5rem 0.5rem; position: relative; }
 .content pre::before { background-color: rgba(255, 255, 255, 0.03125); color: #404040; content: attr(data-type); display: block; left: -0.5rem; margin: 0 -0.5rem 0.5rem -0.5rem; padding: 0.25rem; position: sticky; right: 0; text-align: right; top: 0; }
@@ -247,8 +247,22 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content .footnote { font-size: 0.75rem; }
 .content .note:not(.admonition.note)::before, .content .note > .admonition-title::before { color: #afbfff; content: ""; font-family: "icon"; margin: 0 0.25rem 0 0; }
 .content .warning:not(.admonition.warning)::before, .content .warning > .admonition-title::before { color: #dfbf37; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
-.content .input:not(.admonition.input)::before, .content .input > .admonition-title::before { color: #ff5f7f; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
-.content .output:not(.admonition.output)::before, .content .output > .admonition-title::before { color: #7fff5f; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
+.content .input:not(.admonition.input)::before, .content .input > .admonition-title::before { content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0; vertical-align: sub; }
+.content .input:not(.admonition.input).red::before, .content .input > .admonition-title.red::before { color: #ff5f7f; }
+.content .input:not(.admonition.input).orange::before, .content .input > .admonition-title.orange::before { color: #ff7f5f; }
+.content .input:not(.admonition.input).yellow::before, .content .input > .admonition-title.yellow::before { color: #ffff7f; }
+.content .input:not(.admonition.input).green::before, .content .input > .admonition-title.green::before { color: #5fff5f; }
+.content .input:not(.admonition.input).cyan::before, .content .input > .admonition-title.cyan::before { color: #5fffff; }
+.content .input:not(.admonition.input).blue::before, .content .input > .admonition-title.blue::before { color: #5f7fff; }
+.content .input:not(.admonition.input).magenta::before, .content .input > .admonition-title.magenta::before { color: #ff5fff; }
+.content .output:not(.admonition.output)::after, .content .output > .admonition-title::after { content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0; vertical-align: sub; }
+.content .output:not(.admonition.output).red::after, .content .output > .admonition-title.red::after { color: #ff5f7f; }
+.content .output:not(.admonition.output).orange::after, .content .output > .admonition-title.orange::after { color: #ff7f5f; }
+.content .output:not(.admonition.output).yellow::after, .content .output > .admonition-title.yellow::after { color: #ffff7f; }
+.content .output:not(.admonition.output).green::after, .content .output > .admonition-title.green::after { color: #5fff5f; }
+.content .output:not(.admonition.output).cyan::after, .content .output > .admonition-title.cyan::after { color: #5fffff; }
+.content .output:not(.admonition.output).blue::after, .content .output > .admonition-title.blue::after { color: #5f7fff; }
+.content .output:not(.admonition.output).magenta::after, .content .output > .admonition-title.magenta::after { color: #ff5fff; }
 .content .key, .content kbd { background-color: rgba(255, 255, 255, 0.0625); border-radius: 0.25rem; box-shadow: 0 0.125rem 0 0.125rem rgba(0, 0, 0, 0.25); margin: 0 0.25rem; }
 .content .admonition { border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.49609375); padding: 1rem; }
 .content .admonition > * { margin-bottom: 1rem; margin-top: 1rem; }

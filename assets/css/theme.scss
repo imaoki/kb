@@ -307,9 +307,49 @@ $radius-key: 0.25rem;
   // }
 }
 
+@mixin common-forecolor($position: 0) {
+  @if $position == -1 {
+    &.red::before {color: $color-name-red;}
+    &.orange::before {color: $color-name-orange;}
+    &.yellow::before {color: $color-name-yellow;}
+    &.green::before {color: $color-name-green;}
+    &.cyan::before {color: $color-name-cyan;}
+    &.blue::before {color: $color-name-blue;}
+    &.magenta::before {color: $color-name-magenta;}
+  }
+  @else if $position == 1 {
+    &.red::after {color: $color-name-red;}
+    &.orange::after {color: $color-name-orange;}
+    &.yellow::after {color: $color-name-yellow;}
+    &.green::after {color: $color-name-green;}
+    &.cyan::after {color: $color-name-cyan;}
+    &.blue::after {color: $color-name-blue;}
+    &.magenta::after {color: $color-name-magenta;}
+  }
+  @else {
+    &.red {color: $color-name-red;}
+    &.orange {color: $color-name-orange;}
+    &.yellow {color: $color-name-yellow;}
+    &.green {color: $color-name-green;}
+    &.cyan {color: $color-name-cyan;}
+    &.blue {color: $color-name-blue;}
+    &.magenta {color: $color-name-magenta;}
+  }
+}
+
 // =============================================================================
 // Color Variables
 // =============================================================================
+
+// Common
+// -----------------------------------------------------------------------------
+$color-name-red: rgb(255, 95, 127);
+$color-name-orange: rgb(255, 127, 95);
+$color-name-yellow: rgb(255, 255, 127);
+$color-name-green: rgb(95, 255, 95);
+$color-name-cyan: rgb(95, 255, 255);
+$color-name-blue: rgb(95, 127, 255);
+$color-name-magenta: rgb(255, 95, 255);
 
 // Link
 // -----------------------------------------------------------------------------
@@ -383,8 +423,6 @@ $color-pre-caption-fore: brighten256($color-base-fore, -128);
 
 $color-note-fore: rgb(175, 191, 255);
 $color-warning-fore: rgb(223, 191, 55);
-$color-input-fore: rgb(255, 95, 127);
-$color-output-fore: rgb(127, 255, 95);
 
 $color-github-back: transparent;
 $color-github-back-h: rgb(245, 245, 245);
@@ -997,6 +1035,16 @@ a {
 .post.main {
   @include block-child-margin;
 
+  // * {
+  //   &.red {color: $color-name-red;}
+  //   &.orange {color: $color-name-orange;}
+  //   &.yellow {color: $color-name-yellow;}
+  //   &.green {color: $color-name-green;}
+  //   &.cyan {color: $color-name-cyan;}
+  //   &.blue {color: $color-name-blue;}
+  //   &.magenta {color: $color-name-magenta;}
+  // }
+
   a {
     &:not([href^="{{ site.url }}"]) {
       &:not([href^="{{ site.baseurl }}"]) {
@@ -1127,7 +1175,7 @@ a {
   }
 
   ol, ul {
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 2.25rem;
   }
 
   ul {
@@ -1143,6 +1191,7 @@ a {
 
     & > li {
       &::before {
+        // content: "99.";
         content: counter(order)".";
         counter-increment: order;
       }
@@ -1160,11 +1209,11 @@ a {
       display: block;
       font-family: $font-list-mark;
       // font-size: 0.5rem;
-      left: -3rem;
+      left: -2.25rem;
       position: absolute;
       text-align: right;
       // top: 0.25rem;
-      width: 2.75rem;
+      width: 2rem;
     }
 
     & + li {
@@ -1280,25 +1329,27 @@ a {
   .input:not(.admonition.input),
   .input > .admonition-title {
     &::before {
-      color: $color-input-fore;
       content: $icon-log-in;
       font-family: $font-icon;
       font-size: 1.5rem;
-      margin: 0 0.25rem 0 0;
+      margin: 0;
       vertical-align: sub;
     }
+
+    @include common-forecolor(-1);
   }
 
   .output:not(.admonition.output),
   .output > .admonition-title {
-    &::before {
-      color: $color-output-fore;
+    &::after {
       content: $icon-log-out;
       font-family: $font-icon;
       font-size: 1.5rem;
-      margin: 0 0.25rem 0 0;
+      margin: 0;
       vertical-align: sub;
     }
+
+    @include common-forecolor(1);
   }
 
   .key,

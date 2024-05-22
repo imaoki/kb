@@ -212,7 +212,7 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content hr { border-color: rgba(255, 255, 255, 0.125); border-style: solid; border-width: 1px 0 0 0; display: block; }
 .content iframe { border: 0 none transparent; }
 .content img { display: inline-block; margin: 0.25rem; vertical-align: middle; }
-.content ol, .content ul { padding: 0 0 0 1rem; }
+.content ol, .content ul { padding: 0 0 0 2.25rem; }
 .content ul > li::before { content: "\2022"; }
 .content ol { counter-reset: order; }
 .content ol > li::before { content: counter(order) "."; counter-increment: order; }
@@ -230,7 +230,7 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content li > h1:last-child, .content li h2:last-child, .content li h3:last-child, .content li h4:last-child, .content li h5:last-child, .content li h6:last-child { margin-top: 5rem; }
 .content li > h1:last-child:first-child, .content li h2:last-child:first-child, .content li h3:last-child:first-child, .content li h4:last-child:first-child, .content li h5:last-child:first-child, .content li h6:last-child:first-child { margin-bottom: 0; margin-top: 0; }
 .content li > h1 + h1, .content li > h1 + h2, .content li > h1 + h3, .content li > h1 + h4, .content li > h1 + h5, .content li > h1 + h6, .content li h2 + h1, .content li h2 + h2, .content li h2 + h3, .content li h2 + h4, .content li h2 + h5, .content li h2 + h6, .content li h3 + h1, .content li h3 + h2, .content li h3 + h3, .content li h3 + h4, .content li h3 + h5, .content li h3 + h6, .content li h4 + h1, .content li h4 + h2, .content li h4 + h3, .content li h4 + h4, .content li h4 + h5, .content li h4 + h6, .content li h5 + h1, .content li h5 + h2, .content li h5 + h3, .content li h5 + h4, .content li h5 + h5, .content li h5 + h6, .content li h6 + h1, .content li h6 + h2, .content li h6 + h3, .content li h6 + h4, .content li h6 + h5, .content li h6 + h6 { margin-top: 1rem !important; }
-.content li::before { color: rgba(255, 255, 255, 0.25); display: block; font-family: monospace, monospace; left: -3rem; position: absolute; text-align: right; width: 2.75rem; }
+.content li::before { color: rgba(255, 255, 255, 0.25); display: block; font-family: monospace, monospace; left: -2.25rem; position: absolute; text-align: right; width: 2rem; }
 .content li + li { margin: 1rem 0 0 0; }
 .content pre { background-color: #1c1f21; border-radius: 0; font-size: 1rem; letter-spacing: 0; line-height: 1.375; max-height: 60rem; padding: 0.0rem 0.5rem 0.5rem 0.5rem; position: relative; }
 .content pre::before { background-color: rgba(255, 255, 255, 0.03125); color: #404040; content: attr(data-type); display: block; left: -0.5rem; margin: 0 -0.5rem 0.5rem -0.5rem; padding: 0.25rem; position: sticky; right: 0; text-align: right; top: 0; }
@@ -247,8 +247,22 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 .content .footnote { font-size: 0.75rem; }
 .content .note:not(.admonition.note)::before, .content .note > .admonition-title::before { color: #afbfff; content: ""; font-family: "icon"; margin: 0 0.25rem 0 0; }
 .content .warning:not(.admonition.warning)::before, .content .warning > .admonition-title::before { color: #dfbf37; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
-.content .input:not(.admonition.input)::before, .content .input > .admonition-title::before { color: #ff5f7f; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
-.content .output:not(.admonition.output)::before, .content .output > .admonition-title::before { color: #7fff5f; content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0 0.25rem 0 0; vertical-align: sub; }
+.content .input:not(.admonition.input)::before, .content .input > .admonition-title::before { content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0; vertical-align: sub; }
+.content .input:not(.admonition.input).red::before, .content .input > .admonition-title.red::before { color: #ff5f7f; }
+.content .input:not(.admonition.input).orange::before, .content .input > .admonition-title.orange::before { color: #ff7f5f; }
+.content .input:not(.admonition.input).yellow::before, .content .input > .admonition-title.yellow::before { color: #ffff7f; }
+.content .input:not(.admonition.input).green::before, .content .input > .admonition-title.green::before { color: #5fff5f; }
+.content .input:not(.admonition.input).cyan::before, .content .input > .admonition-title.cyan::before { color: #5fffff; }
+.content .input:not(.admonition.input).blue::before, .content .input > .admonition-title.blue::before { color: #5f7fff; }
+.content .input:not(.admonition.input).magenta::before, .content .input > .admonition-title.magenta::before { color: #ff5fff; }
+.content .output:not(.admonition.output)::after, .content .output > .admonition-title::after { content: ""; font-family: "icon"; font-size: 1.5rem; margin: 0; vertical-align: sub; }
+.content .output:not(.admonition.output).red::after, .content .output > .admonition-title.red::after { color: #ff5f7f; }
+.content .output:not(.admonition.output).orange::after, .content .output > .admonition-title.orange::after { color: #ff7f5f; }
+.content .output:not(.admonition.output).yellow::after, .content .output > .admonition-title.yellow::after { color: #ffff7f; }
+.content .output:not(.admonition.output).green::after, .content .output > .admonition-title.green::after { color: #5fff5f; }
+.content .output:not(.admonition.output).cyan::after, .content .output > .admonition-title.cyan::after { color: #5fffff; }
+.content .output:not(.admonition.output).blue::after, .content .output > .admonition-title.blue::after { color: #5f7fff; }
+.content .output:not(.admonition.output).magenta::after, .content .output > .admonition-title.magenta::after { color: #ff5fff; }
 .content .key, .content kbd { background-color: rgba(255, 255, 255, 0.0625); border-radius: 0.25rem; box-shadow: 0 0.125rem 0 0.125rem rgba(0, 0, 0, 0.25); margin: 0 0.25rem; }
 .content .admonition { border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.49609375); padding: 1rem; }
 .content .admonition > * { margin-bottom: 1rem; margin-top: 1rem; }
@@ -359,7 +373,7 @@ a.static:link, a.static:visited, a.static:hover, a.static:active { color: #bfbfb
 <h1 data-line="0" class="code-line" dir="auto" id="markdown-converter-sample" tabindex="-1"><a href="" data-href="">Markdown Converter Sample</a></h1>
 <dl data-line="2" class="code-line" dir="auto">
 <dt data-line="2" class="code-line" dir="auto">update</dt>
-<dd data-line="3" class="code-line" dir="auto">2024-05-19</dd>
+<dd data-line="3" class="code-line" dir="auto">2024-05-22</dd>
 </dl>
 <h2 data-line="5" class="code-line" dir="auto" id="スタイルシート色見本" tabindex="-1"><a href="" data-href="">スタイルシート色見本</a></h2>
 <p data-line="7" class="code-line" dir="auto"><a href="https://github.github.com/gfm/" data-href="https://github.github.com/gfm/">GFM</a>、<a href="https://kramdown.gettalong.org/" data-href="https://kramdown.gettalong.org/">kramdown</a>、<a href="https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended" data-href="https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended">Markdown Extended</a>に対応した記述のサンプル。</p>
@@ -714,11 +728,61 @@ abcdefghijklmnopqrstuvwxyz
 </ul>
 </dd>
 </dl>
-<h4 id="definition-lists" data-line="331" class="code-line" dir="auto" tabindex="-1">定義リスト</h4>
-<dl data-line="333" class="code-line" dir="auto">
-<dt data-line="333" class="code-line" dir="auto">記述</dt>
-<dd data-line="334" class="code-line" dir="auto">
-<pre><code data-line="334" class="code-line language-markdown" dir="auto"><div>用語1
+<hr data-line="331" class="code-line" dir="auto">
+<ul data-line="333" class="code-line" dir="auto">
+<li data-line="333" class="code-line" dir="auto">インデント確認</li>
+</ul>
+<ol data-line="335" class="code-line" dir="auto">
+<li data-line="335" class="code-line" dir="auto">
+<p data-line="335" class="code-line" dir="auto">インデント確認</p>
+<ul data-line="337" class="code-line" dir="auto">
+<li data-line="337" class="code-line" dir="auto">インデント確認</li>
+</ul>
+<ol data-line="339" class="code-line" dir="auto">
+<li data-line="339" class="code-line" dir="auto">
+<p data-line="339" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="341" class="code-line" dir="auto">
+<p data-line="341" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="343" class="code-line" dir="auto">
+<p data-line="343" class="code-line" dir="auto">インデント確認</p>
+</li>
+</ol>
+</li>
+<li data-line="345" class="code-line" dir="auto">
+<p data-line="345" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="347" class="code-line" dir="auto">
+<p data-line="347" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="349" class="code-line" dir="auto">
+<p data-line="349" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="351" class="code-line" dir="auto">
+<p data-line="351" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="353" class="code-line" dir="auto">
+<p data-line="353" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="355" class="code-line" dir="auto">
+<p data-line="355" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="357" class="code-line" dir="auto">
+<p data-line="357" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="359" class="code-line" dir="auto">
+<p data-line="359" class="code-line" dir="auto">インデント確認</p>
+</li>
+<li data-line="361" class="code-line" dir="auto">
+<p data-line="361" class="code-line" dir="auto">インデント確認</p>
+</li>
+</ol>
+<h4 id="definition-lists" data-line="363" class="code-line" dir="auto" tabindex="-1">定義リスト</h4>
+<dl data-line="365" class="code-line" dir="auto">
+<dt data-line="365" class="code-line" dir="auto">記述</dt>
+<dd data-line="366" class="code-line" dir="auto">
+<pre><code data-line="366" class="code-line language-markdown" dir="auto"><div>用語1
 : <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
 
   定義1
@@ -762,60 +826,60 @@ abcdefghijklmnopqrstuvwxyz
 <span class="hljs-bullet">  *</span> B
 </div></code></pre>
 </dd>
-<dt data-line="379" class="code-line" dir="auto">結果</dt>
-<dd data-line="379" class="code-line" dir="auto">
-<dl data-line="380" class="code-line" dir="auto">
-<dt data-line="380" class="code-line" dir="auto">用語1</dt>
-<dd data-line="381" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="381" dir="auto"><span></span></p>
-<p data-line="383" class="code-line" dir="auto">定義1</p>
-<p data-line="385" class="code-line" dir="auto">段落</p>
-<p data-line="387" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。<br>
+<dt data-line="411" class="code-line" dir="auto">結果</dt>
+<dd data-line="411" class="code-line" dir="auto">
+<dl data-line="412" class="code-line" dir="auto">
+<dt data-line="412" class="code-line" dir="auto">用語1</dt>
+<dd data-line="413" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="413" dir="auto"><span></span></p>
+<p data-line="415" class="code-line" dir="auto">定義1</p>
+<p data-line="417" class="code-line" dir="auto">段落</p>
+<p data-line="419" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。<br>
 cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。</p>
-<p data-line="390" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+<p data-line="422" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
 abcdefghijklmnopqrstuvwxyz<br>
 0123456789</p>
 </dd>
-<dd data-line="394" class="code-line" dir="auto">
-<p data-line="394" class="code-line" dir="auto">定義2</p>
-<p data-line="396" class="code-line" dir="auto">引用</p>
-<blockquote data-line="398" class="code-line" dir="auto">
-<p data-line="398" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+<dd data-line="426" class="code-line" dir="auto">
+<p data-line="426" class="code-line" dir="auto">定義2</p>
+<p data-line="428" class="code-line" dir="auto">引用</p>
+<blockquote data-line="430" class="code-line" dir="auto">
+<p data-line="430" class="code-line" dir="auto">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
 abcdefghijklmnopqrstuvwxyz<br>
 0123456789</p>
 </blockquote>
 </dd>
-<dt data-line="402" class="code-line" dir="auto">用語2</dt>
-<dd data-line="402" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="403" dir="auto"><span></span></p>
-<p data-line="405" class="code-line" dir="auto">定義1</p>
-<p data-line="407" class="code-line" dir="auto">整形済みテキスト</p>
-<pre><code data-line="409" class="code-line" dir="auto"><code><div>ABCDEFGHIJKLMNOPQRSTUVWXYZ
+<dt data-line="434" class="code-line" dir="auto">用語2</dt>
+<dd data-line="434" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="435" dir="auto"><span></span></p>
+<p data-line="437" class="code-line" dir="auto">定義1</p>
+<p data-line="439" class="code-line" dir="auto">整形済みテキスト</p>
+<pre><code data-line="441" class="code-line" dir="auto"><code><div>ABCDEFGHIJKLMNOPQRSTUVWXYZ
 abcdefghijklmnopqrstuvwxyz
 0123456789
 </div></code></code></pre>
 </dd>
-<dd data-line="415" class="code-line" dir="auto">
-<p data-line="415" class="code-line" dir="auto">定義2</p>
-<p data-line="417" class="code-line" dir="auto">リスト</p>
-<ul data-line="419" class="code-line" dir="auto">
-<li data-line="419" class="code-line" dir="auto">
-<p data-line="419" class="code-line" dir="auto">A</p>
+<dd data-line="447" class="code-line" dir="auto">
+<p data-line="447" class="code-line" dir="auto">定義2</p>
+<p data-line="449" class="code-line" dir="auto">リスト</p>
+<ul data-line="451" class="code-line" dir="auto">
+<li data-line="451" class="code-line" dir="auto">
+<p data-line="451" class="code-line" dir="auto">A</p>
 </li>
-<li data-line="421" class="code-line" dir="auto">
-<p data-line="421" class="code-line" dir="auto">B</p>
+<li data-line="453" class="code-line" dir="auto">
+<p data-line="453" class="code-line" dir="auto">B</p>
 </li>
 </ul>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="note code-line" data-line="423" dir="auto">最初の定義を段落にできないのでダミー要素を挟むことで対応。</p>
-<h4 id="indented-code-blocks" data-line="426" class="code-line" dir="auto" tabindex="-1">整形済みテキスト</h4>
-<dl data-line="428" class="code-line" dir="auto">
-<dt data-line="428" class="code-line" dir="auto">記述</dt>
-<dd data-line="429" class="code-line" dir="auto">
-<pre><code data-line="429" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">    Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+<p class="note code-line" data-line="455" dir="auto">最初の定義を段落にできないのでダミー要素を挟むことで対応。</p>
+<h4 id="indented-code-blocks" data-line="458" class="code-line" dir="auto" tabindex="-1">整形済みテキスト</h4>
+<dl data-line="460" class="code-line" dir="auto">
+<dt data-line="460" class="code-line" dir="auto">記述</dt>
+<dd data-line="461" class="code-line" dir="auto">
+<pre><code data-line="461" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">    Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
     cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
 </span>
 <span class="hljs-code">    ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -826,9 +890,9 @@ abcdefghijklmnopqrstuvwxyz
     ---------1---------2---------3---------4---------5---------6---------7---------8---------9---------0---------1---------2---------3---------4---------5---------6
 </span></div></code></pre>
 </dd>
-<dt data-line="441" class="code-line" dir="auto">結果</dt>
-<dd data-line="441" class="code-line" dir="auto">
-<pre data-line="442" class="code-line" dir="auto"><code>Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
+<dt data-line="473" class="code-line" dir="auto">結果</dt>
+<dd data-line="473" class="code-line" dir="auto">
+<pre data-line="474" class="code-line" dir="auto"><code>Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
 cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
 
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -840,11 +904,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </code></pre>
 </dd>
 </dl>
-<h4 id="fenced-code-blocks" data-line="452" class="code-line" dir="auto" tabindex="-1">Fenced Code Blocks</h4>
-<dl data-line="454" class="code-line" dir="auto">
-<dt data-line="454" class="code-line" dir="auto">記述</dt>
-<dd data-line="455" class="code-line" dir="auto">
-<pre><code data-line="455" class="code-line language-markdown" dir="auto"><div>\<span class="hljs-code">```maxscript
+<h4 id="fenced-code-blocks" data-line="484" class="code-line" dir="auto" tabindex="-1">Fenced Code Blocks</h4>
+<dl data-line="486" class="code-line" dir="auto">
+<dt data-line="486" class="code-line" dir="auto">記述</dt>
+<dd data-line="487" class="code-line" dir="auto">
+<pre><code data-line="487" class="code-line language-markdown" dir="auto"><div>\<span class="hljs-code">```maxscript
 global var -- Line Comment
 
 /*
@@ -878,9 +942,9 @@ struct TestClass (
 \```</span>
 </div></code></pre>
 </dd>
-<dt data-line="490" class="code-line" dir="auto">結果</dt>
-<dd data-line="490" class="code-line" dir="auto">
-<pre><code data-line="491" class="code-line language-maxscript" dir="auto"><code><div>global var -- Line Comment
+<dt data-line="522" class="code-line" dir="auto">結果</dt>
+<dd data-line="522" class="code-line" dir="auto">
+<pre><code data-line="523" class="code-line language-maxscript" dir="auto"><code><div>global var -- Line Comment
 
 /*
 Block Comment
@@ -913,63 +977,63 @@ struct TestClass (
 </div></code></code></pre>
 </dd>
 </dl>
-<h4 id="tables" data-line="524" class="code-line" dir="auto" tabindex="-1">テーブル</h4>
-<dl data-line="526" class="code-line" dir="auto">
-<dt data-line="526" class="code-line" dir="auto">記述</dt>
-<dd data-line="527" class="code-line" dir="auto">
-<pre><code data-line="527" class="code-line language-markdown" dir="auto"><div>| -   | 左寄せ |               中央寄せ               | 右寄せ |
+<h4 id="tables" data-line="556" class="code-line" dir="auto" tabindex="-1">テーブル</h4>
+<dl data-line="558" class="code-line" dir="auto">
+<dt data-line="558" class="code-line" dir="auto">記述</dt>
+<dd data-line="559" class="code-line" dir="auto">
+<pre><code data-line="559" class="code-line language-markdown" dir="auto"><div>| -   | 左寄せ |               中央寄せ               | 右寄せ |
 | --- | :----- | :----------------------------------: | -----: |
 | 行1 | TD     |                  TD                  |     TD |
 | 行2 | TD     | セル内の改行は<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><span class="hljs-code">`&lt;br&gt;`</span>タグを使う。 |     TD |
 </div></code></pre>
 </dd>
-<dt data-line="534" class="code-line" dir="auto">結果</dt>
-<dd data-line="534" class="code-line" dir="auto">
-<table data-line="535" class="code-line" dir="auto">
-<thead data-line="535" class="code-line" dir="auto">
-<tr data-line="535" class="code-line" dir="auto">
-<th data-line="535" class="code-line" dir="auto">-</th>
-<th style="text-align:left" data-line="535" class="code-line" dir="auto">左寄せ</th>
-<th style="text-align:center" data-line="535" class="code-line" dir="auto">中央寄せ</th>
-<th style="text-align:right" data-line="535" class="code-line" dir="auto">右寄せ</th>
+<dt data-line="566" class="code-line" dir="auto">結果</dt>
+<dd data-line="566" class="code-line" dir="auto">
+<table data-line="567" class="code-line" dir="auto">
+<thead data-line="567" class="code-line" dir="auto">
+<tr data-line="567" class="code-line" dir="auto">
+<th data-line="567" class="code-line" dir="auto">-</th>
+<th style="text-align:left" data-line="567" class="code-line" dir="auto">左寄せ</th>
+<th style="text-align:center" data-line="567" class="code-line" dir="auto">中央寄せ</th>
+<th style="text-align:right" data-line="567" class="code-line" dir="auto">右寄せ</th>
 </tr>
 </thead>
-<tbody data-line="537" class="code-line" dir="auto">
-<tr data-line="537" class="code-line" dir="auto">
-<td data-line="537" class="code-line" dir="auto">行1</td>
-<td style="text-align:left" data-line="537" class="code-line" dir="auto">TD</td>
-<td style="text-align:center" data-line="537" class="code-line" dir="auto">TD</td>
-<td style="text-align:right" data-line="537" class="code-line" dir="auto">TD</td>
+<tbody data-line="569" class="code-line" dir="auto">
+<tr data-line="569" class="code-line" dir="auto">
+<td data-line="569" class="code-line" dir="auto">行1</td>
+<td style="text-align:left" data-line="569" class="code-line" dir="auto">TD</td>
+<td style="text-align:center" data-line="569" class="code-line" dir="auto">TD</td>
+<td style="text-align:right" data-line="569" class="code-line" dir="auto">TD</td>
 </tr>
-<tr data-line="538" class="code-line" dir="auto">
-<td data-line="538" class="code-line" dir="auto">行2</td>
-<td style="text-align:left" data-line="538" class="code-line" dir="auto">TD</td>
-<td style="text-align:center" data-line="538" class="code-line" dir="auto">セル内の改行は<br><code>&lt;br&gt;</code>タグを使う。</td>
-<td style="text-align:right" data-line="538" class="code-line" dir="auto">TD</td>
+<tr data-line="570" class="code-line" dir="auto">
+<td data-line="570" class="code-line" dir="auto">行2</td>
+<td style="text-align:left" data-line="570" class="code-line" dir="auto">TD</td>
+<td style="text-align:center" data-line="570" class="code-line" dir="auto">セル内の改行は<br><code>&lt;br&gt;</code>タグを使う。</td>
+<td style="text-align:right" data-line="570" class="code-line" dir="auto">TD</td>
 </tr>
 </tbody>
 </table>
 </dd>
 </dl>
-<h4 id="horizontal-rules" data-line="540" class="code-line" dir="auto" tabindex="-1">水平線</h4>
-<dl data-line="542" class="code-line" dir="auto">
-<dt data-line="542" class="code-line" dir="auto">記述</dt>
-<dd data-line="543" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="543" dir="auto"><span></span></p>
-<pre><code data-line="545" class="code-line language-markdown" dir="auto"><div>---
+<h4 id="horizontal-rules" data-line="572" class="code-line" dir="auto" tabindex="-1">水平線</h4>
+<dl data-line="574" class="code-line" dir="auto">
+<dt data-line="574" class="code-line" dir="auto">記述</dt>
+<dd data-line="575" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="575" dir="auto"><span></span></p>
+<pre><code data-line="577" class="code-line language-markdown" dir="auto"><div>---
 </div></code></pre>
 </dd>
-<dt data-line="549" class="code-line" dir="auto">結果</dt>
-<dd data-line="549" class="code-line" dir="auto">
-<hr data-line="550" class="code-line" dir="auto">
+<dt data-line="581" class="code-line" dir="auto">結果</dt>
+<dd data-line="581" class="code-line" dir="auto">
+<hr data-line="582" class="code-line" dir="auto">
 </dd>
 </dl>
-<h3 id="inline-elements" data-line="552" class="code-line" dir="auto" tabindex="-1">インライン要素</h3>
-<h4 id="links" data-line="554" class="code-line" dir="auto" tabindex="-1">リンク</h4>
-<dl data-line="556" class="code-line" dir="auto">
-<dt data-line="556" class="code-line" dir="auto">記述</dt>
-<dd data-line="557" class="code-line" dir="auto">
-<pre><code data-line="557" class="code-line language-markdown" dir="auto"><div>[<span class="hljs-string">通常リンク</span>](<span class="hljs-link">/ "ツールチップA"</span>)
+<h3 id="inline-elements" data-line="584" class="code-line" dir="auto" tabindex="-1">インライン要素</h3>
+<h4 id="links" data-line="586" class="code-line" dir="auto" tabindex="-1">リンク</h4>
+<dl data-line="588" class="code-line" dir="auto">
+<dt data-line="588" class="code-line" dir="auto">記述</dt>
+<dd data-line="589" class="code-line" dir="auto">
+<pre><code data-line="589" class="code-line language-markdown" dir="auto"><div>[<span class="hljs-string">通常リンク</span>](<span class="hljs-link">/ "ツールチップA"</span>)
 [<span class="hljs-string">参照リンク</span>][<span class="hljs-symbol">ref</span>]
 [<span class="hljs-string">参照リンク（ID省略）</span>][<span class="hljs-symbol"></span>]
 [<span class="hljs-string">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>][<span class="hljs-symbol">ref</span>]
@@ -982,41 +1046,41 @@ struct TestClass (
 相対リンク[<span class="hljs-string">highlight.js サンプル</span>](<span class="hljs-link">2019-04-14-highlight-js-sample</span>)
 </div></code></pre>
 </dd>
-<dt data-line="571" class="code-line" dir="auto">結果</dt>
-<dd data-line="571" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="572" dir="auto"><span></span></p>
-<p data-line="574" class="code-line" dir="auto"><a href="/" title="ツールチップA" data-href="/">通常リンク</a><br>
+<dt data-line="603" class="code-line" dir="auto">結果</dt>
+<dd data-line="603" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="604" dir="auto"><span></span></p>
+<p data-line="606" class="code-line" dir="auto"><a href="/" title="ツールチップA" data-href="/">通常リンク</a><br>
 <a href="/" title="ツールチップB" data-href="/">参照リンク</a><br>
 <a href="/" title="ツールチップC" data-href="/">参照リンク（ID省略）</a><br>
 <a href="/" title="ツールチップB" data-href="/">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
-<p data-line="582" class="code-line" dir="auto">外部サイト<a href="https://github.com/" data-href="https://github.com/">https://github.com/</a><br>
+<p data-line="614" class="code-line" dir="auto">外部サイト<a href="https://github.com/" data-href="https://github.com/">https://github.com/</a><br>
 自動リンク&lt;/&gt;<br>
 相対リンク<a href="2019-04-14-highlight-js-sample" data-href="2019-04-14-highlight-js-sample">highlight.js サンプル</a></p>
 </dd>
 </dl>
-<p class="note code-line" data-line="586" dir="auto">参照先の記述は前に一行空ける必要がある。</p>
-<h4 id="footnotes" data-line="589" class="code-line" dir="auto" tabindex="-1">脚注</h4>
-<dl data-line="591" class="code-line" dir="auto">
-<dt data-line="591" class="code-line" dir="auto">記述</dt>
-<dd data-line="592" class="code-line" dir="auto">
-<pre><code data-line="592" class="code-line language-markdown" dir="auto"><div>脚注1[^1]
+<p class="note code-line" data-line="618" dir="auto">参照先の記述は前に一行空ける必要がある。</p>
+<h4 id="footnotes" data-line="621" class="code-line" dir="auto" tabindex="-1">脚注</h4>
+<dl data-line="623" class="code-line" dir="auto">
+<dt data-line="623" class="code-line" dir="auto">記述</dt>
+<dd data-line="624" class="code-line" dir="auto">
+<pre><code data-line="624" class="code-line language-markdown" dir="auto"><div>脚注1[^1]
 脚注2[^a]
 
 [<span class="hljs-symbol">^1</span>]:<span class="hljs-link">脚注1</span>
 [<span class="hljs-symbol">^a</span>]:<span class="hljs-link">脚注2</span>
 </div></code></pre>
 </dd>
-<dt data-line="600" class="code-line" dir="auto">結果</dt>
-<dd data-line="600" class="code-line" dir="auto">
-<p data-line="601" class="code-line" dir="auto">脚注1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+<dt data-line="632" class="code-line" dir="auto">結果</dt>
+<dd data-line="632" class="code-line" dir="auto">
+<p data-line="633" class="code-line" dir="auto">脚注1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
 脚注2<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
 </dd>
 </dl>
-<h4 id="emphasis" data-line="607" class="code-line" dir="auto" tabindex="-1">文字修飾</h4>
-<dl data-line="609" class="code-line" dir="auto">
-<dt data-line="609" class="code-line" dir="auto">記述</dt>
-<dd data-line="610" class="code-line" dir="auto">
-<pre><code data-line="610" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*強調*</span>
+<h4 id="emphasis" data-line="639" class="code-line" dir="auto" tabindex="-1">文字修飾</h4>
+<dl data-line="641" class="code-line" dir="auto">
+<dt data-line="641" class="code-line" dir="auto">記述</dt>
+<dd data-line="642" class="code-line" dir="auto">
+<pre><code data-line="642" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*強調*</span>
 <span class="hljs-emphasis">_強調_</span>
 <span class="hljs-strong">**より強い強調**</span>
 <span class="hljs-strong">__より強い強調__</span>
@@ -1027,8 +1091,8 @@ struct TestClass (
 ~~打ち消し線~~
 </div></code></pre>
 </dd>
-<dt data-line="622" class="code-line" dir="auto">結果</dt>
-<dd data-line="622" class="code-line" dir="auto"><em>強調</em><br>
+<dt data-line="654" class="code-line" dir="auto">結果</dt>
+<dd data-line="654" class="code-line" dir="auto"><em>強調</em><br>
 <u>強調</u><br>
 <strong>より強い強調</strong><br>
 <strong>より強い強調</strong><br>
@@ -1038,11 +1102,11 @@ struct TestClass (
 <code>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</code><br>
 <s>打ち消し線</s></dd>
 </dl>
-<h4 id="images" data-line="633" class="code-line" dir="auto" tabindex="-1">画像</h4>
-<dl data-line="635" class="code-line" dir="auto">
-<dt data-line="635" class="code-line" dir="auto">記述</dt>
-<dd data-line="636" class="code-line" dir="auto">
-<pre><code data-line="636" class="code-line language-markdown" dir="auto"><div>画像
+<h4 id="images" data-line="665" class="code-line" dir="auto" tabindex="-1">画像</h4>
+<dl data-line="667" class="code-line" dir="auto">
+<dt data-line="667" class="code-line" dir="auto">記述</dt>
+<dd data-line="668" class="code-line" dir="auto">
+<pre><code data-line="668" class="code-line language-markdown" dir="auto"><div>画像
 : <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span></span>{.invisible}
 
   相対アドレス![<span class="hljs-string">代替文字</span>](<span class="hljs-link">images/sample/32x32.png "ツールチップ"</span>)
@@ -1071,165 +1135,221 @@ struct TestClass (
   [<span class="hljs-string">![2048x2048</span>](<span class="hljs-link">images/sample/2048x2048t.png</span>)](<span class="hljs-link">images/sample/2048x2048.png</span>)
 </div></code></pre>
 </dd>
-<dt data-line="666" class="code-line" dir="auto">結果</dt>
-<dd data-line="666" class="code-line" dir="auto">
-<dl data-line="667" class="code-line" dir="auto">
-<dt data-line="667" class="code-line" dir="auto">画像</dt>
-<dd data-line="668" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="668" dir="auto"><span></span></p>
-<p data-line="670" class="code-line" dir="auto">相対アドレス<img src="images/sample/32x32.png" alt="" title="ツールチップ" data-src="images/sample/32x32.png"></p>
+<dt data-line="698" class="code-line" dir="auto">結果</dt>
+<dd data-line="698" class="code-line" dir="auto">
+<dl data-line="699" class="code-line" dir="auto">
+<dt data-line="699" class="code-line" dir="auto">画像</dt>
+<dd data-line="700" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="700" dir="auto"><span></span></p>
+<p data-line="702" class="code-line" dir="auto">相対アドレス<img src="images/sample/32x32.png" alt="" title="ツールチップ" data-src="images/sample/32x32.png"></p>
 </dd>
-<dt data-line="672" class="code-line" dir="auto">リンク</dt>
-<dd data-line="672" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="673" dir="auto"><span></span></p>
-<p data-line="675" class="code-line" dir="auto">相対アドレス<a href="images/sample/64x64.png" data-href="images/sample/64x64.png"><img src="images/sample/64x64.png" alt="" title="ツールチップ" data-src="images/sample/64x64.png"></a><br>
+<dt data-line="704" class="code-line" dir="auto">リンク</dt>
+<dd data-line="704" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="705" dir="auto"><span></span></p>
+<p data-line="707" class="code-line" dir="auto">相対アドレス<a href="images/sample/64x64.png" data-href="images/sample/64x64.png"><img src="images/sample/64x64.png" alt="" title="ツールチップ" data-src="images/sample/64x64.png"></a><br>
 絶対アドレス<a href="https://imaoki.github.io/kb/assets/images/sample/128x128.png" data-href="https://imaoki.github.io/kb/assets/images/sample/128x128.png"><img src="https://imaoki.github.io/kb/assets/images/sample/128x128.png" alt="" title="ツールチップ" data-src="https://imaoki.github.io/kb/assets/images/sample/128x128.png"></a><br>
 外部サイト<a href="https://github.com/" data-href="https://github.com/"><img src="images/sample/128x128.png" alt="" title="ツールチップ" data-src="images/sample/128x128.png"></a></p>
 </dd>
-<dt data-line="679" class="code-line" dir="auto">参照画像</dt>
-<dd data-line="679" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="680" dir="auto"><span></span></p>
-<p data-line="682" class="code-line" dir="auto">ID指定<img src="images/sample/128x128.png" alt="" title="ツールチップA" data-src="images/sample/128x128.png"><br>
+<dt data-line="711" class="code-line" dir="auto">参照画像</dt>
+<dd data-line="711" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="712" dir="auto"><span></span></p>
+<p data-line="714" class="code-line" dir="auto">ID指定<img src="images/sample/128x128.png" alt="" title="ツールチップA" data-src="images/sample/128x128.png"><br>
 ID省略<img src="images/sample/128x128.png" alt="" title="ツールチップB" data-src="images/sample/128x128.png"></p>
 </dd>
-<dt data-line="688" class="code-line" dir="auto">高解像度</dt>
-<dd data-line="688" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="689" dir="auto"><span></span></p>
-<p data-line="691" class="code-line" dir="auto"><a href="images/sample/512x512.png" data-href="images/sample/512x512.png"><img src="images/sample/512x512t.png" alt="" data-src="images/sample/512x512t.png"></a><br>
+<dt data-line="720" class="code-line" dir="auto">高解像度</dt>
+<dd data-line="720" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="721" dir="auto"><span></span></p>
+<p data-line="723" class="code-line" dir="auto"><a href="images/sample/512x512.png" data-href="images/sample/512x512.png"><img src="images/sample/512x512t.png" alt="" data-src="images/sample/512x512t.png"></a><br>
 <a href="images/sample/1024x1024.png" data-href="images/sample/1024x1024.png"><img src="images/sample/1024x1024t.png" alt="" data-src="images/sample/1024x1024t.png"></a><br>
 <a href="images/sample/2048x2048.png" data-href="images/sample/2048x2048.png"><img src="images/sample/2048x2048t.png" alt="" data-src="images/sample/2048x2048t.png"></a></p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div data-line="695" class="code-line" dir="auto"></div>
+<div data-line="727" class="code-line" dir="auto"></div>
 <!--
 ### インラインフレーム{#iframes}
 
 <iframe class="iframe-class" src="https://github.com/imaoki/imaoki.github.io" width="520" height="293"></iframe>
 -->
-<h3 id="kramdown" data-line="701" class="code-line" dir="auto" tabindex="-1">kramdown</h3>
-<p data-line="703" class="code-line" dir="auto">Jekyllで有効。</p>
-<h4 id="kramdown-block-attributes" data-line="705" class="code-line" dir="auto" tabindex="-1">ブロック要素の属性</h4>
-<p class="warning code-line" data-line="707" dir="auto">Markdown Extendedとの違いに注意。</p>
-<dl :#block-element-id="" style="color: magenta;" data-line="710" class="code-line" dir="auto">
-<dt data-line="710" class="code-line" dir="auto">記述</dt>
-<dd data-line="711" class="code-line" dir="auto">
-<pre><code data-line="711" class="code-line language-markdown" dir="auto"><div>ブロック要素
+<h3 id="kramdown" data-line="733" class="code-line" dir="auto" tabindex="-1">kramdown</h3>
+<p data-line="735" class="code-line" dir="auto">Jekyllで有効。</p>
+<h4 id="kramdown-block-attributes" data-line="737" class="code-line" dir="auto" tabindex="-1">ブロック要素の属性</h4>
+<p class="warning code-line" data-line="739" dir="auto">Markdown Extendedとの違いに注意。</p>
+<dl :#block-element-id="" style="color: magenta;" data-line="742" class="code-line" dir="auto">
+<dt data-line="742" class="code-line" dir="auto">記述</dt>
+<dd data-line="743" class="code-line" dir="auto">
+<pre><code data-line="743" class="code-line language-markdown" dir="auto"><div>ブロック要素
 {:#block-element-id style="color: magenta;"}
 </div></code></pre>
 </dd>
-<dt data-line="716" class="code-line" dir="auto">結果</dt>
-<dd data-line="716" class="code-line" dir="auto">
-<pre><code data-line="717" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"block-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: magenta;"</span>&gt;</span>ブロック要素<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<dt data-line="748" class="code-line" dir="auto">結果</dt>
+<dd data-line="748" class="code-line" dir="auto">
+<pre><code data-line="749" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"block-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: magenta;"</span>&gt;</span>ブロック要素<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </div></code></pre>
-<p data-line="721" class="code-line" dir="auto">ブロック要素</p>
+<p data-line="753" class="code-line" dir="auto">ブロック要素</p>
 </dd>
 </dl>
-<h5 id="kramdown-block-attributes-note" data-line="724" class="code-line" dir="auto" tabindex="-1">ノート</h5>
-<dl :.note="" data-line="726" class="code-line" dir="auto">
-<dt data-line="726" class="code-line" dir="auto">記述</dt>
-<dd data-line="727" class="code-line" dir="auto">
-<pre><code data-line="727" class="code-line language-markdown" dir="auto"><div>ノート
+<h5 id="kramdown-block-attributes-note" data-line="756" class="code-line" dir="auto" tabindex="-1">ノート</h5>
+<dl :.note="" data-line="758" class="code-line" dir="auto">
+<dt data-line="758" class="code-line" dir="auto">記述</dt>
+<dd data-line="759" class="code-line" dir="auto">
+<pre><code data-line="759" class="code-line language-markdown" dir="auto"><div>ノート
 {:.note}
 </div></code></pre>
 </dd>
-<dt data-line="732" class="code-line" dir="auto">結果</dt>
-<dd data-line="732" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="733" dir="auto"><span></span></p>
-<p data-line="735" class="code-line" dir="auto">ノート</p>
+<dt data-line="764" class="code-line" dir="auto">結果</dt>
+<dd data-line="764" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="765" dir="auto"><span></span></p>
+<p data-line="767" class="code-line" dir="auto">ノート</p>
 </dd>
 </dl>
-<h5 id="kramdown-block-attributes-warning" data-line="738" class="code-line" dir="auto" tabindex="-1">警告</h5>
-<dl :.warning="" data-line="740" class="code-line" dir="auto">
-<dt data-line="740" class="code-line" dir="auto">記述</dt>
-<dd data-line="741" class="code-line" dir="auto">
-<pre><code data-line="741" class="code-line language-markdown" dir="auto"><div>警告
+<h5 id="kramdown-block-attributes-warning" data-line="770" class="code-line" dir="auto" tabindex="-1">警告</h5>
+<dl :.warning="" data-line="772" class="code-line" dir="auto">
+<dt data-line="772" class="code-line" dir="auto">記述</dt>
+<dd data-line="773" class="code-line" dir="auto">
+<pre><code data-line="773" class="code-line language-markdown" dir="auto"><div>警告
 {:.warning}
 </div></code></pre>
 </dd>
-<dt data-line="746" class="code-line" dir="auto">結果</dt>
-<dd data-line="746" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="747" dir="auto"><span></span></p>
-<p data-line="749" class="code-line" dir="auto">警告</p>
+<dt data-line="778" class="code-line" dir="auto">結果</dt>
+<dd data-line="778" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="779" dir="auto"><span></span></p>
+<p data-line="781" class="code-line" dir="auto">警告</p>
 </dd>
 </dl>
-<h5 id="kramdown-block-attributes-input" data-line="752" class="code-line" dir="auto" tabindex="-1">入力</h5>
-<dl :.input="" data-line="754" class="code-line" dir="auto">
-<dt data-line="754" class="code-line" dir="auto">記述</dt>
-<dd data-line="755" class="code-line" dir="auto">
-<pre><code data-line="755" class="code-line language-markdown" dir="auto"><div>入力
+<h5 id="kramdown-block-attributes-input" data-line="784" class="code-line" dir="auto" tabindex="-1">入力</h5>
+<dl :.input="" class="magenta code-line" data-line="786" dir="auto">
+<dt data-line="786" class="code-line" dir="auto">記述</dt>
+<dd data-line="787" class="code-line" dir="auto">
+<pre><code data-line="787" class="code-line language-markdown" dir="auto"><div>入力
 {:.input}
+
+red
+{:.input .red}
+
+orange
+{:.input .orange}
+
+yellow
+{:.input .yellow}
+
+green
+{:.input .green}
+
+cyan
+{:.input .cyan}
+
+blue
+{:.input .blue}
+
+magenta
+{:.input .magenta}
 </div></code></pre>
 </dd>
-<dt data-line="760" class="code-line" dir="auto">結果</dt>
-<dd data-line="760" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="761" dir="auto"><span></span></p>
-<p data-line="763" class="code-line" dir="auto">入力</p>
+<dt data-line="813" class="code-line" dir="auto">結果</dt>
+<dd data-line="813" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="814" dir="auto"><span></span></p>
+<p :.input="" data-line="816" class="code-line" dir="auto">入力</p>
+<p :.input="" class="red code-line" data-line="819" dir="auto">red</p>
+<p :.input="" class="orange code-line" data-line="822" dir="auto">orange</p>
+<p :.input="" class="yellow code-line" data-line="825" dir="auto">yellow</p>
+<p :.input="" class="green code-line" data-line="828" dir="auto">green</p>
+<p :.input="" class="cyan code-line" data-line="831" dir="auto">cyan</p>
+<p :.input="" class="blue code-line" data-line="834" dir="auto">blue</p>
+<p data-line="837" class="code-line" dir="auto">magenta</p>
 </dd>
 </dl>
-<h5 id="kramdown-block-attributes-output" data-line="766" class="code-line" dir="auto" tabindex="-1">出力</h5>
-<dl :.output="" data-line="768" class="code-line" dir="auto">
-<dt data-line="768" class="code-line" dir="auto">記述</dt>
-<dd data-line="769" class="code-line" dir="auto">
-<pre><code data-line="769" class="code-line language-markdown" dir="auto"><div>出力
+<h5 id="kramdown-block-attributes-output" data-line="840" class="code-line" dir="auto" tabindex="-1">出力</h5>
+<dl :.output="" class="magenta code-line" data-line="842" dir="auto">
+<dt data-line="842" class="code-line" dir="auto">記述</dt>
+<dd data-line="843" class="code-line" dir="auto">
+<pre><code data-line="843" class="code-line language-markdown" dir="auto"><div>出力
 {:.output}
+
+red
+{:.output .red}
+
+orange
+{:.output .orange}
+
+yellow
+{:.output .yellow}
+
+green
+{:.output .green}
+
+cyan
+{:.output .cyan}
+
+blue
+{:.output .blue}
+
+magenta
+{:.output .magenta}
 </div></code></pre>
 </dd>
-<dt data-line="774" class="code-line" dir="auto">結果</dt>
-<dd data-line="774" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="775" dir="auto"><span></span></p>
-<p data-line="777" class="code-line" dir="auto">出力</p>
+<dt data-line="869" class="code-line" dir="auto">結果</dt>
+<dd data-line="869" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="870" dir="auto"><span></span></p>
+<p :.output="" data-line="872" class="code-line" dir="auto">出力</p>
+<p :.output="" class="red code-line" data-line="875" dir="auto">red</p>
+<p :.output="" class="orange code-line" data-line="878" dir="auto">orange</p>
+<p :.output="" class="yellow code-line" data-line="881" dir="auto">yellow</p>
+<p :.output="" class="green code-line" data-line="884" dir="auto">green</p>
+<p :.output="" class="cyan code-line" data-line="887" dir="auto">cyan</p>
+<p :.output="" class="blue code-line" data-line="890" dir="auto">blue</p>
+<p data-line="893" class="code-line" dir="auto">magenta</p>
 </dd>
 </dl>
-<h4 id="kramdown-inline-attributes" data-line="780" class="code-line" dir="auto" tabindex="-1">インライン要素の属性</h4>
-<p class="warning code-line" data-line="782" dir="auto">Markdown Extendedとの違いに注意。</p>
-<dl data-line="785" class="code-line" dir="auto">
-<dt data-line="785" class="code-line" dir="auto">記述</dt>
-<dd data-line="786" class="code-line" dir="auto">
-<pre><code data-line="786" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*インライン要素*</span>{:#inline-element-id style="color: cyan;"}
+<h4 id="kramdown-inline-attributes" data-line="896" class="code-line" dir="auto" tabindex="-1">インライン要素の属性</h4>
+<p class="warning code-line" data-line="898" dir="auto">Markdown Extendedとの違いに注意。</p>
+<dl data-line="901" class="code-line" dir="auto">
+<dt data-line="901" class="code-line" dir="auto">記述</dt>
+<dd data-line="902" class="code-line" dir="auto">
+<pre><code data-line="902" class="code-line language-markdown" dir="auto"><div><span class="hljs-emphasis">*インライン要素*</span>{:#inline-element-id style="color: cyan;"}
 </div></code></pre>
 </dd>
-<dt data-line="790" class="code-line" dir="auto">結果</dt>
-<dd data-line="790" class="code-line" dir="auto">
-<pre><code data-line="791" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">em</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inline-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: cyan;"</span>&gt;</span>インライン要素<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
+<dt data-line="906" class="code-line" dir="auto">結果</dt>
+<dd data-line="906" class="code-line" dir="auto">
+<pre><code data-line="907" class="code-line language-html" dir="auto"><div><span class="hljs-tag">&lt;<span class="hljs-name">em</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"inline-element-id"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: cyan;"</span>&gt;</span>インライン要素<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
 </div></code></pre>
-<p data-line="795" class="code-line" dir="auto"><em :#inline-element-id="" style="color: cyan;">インライン要素</em></p>
+<p data-line="911" class="code-line" dir="auto"><em :#inline-element-id="" style="color: cyan;">インライン要素</em></p>
 </dd>
 </dl>
-<h5 id="kramdown-inline-attributes-syntax-highlihgt" data-line="797" class="code-line" dir="auto" tabindex="-1">シンタックスハイライト</h5>
-<dl data-line="799" class="code-line" dir="auto">
-<dt data-line="799" class="code-line" dir="auto">記述</dt>
-<dd data-line="800" class="code-line" dir="auto">
-<pre><code data-line="800" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{:.code .language-html}
+<h5 id="kramdown-inline-attributes-syntax-highlihgt" data-line="913" class="code-line" dir="auto" tabindex="-1">シンタックスハイライト</h5>
+<dl data-line="915" class="code-line" dir="auto">
+<dt data-line="915" class="code-line" dir="auto">記述</dt>
+<dd data-line="916" class="code-line" dir="auto">
+<pre><code data-line="916" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{:.code .language-html}
 </div></code></pre>
 </dd>
-<dt data-line="804" class="code-line" dir="auto">結果</dt>
-<dd data-line="804" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="805" dir="auto"><span></span></p>
-<p data-line="807" class="code-line" dir="auto"><code :.code="" class="language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
+<dt data-line="920" class="code-line" dir="auto">結果</dt>
+<dd data-line="920" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="921" dir="auto"><span></span></p>
+<p data-line="923" class="code-line" dir="auto"><code :.code="" class="language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
 </dd>
 </dl>
-<h5 id="kramdown-inline-attributes-key-button" data-line="809" class="code-line" dir="auto" tabindex="-1">キーボタン</h5>
-<dl data-line="811" class="code-line" dir="auto">
-<dt data-line="811" class="code-line" dir="auto">記述</dt>
-<dd data-line="812" class="code-line" dir="auto">
-<pre><code data-line="812" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`Ctrl+A`</span>{:.key}で全て選択し、<span class="hljs-code">`Ctrl+C`</span>{:.key}でコピーする。
+<h5 id="kramdown-inline-attributes-key-button" data-line="925" class="code-line" dir="auto" tabindex="-1">キーボタン</h5>
+<dl data-line="927" class="code-line" dir="auto">
+<dt data-line="927" class="code-line" dir="auto">記述</dt>
+<dd data-line="928" class="code-line" dir="auto">
+<pre><code data-line="928" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`Ctrl+A`</span>{:.key}で全て選択し、<span class="hljs-code">`Ctrl+C`</span>{:.key}でコピーする。
 </div></code></pre>
 </dd>
-<dt data-line="816" class="code-line" dir="auto">表示</dt>
-<dd data-line="816" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="817" dir="auto"><span></span></p>
-<p data-line="819" class="code-line" dir="auto"><code :.key="">Ctrl+A</code>で全て選択し、<code :.key="">Ctrl+C</code>でコピーする。</p>
+<dt data-line="932" class="code-line" dir="auto">表示</dt>
+<dd data-line="932" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="933" dir="auto"><span></span></p>
+<p data-line="935" class="code-line" dir="auto"><code :.key="">Ctrl+A</code>で全て選択し、<code :.key="">Ctrl+C</code>でコピーする。</p>
 </dd>
 </dl>
-<h3 id="markdown-extended" data-line="821" class="code-line" dir="auto" tabindex="-1">Markdown Extended</h3>
-<p data-line="823" class="code-line" dir="auto">Markdown Converterによる変換で有効。</p>
-<h4 id="markdown-extended-admonition" data-line="825" class="code-line" dir="auto" tabindex="-1">Admonition</h4>
-<dl data-line="827" class="code-line" dir="auto">
-<dt data-line="827" class="code-line" dir="auto">記述</dt>
-<dd data-line="828" class="code-line" dir="auto">
-<pre><code data-line="828" class="code-line language-markdown" dir="auto"><div>!!! ノート
+<h3 id="markdown-extended" data-line="937" class="code-line" dir="auto" tabindex="-1">Markdown Extended</h3>
+<p data-line="939" class="code-line" dir="auto">Markdown Converterによる変換で有効。</p>
+<h4 id="markdown-extended-admonition" data-line="941" class="code-line" dir="auto" tabindex="-1">Admonition</h4>
+<dl data-line="943" class="code-line" dir="auto">
+<dt data-line="943" class="code-line" dir="auto">記述</dt>
+<dd data-line="944" class="code-line" dir="auto">
+<pre><code data-line="944" class="code-line language-markdown" dir="auto"><div>!!! ノート
 
 <span class="hljs-code">    Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 </span>
@@ -1238,104 +1358,146 @@ ID省略<img src="images/sample/128x128.png" alt="" title="ツールチップB" 
 <span class="hljs-code">        Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。
 </span></div></code></pre>
 </dd>
-<dt data-line="838" class="code-line" dir="auto">表示</dt>
-<dd data-line="838" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="839" dir="auto"><span></span></p>
-<div data-line="841" class="code-line admonition note" dir="auto">
-<p data-line="841" class="code-line admonition-title" dir="auto">ノート</p>
-<p data-line="843" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
-<div data-line="845" class="code-line admonition warning" dir="auto">
-<p data-line="845" class="code-line admonition-title" dir="auto"> 警告</p>
-<p data-line="847" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<dt data-line="954" class="code-line" dir="auto">表示</dt>
+<dd data-line="954" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="955" dir="auto"><span></span></p>
+<div data-line="957" class="code-line admonition note" dir="auto">
+<p data-line="957" class="code-line admonition-title" dir="auto">ノート</p>
+<p data-line="959" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
+<div data-line="961" class="code-line admonition warning" dir="auto">
+<p data-line="961" class="code-line admonition-title" dir="auto"> 警告</p>
+<p data-line="963" class="code-line" dir="auto">Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。</p>
 </div>
 </div>
 </dd>
 </dl>
-<h4 id="markdown-extended-markdown-it-attrs" data-line="849" class="code-line" dir="auto" tabindex="-1">markdown-it-attrs</h4>
-<p class="warning code-line" data-line="851" dir="auto">kramdownとの違いに注意。</p>
-<dl data-line="854" class="code-line" dir="auto">
-<dt data-line="854" class="code-line" dir="auto">記述</dt>
-<dd data-line="855" class="code-line" dir="auto">
-<pre><code data-line="855" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{.code .language-html}
+<h4 id="markdown-extended-markdown-it-attrs" data-line="965" class="code-line" dir="auto" tabindex="-1">markdown-it-attrs</h4>
+<p class="warning code-line" data-line="967" dir="auto">kramdownとの違いに注意。</p>
+<dl data-line="970" class="code-line" dir="auto">
+<dt data-line="970" class="code-line" dir="auto">記述</dt>
+<dd data-line="971" class="code-line" dir="auto">
+<pre><code data-line="971" class="code-line language-markdown" dir="auto"><div><span class="hljs-code">`&lt;style&gt;body {width: 500px;}&lt;/style&gt;`</span>{.code .language-html}
 </div></code></pre>
 </dd>
-<dt data-line="859" class="code-line" dir="auto">表示</dt>
-<dd data-line="859" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="860" dir="auto"><span></span></p>
-<p data-line="862" class="code-line" dir="auto"><code class="code language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
+<dt data-line="975" class="code-line" dir="auto">表示</dt>
+<dd data-line="975" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="976" dir="auto"><span></span></p>
+<p data-line="978" class="code-line" dir="auto"><code class="code language-html">&lt;style&gt;body {width: 500px;}&lt;/style&gt;</code></p>
 </dd>
 </dl>
-<h5 id="markdown-extended-markdown-it-attrs-note" data-line="864" class="code-line" dir="auto" tabindex="-1">ノート</h5>
-<dl data-line="866" class="code-line" dir="auto">
-<dt data-line="866" class="code-line" dir="auto">記述</dt>
-<dd data-line="867" class="code-line" dir="auto">
-<pre><code data-line="867" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**ノート**</span>{.note}
+<h5 id="markdown-extended-markdown-it-attrs-note" data-line="980" class="code-line" dir="auto" tabindex="-1">ノート</h5>
+<dl data-line="982" class="code-line" dir="auto">
+<dt data-line="982" class="code-line" dir="auto">記述</dt>
+<dd data-line="983" class="code-line" dir="auto">
+<pre><code data-line="983" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**ノート**</span>{.note}
 </div></code></pre>
 </dd>
-<dt data-line="871" class="code-line" dir="auto">結果</dt>
-<dd data-line="871" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="872" dir="auto"><span></span></p>
-<p data-line="874" class="code-line" dir="auto"><strong class="note">ノート</strong></p>
+<dt data-line="987" class="code-line" dir="auto">結果</dt>
+<dd data-line="987" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="988" dir="auto"><span></span></p>
+<p data-line="990" class="code-line" dir="auto"><strong class="note">ノート</strong></p>
 </dd>
 </dl>
-<h5 id="markdown-extended-markdown-it-attrs-warning" data-line="876" class="code-line" dir="auto" tabindex="-1">警告</h5>
-<dl data-line="878" class="code-line" dir="auto">
-<dt data-line="878" class="code-line" dir="auto">記述</dt>
-<dd data-line="879" class="code-line" dir="auto">
-<pre><code data-line="879" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**警告**</span>{.warning}
+<h5 id="markdown-extended-markdown-it-attrs-warning" data-line="992" class="code-line" dir="auto" tabindex="-1">警告</h5>
+<dl data-line="994" class="code-line" dir="auto">
+<dt data-line="994" class="code-line" dir="auto">記述</dt>
+<dd data-line="995" class="code-line" dir="auto">
+<pre><code data-line="995" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**警告**</span>{.warning}
 </div></code></pre>
 </dd>
-<dt data-line="883" class="code-line" dir="auto">結果</dt>
-<dd data-line="883" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="884" dir="auto"><span></span></p>
-<p data-line="886" class="code-line" dir="auto"><strong class="warning">警告</strong></p>
+<dt data-line="999" class="code-line" dir="auto">結果</dt>
+<dd data-line="999" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="1000" dir="auto"><span></span></p>
+<p data-line="1002" class="code-line" dir="auto"><strong class="warning">警告</strong></p>
 </dd>
 </dl>
-<h5 id="markdown-extended-markdown-it-attrs-input" data-line="888" class="code-line" dir="auto" tabindex="-1">入力</h5>
-<dl data-line="890" class="code-line" dir="auto">
-<dt data-line="890" class="code-line" dir="auto">記述</dt>
-<dd data-line="891" class="code-line" dir="auto">
-<pre><code data-line="891" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**入力**</span>{.input}
+<h5 id="markdown-extended-markdown-it-attrs-input" data-line="1004" class="code-line" dir="auto" tabindex="-1">入力</h5>
+<dl data-line="1006" class="code-line" dir="auto">
+<dt data-line="1006" class="code-line" dir="auto">記述</dt>
+<dd data-line="1007" class="code-line" dir="auto">
+<pre><code data-line="1007" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**入力**</span>{.input}
+
+<span class="hljs-strong">**red**</span>{.input .red}
+
+<span class="hljs-strong">**orange**</span>{.input .orange}
+
+<span class="hljs-strong">**yellow**</span>{.input .yellow}
+
+<span class="hljs-strong">**green**</span>{.input .green}
+
+<span class="hljs-strong">**cyan**</span>{.input .cyan}
+
+<span class="hljs-strong">**blue**</span>{.input .blue}
+
+<span class="hljs-strong">**magenta**</span>{.input .magenta}
 </div></code></pre>
 </dd>
-<dt data-line="895" class="code-line" dir="auto">結果</dt>
-<dd data-line="895" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="896" dir="auto"><span></span></p>
-<p data-line="898" class="code-line" dir="auto"><strong class="input">入力</strong></p>
+<dt data-line="1025" class="code-line" dir="auto">結果</dt>
+<dd data-line="1025" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="1026" dir="auto"><span></span></p>
+<p data-line="1028" class="code-line" dir="auto"><strong class="input">入力</strong></p>
+<p data-line="1030" class="code-line" dir="auto"><strong class="input red">red</strong></p>
+<p data-line="1032" class="code-line" dir="auto"><strong class="input orange">orange</strong></p>
+<p data-line="1034" class="code-line" dir="auto"><strong class="input yellow">yellow</strong></p>
+<p data-line="1036" class="code-line" dir="auto"><strong class="input green">green</strong></p>
+<p data-line="1038" class="code-line" dir="auto"><strong class="input cyan">cyan</strong></p>
+<p data-line="1040" class="code-line" dir="auto"><strong class="input blue">blue</strong></p>
+<p data-line="1042" class="code-line" dir="auto"><strong class="input magenta">magenta</strong></p>
 </dd>
 </dl>
-<h5 id="markdown-extended-markdown-it-attrs-output" data-line="900" class="code-line" dir="auto" tabindex="-1">出力</h5>
-<dl data-line="902" class="code-line" dir="auto">
-<dt data-line="902" class="code-line" dir="auto">記述</dt>
-<dd data-line="903" class="code-line" dir="auto">
-<pre><code data-line="903" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**出力**</span>{.output}
+<h5 id="markdown-extended-markdown-it-attrs-output" data-line="1044" class="code-line" dir="auto" tabindex="-1">出力</h5>
+<dl data-line="1046" class="code-line" dir="auto">
+<dt data-line="1046" class="code-line" dir="auto">記述</dt>
+<dd data-line="1047" class="code-line" dir="auto">
+<pre><code data-line="1047" class="code-line language-markdown" dir="auto"><div><span class="hljs-strong">**出力**</span>{.output}
+
+<span class="hljs-strong">**red**</span>{.output .red}
+
+<span class="hljs-strong">**orange**</span>{.output .orange}
+
+<span class="hljs-strong">**yellow**</span>{.output .yellow}
+
+<span class="hljs-strong">**green**</span>{.output .green}
+
+<span class="hljs-strong">**cyan**</span>{.output .cyan}
+
+<span class="hljs-strong">**blue**</span>{.output .blue}
+
+<span class="hljs-strong">**magenta**</span>{.output .magenta}
 </div></code></pre>
 </dd>
-<dt data-line="907" class="code-line" dir="auto">結果</dt>
-<dd data-line="907" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="908" dir="auto"><span></span></p>
-<p data-line="910" class="code-line" dir="auto"><strong class="output">出力</strong></p>
+<dt data-line="1065" class="code-line" dir="auto">結果</dt>
+<dd data-line="1065" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="1066" dir="auto"><span></span></p>
+<p data-line="1068" class="code-line" dir="auto"><strong class="output">出力</strong></p>
+<p data-line="1070" class="code-line" dir="auto"><strong class="output red">red</strong></p>
+<p data-line="1072" class="code-line" dir="auto"><strong class="output orange">orange</strong></p>
+<p data-line="1074" class="code-line" dir="auto"><strong class="output yellow">yellow</strong></p>
+<p data-line="1076" class="code-line" dir="auto"><strong class="output green">green</strong></p>
+<p data-line="1078" class="code-line" dir="auto"><strong class="output cyan">cyan</strong></p>
+<p data-line="1080" class="code-line" dir="auto"><strong class="output blue">blue</strong></p>
+<p data-line="1082" class="code-line" dir="auto"><strong class="output magenta">magenta</strong></p>
 </dd>
 </dl>
-<h4 id="markdown-extended-markdown-it-kbd" data-line="912" class="code-line" dir="auto" tabindex="-1">markdown-it-kbd</h4>
-<dl data-line="914" class="code-line" dir="auto">
-<dt data-line="914" class="code-line" dir="auto">記述</dt>
-<dd data-line="915" class="code-line" dir="auto">
-<pre><code data-line="915" class="code-line language-markdown" dir="auto"><div>[[Ctrl+A]]で全て選択し、[[Ctrl+C]]でコピーする。
+<h4 id="markdown-extended-markdown-it-kbd" data-line="1084" class="code-line" dir="auto" tabindex="-1">markdown-it-kbd</h4>
+<dl data-line="1086" class="code-line" dir="auto">
+<dt data-line="1086" class="code-line" dir="auto">記述</dt>
+<dd data-line="1087" class="code-line" dir="auto">
+<pre><code data-line="1087" class="code-line language-markdown" dir="auto"><div>[[Ctrl+A]]で全て選択し、[[Ctrl+C]]でコピーする。
 </div></code></pre>
 </dd>
-<dt data-line="919" class="code-line" dir="auto">表示</dt>
-<dd data-line="919" class="code-line" dir="auto">
-<p class="invisible code-line" data-line="920" dir="auto"><span></span></p>
-<p data-line="922" class="code-line" dir="auto"><kbd>Ctrl+A</kbd>で全て選択し、<kbd>Ctrl+C</kbd>でコピーする。</p>
+<dt data-line="1091" class="code-line" dir="auto">表示</dt>
+<dd data-line="1091" class="code-line" dir="auto">
+<p class="invisible code-line" data-line="1092" dir="auto"><span></span></p>
+<p data-line="1094" class="code-line" dir="auto"><kbd>Ctrl+A</kbd>で全て選択し、<kbd>Ctrl+C</kbd>でコピーする。</p>
 </dd>
 </dl>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p data-line="604" class="code-line" dir="auto">脚注1 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p data-line="636" class="code-line" dir="auto">脚注1 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
-<li id="fn2" class="footnote-item"><p data-line="605" class="code-line" dir="auto">脚注2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+<li id="fn2" class="footnote-item"><p data-line="637" class="code-line" dir="auto">脚注2 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
 </ol>
 </section>

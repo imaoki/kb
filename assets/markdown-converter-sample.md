@@ -1,7 +1,7 @@
 # [Markdown Converter Sample]()
 
 update
-: 2024-05-19
+: 2024-05-22
 
 ## [スタイルシート色見本]()
 
@@ -328,6 +328,38 @@ update
   * D
 
   * E
+
+---
+
+* インデント確認
+
+01. インデント確認
+
+    * インデント確認
+
+    01. インデント確認
+
+    02. インデント確認
+
+    03. インデント確認
+
+02. インデント確認
+
+03. インデント確認
+
+04. インデント確認
+
+05. インデント確認
+
+06. インデント確認
+
+07. インデント確認
+
+08. インデント確認
+
+09. インデント確認
+
+10. インデント確認
 
 #### 定義リスト{#definition-lists}
 
@@ -756,6 +788,27 @@ Markdown Extendedとの違いに注意。
 : ```markdown
   入力
   {:.input}
+
+  red
+  {:.input .red}
+
+  orange
+  {:.input .orange}
+
+  yellow
+  {:.input .yellow}
+
+  green
+  {:.input .green}
+
+  cyan
+  {:.input .cyan}
+
+  blue
+  {:.input .blue}
+
+  magenta
+  {:.input .magenta}
   ```
 
 結果
@@ -764,12 +817,54 @@ Markdown Extendedとの違いに注意。
   入力
   {:.input}
 
+  red
+  {:.input .red}
+
+  orange
+  {:.input .orange}
+
+  yellow
+  {:.input .yellow}
+
+  green
+  {:.input .green}
+
+  cyan
+  {:.input .cyan}
+
+  blue
+  {:.input .blue}
+
+  magenta
+  {:.input .magenta}
+
 ##### 出力{#kramdown-block-attributes-output}
 
 記述
 : ```markdown
   出力
   {:.output}
+
+  red
+  {:.output .red}
+
+  orange
+  {:.output .orange}
+
+  yellow
+  {:.output .yellow}
+
+  green
+  {:.output .green}
+
+  cyan
+  {:.output .cyan}
+
+  blue
+  {:.output .blue}
+
+  magenta
+  {:.output .magenta}
   ```
 
 結果
@@ -777,6 +872,27 @@ Markdown Extendedとの違いに注意。
 
   出力
   {:.output}
+
+  red
+  {:.output .red}
+
+  orange
+  {:.output .orange}
+
+  yellow
+  {:.output .yellow}
+
+  green
+  {:.output .green}
+
+  cyan
+  {:.output .cyan}
+
+  blue
+  {:.output .blue}
+
+  magenta
+  {:.output .magenta}
 
 #### インライン要素の属性{#kramdown-inline-attributes}
 
@@ -891,6 +1007,20 @@ kramdownとの違いに注意。
 記述
 : ```markdown
   **入力**{.input}
+
+  **red**{.input .red}
+
+  **orange**{.input .orange}
+
+  **yellow**{.input .yellow}
+
+  **green**{.input .green}
+
+  **cyan**{.input .cyan}
+
+  **blue**{.input .blue}
+
+  **magenta**{.input .magenta}
   ```
 
 結果
@@ -898,17 +1028,59 @@ kramdownとの違いに注意。
 
   **入力**{.input}
 
+  **red**{.input .red}
+
+  **orange**{.input .orange}
+
+  **yellow**{.input .yellow}
+
+  **green**{.input .green}
+
+  **cyan**{.input .cyan}
+
+  **blue**{.input .blue}
+
+  **magenta**{.input .magenta}
+
 ##### 出力{#markdown-extended-markdown-it-attrs-output}
 
 記述
 : ```markdown
   **出力**{.output}
+
+  **red**{.output .red}
+
+  **orange**{.output .orange}
+
+  **yellow**{.output .yellow}
+
+  **green**{.output .green}
+
+  **cyan**{.output .cyan}
+
+  **blue**{.output .blue}
+
+  **magenta**{.output .magenta}
   ```
 
 結果
 : <span/>{.invisible}
 
   **出力**{.output}
+
+  **red**{.output .red}
+
+  **orange**{.output .orange}
+
+  **yellow**{.output .yellow}
+
+  **green**{.output .green}
+
+  **cyan**{.output .cyan}
+
+  **blue**{.output .blue}
+
+  **magenta**{.output .magenta}
 
 #### markdown-it-kbd{#markdown-extended-markdown-it-kbd}
 
