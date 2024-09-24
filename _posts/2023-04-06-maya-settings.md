@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00
-updated: 2024-03-07 15:53:00
+updated: 2024-09-24 11:09:00
 categories: note
 tags: maya
 toc: true
@@ -25,6 +25,17 @@ Mayaの設定。
 | Settings  | Files/Projects | AutoSave               | Interval (minutes)                            | `5`               |
 | Settings  | Selection      | Modifiers              | Selection Child Highlighting                  | `Never highlight` |
 | Settings  | Time Slider    | Playback               | Update view                                   | `All`             |
+
+#### Default
+{:#preferences-default}
+
+| カテゴリ | サブカテゴリ | グループ          | 項目                | 値      |
+| -------- | ------------ | ----------------- | ------------------- | ------- |
+| Display  | Manipulators | Manipulator Sizes | Global scale        | `1.50`  |
+| Display  | Manipulators | Manipulator Sizes | Handle size         | `35.00` |
+| Display  | Manipulators | Manipulator Sizes | Line size           | `1`     |
+| Display  | Manipulators | Manipulator Sizes | Line pick size      | `1.00`  |
+| Display  | Manipulators | Manipulator Sizes | Previous state size | `6.00`  |
 
 ### Hotkey
 {:#hotkey}
