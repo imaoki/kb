@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00
-updated: 2023-07-28 10:46:00
+updated: 2024-10-12 14:27:00
 categories: note
 tags: photoshop
 toc: true
@@ -104,3 +104,11 @@ Photoshopの設定。
   ```
 
 * それでも起動しない場合は再インストールする。
+
+#### PNGの保存ができない
+{:#troubleshooting-cannot-save-png}
+
+半透明画像を保存する際にファイルの種類にPNGが出てこない場合は以下の設定を変更する。
+
+環境設定 > ファイル管理 > ファイルの保存オプション > 従来の「別名で保存」を有効にする
+: オン
