@@ -4,14 +4,14 @@ description: :-)
 author:
   name: imaoki
 
-copyright: 2016-2024
+copyright: 2016-2025
 
 url: https://imaoki.github.io
 baseurl: "/kb"
 
 excerpt_length: 30
 paginate_path: "/page:num"
-paginate: 10
+paginate: 100
 permalink: /:year-:month-:day-:title
 timezone: Asia/Tokyo
 unpublished: false
