@@ -1,7 +1,7 @@
 ---
 title: Windows 10 初期設定ノート
-date: 2021-01-28 03:46:00
-updated: 2024-04-07 04:10:00
+date: 2021-01-28 03:46:00 +09:00
+updated: 2024-04-07 04:10:00 +09:00
 categories: note
 tags: windows
 toc: true

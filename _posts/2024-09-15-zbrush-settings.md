@@ -1,6 +1,6 @@
 ---
 title: ZBrush 設定
-date: 2024-09-15 09:40:00
+date: 2024-09-15 09:40:00 +09:00
 updated:
 categories: note
 tags: zbrush

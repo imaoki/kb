@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
-date: 2020-06-22 18:22:00
-updated: 2021-11-29 10:53:00
+date: 2020-06-22 18:22:00 +09:00
+updated: 2021-11-29 10:53:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true

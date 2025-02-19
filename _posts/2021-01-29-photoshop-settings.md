@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
-date: 2021-01-29 17:47:00
-updated: 2024-10-12 14:27:00
+date: 2021-01-29 17:47:00 +09:00
+updated: 2024-10-12 14:27:00 +09:00
 categories: note
 tags: photoshop
 toc: true

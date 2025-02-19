@@ -1,7 +1,7 @@
 ---
 title: Jekyll インストールノート
-date: 2021-01-28 03:07:00
-updated: 2021-06-23 23:00:00
+date: 2021-01-28 03:07:00 +09:00
+updated: 2021-06-23 23:00:00 +09:00
 categories: note
 tags: jekyll
 toc: true

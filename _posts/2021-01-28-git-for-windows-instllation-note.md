@@ -1,6 +1,6 @@
 ---
 title: Git for Windows インストールノート
-date: 2021-01-28 01:45:00
+date: 2021-01-28 01:45:00 +09:00
 updated:
 categories: note
 tags: git

@@ -1,6 +1,6 @@
 ---
 title: 等幅フォント サンプル
-date: 2023-08-26 15:45:00
+date: 2023-08-26 15:45:00 +09:00
 updated:
 categories: sample
 tags: vscode

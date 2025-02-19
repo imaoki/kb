@@ -1,7 +1,7 @@
 ---
 title: Cyberpunk 2077 PC版ノート
-date: 2020-12-11 04:58:00
-updated: 2020-12-29 08:04:00
+date: 2020-12-11 04:58:00 +09:00
+updated: 2020-12-29 08:04:00 +09:00
 categories: note
 tags: game
 toc: true

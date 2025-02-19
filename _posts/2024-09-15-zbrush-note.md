@@ -1,6 +1,6 @@
 ---
 title: ZBrushノート
-date: 2024-09-15 05:05:00
+date: 2024-09-15 05:05:00 +09:00
 updated:
 categories: note
 tags: zbrush

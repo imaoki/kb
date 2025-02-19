@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
-date: 2023-04-06 01:27:00
-updated: 2024-09-24 11:09:00
+date: 2023-04-06 01:27:00 +09:00
+updated: 2024-09-24 11:09:00 +09:00
 categories: note
 tags: maya
 toc: true
