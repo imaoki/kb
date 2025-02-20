@@ -1,68 +1,111 @@
 ---
 title: Jekyll インストールノート
 date: 2021-01-28 03:07:00 +09:00
-updated: 2021-06-23 23:00:00 +09:00
+updated: 2025-02-20 23:39:00 +09:00
 categories: note
 tags: jekyll
 toc: true
 published: true
 ---
-[Jekyll](https://jekyllrb.com/)の私的導入手順。
+[GitHub Pages](https://docs.github.com/ja/pages)用[Jekyll](https://jekyllrb.com/)の私的導入手順。
 
 ### Rubyのインストール
 {:#install-ruby}
 
-01. [RubyInstaller for Windows](https://rubyinstaller.org/)から`Ruby+Devkit`（太字のバージョンが推奨）をダウンロードし、規定値のオプションでインストールする。
+01. [RubyInstaller for Windows](https://rubyinstaller.org/downloads/)から`Ruby+Devkit`（太字のバージョンが推奨）をダウンロードし、既定値のオプションでインストール
     `Use UTF-8 as default external encoding.`はオンで。
 
-02. 最後の段階で`rick install`を実行する。
+02. 最後の段階で`rick install`を実行
 
-03. `succeeded`が表示されれば完了。
+03. `ruby -v`を実行し、バージョンが表示されればインストール完了
 
-04. スタートメニューから`Start Command Prompt with Ruby`を起動して`ruby -v`を入力する。
+#### Rubyのバージョン変更
+{:#install-ruby-version-change}
 
-05. バージョンが表示されればインストール完了。
+01. 必要なバージョンの`Ruby+Devkit`を通常通りインストール
+
+02. ユーザー環境変数の`Path`から使わないバージョンのパスを削除
 
 ### Jekyllのインストール
 {:#install-jekyll}
 
-01. スタートメニューから新しくコマンドプロンプトを開き`gem install jekyll bundler`を入力する。
+01. ```
+    gem install jekyll bundler
+    ```
 
-02. `jekyll -v`でバージョンが表示されればインストール完了。
+02. `jekyll -v`でバージョンが表示されればインストール完了
 
 ### Bundlerのインストール
 {:#install-bundler}
 
-01. コマンドプロンプトを起動して`gem install bundler`を入力する。
+01. ```
+    gem install bundler
+    ```
 
-02. `bundler -v`でバージョンが表示されればインストール完了。
+02. `bundler -v`でバージョンが表示されればインストール完了
 
 ### Gemのインストール
 {:#install-gem}
 
-01. コマンドプロンプトを起動して`Gemfile`のあるディレクトリへ移動する。
+01. `Gemfile`の内容を編集
 
-02. `bundle install`を入力する。
+    ```
+    source "https://rubygems.org"
+
+    gem "github-pages", "~> 232", group: :jekyll_plugins
+
+    platforms :mingw, :x64_mingw, :mswin, :jruby do
+      gem "tzinfo", "~> 1.2"
+      gem "tzinfo-data"
+    end
+    ```
+
+    * `jekyll`やプラグインのgemは今のところ不要なのでコメントアウトしておく。
+
+    * `github-pages`のバージョンは[Dependency versions](https://pages.github.com/versions/)を参照。
+
+01. `Gemfile`のあるディレクトリで`bundle install`を実行
 
 ### Jekyllの起動
 {:#launch-jekyll}
 
-01. コマンドプロンプトを起動してローカルサイトのルートディレクトリへ移動する。
+01. ローカルサイトのルートディレクトリで`bundle exec jekyll serve`を実行
 
-02. `bundle exec jekyll serve`を入力する。
+    * `published: false`のポストを表示するには`--unpublished`を加える。
 
-    `published: false`のポストを表示するには`--unpublished`を加える。
-    タイムゾーンの関係で表示されない場合は`--future`を加える。
+    * タイムゾーンの関係で表示されない場合は`--future`を加える。
 
-03. `http://localhost:4000/`で正常にページが表示されれば完了。
-    `baseurl`を設定している場合は`http://localhost:4000/baseurl/`になる。
+03. `http://localhost:4000/`で正常にページが表示されれば完了
+    `_config.yml`に`baseurl`を設定している場合は`http://localhost:4000/baseurl/`になる。
 
 #### 設定ファイルの更新が反映されない場合
 {:#if-the-update-of-the-configuration-file-is-not-reflected}
 
-コマンドプロンプトを起動して`bundle exec jekyll build`を入力する。
+01. `bundle exec jekyll build`を実行
 
 #### (Bundler::GemNotFound)や(Gem::LoadError)が出る場合
 {:#bundler-gemnotfound-or-gem-loaderror}
 
-コマンドプロンプトを起動して`bundle update`を入力する。
+01. `bundle update`を実行
+
+### Gemその他
+{:#misc-gem}
+
+#### Gemの更新
+{:#misc-gem-update}
+
+01. `Gemfile`のあるディレクトリで`bundle update`を実行
+
+#### Gemの全削除
+{:#misc-gem-uninstall}
+
+01. `Gemfile`のあるディレクトリで以下を実行
+
+    ```
+    gem uninstall -aIx --user-install --force
+    ```
+
+#### Gemの一覧表示
+{:#misc-gem-list}
+
+01. `Gemfile`のあるディレクトリで`gem list`を実行
