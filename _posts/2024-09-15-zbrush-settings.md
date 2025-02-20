@@ -1,7 +1,7 @@
 ---
 title: ZBrush 設定
 date: 2024-09-15 09:40:00 +09:00
-updated:
+updated: 2025-02-20 20:14:00 +09:00
 categories: note
 tags: zbrush
 toc: true
@@ -48,3 +48,15 @@ ZBrushの設定。
 | ------------------- | --------------- | ------------------------- |
 | Hierarchy           | SelectHierarchy | `Ctrl+Alt+Shift+S`{:.key} |
 -->
+
+### トラブルシューティング
+{:#troubleshooting}
+
+#### Tablet Services Not Available
+{:#troubleshooting-tablet-services-not-available}
+
+起動すると「Tablet Services Not Available」エラーが発生してタブレットが認識されない。
+
+スタートメニュー > Windows管理ツール > サービス
+: Wacom Professional Service
+  : 停止後に再度開始する
