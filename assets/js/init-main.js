@@ -3,25 +3,7 @@ if (window.kb) {
   kb.addInitHandler(function() {
     // highlight.js初期化
     if (window.hljs) {
-      window.hljs.configure({languages: []});
-
-      if (window.hljslang) {
-        window.hljs.registerLanguage("css", window.hljslang.css);
-        window.hljs.registerLanguage("diff", window.hljslang.diff);
-        window.hljs.registerLanguage("ebnf", window.hljslang.ebnf);
-        window.hljs.registerLanguage("javascript", window.hljslang.javascript);
-        window.hljs.registerLanguage("markdown", window.hljslang.markdown);
-        window.hljs.registerLanguage("maxscript", window.hljslang.maxscript);
-        window.hljs.registerLanguage("mel", window.hljslang.mel);
-        window.hljs.registerLanguage("python", window.hljslang.python);
-        window.hljs.registerLanguage("xml", window.hljslang.xml);
-      }
-
-      window.hljs.initHighlighting();
-
-      kb.each(document.querySelectorAll("code[class^='code language-']"), function(el, i) {
-        window.hljs.highlightBlock(el);
-      });
+      hljs.highlightAll();
     }
 
     // SmoothScroll初期化

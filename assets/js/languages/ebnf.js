@@ -1,49 +1,63 @@
-/*
-Language: Extended Backus-Naur Form
-Author: imaoki <https://github.com/imaoki>
-*/
+/*! `ebnf` grammar compiled for Highlight.js 11.11.1 */
+  (function(){
+    var hljsGrammar = (function () {
+  'use strict';
 
-var hljslang = hljslang || {};
-hljslang.ebnf = function(hljs) {
-  var ebnfIdentifier = {
-    className: 'keyword',
-    begin: /[a-zA-Z][a-zA-Z0-9_-]*/
+  /*
+  Language: Extended Backus-Naur Form
+  Author: imaoki <https://github.com/imaoki>
+  */
+
+  function ebnf(hljs) {
+    const regex = hljs.regex;
+
+    const ebnfIdentifier = {
+      className: 'keyword',
+      begin: /[a-zA-Z][a-zA-Z0-9_-]*/
+    };
+
+    const ebnfString = {
+      className: 'string',
+      begin: /".*?"/
+    };
+
+    const ebnfSingleQuotString = {
+      className: 'string',
+      begin: /'.*?'/
+    };
+
+    const ebnfComment = {
+      className: 'comment',
+      begin: /\(\*/, end: /\*\)/
+    };
+
+    const ebnfSpecialSequence = {
+      className: 'meta',
+      begin: /\?[^\?]+?\?/
+    };
+
+    const ebnfTermination = {
+      className: 'title',
+      begin: /;$/
+    };
+
+    return {
+      name: "Extended Backus-Naur Form",
+      case_insensitive: true,
+      contains: [
+        ebnfIdentifier,
+        ebnfString,
+        ebnfSingleQuotString,
+        ebnfComment,
+        ebnfSpecialSequence,
+        ebnfTermination
+      ]
+    };
   };
 
-  var ebnfString = {
-    className: 'string',
-    begin: /".*?"/
-  };
+  return ebnf;
 
-  var ebnfSingleQuotString = {
-    className: 'string',
-    begin: /'.*?'/
-  };
+})();
 
-  var ebnfComment = {
-    className: 'comment',
-    begin: /\(\*/, end: /\*\)/
-  };
-
-  var ebnfSpecialSequence = {
-    className: 'meta',
-    begin: /\?[^\?]+?\?/
-  };
-
-  var ebnfTermination = {
-    className: 'title',
-    begin: /;$/
-  };
-
-  return {
-    case_insensitive: true,
-    contains: [
-      ebnfIdentifier,
-      ebnfString,
-      ebnfSingleQuotString,
-      ebnfComment,
-      ebnfSpecialSequence,
-      ebnfTermination
-    ]
-  };
-};
+    hljs.registerLanguage('ebnf', hljsGrammar);
+  })();
