@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2025-05-17 03:25:00 +09:00
+updated: 2025-05-18 00:22:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -121,6 +121,186 @@ published: true
 ### SciTEの設定
 {:#scite-settings}
 
+MXS_EditorUser.properties
+: `C:\Users\<UserName>\AppData\Local\Autodesk\3dsMax\<Version>\ENU` に配置。
+
+  ```properties
+  # Global initialization file for MXS_SciTE
+  # Documentation at http://www.scintilla.org/SciTEDoc.html
+
+  # Sizes and visibility in edit pane
+  fold.margin.colour=#707070
+  fold.margin.highlight.colour=#707070
+
+  # Element styles
+  view.eol=1
+  view.whitespace=1
+  # caret color and settings
+  caret.fore=#AFAFAF
+  #caret.width=2
+  caret.line.back=#FFFFFF
+  caret.line.back.alpha=16
+  # selection color and settings
+  selection.fore=#FFD802
+  selection.back=#2D46B3
+  selection.alpha=256
+
+  # Indentation
+  tabsize=2
+  #tab.size.filepattern=2
+  tab.size.$(file.patterns.MAXScript)=2
+  indent.size=2
+  #indent.size.filepattern=2
+  indent.size.$(file.patterns.MAXScript)=2
+  use.tabs=0
+  use.tabs.$(file.patterns.MAXScript)=0
+  #indent.auto=0
+  tab.indents=1
+  backspace.unindents=1
+  indent.automatic=0
+  #indent.maintain.filepattern=1
+  indent.maintain.$(file.patterns.MAXScript)=1
+
+  # Behaviour
+  eol.mode=LF
+  eol.auto=0
+
+  # Status Bar
+  statusbar.number=2
+  statusbar.text.1=$(SelLength) chars selected. | Line:$(LineNumber) Column:$(ColumnNumber) | ($(EOLMode)) | $(Encoding) | $(OverType) | $(FileAttr)
+  statusbar.text.2=$(BufferLength) chars in $(NbOfLines) lines. Sel: $(SelLength) chars.
+  statusbar.text.3=Now is: Date=$(CurrentDate) Time=$(CurrentTime)
+  statusbar.text.4=$(FileNameExt) : $(FileDate) - $(FileTime) | Attributes: $(FileAttr) | Encoding: $(Encoding)
+
+  # Internationalisation
+  character.set=128
+  code.page=65001
+
+  # Give symbolic names to the set of fonts used in the standard styles.
+  font.base=font:HackGen,size:10
+  font.small=font:HackGen,size:10
+  font.comment=font:HackGen,size:10
+  font.text=font:HackGen,size:10
+  font.text.comment=font:HackGen,size:10
+  font.embedded.base=font:HackGen,size:10
+  font.embedded.comment=font:HackGen,size:10
+  font.monospace=font:HackGen,size:10
+
+  # Give symbolic names to the set of colours used in the standard styles.
+  colour.global.back=#282828
+  colour.global.fore=#E0E2E4
+  colour.code.comment.line=fore:#D293B3
+  colour.code.comment.box=fore:#D293B3
+  colour.code.comment.doc=$(colour.code.comment.box)
+  colour.code.comment.nested=$(colour.code.comment.box)
+  colour.text.comment=$(colour.code.comment.box)
+  colour.other.comment=$(colour.code.comment.box)
+  colour.embedded.comment=$(colour.code.comment.box)
+  colour.notused=back:#FF0000
+  colour.brace.highlight=fore:#00AA00
+  colour.brace.incomplete=fore:#AA0000
+  colour.indentationguide=fore:#404040,back:$(colour.global.back)
+  colour.linenumbers=back:#707070,fore:#000000
+  colour.whitespace=fore:#404040
+  colour.foldmargin=$(colour.indentationguide)
+  colour.number=fore:#FF9933
+  colour.keyword=fore:#99CC66
+  colour.reserved=fore:#99CCFF
+  colour.string=fore:#FF9999
+  colour.string.verbatim=fore:#FF7070
+  colour.string.open=fore:#FFBBBB,back:#342727
+  colour.char=fore:#FF99FF
+  colour.operator=fore:#DADADA
+  colour.argument=fore:#B0DB94
+  #colour.argument=fore:#3983E6
+  colour.preproc=fore:#99CC66
+  colour.pathname=fore:#59B344
+  colour.function=fore:#80B6FF
+  colour.class=fore:#B18AE6
+  colour.maxclass=fore:#60A030
+  colour.superclass=fore:#4479D6
+  colour.coreinterface=fore:#4479D6
+  colour.objectset=fore:#D0B080
+  colour.struct=fore:#804020
+  colour.constantglobals=fore:#99CCFF
+  colour.globals=fore:#F05F92
+  colour.user=fore:#FF0000
+  colour.structFPS=fore:#A0A0FF
+
+  # Maxscript.properties style overrides ( those override the properties in maxscript.properties )
+  # Keywords13 - structure and FPS properties
+  style.MAXScript.24=$(colour.structFPS)
+  # Line number
+  style.MAXScript.33=$(colour.linenumbers)
+  # Brace highlight
+  style.MAXScript.34=$(colour.brace.highlight)
+  # Brace incomplete highlight
+  style.MAXScript.35=$(colour.brace.incomplete)
+  # Control characters
+  style.MAXScript.36=
+  # Indentation guides
+  style.MAXScript.37=$(colour.indentationguide)
+  ################################################################################
+  # Default
+  style.MAXScript.32=back:$(colour.global.back),fore:$(colour.global.fore)
+  # White space
+  style.MAXScript.0=$(colour.whitespace)
+  # Comment: /* */.
+  style.MAXScript.1=$(colour.code.comment.box)
+  # Line Comment: --.
+  style.MAXScript.2=$(colour.code.comment.line),eolfilled
+  # Number
+  style.MAXScript.3=$(colour.number)
+  # String
+  style.MAXScript.4=$(colour.string)
+  # Verbatim strings
+  style.MAXScript.5=$(colour.string.verbatim),eolfilled
+  # End of line where string is not closed
+  style.MAXScript.6=$(colour.string.open),eolfilled
+  # Identifiers
+  style.MAXScript.7=
+  # Operators
+  style.MAXScript.8=$(colour.operator)
+  # Keyword arg name
+  style.MAXScript.9=$(colour.argument)
+  # Name value
+  style.MAXScript.10=$(colour.char)
+  # Pathname
+  style.MAXScript.11=$(colour.pathname)
+  # Keywords1 - Keywords
+  style.MAXScript.12=$(colour.keyword)
+  # Keywords2 - Rollout controls
+  style.MAXScript.13=$(colour.preproc)
+  # Keywords3 - Functions
+  style.MAXScript.14=$(colour.function)
+  # Keywords4 - MXS Classes
+  style.MAXScript.15=$(colour.class)
+  # Keywords5 - MAXClasses
+  style.MAXScript.16=$(colour.maxclass)
+  # Keywords6 - MAXSuperClasses
+  style.MAXScript.17=$(colour.superclass)
+  # Keywords7 - Core interfaces
+  style.MAXScript.18=$(colour.coreinterface)
+  # Keywords8 - Object sets
+  style.MAXScript.19=$(colour.objectset)
+  # Keywords9 - StructDefs
+  style.MAXScript.20=$(colour.struct)
+  # Keywords10 - Const reserved globals
+  style.MAXScript.21=$(colour.constantglobals)
+  # Keywords11 - Reserved globals
+  style.MAXScript.22=$(colour.globals)
+  # Keywords12 - User defined
+  style.MAXScript.23=$(colour.user)
+
+  # User defined key commands
+  user.context.menu=||UTF-8|IDM_ENCODING_UCOOKIE|
+
+  # has no effect in 3ds Max's (old) Scintilla version
+  find.use.strip=1
+  replace.use.strip=1
+  ```
+
+<!--
 maxscript.properties
 : ```diff
   --- Default/maxscript.properties
@@ -238,3 +418,4 @@ MXS_Editor.properties
   +||\
   +UTF-8|IDM_ENCODING_UCOOKIE|
   ```
+-->
