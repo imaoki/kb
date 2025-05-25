@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2025-05-18 00:22:00 +09:00
+updated: 2025-05-26 01:03:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -58,6 +58,7 @@ published: true
 | Display Floater Toggle        | `Ctrl+Shift+D`{:.key}         | Main UI | Edit                    |
 | Extrude Face (Poly)           |                               | Main UI | Editable Polygon Object |
 | Forward Time One Unit         | `Alt+.`{:.key}                | Main UI | Time                    |
+| Front View                    |                               | Main UI | Views                   |
 | Go to End Frame               | `End`{:.key}, `Alt+L`{:.key}  | Main UI | Time                    |
 | Go to Start Frame             | `Home`{:.key}, `Alt+K`{:.key} | Main UI | Time                    |
 | GotoNextKeyTime               | `.`{:.key}                    | Main UI | * - Command             |
@@ -93,6 +94,7 @@ published: true
 | Virtual Viewport Pan Right    |                               | Main UI | Tools                   |
 | Weld (Poly)                   |                               | Main UI | Editable Polygon Object |
 | World Coordinate System       | `Ctrl+Shift+W`{:.key}         | Main UI | Coordinate System       |
+| Zoom Extents Selected         | `F`{:.key}                    | Main UI | Tools                   |
 
 ### Default Controller
 {:#default-controller}
