@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2025-05-26 01:03:00 +09:00
+updated: 2025-05-29 22:46:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -64,6 +64,7 @@ published: true
 | GotoNextKeyTime               | `.`{:.key}                    | Main UI | * - Command             |
 | GotoPreviousKeyTime           | `,`{:.key}                    | Main UI | * - Command             |
 | Hide Frozen Objects Toggle    | `Ctrl+Shift+F`{:.key}         | Main UI | Tools                   |
+| Hide Geometry Toggle          | `Alt+2`{:.key}                | Main UI | Views                   |
 | Hide Space Warps Toggle       |                               | Main UI | Views                   |
 | Hierarchy Command Mode        | `NumPad 3`{:.key}             | Main UI | Tools                   |
 | InitializeCenterPoint         | `Ctrl+Alt+Shift+Space`{:.key} | Main UI | * - Command             |
@@ -74,6 +75,7 @@ published: true
 | Next/Previous Key Mode Toggle |                               | Main UI | Tools                   |
 | Pan View                      |                               | Main UI | Views                   |
 | Pan Viewport                  |                               | Main UI | Tools                   |
+| Parameter Collector           |                               | Main UI | Parameter Collector     |
 | Parent Coordinate System      | `Ctrl+Shift+P`{:.key}         | Main UI | Coordinate System       |
 | Percent Snap Toggle           |                               | Main UI | Snaps                   |
 | Properties                    | `Ctrl+P`{:.key}               | Main UI | Edit                    |
