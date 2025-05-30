@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2025-05-29 22:46:00 +09:00
+updated: 2025-05-30 19:23:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -40,22 +40,23 @@ Mayaの設定。
 ### Hotkey
 {:#hotkey}
 
-| Application Command           | Runtime Command       | HotKey                    |
-| ----------------------------- | --------------------- | ------------------------- |
-| Cycle Display Mode            | CycleDisplayMode      |                           |
-| Decrease Manip Size           | dR_decreaseManipSize  |                           |
-| Hierarchy                     | SelectHierarchy       | `Ctrl+Alt+Shift+S`{:.key} |
-| Increase Manip Size           | dR_increaseManipSize  |                           |
-| Increase Manip Size           | dR_increaseManipSize  |                           |
-| Increment and Save            | IncrementAndSave      |                           |
-| Match All Transforms (Option) | MatchTransformOptions | `Alt+A`{:.key}            |
-| Object Xray TGL               | dr_objectXrayTGL      | `Ctrl+Alt+Shift+X`{:.key} |
-| Pick Color Activate           | PickColorActivate     |                           |
-| Pick Color Deactivate         | PickColorDeactivate   |                           |
-| Play Range End                | GoToMaxFrame          | `Alt+L`{:.key}            |
-| Play Range Start              | GoToMinFrame          | `Alt+K`{:.key}            |
-| Playback Toggle               | PlaybackToggle        | `/`{:.key}                |
-| Save Scene As...              | SaveSceneAs           | `Ctrl+Alt+S`{:.key}       |
+| Application Command                        | Runtime Command         | HotKey                    |
+| ------------------------------------------ | ----------------------- | ------------------------- |
+| Cycle Display Mode                         | CycleDisplayMode        |                           |
+| Decrease Manip Size                        | dR_decreaseManipSize    |                           |
+| Frame Selection with Children in All Views | FrameSelectedInAllViews |                           |
+| Hierarchy                                  | SelectHierarchy         | `Ctrl+Alt+Shift+S`{:.key} |
+| Increase Manip Size                        | dR_increaseManipSize    |                           |
+| Increase Manip Size                        | dR_increaseManipSize    |                           |
+| Increment and Save                         | IncrementAndSave        |                           |
+| Match All Transforms (Option)              | MatchTransformOptions   | `Alt+A`{:.key}            |
+| Object Xray TGL                            | dr_objectXrayTGL        | `Ctrl+Alt+Shift+X`{:.key} |
+| Pick Color Activate                        | PickColorActivate       |                           |
+| Pick Color Deactivate                      | PickColorDeactivate     |                           |
+| Play Range End                             | GoToMaxFrame            | `Alt+L`{:.key}            |
+| Play Range Start                           | GoToMinFrame            | `Alt+K`{:.key}            |
+| Playback Toggle                            | PlaybackToggle          | `/`{:.key}                |
+| Save Scene As...                           | SaveSceneAs             | `Ctrl+Alt+S`{:.key}       |
 
 ### Tool Settings
 {:#tool-settings}
