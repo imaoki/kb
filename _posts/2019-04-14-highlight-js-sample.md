@@ -1,30 +1,167 @@
 ---
 title: highlight.js サンプル
 date: 2019-04-14 16:57:00 +09:00
-updated: 2025-05-18 00:03:00 +09:00
+updated: 2025-06-15 21:43:00 +09:00
 categories: sample
 tags: javascript markdown
 toc: true
 published: true
 ---
+[highlight.js](https://highlightjs.org/)の確認用。
+
+### Bash
+{:#bash}
+
+```bash
+#!/bin/bash
+
+# ログファイルをバックアップして圧縮するスクリプト
+
+BACKUP_DIR="/var/backups/logs"
+SOURCE_DIR="/var/log"
+DATE=$(date +"%Y%m%d_%H%M%S")
+ARCHIVE_NAME="logs_backup_$DATE.tar.gz"
+LOG_FILE="./backup_$DATE.log"
+
+mkdir -p "$BACKUP_DIR"
+
+echo "[$(date)] バックアップ開始" | tee "$LOG_FILE"
+
+find "$SOURCE_DIR" -type f -name "*.log" -size +0c | while read -r file; do
+  echo "追加: $file" >> "$LOG_FILE"
+done
+
+tar -czf "$BACKUP_DIR/$ARCHIVE_NAME" -C "$SOURCE_DIR" ./*.log 2>>"$LOG_FILE"
+
+if [[ $? -eq 0 ]]; then
+  echo "[$(date)] バックアップ完了: $ARCHIVE_NAME" | tee -a "$LOG_FILE"
+else
+  echo "[$(date)] エラー: バックアップ失敗" | tee -a "$LOG_FILE"
+fi
+
+exit 0
+```
+
 ### CSS
 {:#css}
 
 ```css
+/*---------------------------
+  インポートとフォント設定
+---------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @font-face {
-  font-family: Chunkfive; src: url('Chunkfive.otf');
+  font-family: 'MyCustomFont';
+  src: url('/fonts/MyCustomFont.woff2') format('woff2'),
+       url('/fonts/MyCustomFont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body, .usertext {
-  color: #F0F0F0; background: #600;
-  font-family: Chunkfive, sans;
+/*---------------------------
+  ルート変数と基本リセット
+---------------------------*/
+:root {
+  --main-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-stack: 'Roboto', 'MyCustomFont', sans-serif;
 }
 
-@import url(print.css);
-@media print {
-  a[href^=http]::after {
-    content: attr(href)
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*---------------------------
+  基本レイアウト
+---------------------------*/
+body {
+  font-family: var(--font-stack);
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/*---------------------------
+  ナビゲーション
+---------------------------*/
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/*---------------------------
+  コンテナとグリッド
+---------------------------*/
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/*---------------------------
+  メディアクエリ
+---------------------------*/
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
   }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*---------------------------
+  擬似要素・擬似クラス
+---------------------------*/
+button::before {
+  content: "▶ ";
+  color: var(--main-color);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/*---------------------------
+  アニメーション
+---------------------------*/
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 ```
 
@@ -33,66 +170,44 @@ body, .usertext {
 
 Normal
 : ```diff
-  1,2d0
-  < The Way that can be told of is not the eternal Way;
-  < The name that can be named is not the eternal name.
-  4c2,3
-  < The Named is the mother of all things.
+  2c2
+  < Line 1: Hello world
   ---
-  > The named is the mother of all things.
-  >
-  11a11,13
-  > They both may be called deep and profound.
-  > Deeper and more profound,
-  > The door of all subtleties!
+  > Line 1: Hello world!
+  3c3
+  < Line 3: It has three lines
+  ---
+  > Line 3: It has four lines now
   ```
 
 Context
 : ```diff
-  *** lao	2002-02-21 23:30:39.942229878 -0800
-  --- tzu	2002-02-21 23:30:50.442260588 -0800
+  *** old.txt	2025-06-15 20:00:00.000000000 +0900
+  --- new.txt	2025-06-15 20:01:00.000000000 +0900
   ***************
-  *** 1,5 ****
-  - The Way that can be told of is not the eternal Way;
-  - The name that can be named is not the eternal name.
-    The Nameless is the origin of Heaven and Earth;
-  ! The Named is the mother of all things.
-    Therefore let there always be non-being,
+  *** 1,4 ****
+  ! Line 1: Hello world
+    Line 2: This is a sample text
+  ! Line 3: It has three lines
+    Line 4: End of file
   --- 1,4 ----
-    The Nameless is the origin of Heaven and Earth;
-  ! The named is the mother of all things.
-  !
-    Therefore let there always be non-being,
-  ***************
-  *** 11 ****
-  --- 10,13 ----
-      they have different names.
-  + They both may be called deep and profound.
-  + Deeper and more profound,
-  + The door of all subtleties!
+  ! Line 1: Hello world!
+    Line 2: This is a sample text
+  ! Line 3: It has four lines now
+    Line 4: End of file
   ```
 
 Unified
 : ```diff
-  --- lao	2002-02-21 23:30:39.942229878 -0800
-  +++ tzu	2002-02-21 23:30:50.442260588 -0800
-  @@ -1,7 +1,6 @@
-  -The Way that can be told of is not the eternal Way;
-  -The name that can be named is not the eternal name.
-  The Nameless is the origin of Heaven and Earth;
-  -The Named is the mother of all things.
-  +The named is the mother of all things.
-  +
-  Therefore let there always be non-being,
-    so we may see their subtlety,
-  And let there always be being,
-  @@ -9,3 +8,6 @@
-  The two are the same,
-  But after they are produced,
-    they have different names.
-  +They both may be called deep and profound.
-  +Deeper and more profound,
-  +The door of all subtleties!
+  --- old.txt	2025-06-15 20:00:00.000000000 +0900
+  +++ new.txt	2025-06-15 20:01:00.000000000 +0900
+  @@ -1,4 +1,4 @@
+  -Line 1: Hello world
+  +Line 1: Hello world!
+  Line 2: This is a sample text
+  -Line 3: It has three lines
+  +Line 3: It has four lines now
+  Line 4: End of file
   ```
 
 ### EBNF
@@ -129,21 +244,69 @@ alphabetic character = "A" | "B" | "C" | "D" | "E" | "F" | "G"
 {:#javascript}
 
 ```javascript
-function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-             ` class="${cls}"`;
-  } catch (e) {
-    /* handle exception */
+// ユーザーデータ処理用ユーティリティ
+
+import { EMAIL_REGEX } from './config.mjs';
+
+export class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
   }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
+
+  get displayName() {
+    return this.name.trim().replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  isValidEmail() {
+    return EMAIL_REGEX.test(this.email);
   }
 }
 
-export $initHighlight;
+export function filterValidUsers(users) {
+  return users.filter(user => user.isValidEmail());
+}
+```
+
+### JSON
+{:#json}
+
+```json
+{
+  "app": {
+    "name": "BackupUtility",
+    "version": "2.1.0",
+    "debug": true,
+    "paths": {
+      "source": "/var/log",
+      "destination": "/var/backups/logs",
+      "log": "/home/user/backup_logs"
+    }
+  },
+  "schedules": [
+    {
+      "day": "Monday",
+      "time": "03:00",
+      "enabled": true
+    },
+    {
+      "day": "Friday",
+      "time": "22:00",
+      "enabled": false
+    }
+  ],
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "recipients": ["admin@example.com"],
+      "smtp": {
+        "server": "smtp.example.com",
+        "port": 587,
+        "use_tls": true
+      }
+    }
+  }
+}
 ```
 
 ### Markdown
@@ -438,25 +601,75 @@ struct ClassName (
 {:#mel}
 
 ```mel
-proc string[] getSelectedLights() {
-  string $selectedLights[];
+/*-
+@param $node <string>
+@param $attribute <string>
+@returns <boolean>
+@remarks 配列アトリビュートの場合は最後のアトリビュートをテストする。
+例えば `$attribute` が `a.b.c` の場合、 `$node.a.b` の `c` の存在を確認する。
+*/
+proc int existsAttribute(string $node, string $attribute) {
+  if (!`objExists $node`) return false;
 
-  string $select[] = `ls -sl -dag -leaf`;
+  if (`gmatch $attribute "*\\[*\\]"`) {
+    string $buffer[];
+    if (`tokenize $attribute "[]" $buffer` < 2) return false;
 
-  for ($shape in $select) {
-    // Determine if this is a light.
-    //
-    string $class[] = getClassification(`nodeType $shape`);
-
-    if ((`size $class`) > 0 && ("light" == $class[0])) {
-      $selectedLights[`size $selectedLights`] = $shape;
-    }
+    return `attributeQuery -ex -n $node $buffer[0]`;
   }
+  else if (`gmatch $attribute "*.*"`) {
+    string $buffer[];
+    int $numBuffer = `tokenize $attribute "." $buffer`;
+    if ($numBuffer < 2) return false;
 
-  // Result is an array of all lights included in
+    string $parentAttribute = $node;
+    for ($i = 0; $i < $numBuffer - 1; $i++) {
+      $parentAttribute += "." + $buffer[$i];
+    }
+    string $targetAttribute = $buffer[$numBuffer - 1];
+    return `attributeQuery -ex -n $parentAttribute $targetAttribute`;
+  }
+  else {
+    return `attributeQuery -ex -n $node $attribute`;
+  }
+}
+```
 
-  // current selection list.
-  return $selectedLights;
+### PowerShell
+{:#powershell}
+
+```powershell
+# サービスの状態を監視して必要に応じて再起動するスクリプト
+
+$ServiceName = "Spooler"
+$LogFile = "C:\logs\service_watchdog.log"
+
+function Log {
+    param($message)
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    "$timestamp - $message" | Out-File -FilePath $LogFile -Append
+}
+
+Log "監視開始: $ServiceName"
+
+try {
+    $service = Get-Service -Name $ServiceName -ErrorAction Stop
+
+    if ($service.Status -ne 'Running') {
+        Log "サービスが停止中: 再起動を試行中"
+        Start-Service -Name $ServiceName
+        Start-Sleep -Seconds 2
+        $status = (Get-Service -Name $ServiceName).Status
+        if ($status -eq 'Running') {
+            Log "再起動成功"
+        } else {
+            Log "再起動失敗: 現在の状態は $status"
+        }
+    } else {
+        Log "サービスは正常に稼働中"
+    }
+} catch {
+    Log "エラー発生: $_"
 }
 ```
 
@@ -522,18 +735,52 @@ helloInJapanese = こんにちは
 {:#python}
 
 ```python
-@requires_authorization
-def somefunc(param1='', param2=0):
-    r'''A docstring'''
-    if param1 > param2: # interesting
-        print 'Gre\'ater'
-    return (param2 - param1 + 1 + 0b10l) or None
+import os
+import json
+import logging
+from datetime import datetime
+from typing import List, Dict
 
-class SomeClass:
-    pass
 
->>> message = '''interpreter
-... prompt'''
+# ログ設定
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+def scan_directory(path: str, extensions: List[str]) -> List[Dict[str, str]]:
+    """指定した拡張子のファイルを再帰的に検索し、結果をリストで返す"""
+    results = []
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if any(file.endswith(ext) for ext in extensions):
+                full_path = os.path.join(root, file)
+                results.append({
+                    "name": file,
+                    "path": full_path,
+                    "modified": datetime.fromtimestamp(os.path.getmtime(full_path)).isoformat()
+                })
+    return results
+
+
+def save_json(data: List[Dict[str, str]], output_file: str) -> None:
+    """結果をJSON形式で保存"""
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    logging.info(f"JSONファイル保存完了: {output_file}")
+
+
+def main():
+    target_dir = "./logs"
+    output = "scan_results.json"
+    try:
+        logging.info("ディレクトリスキャン開始")
+        result = scan_directory(target_dir, [".log", ".txt"])
+        save_json(result, output)
+    except Exception as e:
+        logging.error(f"エラー発生: {e}")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ### XML
