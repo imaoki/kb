@@ -1,7 +1,7 @@
 ---
 title: Git for Windows インストールノート
 date: 2021-01-28 01:45:00 +09:00
-updated:
+updated: 2025-06-17 03:50:00 +09:00
 categories: note
 tags: git
 toc: true
@@ -67,7 +67,7 @@ Configuring experimental options
 #### ユーザー情報
 {:#user-information}
 
-```
+```bash
 $ git config --global user.name "user_name"
 $ git config --global user.email "your_email@example.com"
 ```
@@ -75,21 +75,21 @@ $ git config --global user.email "your_email@example.com"
 #### 日本語ファイル名の文字化け対策
 {:#countermeasures-against-garbled-japanese-file-names}
 
-```
+```bash
 $ git config --global core.quotepath false
 ```
 
 #### 設定の確認
 {:#confirmation-of-settings}
 
-```
+```bash
 $ git config --list
 ```
 
 ### SSHキーの生成
 {:#ssh-key-generation}
 
-```
+```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
@@ -115,14 +115,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 02. `yes`入力後に以下のエラーが出た場合は`ssh-add -l`を試す。
 
-    ```
+    ```bash
     Warning: Permanently added 'github.com,52.69.186.44' (RSA) to the list of known hosts.
     Connection reset by 52.69.186.44 port 22
     ```
 
 03. `ssh-add -l`で更に以下のエラーが出た場合は`$ eval ｀ssh-agent｀`（引用符は`@`{:.key}の方）と入力し、`Agent pid 数字`と出力されればOK。
 
-    ```
+    ```bash
     Could not open a connection to your authentication agent.
     ```
 
@@ -130,7 +130,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 05. SSHエージェントに作成した秘密鍵を登録する。
 
-    ```
+    ```bash
     $ ssh-add ~/.ssh/id_rsa
     ```
 
@@ -138,14 +138,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 07. 再び`$ ssh -T git@github.com`し、パスフレーズ無しで以下のように表示されればOK。
 
-    ```
+    ```bash
     Hi user_name! You've successfully authenticated, but GitHub does not provide shell access.
     ```
 
 ### アップデート
 {:#update}
 
-```
+```bash
 $ git update-git-for-windows
 ```
 

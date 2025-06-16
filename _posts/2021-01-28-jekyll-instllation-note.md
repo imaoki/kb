@@ -1,7 +1,7 @@
 ---
 title: Jekyll インストールノート
 date: 2021-01-28 03:07:00 +09:00
-updated: 2025-02-20 23:39:00 +09:00
+updated: 2025-06-17 03:51:00 +09:00
 categories: note
 tags: jekyll
 toc: true
@@ -29,7 +29,7 @@ published: true
 ### Jekyllのインストール
 {:#install-jekyll}
 
-01. ```
+01. ```bash
     gem install jekyll bundler
     ```
 
@@ -38,7 +38,7 @@ published: true
 ### Bundlerのインストール
 {:#install-bundler}
 
-01. ```
+01. ```bash
     gem install bundler
     ```
 
@@ -49,7 +49,7 @@ published: true
 
 01. `Gemfile`の内容を編集
 
-    ```
+    ```gems
     source "https://rubygems.org"
 
     gem "github-pages", "~> 232", group: :jekyll_plugins
@@ -101,7 +101,7 @@ published: true
 
 01. `Gemfile`のあるディレクトリで以下を実行
 
-    ```
+    ```bash
     gem uninstall -aIx --user-install --force
     ```
 

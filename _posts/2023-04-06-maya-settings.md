@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2025-05-30 19:23:00 +09:00
+updated: 2025-06-17 03:42:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -110,7 +110,7 @@ XGen設定ファイルのパスを設定
   `XGEN_CONFIG_PATH`に指定したディレクトリに`config.txt`を作成し`UserRepo`のパスを指定する。
 
   `config.txt`の中身
-  : ```
+  : ```plaintext
     UserRepo ${XGEN_CONFIG_PATH}/xgen
     ```
 

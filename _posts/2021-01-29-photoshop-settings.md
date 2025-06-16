@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00 +09:00
-updated: 2024-10-12 14:27:00 +09:00
+updated: 2025-06-17 03:54:00 +09:00
 categories: note
 tags: photoshop
 toc: true
@@ -75,14 +75,12 @@ Photoshopの設定。
 `PSUserConfig.txt`を作成しバージョン毎の設定フォルダにコピーする。
 
 設定フォルダ
-: ```
-  C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings
-  ```
+: `C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings`
 
 `PSUserConfig.txt`の内容
 : ワコムタブレットのデジタルインク機能を使用しない場合
 
-  ```
+  ```planetext
   # Use WinTab
   UseSystemStylus 0
   ```
@@ -99,9 +97,7 @@ Photoshopの設定。
 
 * 設定ファイルの削除で効果が無ければ設定フォルダを削除する。
 
-  ```
-  C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings
-  ```
+  `C:\Users\<ユーザー名>\AppData\Roaming\Adobe\Adobe Photoshop <バージョン>\Adobe Photoshop <バージョン> Settings`
 
 * それでも起動しない場合は再インストールする。
 
