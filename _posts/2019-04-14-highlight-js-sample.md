@@ -1,7 +1,7 @@
 ---
 title: highlight.js サンプル
 date: 2019-04-14 16:57:00 +09:00
-updated: 2025-06-15 21:43:00 +09:00
+updated: 2025-06-17 03:30:00 +09:00
 categories: sample
 tags: javascript markdown
 toc: true
@@ -214,30 +214,47 @@ Unified
 {:#ebnf}
 
 ```ebnf
-             (* a simple program in EBNF − Wikipedia *)
-             program = 'PROGRAM' , white space , identifier , white space ,
-                       'BEGIN' , white space ,
-                       { assignment , ";" , white space } ,
-                       'END.' ;
+(* 文法: 簡易的な構造化プログラミング言語 *)
 
-          identifier = alphabetic character , [ { alphabetic character | digit } ] ;
+program       = { statement } ;
 
-              number = [ "-" ] , digit , [ { digit } ] ;
+statement     = assignment | if_statement | while_loop | function_call | block ;
 
-              string = '"' , { all characters - '"' } , '"' ;
+assignment    = identifier , ":=" , expression , ";" ;
 
-          assignment = identifier , ":=" , ( number | identifier | string ) ;
+if_statement  = "if" , condition , "then" , statement , [ "else" , statement ] ;
 
-alphabetic character = "A" | "B" | "C" | "D" | "E" | "F" | "G"
-                     | "H" | "I" | "J" | "K" | "L" | "M" | "N"
-                     | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
-                     | "V" | "W" | "X" | "Y" | "Z" ;
+while_loop    = "while" , condition , "do" , statement ;
 
-               digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+function_call = identifier , "(" , [ argument_list ] , ")" , ";" ;
 
-         white space = ? white space characters ? ;
+block         = "begin" , { statement } , "end" , ";" ;
 
-      all characters = ? all visible characters ? ;
+argument_list = expression , { "," , expression } ;
+
+condition     = expression , comparator , expression ;
+
+comparator    = "=" | "!=" | "<" | ">" | "<=" | ">=" ;
+
+expression    = term , { ("+" | "-") , term } ;
+
+term          = factor , { ("*" | "/") , factor } ;
+
+factor        = number | string | identifier | "(" , expression , ")" ;
+
+identifier    = letter , { letter | digit | "_" } ;
+
+number        = digit , { digit } ;
+
+string        = '"' , { character } , '"' ;
+
+letter        = "A" | "B" | "C" | ... | "Z" | "a" | "b" | "c" | ... | "z" ;
+
+digit         = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+character     = ? all printable characters except " and ? ;
+
+(* コメントはこのように書きます。 *)
 ```
 
 ### Javascript

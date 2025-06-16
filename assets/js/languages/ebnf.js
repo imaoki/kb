@@ -11,8 +11,13 @@
   function ebnf(hljs) {
     const regex = hljs.regex;
 
-    const ebnfIdentifier = {
-      className: 'keyword',
+    const ebnfIdentifierLeft = {
+      className: 'attribute',
+      begin: /[a-zA-Z][a-zA-Z0-9_-]*(?=\s*=)/
+    };
+
+    const ebnfIdentifierRight = {
+      className: 'type',
       begin: /[a-zA-Z][a-zA-Z0-9_-]*/
     };
 
@@ -36,21 +41,16 @@
       begin: /\?[^\?]+?\?/
     };
 
-    const ebnfTermination = {
-      className: 'title',
-      begin: /;$/
-    };
-
     return {
       name: "Extended Backus-Naur Form",
       case_insensitive: true,
       contains: [
-        ebnfIdentifier,
+        ebnfIdentifierLeft,
+        ebnfIdentifierRight,
         ebnfString,
         ebnfSingleQuotString,
         ebnfComment,
-        ebnfSpecialSequence,
-        ebnfTermination
+        ebnfSpecialSequence
       ]
     };
   };
