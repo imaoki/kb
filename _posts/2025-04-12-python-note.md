@@ -1,7 +1,7 @@
 ---
 title: Pythonノート
 date: 2025-04-12 20:51:00 +09:00
-updated:
+updated: 2025-06-22 00:01:00 +09:00
 categories: note
 tags: maya python
 toc: true
@@ -120,7 +120,7 @@ Builtins
 
 | 種別                 | 規則                                                                                                                                                       |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| パッケージ           | 全て小文字。                                                                                                                                               |
+| パッケージ           | 全て小文字。`_`は使用しない。                                                                                                                              |
 | モジュール           | 全て小文字。必要に応じて`_`で区切る。                                                                                                                      |
 | クラス               | パスカルケース。                                                                                                                                           |
 | 例外                 | パスカルケース。末尾に`Error`を付ける。                                                                                                                    |
@@ -154,44 +154,3 @@ Builtins
   ```python
   __all__ = ["hoge", "piyo"]
   ```
-
-### ツール設定
-{:#tool-settings}
-
-#### Visual Studio Code
-{:#tool-settings-vscode}
-
-##### 拡張
-{:#tool-settings-vscode-extension}
-
-* [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  以下も自動的にインストールされる。
-  [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
-  [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-
-* [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
-
-##### 設定
-{:#tool-settings-vscode-settings}
-
-* PylanceのreportMissingImportsを解消する。
-
-  ![pylance-reportmissingimports](/kb/assets/images/content/2025-04-12-python-note/pylance-reportmissingimports.png)
-
-  Python > Analysis: Extra Paths
-  : ```json
-    "python.analysis.extraPaths": [
-      "C:/Program Files/Autodesk/Maya2022/Python37/Lib/site-packages"
-    ]
-    ```
-
-* オートコンプリート
-
-  Auto Complete: Extra Paths
-  : ```json
-    "python.autoComplete.extraPaths": [
-      "C:/Program Files/Autodesk/Maya2022/Python37/Lib/site-packages"
-    ]
-    ```
-
-  スタブファイル？が必要らしく不完全。要調査。
