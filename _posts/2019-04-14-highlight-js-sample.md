@@ -1,7 +1,7 @@
 ---
 title: highlight.js サンプル
 date: 2019-04-14 16:57:00 +09:00
-updated: 2025-06-17 03:30:00 +09:00
+updated: 2025-06-22 04:57:00 +09:00
 categories: sample
 tags: javascript markdown
 toc: true
@@ -209,6 +209,58 @@ Unified
   +Line 3: It has four lines now
   Line 4: End of file
   ```
+
+### DOS
+{:#dos}
+
+```dos
+@echo off
+setlocal enabledelayedexpansion
+
+rem === タイトルと色設定 ===
+title Log Cleaner Utility
+color 1F
+
+echo.
+echo *** Log Cleaner ***
+echo.
+
+rem === ユーザー入力取得 ===
+set /p target="ログファイルのディレクトリを入力してください: "
+
+if not exist "%target%" (
+    echo [エラー] ディレクトリが存在しません。
+    goto end
+)
+
+rem === ファイル一覧と選択肢 ===
+echo 処理対象のログファイル一覧:
+for %%F in ("%target%\*.log") do (
+    echo   %%~nxF
+)
+
+echo.
+choice /M "すべての .log ファイルを削除しますか？"
+
+if errorlevel 2 (
+    echo 操作はキャンセルされました。
+    goto end
+)
+
+rem === 削除処理 ===
+echo 削除中...
+del /q "%target%\*.log"
+if errorlevel 1 (
+    echo [エラー] 削除に失敗しました。
+) else (
+    echo 削除が完了しました。
+)
+
+:end
+echo.
+pause
+exit /b
+```
 
 ### EBNF
 {:#ebnf}

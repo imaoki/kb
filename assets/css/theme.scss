@@ -1,6 +1,6 @@
 ---
 ---
-/*! © 2020 imaoki | MIT License | https://github.com/imaoki */
+/*! © 2025 imaoki | MIT License | https://github.com/imaoki */
 
 // =============================================================================
 // Const
@@ -350,6 +350,8 @@ $color-name-green: rgb(95, 255, 95);
 $color-name-cyan: rgb(95, 255, 255);
 $color-name-blue: rgb(95, 127, 255);
 $color-name-magenta: rgb(255, 95, 255);
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(0, 0, 0);
 
 // Link
 // -----------------------------------------------------------------------------
@@ -384,9 +386,9 @@ $color-nav-fore: brighten256($color-base-fore, -128);
 // Toc
 // -----------------------------------------------------------------------------
 
-$color-toc-back: rgb(0, 0, 0);
+$color-toc-back: $color-black;
 $color-toc-icon: $color-base-fore-dark;
-$color-toc-item-back: rgb(255, 255, 255);
+$color-toc-item-back: $color-white;
 $color-toc-item-fore: $color-base-fore-dark;
 
 // Content
@@ -395,28 +397,30 @@ $color-toc-item-fore: $color-base-fore-dark;
 $color-content-back: brighten256($color-base-back, 8);
 $color-content-fore: brighten256($color-content-back, 32);
 
-$color-content-l1-back: setAlpha256(rgb(255, 255, 255), 16);
-$color-content-l1-fore: setAlpha256(rgb(255, 255, 255), 32);
+$color-content-l1-back: setAlpha256($color-white, 16);
+$color-content-l1-fore: setAlpha256($color-white, 32);
 
-$color-content-l1-back-light: setAlpha256(rgb(255, 255, 255), 64);
-$color-content-l1-back-dark: setAlpha256(rgb(0, 0, 0), 64);
+$color-content-l1-back-light: setAlpha256($color-white, 64);
+$color-content-l1-back-dark: setAlpha256($color-black, 64);
 
 $color-h6-back: brighten256($color-content-back, 8);
 $color-h5-back: brighten256($color-h6-back, 4);
 $color-h4-back: brighten256($color-h5-back, 4);
 $color-h3-back: brighten256($color-h4-back, 4);
 
-$color-h-mark-fore: setAlpha256(rgb(0, 0, 0), 32);
+$color-h-mark-fore: setAlpha256($color-black, 32);
 
-$color-admonition-fore: setAlpha256(rgb(255, 255, 255), 127);
+$color-admonition-fore: setAlpha256($color-white, 127);
 
 // Code
 // -----------------------------------------------------------------------------
 
-$color-code-back: rgb(28, 31, 33);
-$color-code-fore: rgb(192, 197, 206);
+// $color-code-back: rgb(28, 31, 33);
+// $color-code-fore: rgb(192, 197, 206);
+$color-code-back: rgb(40, 44, 52);
+$color-code-fore: rgb(168, 153, 132);
 $color-pre-caption-back: setAlpha256(rgb(255, 255,255), 8);
-$color-pre-caption-fore: brighten256($color-base-fore, -128);
+$color-pre-caption-fore: brighten256($color-base-fore, -96);
 
 // Icon
 // -----------------------------------------------------------------------------
@@ -432,7 +436,7 @@ $color-github-fore-h: rgb(64, 120, 192);
 $color-feed-back: transparent;
 $color-feed-back-h: rgb(242, 101, 34);
 $color-feed-fore: rgb(242, 101, 34);
-$color-feed-fore-h: rgb(255, 255, 255);
+$color-feed-fore-h: $color-white;
 
 // =============================================================================
 // Reset
@@ -1101,12 +1105,23 @@ a {
 
   code,
   kbd {
-    background-color: $color-code-back;
-    color: $color-code-fore;
+    // background-color: $color-code-back;
+    // color: $color-code-fore;
     font-size: 1rem;
     letter-spacing: 0;
     line-height: $line-height-code;
     padding: 0.25rem 0.5rem;
+  }
+
+  code:not(.hljs),
+  kbd {
+    background-color: $color-code-back;
+    color: $color-code-fore;
+  }
+
+  span[class^="hljs-"] {
+    font-style: normal;
+    font-weight: normal;
   }
 
   dt {
@@ -1246,7 +1261,7 @@ a {
     }
 
     & > code {
-      background-color: $color-code-back;
+      // background-color: $color-code-back;
       line-height: $line-height-pre;
       padding: 0;
     }
