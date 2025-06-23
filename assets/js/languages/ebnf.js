@@ -12,12 +12,12 @@
     const regex = hljs.regex;
 
     const ebnfIdentifierLeft = {
-      className: 'attribute',
+      className: 'keyword',
       begin: /[a-zA-Z][a-zA-Z0-9_-]*(?=\s*=)/
     };
 
     const ebnfIdentifierRight = {
-      className: 'type',
+      className: 'attribute',
       begin: /[a-zA-Z][a-zA-Z0-9_-]*/
     };
 
