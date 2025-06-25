@@ -1,7 +1,7 @@
 ---
 title: Python 設定
-date: 2025-06-26 01:47:00 +09:00
-updated:
+date: 2025-06-22 17:48:00 +09:00
+updated: 2025-06-26 03:54:00 +09:00
 categories: note
 tags: maya python vscode
 toc: true
@@ -171,11 +171,11 @@ Get-Command python | Select-Object -ExpandProperty Source
   . ./deactivate-venv.ps1
   ```
 
-ターミナルで無効化できてもPythonファイルのタブを選択すると仮想環境のままになっていたりするが、これはVSCodeのPython拡張が持っている仮想環境を自動検出する仕組みによるものらしい。
+ターミナルの仮想環境を無効化してもPythonファイルのタブを選択すると仮想環境のままになっていたりするが、これはVSCodeの仮想環境の仕組みによるもの。
 
 ![python-select-interpreter](/kb/assets/images/content/2025-06-22-python-settings/python-select-interpreter.png)
 
-ややこしいのでVSCode側は手動で切り替えて対応する。
+[仮想環境の管理](#vscode-virtual-environment-management)を参照。
 
 ### mayapy
 {:#mayapy}
@@ -323,32 +323,72 @@ except Exception:
 {
   "folders": [
     {
-      "name": "my_project",
-      "path": "../my_project"
+      "name": "foo/bar",
+      "path": "..\\foo\\bar"
     },
     {
       "name": "Maya2022/scripts",
-      "path": "C:/Program Files/Autodesk/Maya2022/scripts"
+      "path": "C:\\Program Files\\Autodesk\\Maya2022\\scripts"
     }
   ],
   "settings": {
     "files.readonlyInclude": {
-      "C:/Program Files/Autodesk/Maya2022/scripts/**": true
+      "C:\\Program Files\\Autodesk\\Maya2022\\scripts\\**": true
     },
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
     "python.analysis.extraPaths": [
-      "C:/Program Files/Autodesk/Maya2022/Python37/Lib/site-packages",
-      "${workspaceFolder}/.venv/Lib/site-packages"
+      "C:\\Program Files\\Autodesk\\Maya2022\\Python37\\Lib\\site-packages",
+      "${workspaceFolder:foo/bar}\\.venv\\Lib\\site-packages"
     ],
-    "terminal.integrated.cwd": "${workspaceFolder}",
+    "python.defaultInterpreterPath": "${workspaceFolder:foo/bar}\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.cwd": "${workspaceFolder:foo/bar}",
+    "terminal.integrated.env.windows": {
+      "PATH": "${workspaceFolder:foo/bar}\\.venv\\Scripts;${env:PATH}"
+    },
     "terminal.integrated.persistentSessionReviveProcess": "never"
   }
 }
 ```
 
-型チェック/コード補完
-: Pylanceをインストール済みの場合は、`python.analysis.extraPaths`のみでよい。
+* パス形式
+  `${workspaceFolder:foo/bar}`がVSCode内部で展開される際の形式に合わせてWindows形式で記述する。
+
+* 型チェック/コード補完
+  Pylanceをインストール済みの場合は、`python.analysis.extraPaths`のみでよい。
   `python.autoComplete.extraPaths`は古いPython言語サーバー用なので不要。
+
+#### 仮想環境の管理
+{:#vscode-virtual-environment-management}
+
+VSCode本体とVSCode内ターミナルの仮想環境はそれぞれ独立して管理されている。
+
+VSCode本体（Python拡張機能）
+: 用途
+  : コードの入力支援、リンティング、デバッグ、Pythonファイル実行
+
+  設定方法
+  : `Python: Select Interpreter`コマンド、または`python.defaultInterpreterPath`
+
+VSCode内ターミナル
+: 用途
+  : 手動でのコマンド実行、pip install、スクリプト実行など
+
+  設定方法
+  : 環境変数（PATH）、アクティベーションスクリプト、`terminal.integrated.env.windows`によるPATH制御
+
+**重要なポイント**
+{:.note}
+
+* VSCode本体が仮想環境Aを使用していても、ターミナルは仮想環境Bを使用することが可能。
+
+* それぞれ別々に設定する必要がある。
+
+Pythonファイル実行時の動作
+: | 実行方法                                           | 動作                   |
+  | -------------------------------------------------- | ---------------------- |
+  | VSCodeのPython実行ボタン（右上角の三角形のボタン） | VSCode本体の設定を使用 |
+  | ターミナルで`python script.py`                     | ターミナルの環境を使用 |
 
 <!-- #### プロジェクト設定
 {:#vscode-project-settings} -->
