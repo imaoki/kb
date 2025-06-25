@@ -1,6 +1,6 @@
 ---
 title: Python 設定
-date: 2025-06-22 17:48:00 +09:00
+date: 2025-06-26 01:47:00 +09:00
 updated:
 categories: note
 tags: maya python vscode
@@ -77,7 +77,7 @@ python -m venv .venv
 {:#virtual-environments-activate}
 
 ```powershell
-. .venv/Scripts/Activate.ps1
+. ./.venv/Scripts/Activate.ps1
 ```
 
 #### インタプリタの確認
@@ -126,19 +126,44 @@ Get-Command python | Select-Object -ExpandProperty Source
 
   # パスの標準化（バックスラッシュに統一）
   $venvScripts = Join-Path $venvPath "Scripts"
-  $escapedVenvScripts = [Regex]::Escape($venvScripts)
 
-  # PATH から仮想環境の Scripts パスを除去
+  # PATH から仮想環境の Scripts パスを除去（空要素も除去）
   $originalPath = $env:PATH
-  $updatedPath = ($originalPath -split ';') -notmatch "^$escapedVenvScripts\\?$" -join ';'
+  $pathEntries = $originalPath -split ';' | Where-Object { $_.Trim() -ne '' }
+  $updatedEntries = $pathEntries | Where-Object {
+      $normalizedEntry = $_.TrimEnd('\')
+      $normalizedVenvScripts = $venvScripts.TrimEnd('\')
+      $normalizedEntry -ne $normalizedVenvScripts
+  }
+  $updatedPath = $updatedEntries -join ';'
   $env:PATH = $updatedPath
 
   # 環境変数 VIRTUAL_ENV の削除
   Remove-Item Env:VIRTUAL_ENV -ErrorAction SilentlyContinue
 
+  # プロンプトをリセット
+  if (Get-Command prompt -ErrorAction SilentlyContinue) {
+      function global:prompt {
+          "PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
+      }
+  }
+
   Write-Host ">>> 仮想環境 [$venvPath] を無効化しました。"
+
+  # 成功確認
+  if (-not $env:VIRTUAL_ENV -and $env:PATH -notlike "*$venvScripts*") {
+      Write-Host "仮想環境の無効化が完了しました。" -ForegroundColor Green
+  } else {
+      Write-Warning "仮想環境の無効化が完全ではない可能性があります。"
+  }
+
   Write-Host ">>> 現在の Python 実行ファイル："
-  Get-Command python | Select-Object -ExpandProperty Source
+  try {
+      $pythonPath = Get-Command python -ErrorAction Stop | Select-Object -ExpandProperty Source
+      Write-Host "    $pythonPath"
+  } catch {
+      Write-Warning "Python が見つかりません。システムの PATH を確認してください。"
+  }
   ```
 
 実行
