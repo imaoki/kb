@@ -1,7 +1,7 @@
 ---
 title: Python 設定
 date: 2025-06-22 17:48:00 +09:00
-updated: 2025-06-26 03:54:00 +09:00
+updated: 2025-06-27 02:12:00 +09:00
 categories: note
 tags: maya python vscode
 toc: true
@@ -109,8 +109,8 @@ Get-Command python | Select-Object -ExpandProperty Source
       VSCode や PowerShell 上で仮想環境 (.venv) を明示的に解除するスクリプト。
 
   .DESCRIPTION
-      - $env:VIRTUAL_ENV を解除し、仮想環境の Scripts パスを PATH から除去します。
-      - VSCode ターミナルが仮想環境を自動再適用することは防ぎません（VSCode 側で対応）。
+      - $env:VIRTUAL_ENV を解除し、仮想環境の Scripts パスを PATH から除去する。
+      - VSCode ターミナルが仮想環境を自動再適用することは防がない（VSCode 側で対応）。
       - PowerShell 専用。bash には未対応。
   #>
 
