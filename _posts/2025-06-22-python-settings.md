@@ -1,7 +1,7 @@
 ---
 title: Python 設定
 date: 2025-06-22 17:48:00 +09:00
-updated: 2025-06-27 02:12:00 +09:00
+updated: 2025-06-27 02:14:00 +09:00
 categories: note
 tags: maya python vscode
 toc: true
@@ -57,7 +57,7 @@ PowerShellを使用。
 {:#terminal-command-source}
 
 ```powershell
-Get-Command git | Select-Object -ExpandProperty Source
+Get-Command python | Select-Object -ExpandProperty Source
 ```
 
 ### 仮想環境の構築
