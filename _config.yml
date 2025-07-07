@@ -29,6 +29,10 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: "assets/dist"
+    values:
+      sitemap: false
 
 highlighter: none
 markdown: kramdown
