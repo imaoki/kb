@@ -1,7 +1,7 @@
 ---
 title: Markdown チートシート
 date: 2016-01-05 21:32:00 +09:00
-updated: 2024-05-22 17:42:00 +09:00
+updated: 2025-07-07 00:42:00 +09:00
 categories: document
 tags: markdown
 toc: true
@@ -98,12 +98,12 @@ published: true
 {:#blockquotes}
 
 記述
-: ```markdown
+: ````markdown
   > Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
   >
   > > cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
   > >
-  > > ```
+  > > ```plaintext
   > > 0123456789
   > > ```
   >
@@ -111,7 +111,7 @@ published: true
   >
   > * abcdefghijklmnopqrstuvwxyz
   >
-  > ```
+  > ```plaintext
   > 0123456789
   > ```
   >
@@ -120,14 +120,14 @@ published: true
   >  Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
   >
   > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  ```
+  ````
 
 結果
 : > Loremのイプサムの嘆き、AMET consecteturのadipiscingのELIT、sedのtemporと活力、そのような労働と悲しみ、eiusmod行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であればそのような刺激の取り組み、彼女のうち、運動の利点をaliquipをnostrudする人、来ます。
   >
   > > cupidatatのcillumの痛みになりたいDuisに批判されてきたらdoloreマグナ逃亡しても結果の喜びを生成しません。Excepteur cupidatatブラックはexcepteurていない、つまり、彼らはあなたの悩みに責任がある人の一般的な義務を捨て、魂を癒しています。
   > >
-  > > ```
+  > > ```plaintext
   > > 0123456789
   > > ```
   >
@@ -135,7 +135,7 @@ published: true
   >
   > * abcdefghijklmnopqrstuvwxyz
   >
-  > ```
+  > ```plaintext
   > 0123456789
   > ```
   >
@@ -149,7 +149,7 @@ published: true
 {:#lists}
 
 記述
-: ```markdown
+: ````markdown
   * A
 
   * B - start
@@ -192,7 +192,7 @@ published: true
 
                   整形済みテキスト
 
-                  ```
+                  ```plaintext
                   ABCDEFGHIJKLMNOPQRSTUVWXYZ
                   abcdefghijklmnopqrstuvwxyz
                   ```
@@ -243,7 +243,7 @@ published: true
   * D
 
   * E
-  ```
+  ````
 
 結果
 : * A
@@ -288,7 +288,7 @@ published: true
 
                   整形済みテキスト
 
-                  ```
+                  ```plaintext
                   ABCDEFGHIJKLMNOPQRSTUVWXYZ
                   abcdefghijklmnopqrstuvwxyz
                   ```
@@ -376,7 +376,7 @@ published: true
 {:#definition-lists}
 
 記述
-: ```markdown
+: ````markdown
   用語1
   : <span/>{:.invisible}
 
@@ -406,11 +406,11 @@ published: true
 
     整形済みテキスト
 
-    \```
+    ```plaintext
     ABCDEFGHIJKLMNOPQRSTUVWXYZ
     abcdefghijklmnopqrstuvwxyz
     0123456789
-    \```
+    ```
 
   : 定義2
 
@@ -419,7 +419,7 @@ published: true
     * A
 
     * B
-  ```
+  ````
 
 結果
 : 用語1
@@ -451,7 +451,7 @@ published: true
 
     整形済みテキスト
 
-    ```
+    ```plaintext
     ABCDEFGHIJKLMNOPQRSTUVWXYZ
     abcdefghijklmnopqrstuvwxyz
     0123456789
@@ -499,74 +499,130 @@ published: true
 {:#fenced-code-blocks}
 
 記述
-: ```markdown
-  \```maxscript
-  global var -- Line Comment
+: ````markdown
+  ```python
+  import os
+  import json
+  import logging
+  from datetime import datetime
+  from typing import List, Dict
 
-  /*
-  Block Comment
-  */
-  struct TestClass (
-    public Literals = #(
-      1, .1e-2, 1.2, -0., 0x0E, "String", @"Verbatim", #Name, true,
-      2m30s5f2t, 18.25f, 2:10.0, $'Node Name', #{1..3, 5}
-    ),
 
-    private rlt = Rollout rlt "Title" (
-      CheckBox ckbx "Caption" checked:false triState:0
-      on ckbx Changed state do (
-        -- ...
-      )
-    ),
+  # ログ設定
+  logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    public fn TestFunction pA &pB pC:false &pD:1.2 pE:#(1, 2) pF: = (
-      -- ...
-    ),
 
-    private mapped fn compare x y = (
-      -- ...
-    ),
+  def scan_directory(path: str, extensions: List[str]) -> List[Dict[str, str]]:
+      """指定した拡張子のファイルを再帰的に検索し、結果をリストで返す"""
+      results = []
+      for root, dirs, files in os.walk(path):
+          for file in files:
+              if any(file.endswith(ext) for ext in extensions):
+                  full_path = os.path.join(root, file)
+                  results.append({
+                      "name": file,
+                      "path": full_path,
+                      "modified": datetime.fromtimestamp(os.path.getmtime(full_path)).isoformat()
+                  })
+      return results
 
-    on Create do (
-      -- ...
-    )
-  )
-  \```
+
+  def save_json(data: List[Dict[str, str]], output_file: str) -> None:
+      """結果をJSON形式で保存"""
+      with open(output_file, 'w', encoding='utf-8') as f:
+          json.dump(data, f, indent=2, ensure_ascii=False)
+      logging.info(f"JSONファイル保存完了: {output_file}")
+
+
+  def main():
+      target_dir = "./logs"
+      output = "scan_results.json"
+      try:
+          logging.info("ディレクトリスキャン開始")
+          result = scan_directory(target_dir, [".log", ".txt"])
+          save_json(result, output)
+      except Exception as e:
+          logging.error(f"エラー発生: {e}")
+
+
+  if __name__ == "__main__":
+      main()
   ```
+  ````
 
 結果
-: ```maxscript
-  global var -- Line Comment
+: ```python
+  import os
+  import json
+  import logging
+  from datetime import datetime
+  from typing import List, Dict
 
-  /*
-  Block Comment
-  */
-  struct TestClass (
-    public Literals = #(
-      1, .1e-2, 1.2, -0., 0x0E, "String", @"Verbatim", #Name, true,
-      2m30s5f2t, 18.25f, 2:10.0, $'Node Name', #{1..3, 5}
-    ),
 
-    private rlt = Rollout rlt "Title" (
-      CheckBox ckbx "Caption" checked:false triState:0
-      on ckbx Changed state do (
-        -- ...
-      )
-    ),
+  # ログ設定
+  logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    public fn TestFunction pA &pB pC:false &pD:1.2 pE:#(1, 2) pF: = (
-      -- ...
-    ),
 
-    private mapped fn compare x y = (
-      -- ...
-    ),
+  def scan_directory(path: str, extensions: List[str]) -> List[Dict[str, str]]:
+      """指定した拡張子のファイルを再帰的に検索し、結果をリストで返す"""
+      results = []
+      for root, dirs, files in os.walk(path):
+          for file in files:
+              if any(file.endswith(ext) for ext in extensions):
+                  full_path = os.path.join(root, file)
+                  results.append({
+                      "name": file,
+                      "path": full_path,
+                      "modified": datetime.fromtimestamp(os.path.getmtime(full_path)).isoformat()
+                  })
+      return results
 
-    on Create do (
-      -- ...
-    )
-  )
+
+  def save_json(data: List[Dict[str, str]], output_file: str) -> None:
+      """結果をJSON形式で保存"""
+      with open(output_file, 'w', encoding='utf-8') as f:
+          json.dump(data, f, indent=2, ensure_ascii=False)
+      logging.info(f"JSONファイル保存完了: {output_file}")
+
+
+  def main():
+      target_dir = "./logs"
+      output = "scan_results.json"
+      try:
+          logging.info("ディレクトリスキャン開始")
+          result = scan_directory(target_dir, [".log", ".txt"])
+          save_json(result, output)
+      except Exception as e:
+          logging.error(f"エラー発生: {e}")
+
+
+  if __name__ == "__main__":
+      main()
   ```
+
+##### ネストしたコードブロック
+{:#nested-fenced-code-blocks}
+
+記述
+: `````markdown
+  ````markdown
+  ```plaintext
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+  ```
+  ````
+  `````
+
+結果
+: ````markdown
+  ```plaintext
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+  ```
+  ````
+
+外側のバッククォートを増やしていく。
+{:.note}
 
 #### テーブル
 {:#tables}
@@ -713,6 +769,7 @@ published: true
     [![512x512]({{ '/assets/images/sample/512x512t.png' | relative_url }})]({{ '/assets/images/sample/512x512.png' | relative_url }})
     [![1024x1024]({{ '/assets/images/sample/1024x1024t.png' | relative_url }})]({{ '/assets/images/sample/1024x1024.png' | relative_url }})
     [![2048x2048]({{ '/assets/images/sample/2048x2048t.png' | relative_url }})]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
+    ![2048x2048]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
   ```
 
 結果
@@ -743,6 +800,7 @@ published: true
     [![512x512]({{ '/assets/images/sample/512x512t.png' | relative_url }})]({{ '/assets/images/sample/512x512.png' | relative_url }})
     [![1024x1024]({{ '/assets/images/sample/1024x1024t.png' | relative_url }})]({{ '/assets/images/sample/1024x1024.png' | relative_url }})
     [![2048x2048]({{ '/assets/images/sample/2048x2048t.png' | relative_url }})]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
+    ![2048x2048]({{ '/assets/images/sample/2048x2048.png' | relative_url }})
 
 <!--
 ### インラインフレーム

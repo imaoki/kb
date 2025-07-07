@@ -1,9 +1,9 @@
 ---
 title: nkBdnEditor
 date: 2025-02-11 12:14:00 +09:00
-updated:
+updated: 2025-07-07 01:28:00 +09:00
 categories: tool
-tags: maya mel tool
+tags: maya mel
 toc: true
 published: true
 ---

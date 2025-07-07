@@ -1,7 +1,7 @@
 ---
 title: Photoshop 設定
 date: 2021-01-29 17:47:00 +09:00
-updated: 2025-06-17 03:54:00 +09:00
+updated: 2025-07-07 02:16:00 +09:00
 categories: note
 tags: photoshop
 toc: true
@@ -80,7 +80,7 @@ Photoshopの設定。
 `PSUserConfig.txt`の内容
 : ワコムタブレットのデジタルインク機能を使用しない場合
 
-  ```planetext
+  ```plaintext
   # Use WinTab
   UseSystemStylus 0
   ```

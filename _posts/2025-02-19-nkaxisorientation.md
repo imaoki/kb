@@ -1,9 +1,9 @@
 ---
 title: nkAxisOrientation
 date: 2023-07-20 07:19:00 +09:00
-updated:
+updated: 2025-07-07 01:28:00 +09:00
 categories: tool
-tags: maya mel tool
+tags: maya mel
 toc: true
 published: true
 ---

@@ -1,9 +1,9 @@
 ---
 title: nkPoseStack
 date: 2024-02-16 05:01:00 +09:00
-updated:
+updated: 2025-07-07 01:28:00 +09:00
 categories: tool
-tags: maya mel tool
+tags: maya mel
 toc: true
 published: true
 ---
