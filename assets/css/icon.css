@@ -1,12 +1,13 @@
-/*! © 2020 imaoki | MIT License | https://github.com/imaoki */
+/*! © 2025 imaoki | MIT License | https://github.com/imaoki */
 @font-face {
+  font-display: block;
   font-family: "icon";
   font-style: normal;
   font-weight: normal;
   src:
-    url("font/icon.ttf?ag4bpy") format("truetype"),
-    url("font/icon.woff?ag4bpy") format("woff"),
-    url("font/icon.svg?ag4bpy#icon") format("svg");
+    url("font/icon.ttf?l2zmz4") format("truetype"),
+    url("font/icon.woff?l2zmz4") format("woff"),
+    url("font/icon.svg?l2zmz4#icon") format("svg");
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -37,6 +38,7 @@
 .icon-alert-triangle::before {content: "\e90d";}
 .icon-anchor::before {content: "\e900";}
 .icon-calendar::before {content: "\e901";}
+.icon-check::before {content: "\e914";}
 .icon-chevron-left::before {content: "\e902";}
 .icon-chevron-right::before {content: "\e903";}
 .icon-chevron-up::before {content: "\e904";}
@@ -47,6 +49,7 @@
 .icon-external-link::before {content: "\e908";}
 .icon-github::before {content: "\e906";}
 .icon-info::before {content: "\e90f";}
+.icon-list::before {content: "\e915";}
 .icon-log-in::before {content: "\e912";}
 .icon-log-out::before {content: "\e913";}
 .icon-menu::before {content: "\e907";}
