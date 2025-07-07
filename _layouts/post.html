@@ -5,23 +5,23 @@ layout: page
 <header class="post header">
 <h2 class="post title"><a class="static" href="{{ page.url | relative_url }}">{{ page.title }}</a></h2>
 <ul class="hlist right post property">
-{% if page.tags %}
-{% assign tags = page.tags | sort %}
-{% for tag in tags %}
-<li class="item"><a class="icon tag" href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a></li>
-{% endfor %}
-{% endif %}
-{% if page.updated %}
+{% if page.tags -%}
+{% assign tags = page.tags | sort -%}
+{% for tag in tags -%}
+<li class="item"><a class="icon tag" href="{{ '/tags/' | append: tag | relative_url | append: "/" }}">{{ tag }}</a></li>
+{% endfor -%}
+{% endif -%}
+{% if page.updated -%}
 <li class="item"><time class="icon date updated">{{ page.updated | date: "%Y-%m-%d" }}</time></li>
-{% endif %}
+{% endif -%}
 <li class="item"><time class="icon date published">{{ page.date | date: "%Y-%m-%d" }}</time></li>
 </ul>
 </header>
-{% if page.toc %}
-<div class="table-of-contents">{% include toc.html html=content h_min=3 h_max=6 %}</div>
-{% endif %}
-<main class="post main" data-pswp>
-{{ content }}
+{% if page.toc -%}
+<div class="table-of-contents">{% include toc.html html=content sanitize=true h_min=3 h_max=6 item_class="level%level%" -%}</div>
+{% endif -%}
+<main class="post main">
+{{ content -}}
 </main>
 </article>
-{% include debug.html path="/_layouts/post.html" %}
+{% include debug.html path='/_layouts/post.html' -%}

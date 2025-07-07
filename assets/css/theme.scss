@@ -3,63 +3,6 @@
 /*! © 2025 imaoki | MIT License | https://github.com/imaoki */
 
 // =============================================================================
-// Const
-// =============================================================================
-
-$header-font-size-base: 0.5rem;
-$header-font-size-offset: 0.5rem;
-$header-level-start: 3;
-$header-margin-offset: 1rem;
-$header-mark-end: "/";
-$header-mark-start: "#";
-
-$offset-hover-back: 16;
-$offset-hover-fore: 64;
-
-$icon-imaoki: "\e911";
-$icon-alert-triangle: "\e90d";
-$icon-anchor: "\e900";
-$icon-calendar: "\e901";
-$icon-chevron-left: "\e902";
-$icon-chevron-right: "\e903";
-$icon-chevron-up: "\e904";
-$icon-clipboard: "\e910";
-$icon-clock: "\e905";
-$icon-corner-down-left: "\e90c";
-$icon-edit: "\e90e";
-$icon-external-link: "\e908";
-$icon-github: "\e906";
-$icon-info: "\e90f";
-$icon-log-in: "\e912";
-$icon-log-out: "\e913";
-$icon-menu: "\e907";
-$icon-feed: "\e909";
-$icon-search: "\e90a";
-$icon-tag: "\e90b";
-
-$font-icon: "icon";
-$font-monospace: monospace, monospace;
-$font-sans-serif-italic: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
-$font-sans-serif: sans-serif;
-// $font-external: "Rock Salt", cursive;
-$font-external: sans-serif;
-$font-list-mark: $font-monospace;
-$font-header-mark: sans-serif;
-
-$line-height-code: 1.7;
-$line-height-common: 1.7;
-$line-height-icon: 1;
-$line-height-pre: 1.375;
-$line-height-toc: 1.375;
-
-// $radius-large: 0.5rem;
-$radius-large: 0;
-// $radius-small: 0.25rem;
-$radius-small: 0;
-$radius-button: 1.0rem;
-$radius-key: 0.25rem;
-
-// =============================================================================
 // Functions
 // =============================================================================
 
@@ -84,12 +27,153 @@ $radius-key: 0.25rem;
   @return $content;
 }
 
-@function toString($number) {
-  @return "" + inspect($number);
-}
+// =============================================================================
+// Const
+// =============================================================================
+
+$header-font-size-base: 0.5rem;
+$header-font-size-offset: 0.5rem;
+$header-level-start: 3;
+$header-margin-offset: 1rem;
+$header-mark-end: "/";
+$header-mark-start: "#";
+
+$offset-hover-back: 16;
+$offset-hover-fore: 64;
+
+// Icon constants
+$icon-imaoki: "\e911";
+$icon-alert-triangle: "\e90d";
+$icon-anchor: "\e900";
+$icon-calendar: "\e901";
+$icon-check: "\e914";
+$icon-chevron-left: "\e902";
+$icon-chevron-right: "\e903";
+$icon-chevron-up: "\e904";
+$icon-clipboard: "\e910";
+$icon-clock: "\e905";
+$icon-corner-down-left: "\e90c";
+$icon-edit: "\e90e";
+$icon-external-link: "\e908";
+$icon-github: "\e906";
+$icon-info: "\e90f";
+$icon-list: "\e915";
+$icon-log-in: "\e912";
+$icon-log-out: "\e913";
+$icon-menu: "\e907";
+$icon-feed: "\e909";
+$icon-search: "\e90a";
+$icon-tag: "\e90b";
+
+// Font stacks
+$font-icon: "icon";
+$font-monospace: monospace, monospace;
+$font-sans-serif-italic: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+$font-sans-serif: sans-serif;
+$font-external: sans-serif;
+$font-list-mark: $font-monospace;
+$font-header-mark: sans-serif;
+
+// Line heights
+$line-height-code: 1.7;
+$line-height-common: 1.7;
+$line-height-icon: 1;
+$line-height-pre: 1.375;
+$line-height-toc: 1.375;
+$code-block-lines: 20;
+
+// Scrollbar
+$scrollbar-large-size: 0.5rem;
+$scrollbar-small-size: 0.25rem;
+
+// Layout
+$page-max-width: 50rem;
+$toc-max-width: 20rem;
+$toc-collapse-width: 5rem;
+
+// Post
+$key-radius: 0.125rem;
 
 // =============================================================================
-// Mixin
+// Color Variables
+// =============================================================================
+
+// Named colors
+$color-name-red: rgb(223, 63, 95);
+$color-name-orange: rgb(223, 95, 63);
+$color-name-yellow: rgb(223, 223, 95);
+$color-name-green: rgb(63, 223, 63);
+$color-name-cyan: rgb(63, 223, 223);
+$color-name-blue: rgb(63, 95, 223);
+$color-name-magenta: rgb(223, 63, 223);
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(0, 0, 0);
+
+// Link colors
+$color-link: rgb(95, 127, 223);
+$color-visited: rgb(159, 127, 159);
+$color-hover: rgb(159, 223, 255);
+$color-active: rgb(127, 159, 191);
+$color-focus-border: rgb(63, 127, 191);
+$color-hover-image: setAlpha256($color-hover, 64);
+
+// Base colors
+$color-base-back: rgb(31, 31, 31);
+$color-base-fore: rgb(191, 191, 191);
+$color-base-fore-dark: brighten256($color-base-fore, -64);
+
+// Scrollbar colors
+$color-scrollbar-track: transparent;
+$color-scrollbar-thumb: brighten256($color-base-back, 16);
+
+// Navigation colors
+$color-nav-fore: brighten256($color-base-fore, -128);
+
+// TOC colors
+$color-toc-back: brighten256($color-base-back, -8);
+$color-toc-icon: $color-base-fore-dark;
+$color-toc-item-back: $color-white;
+$color-toc-item-fore: $color-base-fore-dark;
+
+// Content colors
+$color-content-back: brighten256($color-base-back, 8);
+$color-content-fore: brighten256($color-content-back, 32);
+$color-content-l1-back: setAlpha256($color-white, 16);
+$color-content-l1-fore: setAlpha256($color-white, 32);
+$color-content-l1-back-light: setAlpha256($color-white, 64);
+$color-content-l1-back-dark: setAlpha256($color-black, 64);
+$color-admonition-fore: setAlpha256($color-white, 127);
+
+// Header colors
+$color-h6-back: brighten256($color-content-back, 8);
+$color-h5-back: brighten256($color-h6-back, 4);
+$color-h4-back: brighten256($color-h5-back, 4);
+$color-h3-back: brighten256($color-h4-back, 4);
+$color-h-mark-fore: setAlpha256($color-black, 32);
+
+// Code colors
+$color-code-back: rgb(40, 44, 52);
+$color-code-fore: rgb(168, 153, 132);
+$color-code-info-back: brighten256($color-code-back, 8);
+$color-code-info-fore: brighten256($color-base-fore, -96);
+$color-code-line-number-fore: rgb(102, 92, 84);
+
+// Icon-specific colors
+$color-note-fore: rgb(127, 159, 255);
+$color-warning-fore: rgb(255, 191, 0);
+
+$color-github-back: transparent;
+$color-github-back-h: rgb(245, 245, 245);
+$color-github-fore: rgb(245, 245, 245);
+$color-github-fore-h: rgb(64, 120, 192);
+
+$color-feed-back: transparent;
+$color-feed-back-h: rgb(242, 101, 34);
+$color-feed-fore: rgb(242, 101, 34);
+$color-feed-fore-h: $color-white;
+
+// =============================================================================
+// Mixins
 // =============================================================================
 
 @mixin hovered-backcolor($source, $offset, $pseudo: 0) {
@@ -97,7 +181,6 @@ $radius-key: 0.25rem;
     &::before {
       background-color: $source;
     }
-
     &:hover::before {
       background-color: brighten256($source, $offset);
     }
@@ -106,14 +189,12 @@ $radius-key: 0.25rem;
     &::after {
       background-color: $source;
     }
-
     &:hover::after {
       background-color: brighten256($source, $offset);
     }
   }
   @else {
     background-color: $source;
-
     &:hover {
       background-color: brighten256($source, $offset);
     }
@@ -125,7 +206,6 @@ $radius-key: 0.25rem;
     &::before {
       background-color: setAlpha256($source, $init);
     }
-
     &:hover::before {
       background-color: setAlpha256($source, $offset);
     }
@@ -134,14 +214,12 @@ $radius-key: 0.25rem;
     &::after {
       background-color: setAlpha256($source, $init);
     }
-
     &:hover::after {
       background-color: setAlpha256($source, $offset);
     }
   }
   @else {
     background-color: setAlpha256($source, $init);
-
     &:hover {
       background-color: setAlpha256($source, $offset);
     }
@@ -153,7 +231,6 @@ $radius-key: 0.25rem;
     &::before {
       color: $source;
     }
-
     &:hover::before {
       color: brighten256($source, $offset);
     }
@@ -162,14 +239,12 @@ $radius-key: 0.25rem;
     &::after {
       color: $source;
     }
-
     &:hover::after {
       color: brighten256($source, $offset);
     }
   }
   @else {
     color: $source;
-
     &:hover {
       color: brighten256($source, $offset);
     }
@@ -178,68 +253,50 @@ $radius-key: 0.25rem;
 
 @mixin block-child-margin($margin-normal: 1rem, $margin-header: 5rem) {
   & > * {
-    // margin: $margin-normal 0;
-    margin-bottom: $margin-normal;
-    margin-top: $margin-normal;
+    margin: $margin-normal 0;
 
     &:first-child {
-      // margin: 0 0 $margin-normal 0;
-      margin-bottom: $margin-normal;
       margin-top: $margin-normal;
 
       &[class*="invisible"] + * {
-        // margin: 0 0 $margin-normal 0;
         margin-bottom: $margin-normal;
-
         &:last-child {
-          // margin: 0;
-          margin-bottom: 0;
-          margin-top: 0;
+          margin: 0;
         }
       }
     }
 
     &:last-child {
-      // margin: $margin-normal 0 0 0;
       margin-top: $margin-normal;
-
       &:first-child {
-        // margin: 0;
-        margin-bottom: 0;
-        margin-top: 0;
+        margin: 0;
       }
     }
   }
 
-  & > h1, h2, h3, h4, h5, h6 {
-    // margin: $margin-header 0 $margin-normal 0;
-    margin-bottom: $margin-normal;
-    margin-top: $margin-header;
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    margin: $margin-header 0 $margin-normal 0;
 
     &:first-child {
-      // margin: 0 0 $margin-normal 0;
       margin-bottom: $margin-normal;
 
       &[class*="invisible"] + * {
-        // margin: 0 0 $margin-normal 0;
         margin-bottom: $margin-normal;
-
         &:last-child {
-          // margin: 0;
-          margin-bottom: 0;
-          margin-top: 0;
+          margin: 0;
         }
       }
     }
 
     &:last-child {
-      // margin: $margin-header 0 0 0;
       margin-top: $margin-header;
-
       &:first-child {
-        // margin: 0;
-        margin-bottom: 0;
-        margin-top: 0;
+        margin: 0;
       }
     }
 
@@ -256,200 +313,59 @@ $radius-key: 0.25rem;
 
 @mixin post-content-header($level, $color, $margin-normal: 1rem) {
   $header-level: $level - $header-level-start + 1;
-  $mark-font-family: $font-header-mark;
   $mark-font-size: $header-font-size-base + $header-font-size-offset * (6 - $header-level) * 0.5;
-  // $mark-margin-side: $header-margin-offset * ($header-level - 1);
-  $mark-margin-side: 0;
 
   background-color: $color;
-  border-radius: $radius-small;
-  margin-left: $mark-margin-side;
-  margin-right: $mark-margin-side;
+  margin: unset 0;
   padding: (0.375rem * (6 - $header-level)) 1rem;
   position: relative;
-  // text-align: center;
   text-align: left;
 
   &::before {
-    // content: toString($header-level);
     color: $color-h-mark-fore;
     content: generateHeaderMark($header-level, $header-mark-start);
-    font-family: $mark-font-family;
+    font-family: $font-header-mark;
     font-size: $mark-font-size;
-    // left: 0.25rem;
     line-height: $line-height-icon;
     margin: 0 0.5rem 0 -0.5rem;
-    // position: absolute;
-    // top: 0.25rem;
-    // bottom: 0.25rem;
     vertical-align: baseline;
   }
-
-  // &::after {
-  //   bottom: 0.25rem;
-  //   color: $color-h-mark-fore;
-  //   content: generateHeaderMark($header-level, $header-mark-end);
-  //   font-family: $mark-font-family;
-  //   font-size: $mark-font-size;
-  //   line-height: $line-height-icon;
-  //   margin: auto 0;
-  //   position: absolute;
-  //   right: 0.25rem;
-  // }
-
-  // & + h1,
-  // & + h2,
-  // & + h3,
-  // & + h4,
-  // & + h5,
-  // & + h6 {
-  //   margin-top: $margin-normal;
-  // }
 }
 
 @mixin common-forecolor($position: 0) {
-  @if $position == -1 {
-    &.red::before {color: $color-name-red;}
-    &.orange::before {color: $color-name-orange;}
-    &.yellow::before {color: $color-name-yellow;}
-    &.green::before {color: $color-name-green;}
-    &.cyan::before {color: $color-name-cyan;}
-    &.blue::before {color: $color-name-blue;}
-    &.magenta::before {color: $color-name-magenta;}
-  }
-  @else if $position == 1 {
-    &.red::after {color: $color-name-red;}
-    &.orange::after {color: $color-name-orange;}
-    &.yellow::after {color: $color-name-yellow;}
-    &.green::after {color: $color-name-green;}
-    &.cyan::after {color: $color-name-cyan;}
-    &.blue::after {color: $color-name-blue;}
-    &.magenta::after {color: $color-name-magenta;}
-  }
-  @else {
-    &.red {color: $color-name-red;}
-    &.orange {color: $color-name-orange;}
-    &.yellow {color: $color-name-yellow;}
-    &.green {color: $color-name-green;}
-    &.cyan {color: $color-name-cyan;}
-    &.blue {color: $color-name-blue;}
-    &.magenta {color: $color-name-magenta;}
+  $colors: (
+    "red": $color-name-red,
+    "orange": $color-name-orange,
+    "yellow": $color-name-yellow,
+    "green": $color-name-green,
+    "cyan": $color-name-cyan,
+    "blue": $color-name-blue,
+    "magenta": $color-name-magenta
+  );
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      @if $position == -1 {
+        &::before {color: $color;}
+      }
+      @else if $position == 1 {
+        &::after {color: $color;}
+      }
+      @else {
+        color: $color;
+      }
+    }
   }
 }
-
-// =============================================================================
-// Color Variables
-// =============================================================================
-
-// Common
-// -----------------------------------------------------------------------------
-$color-name-red: rgb(255, 95, 127);
-$color-name-orange: rgb(255, 127, 95);
-$color-name-yellow: rgb(255, 255, 127);
-$color-name-green: rgb(95, 255, 95);
-$color-name-cyan: rgb(95, 255, 255);
-$color-name-blue: rgb(95, 127, 255);
-$color-name-magenta: rgb(255, 95, 255);
-$color-white: rgb(255, 255, 255);
-$color-black: rgb(0, 0, 0);
-
-// Link
-// -----------------------------------------------------------------------------
-
-$color-link: rgb(95, 127, 223);
-$color-visited: rgb(159, 127, 159);
-$color-hover: rgb(159, 223, 255);
-$color-active: rgb(127, 159, 191);
-$color-focus-border: rgb(63, 127, 191);
-
-$color-hover-image: setAlpha256($color-hover, 64);
-
-// Base
-// -----------------------------------------------------------------------------
-
-$color-base-back: rgb(31, 31, 31);
-$color-base-fore: rgb(191, 191, 191);
-
-$color-base-fore-dark: brighten256($color-base-fore, -64);
-
-// Scrollbar
-// -----------------------------------------------------------------------------
-
-$color-scrollbar-track: transparent;
-$color-scrollbar-thumb: brighten256($color-base-back, 16);
-
-// Nav
-// -----------------------------------------------------------------------------
-
-$color-nav-fore: brighten256($color-base-fore, -128);
-
-// Toc
-// -----------------------------------------------------------------------------
-
-$color-toc-back: $color-black;
-$color-toc-icon: $color-base-fore-dark;
-$color-toc-item-back: $color-white;
-$color-toc-item-fore: $color-base-fore-dark;
-
-// Content
-// -----------------------------------------------------------------------------
-
-$color-content-back: brighten256($color-base-back, 8);
-$color-content-fore: brighten256($color-content-back, 32);
-
-$color-content-l1-back: setAlpha256($color-white, 16);
-$color-content-l1-fore: setAlpha256($color-white, 32);
-
-$color-content-l1-back-light: setAlpha256($color-white, 64);
-$color-content-l1-back-dark: setAlpha256($color-black, 64);
-
-$color-h6-back: brighten256($color-content-back, 8);
-$color-h5-back: brighten256($color-h6-back, 4);
-$color-h4-back: brighten256($color-h5-back, 4);
-$color-h3-back: brighten256($color-h4-back, 4);
-
-$color-h-mark-fore: setAlpha256($color-black, 32);
-
-$color-admonition-fore: setAlpha256($color-white, 127);
-
-// Code
-// -----------------------------------------------------------------------------
-
-// $color-code-back: rgb(28, 31, 33);
-// $color-code-fore: rgb(192, 197, 206);
-$color-code-back: rgb(40, 44, 52);
-$color-code-fore: rgb(168, 153, 132);
-$color-pre-caption-back: setAlpha256(rgb(255, 255,255), 8);
-$color-pre-caption-fore: brighten256($color-base-fore, -96);
-
-// Icon
-// -----------------------------------------------------------------------------
-
-$color-note-fore: rgb(175, 191, 255);
-$color-warning-fore: rgb(223, 191, 55);
-
-$color-github-back: transparent;
-$color-github-back-h: rgb(245, 245, 245);
-$color-github-fore: rgb(245, 245, 245);
-$color-github-fore-h: rgb(64, 120, 192);
-
-$color-feed-back: transparent;
-$color-feed-back-h: rgb(242, 101, 34);
-$color-feed-fore: rgb(242, 101, 34);
-$color-feed-fore-h: $color-white;
 
 // =============================================================================
 // Reset
 // =============================================================================
 
 * {
-  // scroll-behavior: smooth;
   background-clip: padding-box;
   box-sizing: border-box;
-  font-family: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
+  font: inherit;
   letter-spacing: inherit;
   line-height: inherit;
   margin: 0;
@@ -460,6 +376,12 @@ $color-feed-fore-h: $color-white;
   &:focus {
     outline: transparent none 0;
   }
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -480,6 +402,10 @@ sub, sup {
   vertical-align: inherit;
 }
 
+deepl-input-controller {
+  display: none;
+}
+
 // =============================================================================
 // Font
 // =============================================================================
@@ -493,15 +419,9 @@ kbd,
 pre,
 samp {
   font-family: $font-monospace;
-
   * {
     font-family: $font-monospace;
   }
-}
-
-html {
-  font-size: 16px;
-  height: 100%;
 }
 
 body {
@@ -532,8 +452,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar {
   background-color: transparent;
-  height: 0.5rem;
-  width: 0.5rem;
+  height: $scrollbar-large-size;
+  width: $scrollbar-large-size;
 }
 
 ::-webkit-scrollbar-track,
@@ -542,7 +462,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: $radius-small;
   @include hovered-backcolor($color-scrollbar-thumb, $offset-hover-back);
 }
 
@@ -560,7 +479,6 @@ a {
   &:visited {color: $color-visited;}
   &:hover {color: $color-hover;}
   &:active {color: $color-active;}
-  // &:focus {box-shadow: 0 0 0 1px $color-focus-border;}
 
   &.static {
     &:link,
@@ -576,10 +494,11 @@ a {
   &.wrapper {
     display: flex;
     flex-flow: column nowrap;
+    gap: 1rem;
     height: 100%;
     margin: 0 auto;
-    max-width: 50rem;
-    padding: 0 1rem;
+    max-width: $page-max-width;
+    padding: 1rem;
   }
 
   &.header {
@@ -587,27 +506,19 @@ a {
     display: flex;
     flex-flow: row wrap;
     flex: 0 0 auto;
+    gap: 1rem;
     justify-content: flex-start;
-    margin: 1rem 0 0 0;
   }
 
   &.title {
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
-    margin: 0 0.5rem 0 0;
   }
 
   &.nav {
     .static {
-      padding: 0 0.5rem;
-
       @include hovered-fontcolor($color-nav-fore, $offset-hover-fore);
-
-      // &::before {
-      //   content: "/";
-      // }
-
       &.active {
         color: $color-active;
       }
@@ -616,7 +527,6 @@ a {
 
   &.main {
     flex: 1 0 auto;
-    margin: 1rem 0 0 0;
   }
 
   &.footer {
@@ -624,7 +534,6 @@ a {
     flex-flow: row nowrap;
     flex: 0 0 auto;
     justify-content: center;
-    margin: 1rem 0;
   }
 }
 
@@ -632,10 +541,7 @@ a {
   &.title {
     padding: 0.25rem 0.5rem;
 
-    &.home {
-      display: none;
-    }
-
+    &.home,
     &.category {
       display: none;
     }
@@ -653,12 +559,10 @@ a {
 
 .panel {
   &.wrapper {
-    border-radius: $radius-large;
     display: flex;
     flex-flow: column nowrap;
     flex: 0 0 auto;
     padding: 1rem;
-
     @include hovered-backcolor($color-content-back, $offset-hover-back);
   }
 
@@ -667,6 +571,7 @@ a {
     display: flex;
     flex-flow: row wrap;
     flex: 0 0 auto;
+    gap: 1rem;
     justify-content: space-between;
   }
 
@@ -680,20 +585,18 @@ a {
   }
 
   &.excerpt {
-    border-color: $color-content-fore;
-    border-radius: 0 0 $radius-small $radius-small;
-    border-style: solid;
-    border-width: 1px 0 0 0;
+    border: 0 solid $color-content-fore;
+    border-top-width: 1px;
     color: $color-content-fore;
     font-size: 0.8rem;
-    padding: $radius-small $radius-large;
+    padding: 0;
   }
 }
 
 .pagination {
-  span {
-    color: $color-base-fore-dark;
-  }
+  // span {
+  //   color: $color-base-fore-dark;
+  // }
 
   &.newer {
     &::before {
@@ -715,13 +618,16 @@ a {
 
   &.number {
     margin: 0 0.5rem;
+
+    &.active {
+      color: $color-active;
+    }
   }
 }
 
 .post {
   &.wrapper {
     background-color: $color-content-back;
-    border-radius: $radius-large;
     display: flex;
     flex-flow: column nowrap;
     padding: 1rem;
@@ -774,18 +680,16 @@ a {
     display: flex;
     flex-flow: row wrap;
     flex: 0 0 auto;
+    gap: 0.5rem;
     justify-content: flex-start;
-    margin: -1rem;
-    padding: 0.5rem;
 
     ul:not([class*="debug"]) {
       align-items: stretch;
       background-color: $color-content-back;
-      border-radius: $radius-large;
       display: flex;
       flex-flow: column nowrap;
       flex: 1 1 auto;
-      margin: 0.5rem;
+      gap: 0.5rem;
       padding: 1rem;
 
       li {
@@ -794,11 +698,9 @@ a {
         flex-flow: row wrap;
         flex: 1 0 auto;
         justify-content: space-between;
-        margin: 0.5rem 0 0 0;
 
         &:first-child {
           align-self: center;
-          margin: 0;
 
           span {
             font-size: 2rem;
@@ -813,8 +715,7 @@ a {
   align-items: center;
   display: flex;
   flex-flow: row wrap;
-  margin: 0 -0.5rem;
-  padding: 0.25rem;
+  gap: 1rem;
 
   &.right {
     justify-content: flex-end;
@@ -831,7 +732,6 @@ a {
   & > .item {
     display: block;
     flex: 0 1 auto;
-    margin: 0.25rem;
 
     &.stretch {
       flex: 1 1 auto;
@@ -843,15 +743,11 @@ a {
   align-items: stretch;
   display: flex;
   flex-flow: column wrap;
+  gap: 0.5rem;
 
   & > .item {
     display: block;
     flex: 1 1 auto;
-    margin: 0 0 0.5rem 0;
-
-    &:last-child {
-      margin: 0;
-    }
   }
 }
 
@@ -863,6 +759,7 @@ a {
   }
 
   &.copy::before {content: $icon-clipboard;}
+  &.copy.success::before {content: $icon-check;}
   &.date.published::before {content: $icon-calendar;}
   &.date.updated::before {content: $icon-edit;}
   &.feed::before {content: $icon-feed;}
@@ -871,11 +768,11 @@ a {
 }
 
 .button {
-  border-radius: $radius-button;
   display: block;
-  padding: 0.25rem 0.5rem;
+  padding: 0 0.25rem;
 
   &.copy {
+    cursor: pointer;
     @include hovered-backcolor($color-content-back, $offset-hover-back);
     @include hovered-fontcolor($color-base-fore-dark, $offset-hover-fore);
   }
@@ -912,7 +809,7 @@ a {
   .template {
     &::before {
       content: "template:";
-      margin: 0 0.25rem 0 0;
+      margin: 0 0.125rem 0 0;
     }
   }
 }
@@ -924,39 +821,27 @@ a {
 // =============================================================================
 // TOC
 // =============================================================================
-
+// TOC class names follow Markdown Converter
 .table-of-contents > ul {
-  border-radius: 1.5rem;
+  bottom: 0;
   display: flex;
   flex-flow: column nowrap;
-  height: 3rem;
-  overflow: hidden;
-  padding: 0.5rem;
+  height: auto;
+  max-width: $toc-max-width;
+  min-width: 3rem;
+  overflow: scroll;
+  padding: 3rem 0.5rem 0.5rem 0.5rem;
   position: fixed;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 0;
+  top: 0;
   visibility: visible;
-  width: 3rem;
+  width: auto;
   z-index: 3;
-
-  @include hovered-backcolor-alpha($color-toc-back, 64, 192);
-  @include hovered-fontcolor($color-toc-icon, $offset-hover-fore, $pseudo: 1);
-
-  &:hover {
-    border-radius: 0;
-    bottom: 0.5rem;
-    height: auto;
-    max-width: 70%;
-    overflow: scroll;
-    width: auto;
-
-    li {
-      visibility: visible;
-    }
-  }
+  @include hovered-backcolor-alpha($color-toc-back, 96, 224);
 
   &::before {
-    content: $icon-menu;
+    color: $color-toc-icon;
+    content: $icon-list;
     display: block;
     flex: 0 0 auto;
     font-family: $font-icon;
@@ -964,13 +849,13 @@ a {
     line-height: $line-height-icon;
     padding: 0.25rem;
     position: fixed;
-    right: calc(1rem - 2px);
-    top: 1rem;
+    right: calc(0.5rem - 2px);
+    top: 0.5rem;
   }
 
   &::-webkit-scrollbar {
-    height: 0.125rem;
-    width: 0.125rem;
+    height: $scrollbar-small-size;
+    width: $scrollbar-small-size;
   }
 
   ul {
@@ -981,27 +866,20 @@ a {
   li {
     display: block;
     flex: 0 0 auto;
-    visibility: hidden;
 
     & > a {
-      border-radius: $radius-small;
       display: block;
       line-height: $line-height-toc;
       overflow: hidden;
       padding: 0.25rem;
       text-overflow: ellipsis;
       white-space: nowrap;
-
       @include hovered-backcolor-alpha($color-toc-item-back, 0, 32);
       @include hovered-fontcolor($color-toc-item-fore, $offset-hover-fore);
     }
   }
 
   & > li {
-    &:first-child {
-      margin: 2.5rem 0 0 0;
-    }
-
     // level1
     & > a {padding-left: 0.25rem;}
 
@@ -1032,6 +910,47 @@ a {
   }
 }
 
+@media (max-width: #{$page-max-width + $toc-max-width * 2}) {
+  .table-of-contents > ul {
+    max-width: calc((100% - #{$page-max-width}) * 0.5);
+  }
+}
+
+@media (max-width: #{$page-max-width + $toc-collapse-width * 2}) {
+  .table-of-contents > ul {
+    height: 3rem;
+    max-width: 3rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    width: 3rem;
+
+    &:hover {
+      bottom: 0;
+      height: auto;
+      max-width: $toc-max-width;
+      overflow: scroll;
+      padding: 3rem 0.5rem 0.5rem 0.5rem;
+      width: auto;
+
+      li {
+        visibility: visible;
+      }
+    }
+
+    li {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: #{$toc-max-width + 2rem}) {
+  .table-of-contents > ul {
+    &:hover {
+      max-width: calc(100% - 2rem);
+    }
+  }
+}
+
 // =============================================================================
 // Content
 // =============================================================================
@@ -1039,52 +958,44 @@ a {
 .post.main {
   @include block-child-margin;
 
-  // * {
-  //   &.red {color: $color-name-red;}
-  //   &.orange {color: $color-name-orange;}
-  //   &.yellow {color: $color-name-yellow;}
-  //   &.green {color: $color-name-green;}
-  //   &.cyan {color: $color-name-cyan;}
-  //   &.blue {color: $color-name-blue;}
-  //   &.magenta {color: $color-name-magenta;}
-  // }
-
   a {
     &:not([href^="{{ site.url }}"]) {
       &:not([href^="{{ site.baseurl }}"]) {
         &:not([href^="#"]) {
           &:not([href^="20"]) {
-            &::before {
-              color: $color-base-fore-dark;
-              content: "\e908";
-              font-family: $font-icon;
+            &:not([href^="./"]) {
+              &::before {
+                color: $color-base-fore-dark;
+                content: $icon-external-link;
+                font-family: $font-icon;
+              }
             }
           }
         }
       }
     }
 
-    &.image {
+    &:has(img) {
       display: inline-block;
       position: relative;
 
       &::before {
+        background-color: $color-hover-image;
         bottom: 0;
         content: "";
         display: inline-block;
         left: 0;
         line-height: $line-height-icon;
-        opacity: 0;
         position: absolute;
         right: 0;
         top: 0;
+        visibility: hidden;
         z-index: 1;
       }
 
       &:hover {
         &::before {
-          background-color: $color-hover-image;
-          opacity: 1;
+          visibility: visible;
         }
 
         & > img {
@@ -1097,16 +1008,12 @@ a {
   blockquote {
     background-color: $color-content-l1-back;
     border-left: 0.25rem solid $color-content-l1-fore;
-    border-radius: $radius-small;
     padding: 1rem;
-
     @include block-child-margin;
   }
 
   code,
   kbd {
-    // background-color: $color-code-back;
-    // color: $color-code-fore;
     font-size: 1rem;
     letter-spacing: 0;
     line-height: $line-height-code;
@@ -1125,7 +1032,6 @@ a {
   }
 
   dt {
-    // border-radius: $radius-small;
     border-left: 0.5rem solid $color-content-l1-fore;
     padding: 0 0.5rem;
   }
@@ -1136,7 +1042,6 @@ a {
 
   dd {
     padding: 0.5rem 1rem;
-
     @include block-child-margin;
   }
 
@@ -1173,9 +1078,8 @@ a {
   h6 {@include post-content-header(6, $color-h6-back);}
 
   hr {
-    border-color: $color-content-l1-fore;
-    border-style: solid;
-    border-width: 1px 0 0 0;
+    border: 0 solid $color-content-l1-fore;
+    border-top-width: 1px;
     display: block;
   }
 
@@ -1184,8 +1088,12 @@ a {
   }
 
   img {
+    $img-margin: 0.25rem;
+
     display: inline-block;
-    margin: 0.25rem;
+    height: auto;
+    margin: $img-margin;
+    max-width: calc(100% - #{$img-margin} * 2);
     vertical-align: middle;
   }
 
@@ -1193,41 +1101,32 @@ a {
     padding: 0 0 0 2.25rem;
   }
 
-  ul {
-    & > li {
-      &::before {
-        content: "\2022";
-      }
-    }
+  ul > li::before {
+    content: "\2022";
   }
 
   ol {
     counter-reset: order;
 
-    & > li {
-      &::before {
-        // content: "99.";
-        content: counter(order)".";
-        counter-increment: order;
-      }
+    & > li::before {
+      // content: "99.";
+      content: counter(order)".";
+      counter-increment: order;
     }
   }
 
   li {
     display: block;
     position: relative;
-
     @include block-child-margin;
 
     &::before {
       color: $color-content-l1-back-light;
       display: block;
       font-family: $font-list-mark;
-      // font-size: 0.5rem;
       left: -2.25rem;
       position: absolute;
       text-align: right;
-      // top: 0.25rem;
       width: 2rem;
     }
 
@@ -1236,44 +1135,90 @@ a {
     }
   }
 
-  pre {
-    background-color: $color-code-back;
-    border-radius: $radius-small;
-    font-size: 1rem;
-    letter-spacing: 0;
-    line-height: $line-height-pre;
-    max-height: 60rem;
-    padding: 0.0rem 0.5rem 0.5rem 0.5rem;
-    position: relative;
+  ul.code-info {
+    background-color: $color-code-info-back;
+    color: $color-code-info-fore;
+    margin-bottom: 0;
+    padding: 0;
 
-    &::before {
-      background-color: $color-pre-caption-back;
-      color: $color-pre-caption-fore;
-      content: attr(data-type);
-      display: block;
-      left: -0.5rem;
-      margin: 0 -0.5rem 0.5rem -0.5rem;
-      padding: 0.25rem;
-      position: sticky;
-      right: 0;
-      text-align: right;
-      top: 0;
+    &.hlist {
+      margin: 0;
     }
 
-    & > code {
-      // background-color: $color-code-back;
-      line-height: $line-height-pre;
-      padding: 0;
+    & > li {
+      display: block;
+      font-family: $font-monospace;
+      font-size: 1rem;
+      letter-spacing: 0;
+      line-height: $line-height-code;
+      margin: 0;
+      position: unset;
+
+      &::before {
+        content: none;
+      }
+
+      &.item.language {
+        padding: 0 0.5rem;
+      }
+
+      & > .button.copy {
+        @include hovered-backcolor($color-code-info-back, $offset-hover-back);
+        @include hovered-fontcolor($color-code-info-fore, $offset-hover-fore);
+      }
+    }
+
+    & ~ pre {
+      margin-top: 0;
     }
   }
 
+  pre {
+    $code-padding: 0.5rem;
+    $pre-max-height: $line-height-pre * $code-block-lines + $code-padding * 2;
+
+    background-color: $color-code-back;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1rem;
+    gap: 0;
+    letter-spacing: 0;
+    line-height: $line-height-pre;
+    max-height: $pre-max-height;
+
+    &::-webkit-scrollbar {
+      height: $scrollbar-small-size;
+      width: $scrollbar-small-size;
+    }
+
+    & > code {
+      display: block;
+      flex: 0 1 auto;
+      line-height: $line-height-pre;
+      overflow: visible;
+      padding: $code-padding;
+    }
+
+    &::before {
+      color: $color-code-line-number-fore;
+      content: attr(data-line-number);
+      display: block;
+      flex: 0 1 auto;
+      font-family: $font-monospace;
+      font-size: 1rem;
+      letter-spacing: 0;
+      line-height: $line-height-pre;
+      padding: $code-padding;
+    }
+  }
 
   table {
+    border-spacing: 0;
     display: block;
   }
 
   th, td {
-    padding: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
     vertical-align: baseline;
   }
 
@@ -1284,28 +1229,14 @@ a {
     & + th {
       border-left: 1px solid $color-content-l1-fore;
     }
-
-    &:first-child {
-      border-radius: $radius-small 0 0 0;
-    }
-
-    &:last-child {
-      border-radius: 0 $radius-small 0 0;
-    }
   }
 
-  td {
-    & + td {
-      border-left: 1px solid $color-content-l1-fore;
-    }
+  td + td {
+    border-left: 1px solid $color-content-l1-fore;
   }
 
-  tr {
-    & + tr {
-      & > td {
-        border-top: 1px solid $color-content-l1-fore;
-      }
-    }
+  tr + tr > td {
+    border-top: 1px solid $color-content-l1-fore;
   }
 
   .footnote,
@@ -1350,7 +1281,6 @@ a {
       margin: 0;
       vertical-align: sub;
     }
-
     @include common-forecolor(-1);
   }
 
@@ -1363,26 +1293,24 @@ a {
       margin: 0;
       vertical-align: sub;
     }
-
     @include common-forecolor(1);
   }
 
   .key,
   kbd {
     background-color: $color-content-l1-back;
-    border-radius: $radius-key;
+    border-radius: $key-radius;
     box-shadow: 0 0.125rem 0 0.125rem $color-content-l1-back-dark;
     margin: 0 0.25rem;
   }
 
   .admonition {
-    border-radius: $radius-small;
     border: 1px solid $color-admonition-fore;
     padding: 1rem;
-
     @include block-child-margin;
-  }
-  .admonition > .admonition-title {
-    margin: 0;
+
+    & > .admonition-title {
+      margin: 0;
+    }
   }
 }

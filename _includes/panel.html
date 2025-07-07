@@ -1,14 +1,17 @@
-{% assign post = include.post %}
+{%- assign post = include.post -%}
 <a class="panel wrapper" href="{{ post.url | relative_url }}">
-<section class="panel header">
-<h3 class="panel title">{{ post.title }}</h3>
+{%- comment -%}{%- endcomment -%}
+<section class="panel header"><h3 class="panel title">{{ post.title }}</h3>
+{%- comment -%}{%- endcomment -%}
 <ul class="hlist right panel property">
-{% if post.updated %}
+{%- if post.updated -%}
 <li class="item"><time class="icon date updated">{{ post.updated | date: "%Y-%m-%d" }}</time></li>
-{% endif %}
+{%- endif -%}
 <li class="item"><time class="icon date published">{{ post.date | date: "%Y-%m-%d" }}</time></li>
-</ul>
-</section>
-<p class="panel excerpt">{% include excerpt.html content=post.content %}</p>
+{%- comment -%}{%- endcomment -%}
+</ul></section>
+{%- comment -%}{%- endcomment -%}
+<p class="panel excerpt">{% include excerpt.html content=post.content -%}</p>
+{%- comment -%}{%- endcomment -%}
 </a>
-{% include debug.html path="/_includes/panel.html" %}
+{%- include debug.html path='/_includes/panel.html' -%}

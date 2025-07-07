@@ -4,13 +4,13 @@ layout: page
 <section class="index wrapper">
 <h2 class="index title {{ page.key.page }}">{{ page[page.key.page] }}</h2>
 <ul class="vlist">
-{% for post in site.posts %}
-{% for category in post[page.key.post] %}
-{% if category == page[page.key.page] %}
-<li class="item">{% include panel.html post=post %}</li>
-{% endif %}
-{% endfor %}
-{% endfor %}
+{% for post in site.posts -%}
+{% for category in post[page.key.post] -%}
+{% if category == page[page.key.page] -%}
+<li class="item">{% include panel.html post=post -%}</li>
+{% endif -%}
+{% endfor -%}
+{% endfor -%}
 </ul>
 </section>
-{% include debug.html path="/_layouts/index-by-key.html" %}
+{% include debug.html path='/_layouts/index-by-key.html' -%}

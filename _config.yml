@@ -9,14 +9,15 @@ copyright: 2016-2025
 url: https://imaoki.github.io
 baseurl: "/kb"
 
-excerpt_length: 30
 paginate_path: "/page:num"
-paginate: 100
-permalink: /:year-:month-:day-:title
+paginate: 7
+permalink: /:year-:month-:day-:title/
 timezone: Asia/Tokyo
 unpublished: false
-use_minjs: true
 
+# Original properties
+use_minjs: true
+excerpt_length: 30
 debug:
   enabled: false
   template_path: true
@@ -29,17 +30,16 @@ defaults:
     values:
       layout: "post"
 
-# highlighter: none
-
+highlighter: none
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: true
   footnote_backlink: "&crarr;"
   footnote_backlink_inline: true
-  # syntax_highlighter: none
+  syntax_highlighter: nil
   syntax_highlighter_opts:
-    disable: true
+    disable : true
 gfm_quirks: paragraph_end
 
 plugins:
@@ -48,7 +48,6 @@ plugins:
   - jekyll-sitemap
 
 exclude:
-  - _site/
   - Gemfile
   - Gemfile.lock
   - LICENSE

@@ -1,61 +1,74 @@
-/*! © 2020 imaoki | MIT License | https://github.com/imaoki */
-(function (root, factory) {
-  if (typeof define === "function" && define.amd) {
-    define([], (function () {
-      return factory(root);
-    }));
-  } else if (typeof exports === "object") {
-    module.exports = factory(root);
-  } else {
-    root.kb = factory(root);
+/*! © 2025 imaoki | MIT License | https://github.com/imaoki */
+class KB {
+  constructor() {
+    this.initHandlers = [];
+    this.init();
   }
-})(typeof global !== "undefined" ? global : typeof window !== "undefined" ? window : this, (function (window) {
-  "use strict";
 
-  var kb = {};
+  /**
+   * 初期化ハンドラーを追加する
+   * @param {Function} handler - 実行する関数
+   */
+  addInitHandler(handler) {
+    if (typeof handler === 'function') {
+      this.initHandlers.push(handler);
+    }
+  }
 
-  kb.initHandlers = [];
+  /**
+   * NodeListまたは配列の各要素に対して関数を実行
+   * @param {NodeList|Array} elements - 要素のリスト
+   * @param {Function} fn - 実行する関数
+   */
+  each(elements, fn) {
+    if (!elements || typeof fn !== 'function') return;
 
-  kb.addInitHandler = function(handler) {
-    kb.initHandlers.push(handler);
-  };
+    for (const [index, element] of [...elements].entries()) {
+      fn(element, index);
+    }
+  }
 
-  kb.each = function(elements, fn) {
-    Array.prototype.forEach.call(elements, fn);
-  };
+  /**
+   * テキストをクリップボードにコピー
+   * @param {string} textValue - コピーするテキスト
+   * @returns {Promise<boolean>} - コピー成功の可否
+   */
+  async execCopy(textValue) {
+    if (!textValue) return false;
 
-  // icon.html用
-  // テキストをコピーする
-  kb.execCopy = function(textValue) {
-    var dummy = document.createElement("div");
-    dummy.style.position = "fixed";
-    dummy.style.right = "200%";
+    try {
+      await navigator.clipboard.writeText(textValue);
+      return true;
+    }
+    catch (error) {
+      console.warn('クリップボードへのコピーに失敗:', error);
+      return false;
+    }
+  }
 
-    var pre = document.createElement("pre");
-    pre.style.webkitUserSelect = "auto";
-    pre.style.userSelect = "auto";
+  /**
+   * 初期化処理
+   */
+  init() {
+    const runInitHandlers = () => {
+      this.initHandlers.forEach(handler => {
+        try {
+          handler();
+        }
+        catch (error) {
+          console.error('初期化ハンドラーでエラーが発生しました:', error);
+        }
+      });
+    };
 
-    dummy.appendChild(pre).textContent = textValue;
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", runInitHandlers);
+    }
+    else {
+      Promise.resolve().then(runInitHandlers);
+    }
+  }
+}
 
-    document.body.appendChild(dummy);
-    document.getSelection().selectAllChildren(dummy);
-
-    var result = document.execCommand("copy");
-
-    document.body.removeChild(dummy);
-
-    return result;
-  };
-
-  var init = function() {
-    document.addEventListener("DOMContentLoaded", function() {
-      for (var i = 0, len = kb.initHandlers.length; i < len; ++i) {
-        kb.initHandlers[i]();
-      }
-    });
-  };
-
-  init();
-
-  return kb;
-}));
+// グローバルに公開
+window.kb = new KB();

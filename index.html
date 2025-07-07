@@ -4,10 +4,10 @@ layout: page
 <section class="index wrapper">
 <h2 class="index title home">Resent</h2>
 <ul class="vlist">
-{% for post in paginator.posts %}
-<li class="item">{% include panel.html post=post %}</li>
-{% endfor %}
+{% for post in paginator.posts -%}
+<li class="item">{% include panel.html post=post -%}</li>
+{% endfor -%}
 </ul>
 </section>
-{% include pagination.html %}
-{% include debug.html path="/index.html" %}
+{% include pagination.html -%}
+{% include debug.html path='/index.html' -%}

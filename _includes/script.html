@@ -1,41 +1,28 @@
-<script src="{{ '/assets/js/smooth-scroll.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/photoswipe.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/photoswipe-ui-default.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/photoswipe-simplify.min.js' | relative_url }}"></script>
-{% if site.use_minjs %}
-<script src="{{ '/assets/js/highlight.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/bash.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/css.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/diff.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/dos.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/ebnf.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/javascript.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/json.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/markdown.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/maxscript.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/mel.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/powershell.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/properties.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/python.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/xml.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/kb.min.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/init-main.min.js' | relative_url }}"></script>
-{% else %}
-<script src="{{ '/assets/js/highlight.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/bash.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/css.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/diff.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/dos.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/ebnf.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/javascript.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/json.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/markdown.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/maxscript.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/mel.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/powershell.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/properties.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/python.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/languages/xml.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/kb.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/init-main.js' | relative_url }}"></script>
-{% endif %}
+{% assign js_files_str = '' -%}
+{% assign js_files_str = js_files_str | append: 'highlight,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/bash,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/css,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/diff,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/dos,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/ebnf,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/javascript,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/json,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/markdown,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/maxscript,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/mel,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/plaintext,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/powershell,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/properties,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/python,' -%}
+{% assign js_files_str = js_files_str | append: 'languages/xml,' -%}
+{% assign js_files_str = js_files_str | append: 'kb,' -%}
+{% assign js_files_str = js_files_str | append: 'init-main' -%}
+{% assign js_files = js_files_str | split: ',' -%}
+{% if site.use_minjs -%}
+{% assign js_ext = '.min.js' -%}
+{% else -%}
+{% assign js_ext = '.js' -%}
+{% endif -%}
+{% for js_file in js_files -%}
+<script src="{{ '/assets/js/' | append: js_file | append: js_ext | relative_url }}"></script>
+{% endfor -%}
