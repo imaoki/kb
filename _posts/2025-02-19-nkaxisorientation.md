@@ -6,6 +6,7 @@ categories: tool
 tags: maya mel
 toc: true
 published: true
+permalink: /tool/nkAxisOrientation/
 ---
 移動/回転/スケールツールのAxis Orientationを設定するMELツール。
 

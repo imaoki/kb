@@ -29,7 +29,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-  - scope:
+  -
+    scope:
       path: "assets/dist"
     values:
       sitemap: false

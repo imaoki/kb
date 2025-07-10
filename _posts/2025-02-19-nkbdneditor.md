@@ -6,6 +6,7 @@ categories: tool
 tags: maya mel
 toc: true
 published: true
+permalink: /tool/nkBdnEditor/
 ---
 [boneDynamicsNode](https://github.com/akasaki1211/boneDynamicsNode)のセットアップ、および編集を行うMELツール。
 

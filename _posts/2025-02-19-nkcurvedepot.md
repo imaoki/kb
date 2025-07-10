@@ -6,6 +6,7 @@ categories: tool
 tags: maya mel
 toc: true
 published: true
+permalink: /tool/nkCurveDepot/
 ---
 カスタムカーブを定義、作成するMELツール。
 
