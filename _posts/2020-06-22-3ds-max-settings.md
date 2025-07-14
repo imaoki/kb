@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2025-05-29 22:46:00 +09:00
+updated: 2025-07-14 16:08:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -121,6 +121,13 @@ published: true
 | Viewport Configuration       | Statistics | Setup              | Triangle Count       | `True`            |
 | Viewport Configuration       | Statistics | Setup              | Vertex Count         | `True`            |
 | Viewport Per-View Preference |            |                    | Viewport Background  | `Solid Color`     |
+
+### Viewport
+{:#viewport}
+
+| 項目  | 値                |
+| ----- | ----------------- |
+| Orbit | `Orbit SubObject` |
 
 ### SciTEの設定
 {:#scite-settings}
