@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-02-05 11:06:00 +09:00
+updated: 2026-02-07 00:32:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -57,7 +57,15 @@ Mayaの設定。
 | Play Range End                             | GoToMaxFrame                 | `Alt+L`{:.key}            |
 | Play Range Start                           | GoToMinFrame                 | `Alt+K`{:.key}            |
 | Playback Toggle                            | PlaybackToggle               | `/`{:.key}                |
+| Redo                                       | Redo                         |                           |
+| Redo                                       | Redo                         | `Ctrl+Y`{:.key}           |
+| Redo View Change                           | RedoViewChange               |                           |
+| Redo View Change                           | RedoViewChange               | `Shift+Y`{:.key}          |
 | Save Scene As...                           | SaveSceneAs                  | `Ctrl+Alt+S`{:.key}       |
+| Undo                                       | Undo                         |                           |
+| Undo                                       | Undo                         | `Ctrl+Z`{:.key}           |
+| Undo View Change                           | UndoViewChange               |                           |
+| Undo View Change                           | UndoViewChange               | `Shift+Z`{:.key}          |
 
 ### Tool Settings
 {:#tool-settings}
