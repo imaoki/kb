@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-02-07 00:32:00 +09:00
+updated: 2026-02-11 22:17:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -23,6 +23,7 @@ Mayaの設定。
 | Settings  | Files/Projects | AutoSave               | Limit autosaves                               | `true`            |
 | Settings  | Files/Projects | AutoSave               | Number of autosaves                           | `20`              |
 | Settings  | Files/Projects | AutoSave               | Interval (minutes)                            | `5`               |
+| Settings  | Files/Projects | File Dialog            | Dialog style                                  | `OS native`       |
 | Settings  | Selection      | Modifiers              | Selection Child Highlighting                  | `Never highlight` |
 | Settings  | Time Slider    | Playback               | Update view                                   | `All`             |
 
