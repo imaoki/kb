@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-02-11 22:17:00 +09:00
+updated: 2026-02-22 01:18:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -94,11 +94,10 @@ Automatically set tumble pivot
 | ------------------ | ------- |
 | `MAYA_UI_LANGUAGE` | `en_US` |
 
-#### XGenのOneDrive対策
-{:#troubleshooting-onedrive-measures-for-xgen}
+#### OneDrive対策
+{:#troubleshooting-onedrive-issues}
 
 日本語版WindowsでOneDriveを使用する場合、ドキュメントのパスに日本語が含まれるのでアプリケーションディレクトリを変更する必要がある。
-また、それだけではMayaを起動する度にOneDriveのルートディレクトリに同期を妨げる文字を含んだディレクトリが生成され、エクスプローラが再起動を繰り返すのでその対策も行う。
 
 アプリケーションディレクトリの変更
 : システムのプロパティ>詳細設定から以下のシステム環境変数を追加する。
@@ -109,6 +108,11 @@ Automatically set tumble pivot
 
   上記設定により生成される Maya.env のパスは次のようになる。
   `C:\Users\<ユーザー名>\OneDrive\Data\Maya\2024\Maya.env`
+
+##### XGen
+{:#troubleshooting-onedrive-issues-xgen}
+
+アプリケーションディレクトリの変更だけではMayaを起動する度にOneDriveのルートディレクトリに同期を妨げる文字を含んだディレクトリが生成され、エクスプローラが再起動を繰り返すのでその対策も行う。
 
 XGen設定ファイルのパスを設定
 : Maya.env に以下の環境変数を加える
@@ -126,6 +130,21 @@ XGen設定ファイルのパスを設定
 
   これらの設定を行った上でMayaを起動すると以下の場所に`xgen`ディレクトリが作成される。
   `C:\Users\<ユーザー名>\OneDrive\Data\Maya\2024\xgen`
+
+##### mayaLogの同期エラー
+{:#troubleshooting-onedrive-issues-mayalog-sync-error}
+
+`mayaLog`を同期対象外の場所に移してシンボリックリンクにすることで使用中による同期エラーが回避できる。
+
+作成方法
+: コマンドプロンプトを管理者権限で起動し、以下のコマンドを実行する。
+
+  ```dos
+  mklink "C:\Users\<ユーザー名>\OneDrive\Data\Maya\mayaLog" "D:\Data\Maya\mayaLog"
+  ```
+
+解除方法
+: エクスプローラで通常のファイルと同じように削除する。
 
 #### ペンタブのサイドスイッチに割り当てた右クリックが効かない
 {:#troubleshooting-rightclick-assigned-to-sideswitch-of-pentab-not-working}
