@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2025-07-14 16:08:00 +09:00
+updated: 2026-03-24 15:21:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -44,59 +44,84 @@ published: true
 ### Hotkey
 {:#hotkey}
 
-| Action                        | Hotkey                        | Group   | Category                |
-| ----------------------------- | ----------------------------- | ------- | ----------------------- |
-| Back View                     | `K`{:.key}                    | Main UI | Views                   |
-| Backface Cull Toggle          | `Alt+B`{:.key}                | Main UI | Tools                   |
-| Backup Time One Unit          | `Alt+,`{:.key}                | Main UI | Time                    |
-| Cap (Poly)                    |                               | Main UI | Editable Polygon Object |
-| Center Point Cycle            | `Alt+P`{:.key}                | Main UI | Tools                   |
-| Create Command Mode           | `NumPad 1`{:.key}             | Main UI | Tools                   |
-| Cycle Selection Method        |                               | Main UI | Tools                   |
-| Disable Viewport              |                               | Main UI | Views                   |
-| Display Command Mode          | `NumPad 5`{:.key}             | Main UI | Tools                   |
-| Display Floater Toggle        | `Ctrl+Shift+D`{:.key}         | Main UI | Edit                    |
-| Extrude Face (Poly)           |                               | Main UI | Editable Polygon Object |
-| Forward Time One Unit         | `Alt+.`{:.key}                | Main UI | Time                    |
-| Front View                    |                               | Main UI | Views                   |
-| Go to End Frame               | `End`{:.key}, `Alt+L`{:.key}  | Main UI | Time                    |
-| Go to Start Frame             | `Home`{:.key}, `Alt+K`{:.key} | Main UI | Time                    |
-| GotoNextKeyTime               | `.`{:.key}                    | Main UI | * - Command             |
-| GotoPreviousKeyTime           | `,`{:.key}                    | Main UI | * - Command             |
-| Hide Frozen Objects Toggle    | `Ctrl+Shift+F`{:.key}         | Main UI | Tools                   |
-| Hide Geometry Toggle          | `Alt+2`{:.key}                | Main UI | Views                   |
-| Hide Space Warps Toggle       |                               | Main UI | Views                   |
-| Hierarchy Command Mode        | `NumPad 3`{:.key}             | Main UI | Tools                   |
-| InitializeCenterPoint         | `Ctrl+Alt+Shift+Space`{:.key} | Main UI | * - Command             |
-| Local Coordinate System       | `Ctrl+Shift+L`{:.key}         | Main UI | Coordinate System       |
-| Merge File                    | `Ctrl+Shift+M`{:.key}         | Main UI | File                    |
-| Modify Command Mode           | `NumPad 2`{:.key}             | Main UI | Tools                   |
-| Motion Command Mode           | `NumPad 4`{:.key}             | Main UI | Tools                   |
-| Next/Previous Key Mode Toggle |                               | Main UI | Tools                   |
-| Pan View                      |                               | Main UI | Views                   |
-| Pan Viewport                  |                               | Main UI | Tools                   |
-| Parameter Collector           |                               | Main UI | Parameter Collector     |
-| Parent Coordinate System      | `Ctrl+Shift+P`{:.key}         | Main UI | Coordinate System       |
-| Percent Snap Toggle           |                               | Main UI | Snaps                   |
-| Properties                    | `Ctrl+P`{:.key}               | Main UI | Edit                    |
-| Reset File                    | `Ctrl+Shift+R`{:.key}         | Main UI | File                    |
-| Right View                    | `I`{:.key}                    | Main UI | Views                   |
-| Save File As                  | `Ctrl+Alt+S`{:.key}           | Main UI | File                    |
-| Save Incremental (+)          |                               | MainUI  | File                    |
-| Screen Coordinate System      | `Ctrl+Shift+S`{:.key}         | Main UI | Coordinate System       |
-| Select Object                 | `Q`{:.key}                    | Main UI | Selection               |
-| Select Sub-object Loop        |                               | Main UI | Editable Polygon Object |
-| Set Keys                      |                               | Main UI | Set Key Tools           |
-| Show Motion Paths             | `Alt+M`{:.key}                | Main UI | Tools                   |
-| Smart Select                  |                               | Main UI | Selection               |
-| Utility Command Mode          | `NumPad 6`{:.key}             | Main UI | Tools                   |
-| Viewport Background           |                               | Main UI | Views                   |
-| Virtual Viewport Pan Down     |                               | Main UI | Tools                   |
-| Virtual Viewport Pan Left     |                               | Main UI | Tools                   |
-| Virtual Viewport Pan Right    |                               | Main UI | Tools                   |
-| Weld (Poly)                   |                               | Main UI | Editable Polygon Object |
-| World Coordinate System       | `Ctrl+Shift+W`{:.key}         | Main UI | Coordinate System       |
-| Zoom Extents Selected         | `F`{:.key}                    | Main UI | Tools                   |
+#### Main UI
+{:#hotkey-main-ui}
+
+| Action                                         | Hotkey                        |
+| ---------------------------------------------- | ----------------------------- |
+| Back View                                      | `K`{:.key}                    |
+| Backface Cull Toggle                           | `Alt+B`{:.key}                |
+| Backup Time One Unit                           | `Alt+,`{:.key}                |
+| Cap (Poly)                                     |                               |
+| Center Point Cycle                             | `Alt+P`{:.key}                |
+| Create Command Mode                            | `F2`{:.key}                   |
+| Cycle Selection Method                         |                               |
+| Disable Viewport                               |                               |
+| Display Command Mode                           | `F6`{:.key}                   |
+| Display Floater Toggle                         | `Ctrl+Shift+D`{:.key}         |
+| Extrude Face (Poly)                            |                               |
+| Forward Time One Unit                          | `Alt+.`{:.key}                |
+| Front View                                     |                               |
+| Go to End Frame                                | `End`{:.key}, `Alt+L`{:.key}  |
+| Go to Start Frame                              | `Home`{:.key}, `Alt+K`{:.key} |
+| GotoNextKeyTime                                | `.`{:.key}                    |
+| GotoPreviousKeyTime                            | `,`{:.key}                    |
+| Hide Frozen Objects Toggle                     | `Ctrl+Shift+F`{:.key}         |
+| Hide Geometry Toggle                           | `Alt+2`{:.key}                |
+| Hide Space Warps Toggle                        |                               |
+| Hierarchy Command Mode                         | `F4`{:.key}                   |
+| InitializeCenterPoint                          | `Ctrl+Alt+Shift+Space`{:.key} |
+| Local Coordinate System                        | `Ctrl+Shift+L`{:.key}         |
+| MAXScript Listener                             |                               |
+| Merge File                                     | `Ctrl+Shift+M`{:.key}         |
+| Modify Command Mode                            | `F3`{:.key}                   |
+| Motion Command Mode                            | `F5`{:.key}                   |
+| Next/Previous Key Mode Toggle                  |                               |
+| Pan View                                       |                               |
+| Pan Viewport                                   |                               |
+| Parameter Collector                            |                               |
+| Parameter Wiring Dialog...                     |                               |
+| Parent Coordinate System                       | `Ctrl+Shift+P`{:.key}         |
+| Percent Snap Toggle                            |                               |
+| Properties                                     | `Ctrl+P`{:.key}               |
+| Render Last                                    |                               |
+| Render SetUp...                                |                               |
+| Reset File                                     | `Ctrl+Shift+R`{:.key}         |
+| Right View                                     | `I`{:.key}                    |
+| Save File As                                   | `Ctrl+Alt+S`{:.key}           |
+| Save Incremental (+)                           |                               |
+| Screen Coordinate System                       | `Ctrl+Shift+S`{:.key}         |
+| Select Object                                  | `Q`{:.key}                    |
+| Select Sub-object Loop                         |                               |
+| Set Keys                                       |                               |
+| Show Motion Paths                              | `Alt+M`{:.key}                |
+| Smart Select                                   |                               |
+| Sub-Object Level 1                             | `F9`{:.key}                   |
+| Sub-Object Level 2                             | `F10`{:.key}                  |
+| Sub-Object Level 3                             |                               |
+| Sub-Object Level 4                             | `F11`{:.key}                  |
+| Sub-Object Level 5                             |                               |
+| Sub-object Selection Toggle                    | `F8`{:.key}                   |
+| Transform Gizmo Plane Constraint Cycle         |                               |
+| Transform Gizmo X Constraint                   |                               |
+| Transform Gizmo Y Constraint                   |                               |
+| Transform Gizmo Z Constraint                   |                               |
+| Utility Command Mode                           | `F7`{:.key}                   |
+| View Edged Faces Toggle                        |                               |
+| Viewport Background                            |                               |
+| Viewport Materials Display as Shaded with Maps | `6`{:.key}                    |
+| Viewport Selection Shade Selected Faces Toggle |                               |
+| Viewport Visual Style Edged Faces Toggle       | `Alt+5`{:.key}                |
+| Viewport Visual Style Shaded                   | `5`{:.key}                    |
+| Viewport Visual Style Wireframe                | `4`{:.key}                    |
+| Virtual Viewport Pan Down                      |                               |
+| Virtual Viewport Pan Left                      |                               |
+| Virtual Viewport Pan Right                     |                               |
+| Virtual Viewport Pan UP                        |                               |
+| Weld (Poly)                                    |                               |
+| Wireframe / Smooth+Highlights Toggle           |                               |
+| World Coordinate System                        | `Ctrl+Shift+W`{:.key}         |
+| Zoom Extents Selected                          | `F`{:.key}                    |
 
 ### Default Controller
 {:#default-controller}
