@@ -1,7 +1,7 @@
 ---
 title: 3ds Max 設定
 date: 2020-06-22 18:22:00 +09:00
-updated: 2026-03-24 15:21:00 +09:00
+updated: 2026-05-11 14:27:00 +09:00
 categories: note
 tags: 3dsmax
 toc: true
@@ -47,7 +47,7 @@ published: true
 #### Main UI
 {:#hotkey-main-ui}
 
-| Action                                         | Hotkey                        |
+| Action (2024)                                  | Hotkey                        |
 | ---------------------------------------------- | ----------------------------- |
 | Back View                                      | `K`{:.key}                    |
 | Backface Cull Toggle                           | `Alt+B`{:.key}                |
@@ -72,7 +72,7 @@ published: true
 | Hierarchy Command Mode                         | `F4`{:.key}                   |
 | InitializeCenterPoint                          | `Ctrl+Alt+Shift+Space`{:.key} |
 | Local Coordinate System                        | `Ctrl+Shift+L`{:.key}         |
-| MAXScript Listener                             |                               |
+| MAXScript Listener (Scripting Listener)        |                               |
 | Merge File                                     | `Ctrl+Shift+M`{:.key}         |
 | Modify Command Mode                            | `F3`{:.key}                   |
 | Motion Command Mode                            | `F5`{:.key}                   |
