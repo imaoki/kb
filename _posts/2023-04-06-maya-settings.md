@@ -1,7 +1,7 @@
 ---
 title: Maya 設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-02-22 01:18:00 +09:00
+updated: 2026-05-20 20:58:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -37,6 +37,20 @@ Mayaの設定。
 | Display  | Manipulators | Manipulator Sizes | Line size           | `1`     |
 | Display  | Manipulators | Manipulator Sizes | Line pick size      | `1.00`  |
 | Display  | Manipulators | Manipulator Sizes | Previous state size | `6.00`  |
+
+### New Scene Options
+{:#new-scene-options}
+
+| フレーム                          | 項目                       | 値           |
+| --------------------------------- | -------------------------- | ------------ |
+| Default Working Units             | Do not reset working units | `false`      |
+| Default Working Units             | Linear                     | `centimeter` |
+| Default Working Units             | Angular                    | `degrees`    |
+| Default Working Units             | Time                       | `30 fps`     |
+| Default Time Slider Settings      | Playback start/end         | `0`, `30`    |
+| Default Time Slider Settings      | Animation start/end        | `0`, `30`    |
+| Default Color Management Settings | Color Management enabled   | `false`      |
+
 
 ### Hotkey
 {:#hotkey}
