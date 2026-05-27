@@ -1,5 +1,5 @@
 ---
-title: highlight.js サンプル
+title: highlight.jsサンプル
 date: 2019-04-14 16:57:00 +09:00
 updated: 2025-06-22 04:57:00 +09:00
 categories: sample

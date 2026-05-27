@@ -1,5 +1,5 @@
 ---
-title: 等幅フォント サンプル
+title: 等幅フォントサンプル
 date: 2023-08-26 15:45:00 +09:00
 updated:
 categories: sample

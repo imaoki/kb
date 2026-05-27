@@ -1,5 +1,5 @@
 ---
-title: Maya 設定
+title: Maya設定
 date: 2023-04-06 01:27:00 +09:00
 updated: 2026-05-20 20:58:00 +09:00
 categories: note

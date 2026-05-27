@@ -1,5 +1,5 @@
 ---
-title: Photoshop 設定
+title: Photoshop設定
 date: 2021-01-29 17:47:00 +09:00
 updated: 2025-07-07 02:16:00 +09:00
 categories: note

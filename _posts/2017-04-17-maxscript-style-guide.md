@@ -1,5 +1,5 @@
 ---
-title: MAXScript スタイルガイド
+title: MAXScriptスタイルガイド
 date: 2017-04-17 23:28:00 +09:00
 updated: 2023-07-21 17:57:00 +09:00
 categories: document

@@ -1,5 +1,5 @@
 ---
-title: Jekyll インストールノート
+title: Jekyllインストールノート
 date: 2021-01-28 03:07:00 +09:00
 updated: 2025-06-17 03:51:00 +09:00
 categories: note

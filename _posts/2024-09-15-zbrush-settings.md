@@ -1,5 +1,5 @@
 ---
-title: ZBrush 設定
+title: ZBrush設定
 date: 2024-09-15 09:40:00 +09:00
 updated: 2025-02-20 20:14:00 +09:00
 categories: note
