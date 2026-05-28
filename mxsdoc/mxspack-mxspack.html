@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.MxsPack.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,17 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MxsPack.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mxspackstruct">MxsPackStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#blanklineregex">blankLineRegex</a></li><li><a href="#blockcommentregex">blockCommentRegex</a></li><li><a href="#commabreakregex">commaBreakRegex</a></li><li><a href="#continuationlineregex">continuationLineRegex</a></li><li><a href="#indentationregex">indentationRegex</a></li><li><a href="#installerregex">installerRegex</a></li><li><a href="#lfregex">lfRegex</a></li><li><a href="#linecommentregex">lineCommentRegex</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#appendtext">AppendText</a></li><li><a href="#clipfile">ClipFile</a></li><li><a href="#cliptext">ClipText</a></li><li><a href="#copydirectory">CopyDirectory</a></li><li><a href="#deletedirectory">DeleteDirectory</a></li><li><a href="#inserttext">InsertText</a></li><li><a href="#install">Install</a></li><li><a href="#minify">Minify</a></li><li><a href="#removeinstalleroption">RemoveInstallerOption</a></li><li><a href="#replacetext">ReplaceText</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#writealltext">WriteAllText</a></li><li><a href="#isvalidpathutility">isValidPathUtility</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="mxspackstruct">struct&nbsp;MxsPackStruct</h3>
-<p>複数のスクリプトファイルを1ファイルに統合するためのメソッドを提供する。</p><dl>
+<p>複数のスクリプトファイルを1ファイルに統合するためのメソッドを提供する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>スクリプトファイルは以下の条件を満たしていることが前提となる。</p>
 <table>
@@ -118,10 +126,11 @@
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="appendtext">public&nbsp;fn&nbsp;AppendText</h4>
-<p>末尾に文字列を追加する。</p><dl>
+<p>末尾に文字列を追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -142,7 +151,8 @@
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="clipfile">public&nbsp;fn&nbsp;ClipFile</h4>
-<p>ファイルから指定された範囲の部分文字列を切り出す。</p><dl>
+<p>ファイルから指定された範囲の部分文字列を切り出す。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -169,7 +179,8 @@
 <dd><p>基準となるディレクトリが未指定の場合、ファイルが存在しない場合、または範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="cliptext">public&nbsp;fn&nbsp;ClipText</h4>
-<p>文字列から指定された範囲の部分文字列を切り出す。</p><dl>
+<p>文字列から指定された範囲の部分文字列を切り出す。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -196,7 +207,8 @@
 <dd><p>範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="copydirectory">public&nbsp;fn&nbsp;CopyDirectory</h4>
-<p><code>::std.FileUtility.CopyDirectory</code>メソッドをラップする。</p><dl>
+<p><code>::std.FileUtility.CopyDirectory</code>メソッドをラップする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -218,7 +230,8 @@
 基準となるディレクトリが未指定の場合は何もしない。</p></dd>
 </dl>
 <h4 id="deletedirectory">public&nbsp;fn&nbsp;DeleteDirectory</h4>
-<p><code>::std.FileUtility.DeleteDirectory</code>メソッドをラップする。</p><dl>
+<p><code>::std.FileUtility.DeleteDirectory</code>メソッドをラップする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -234,7 +247,8 @@
 基準となるディレクトリが未指定の場合は何もしない。</p></dd>
 </dl>
 <h4 id="inserttext">public&nbsp;fn&nbsp;InsertText</h4>
-<p>指定した位置に文字列を挿入する。</p><dl>
+<p>指定した位置に文字列を挿入する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -261,7 +275,8 @@
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="install">public&nbsp;fn&nbsp;Install</h4>
-<p>インストールする。</p><dl>
+<p>インストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -270,7 +285,8 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="minify">public&nbsp;fn&nbsp;Minify</h4>
-<p>コードを最小化する。</p><dl>
+<p>コードを最小化する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -284,7 +300,8 @@
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="removeinstalleroption">public&nbsp;fn&nbsp;RemoveInstallerOption</h4>
-<p><code>Install</code>メソッドのインストーラオプションを除去する。</p><dl>
+<p><code>Install</code>メソッドのインストーラオプションを除去する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -298,7 +315,8 @@
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="replacetext">public&nbsp;fn&nbsp;ReplaceText</h4>
-<p>指定された範囲の文字列を置換した新たな文字列を返す。</p><dl>
+<p>指定された範囲の文字列を置換した新たな文字列を返す。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -331,7 +349,8 @@
 <dd><p>範囲指定が正しくない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
-<p>アンインストールする。</p><dl>
+<p>アンインストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -340,7 +359,8 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="writealltext">public&nbsp;fn&nbsp;WriteAllText</h4>
-<p><code>::std.FileUtility.WriteAllText</code>メソッドをラップする。</p><dl>
+<p><code>::std.FileUtility.WriteAllText</code>メソッドをラップする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -419,7 +439,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.AttributeUtility.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,14 +37,16 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">AttributeUtility.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#attributeutilitystruct">AttributeUtilityStruct</a><ul><li><a href="#getattribute">GetAttribute</a></li><li><a href="#getattributenames">GetAttributeNames</a></li><li><a href="#hasattribute">HasAttribute</a></li><li><a href="#isattribute">IsAttribute</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="attributeutilitystruct">struct&nbsp;AttributeUtilityStruct</h3>
-<p>アトリビュート用の追加メソッドを提供する。</p><h4 id="getattribute">public&nbsp;fn&nbsp;GetAttribute</h4>
-<p>オブジェクトから指定した名前のアトリビュートインスタンスを取得する。</p><dl>
+<p>アトリビュート用の追加メソッドを提供する。</p>
+<h4 id="getattribute">public&nbsp;fn&nbsp;GetAttribute</h4>
+<p>オブジェクトから指定した名前のアトリビュートインスタンスを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -55,7 +65,8 @@
 <dd><p>アトリビュートが見つからない場合は<code>undefined</code>返す。</p></dd>
 </dl>
 <h4 id="getattributenames">public&nbsp;fn&nbsp;GetAttributeNames</h4>
-<p>オブジェクトが持つ全てのアトリビュートの名前を取得する。</p><dl>
+<p>オブジェクトが持つ全てのアトリビュートの名前を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -65,7 +76,8 @@
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
 <h4 id="hasattribute">public&nbsp;fn&nbsp;HasAttribute</h4>
-<p>オブジェクトが指定した名前のアトリビュートを持っているかどうかを判定する。</p><dl>
+<p>オブジェクトが指定した名前のアトリビュートを持っているかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -80,7 +92,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="isattribute">public&nbsp;fn&nbsp;IsAttribute</h4>
-<p>指定されたオブジェクトがアトリビュートインスタンスかどうかを判定する。</p><dl>
+<p>指定されたオブジェクトがアトリビュートインスタンスかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -128,7 +141,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

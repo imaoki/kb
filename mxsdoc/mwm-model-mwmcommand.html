@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.MwmCommand.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmCommand.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmcommandstruct">MwmCommandStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#_cp5_">_CP5_</a></li><li><a href="#canexecutecondition">canExecuteCondition</a></li><li><a href="#commandname">commandName</a></li><li><a href="#executecondition">executeCondition</a></li><li><a href="#executefunction">executeFunction</a></li><li><a href="#model">model</a></li><li><a href="#modelattribute">modelAttribute</a></li><li><a href="#canexecute">CanExecute</a></li><li><a href="#execute">Execute</a></li><li><a href="#getcanexecutecondition">GetCanExecuteCondition</a></li><li><a href="#getcommandname">GetCommandName</a></li><li><a href="#getexecutecondition">GetExecuteCondition</a></li><li><a href="#getexecutefunction">GetExecuteFunction</a></li><li><a href="#getmodel">GetModel</a></li><li><a href="#getmodelattribute">GetModelAttribute</a></li><li><a href="#raisecanexecutechanged">RaiseCanExecuteChanged</a></li><li><a href="#setcanexecutecondition">SetCanExecuteCondition</a></li><li><a href="#setcommandname">SetCommandName</a></li><li><a href="#setexecutecondition">SetExecuteCondition</a></li><li><a href="#setexecutefunction">SetExecuteFunction</a></li><li><a href="#setmodel">SetModel</a></li><li><a href="#setmodelattribute">SetModelAttribute</a></li><li><a href="#isvalidcondition">isValidCondition</a></li><li><a href="#isvalidfunction">isValidFunction</a></li><li><a href="#isvalidmodel">isValidModel</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidobservable">isValidObservable</a></li><li><a href="#isvalidproperty">isValidProperty</a></li><li><a href="#subscribecanexecutecondition">subscribeCanExecuteCondition</a></li><li><a href="#unsubscribecanexecutecondition">unsubscribeCanExecuteCondition</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#canexecutechanged">CanExecuteChanged</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -38,7 +46,8 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="mwmcommandstruct">struct&nbsp;MwmCommandStruct</h3>
-<p>ビューモデルにコマンドを定義するための構造体。</p><dl>
+<p>ビューモデルにコマンドを定義するための構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -129,25 +138,25 @@
 <h4 id="_cp3_">public&nbsp;_CP3_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>作成パラメータ3。モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="_cp4_">public&nbsp;_CP4_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>作成パラメータ4。コマンドで使用するプロパティを格納した条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="_cp5_">public&nbsp;_CP5_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>作成パラメータ5。コマンドが実行可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="canexecutecondition">private&nbsp;canExecuteCondition</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>コマンドが実行可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="commandname">private&nbsp;commandName</h4>
@@ -159,7 +168,7 @@
 <h4 id="executecondition">private&nbsp;executeCondition</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>コマンドで使用するプロパティを格納した条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="executefunction">private&nbsp;executeFunction</h4>
@@ -177,11 +186,12 @@
 <h4 id="modelattribute">private&nbsp;modelAttribute</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="canexecute">public&nbsp;fn&nbsp;CanExecute</h4>
-<p>コマンドが実行可能かどうかを判定する。</p><dl>
+<p>コマンドが実行可能かどうかを判定する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
@@ -190,10 +200,11 @@
 <dd><p>条件式が真偽値以外を返した場合は<code>true</code>を返す。</p></dd>
 </dl>
 <h4 id="execute">public&nbsp;fn&nbsp;Execute</h4>
-<p>コマンドを実行する。</p><dl>
+<p>コマンドを実行する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>event</code></dd>
-<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmevent.html">MwmEventStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>イベント情報。</p></dd>
 </dl>
 <dl>
@@ -201,37 +212,44 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="getcanexecutecondition">public&nbsp;fn&nbsp;GetCanExecuteCondition</h4>
-<p>コマンドが実行可能かどうかを判定する条件オブジェクトを取得する。</p><dl>
+<p>コマンドが実行可能かどうかを判定する条件オブジェクトを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getcommandname">public&nbsp;fn&nbsp;GetCommandName</h4>
-<p>コマンド名を取得する。</p><dl>
+<p>コマンド名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="getexecutecondition">public&nbsp;fn&nbsp;GetExecuteCondition</h4>
-<p>コマンドで使用するプロパティを格納した条件オブジェクトを取得する。</p><dl>
+<p>コマンドで使用するプロパティを格納した条件オブジェクトを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getexecutefunction">public&nbsp;fn&nbsp;GetExecuteFunction</h4>
-<p>コマンドの内容を定義した関数を取得する。</p><dl>
+<p>コマンドの内容を定義した関数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getmodel">public&nbsp;fn&nbsp;GetModel</h4>
-<p>モデルオブジェクトを取得する。</p><dl>
+<p>モデルオブジェクトを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getmodelattribute">public&nbsp;fn&nbsp;GetModelAttribute</h4>
-<p>モデル属性を取得する。</p><dl>
+<p>モデル属性を取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="raisecanexecutechanged">public&nbsp;fn&nbsp;RaiseCanExecuteChanged</h4>
-<p>コマンドが実行可能かどうかの変更通知を発行する。</p><dl>
+<p>コマンドが実行可能かどうかの変更通知を発行する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>type</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -246,21 +264,23 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="setcanexecutecondition">public&nbsp;fn&nbsp;SetCanExecuteCondition</h4>
-<p>コマンドが実行可能かどうかを判定する条件オブジェクトを設定する。</p><dl>
+<p>コマンドが実行可能かどうかを判定する条件オブジェクトを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>condition</code></dd>
-<dd><code>&lt;Struct:MwmConditionStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setcommandname">public&nbsp;fn&nbsp;SetCommandName</h4>
-<p>コマンド名を設定する。</p><dl>
+<p>コマンド名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -274,21 +294,23 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setexecutecondition">public&nbsp;fn&nbsp;SetExecuteCondition</h4>
-<p>コマンドで使用するプロパティを格納した条件オブジェクトを設定する。</p><dl>
+<p>コマンドで使用するプロパティを格納した条件オブジェクトを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>condition</code></dd>
-<dd><code>&lt;Struct:MwmConditionStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setexecutefunction">public&nbsp;fn&nbsp;SetExecuteFunction</h4>
-<p>コマンドの内容を定義した関数を設定する。</p><dl>
+<p>コマンドの内容を定義した関数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -307,7 +329,8 @@
 )
 </code></pre>
 <ul>
-<li><p>第一引数にコマンドに関連付けられたモデルオブジェクト、第二引数にプロパティ名とプロパティ値のペアの配列を取る。</p>
+<li>
+<p>第一引数にコマンドに関連付けられたモデルオブジェクト、第二引数にプロパティ名とプロパティ値のペアの配列を取る。</p>
 <table>
 <thead>
 <tr>
@@ -326,17 +349,19 @@
 </tr>
 <tr>
 <td><code>event</code></td>
-<td><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></td>
+<td>`&lt;Struct:MwmEventStruct</td>
 </tr>
 </tbody>
 </table>
 </li>
-<li><p>任意の値を返す。</p>
+<li>
+<p>任意の値を返す。</p>
 </li>
 </ul></dd>
 </dl>
 <h4 id="setmodel">public&nbsp;fn&nbsp;SetModel</h4>
-<p>モデルオブジェクトを設定する。</p><dl>
+<p>モデルオブジェクトを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Struct|UndefinedClass&gt;</code></dd>
@@ -350,14 +375,15 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmodelattribute">public&nbsp;fn&nbsp;SetModelAttribute</h4>
-<p>モデル属性を設定する。</p><dl>
+<p>モデル属性を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
@@ -424,12 +450,14 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="subscribecanexecutecondition">private&nbsp;fn&nbsp;subscribeCanExecuteCondition</h4>
-<p>コマンドが実行可能かどうかを判定する条件オブジェクトを購読する。</p><dl>
+<p>コマンドが実行可能かどうかを判定する条件オブジェクトを購読する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="unsubscribecanexecutecondition">private&nbsp;fn&nbsp;unsubscribeCanExecuteCondition</h4>
-<p>コマンドが実行可能かどうかを判定する条件オブジェクトの購読を解除する。</p><dl>
+<p>コマンドが実行可能かどうかを判定する条件オブジェクトの購読を解除する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -471,18 +499,18 @@
 <h4 id="canexecutechanged">public&nbsp;CanExecuteChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

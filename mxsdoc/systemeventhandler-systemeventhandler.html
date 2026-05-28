@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.SystemEventHandler.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,14 +37,13 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">SystemEventHandler.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#systemeventhandler">systemEventHandler</a></li><li><a href="#systemeventhandlerstruct">SystemEventHandlerStruct</a><ul><li><a href="#delaytimertable">delayTimerTable</a></li><li><a href="#eventparamtable">eventParamTable</a></li><li><a href="#observertable">observerTable</a></li><li><a href="#globalvarname">globalVarName</a></li><li><a href="#add">Add</a></li><li><a href="#getregisteredcallbackcount">GetRegisteredCallbackCount</a></li><li><a href="#install">Install</a></li><li><a href="#invokegeneralevent">InvokeGeneralEvent</a></li><li><a href="#invokeobserver">InvokeObserver</a></li><li><a href="#invoketimechange">InvokeTimeChange</a></li><li><a href="#invokeviewportredraw">InvokeViewportRedraw</a></li><li><a href="#remove">Remove</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#createdelaytimer">createDelayTimer</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#generategeneraleventscript">generateGeneralEventScript</a></li><li><a href="#geteventparam">getEventParam</a></li><li><a href="#geteventtypefromtimer">getEventTypeFromTimer</a></li><li><a href="#invoketimer">invokeTimer</a></li><li><a href="#isvalidtimer">isValidTimer</a></li><li><a href="#registergeneraleventcallback">registerGeneralEventCallback</a></li><li><a href="#registertimechangecallback">registerTimeChangeCallback</a></li><li><a href="#registerviewportredrawcallback">registerViewportRedrawCallback</a></li><li><a href="#unregisterallcallbacks">unregisterAllCallbacks</a></li><li><a href="#unregistergeneraleventcallback">unregisterGeneralEventCallback</a></li><li><a href="#unregistertimechangecallback">unregisterTimeChangeCallback</a></li><li><a href="#unregisterviewportredrawcallback">unregisterViewportRedrawCallback</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code>currentTime</code><ul>
-</ul></li>
+<li><code>currentTime</code></li>
 <li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 <li><code><a href="systemeventhandler-systemeventhandler.html">systemEventHandler</a></code></li>
@@ -48,34 +55,38 @@
 <dd><code>&lt;Struct:<a href="systemeventhandler-systemeventhandler.html">SystemEventHandlerStruct</a>&gt;</code></dd>
 </dl>
 <h3 id="systemeventhandlerstruct">struct&nbsp;SystemEventHandlerStruct</h3>
-<p>イベントコールバックの処理を共通化するための仕組みを提供する。</p><dl>
+<p>イベントコールバックの処理を共通化するための仕組みを提供する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>対応しているコールバックの種類は以下の通り。</p>
 <ul>
-<li><p>一般イベントコールバック</p>
+<li>
+<p>一般イベントコールバック</p>
 </li>
-<li><p>時間変更コールバック</p>
+<li>
+<p>時間変更コールバック</p>
 </li>
-<li><p>ビューポート再描画コールバック</p>
+<li>
+<p>ビューポート再描画コールバック</p>
 </li>
 </ul></dd>
 </dl>
 <h4 id="delaytimertable">private&nbsp;delayTimerTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:TimerStruct&gt;&gt;</code></dd>
+<dd><code>&lt;Dictionary &lt;Name&gt; &lt;Struct:<a href="standard-timer.html">TimerStruct</a>&gt;&gt;</code></dd>
 <dd><p>イベント毎の遅延タイマー。</p></dd>
 </dl>
 <h4 id="eventparamtable">private&nbsp;eventParamTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Any&gt;&gt;</code></dd>
+<dd><code>&lt;Dictionary &lt;Name&gt; &lt;Any&gt;&gt;</code></dd>
 <dd><p>イベント毎の補足情報。</p></dd>
 </dl>
 <h4 id="observertable">private&nbsp;observerTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Array[&lt;MAXScriptFunction&gt;]&gt;&gt;</code></dd>
+<dd><code>&lt;Dictionary &lt;Name&gt; &lt;Array[&lt;MAXScriptFunction&gt;]&gt;&gt;</code></dd>
 <dd><p>イベント毎のオブザーバ。</p></dd>
 </dl>
 <h4 id="globalvarname">private&nbsp;globalVarName</h4>
@@ -85,7 +96,8 @@
 <dd><p>自己のインスタンスを格納するグローバル変数の名前。既定値は<code>&quot;systemEventHandler&quot;</code>。</p></dd>
 </dl>
 <h4 id="add">public&nbsp;fn&nbsp;Add</h4>
-<p>指定したイベントにオブザーバを登録する。</p><dl>
+<p>指定したイベントにオブザーバを登録する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -133,7 +145,8 @@
 <dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="getregisteredcallbackcount">public&nbsp;fn&nbsp;GetRegisteredCallbackCount</h4>
-<p>指定したイベントに登録されている<code>SystemEventHandlerStruct</code>由来のコールバックの数を取得する。</p><dl>
+<p>指定したイベントに登録されている<code>SystemEventHandlerStruct</code>由来のコールバックの数を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -143,7 +156,8 @@
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="install">public&nbsp;fn&nbsp;Install</h4>
-<p>インストールする。</p><dl>
+<p>インストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -152,7 +166,8 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="invokegeneralevent">public&nbsp;fn&nbsp;InvokeGeneralEvent</h4>
-<p>一般イベントが通知された時に呼ばれる。</p><dl>
+<p>一般イベントが通知された時に呼ばれる。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -169,7 +184,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="invokeobserver">public&nbsp;fn&nbsp;InvokeObserver</h4>
-<p>イベントに登録したコールバック関数を呼び出す。</p><dl>
+<p>イベントに登録したコールバック関数を呼び出す。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>type</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -177,7 +193,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>param</code></dd>
-<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-timer.html">TimerStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -188,7 +204,8 @@
 <dd><p>タイマーオブジェクトから呼ばれる。</p></dd>
 </dl>
 <h4 id="invoketimechange">public&nbsp;fn&nbsp;InvokeTimeChange</h4>
-<p>アニメーション時間が変更された時に呼ばれる。</p><dl>
+<p>アニメーション時間が変更された時に呼ばれる。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -197,7 +214,8 @@
 <dd><p><code>eventParam</code>には現在時間が渡される。</p></dd>
 </dl>
 <h4 id="invokeviewportredraw">public&nbsp;fn&nbsp;InvokeViewportRedraw</h4>
-<p>ビューポートが再描画された時に呼ばれる。</p><dl>
+<p>ビューポートが再描画された時に呼ばれる。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -206,7 +224,8 @@
 <dd><p><code>eventParam</code>には<code>undefined</code>が渡される。</p></dd>
 </dl>
 <h4 id="remove">public&nbsp;fn&nbsp;Remove</h4>
-<p>指定したイベントからオブザーバを登録解除する。</p><dl>
+<p>指定したイベントからオブザーバを登録解除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -244,19 +263,21 @@
 <dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
-<p>アンインストールする。</p><dl>
+<p>アンインストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="createdelaytimer">private&nbsp;fn&nbsp;createDelayTimer</h4>
-<p>遅延タイマーを作成する。</p><dl>
+<p>遅延タイマーを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>delayInterval</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-timer.html">TimerStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="findobserver">private&nbsp;fn&nbsp;findObserver</h4>
 <dl>
@@ -274,7 +295,8 @@
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="generategeneraleventscript">private&nbsp;fn&nbsp;generateGeneralEventScript</h4>
-<p>一般イベント用のコールバックスクリプトを生成する。</p><dl>
+<p>一般イベント用のコールバックスクリプトを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -284,7 +306,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="geteventparam">private&nbsp;fn&nbsp;getEventParam</h4>
-<p>指定したイベントタイプの補足情報を取得する。</p><dl>
+<p>指定したイベントタイプの補足情報を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -298,10 +321,11 @@
 <dd><p>イベントタイプが見つからない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="geteventtypefromtimer">private&nbsp;fn&nbsp;getEventTypeFromTimer</h4>
-<p>タイマーオブジェクトからイベントタイプを取得する。</p><dl>
+<p>タイマーオブジェクトからイベントタイプを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>timerObject</code></dd>
-<dd><code>&lt;Struct:TimerStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-timer.html">TimerStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -312,7 +336,8 @@
 <dd><p>イベントタイプが見つからない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="invoketimer">private&nbsp;fn&nbsp;invokeTimer</h4>
-<p>イベントに登録したコールバック関数を呼び出す。</p><dl>
+<p>イベントに登録したコールバック関数を呼び出す。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -337,7 +362,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="registergeneraleventcallback">private&nbsp;fn&nbsp;registerGeneralEventCallback</h4>
-<p>一般イベントのコールバック関数を登録する。</p><dl>
+<p>一般イベントのコールバック関数を登録する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -347,22 +373,26 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="registertimechangecallback">private&nbsp;fn&nbsp;registerTimeChangeCallback</h4>
-<p>時間変更のコールバック関数を登録する。</p><dl>
+<p>時間変更のコールバック関数を登録する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="registerviewportredrawcallback">private&nbsp;fn&nbsp;registerViewportRedrawCallback</h4>
-<p>ビューポート再描画のコールバック関数を登録する。</p><dl>
+<p>ビューポート再描画のコールバック関数を登録する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="unregisterallcallbacks">private&nbsp;fn&nbsp;unregisterAllCallbacks</h4>
-<p>全てのコールバック関数を登録解除する。</p><dl>
+<p>全てのコールバック関数を登録解除する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="unregistergeneraleventcallback">private&nbsp;fn&nbsp;unregisterGeneralEventCallback</h4>
-<p>一般イベントのコールバック関数を登録解除する。</p><dl>
+<p>一般イベントのコールバック関数を登録解除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>eventType</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -372,12 +402,14 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="unregistertimechangecallback">private&nbsp;fn&nbsp;unregisterTimeChangeCallback</h4>
-<p>時間変更のコールバック関数を登録解除する。</p><dl>
+<p>時間変更のコールバック関数を登録解除する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="unregisterviewportredrawcallback">private&nbsp;fn&nbsp;unregisterViewportRedrawCallback</h4>
-<p>ビューポート再描画のコールバック関数を登録解除する。</p><dl>
+<p>ビューポート再描画のコールバック関数を登録解除する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -431,7 +463,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

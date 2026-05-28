@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Markdown.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Markdown.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
-<div class="table-of-contents"><ul><li><a href="#markdownstruct">MarkdownStruct</a><ul><li><a href="#usedefinitionlists">UseDefinitionLists</a></li><li><a href="#usepipetables">UsePipeTables</a></li><li><a href="#usesoftlinebreakashardlinebreak">UseSoftlineBreakAsHardlineBreak</a></li><li><a href="#context">context</a></li><li><a href="#markdigassembly">markdigAssembly</a></li><li><a href="#markdownclass">markdownClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#pipeline">pipeline</a></li><li><a href="#markdigdll">markdigDll</a></li><li><a href="#install">Install</a></li><li><a href="#showtypes">ShowTypes</a></li><li><a href="#tohtml">ToHtml</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#returns">returns</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
+<div class="table-of-contents"><ul><li><a href="#markdownstruct">MarkdownStruct</a><ul><li><a href="#usedefinitionlists">UseDefinitionLists</a></li><li><a href="#usepipetables">UsePipeTables</a></li><li><a href="#usesoftlinebreakashardlinebreak">UseSoftlineBreakAsHardlineBreak</a></li><li><a href="#context">context</a></li><li><a href="#markdigassembly">markdigAssembly</a></li><li><a href="#markdownclass">markdownClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#pipeline">pipeline</a></li><li><a href="#markdigdll">markdigDll</a></li><li><a href="#install">Install</a></li><li><a href="#showtypes">ShowTypes</a></li><li><a href="#tohtml">ToHtml</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#initialize">initialize</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="markdownstruct">struct&nbsp;MarkdownStruct</h3>
-<p><a href="https://github.com/xoofx/markdig">Markdig 0.26.0</a>のラッパー。</p><dl>
+<p><a href="https://github.com/xoofx/markdig">Markdig 0.26.0</a>のラッパー。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>フレームワークは<code>net452</code>を使用する。</p></dd>
 </dl>
@@ -64,7 +73,7 @@
 <h4 id="context">private&nbsp;context</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/markdig.markdownparsercontext?view=netframework-4.8">Markdig.MarkdownParserContext</a>&gt;</code></dd>
+<dd><code>&lt;DotNetObject:Markdig.MarkdownParserContext&gt;</code></dd>
 </dl>
 <h4 id="markdigassembly">private&nbsp;markdigAssembly</h4>
 <dl>
@@ -74,17 +83,17 @@
 <h4 id="markdownclass">private&nbsp;markdownClass</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/markdig.markdownextensions?view=netframework-4.8">Markdig.MarkdownExtensions</a>&gt;</code></dd>
+<dd><code>&lt;DotNetClass:Markdig.MarkdownExtensions&gt;</code></dd>
 </dl>
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="pipeline">private&nbsp;pipeline</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/markdig.markdownpipeline?view=netframework-4.8">Markdig.MarkdownPipeline</a>&gt;</code></dd>
+<dd><code>&lt;DotNetObject:Markdig.MarkdownPipeline&gt;</code></dd>
 </dl>
 <h4 id="markdigdll">private&nbsp;markdigDll</h4>
 <dl>
@@ -93,7 +102,8 @@
 <dd><p>アセンブリのパス文字列。</p></dd>
 </dl>
 <h4 id="install">public&nbsp;fn&nbsp;Install</h4>
-<p>インストールする。</p><dl>
+<p>インストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -102,12 +112,14 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="showtypes">public&nbsp;fn&nbsp;ShowTypes</h4>
-<p>アセンブリで定義されている全ての型をリスナーに出力する。</p><dl>
+<p>アセンブリで定義されている全ての型をリスナーに出力する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="tohtml">public&nbsp;fn&nbsp;ToHtml</h4>
-<p>マークダウンテキストをHTMLコードに変換する。</p><dl>
+<p>マークダウンテキストをHTMLコードに変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -119,7 +131,8 @@
 <dd><p>変換されたHTMLコード。</p></dd>
 </dl>
 <h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
-<p>アンインストールする。</p><dl>
+<p>アンインストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -127,15 +140,10 @@
 <dt>補足</dt>
 <dd><p>静的メソッド。</p></dd>
 </dl>
-<h4 id="returns">returns</h4>
-<p>エスケープ無しではエラーになる&quot;&amp;&quot;、&quot;*&quot;、&quot;_&quot;をエスケープ処理する。</p><dl>
-<dt>パラメータ</dt>
-<dd><code>input</code></dd>
-<dd><code>&lt;String&gt;</code></dd>
-</dl>
+<h4 id="initialize">private&nbsp;fn&nbsp;initialize</h4>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;String&gt;</code></dd>
+<dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="version">private&nbsp;version</h4>
 <dl>
@@ -187,7 +195,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

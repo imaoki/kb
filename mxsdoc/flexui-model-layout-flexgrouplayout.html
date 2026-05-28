@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.FlexGroupLayout.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexGroupLayout.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexgrouplayoutstruct">FlexGroupLayoutStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#cell">cell</a></li><li><a href="#groupboxwidget">groupBoxWidget</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#paddingb">paddingB</a></li><li><a href="#paddingl">paddingL</a></li><li><a href="#paddingr">paddingR</a></li><li><a href="#paddingt">paddingT</a></li><li><a href="#getcell">GetCell</a></li><li><a href="#getgroupboxwidget">GetGroupBoxWidget</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcell">SetCell</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#isvalidboxcell">isValidBoxCell</a></li><li><a href="#isvalidgroupboxcontrolwidget">isValidGroupBoxControlWidget</a></li><li><a href="#setgroupboxwidget">setGroupBoxWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
+<li><code>flexUIDefinitionPool</code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="flexgrouplayoutstruct">struct&nbsp;FlexGroupLayoutStruct</h3>
-<p><code>GroupBoxControl</code>用のレイアウト。</p><dl>
+<p><code>GroupBoxControl</code>用のレイアウト。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>レイアウトオプションの状態に関係なく上側<code>15</code>ピクセル、下側と左右にそれぞれ<code>5</code>ピクセルの余白を設ける。<br />
 矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p>
@@ -78,25 +87,25 @@
 <h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-widget-flexgroupboxcontrolwidget.html">FlexGroupBoxControlWidgetStruct</a>&gt;</code></dd>
 <dd><p>作成パラメータ1。<code>GroupBoxControl</code>ウィジェット。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="cell">private&nbsp;cell</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;</code></dd>
 <dd><p>セルのアイテム。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="groupboxwidget">private&nbsp;groupBoxWidget</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-widget-flexgroupboxcontrolwidget.html">FlexGroupBoxControlWidgetStruct</a>&gt;</code></dd>
 <dd><p><code>GroupBoxControl</code>ウィジェット。</p></dd>
 </dl>
 <h4 id="boxcelldef">private&nbsp;boxCellDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:FlexBoxCellStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="paddingb">private&nbsp;paddingB</h4>
 <dl>
@@ -123,17 +132,20 @@
 <dd><p>レイアウト外周の上側の余白。既定値は<code>15</code>。</p></dd>
 </dl>
 <h4 id="getcell">public&nbsp;fn&nbsp;GetCell</h4>
-<p>セルのアイテムを取得する。</p><dl>
+<p>セルのアイテムを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getgroupboxwidget">public&nbsp;fn&nbsp;GetGroupBoxWidget</h4>
-<p><code>GroupBoxControl</code>ウィジェットを取得する。</p><dl>
+<p><code>GroupBoxControl</code>ウィジェットを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-widget-flexgroupboxcontrolwidget.html">FlexGroupBoxControlWidgetStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getvisibility">public&nbsp;fn&nbsp;GetVisibility</h4>
-<p>セルのアイテムの可視性を取得する。</p><dl>
+<p>セルのアイテムの可視性を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass|UndefinedClass&gt;</code></dd>
 </dl>
@@ -142,7 +154,8 @@
 <dd><p>値を取得できない場合や真偽混合の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="setcell">public&nbsp;fn&nbsp;SetCell</h4>
-<p>セルのアイテムを設定する。</p><dl>
+<p>セルのアイテムを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Struct&gt;</code></dd>
@@ -150,10 +163,11 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexBoxCellStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="setrect">public&nbsp;fn&nbsp;SetRect</h4>
-<p>レイアウトの矩形を設定する。</p><dl>
+<p>レイアウトの矩形を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>rect</code></dd>
 <dd><code>&lt;Box2&gt;</code></dd>
@@ -167,7 +181,8 @@
 <dd><p>一貫性のため戻り値は配列で返す。</p></dd>
 </dl>
 <h4 id="setvisibility">public&nbsp;fn&nbsp;SetVisibility</h4>
-<p>セルのアイテムの可視性を設定する。</p><dl>
+<p>セルのアイテムの可視性を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -208,7 +223,7 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexGroupBoxControlWidgetStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-widget-flexgroupboxcontrolwidget.html">FlexGroupBoxControlWidgetStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="structname">public&nbsp;fn&nbsp;StructName</h4>
 <dl>
@@ -248,13 +263,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

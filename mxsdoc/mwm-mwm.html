@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Mwm.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,14 +37,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Mwm.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwm">mwm</a></li><li><a href="#mwmstruct">MwmStruct</a><ul><li><a href="#convertertable">converterTable</a></li><li><a href="#applicationdef">applicationDef</a></li><li><a href="#bindingdef">bindingDef</a></li><li><a href="#commanddef">commandDef</a></li><li><a href="#conditiondef">conditionDef</a></li><li><a href="#converterdef">converterDef</a></li><li><a href="#eventdef">eventDef</a></li><li><a href="#modelattributedef">modelAttributeDef</a></li><li><a href="#propertydef">propertyDef</a></li><li><a href="#viewmodeldef">viewModelDef</a></li><li><a href="#addconverter">AddConverter</a></li><li><a href="#createapplication">CreateApplication</a></li><li><a href="#createcommand">CreateCommand</a></li><li><a href="#createcommandbinding">CreateCommandBinding</a></li><li><a href="#createcondition">CreateCondition</a></li><li><a href="#createconverter">CreateConverter</a></li><li><a href="#createevent">CreateEvent</a></li><li><a href="#createmodelattribute">CreateModelAttribute</a></li><li><a href="#createproperty">CreateProperty</a></li><li><a href="#createpropertybinding">CreatePropertyBinding</a></li><li><a href="#createviewmodel">CreateViewModel</a></li><li><a href="#getconverter">GetConverter</a></li><li><a href="#getconverternames">GetConverterNames</a></li><li><a href="#install">Install</a></li><li><a href="#isvalidviewmodel">IsValidViewModel</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#isvalidcontrol">isValidControl</a></li><li><a href="#isvalidconverter">isValidConverter</a></li><li><a href="#isvalidmenuitem">isValidMenuItem</a></li><li><a href="#isvalidmodelattribute">isValidModelAttribute</a></li><li><a href="#isvalidrcmenu">isValidRCMenu</a></li><li><a href="#isvalidrollout">isValidRollout</a></li><li><a href="#isvalidrolloutcontrol">isValidRolloutControl</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="mwm-mwm.html">mwm</a></code></li>
-<li><code><a href="mwm-definitionpool.html">mwmDefinitionPool</a></code></li>
+<li><code>mwmDefinitionPool</code></li>
 <li><code><a href="mwm-mwm.html">MwmStruct</a></code></li>
 <li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
@@ -47,59 +55,61 @@
 <dd><code>&lt;Struct:<a href="mwm-mwm.html">MwmStruct</a>&gt;</code></dd>
 </dl>
 <h3 id="mwmstruct">struct&nbsp;MwmStruct</h3>
-<p>MVVMフレームワーク。</p><h4 id="convertertable">private&nbsp;converterTable</h4>
+<p>MVVMフレームワーク。</p>
+<h4 id="convertertable">private&nbsp;converterTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Dictionary&nbsp;&lt;Name&gt;&nbsp;&lt;Struct:MwmConverterStruct&gt;&gt;</code></dd>
+<dd><code>&lt;Dictionary &lt;Name&gt; &lt;Struct:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>&gt;&gt;</code></dd>
 <dd><p>汎用的なコンバータに名前を付けて格納。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="applicationdef">private&nbsp;applicationDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmApplicationStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmapplication.html">MwmApplicationStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="bindingdef">private&nbsp;bindingDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmBindingStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmbinding.html">MwmBindingStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="commanddef">private&nbsp;commandDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmCommandStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmcommand.html">MwmCommandStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="conditiondef">private&nbsp;conditionDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmConditionStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="converterdef">private&nbsp;converterDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmConverterStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="eventdef">private&nbsp;eventDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmEventStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmevent.html">MwmEventStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="modelattributedef">private&nbsp;modelAttributeDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmModelAttributeStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="propertydef">private&nbsp;propertyDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmPropertyStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="viewmodeldef">private&nbsp;viewModelDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:MwmViewModelStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="mwm-model-mwmviewmodel.html">MwmViewModelStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="addconverter">public&nbsp;fn&nbsp;AddConverter</h4>
-<p>汎用的なコンバータを追加する。</p><dl>
+<p>汎用的なコンバータを追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>converterName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -108,12 +118,12 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>converter</code></dd>
-<dd><code>&lt;Struct:MwmConverterStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>&gt;</code></dd>
 <dd><p>コンバータオブジェクト。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
@@ -121,7 +131,8 @@
 既に登録済みのコンバータ名を指定した場合は内容が上書きされる。</p></dd>
 </dl>
 <h4 id="createapplication">public&nbsp;fn&nbsp;CreateApplication</h4>
-<p>アプリケーションを作成する。</p><dl>
+<p>アプリケーションを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>applicationName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -141,14 +152,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmApplicationStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmapplication.html">MwmApplicationStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createcommand">public&nbsp;fn&nbsp;CreateCommand</h4>
-<p>コマンドを作成する。</p><dl>
+<p>コマンドを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>commandName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -163,31 +175,32 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>modelAttribute:</code></dd>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>executeCondition:</code></dd>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>コマンドで使用するプロパティを格納した条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>canExecuteCondition:</code></dd>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>コマンドが実行可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmCommandStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcommand.html">MwmCommandStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createcommandbinding">public&nbsp;fn&nbsp;CreateCommandBinding</h4>
-<p>ターゲットオブジェクトとコマンドとのバインディングを作成する。</p><dl>
+<p>ターゲットオブジェクトとコマンドとのバインディングを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>commandName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -207,14 +220,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmBindingStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmbinding.html">MwmBindingStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createcondition">public&nbsp;fn&nbsp;CreateCondition</h4>
-<p>条件オブジェクトを作成する。</p><dl>
+<p>条件オブジェクトを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>evaluator:</code></dd>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
@@ -222,10 +236,11 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="createconverter">public&nbsp;fn&nbsp;CreateConverter</h4>
-<p>コンバータを作成する。</p><dl>
+<p>コンバータを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>toTargetFunction</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -239,14 +254,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createevent">public&nbsp;fn&nbsp;CreateEvent</h4>
-<p>イベントを作成する。</p><dl>
+<p>イベントを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>control</code></dd>
 <dd><code>&lt;RolloutClass|RolloutControl|RCMenu|MenuItem&gt;</code></dd>
@@ -266,14 +282,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmEventStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmevent.html">MwmEventStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createmodelattribute">public&nbsp;fn&nbsp;CreateModelAttribute</h4>
-<p>モデル属性を作成する。</p><dl>
+<p>モデル属性を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>modelName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -299,14 +316,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createproperty">public&nbsp;fn&nbsp;CreateProperty</h4>
-<p>プロパティを作成する。</p><dl>
+<p>プロパティを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>propertyName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -321,25 +339,26 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>modelAttribute:</code></dd>
-<dd><code>&lt;Struct:MwmModelAttributeStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmmodelattribute.html">MwmModelAttributeStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>モデル属性。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>enabledCondition:</code></dd>
-<dd><code>&lt;Struct:MwmConditionStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmcondition.html">MwmConditionStruct</a>|UndefinedClass&gt;</code></dd>
 <dd><p>プロパティが使用可能かどうかを判定する条件オブジェクト。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmPropertyStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createpropertybinding">public&nbsp;fn&nbsp;CreatePropertyBinding</h4>
-<p>ターゲットオブジェクトとプロパティとのバインディングを作成する。</p><dl>
+<p>ターゲットオブジェクトとプロパティとのバインディングを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>mode</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -398,14 +417,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmBindingStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmbinding.html">MwmBindingStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="createviewmodel">public&nbsp;fn&nbsp;CreateViewModel</h4>
-<p>ビューモデルを作成する。</p><dl>
+<p>ビューモデルを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>viewModelName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -413,33 +433,36 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmViewModelStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmviewmodel.html">MwmViewModelStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getconverter">public&nbsp;fn&nbsp;GetConverter</h4>
-<p>汎用コンバータを取得する。</p><dl>
+<p>汎用コンバータを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>converterName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmConverterStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmconverter.html">MwmConverterStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getconverternames">public&nbsp;fn&nbsp;GetConverterNames</h4>
-<p>全ての汎用コンバータの名前を取得する。</p><dl>
+<p>全ての汎用コンバータの名前を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
 <h4 id="install">public&nbsp;fn&nbsp;Install</h4>
-<p>インストールする。</p><dl>
+<p>インストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -448,7 +471,8 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="isvalidviewmodel">public&nbsp;fn&nbsp;IsValidViewModel</h4>
-<p>指定されたオブジェクトがビューモデルかどうかを判定する。</p><dl>
+<p>指定されたオブジェクトがビューモデルかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -458,7 +482,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
-<p>アンインストールする。</p><dl>
+<p>アンインストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -586,7 +611,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

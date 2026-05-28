@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.DocPathMaker.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocPathMaker.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#docpathmakerstruct">DocPathMakerStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#fromdirectory">FromDirectory</a></li><li><a href="#fromfile">FromFile</a></li><li><a href="#getabsolutebasepath">GetAbsoluteBasePath</a></li><li><a href="#getabsoluteindexpath">GetAbsoluteIndexPath</a></li><li><a href="#getabsolutetemplatepath">GetAbsoluteTemplatePath</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#matchpatterns">matchPatterns</a></li><li><a href="#trimendbackslash">trimEndBackslash</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="docgenerator-definitionpool.html">docGeneratorDefinitionPool</a></code></li>
+<li><code>docGeneratorDefinitionPool</code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="docpathmakerstruct">struct&nbsp;DocPathMakerStruct</h3>
-<p>ドキュメントのパスを生成する。</p><dl>
+<p>ドキュメントのパスを生成する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>ベースパスから見た相対パスが生成されるパスのファイル名になる。</p>
 <table>
@@ -67,13 +76,13 @@
 <h4 id="options">public&nbsp;Options</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocOptionsStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docoptions.html">DocOptionsStruct</a>&gt;</code></dd>
 <dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
 </dl>
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="uriclass">private&nbsp;uriClass</h4>
 <dl>
@@ -81,7 +90,8 @@
 <dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.uri?view=netframework-4.8">System.Uri</a>&gt;</code></dd>
 </dl>
 <h4 id="fromdirectory">public&nbsp;fn&nbsp;FromDirectory</h4>
-<p>ディレクトリ内のスクリプトファイルのパスから変換後のHTMLファイルのパスを作成する。</p><dl>
+<p>ディレクトリ内のスクリプトファイルのパスから変換後のHTMLファイルのパスを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>dir</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -108,10 +118,11 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;</code></dd>
 </dl>
 <h4 id="fromfile">public&nbsp;fn&nbsp;FromFile</h4>
-<p>スクリプトファイルのパスから変換後のHTMLファイルのパスを作成する。</p><dl>
+<p>スクリプトファイルのパスから変換後のHTMLファイルのパスを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>file</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -119,20 +130,23 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;</code></dd>
 </dl>
 <h4 id="getabsolutebasepath">public&nbsp;fn&nbsp;GetAbsoluteBasePath</h4>
-<p><code>Options.BasePath</code>を絶対パスで取得する。</p><dl>
+<p><code>Options.BasePath</code>を絶対パスで取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="getabsoluteindexpath">public&nbsp;fn&nbsp;GetAbsoluteIndexPath</h4>
-<p><code>Options.SiteUrl</code>を絶対パスで取得する。</p><dl>
+<p><code>Options.SiteUrl</code>を絶対パスで取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="getabsolutetemplatepath">public&nbsp;fn&nbsp;GetAbsoluteTemplatePath</h4>
-<p><code>Options.TemplatePath</code>を絶対パスで取得する。</p><dl>
+<p><code>Options.TemplatePath</code>を絶対パスで取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
@@ -162,7 +176,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="trimendbackslash">private&nbsp;fn&nbsp;trimEndBackslash</h4>
-<p>末尾のバックスラッシュを除去する。</p><dl>
+<p>末尾のバックスラッシュを除去する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -210,7 +225,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

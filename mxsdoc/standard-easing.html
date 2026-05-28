@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Easing.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,18 +37,19 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Easing.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#easingstruct">EasingStruct</a><ul><li><a href="#backin">BackIn</a></li><li><a href="#backinout">BackInOut</a></li><li><a href="#backout">BackOut</a></li><li><a href="#bezier">Bezier</a></li><li><a href="#bouncein">BounceIn</a></li><li><a href="#bounceinout">BounceInOut</a></li><li><a href="#bounceout">BounceOut</a></li><li><a href="#circularin">CircularIn</a></li><li><a href="#circularinout">CircularInOut</a></li><li><a href="#circularout">CircularOut</a></li><li><a href="#cubicin">CubicIn</a></li><li><a href="#cubicinout">CubicInOut</a></li><li><a href="#cubicout">CubicOut</a></li><li><a href="#elasticin">ElasticIn</a></li><li><a href="#elasticinout">ElasticInOut</a></li><li><a href="#elasticout">ElasticOut</a></li><li><a href="#exponentialin">ExponentialIn</a></li><li><a href="#exponentialinout">ExponentialInOut</a></li><li><a href="#exponentialout">ExponentialOut</a></li><li><a href="#linear">Linear</a></li><li><a href="#quadraticin">QuadraticIn</a></li><li><a href="#quadraticinout">QuadraticInOut</a></li><li><a href="#quadraticout">QuadraticOut</a></li><li><a href="#quarticin">QuarticIn</a></li><li><a href="#quarticinout">QuarticInOut</a></li><li><a href="#quarticout">QuarticOut</a></li><li><a href="#quinticin">QuinticIn</a></li><li><a href="#quinticinout">QuinticInOut</a></li><li><a href="#quinticout">QuinticOut</a></li><li><a href="#sigmoid">Sigmoid</a></li><li><a href="#sinein">SineIn</a></li><li><a href="#sineinout">SineInOut</a></li><li><a href="#sineout">SineOut</a></li><li><a href="#clamp">clamp</a></li><li><a href="#isnormalized">isNormalized</a></li><li><a href="#solvecubicequation">solveCubicEquation</a></li><li><a href="#solvequadraticequation">solveQuadraticEquation</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code>pi</code><ul>
-</ul></li>
+<li><code>pi</code></li>
 </ul></dd></dl>
 <h3 id="easingstruct">struct&nbsp;EasingStruct</h3>
-<p>各種イージングメソッドを提供する。</p><h4 id="backin">public&nbsp;fn&nbsp;BackIn</h4>
-<p>逆方向の変化を伴う。</p><dl>
+<p>各種イージングメソッドを提供する。</p>
+<h4 id="backin">public&nbsp;fn&nbsp;BackIn</h4>
+<p>逆方向の変化を伴う。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -51,7 +60,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="backinout">public&nbsp;fn&nbsp;BackInOut</h4>
-<p>逆方向の変化を伴う。</p><dl>
+<p>逆方向の変化を伴う。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -62,7 +72,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="backout">public&nbsp;fn&nbsp;BackOut</h4>
-<p>逆方向の変化を伴う。</p><dl>
+<p>逆方向の変化を伴う。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -73,7 +84,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="bezier">public&nbsp;fn&nbsp;Bezier</h4>
-<p>ベジェ曲線を使用する。</p><dl>
+<p>ベジェ曲線を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -115,7 +127,8 @@
 </dl></dd>
 </dl>
 <h4 id="bouncein">public&nbsp;fn&nbsp;BounceIn</h4>
-<p>バウンス効果を作成する。</p><dl>
+<p>バウンス効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -126,7 +139,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="bounceinout">public&nbsp;fn&nbsp;BounceInOut</h4>
-<p>バウンス効果を作成する。</p><dl>
+<p>バウンス効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -137,7 +151,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="bounceout">public&nbsp;fn&nbsp;BounceOut</h4>
-<p>バウンス効果を作成する。</p><dl>
+<p>バウンス効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -148,7 +163,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="circularin">public&nbsp;fn&nbsp;CircularIn</h4>
-<p>円弧状に変化する。</p><dl>
+<p>円弧状に変化する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -159,7 +175,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="circularinout">public&nbsp;fn&nbsp;CircularInOut</h4>
-<p>円弧状に変化する。</p><dl>
+<p>円弧状に変化する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -170,7 +187,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="circularout">public&nbsp;fn&nbsp;CircularOut</h4>
-<p>円弧状に変化する。</p><dl>
+<p>円弧状に変化する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -181,7 +199,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="cubicin">public&nbsp;fn&nbsp;CubicIn</h4>
-<p>三次関数を使用する。</p><dl>
+<p>三次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -192,7 +211,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="cubicinout">public&nbsp;fn&nbsp;CubicInOut</h4>
-<p>三次関数を使用する。</p><dl>
+<p>三次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -203,7 +223,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="cubicout">public&nbsp;fn&nbsp;CubicOut</h4>
-<p>三次関数を使用する。</p><dl>
+<p>三次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -214,7 +235,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="elasticin">public&nbsp;fn&nbsp;ElasticIn</h4>
-<p>弾性効果を作成する。</p><dl>
+<p>弾性効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -243,7 +265,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="elasticinout">public&nbsp;fn&nbsp;ElasticInOut</h4>
-<p>弾性効果を作成する。</p><dl>
+<p>弾性効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -272,7 +295,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="elasticout">public&nbsp;fn&nbsp;ElasticOut</h4>
-<p>弾性効果を作成する。</p><dl>
+<p>弾性効果を作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -301,7 +325,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="exponentialin">public&nbsp;fn&nbsp;ExponentialIn</h4>
-<p>指数関数を使用する。</p><dl>
+<p>指数関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -312,7 +337,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="exponentialinout">public&nbsp;fn&nbsp;ExponentialInOut</h4>
-<p>指数関数を使用する。</p><dl>
+<p>指数関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -323,7 +349,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="exponentialout">public&nbsp;fn&nbsp;ExponentialOut</h4>
-<p>指数関数を使用する。</p><dl>
+<p>指数関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -334,7 +361,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="linear">public&nbsp;fn&nbsp;Linear</h4>
-<p>線形補間。</p><dl>
+<p>線形補間。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -345,7 +373,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quadraticin">public&nbsp;fn&nbsp;QuadraticIn</h4>
-<p>二次関数を使用する。</p><dl>
+<p>二次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -356,7 +385,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quadraticinout">public&nbsp;fn&nbsp;QuadraticInOut</h4>
-<p>二次関数を使用する。</p><dl>
+<p>二次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -367,7 +397,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quadraticout">public&nbsp;fn&nbsp;QuadraticOut</h4>
-<p>二次関数を使用する。</p><dl>
+<p>二次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -378,7 +409,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quarticin">public&nbsp;fn&nbsp;QuarticIn</h4>
-<p>四次関数を使用する。</p><dl>
+<p>四次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -389,7 +421,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quarticinout">public&nbsp;fn&nbsp;QuarticInOut</h4>
-<p>四次関数を使用する。</p><dl>
+<p>四次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -400,7 +433,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quarticout">public&nbsp;fn&nbsp;QuarticOut</h4>
-<p>四次関数を使用する。</p><dl>
+<p>四次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -411,7 +445,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quinticin">public&nbsp;fn&nbsp;QuinticIn</h4>
-<p>五次関数を使用する。</p><dl>
+<p>五次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -422,7 +457,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quinticinout">public&nbsp;fn&nbsp;QuinticInOut</h4>
-<p>五次関数を使用する。</p><dl>
+<p>五次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -433,7 +469,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="quinticout">public&nbsp;fn&nbsp;QuinticOut</h4>
-<p>五次関数を使用する。</p><dl>
+<p>五次関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -444,7 +481,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="sigmoid">public&nbsp;fn&nbsp;Sigmoid</h4>
-<p>シグモイド関数を使用する。</p><dl>
+<p>シグモイド関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -467,7 +505,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="sinein">public&nbsp;fn&nbsp;SineIn</h4>
-<p>サイン関数を使用する。</p><dl>
+<p>サイン関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -478,7 +517,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="sineinout">public&nbsp;fn&nbsp;SineInOut</h4>
-<p>サイン関数を使用する。</p><dl>
+<p>サイン関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -489,7 +529,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="sineout">public&nbsp;fn&nbsp;SineOut</h4>
-<p>サイン関数を使用する。</p><dl>
+<p>サイン関数を使用する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>v</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -500,7 +541,8 @@
 <dd><code>&lt;Float&gt;</code></dd>
 </dl>
 <h4 id="clamp">private&nbsp;fn&nbsp;clamp</h4>
-<p>値を範囲内に収める。</p><dl>
+<p>値を範囲内に収める。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Integer|Float|Point2&gt;</code></dd>
@@ -532,7 +574,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="solvecubicequation">private&nbsp;fn&nbsp;solveCubicEquation</h4>
-<p>三次方程式を解決する。</p><dl>
+<p>三次方程式を解決する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>a</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -564,7 +607,8 @@
 </dl></dd>
 </dl>
 <h4 id="solvequadraticequation">private&nbsp;fn&nbsp;solveQuadraticEquation</h4>
-<p>二次方程式を解決する。</p><dl>
+<p>二次方程式を解決する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>a</code></dd>
 <dd><code>&lt;Float&gt;</code></dd>
@@ -629,7 +673,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

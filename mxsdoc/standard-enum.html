@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Enum.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,16 +37,17 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Enum.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#enumstruct">EnumStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#baseenumclass">baseEnumClass</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#enumclass">enumClass</a></li><li><a href="#create">Create</a></li><li><a href="#getflags">GetFlags</a></li><li><a href="#getnames">GetNames</a></li><li><a href="#hasflag">HasFlag</a></li><li><a href="#isvalidenum">IsValidEnum</a></li><li><a href="#isenumclass">isEnumClass</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
+<li><code>standardDefinitionPool</code></li>
 </ul></dd></dl>
 <h3 id="enumstruct">struct&nbsp;EnumStruct</h3>
-<p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.enum?view=netframework-4.8">Enum</a>を<code>Name</code>値で操作するためのラッパー。</p><dl>
+<p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.enum?view=netframework-4.8">Enum</a>を<code>Name</code>値で操作するためのラッパー。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -63,32 +72,34 @@
 <h4 id="dotnetutility">private&nbsp;dotNetUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DotNetUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-dotnetutility.html">DotNetUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="enumclass">private&nbsp;enumClass</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;DotNetClass:Any&gt;</code></dd>
 </dl>
 <h4 id="create">public&nbsp;fn&nbsp;Create</h4>
-<p>指定したフラグを組み合わせた列挙体インスタンスを生成する。</p><dl>
+<p>指定したフラグを組み合わせた列挙体インスタンスを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>flagNames</code></dd>
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;DotNetObject:Any|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p><code>flagNames</code>が空配列、または未定義のフラグを指定した場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getflags">public&nbsp;fn&nbsp;GetFlags</h4>
-<p>列挙体インスタンスから有効なフラグを取得する。</p><dl>
+<p>列挙体インスタンスから有効なフラグを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>enumObject</code></dd>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;DotNetObject:Any&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -99,15 +110,17 @@
 <dd><p><code>enumObject</code>は本インスタンスの列挙体オブジェクトと同じ型でなければならない。</p></dd>
 </dl>
 <h4 id="getnames">public&nbsp;fn&nbsp;GetNames</h4>
-<p>列挙体に定義された全てのフラグの名前を取得する。</p><dl>
+<p>列挙体に定義された全てのフラグの名前を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
 <h4 id="hasflag">public&nbsp;fn&nbsp;HasFlag</h4>
-<p>指定したフラグが有効かどうかを判定する。</p><dl>
+<p>指定したフラグが有効かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>enumObject</code></dd>
-<dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/any?view=netframework-4.8">Any</a>&gt;</code></dd>
+<dd><code>&lt;DotNetObject:Any&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -123,12 +136,14 @@
 <dd><p><code>enumObject</code>は本インスタンスの列挙体オブジェクトと同じ型でなければならない。</p></dd>
 </dl>
 <h4 id="isvalidenum">public&nbsp;fn&nbsp;IsValidEnum</h4>
-<p><code>Enum</code>オブジェクトとして有効かどうかを判定する。</p><dl>
+<p><code>Enum</code>オブジェクトとして有効かどうかを判定する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="isenumclass">private&nbsp;fn&nbsp;isEnumClass</h4>
-<p><code>System.Enum</code>のサブクラスかどうかを判定する。</p><dl>
+<p><code>System.Enum</code>のサブクラスかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -176,7 +191,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

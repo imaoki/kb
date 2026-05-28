@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.StringUtility.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,16 +37,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">StringUtility.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#stringutilitystruct">StringUtilityStruct</a><ul><li><a href="#regexclass">regexClass</a></li><li><a href="#regexoptionsenum">regexOptionsEnum</a></li><li><a href="#stringclass">stringClass</a></li><li><a href="#stringsplitoptionsenum">stringSplitOptionsEnum</a></li><li><a href="#backslashregex">backslashRegex</a></li><li><a href="#camelregex">camelRegex</a></li><li><a href="#commaregex">commaRegex</a></li><li><a href="#crregex">crRegex</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#doublequoteregex">doubleQuoteRegex</a></li><li><a href="#enumdef">enumDef</a></li><li><a href="#formatregex">formatRegex</a></li><li><a href="#lfregex">lfRegex</a></li><li><a href="#nonwordregex">nonWordRegex</a></li><li><a href="#percentregex">percentRegex</a></li><li><a href="#tabregex">tabRegex</a></li><li><a href="#clipstring">ClipString</a></li><li><a href="#createregex">CreateRegex</a></li><li><a href="#escapebackslash">EscapeBackslash</a></li><li><a href="#escapewhitespace">EscapeWhiteSpace</a></li><li><a href="#formatstring">FormatString</a></li><li><a href="#fromcodepoint">FromCodePoint</a></li><li><a href="#getregexoptions">GetRegexOptions</a></li><li><a href="#getregexpattern">GetRegexPattern</a></li><li><a href="#getunicodecodepointfromsurrogatepair">GetUnicodeCodePointFromSurrogatePair</a></li><li><a href="#getvalidunicodecodepoint">GetValidUnicodeCodePoint</a></li><li><a href="#isregexobject">IsRegexObject</a></li><li><a href="#join">Join</a></li><li><a href="#padleft">PadLeft</a></li><li><a href="#padright">PadRight</a></li><li><a href="#serialize">Serialize</a></li><li><a href="#split">Split</a></li><li><a href="#splitbylf">SplitByLF</a></li><li><a href="#tochararray">ToCharArray</a></li><li><a href="#topascalcase">ToPascalCase</a></li><li><a href="#trim">Trim</a></li><li><a href="#trimend">TrimEnd</a></li><li><a href="#trimstart">TrimStart</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
-<dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
-</ul></dd></dl>
 <h3 id="stringutilitystruct">struct&nbsp;StringUtilityStruct</h3>
-<p>文字列操作を行うためのメソッドを提供する。</p><h4 id="regexclass">private&nbsp;regexClass</h4>
+<p>文字列操作を行うためのメソッドを提供する。</p>
+<h4 id="regexclass">private&nbsp;regexClass</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
@@ -46,7 +52,7 @@
 <h4 id="regexoptionsenum">private&nbsp;regexOptionsEnum</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:EnumStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 <dd><p><code>&quot;System.Text.RegularExpressions.RegexOptions&quot;</code>列挙型。</p></dd>
 </dl>
 <h4 id="stringclass">private&nbsp;stringClass</h4>
@@ -57,7 +63,7 @@
 <h4 id="stringsplitoptionsenum">private&nbsp;stringSplitOptionsEnum</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:EnumStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 <dd><p><code>&quot;System.StringSplitOptions&quot;</code>列挙型。</p></dd>
 </dl>
 <h4 id="backslashregex">private&nbsp;backslashRegex</h4>
@@ -87,7 +93,7 @@
 <h4 id="dotnetutility">private&nbsp;dotNetUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DotNetUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-dotnetutility.html">DotNetUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="doublequoteregex">private&nbsp;doubleQuoteRegex</h4>
 <dl>
@@ -98,7 +104,7 @@
 <h4 id="enumdef">private&nbsp;enumDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:EnumStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="formatregex">private&nbsp;formatRegex</h4>
 <dl>
@@ -131,7 +137,8 @@
 <dd><p><code>\t</code>に一致する正規表現オブジェクト。</p></dd>
 </dl>
 <h4 id="clipstring">public&nbsp;fn&nbsp;ClipString</h4>
-<p>入力文字列を指定の桁数に収まるよう省略する。</p><dl>
+<p>入力文字列を指定の桁数に収まるよう省略する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -147,7 +154,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="createregex">public&nbsp;fn&nbsp;CreateRegex</h4>
-<p>正規表現オブジェクトを作成する。</p><dl>
+<p>正規表現オブジェクトを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>pattern</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -216,7 +224,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
 </dl>
 <h4 id="escapebackslash">public&nbsp;fn&nbsp;EscapeBackslash</h4>
-<p>入力文字列中の<code>\</code>、<code>\%</code>、<code>\&quot;</code>、<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p><dl>
+<p>入力文字列中の<code>\</code>、<code>\%</code>、<code>\&quot;</code>、<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -226,7 +235,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="escapewhitespace">public&nbsp;fn&nbsp;EscapeWhiteSpace</h4>
-<p>入力文字列中の<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p><dl>
+<p>入力文字列中の<code>\n</code>、<code>\r</code>、および<code>\t</code>をエスケープ処理する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -236,7 +246,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="formatstring">public&nbsp;fn&nbsp;FormatString</h4>
-<p><code>format</code>関数のパラメータを配列で渡せるようにしたメソッド。</p><dl>
+<p><code>format</code>関数のパラメータを配列で渡せるようにしたメソッド。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -253,7 +264,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="fromcodepoint">public&nbsp;fn&nbsp;FromCodePoint</h4>
-<p>Unicodeコードポイントの配列を文字列に変換する。</p><dl>
+<p>Unicodeコードポイントの配列を文字列に変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>codePoints</code></dd>
 <dd><code>&lt;Array[&lt;Integer&gt;]&gt;</code></dd>
@@ -268,7 +280,8 @@
 <dd><p><code>0x10000</code>以上は補助コードポイントとして処理する。</p></dd>
 </dl>
 <h4 id="getregexoptions">public&nbsp;fn&nbsp;GetRegexOptions</h4>
-<p>正規表現オブジェクトのオプションを配列として取得する。</p><dl>
+<p>正規表現オブジェクトのオプションを配列として取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
@@ -285,7 +298,8 @@
 <dd><code>&lt;Array[&lt;Name&gt;]|Array[&lt;String&gt;]&gt;</code></dd>
 </dl>
 <h4 id="getregexpattern">public&nbsp;fn&nbsp;GetRegexPattern</h4>
-<p>正規表現オブジェクトの正規表現パターン文字列を取得する。</p><dl>
+<p>正規表現オブジェクトの正規表現パターン文字列を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8">System.Text.RegularExpressions.Regex</a>&gt;</code></dd>
@@ -296,7 +310,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="getunicodecodepointfromsurrogatepair">public&nbsp;fn&nbsp;GetUnicodeCodePointFromSurrogatePair</h4>
-<p>サロゲートペアからUnicodeコードポイントを取得する。</p><dl>
+<p>サロゲートペアからUnicodeコードポイントを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>highSurrogate</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -314,7 +329,8 @@
 <dd><p>Unicodeコードポイント。</p></dd>
 </dl>
 <h4 id="getvalidunicodecodepoint">public&nbsp;fn&nbsp;GetValidUnicodeCodePoint</h4>
-<p>Unicodeコードポイントから正しい文字に変換可能なUnicodeコードポイントの配列を取得する。</p><dl>
+<p>Unicodeコードポイントから正しい文字に変換可能なUnicodeコードポイントの配列を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>codePoint</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -337,7 +353,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="join">public&nbsp;fn&nbsp;Join</h4>
-<p>文字列配列の全ての要素を連結する。</p><dl>
+<p>文字列配列の全ての要素を連結する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
@@ -354,7 +371,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="padleft">public&nbsp;fn&nbsp;PadLeft</h4>
-<p>文字列の左側に任意の文字を埋め込むことで現在の文字列を右寄せした新しい文字列を生成する。</p><dl>
+<p>文字列の左側に任意の文字を埋め込むことで現在の文字列を右寄せした新しい文字列を生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -397,7 +415,8 @@
 </table></dd>
 </dl>
 <h4 id="padright">public&nbsp;fn&nbsp;PadRight</h4>
-<p>文字列の右側に任意の文字を埋め込むことで現在の文字列を左寄せした新しい文字列を生成する。</p><dl>
+<p>文字列の右側に任意の文字を埋め込むことで現在の文字列を左寄せした新しい文字列を生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -440,7 +459,8 @@
 </table></dd>
 </dl>
 <h4 id="serialize">public&nbsp;fn&nbsp;Serialize</h4>
-<p>値をシリアライズする。</p><dl>
+<p>値をシリアライズする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -450,7 +470,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="split">public&nbsp;fn&nbsp;Split</h4>
-<p>文字列を部分文字列に分割する。</p><dl>
+<p>文字列を部分文字列に分割する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -498,7 +519,8 @@
 </code></pre></dd>
 </dl>
 <h4 id="splitbylf">public&nbsp;fn&nbsp;SplitByLF</h4>
-<p><code>\n</code>の位置で部分文字列に分割する。</p><dl>
+<p><code>\n</code>の位置で部分文字列に分割する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -508,7 +530,8 @@
 <dd><code>&lt;Array[&lt;String&gt;]&gt;</code></dd>
 </dl>
 <h4 id="tochararray">public&nbsp;fn&nbsp;ToCharArray</h4>
-<p>入力値の各文字を要素とする配列に変換する。</p><dl>
+<p>入力値の各文字を要素とする配列に変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -522,7 +545,8 @@
 <dd><p>空文字列の場合は空配列を返す。</p></dd>
 </dl>
 <h4 id="topascalcase">public&nbsp;fn&nbsp;ToPascalCase</h4>
-<p>入力値をパスカル形式の文字列に変換する。</p><dl>
+<p>入力値をパスカル形式の文字列に変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -537,7 +561,8 @@
 文字列リテラル中のエスケープシーケンスのエスケープ処理は行わない。</p></dd>
 </dl>
 <h4 id="trim">public&nbsp;fn&nbsp;Trim</h4>
-<p>先頭および末尾の空白文字を全て削除する。</p><dl>
+<p>先頭および末尾の空白文字を全て削除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -547,7 +572,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="trimend">public&nbsp;fn&nbsp;TrimEnd</h4>
-<p>末尾から指定した文字セットを全て削除する。</p><dl>
+<p>末尾から指定した文字セットを全て削除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -563,7 +589,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="trimstart">public&nbsp;fn&nbsp;TrimStart</h4>
-<p>先頭から指定した文字セットを全て削除する。</p><dl>
+<p>先頭から指定した文字セットを全て削除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -617,7 +644,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

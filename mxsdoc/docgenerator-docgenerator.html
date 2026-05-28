@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.DocGenerator.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,56 +37,58 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocGenerator.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#docgeneratorstruct">DocGeneratorStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#docdependentparser">docDependentParser</a></li><li><a href="#docdependenttable">docDependentTable</a></li><li><a href="#docparser">docParser</a></li><li><a href="#docrender">docRender</a></li><li><a href="#pathmaker">pathMaker</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#fromdirectory">FromDirectory</a></li><li><a href="#fromfile">FromFile</a></li><li><a href="#indexfromdirectory">IndexFromDirectory</a></li><li><a href="#convertfile">convertFile</a></li><li><a href="#comparefilename">compareFileName</a></li><li><a href="#dumppathtree">dumpPathTree</a></li><li><a href="#extractdependent">extractDependent</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#makepathtree">makePathTree</a></li><li><a href="#pathtreetohtml">pathTreeToHtml</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="docgenerator-definitionpool.html">docGeneratorDefinitionPool</a></code></li>
+<li><code>docGeneratorDefinitionPool</code></li>
 <li><code><a href="markdown-markdown.html">MarkdownStruct</a></code></li>
 <li><code><a href="parsercombinator-parsercombinator.html">ParserCombinatorStruct</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="docgeneratorstruct">struct&nbsp;DocGeneratorStruct</h3>
-<p>スクリプトファイル内のドキュメントコメントを基にHTMLファイルを生成する。</p><h4 id="options">public&nbsp;Options</h4>
+<p>スクリプトファイル内のドキュメントコメントを基にHTMLファイルを生成する。</p>
+<h4 id="options">public&nbsp;Options</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocOptionsStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docoptions.html">DocOptionsStruct</a>&gt;</code></dd>
 <dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
 </dl>
 <h4 id="docdependentparser">private&nbsp;docDependentParser</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocDependentStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-parser-docdependent.html">DocDependentStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="docdependenttable">private&nbsp;docDependentTable</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocDependentTableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docdependenttable.html">DocDependentTableStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="docparser">private&nbsp;docParser</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-parser-doc.html">DocStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="docrender">private&nbsp;docRender</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocRenderStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docrender.html">DocRenderStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="pathmaker">private&nbsp;pathMaker</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocPathMakerStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docpathmaker.html">DocPathMakerStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="fromdirectory">public&nbsp;fn&nbsp;FromDirectory</h4>
-<p>ディレクトリ内のスクリプトファイルを変換する。</p><dl>
+<p>ディレクトリ内のスクリプトファイルを変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>dir</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -108,7 +118,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="fromfile">public&nbsp;fn&nbsp;FromFile</h4>
-<p>スクリプトファイルを変換する。</p><dl>
+<p>スクリプトファイルを変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>file</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -123,7 +134,8 @@
 <dd><p>依存情報の解析は指定したファイルのみで行われるため正しく抽出できない。</p></dd>
 </dl>
 <h4 id="indexfromdirectory">public&nbsp;fn&nbsp;IndexFromDirectory</h4>
-<p>ディレクトリ内のスクリプトファイルからインデックスページを生成する。</p><dl>
+<p>ディレクトリ内のスクリプトファイルからインデックスページを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>dir</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -160,7 +172,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
-<dd><code>&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -171,7 +183,8 @@
 <dd><p>HTMLファイルの書き込みは常にUTF-8Nで行う。</p></dd>
 </dl>
 <h4 id="comparefilename">private&nbsp;fn&nbsp;compareFileName</h4>
-<p>ディレクトリが前、ファイルが後になるように並べ替える。</p><dl>
+<p>ディレクトリが前、ファイルが後になるように並べ替える。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>a</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -186,10 +199,11 @@
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="dumppathtree">private&nbsp;fn&nbsp;dumpPathTree</h4>
-<p>パスの階層構造をリスナーに出力する。デバッグ用。</p><dl>
+<p>パスの階層構造をリスナーに出力する。デバッグ用。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>pathTree</code></dd>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;String&gt;&nbsp;Value:&lt;Array[&lt;Any&gt;]|DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Name:&lt;String&gt; Value:&lt;Array[&lt;Any&gt;]|DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -201,10 +215,11 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="extractdependent">private&nbsp;fn&nbsp;extractDependent</h4>
-<p>依存情報を抽出する。</p><dl>
+<p>依存情報を抽出する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
-<dd><code>&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -221,7 +236,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="makepathtree">private&nbsp;fn&nbsp;makePathTree</h4>
-<p>パスの配列からディレクトリやファイルの階層構造を構築する。</p><dl>
+<p>パスの配列からディレクトリやファイルの階層構造を構築する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>parentPath</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -230,21 +246,22 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>paths</code></dd>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;String&gt;&nbsp;Value:&lt;Array[&lt;Any&gt;]|DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Name:&lt;String&gt; Value:&lt;Array[&lt;Any&gt;]|DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>終端（ファイル）の<code>Value</code>には子階層の配列ではなくファイルのパス情報が格納される。</p></dd>
 </dl>
 <h4 id="pathtreetohtml">private&nbsp;fn&nbsp;pathTreeToHtml</h4>
-<p>パスの階層構造からリスト要素のHTMLコードを生成する。</p><dl>
+<p>パスの階層構造からリスト要素のHTMLコードを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>pathTree</code></dd>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;String&gt;&nbsp;Value:&lt;Array[&lt;Any&gt;]|DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Name:&lt;String&gt; Value:&lt;Array[&lt;Any&gt;]|DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;&gt;]&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -300,7 +317,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

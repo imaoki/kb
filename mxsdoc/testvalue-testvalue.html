@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.TestValue.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,16 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">TestValue.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#testvaluestruct">TestValueStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#ignorecase">IgnoreCase</a></li><li><a href="#v">v</a></li><li><a href="#regexclass">regexClass</a></li><li><a href="#regextype">regexType</a></li><li><a href="#countequals">CountEquals</a></li><li><a href="#countgreaterorequals">CountGreaterOrEquals</a></li><li><a href="#countgreaterthan">CountGreaterThan</a></li><li><a href="#countlessorequals">CountLessOrEquals</a></li><li><a href="#countlessthan">CountLessThan</a></li><li><a href="#getvalue">GetValue</a></li><li><a href="#hasequals">HasEquals</a></li><li><a href="#hasprop">HasProp</a></li><li><a href="#install">Install</a></li><li><a href="#uninstall">Uninstall</a></li><li><a href="#isangleaxis">IsAngleAxis</a></li><li><a href="#isarray">IsArray</a></li><li><a href="#isarrayorarrayparameter">IsArrayOrArrayParameter</a></li><li><a href="#isarrayparameter">IsArrayParameter</a></li><li><a href="#isattributedef">IsAttributeDef</a></li><li><a href="#isbigmatrix">IsBigMatrix</a></li><li><a href="#isbinstream">IsBinStream</a></li><li><a href="#isbitarray">IsBitArray</a></li><li><a href="#isbitmap">IsBitmap</a></li><li><a href="#isboolean">IsBoolean</a></li><li><a href="#isbox2">IsBox2</a></li><li><a href="#isbox3">IsBox3</a></li><li><a href="#iscolor">IsColor</a></li><li><a href="#isdatapair">IsDataPair</a></li><li><a href="#isdictionary">IsDictionary</a></li><li><a href="#isdotnetclass">IsDotNetClass</a></li><li><a href="#isdotnetmethod">IsDotNetMethod</a></li><li><a href="#isdotnetobject">IsDotNetObject</a></li><li><a href="#iseulerangles">IsEulerAngles</a></li><li><a href="#isfilestream">IsFileStream</a></li><li><a href="#isfloat">IsFloat</a></li><li><a href="#isinteger">IsInteger</a></li><li><a href="#isinterval">IsInterval</a></li><li><a href="#ismatrix3">IsMatrix3</a></li><li><a href="#ismaxkey">IsMAXKey</a></li><li><a href="#ismaxscriptfunction">IsMAXScriptFunction</a></li><li><a href="#isname">IsName</a></li><li><a href="#isnumber">IsNumber</a></li><li><a href="#isok">IsOk</a></li><li><a href="#ispoint2">IsPoint2</a></li><li><a href="#ispoint3">IsPoint3</a></li><li><a href="#ispoint4">IsPoint4</a></li><li><a href="#isquat">IsQuat</a></li><li><a href="#isray">IsRay</a></li><li><a href="#isregexobject">IsRegexObject</a></li><li><a href="#isrollout">IsRollout</a></li><li><a href="#isstring">IsString</a></li><li><a href="#isstringstream">IsStringStream</a></li><li><a href="#isstructdefinition">IsStructDefinition</a></li><li><a href="#isstructinstance">IsStructInstance</a></li><li><a href="#istestvalue">IsTestValue</a></li><li><a href="#istime">IsTime</a></li><li><a href="#isundefined">IsUndefined</a></li><li><a href="#isunsupplied">IsUnsupplied</a></li><li><a href="#iswindowstream">IsWindowStream</a></li><li><a href="#escapebackslash">escapeBackslash</a></li><li><a href="#valuetostring">valueToString</a></li><li><a href="#version">version</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#getversion">GetVersion</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="startuploader-startuploader.html">startupLoader</a></code></li>
+<li><code><a href="testvalue-testvalue.html">TestValueStruct</a></code></li>
 </ul></dd></dl>
 <h3 id="testvaluestruct">struct&nbsp;TestValueStruct</h3>
-<p>各種アサーション用の機能を提供するテスト用の構造体。</p><h4 id="_cp1_">public&nbsp;_CP1_</h4>
+<p>各種アサーション用の機能を提供するテスト用の構造体。</p>
+<h4 id="_cp1_">public&nbsp;_CP1_</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -66,7 +76,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.type?view=netframework-4.8">System.Type</a>&gt;</code></dd>
 </dl>
 <h4 id="countequals">public&nbsp;fn&nbsp;CountEquals</h4>
-<p>コレクションの要素数が指定の数と等しいかどうかを判定する。</p><dl>
+<p>コレクションの要素数が指定の数と等しいかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>count</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -76,7 +87,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="countgreaterorequals">public&nbsp;fn&nbsp;CountGreaterOrEquals</h4>
-<p>コレクションの要素数が指定の数以上かどうかを判定する。</p><dl>
+<p>コレクションの要素数が指定の数以上かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>count</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -86,7 +98,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="countgreaterthan">public&nbsp;fn&nbsp;CountGreaterThan</h4>
-<p>コレクションの要素数が指定の数を超えるかどうかを判定する。</p><dl>
+<p>コレクションの要素数が指定の数を超えるかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>count</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -96,7 +109,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="countlessorequals">public&nbsp;fn&nbsp;CountLessOrEquals</h4>
-<p>コレクションの要素数が指定の数以下かどうかを判定する。</p><dl>
+<p>コレクションの要素数が指定の数以下かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>count</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -106,7 +120,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="countlessthan">public&nbsp;fn&nbsp;CountLessThan</h4>
-<p>コレクションの要素数が指定の数未満かどうかを判定する。</p><dl>
+<p>コレクションの要素数が指定の数未満かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>count</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -121,12 +136,14 @@
 <dd><code>&lt;Any&gt;</code></dd>
 </dl>
 <h4 id="hasequals">public&nbsp;fn&nbsp;HasEquals</h4>
-<p><code>Equals</code>メソッドを持っているかどうかを判定する。</p><dl>
+<p><code>Equals</code>メソッドを持っているかどうかを判定する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="hasprop">public&nbsp;fn&nbsp;HasProp</h4>
-<p>現在のオブジェクトの値が指定したプロパティを持っているかどうかを判定する。</p><dl>
+<p>現在のオブジェクトの値が指定したプロパティを持っているかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>propName</code></dd>
 <dd><code>&lt;String|Name&gt;</code></dd>
@@ -136,7 +153,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="install">public&nbsp;fn&nbsp;Install</h4>
-<p>インストールする。</p><dl>
+<p>インストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -145,7 +163,8 @@
 <dd><p>静的メソッド。</p></dd>
 </dl>
 <h4 id="uninstall">public&nbsp;fn&nbsp;Uninstall</h4>
-<p>アンインストールする。</p><dl>
+<p>アンインストールする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -379,7 +398,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="escapebackslash">private&nbsp;fn&nbsp;escapeBackslash</h4>
-<p>エスケープシーケンスの<code>\</code>をエスケープする。</p><dl>
+<p>エスケープシーケンスの<code>\</code>をエスケープする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String|StringStream&gt;</code></dd>
@@ -389,7 +409,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="valuetostring">private&nbsp;fn&nbsp;valueToString</h4>
-<p>値を文字列に変換してエスケープシーケンスをエスケープする。</p><dl>
+<p>値を文字列に変換してエスケープシーケンスをエスケープする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -426,10 +447,11 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="equals">public&nbsp;fn&nbsp;Equals</h4>
-<p>指定したオブジェクトが現在のオブジェクトと等しいかどうかを判定する。</p><dl>
+<p>指定したオブジェクトが現在のオブジェクトと等しいかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
-<dd><code>&lt;Struct:TestValueStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="testvalue-testvalue.html">TestValueStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -439,15 +461,20 @@
 <dt>補足</dt>
 <dd><p>比較は型によって異なる方法で行われる。</p>
 <ul>
-<li><p>配列や<code>DataPair</code>等の複合型は再帰的に比較する。</p>
+<li>
+<p>配列や<code>DataPair</code>等の複合型は再帰的に比較する。</p>
 </li>
-<li><p>数値で構成される複合型は各要素の数値を<code>==</code>演算子ではなく<code>close_enough</code>関数を用いて比較する。</p>
+<li>
+<p>数値で構成される複合型は各要素の数値を<code>==</code>演算子ではなく<code>close_enough</code>関数を用いて比較する。</p>
 </li>
-<li><p><code>Equals</code>メソッドを持っているオブジェクトは<code>Equals</code>メソッドを使用して比較する。</p>
+<li>
+<p><code>Equals</code>メソッドを持っているオブジェクトは<code>Equals</code>メソッドを使用して比較する。</p>
 </li>
-<li><p>正規表現オブジェクトは<code>ToString</code>メソッドによるパターン文字列と<code>Options</code>プロパティをそれぞれ比較する。</p>
+<li>
+<p>正規表現オブジェクトは<code>ToString</code>メソッドによるパターン文字列と<code>Options</code>プロパティをそれぞれ比較する。</p>
 </li>
-<li><p>プロパティアクセスによる<code>MAXScriptFunction</code>値の比較は失敗する。<br />
+<li>
+<p>プロパティアクセスによる<code>MAXScriptFunction</code>値の比較は失敗する。<br />
 そのため関数値を比較する場合は一旦変数に格納し、その変数を用いてインスタンスを生成する。</p>
 <dl>
 <dt>アサーション失敗</dt>
@@ -467,7 +494,8 @@ assert (actual.Equals expected == true)
 </dd>
 </dl>
 </li>
-<li><p><code>DotNetMethod</code>の比較は常に<code>false</code>になる。</p>
+<li>
+<p><code>DotNetMethod</code>の比較は常に<code>false</code>になる。</p>
 </li>
 </ul></dd>
 </dl>
@@ -480,7 +508,7 @@ assert (actual.Equals expected == true)
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.MwmCondition.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmCondition.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmconditionstruct">MwmConditionStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#evaluator">evaluator</a></li><li><a href="#properties">properties</a></li><li><a href="#addproperty">AddProperty</a></li><li><a href="#evaluate">Evaluate</a></li><li><a href="#getevaluator">GetEvaluator</a></li><li><a href="#getproperties">GetProperties</a></li><li><a href="#getproperty">GetProperty</a></li><li><a href="#getpropertynames">GetPropertyNames</a></li><li><a href="#hasproperty">HasProperty</a></li><li><a href="#makeparams">MakeParams</a></li><li><a href="#propertyvaluechanged">PropertyValueChanged</a></li><li><a href="#removeproperty">RemoveProperty</a></li><li><a href="#setevaluator">SetEvaluator</a></li><li><a href="#findproperty">findProperty</a></li><li><a href="#findpropertybyname">findPropertyByName</a></li><li><a href="#isvalidfunction">isValidFunction</a></li><li><a href="#isvalidproperty">isValidProperty</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -38,7 +46,8 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="mwmconditionstruct">struct&nbsp;MwmConditionStruct</h3>
-<p>プロパティ値の条件式を定義する構造体。</p><dl>
+<p>プロパティ値の条件式を定義する構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -109,14 +118,15 @@
 <h4 id="properties">private&nbsp;properties</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:MwmPropertyStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>&gt;]&gt;</code></dd>
 <dd><p>条件となるプロパティオブジェクト。既定値は<code>#()</code>。</p></dd>
 </dl>
 <h4 id="addproperty">public&nbsp;fn&nbsp;AddProperty</h4>
-<p>条件となるプロパティオブジェクトを追加する。</p><dl>
+<p>条件となるプロパティオブジェクトを追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>property</code></dd>
-<dd><code>&lt;Struct:MwmPropertyStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>&gt;</code></dd>
 <dd><p>プロパティオブジェクト。</p></dd>
 </dl>
 <dl>
@@ -129,22 +139,26 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="evaluate">public&nbsp;fn&nbsp;Evaluate</h4>
-<p>条件式を評価する。</p><dl>
+<p>条件式を評価する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Any&gt;</code></dd>
 </dl>
 <h4 id="getevaluator">public&nbsp;fn&nbsp;GetEvaluator</h4>
-<p>条件式を定義した関数を取得する。</p><dl>
+<p>条件式を定義した関数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getproperties">public&nbsp;fn&nbsp;GetProperties</h4>
-<p>条件となるプロパティオブジェクトを全て取得する。</p><dl>
+<p>条件となるプロパティオブジェクトを全て取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;Struct:MwmPropertyStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>&gt;]&gt;</code></dd>
 </dl>
 <h4 id="getproperty">public&nbsp;fn&nbsp;GetProperty</h4>
-<p>条件となるプロパティオブジェクトを取得する。</p><dl>
+<p>条件となるプロパティオブジェクトを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>propertyName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -152,22 +166,24 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:MwmPropertyStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getpropertynames">public&nbsp;fn&nbsp;GetPropertyNames</h4>
-<p>条件となるプロパティオブジェクトのプロパティ名を全て取得する。</p><dl>
+<p>条件となるプロパティオブジェクトのプロパティ名を全て取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
 <h4 id="hasproperty">public&nbsp;fn&nbsp;HasProperty</h4>
-<p>条件となるプロパティオブジェクトが登録済みかどうかを判定する。</p><dl>
+<p>条件となるプロパティオブジェクトが登録済みかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>key</code></dd>
-<dd><code>&lt;Struct:MwmPropertyStruct|Name&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>|Name&gt;</code></dd>
 <dd><p>プロパティオブジェクトまたはプロパティ名。</p></dd>
 </dl>
 <dl>
@@ -175,12 +191,14 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="makeparams">public&nbsp;fn&nbsp;MakeParams</h4>
-<p>登録したプロパティオブジェクトからプロパティ名とプロパティ値のペアの配列を作成する。</p><dl>
+<p>登録したプロパティオブジェクトからプロパティ名とプロパティ値のペアの配列を作成する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;DataPair&nbsp;Name:&lt;Name&gt;&nbsp;Value:&lt;Any&gt;&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;DataPair Name:&lt;Name&gt; Value:&lt;Any&gt;&gt;]&gt;</code></dd>
 </dl>
 <h4 id="propertyvaluechanged">public&nbsp;fn&nbsp;PropertyValueChanged</h4>
-<p>登録したプロパティオブジェクトの変更通知を発行する。</p><dl>
+<p>登録したプロパティオブジェクトの変更通知を発行する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>type</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -195,7 +213,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="removeproperty">public&nbsp;fn&nbsp;RemoveProperty</h4>
-<p>条件となるプロパティオブジェクトを除去する。</p><dl>
+<p>条件となるプロパティオブジェクトを除去する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 <dd><p>除去に成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
@@ -205,7 +224,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setevaluator">public&nbsp;fn&nbsp;SetEvaluator</h4>
-<p>条件式を定義した関数を設定する。</p><dl>
+<p>条件式を定義した関数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -225,7 +245,8 @@
 )
 </code></pre>
 <ul>
-<li><p>引数はプロパティ名とプロパティ値のペアの配列を一つ取る。</p>
+<li>
+<p>引数はプロパティ名とプロパティ値のペアの配列を一つ取る。</p>
 <table>
 <thead>
 <tr>
@@ -244,17 +265,19 @@
 </ul></dd>
 </dl>
 <h4 id="findproperty">private&nbsp;fn&nbsp;findProperty</h4>
-<p>プロパティを検索する。</p><dl>
+<p>プロパティを検索する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>property</code></dd>
-<dd><code>&lt;Struct:MwmPropertyStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="mwm-model-mwmproperty.html">MwmPropertyStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="findpropertybyname">private&nbsp;fn&nbsp;findPropertyByName</h4>
-<p>プロパティ名でプロパティを検索する。</p><dl>
+<p>プロパティ名でプロパティを検索する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>propertyName</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -321,13 +344,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

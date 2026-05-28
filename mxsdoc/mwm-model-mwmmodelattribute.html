@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.MwmModelAttribute.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmModelAttribute.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmmodelattributestruct">MwmModelAttributeStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#gettername">getterName</a></li><li><a href="#modelname">modelName</a></li><li><a href="#observablename">observableName</a></li><li><a href="#propertyname">propertyName</a></li><li><a href="#settername">setterName</a></li><li><a href="#getgettername">GetGetterName</a></li><li><a href="#getmodelname">GetModelName</a></li><li><a href="#getobservablename">GetObservableName</a></li><li><a href="#getpropertyname">GetPropertyName</a></li><li><a href="#getsettername">GetSetterName</a></li><li><a href="#setgettername">SetGetterName</a></li><li><a href="#setmodelname">SetModelName</a></li><li><a href="#setobservablename">SetObservableName</a></li><li><a href="#setpropertyname">SetPropertyName</a></li><li><a href="#setsettername">SetSetterName</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -38,7 +46,8 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="mwmmodelattributestruct">struct&nbsp;MwmModelAttributeStruct</h3>
-<p>モデル属性を格納する構造体。</p><dl>
+<p>モデル属性を格納する構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -142,32 +151,38 @@
 <dd><p>モデルのプロパティ値設定メソッド名。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="getgettername">public&nbsp;fn&nbsp;GetGetterName</h4>
-<p>モデルのプロパティ値取得メソッド名を取得する。</p><dl>
+<p>モデルのプロパティ値取得メソッド名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="getmodelname">public&nbsp;fn&nbsp;GetModelName</h4>
-<p>モデル名を取得する。</p><dl>
+<p>モデル名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getobservablename">public&nbsp;fn&nbsp;GetObservableName</h4>
-<p>モデルの通知元オブジェクトのプロパティ名を取得する。</p><dl>
+<p>モデルの通知元オブジェクトのプロパティ名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="getpropertyname">public&nbsp;fn&nbsp;GetPropertyName</h4>
-<p>モデルのプロパティ名を取得する。</p><dl>
+<p>モデルのプロパティ名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="getsettername">public&nbsp;fn&nbsp;GetSetterName</h4>
-<p>モデルのプロパティ値設定メソッド名を取得する。</p><dl>
+<p>モデルのプロパティ値設定メソッド名を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="setgettername">public&nbsp;fn&nbsp;SetGetterName</h4>
-<p>モデルのプロパティ値取得メソッド名を設定する。</p><dl>
+<p>モデルのプロパティ値取得メソッド名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -181,7 +196,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmodelname">public&nbsp;fn&nbsp;SetModelName</h4>
-<p>モデル名を設定する。</p><dl>
+<p>モデル名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
@@ -195,7 +211,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setobservablename">public&nbsp;fn&nbsp;SetObservableName</h4>
-<p>モデルの通知元オブジェクトのプロパティ名を設定する。</p><dl>
+<p>モデルの通知元オブジェクトのプロパティ名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -209,7 +226,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setpropertyname">public&nbsp;fn&nbsp;SetPropertyName</h4>
-<p>モデルのプロパティ名を設定する。</p><dl>
+<p>モデルのプロパティ名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -223,7 +241,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setsettername">public&nbsp;fn&nbsp;SetSetterName</h4>
-<p>モデルのプロパティ値設定メソッド名を設定する。</p><dl>
+<p>モデルのプロパティ値設定メソッド名を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -274,13 +293,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

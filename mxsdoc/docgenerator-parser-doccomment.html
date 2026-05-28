@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.DocComment.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocComment.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#doccommentstruct">DocCommentStruct</a><ul><li><a href="#showerror">ShowError</a></li><li><a href="#parser">parser</a></li><li><a href="#pc">pc</a></li><li><a href="#getparser">GetParser</a></li><li><a href="#parse">Parse</a></li><li><a href="#program">program</a></li><li><a href="#tags">tags</a></li><li><a href="#tag">tag</a></li><li><a href="#paramtag">paramTag</a></li><li><a href="#proptag">propTag</a></li><li><a href="#returnstag">returnsTag</a></li><li><a href="#vartag">varTag</a></li><li><a href="#remarkstag">remarksTag</a></li><li><a href="#paramname">paramName</a></li><li><a href="#classform">classForm</a></li><li><a href="#classdecl">classDecl</a></li><li><a href="#constructordef">constructorDef</a></li><li><a href="#accessordef">accessorDef</a></li><li><a href="#classdef">classDef</a></li><li><a href="#classname">className</a></li><li><a href="#positionalparameter">positionalParameter</a></li><li><a href="#keywordparameter">keywordParameter</a></li><li><a href="#varname">varName</a></li><li><a href="#text">text</a></li><li><a href="#tagtype">tagType</a></li><li><a href="#tagtypeparam">tagTypeParam</a></li><li><a href="#tagtypeprop">tagTypeProp</a></li><li><a href="#tagtyperemarks">tagTypeRemarks</a></li><li><a href="#tagtypereturns">tagTypeReturns</a></li><li><a href="#tagtypevar">tagTypeVar</a></li><li><a href="#tagtypesymbol">tagTypeSymbol</a></li><li><a href="#start">start</a></li><li><a href="#end">end</a></li><li><a href="#identifier">identifier</a></li><li><a href="#quotedname">quotedName</a></li><li><a href="#alphanumeric">alphanumeric</a></li><li><a href="#digit">digit</a></li><li><a href="#letter">letter</a></li><li><a href="#whitespace">whitespace</a></li><li><a href="#space">space</a></li><li><a href="#newline">newLine</a></li><li><a href="#asname">asName</a></li><li><a href="#astnode">astNode</a></li><li><a href="#trimtext">trimText</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
@@ -42,7 +50,8 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="doccommentstruct">struct&nbsp;DocCommentStruct</h3>
-<p>ドキュメントコメントのパーサ。</p><h4 id="showerror">public&nbsp;ShowError</h4>
+<p>ドキュメントコメントのパーサ。</p>
+<h4 id="showerror">public&nbsp;ShowError</h4>
 <dl>
 <dt>プロパティ</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -264,7 +273,8 @@
 <dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>|Struct:<a href="parsercombinator-model-failure.html">FailureStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="astnode">private&nbsp;fn&nbsp;astNode</h4>
-<p>パース結果をAstNode化する。</p><dl>
+<p>パース結果をAstNode化する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>type</code></dd>
 <dd><code>&lt;Name&gt;</code></dd>
@@ -327,7 +337,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

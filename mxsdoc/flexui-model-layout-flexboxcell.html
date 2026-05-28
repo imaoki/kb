@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.FlexBoxCell.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexBoxCell.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexboxcellstruct">FlexBoxCellStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#fixedlength">fixedLength</a></li><li><a href="#item">item</a></li><li><a href="#minimum">minimum</a></li><li><a href="#stretch">stretch</a></li><li><a href="#getfixedlength">GetFixedLength</a></li><li><a href="#getitem">GetItem</a></li><li><a href="#getminimum">GetMinimum</a></li><li><a href="#getstretch">GetStretch</a></li><li><a href="#gettype">GetType</a></li><li><a href="#setfixedlength">SetFixedLength</a></li><li><a href="#setitem">SetItem</a></li><li><a href="#setminimum">SetMinimum</a></li><li><a href="#setstretch">SetStretch</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayout">isValidLayout</a></li><li><a href="#isvalidspace">isValidSpace</a></li><li><a href="#isvalidstretch">isValidStretch</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#typeof">typeOf</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
@@ -38,7 +46,8 @@
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="flexboxcellstruct">struct&nbsp;FlexBoxCellStruct</h3>
-<p>ボックスレイアウトのセル情報を格納する構造体。</p><dl>
+<p>ボックスレイアウトのセル情報を格納する構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -131,27 +140,32 @@
 <dd><p>セルのストレッチ係数。既定値は<code>1</code>。</p></dd>
 </dl>
 <h4 id="getfixedlength">public&nbsp;fn&nbsp;GetFixedLength</h4>
-<p>セルの固定長を取得する。</p><dl>
+<p>セルの固定長を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getitem">public&nbsp;fn&nbsp;GetItem</h4>
-<p>セルのアイテムを取得する。</p><dl>
+<p>セルのアイテムを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Struct|Integer&gt;</code></dd>
 </dl>
 <h4 id="getminimum">public&nbsp;fn&nbsp;GetMinimum</h4>
-<p>セルの最小値を取得する。</p><dl>
+<p>セルの最小値を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="getstretch">public&nbsp;fn&nbsp;GetStretch</h4>
-<p>セルのストレッチ係数を取得する。</p><dl>
+<p>セルのストレッチ係数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="gettype">public&nbsp;fn&nbsp;GetType</h4>
-<p>セルの種類を取得する。</p><dl>
+<p>セルの種類を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
 <dd><table>
@@ -186,7 +200,8 @@
 <dd><p>不明の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="setfixedlength">public&nbsp;fn&nbsp;SetFixedLength</h4>
-<p>セルの固定長を設定する。</p><dl>
+<p>セルの固定長を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Integer|UndefinedClass&gt;</code></dd>
@@ -201,7 +216,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setitem">public&nbsp;fn&nbsp;SetItem</h4>
-<p>セルのアイテムを設定する。</p><dl>
+<p>セルのアイテムを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Struct|Integer&gt;</code></dd>
@@ -215,7 +231,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setminimum">public&nbsp;fn&nbsp;SetMinimum</h4>
-<p>セルの最小値を設定する。</p><dl>
+<p>セルの最小値を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -230,7 +247,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstretch">public&nbsp;fn&nbsp;SetStretch</h4>
-<p>セルのストレッチ係数を設定する。</p><dl>
+<p>セルのストレッチ係数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -245,7 +263,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="ismatchstructname">private&nbsp;fn&nbsp;isMatchStructName</h4>
-<p>構造体名が指定したパターンに一致するかどうかを判定する。</p><dl>
+<p>構造体名が指定したパターンに一致するかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -300,7 +319,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="typeof">private&nbsp;fn&nbsp;typeOf</h4>
-<p>オブジェクトの種類を取得する。</p><dl>
+<p>オブジェクトの種類を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -351,13 +371,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

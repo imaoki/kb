@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.DocRender.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,18 +37,17 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">DocRender.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#docrenderstruct">DocRenderStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#template">template</a></li><li><a href="#toc">toc</a></li><li><a href="#defaulttemplate">defaultTemplate</a></li><li><a href="#markdown">markdown</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#spaceregex">spaceRegex</a></li><li><a href="#uriclass">uriClass</a></li><li><a href="#render">Render</a></li><li><a href="#renderindex">RenderIndex</a></li><li><a href="#adjustindent">adjustIndent</a></li><li><a href="#dependenttohtml">dependentToHtml</a></li><li><a href="#doccommenttohtml">docCommentToHtml</a></li><li><a href="#doctohtml">docToHtml</a></li><li><a href="#generatenowdate">generateNowDate</a></li><li><a href="#isastnode">isAstNode</a></li><li><a href="#isdocoptions">isDocOptions</a></li><li><a href="#isvaliddependent">isValidDependent</a></li><li><a href="#isvalidmarkdown">isValidMarkdown</a></li><li><a href="#readtemplate">readTemplate</a></li><li><a href="#sanitize">sanitize</a></li><li><a href="#writetocbordertag">writeTocBorderTag</a></li><li><a href="#writetocendtag">writeTocEndTag</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="docgenerator-definitionpool.html">docGeneratorDefinitionPool</a></code></li>
-<li><code><a href="markdown-markdown.html">MarkdownStruct</a></code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="docrenderstruct">struct&nbsp;DocRenderStruct</h3>
-<p>ドキュメントの構文木をHTMLコードに変換する。</p><dl>
+<p>ドキュメントの構文木をHTMLコードに変換する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>テンプレートHTML内で使用可能な変数は以下の通り。</p>
 <table>
@@ -82,7 +89,7 @@
 <h4 id="options">public&nbsp;Options</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DocOptionsStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="docgenerator-docoptions.html">DocOptionsStruct</a>&gt;</code></dd>
 <dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
 </dl>
 <h4 id="template">private&nbsp;template</h4>
@@ -111,7 +118,7 @@
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="spaceregex">private&nbsp;spaceRegex</h4>
 <dl>
@@ -125,10 +132,11 @@
 <dd><code>&lt;DotNetClass:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.uri?view=netframework-4.8">System.Uri</a>&gt;</code></dd>
 </dl>
 <h4 id="render">public&nbsp;fn&nbsp;Render</h4>
-<p>構文木からHTMLコードを生成する。</p><dl>
+<p>構文木からHTMLコードを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>astNode</code></dd>
-<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>&gt;</code></dd>
 <dd><p>パース結果の構文木。</p></dd>
 </dl>
 <dl>
@@ -140,7 +148,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>dependent:</code></dd>
-<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair VarName:&lt;Array[&lt;String&gt;]&gt; Path:&lt;Array[&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
 <dd><p><code>DocDependentTableStruct</code>から取得した依存情報。既定値は<code>unsupplied</code>。</p></dd>
 </dl>
 <dl>
@@ -153,7 +161,8 @@
 <dd><p>依存情報を含める場合は<code>dependent</code>を指定する。</p></dd>
 </dl>
 <h4 id="renderindex">public&nbsp;fn&nbsp;RenderIndex</h4>
-<p>インデックスページ用のHTMLコードを生成する。</p><dl>
+<p>インデックスページ用のHTMLコードを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>docContent</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -165,7 +174,8 @@
 <dd><p>HTMLコード。</p></dd>
 </dl>
 <h4 id="adjustindent">private&nbsp;fn&nbsp;adjustIndent</h4>
-<p>テキストのインデントを指定したインデントに置き換える。</p><dl>
+<p>テキストのインデントを指定したインデントに置き換える。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -184,7 +194,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>dependent</code></dd>
-<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;|UnsuppliedClass&gt;</code></dd>
+<dd><code>&lt;DataPair VarName:&lt;Array[&lt;String&gt;]&gt; Path:&lt;Array[&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;]&gt;|UnsuppliedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -194,12 +204,12 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>n</code></dd>
-<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
 <dd><code>dependent</code></dd>
-<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair VarName:&lt;Array[&lt;String&gt;]&gt; Path:&lt;Array[&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
 <dd><p><code>DocDependentTableStruct</code>から取得した依存情報。</p></dd>
 </dl>
 <dl>
@@ -210,7 +220,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>n</code></dd>
-<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -221,7 +231,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>dependent</code></dd>
-<dd><code>&lt;DataPair&nbsp;VarName:&lt;Array[&lt;String&gt;]&gt;&nbsp;Path:&lt;Array[&lt;Array[&lt;DataPair&nbsp;Source:&lt;String&gt;&nbsp;Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
+<dd><code>&lt;DataPair VarName:&lt;Array[&lt;String&gt;]&gt; Path:&lt;Array[&lt;Array[&lt;DataPair Source:&lt;String&gt; Destination:&lt;String&gt;&gt;]&gt;]&gt;&gt;</code></dd>
 <dd><p><code>DocDependentTableStruct</code>から取得した依存情報。</p></dd>
 </dl>
 <dl>
@@ -229,7 +239,8 @@
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
 <h4 id="generatenowdate">private&nbsp;fn&nbsp;generateNowDate</h4>
-<p>現在の日付を取得する。</p><dl>
+<p>現在の日付を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
@@ -274,7 +285,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="readtemplate">private&nbsp;fn&nbsp;readTemplate</h4>
-<p>テンプレートHTMLファイルの内容を読み込んで<code>template</code>に割り当てる。</p><dl>
+<p>テンプレートHTMLファイルの内容を読み込んで<code>template</code>に割り当てる。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;String&gt;</code></dd>
 </dl>
@@ -283,7 +295,8 @@
 <dd><p>ファイルが読み込めなかった場合や内容が空の場合は<code>defaultTemplate</code>の内容を返す。</p></dd>
 </dl>
 <h4 id="sanitize">private&nbsp;fn&nbsp;sanitize</h4>
-<p><code>&amp;</code>、<code>&quot;</code>、<code>&lt;</code>、<code>&gt;</code>、<code> </code>を文字実体参照に置換する。</p><dl>
+<p><code>&amp;</code>、<code>&quot;</code>、<code>&lt;</code>、<code>&gt;</code>、<code> </code>を文字実体参照に置換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -296,7 +309,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>n</code></dd>
-<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -311,7 +324,7 @@
 <dl>
 <dt>パラメータ</dt>
 <dd><code>n</code></dd>
-<dd><code>&lt;Struct:AstNodeStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="parsercombinator-model-astnode.html">AstNodeStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>パラメータ</dt>
@@ -361,7 +374,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Dialog.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,16 +37,17 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Dialog.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#dialogstruct">DialogStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#_cp3_">_CP3_</a></li><li><a href="#_cp4_">_CP4_</a></li><li><a href="#initposition">initPosition</a></li><li><a href="#initsize">initSize</a></li><li><a href="#isdialogdestroyed">isDialogDestroyed</a></li><li><a href="#lockheight">lockHeight</a></li><li><a href="#lockwidth">lockWidth</a></li><li><a href="#menudef">menuDef</a></li><li><a href="#modal">modal</a></li><li><a href="#rolloutdef">rolloutDef</a></li><li><a href="#styleborder">styleBorder</a></li><li><a href="#stylemaximizebox">styleMaximizeBox</a></li><li><a href="#styleminimizebox">styleMinimizeBox</a></li><li><a href="#styleresizing">styleResizing</a></li><li><a href="#stylesunkenedge">styleSunkenedge</a></li><li><a href="#stylesysmenu">styleSysmenu</a></li><li><a href="#styletitlebar">styleTitleBar</a></li><li><a href="#styletoolwindow">styleToolWindow</a></li><li><a href="#create">Create</a></li><li><a href="#destroy">Destroy</a></li><li><a href="#disableisdialogdestroyed">DisableIsDialogDestroyed</a></li><li><a href="#getinitposition">GetInitPosition</a></li><li><a href="#getinitsize">GetInitSize</a></li><li><a href="#getlockheight">GetLockHeight</a></li><li><a href="#getlockwidth">GetLockWidth</a></li><li><a href="#getmenudef">GetMenuDef</a></li><li><a href="#getmodal">GetModal</a></li><li><a href="#getposition">GetPosition</a></li><li><a href="#getrolloutdef">GetRolloutDef</a></li><li><a href="#getrolloutname">GetRolloutName</a></li><li><a href="#getsize">GetSize</a></li><li><a href="#getstyleborder">GetStyleBorder</a></li><li><a href="#getstylemaximizebox">GetStyleMaximizeBox</a></li><li><a href="#getstyleminimizebox">GetStyleMinimizeBox</a></li><li><a href="#getstyleresizing">GetStyleResizing</a></li><li><a href="#getstylesunkenedge">GetStyleSunkenedge</a></li><li><a href="#getstylesysmenu">GetStyleSysmenu</a></li><li><a href="#getstyletitlebar">GetStyleTitleBar</a></li><li><a href="#getstyletoolwindow">GetStyleToolWindow</a></li><li><a href="#isdisplayed">IsDisplayed</a></li><li><a href="#load">Load</a></li><li><a href="#raisedialogdestroyed">RaiseDialogDestroyed</a></li><li><a href="#save">Save</a></li><li><a href="#setinitposition">SetInitPosition</a></li><li><a href="#setinitsize">SetInitSize</a></li><li><a href="#setlockheight">SetLockHeight</a></li><li><a href="#setlockwidth">SetLockWidth</a></li><li><a href="#setmenudef">SetMenuDef</a></li><li><a href="#setmodal">SetModal</a></li><li><a href="#setposition">SetPosition</a></li><li><a href="#setrolloutdef">SetRolloutDef</a></li><li><a href="#setsize">SetSize</a></li><li><a href="#setstyleborder">SetStyleBorder</a></li><li><a href="#setstylemaximizebox">SetStyleMaximizeBox</a></li><li><a href="#setstyleminimizebox">SetStyleMinimizeBox</a></li><li><a href="#setstyleresizing">SetStyleResizing</a></li><li><a href="#setstylesunkenedge">SetStyleSunkenedge</a></li><li><a href="#setstylesysmenu">SetStyleSysmenu</a></li><li><a href="#setstyletitlebar">SetStyleTitleBar</a></li><li><a href="#setstyletoolwindow">SetStyleToolWindow</a></li><li><a href="#generateconfigkey">generateConfigKey</a></li><li><a href="#generatestyle">generateStyle</a></li><li><a href="#indialog">inDialog</a></li><li><a href="#isvalidconfig">isValidConfig</a></li><li><a href="#isvalidmenudef">isValidMenuDef</a></li><li><a href="#isvalidrolloutdef">isValidRolloutDef</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
+<li><code>standardDefinitionPool</code></li>
 </ul></dd></dl>
 <h3 id="dialogstruct">struct&nbsp;DialogStruct</h3>
-<p>ダイアログの作成と破棄に伴う処理をカプセル化するための構造体。</p><dl>
+<p>ダイアログの作成と破棄に伴う処理をカプセル化するための構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -348,7 +357,8 @@
 <dd><p>ツールウィンドウにするかどうか。既定値は<code>true</code>。</p></dd>
 </dl>
 <h4 id="create">public&nbsp;fn&nbsp;Create</h4>
-<p>ダイアログを作成する。</p><dl>
+<p>ダイアログを作成する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 <dd><p>正常に作成できた場合は<code>true</code>、作成できなかった場合は<code>false</code>。</p></dd>
@@ -358,48 +368,57 @@
 <dd><p><code>isDialogDestroyed</code>は必ず<code>false</code>になる。</p></dd>
 </dl>
 <h4 id="destroy">public&nbsp;fn&nbsp;Destroy</h4>
-<p>ダイアログを破棄する。</p><dl>
+<p>ダイアログを破棄する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 <dd><p>正常に破棄できた場合は<code>true</code>、破棄できなかった場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="disableisdialogdestroyed">public&nbsp;fn&nbsp;DisableIsDialogDestroyed</h4>
-<p><code>isDialogDestroyed</code>を<code>false</code>にする。</p><dl>
+<p><code>isDialogDestroyed</code>を<code>false</code>にする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="getinitposition">public&nbsp;fn&nbsp;GetInitPosition</h4>
-<p>ダイアログの初期位置を取得する。</p><dl>
+<p>ダイアログの初期位置を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getinitsize">public&nbsp;fn&nbsp;GetInitSize</h4>
-<p>ダイアログの初期サイズを取得する。</p><dl>
+<p>ダイアログの初期サイズを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Point2&gt;</code></dd>
 </dl>
 <h4 id="getlockheight">public&nbsp;fn&nbsp;GetLockHeight</h4>
-<p>高さを固定するかどうかを取得する。</p><dl>
+<p>高さを固定するかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getlockwidth">public&nbsp;fn&nbsp;GetLockWidth</h4>
-<p>幅を固定するかどうかを取得する。</p><dl>
+<p>幅を固定するかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getmenudef">public&nbsp;fn&nbsp;GetMenuDef</h4>
-<p>タイトルバーに表示されるメニュー定義を取得する。</p><dl>
+<p>タイトルバーに表示されるメニュー定義を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="getmodal">public&nbsp;fn&nbsp;GetModal</h4>
-<p>モーダルダイアログにするかどうかを取得する。</p><dl>
+<p>モーダルダイアログにするかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getposition">public&nbsp;fn&nbsp;GetPosition</h4>
-<p>ダイアログの現在の位置を取得する。</p><dl>
+<p>ダイアログの現在の位置を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
 </dl>
@@ -408,12 +427,14 @@
 <dd><p>取得できない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getrolloutdef">public&nbsp;fn&nbsp;GetRolloutDef</h4>
-<p>ロールアウト定義を取得する。</p><dl>
+<p>ロールアウト定義を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;RolloutClass&gt;</code></dd>
 </dl>
 <h4 id="getrolloutname">public&nbsp;fn&nbsp;GetRolloutName</h4>
-<p>ロールアウト定義の名前を取得する。</p><dl>
+<p>ロールアウト定義の名前を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name|UndefinedClass&gt;</code></dd>
 </dl>
@@ -422,7 +443,8 @@
 <dd><p>取得できない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getsize">public&nbsp;fn&nbsp;GetSize</h4>
-<p>ダイアログの現在のサイズを取得する。</p><dl>
+<p>ダイアログの現在のサイズを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
 </dl>
@@ -431,55 +453,65 @@
 <dd><p>取得できない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getstyleborder">public&nbsp;fn&nbsp;GetStyleBorder</h4>
-<p>二重境界線を持つかどうかを取得する。</p><dl>
+<p>二重境界線を持つかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstylemaximizebox">public&nbsp;fn&nbsp;GetStyleMaximizeBox</h4>
-<p>最大化ボタンを持つかどうかを取得する。</p><dl>
+<p>最大化ボタンを持つかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstyleminimizebox">public&nbsp;fn&nbsp;GetStyleMinimizeBox</h4>
-<p>最小化ボタンを持つかどうかを取得する。</p><dl>
+<p>最小化ボタンを持つかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstyleresizing">public&nbsp;fn&nbsp;GetStyleResizing</h4>
-<p>サイズ変更可能かどうかを取得する。</p><dl>
+<p>サイズ変更可能かどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstylesunkenedge">public&nbsp;fn&nbsp;GetStyleSunkenedge</h4>
-<p>境界線の内側をくぼませるかどうかを取得する。</p><dl>
+<p>境界線の内側をくぼませるかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstylesysmenu">public&nbsp;fn&nbsp;GetStyleSysmenu</h4>
-<p>タイトルバーに各種ボタンが表示されるかどうかを取得する。</p><dl>
+<p>タイトルバーに各種ボタンが表示されるかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstyletitlebar">public&nbsp;fn&nbsp;GetStyleTitleBar</h4>
-<p>タイトルバーを持つかどうかを取得する。</p><dl>
+<p>タイトルバーを持つかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getstyletoolwindow">public&nbsp;fn&nbsp;GetStyleToolWindow</h4>
-<p>ツールウィンドウにするかどうかを取得する。</p><dl>
+<p>ツールウィンドウにするかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="isdisplayed">public&nbsp;fn&nbsp;IsDisplayed</h4>
-<p>ダイアログが表示されているかどうかを取得する。</p><dl>
+<p>ダイアログが表示されているかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="load">public&nbsp;fn&nbsp;Load</h4>
-<p>コンフィグから値を読み込む。</p><dl>
+<p>コンフィグから値を読み込む。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>config</code></dd>
-<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-config.html">ConfigStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -487,7 +519,8 @@
 <dd><p>読み込みに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="raisedialogdestroyed">public&nbsp;fn&nbsp;RaiseDialogDestroyed</h4>
-<p><code>Destroy</code>メソッド以外の方法でダイアログを閉じる場合に<code>#DialogDestroyed</code>の通知を発行する。</p><dl>
+<p><code>Destroy</code>メソッド以外の方法でダイアログを閉じる場合に<code>#DialogDestroyed</code>の通知を発行する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -496,10 +529,11 @@
 <dd><p><code>Close</code>イベント等、実際にダイアログが閉じていなくても閉じたことにしてその旨を通知したい場所で呼び出す。</p></dd>
 </dl>
 <h4 id="save">public&nbsp;fn&nbsp;Save</h4>
-<p>コンフィグに値を書き込む。</p><dl>
+<p>コンフィグに値を書き込む。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>config</code></dd>
-<dd><code>&lt;Struct:ConfigStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-config.html">ConfigStruct</a>&gt;</code></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
@@ -507,7 +541,8 @@
 <dd><p>書き出しに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
 </dl>
 <h4 id="setinitposition">public&nbsp;fn&nbsp;SetInitPosition</h4>
-<p>ダイアログの初期位置を設定する。</p><dl>
+<p>ダイアログの初期位置を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Point2|UndefinedClass&gt;</code></dd>
@@ -521,7 +556,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setinitsize">public&nbsp;fn&nbsp;SetInitSize</h4>
-<p>ダイアログの初期サイズを設定する。</p><dl>
+<p>ダイアログの初期サイズを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Point2&gt;</code></dd>
@@ -535,7 +571,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setlockheight">public&nbsp;fn&nbsp;SetLockHeight</h4>
-<p>高さを固定するかどうかを設定する。</p><dl>
+<p>高さを固定するかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -549,7 +586,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setlockwidth">public&nbsp;fn&nbsp;SetLockWidth</h4>
-<p>幅を固定するかどうかを設定する。</p><dl>
+<p>幅を固定するかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -563,7 +601,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmenudef">public&nbsp;fn&nbsp;SetMenuDef</h4>
-<p>タイトルバーに表示されるメニュー定義を設定する。</p><dl>
+<p>タイトルバーに表示されるメニュー定義を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>def</code></dd>
 <dd><code>&lt;RCMenu|UndefinedClass&gt;</code></dd>
@@ -577,7 +616,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setmodal">public&nbsp;fn&nbsp;SetModal</h4>
-<p>モーダルダイアログにするかどうかを設定する。</p><dl>
+<p>モーダルダイアログにするかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -591,7 +631,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setposition">public&nbsp;fn&nbsp;SetPosition</h4>
-<p>ダイアログの現在の位置を設定する。</p><dl>
+<p>ダイアログの現在の位置を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Point2&gt;</code></dd>
@@ -606,7 +647,8 @@
 無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setrolloutdef">public&nbsp;fn&nbsp;SetRolloutDef</h4>
-<p>ロールアウト定義を設定する。</p><dl>
+<p>ロールアウト定義を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>def</code></dd>
 <dd><code>&lt;RolloutClass&gt;</code></dd>
@@ -620,7 +662,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setsize">public&nbsp;fn&nbsp;SetSize</h4>
-<p>ダイアログの現在のサイズを設定する。</p><dl>
+<p>ダイアログの現在のサイズを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Point2&gt;</code></dd>
@@ -635,7 +678,8 @@
 無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyleborder">public&nbsp;fn&nbsp;SetStyleBorder</h4>
-<p>二重境界線を持つかどうかを設定する。</p><dl>
+<p>二重境界線を持つかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -649,7 +693,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstylemaximizebox">public&nbsp;fn&nbsp;SetStyleMaximizeBox</h4>
-<p>最大化ボタンを持つかどうかを設定する。</p><dl>
+<p>最大化ボタンを持つかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -663,7 +708,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyleminimizebox">public&nbsp;fn&nbsp;SetStyleMinimizeBox</h4>
-<p>最小化ボタンを持つかどうかを設定する。</p><dl>
+<p>最小化ボタンを持つかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -677,7 +723,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyleresizing">public&nbsp;fn&nbsp;SetStyleResizing</h4>
-<p>サイズ変更可能かどうかを設定する。</p><dl>
+<p>サイズ変更可能かどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -691,7 +738,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstylesunkenedge">public&nbsp;fn&nbsp;SetStyleSunkenedge</h4>
-<p>境界線の内側をくぼませるかどうかを設定する。</p><dl>
+<p>境界線の内側をくぼませるかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -705,7 +753,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstylesysmenu">public&nbsp;fn&nbsp;SetStyleSysmenu</h4>
-<p>タイトルバーに各種ボタンが表示されるかどうかを設定する。</p><dl>
+<p>タイトルバーに各種ボタンが表示されるかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -719,7 +768,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyletitlebar">public&nbsp;fn&nbsp;SetStyleTitleBar</h4>
-<p>タイトルバーを持つかどうかを設定する。</p><dl>
+<p>タイトルバーを持つかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -733,7 +783,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setstyletoolwindow">public&nbsp;fn&nbsp;SetStyleToolWindow</h4>
-<p>ツールウィンドウにするかどうかを設定する。</p><dl>
+<p>ツールウィンドウにするかどうかを設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -747,12 +798,14 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="generateconfigkey">private&nbsp;fn&nbsp;generateConfigKey</h4>
-<p>コンフィグ用のキーを生成する。</p><dl>
+<p>コンフィグ用のキーを生成する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Name&gt;</code></dd>
 </dl>
 <h4 id="generatestyle">private&nbsp;fn&nbsp;generateStyle</h4>
-<p>プロパティの状態に基づいてスタイルフラグの配列を生成する。</p><dl>
+<p>プロパティの状態に基づいてスタイルフラグの配列を生成する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Array[&lt;Name&gt;]&gt;</code></dd>
 </dl>
@@ -834,13 +887,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

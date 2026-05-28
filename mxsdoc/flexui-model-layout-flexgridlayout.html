@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.FlexGridLayout.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FlexGridLayout.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#flexgridlayoutstruct">FlexGridLayoutStruct</a><ul><li><a href="#options">Options</a></li><li><a href="#cells">cells</a></li><li><a href="#columncells">columnCells</a></li><li><a href="#rowcells">rowCells</a></li><li><a href="#boxcelldef">boxCellDef</a></li><li><a href="#gridcelldef">gridCellDef</a></li><li><a href="#addlayout">AddLayout</a></li><li><a href="#addwidget">AddWidget</a></li><li><a href="#getcells">GetCells</a></li><li><a href="#getcolumncells">GetColumnCells</a></li><li><a href="#getrowcells">GetRowCells</a></li><li><a href="#getvisibility">GetVisibility</a></li><li><a href="#setcolumnfixedlength">SetColumnFixedLength</a></li><li><a href="#setcolumnminimumwidth">SetColumnMinimumWidth</a></li><li><a href="#setcolumnstretch">SetColumnStretch</a></li><li><a href="#setrect">SetRect</a></li><li><a href="#setrowfixedlength">SetRowFixedLength</a></li><li><a href="#setrowminimumheight">SetRowMinimumHeight</a></li><li><a href="#setrowstretch">SetRowStretch</a></li><li><a href="#setvisibility">SetVisibility</a></li><li><a href="#addgrid">addGrid</a></li><li><a href="#findwidget">findWidget</a></li><li><a href="#generatecolumnrects">generateColumnRects</a></li><li><a href="#generaterowrects">generateRowRects</a></li><li><a href="#ismatchstructname">isMatchStructName</a></li><li><a href="#isvalidlayoutoptions">isValidLayoutOptions</a></li><li><a href="#isvalidstretchcell">isValidStretchCell</a></li><li><a href="#isvalidwidget">isValidWidget</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code><a href="flexui-definitionpool.html">flexUIDefinitionPool</a></code></li>
+<li><code>flexUIDefinitionPool</code></li>
 <li><code><a href="standard-standard.html">std</a></code></li>
 </ul></dd></dl>
 <h3 id="flexgridlayoutstruct">struct&nbsp;FlexGridLayoutStruct</h3>
-<p>グリッドにアイテムを配置する。</p><dl>
+<p>グリッドにアイテムを配置する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>矩形の指定に<code>Box2</code>値を使用する都合上、各セルの幅と高さの最小値は<code>1</code>となる。</p>
 <dl>
@@ -112,39 +121,40 @@
 <h4 id="options">public&nbsp;Options</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:FlexLayoutOptionsStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexlayoutoptions.html">FlexLayoutOptionsStruct</a>&gt;</code></dd>
 <dd><p>既定値は<code>undefined</code>。未指定の場合は既定値で作成される。</p></dd>
 </dl>
 <h4 id="cells">private&nbsp;cells</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexGridCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexgridcell.html">FlexGridCellStruct</a>&gt;]&gt;</code></dd>
 <dd><p>セルのアイテム。既定値は<code>#()</code>。</p></dd>
 </dl>
 <h4 id="columncells">private&nbsp;columnCells</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;]&gt;</code></dd>
 <dd><p>列を構成するセル。既定値は<code>#()</code>。</p></dd>
 </dl>
 <h4 id="rowcells">private&nbsp;rowCells</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;]&gt;</code></dd>
 <dd><p>行を構成するセル。既定値は<code>#()</code>。</p></dd>
 </dl>
 <h4 id="boxcelldef">private&nbsp;boxCellDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:FlexBoxCellStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="gridcelldef">private&nbsp;gridCellDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:FlexGridCellStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="flexui-model-layout-flexgridcell.html">FlexGridCellStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="addlayout">public&nbsp;fn&nbsp;AddLayout</h4>
-<p>レイアウトを追加する。</p><dl>
+<p>レイアウトを追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>layout</code></dd>
 <dd><code>&lt;Struct&gt;</code></dd>
@@ -175,14 +185,15 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexGridCellStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexgridcell.html">FlexGridCellStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="addwidget">public&nbsp;fn&nbsp;AddWidget</h4>
-<p>ウィジェットを追加する。</p><dl>
+<p>ウィジェットを追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>widget</code></dd>
 <dd><code>&lt;Struct&gt;</code></dd>
@@ -213,29 +224,33 @@
 </dl>
 <dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Struct:FlexGridCellStruct|UndefinedClass&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="flexui-model-layout-flexgridcell.html">FlexGridCellStruct</a>|UndefinedClass&gt;</code></dd>
 </dl>
 <dl>
 <dt>補足</dt>
 <dd><p>無効な値の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="getcells">public&nbsp;fn&nbsp;GetCells</h4>
-<p>セルのアイテムを取得する。</p><dl>
+<p>セルのアイテムを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexGridCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexgridcell.html">FlexGridCellStruct</a>&gt;]&gt;</code></dd>
 </dl>
 <h4 id="getcolumncells">public&nbsp;fn&nbsp;GetColumnCells</h4>
-<p>列を構成するセルを取得する。</p><dl>
+<p>列を構成するセルを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;]&gt;</code></dd>
 </dl>
 <h4 id="getrowcells">public&nbsp;fn&nbsp;GetRowCells</h4>
-<p>行を構成するセルを取得する。</p><dl>
+<p>行を構成するセルを取得する。</p>
+<dl>
 <dt>戻り値</dt>
-<dd><code>&lt;Array[&lt;Struct:FlexBoxCellStruct&gt;]&gt;</code></dd>
+<dd><code>&lt;Array[&lt;Struct:<a href="flexui-model-layout-flexboxcell.html">FlexBoxCellStruct</a>&gt;]&gt;</code></dd>
 </dl>
 <h4 id="getvisibility">public&nbsp;fn&nbsp;GetVisibility</h4>
-<p>セルのアイテムの可視性を取得する。</p><dl>
+<p>セルのアイテムの可視性を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass|UndefinedClass&gt;</code></dd>
 </dl>
@@ -244,7 +259,8 @@
 <dd><p>値を取得できない場合や真偽混合の場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="setcolumnfixedlength">public&nbsp;fn&nbsp;SetColumnFixedLength</h4>
-<p>列の固定幅を設定する。</p><dl>
+<p>列の固定幅を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>column</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -265,7 +281,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setcolumnminimumwidth">public&nbsp;fn&nbsp;SetColumnMinimumWidth</h4>
-<p>列の最小幅を設定する。</p><dl>
+<p>列の最小幅を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>column</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -286,7 +303,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setcolumnstretch">public&nbsp;fn&nbsp;SetColumnStretch</h4>
-<p>列のストレッチ係数を設定する。</p><dl>
+<p>列のストレッチ係数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>column</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -307,7 +325,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setrect">public&nbsp;fn&nbsp;SetRect</h4>
-<p>レイアウトの矩形を設定する。</p><dl>
+<p>レイアウトの矩形を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>rect</code></dd>
 <dd><code>&lt;Box2&gt;</code></dd>
@@ -317,7 +336,8 @@
 <dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
 </dl>
 <h4 id="setrowfixedlength">public&nbsp;fn&nbsp;SetRowFixedLength</h4>
-<p>行の固定高を設定する。</p><dl>
+<p>行の固定高を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>row</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -338,7 +358,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setrowminimumheight">public&nbsp;fn&nbsp;SetRowMinimumHeight</h4>
-<p>行の最小高を設定する。</p><dl>
+<p>行の最小高を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>row</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -359,7 +380,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setrowstretch">public&nbsp;fn&nbsp;SetRowStretch</h4>
-<p>行のストレッチ係数を設定する。</p><dl>
+<p>行のストレッチ係数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>row</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -380,7 +402,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="setvisibility">public&nbsp;fn&nbsp;SetVisibility</h4>
-<p>セルのアイテムの可視性を設定する。</p><dl>
+<p>セルのアイテムの可視性を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -394,7 +417,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="addgrid">private&nbsp;fn&nbsp;addGrid</h4>
-<p>グリッドを構成するセルを追加する。</p><dl>
+<p>グリッドを構成するセルを追加する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>row</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -434,7 +458,8 @@
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="generatecolumnrects">private&nbsp;fn&nbsp;generateColumnRects</h4>
-<p>列の矩形を生成する。</p><dl>
+<p>列の矩形を生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>rect</code></dd>
 <dd><code>&lt;Box2&gt;</code></dd>
@@ -444,7 +469,8 @@
 <dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
 </dl>
 <h4 id="generaterowrects">private&nbsp;fn&nbsp;generateRowRects</h4>
-<p>行の矩形を生成する。</p><dl>
+<p>行の矩形を生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>rect</code></dd>
 <dd><code>&lt;Box2&gt;</code></dd>
@@ -454,7 +480,8 @@
 <dd><code>&lt;Array[&lt;Box2&gt;]&gt;</code></dd>
 </dl>
 <h4 id="ismatchstructname">private&nbsp;fn&nbsp;isMatchStructName</h4>
-<p>構造体名が指定したパターンに一致するかどうかを判定する。</p><dl>
+<p>構造体名が指定したパターンに一致するかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>obj</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -536,13 +563,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

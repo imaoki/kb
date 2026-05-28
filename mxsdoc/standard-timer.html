@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.Timer.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,17 +37,18 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">Timer.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mxsdotnettimertickhandler">mxsDotNetTimerTickHandler</a></li><li><a href="#timerstruct">TimerStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#ticks">ticks</a></li><li><a href="#timer">timer</a></li><li><a href="#getinterval">GetInterval</a></li><li><a href="#getticks">GetTicks</a></li><li><a href="#gettimer">GetTimer</a></li><li><a href="#isenabled">IsEnabled</a></li><li><a href="#reset">Reset</a></li><li><a href="#restart">Restart</a></li><li><a href="#setinterval">SetInterval</a></li><li><a href="#start">Start</a></li><li><a href="#stop">Stop</a></li><li><a href="#updateticks">UpdateTicks</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li><li><a href="#statechanged">StateChanged</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
 <li><code><a href="standard-timer.html">mxsDotNetTimerTickHandler</a></code></li>
-<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
+<li><code>standardDefinitionPool</code></li>
 </ul></dd></dl>
 <h3 id="mxsdotnettimertickhandler">global&nbsp;mxsDotNetTimerTickHandler</h3>
-<p>.NETの<code>Timer</code>オブジェクトの<code>Tick</code>イベントのイベントハンドラ。</p><dl>
+<p>.NETの<code>Timer</code>オブジェクトの<code>Tick</code>イベントのイベントハンドラ。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>sender</code></dd>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">System.Windows.Forms.Timer</a>&gt;</code></dd>
@@ -56,7 +65,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h3 id="timerstruct">struct&nbsp;TimerStruct</h3>
-<p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">Timer</a>のラッパー。</p><dl>
+<p>.NETの<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">Timer</a>のラッパー。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -99,7 +109,7 @@
 <h4 id="dotnetutility">private&nbsp;dotNetUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DotNetUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-dotnetutility.html">DotNetUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="ticks">private&nbsp;ticks</h4>
 <dl>
@@ -113,27 +123,32 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">System.Windows.Forms.Timer</a>&gt;</code></dd>
 </dl>
 <h4 id="getinterval">public&nbsp;fn&nbsp;GetInterval</h4>
-<p><code>Tick</code>イベントの発生間隔（ミリ秒）を取得する。</p><dl>
+<p><code>Tick</code>イベントの発生間隔（ミリ秒）を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="getticks">public&nbsp;fn&nbsp;GetTicks</h4>
-<p><code>Tick</code>イベントが発生回数を取得する。</p><dl>
+<p><code>Tick</code>イベントが発生回数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 </dl>
 <h4 id="gettimer">public&nbsp;fn&nbsp;GetTimer</h4>
-<p><code>Timer</code>オブジェクトを取得する。</p><dl>
+<p><code>Timer</code>オブジェクトを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.windows.forms.timer?view=netframework-4.8">System.Windows.Forms.Timer</a>&gt;</code></dd>
 </dl>
 <h4 id="isenabled">public&nbsp;fn&nbsp;IsEnabled</h4>
-<p>タイマーが実行されているかどうかを取得する。</p><dl>
+<p>タイマーが実行されているかどうかを取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="reset">public&nbsp;fn&nbsp;Reset</h4>
-<p>タイマーを停止して<code>ticks</code>を<code>0</code>にリセットする。</p><dl>
+<p>タイマーを停止して<code>ticks</code>を<code>0</code>にリセットする。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
@@ -142,12 +157,14 @@
 <dd><p><code>ticks</code>は変更するが通知は発行しない。</p></dd>
 </dl>
 <h4 id="restart">public&nbsp;fn&nbsp;Restart</h4>
-<p>タイマーを停止して<code>ticks</code>を<code>0</code>にリセットし、再度タイマーを起動する。</p><dl>
+<p>タイマーを停止して<code>ticks</code>を<code>0</code>にリセットし、再度タイマーを起動する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="setinterval">public&nbsp;fn&nbsp;SetInterval</h4>
-<p><code>Tick</code>イベントの発生間隔（ミリ秒）を設定する。</p><dl>
+<p><code>Tick</code>イベントの発生間隔（ミリ秒）を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Integer&gt;</code></dd>
@@ -159,17 +176,20 @@
 <dd><p>新たに設定された値。</p></dd>
 </dl>
 <h4 id="start">public&nbsp;fn&nbsp;Start</h4>
-<p>タイマーを起動する。</p><dl>
+<p>タイマーを起動する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="stop">public&nbsp;fn&nbsp;Stop</h4>
-<p>タイマーを停止する。</p><dl>
+<p>タイマーを停止する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="updateticks">public&nbsp;fn&nbsp;UpdateTicks</h4>
-<p><code>Tick</code>イベントが発生した時に呼ばれ、<code>ticks</code>を更新する。</p><dl>
+<p><code>Tick</code>イベントが発生した時に呼ばれ、<code>ticks</code>を更新する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;Integer&gt;</code></dd>
 <dd><p>新たに設定された<code>ticks</code>の値。</p></dd>
@@ -212,13 +232,13 @@
 <h4 id="statechanged">public&nbsp;StateChanged</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ObservableStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-observable.html">ObservableStruct</a>&gt;</code></dd>
 </dl>
 </main>
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.MwmConverter.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,13 +37,14 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">MwmConverter.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#mwmconverterstruct">MwmConverterStruct</a><ul><li><a href="#_cp1_">_CP1_</a></li><li><a href="#_cp2_">_CP2_</a></li><li><a href="#tosourcefunction">toSourceFunction</a></li><li><a href="#totargetfunction">toTargetFunction</a></li><li><a href="#gettosourcefunction">GetToSourceFunction</a></li><li><a href="#gettotargetfunction">GetToTargetFunction</a></li><li><a href="#settosourcefunction">SetToSourceFunction</a></li><li><a href="#settotargetfunction">SetToTargetFunction</a></li><li><a href="#tosource">ToSource</a></li><li><a href="#totarget">ToTarget</a></li><li><a href="#isvalidfunction">isValidFunction</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <h3 id="mwmconverterstruct">struct&nbsp;MwmConverterStruct</h3>
-<p>値の変換機能を提供する構造体。</p><dl>
+<p>値の変換機能を提供する構造体。</p>
+<dl>
 <dt>補足</dt>
 <dd><dl>
 <dt>作成パラメータ</dt>
@@ -70,17 +79,20 @@
 <dd><p>値をターゲット用に変換する関数。既定値は<code>undefined</code>。</p></dd>
 </dl>
 <h4 id="gettosourcefunction">public&nbsp;fn&nbsp;GetToSourceFunction</h4>
-<p>値をソース用に変換する関数を取得する。</p><dl>
+<p>値をソース用に変換する関数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="gettotargetfunction">public&nbsp;fn&nbsp;GetToTargetFunction</h4>
-<p>値をターゲット用に変換する関数を取得する。</p><dl>
+<p>値をターゲット用に変換する関数を取得する。</p>
+<dl>
 <dt>戻り値</dt>
 <dd><code>&lt;MAXScriptFunction|UndefinedClass&gt;</code></dd>
 </dl>
 <h4 id="settosourcefunction">public&nbsp;fn&nbsp;SetToSourceFunction</h4>
-<p>値をソース用に変換する関数を設定する。</p><dl>
+<p>値をソース用に変換する関数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -94,7 +106,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="settotargetfunction">public&nbsp;fn&nbsp;SetToTargetFunction</h4>
-<p>値をターゲット用に変換する関数を設定する。</p><dl>
+<p>値をターゲット用に変換する関数を設定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;MAXScriptFunction&gt;</code></dd>
@@ -108,7 +121,8 @@
 <dd><p>無効な値の場合は何もしない。</p></dd>
 </dl>
 <h4 id="tosource">public&nbsp;fn&nbsp;ToSource</h4>
-<p>値をソース用に変換する。</p><dl>
+<p>値をソース用に変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -122,7 +136,8 @@
 <dd><p>変換用の関数が未指定の場合は何もせず値をそのまま返す。</p></dd>
 </dl>
 <h4 id="totarget">public&nbsp;fn&nbsp;ToTarget</h4>
-<p>値をターゲット用に変換する。</p><dl>
+<p>値をターゲット用に変換する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>input</code></dd>
 <dd><code>&lt;Any&gt;</code></dd>
@@ -184,7 +199,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>

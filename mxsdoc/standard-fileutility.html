@@ -3,19 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
 <link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/normalize.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/theme.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/syntax.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/photoswipe.css">
-<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
 <title>mxsdoc.FileUtility.ms</title>
-<script src="https://imaoki.github.io/kb/assets/js/smooth-scroll.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-ui-default.min.js"></script>
-<script src="https://imaoki.github.io/kb/assets/js/photoswipe-simplify.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
 <script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
 </head>
@@ -29,25 +37,25 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">FileUtility.ms</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2022-06-07</time></li>
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#fileutilitystruct">FileUtilityStruct</a><ul><li><a href="#comparer">comparer</a></li><li><a href="#directoryclass">directoryClass</a></li><li><a href="#directoryinfoclass">directoryInfoClass</a></li><li><a href="#dotnetutility">dotNetUtility</a></li><li><a href="#encodingdef">encodingDef</a></li><li><a href="#enumdef">enumDef</a></li><li><a href="#fileattributesenum">fileAttributesEnum</a></li><li><a href="#fileclass">fileClass</a></li><li><a href="#pathutility">pathUtility</a></li><li><a href="#pathutilitydef">pathUtilityDef</a></li><li><a href="#searchoptionenum">searchOptionEnum</a></li><li><a href="#copydirectory">CopyDirectory</a></li><li><a href="#copyfile">CopyFile</a></li><li><a href="#createdirectory">CreateDirectory</a></li><li><a href="#createtextfile">CreateTextFile</a></li><li><a href="#deletedirectory">DeleteDirectory</a></li><li><a href="#deletefile">DeleteFile</a></li><li><a href="#directoryexists">DirectoryExists</a></li><li><a href="#evaluatefile">EvaluateFile</a></li><li><a href="#fileexists">FileExists</a></li><li><a href="#getcreationtime">GetCreationTime</a></li><li><a href="#getdirectories">GetDirectories</a></li><li><a href="#getfiles">GetFiles</a></li><li><a href="#getlastaccesstime">GetLastAccessTime</a></li><li><a href="#getlastwritetime">GetLastWriteTime</a></li><li><a href="#getmaxversion">GetMaxVersion</a></li><li><a href="#ishidden">IsHidden</a></li><li><a href="#ismaxfile">IsMaxFile</a></li><li><a href="#isreadonly">IsReadOnly</a></li><li><a href="#isscriptfile">IsScriptFile</a></li><li><a href="#movedirectory">MoveDirectory</a></li><li><a href="#opentextfile">OpenTextFile</a></li><li><a href="#readalllines">ReadAllLines</a></li><li><a href="#readalltext">ReadAllText</a></li><li><a href="#renamedirectory">RenameDirectory</a></li><li><a href="#renamefile">RenameFile</a></li><li><a href="#writealllines">WriteAllLines</a></li><li><a href="#writealltext">WriteAllText</a></li><li><a href="#copydirectoryrecursive">copyDirectoryRecursive</a></li><li><a href="#createdirectoryinfo">createDirectoryInfo</a></li><li><a href="#createencoding">createEncoding</a></li><li><a href="#createsearchoption">createSearchOption</a></li><li><a href="#getattributes">getAttributes</a></li><li><a href="#getpathtype">getPathType</a></li><li><a href="#isfileattributesobject">isFileAttributesObject</a></li><li><a href="#structname">StructName</a></li><li><a href="#dump">Dump</a></li><li><a href="#equals">Equals</a></li></ul></li></ul></div>
 <main class="post main" data-pswp>
 <dl><dt>依存</dt><dd><ul>
-<li><code>isMaxFile</code><ul>
-</ul></li>
-<li><code><a href="standard-definitionpool.html">standardDefinitionPool</a></code></li>
+<li><code>isMaxFile</code></li>
+<li><code>standardDefinitionPool</code></li>
 </ul></dd></dl>
 <h3 id="fileutilitystruct">struct&nbsp;FileUtilityStruct</h3>
-<p>一般的なファイルおよびディレクトリの操作に加えてスクリプトファイルやシーンファイルの操作を行うメソッドも提供する。</p><dl>
+<p>一般的なファイルおよびディレクトリの操作に加えてスクリプトファイルやシーンファイルの操作を行うメソッドも提供する。</p>
+<dl>
 <dt>補足</dt>
 <dd><p>エンコーディングは指定がない限りUTF-8（BOM無し）を使用する。</p></dd>
 </dl>
 <h4 id="comparer">private&nbsp;comparer</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:ComparerStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-comparer.html">ComparerStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="directoryclass">private&nbsp;directoryClass</h4>
 <dl>
@@ -62,22 +70,22 @@
 <h4 id="dotnetutility">private&nbsp;dotNetUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:DotNetUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-dotnetutility.html">DotNetUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="encodingdef">private&nbsp;encodingDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:EncodingStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="standard-encoding.html">EncodingStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="enumdef">private&nbsp;enumDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:EnumStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="fileattributesenum">private&nbsp;fileAttributesEnum</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:EnumStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 <dd><p><code>&quot;System.IO.FileAttributes&quot;</code>列挙型。</p></dd>
 </dl>
 <h4 id="fileclass">private&nbsp;fileClass</h4>
@@ -88,21 +96,22 @@
 <h4 id="pathutility">private&nbsp;pathUtility</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="pathutilitydef">private&nbsp;pathUtilityDef</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;StructDef:PathUtilityStruct&gt;</code></dd>
+<dd><code>&lt;StructDef:<a href="standard-pathutility.html">PathUtilityStruct</a>&gt;</code></dd>
 </dl>
 <h4 id="searchoptionenum">private&nbsp;searchOptionEnum</h4>
 <dl>
 <dt>プロパティ</dt>
-<dd><code>&lt;Struct:EnumStruct&gt;</code></dd>
+<dd><code>&lt;Struct:<a href="standard-enum.html">EnumStruct</a>&gt;</code></dd>
 <dd><p><code>&quot;System.IO.SearchOption&quot;</code>列挙型。</p></dd>
 </dl>
 <h4 id="copydirectory">public&nbsp;fn&nbsp;CopyDirectory</h4>
-<p>ディレクトリをコピーする。</p><dl>
+<p>ディレクトリをコピーする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -125,7 +134,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="copyfile">public&nbsp;fn&nbsp;CopyFile</h4>
-<p>ファイルをコピーする。</p><dl>
+<p>ファイルをコピーする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -148,7 +158,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="createdirectory">public&nbsp;fn&nbsp;CreateDirectory</h4>
-<p>指定されたパスに全てのディレクトリとサブディレクトリを作成する。</p><dl>
+<p>指定されたパスに全てのディレクトリとサブディレクトリを作成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -158,7 +169,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo?view=netframework-4.8">System.IO.DirectoryInfo</a>&gt;</code></dd>
 </dl>
 <h4 id="createtextfile">public&nbsp;fn&nbsp;CreateTextFile</h4>
-<p>テキストファイルを作成、または上書きする。</p><dl>
+<p>テキストファイルを作成、または上書きする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -191,7 +203,8 @@
 <dd><p>指定可能な値は<code>OpenTextFile</code>を参照。</p></dd>
 </dl>
 <h4 id="deletedirectory">public&nbsp;fn&nbsp;DeleteDirectory</h4>
-<p>ディレクトリを削除する。</p><dl>
+<p>ディレクトリを削除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -212,7 +225,8 @@
 ゴミ箱には移動しないので使用の際は注意すること。</p></dd>
 </dl>
 <h4 id="deletefile">public&nbsp;fn&nbsp;DeleteFile</h4>
-<p>ファイルを削除する。</p><dl>
+<p>ファイルを削除する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -226,7 +240,8 @@
 <dd><p>ゴミ箱には移動しないので使用の際は注意すること。</p></dd>
 </dl>
 <h4 id="directoryexists">public&nbsp;fn&nbsp;DirectoryExists</h4>
-<p>ディレクトリが存在するかどうかを判定する。</p><dl>
+<p>ディレクトリが存在するかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -236,7 +251,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="evaluatefile">public&nbsp;fn&nbsp;EvaluateFile</h4>
-<p>MAXScriptファイルを評価する。</p><dl>
+<p>MAXScriptファイルを評価する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -251,7 +267,8 @@
 <dd><p>msファイルのみが対象。</p></dd>
 </dl>
 <h4 id="fileexists">public&nbsp;fn&nbsp;FileExists</h4>
-<p>ファイルが存在するかどうかを判定する。</p><dl>
+<p>ファイルが存在するかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -261,7 +278,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="getcreationtime">public&nbsp;fn&nbsp;GetCreationTime</h4>
-<p>ディレクトリまたはファイルの作成日時を取得する。</p><dl>
+<p>ディレクトリまたはファイルの作成日時を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -277,7 +295,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
 </dl>
 <h4 id="getdirectories">public&nbsp;fn&nbsp;GetDirectories</h4>
-<p>パターンに一致したサブディレクトリを取得する。</p><dl>
+<p>パターンに一致したサブディレクトリを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -321,7 +340,8 @@
 </table></dd>
 </dl>
 <h4 id="getfiles">public&nbsp;fn&nbsp;GetFiles</h4>
-<p>パターンに一致したファイルを取得する。</p><dl>
+<p>パターンに一致したファイルを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -365,7 +385,8 @@
 </table></dd>
 </dl>
 <h4 id="getlastaccesstime">public&nbsp;fn&nbsp;GetLastAccessTime</h4>
-<p>ディレクトリまたはファイルの最終アクセス日時を取得する。</p><dl>
+<p>ディレクトリまたはファイルの最終アクセス日時を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -381,7 +402,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
 </dl>
 <h4 id="getlastwritetime">public&nbsp;fn&nbsp;GetLastWriteTime</h4>
-<p>ディレクトリまたはファイルの最終書き込み日時を取得する。</p><dl>
+<p>ディレクトリまたはファイルの最終書き込み日時を取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -397,7 +419,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netframework-4.8">System.DateTime</a>&gt;</code></dd>
 </dl>
 <h4 id="getmaxversion">public&nbsp;fn&nbsp;GetMaxVersion</h4>
-<p>Maxシーンファイルのバージョンを西暦形式の整数で取得する。</p><dl>
+<p>Maxシーンファイルのバージョンを西暦形式の整数で取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -412,7 +435,8 @@
 3ds Max 9以前のバージョンについても一律西暦形式で扱う。</p></dd>
 </dl>
 <h4 id="ishidden">public&nbsp;fn&nbsp;IsHidden</h4>
-<p>ディレクトリまたはファイルが隠し属性かどうかを判定する。</p><dl>
+<p>ディレクトリまたはファイルが隠し属性かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -422,7 +446,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="ismaxfile">public&nbsp;fn&nbsp;IsMaxFile</h4>
-<p>ファイルがMaxシーンファイルかどうかを判定する。</p><dl>
+<p>ファイルがMaxシーンファイルかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -432,7 +457,8 @@
 <dd><code>&lt;BooleanClass&gt;</code></dd>
 </dl>
 <h4 id="isreadonly">public&nbsp;fn&nbsp;IsReadOnly</h4>
-<p>ディレクトリまたはファイルが読み取り専用かどうかを判定する。</p><dl>
+<p>ディレクトリまたはファイルが読み取り専用かどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -450,7 +476,8 @@
 </code></pre></dd>
 </dl>
 <h4 id="isscriptfile">public&nbsp;fn&nbsp;IsScriptFile</h4>
-<p>ファイルがスクリプトファイルかどうかを判定する。</p><dl>
+<p>ファイルがスクリプトファイルかどうかを判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -464,7 +491,8 @@
 <dd><p>msファイルのみが対象。</p></dd>
 </dl>
 <h4 id="movedirectory">public&nbsp;fn&nbsp;MoveDirectory</h4>
-<p>ディレクトリまたはファイルのディレクトリ部分を変更する。</p><dl>
+<p>ディレクトリまたはファイルのディレクトリ部分を変更する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -481,7 +509,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="opentextfile">public&nbsp;fn&nbsp;OpenTextFile</h4>
-<p>テキストファイルを開く。</p><dl>
+<p>テキストファイルを開く。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -537,7 +566,8 @@
 <dd><p>MAXScriptの<code>FileStream</code>値。</p></dd>
 </dl>
 <h4 id="readalllines">public&nbsp;fn&nbsp;ReadAllLines</h4>
-<p>ファイルの全ての行を読み取る。</p><dl>
+<p>ファイルの全ての行を読み取る。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -560,7 +590,8 @@
 <dd><p>ファイルが存在しない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="readalltext">public&nbsp;fn&nbsp;ReadAllText</h4>
-<p>ファイルの全てのテキストを読み取る。</p><dl>
+<p>ファイルの全てのテキストを読み取る。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -583,7 +614,8 @@
 <dd><p>ファイルが存在しない場合は<code>undefined</code>を返す。</p></dd>
 </dl>
 <h4 id="renamedirectory">public&nbsp;fn&nbsp;RenameDirectory</h4>
-<p>ディレクトリ名を変更する。</p><dl>
+<p>ディレクトリ名を変更する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -599,7 +631,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="renamefile">public&nbsp;fn&nbsp;RenameFile</h4>
-<p>ファイル名を変更する。</p><dl>
+<p>ファイル名を変更する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -619,7 +652,8 @@
 <dd><p>拡張子が含まれている場合は全て変更し、含まれていない場合は拡張子を引き継ぐ。</p></dd>
 </dl>
 <h4 id="writealllines">public&nbsp;fn&nbsp;WriteAllLines</h4>
-<p>ファイルを作成して行を書き込む。</p><dl>
+<p>ファイルを作成して行を書き込む。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -657,7 +691,8 @@
 ディレクトリが存在しない場合は作成に失敗する。</p></dd>
 </dl>
 <h4 id="writealltext">public&nbsp;fn&nbsp;WriteAllText</h4>
-<p>ファイルを作成して文字列を書き込む。</p><dl>
+<p>ファイルを作成して文字列を書き込む。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -689,7 +724,8 @@
 ディレクトリが存在しない場合は作成に失敗する。</p></dd>
 </dl>
 <h4 id="copydirectoryrecursive">private&nbsp;fn&nbsp;copyDirectoryRecursive</h4>
-<p>ディレクトリを再帰的にコピーする。</p><dl>
+<p>ディレクトリを再帰的にコピーする。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>source</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -711,7 +747,8 @@
 <dd><code>&lt;OkClass&gt;</code></dd>
 </dl>
 <h4 id="createdirectoryinfo">private&nbsp;fn&nbsp;createDirectoryInfo</h4>
-<p><code>&quot;System.IO.DirectoryInfo&quot;</code>オブジェクトを生成する。</p><dl>
+<p><code>&quot;System.IO.DirectoryInfo&quot;</code>オブジェクトを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -721,7 +758,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directoryinfo?view=netframework-4.8">System.IO.DirectoryInfo</a>&gt;</code></dd>
 </dl>
 <h4 id="createencoding">private&nbsp;fn&nbsp;createEncoding</h4>
-<p>エンコーディングオブジェクトを生成する。</p><dl>
+<p>エンコーディングオブジェクトを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>encoding</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -736,7 +774,8 @@
 <dd><code>&lt;Struct:Encoding&gt;</code></dd>
 </dl>
 <h4 id="createsearchoption">private&nbsp;fn&nbsp;createSearchOption</h4>
-<p><code>&quot;System.IO.SearchOption&quot;</code>オブジェクトを生成する。</p><dl>
+<p><code>&quot;System.IO.SearchOption&quot;</code>オブジェクトを生成する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>recursive</code></dd>
 <dd><code>&lt;BooleanClass&gt;</code></dd>
@@ -746,7 +785,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.searchoption?view=netframework-4.8">System.IO.SearchOption</a>&gt;</code></dd>
 </dl>
 <h4 id="getattributes">private&nbsp;fn&nbsp;getAttributes</h4>
-<p>ディレクトリまたはファイルの<code>FileAttributes</code>オブジェクトを取得する。</p><dl>
+<p>ディレクトリまたはファイルの<code>FileAttributes</code>オブジェクトを取得する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -756,7 +796,8 @@
 <dd><code>&lt;DotNetObject:<a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.io.fileattributes?view=netframework-4.8">System.IO.FileAttributes</a>&gt;</code></dd>
 </dl>
 <h4 id="getpathtype">private&nbsp;fn&nbsp;getPathType</h4>
-<p>パスの種類を判定する。</p><dl>
+<p>パスの種類を判定する。</p>
+<dl>
 <dt>パラメータ</dt>
 <dd><code>path</code></dd>
 <dd><code>&lt;String&gt;</code></dd>
@@ -836,7 +877,7 @@
 </article>
 </main>
 <footer class="page footer">
-<ul class="hlist"><li class="item"><p>Generated by DocGenerator</p></li></ul>
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
 </footer>
 </body>
 </html>
