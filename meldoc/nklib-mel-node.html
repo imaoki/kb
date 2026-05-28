@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.node.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">node.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#nodesexists">nodesExists</a></li><li><a href="#isselected">isSelected</a></li><li><a href="#getshapenodes">getShapeNodes</a></li><li><a href="#istype">isType</a></li><li><a href="#hastype">hasType</a></li><li><a href="#istypecontains">isTypeContains</a></li><li><a href="#isnodereferenced">isNodeReferenced</a></li><li><a href="#isconstraintnode">isConstraintNode</a></li><li><a href="#isdagnode">isDagNode</a></li><li><a href="#istransformnode">isTransformNode</a></li><li><a href="#isjointnode">isJointNode</a></li><li><a href="#isshapenode">isShapeNode</a></li><li><a href="#islocatornode">isLocatorNode</a></li><li><a href="#haslocatornode">hasLocatorNode</a></li><li><a href="#isnurbssurfacenode">isNurbsSurfaceNode</a></li><li><a href="#hasnurbssurfacenode">hasNurbsSurfaceNode</a></li><li><a href="#isnurbscurvenode">isNurbsCurveNode</a></li><li><a href="#hasnurbscurvenode">hasNurbsCurveNode</a></li><li><a href="#isbeziercurvenode">isBezierCurveNode</a></li><li><a href="#hasbeziercurvenode">hasBezierCurveNode</a></li><li><a href="#ismeshnode">isMeshNode</a></li><li><a href="#hasmeshnode">hasMeshNode</a></li><li><a href="#islightnode">isLightNode</a></li><li><a href="#haslightnode">hasLightNode</a></li><li><a href="#iscameranode">isCameraNode</a></li><li><a href="#hascameranode">hasCameraNode</a></li><li><a href="#isuuid">isUUID</a></li><li><a href="#toshortname">toShortName</a></li><li><a href="#touuid">toUUID</a></li><li><a href="#uuidtolongname">uuidToLongName</a></li><li><a href="#setnodename">setNodeName</a></li><li><a href="#getparentnode">getParentNode</a></li><li><a href="#setparentnode">setParentNode</a></li><li><a href="#getrootnode">getRootNode</a></li><li><a href="#collectrootnodes">collectRootNodes</a></li><li><a href="#collectchildnodes">collectChildNodes</a></li><li><a href="#collectdescendantnodes">collectDescendantNodes</a></li><li><a href="#collecthierarchynodes">collectHierarchyNodes</a></li><li><a href="#gathernodes">gatherNodes</a></li><li><a href="#nodesascsv">nodesAsCSV</a></li><li><a href="#csvasnodes">csvAsNodes</a></li><li><a href="#getsourceconnectionnodes">getSourceConnectionNodes</a></li><li><a href="#getdestconnectionnodes">getDestConnectionNodes</a></li><li><a href="#builddagnode">buildDagNode</a></li><li><a href="#createjoint">createJoint</a></li><li><a href="#createlocator">createLocator</a></li><li><a href="#createtransform">createTransform</a></li><li><a href="#gettoplevelnode">getTopLevelNode</a></li><li><a href="#getsecondlevelnode">getSecondLevelNode</a></li><li><a href="#getthirdlevelnode">getThirdLevelNode</a></li><li><a href="#freezetransform">freezeTransform</a></li><li><a href="#nodetestappendsuffix">nodeTestAppendSuffix</a></li><li><a href="#nodetestplot">nodeTestPlot</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="nodesexists">proc&nbsp;int&nbsp;nodesExists</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p><code>$nodes</code>が空配列の場合は<code>false</code>を返す。</p></dd>
+</dl>
+<h3 id="isselected">proc&nbsp;int&nbsp;isSelected</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getshapenodes">proc&nbsp;string[]&nbsp;getShapeNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>全ての型を取得する場合は空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="istype">proc&nbsp;int&nbsp;isType</h3>
+<p>ノードの型が<code>$types</code>のいずれかに一致するかどうかを判定する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列を指定した場合は<code>true</code>を返す。<br />
+これは収集系プロシージャで未指定の場合に素通りさせる必要があるためそのようにしている。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hastype">proc&nbsp;int&nbsp;hasType</h3>
+<p>ノードまたそのシェイプノードの型が<code>$types</code>のいずれかに一致するかどうかを判定する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列を指定した場合は<code>true</code>を返す。<br />
+不自然ではあるが一貫性のためこのようにしている。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="istypecontains">proc&nbsp;int&nbsp;isTypeContains</h3>
+<p><code>$types</code>のいずれかに一致するノードが配列に含まれているかどうかを判定する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列を指定した場合は<code>false</code>を返す。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列を指定した場合は<code>true</code>を返す。<br />
+不自然ではあるが一貫性のためこのようにしている。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isnodereferenced">proc&nbsp;int&nbsp;isNodeReferenced</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isconstraintnode">proc&nbsp;int&nbsp;isConstraintNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isdagnode">proc&nbsp;int&nbsp;isDagNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="istransformnode">proc&nbsp;int&nbsp;isTransformNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>派生型は除外する。</p></dd>
+</dl>
+<h3 id="isjointnode">proc&nbsp;int&nbsp;isJointNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>派生型は除外する。</p></dd>
+</dl>
+<h3 id="isshapenode">proc&nbsp;int&nbsp;isShapeNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="islocatornode">proc&nbsp;int&nbsp;isLocatorNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="haslocatornode">proc&nbsp;int&nbsp;hasLocatorNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isnurbssurfacenode">proc&nbsp;int&nbsp;isNurbsSurfaceNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hasnurbssurfacenode">proc&nbsp;int&nbsp;hasNurbsSurfaceNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isnurbscurvenode">proc&nbsp;int&nbsp;isNurbsCurveNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hasnurbscurvenode">proc&nbsp;int&nbsp;hasNurbsCurveNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isbeziercurvenode">proc&nbsp;int&nbsp;isBezierCurveNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hasbeziercurvenode">proc&nbsp;int&nbsp;hasBezierCurveNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="ismeshnode">proc&nbsp;int&nbsp;isMeshNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hasmeshnode">proc&nbsp;int&nbsp;hasMeshNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="islightnode">proc&nbsp;int&nbsp;isLightNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="haslightnode">proc&nbsp;int&nbsp;hasLightNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="iscameranode">proc&nbsp;int&nbsp;isCameraNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="hascameranode">proc&nbsp;int&nbsp;hasCameraNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isuuid">proc&nbsp;int&nbsp;isUUID</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="toshortname">proc&nbsp;string&nbsp;toShortName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$path</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードが存在する必要はない。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="touuid">proc&nbsp;string&nbsp;toUUID</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="uuidtolongname">proc&nbsp;string&nbsp;uuidToLongName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$uuid</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>リファレンスにより同一IDのノードが複数存在する場合、同一IDの非リファレンスノードが一つの場合にのみノード名を返す。</p></dd>
+</dl>
+<h3 id="setnodename">proc&nbsp;string&nbsp;setNodeName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$newName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>対象ノードの新しい名前。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$inheritNamespace</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>既存の名前空間を継承する。<br />
+<code>true</code>かつ新しい名前に別の名前空間が含まれる場合は先頭に既存の名前空間が配置される。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>対象ノードの新しいフルパス。</p></dd>
+</dl>
+<h3 id="getparentnode">proc&nbsp;string&nbsp;getParentNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="setparentnode">proc&nbsp;string[]&nbsp;setParentNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノードのフルパス。空文字列の場合はワールドにペアレントする。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>対象ノードの新しいフルパスの配列。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>DAGノードのみ処理し、非DAGノードには何もしない。<br />
+また、設定しようとしている親を既に親として持っているノードは処理しない。</p></dd>
+</dl>
+<h3 id="getrootnode">proc&nbsp;string&nbsp;getRootNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="collectrootnodes">proc&nbsp;string[]&nbsp;collectRootNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ルートの順序は<code>$nodes</code>の順序に準ずる。</p></dd>
+</dl>
+<h3 id="collectchildnodes">proc&nbsp;string[]&nbsp;collectChildNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="collectdescendantnodes">proc&nbsp;string[]&nbsp;collectDescendantNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノード。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノードタイプの配列。空配列を指定した場合は全て取得する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$script</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードへの処理を定義したグローバルプロシージャの名前。<br />
+このプロシージャの戻り値は<code>$types</code>の影響を受ける。<br />
+空文字列の場合は何もしない。</p>
+<dl>
+<dt>構文</dt>
+<dd>
+<pre><code class="language-mel">global proc string[] appendSuffix(string $sourceId, string $parentId) {
+  string $sourceNodes[] = `ls $sourceId`;
+  rename $sourceNodes[0] ($sourceNodes[0] + &quot;_suffix&quot;);
+  return {$sourceId, $sourceId};
+}
+</code></pre>
+</dd>
+<dt>引数</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$sourceId</code></td>
+<td><code>string</code></td>
+<td>現在の処理対象ノードのUUID</td>
+</tr>
+<tr>
+<td><code>$parentId</code></td>
+<td><code>string</code></td>
+<td>前回処理済みの親ノードのUUID</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>戻り値</dt>
+<dd>
+<table>
+<thead>
+<tr>
+<th>配列要素</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string[0]</code></td>
+<td>処理対象ノードに置き換わるノードのUUID</td>
+</tr>
+<tr>
+<td><code>string[1]</code></td>
+<td>次に子ノードを探索するノードのUUID</td>
+</tr>
+</tbody>
+</table>
+<p>ノードのリネーム等、対象が変わらない場合は戻り値の1番目と2番目の要素は同じにする。<br />
+ノードの複製等で対象が変わる場合は1番目に複製したノードのUUID、2番目に元のノードのUUIDを指定する。</p>
+</dd>
+</dl></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="collecthierarchynodes">proc&nbsp;string[]&nbsp;collectHierarchyNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノード。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノードタイプの配列。空配列を指定した場合は全て取得する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$script</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>collectDescendantNodes</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>階層の順序は<code>$nodes</code>の順序に準ずる。</p></dd>
+</dl>
+<h3 id="gathernodes">proc&nbsp;string[]&nbsp;gatherNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>収集するノードの型。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectedOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>選択したノードのみ収集するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノード名のパターン。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nodesascsv">proc&nbsp;string&nbsp;nodesAsCSV</h3>
+<p>ノード配列を<code>,</code>で区切った文字列に変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>収集するノードの型。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectedOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>選択したノードのみ収集するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノード名のパターン。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$singleNodeOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p><code>true</code>の場合、収集したノードが一つの場合にのみ値を返し、二つ以上の場合は空文字列を返す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="csvasnodes">proc&nbsp;string[]&nbsp;csvAsNodes</h3>
+<p><code>,</code>で区切られた文字列をノード配列に変換する</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>,</code>で区切られた文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getsourceconnectionnodes">proc&nbsp;string[]&nbsp;getSourceConnectionNodes</h3>
+<p>指定したノードへの接続のソース側にあるノードを取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getdestconnectionnodes">proc&nbsp;string[]&nbsp;getDestConnectionNodes</h3>
+<p>指定したノードへの接続の目的側にあるノードを取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isExact</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>派生型を含めない場合は<code>true</code>、派生型を含める場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="builddagnode">proc&nbsp;string&nbsp;buildDagNode</h3>
+<p>対象ノードの名前、親ノード、トランスフォームを一度に設定する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>対象ノード。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$name</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>対象ノードの新しい名前。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノードのフルパス。空文字列の場合はルートノードになる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$maintainOffset</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>親子付けの際に現在のワールド変換を維持するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchTransformNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>トランスフォームを合わせるノード。空文字列の場合は原点に作成する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchFlags</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>位置、回転、スケールをそれぞれ一致させるかどうか。<br />
+空配列の場合は全てを一致させる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>対象ノードの新しいフルパス。</p></dd>
+</dl>
+<h3 id="createjoint">proc&nbsp;string&nbsp;createJoint</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$name</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノードのフルパス。空文字列の場合はルートノードになる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$maintainOffset</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>親子付けの際に現在のワールド変換を維持するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchTransformNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>トランスフォームを合わせるノード。空文字列の場合は原点に作成する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchFlags</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>位置、回転、スケールをそれぞれ一致させるかどうか。<br />
+空配列の場合は全てを一致させる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>作成したノードのフルパス。</p></dd>
+</dl>
+<h3 id="createlocator">proc&nbsp;string&nbsp;createLocator</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$name</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノードのフルパス。空文字列の場合はルートノードになる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$maintainOffset</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>親子付けの際に現在のワールド変換を維持するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchTransformNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>トランスフォームを合わせるノード。空文字列の場合は原点に作成する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchFlags</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>位置、回転、スケールをそれぞれ一致させるかどうか。<br />
+空配列の場合は全てを一致させる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>作成したノードのフルパス。</p></dd>
+</dl>
+<h3 id="createtransform">proc&nbsp;string&nbsp;createTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$name</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>親ノードのフルパス。空文字列の場合はルートノードになる。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$maintainOffset</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>親子付けの際に現在のワールド変換を維持するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchTransformNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>トランスフォームを合わせるノード。空文字列の場合は原点に作成する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$matchFlags</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>位置、回転、スケールをそれぞれ一致させるかどうか。<br />
+空配列の場合は全てを一致させる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>作成したノードのフルパス。</p></dd>
+</dl>
+<h3 id="gettoplevelnode">proc&nbsp;string&nbsp;getTopLevelNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$topLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldCreate</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$ignoreReference</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getsecondlevelnode">proc&nbsp;string&nbsp;getSecondLevelNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$topLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$secondLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldCreate</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$ignoreReference</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getthirdlevelnode">proc&nbsp;string&nbsp;getThirdLevelNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$topLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$secondLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$thirdLevelName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldCreate</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$ignoreReference</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="freezetransform">proc&nbsp;freezeTransform</h3>
+<p>DAGノードのトランスフォームをフリーズ（makeIdentity）する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$preserveFlags</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>位置/回転/スケールの現在の値を維持するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nodetestappendsuffix">global&nbsp;proc&nbsp;string[]&nbsp;nodeTestAppendSuffix</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nodetestplot">global&nbsp;proc&nbsp;string[]&nbsp;nodeTestPlot</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

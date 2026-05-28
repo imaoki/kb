@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.assertion.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">assertion.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#asserttrue">assertTrue</a></li><li><a href="#assertfalse">assertFalse</a></li><li><a href="#assertfloatequal">assertFloatEqual</a></li><li><a href="#assertfloatnotequal">assertFloatNotEqual</a></li><li><a href="#assertintequal">assertIntEqual</a></li><li><a href="#assertintnotequal">assertIntNotEqual</a></li><li><a href="#assertstringequal">assertStringEqual</a></li><li><a href="#assertstringnotequal">assertStringNotEqual</a></li><li><a href="#assertstringmatch">assertStringMatch</a></li><li><a href="#assertstringmismatch">assertStringMismatch</a></li><li><a href="#assertfloatarrayequal">assertFloatArrayEqual</a></li><li><a href="#assertintarrayequal">assertIntArrayEqual</a></li><li><a href="#assertstringarrayequal">assertStringArrayEqual</a></li><li><a href="#testnewscene">testNewScene</a></li><li><a href="#testopenscene">testOpenScene</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="asserttrue">proc&nbsp;string&nbsp;assertTrue</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertfalse">proc&nbsp;string&nbsp;assertFalse</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertfloatequal">proc&nbsp;string&nbsp;assertFloatEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$t</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>許容値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertfloatnotequal">proc&nbsp;string&nbsp;assertFloatNotEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$t</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>許容値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertintequal">proc&nbsp;string&nbsp;assertIntEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertintnotequal">proc&nbsp;string&nbsp;assertIntNotEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertstringequal">proc&nbsp;string&nbsp;assertStringEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertstringnotequal">proc&nbsp;string&nbsp;assertStringNotEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertstringmatch">proc&nbsp;string&nbsp;assertStringMatch</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>MELの正規表現。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>$e</code>が空文字列の場合は成功とする。</p></dd>
+</dl>
+<h3 id="assertstringmismatch">proc&nbsp;string&nbsp;assertStringMismatch</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$e</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>MELの正規表現。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$a</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p><code>$e</code>が空文字列の場合は成功とする。</p></dd>
+</dl>
+<h3 id="assertfloatarrayequal">proc&nbsp;string&nbsp;assertFloatArrayEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$es</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$as</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$t</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>許容値。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertintarrayequal">proc&nbsp;string&nbsp;assertIntArrayEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$es</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$as</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="assertstringarrayequal">proc&nbsp;string&nbsp;assertStringArrayEqual</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$es</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$as</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>成功の場合は空文字列、失敗の場合は<code>warning</code>用のエラーメッセージ。</p></dd>
+</dl>
+<h3 id="testnewscene">proc&nbsp;testNewScene</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="testopenscene">proc&nbsp;testOpenScene</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

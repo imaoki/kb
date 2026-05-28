@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.quaternion.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">quaternion.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#reverserotateorder">reverseRotateOrder</a></li><li><a href="#eulertoquat">eulerToQuat</a></li><li><a href="#quattoeuler">quatToEuler</a></li><li><a href="#angleaxistoquat">angleAxisToQuat</a></li><li><a href="#quatadd">quatAdd</a></li><li><a href="#quatsubtract">quatSubtract</a></li><li><a href="#quatmultiply">quatMultiply</a></li><li><a href="#quatconjugate">quatConjugate</a></li><li><a href="#quatinverse">quatInverse</a></li><li><a href="#rotatevectorbyquat">rotateVectorByQuat</a></li><li><a href="#quatflip">quatFlip</a></li><li><a href="#quatnorm">quatNorm</a></li><li><a href="#quatnormalize">quatNormalize</a></li><li><a href="#quatslerp">quatSlerp</a></li><li><a href="#quatdot">quatDot</a></li><li><a href="#quattomatrix">quatToMatrix</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="reverserotateorder">proc&nbsp;int&nbsp;reverseRotateOrder</h3>
+<p>回転順序のインデックスをMayaの挙動に合わせて並べ替える。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$order</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="eulertoquat">proc&nbsp;float[]&nbsp;eulerToQuat</h3>
+<p>オイラー角（度数）をクォータニオンに変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$r</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$order</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quattoeuler">proc&nbsp;float[]&nbsp;quatToEuler</h3>
+<p>クォータニオンをオイラー角（度数）に変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$order</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<h3 id="angleaxistoquat">proc&nbsp;float[]&nbsp;angleAxisToQuat</h3>
+<p>角度-軸表現をクォータニオンに変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$degree</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$axis</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatadd">proc&nbsp;float[]&nbsp;quatAdd</h3>
+<p>2つのクォータニオンを成分ごとに加算する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q1</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q2</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatsubtract">proc&nbsp;float[]&nbsp;quatSubtract</h3>
+<p>2つのクォータニオンを成分ごとに減算する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q1</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q2</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatmultiply">proc&nbsp;float[]&nbsp;quatMultiply</h3>
+<p>2つのクォータニオンを乗算する（ハミルトン積）。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q1</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q2</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatconjugate">proc&nbsp;float[]&nbsp;quatConjugate</h3>
+<p>クォータニオンの共役を返す。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatinverse">proc&nbsp;float[]&nbsp;quatInverse</h3>
+<p>クォータニオンの逆元を返す。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="rotatevectorbyquat">proc&nbsp;float[]&nbsp;rotateVectorByQuat</h3>
+<p>クォータニオンで3Dベクトルを回転させる。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$v</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<h3 id="quatflip">proc&nbsp;float[]&nbsp;quatFlip</h3>
+<p>指定軸周りに180度反転したクォータニオンを返す。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$axis</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatnorm">proc&nbsp;float&nbsp;quatNorm</h3>
+<p>クォータニオンのノルム（大きさ）を返す。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<h3 id="quatnormalize">proc&nbsp;float[]&nbsp;quatNormalize</h3>
+<p>クォータニオンを単位長に正規化する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatslerp">proc&nbsp;float[]&nbsp;quatSlerp</h3>
+<p>2つのクォータニオン間を球面線形補間する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q1</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q2</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$t</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<h3 id="quatdot">proc&nbsp;float&nbsp;quatDot</h3>
+<p>2つのクォータニオンの内積を計算する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q1</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q2</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<h3 id="quattomatrix">proc&nbsp;float[]&nbsp;quatToMatrix</h3>
+<p>クォータニオンを4x4回転行列（行優先）に変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$q</code></dd>
+<dd><code>&lt;float[4]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[16]&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkCurveDepot.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkCurveDepot.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#hascurvetransformattribute">hasCurveTransformAttribute</a></li><li><a href="#addcurvetransformattribute">addCurveTransformAttribute</a></li><li><a href="#setcurvetransformattributelock">setCurveTransformAttributeLock</a></li><li><a href="#setcurvetransformattributechannelbox">setCurveTransformAttributeChannelBox</a></li><li><a href="#setcurvetransformattributestate">setCurveTransformAttributeState</a></li><li><a href="#setcurvenameattributelock">setCurveNameAttributeLock</a></li><li><a href="#hasnurbscurveattribute">hasNurbsCurveAttribute</a></li><li><a href="#addnurbscurveattribute">addNurbsCurveAttribute</a></li><li><a href="#isvalidcurvetransform">isValidCurveTransform</a></li><li><a href="#createcurvetransform">createCurveTransform</a></li><li><a href="#isvalidnurbscurve">isValidNurbsCurve</a></li><li><a href="#iseditmode">isEditMode</a></li><li><a href="#collectshapenodes">collectShapeNodes</a></li><li><a href="#renamecurvenodes">renameCurveNodes</a></li><li><a href="#deletenodes">deleteNodes</a></li><li><a href="#serializecurve">serializeCurve</a></li><li><a href="#bundlecurves">bundleCurves</a></li><li><a href="#deserializecurve">deserializeCurve</a></li><li><a href="#getcurvedirname">getCurveDirname</a></li><li><a href="#gettrashdirname">getTrashDirname</a></li><li><a href="#getcurveorderfilename">getCurveOrderFilename</a></li><li><a href="#readcurveorder">readCurveOrder</a></li><li><a href="#writecurveorder">writeCurveOrder</a></li><li><a href="#sortcurveorder">sortCurveOrder</a></li><li><a href="#getcurvenamebyindex">getCurveNameByIndex</a></li><li><a href="#escapecurvename">escapeCurveName</a></li><li><a href="#makecurvefilename">makeCurveFilename</a></li><li><a href="#maketrashfilename">makeTrashFilename</a></li><li><a href="#addcurve">addCurve</a></li><li><a href="#deletecurve">deleteCurve</a></li><li><a href="#renamecurve">renameCurve</a></li><li><a href="#moveprevcurve">movePrevCurve</a></li><li><a href="#movenextcurve">moveNextCurve</a></li><li><a href="#createcurve">createCurve</a></li><li><a href="#buildeditablegraph">buildEditableGraph</a></li><li><a href="#removeeditablegraph">removeEditableGraph</a></li><li><a href="#lockcurve">lockCurve</a></li><li><a href="#replacecurves">replaceCurves</a></li><li><a href="#makecurvename">makeCurveName</a></li><li><a href="#getcurvelistselectedindex">getCurveListSelectedIndex</a></li><li><a href="#getcurvelistselecteditem">getCurveListSelectedItem</a></li><li><a href="#selectcurvelistbyindex">selectCurveListByIndex</a></li><li><a href="#selectcurvelistbyitem">selectCurveListByItem</a></li><li><a href="#updatecurvelist">updateCurveList</a></li><li><a href="#nkcurvedepotwindowclosed">nkCurveDepotWindowClosed</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#addbuttonpressed">addButtonPressed</a></li><li><a href="#renamebuttonpressed">renameButtonPressed</a></li><li><a href="#createbuttonpressed">createButtonPressed</a></li><li><a href="#unlockbuttonpressed">unlockButtonPressed</a></li><li><a href="#lockbuttonpressed">lockButtonPressed</a></li><li><a href="#replacebuttonpressed">replaceButtonPressed</a></li><li><a href="#curvelistdoubleclicked">curveListDoubleClicked</a></li><li><a href="#deletebuttonpressed">deleteButtonPressed</a></li><li><a href="#moveupbuttonpressed">moveUpButtonPressed</a></li><li><a href="#movedownbuttonpressed">moveDownButtonPressed</a></li><li><a href="#sortbuttonpressed">sortButtonPressed</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nkcurvedepoteventcontroller">nkCurveDepotEventController</a></li><li><a href="#nkcurvedepotversion">nkCurveDepotVersion</a></li><li><a href="#nkcurvedepot">nkCurveDepot</a></li><li><a href="#test0">test0</a></li><li><a href="#test1">test1</a></li><li><a href="#test2">test2</a></li><li><a href="#test3">test3</a></li><li><a href="#test4">test4</a></li><li><a href="#nkcurvedepottest">nkCurveDepotTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="hascurvetransformattribute">proc&nbsp;int&nbsp;hasCurveTransformAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="addcurvetransformattribute">proc&nbsp;addCurveTransformAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcurvetransformattributelock">proc&nbsp;setCurveTransformAttributeLock</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$state</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcurvetransformattributechannelbox">proc&nbsp;setCurveTransformAttributeChannelBox</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$state</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcurvetransformattributestate">proc&nbsp;setCurveTransformAttributeState</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$editMode</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcurvenameattributelock">proc&nbsp;setCurveNameAttributeLock</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$state</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hasnurbscurveattribute">proc&nbsp;int&nbsp;hasNurbsCurveAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="addnurbscurveattribute">proc&nbsp;addNurbsCurveAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="isvalidcurvetransform">proc&nbsp;int&nbsp;isValidCurveTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="createcurvetransform">proc&nbsp;string&nbsp;createCurveTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$name</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="isvalidnurbscurve">proc&nbsp;int&nbsp;isValidNurbsCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="iseditmode">proc&nbsp;int&nbsp;isEditMode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="collectshapenodes">proc&nbsp;string[]&nbsp;collectShapeNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>シェイプノードのタイプ。空文字の場合は全て収集する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$validOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p><code>sourceCurve</code>アトリビュートを持つノードのみ収集するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="renamecurvenodes">proc&nbsp;string[]&nbsp;renameCurveNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="deletenodes">proc&nbsp;deleteNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="serializecurve">proc&nbsp;string&nbsp;serializeCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="bundlecurves">proc&nbsp;string&nbsp;bundleCurves</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="deserializecurve">proc&nbsp;string&nbsp;deserializeCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveText</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getcurvedirname">proc&nbsp;string&nbsp;getCurveDirname</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="gettrashdirname">proc&nbsp;string&nbsp;getTrashDirname</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getcurveorderfilename">proc&nbsp;string&nbsp;getCurveOrderFilename</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="readcurveorder">proc&nbsp;string[]&nbsp;readCurveOrder</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="writecurveorder">proc&nbsp;int&nbsp;writeCurveOrder</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveNames</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="sortcurveorder">proc&nbsp;int&nbsp;sortCurveOrder</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="getcurvenamebyindex">proc&nbsp;string&nbsp;getCurveNameByIndex</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="escapecurvename">proc&nbsp;string&nbsp;escapeCurveName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="makecurvefilename">proc&nbsp;string&nbsp;makeCurveFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="maketrashfilename">proc&nbsp;string&nbsp;makeTrashFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="addcurve">proc&nbsp;int&nbsp;addCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="deletecurve">proc&nbsp;int&nbsp;deleteCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="renamecurve">proc&nbsp;int&nbsp;renameCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$newName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="moveprevcurve">proc&nbsp;int&nbsp;movePrevCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$fromIndex</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="movenextcurve">proc&nbsp;int&nbsp;moveNextCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$fromIndex</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="createcurve">proc&nbsp;string&nbsp;createCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$curveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>カーブ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>作成したカーブのトランスフォームノード。</p></dd>
+</dl>
+<h3 id="buildeditablegraph">proc&nbsp;string[]&nbsp;buildEditableGraph</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>作成した編集用ノードの配列。</p></dd>
+</dl>
+<h3 id="removeeditablegraph">proc&nbsp;removeEditableGraph</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="lockcurve">proc&nbsp;lockCurve</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノードの配列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$state</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>ロック状態。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="replacecurves">proc&nbsp;string[]&nbsp;replaceCurves</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>1番目要素がソースノード、2番目要素がターゲットノードの配列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>新たに置き換えられたシェイプノードの配列。</p></dd>
+</dl>
+<h3 id="makecurvename">proc&nbsp;string&nbsp;makeCurveName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$initCurveName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getcurvelistselectedindex">proc&nbsp;int&nbsp;getCurveListSelectedIndex</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="getcurvelistselecteditem">proc&nbsp;string&nbsp;getCurveListSelectedItem</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="selectcurvelistbyindex">proc&nbsp;selectCurveListByIndex</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectcurvelistbyitem">proc&nbsp;selectCurveListByItem</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$item</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatecurvelist">proc&nbsp;updateCurveList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectionMode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>更新後の選択状態。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code></td>
+<td>選択無し</td>
+</tr>
+<tr>
+<td><code>keepIndex</code></td>
+<td>前回の選択インデックスを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>keepItem</code></td>
+<td>前回の選択アイテムを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>last</code></td>
+<td>末尾のアイテムを選択</td>
+</tr>
+<tr>
+<td><code>prev</code></td>
+<td>前に一つずらす</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>後に一つずらす</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcurvedepotwindowclosed">proc&nbsp;nkCurveDepotWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="addbuttonpressed">proc&nbsp;addButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="renamebuttonpressed">proc&nbsp;renameButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createbuttonpressed">proc&nbsp;createButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unlockbuttonpressed">proc&nbsp;unlockButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="lockbuttonpressed">proc&nbsp;lockButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="replacebuttonpressed">proc&nbsp;replaceButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="curvelistdoubleclicked">proc&nbsp;curveListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="deletebuttonpressed">proc&nbsp;deleteButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="moveupbuttonpressed">proc&nbsp;moveUpButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="movedownbuttonpressed">proc&nbsp;moveDownButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="sortbuttonpressed">proc&nbsp;sortButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcurvedepoteventcontroller">global&nbsp;proc&nbsp;nkCurveDepotEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcurvedepotversion">global&nbsp;proc&nbsp;string&nbsp;nkCurveDepotVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkcurvedepot">global&nbsp;proc&nbsp;nkCurveDepot</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>アトリビュート。</p></dd>
+</dl>
+<h3 id="test1">proc&nbsp;test1</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ノード。</p></dd>
+</dl>
+<h3 id="test2">proc&nbsp;test2</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カーブ定義。</p></dd>
+</dl>
+<h3 id="test3">proc&nbsp;test3</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カーブリスト。</p></dd>
+</dl>
+<h3 id="test4">proc&nbsp;test4</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カーブ操作。</p></dd>
+</dl>
+<h3 id="nkcurvedepottest">global&nbsp;proc&nbsp;nkCurveDepotTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

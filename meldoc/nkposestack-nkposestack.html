@@ -1,0 +1,1508 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkPoseStack.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkPoseStack.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#getposeversion">getPoseVersion</a></li><li><a href="#nkposestackinitpastesetting">$nkPoseStackInitPasteSetting</a></li><li><a href="#nkposestackinitselectsetting">$nkPoseStackInitSelectSetting</a></li><li><a href="#nkposestackinitmirrorsetting">$nkPoseStackInitMirrorSetting</a></li><li><a href="#initializeinitvalues">initializeInitValues</a></li><li><a href="#serialize">serialize</a></li><li><a href="#deserialize">deserialize</a></li><li><a href="#makeposesetting">makePoseSetting</a></li><li><a href="#maketransformheader">makeTransformHeader</a></li><li><a href="#makeposetransform">makePoseTransform</a></li><li><a href="#makepose">makePose</a></li><li><a href="#extractposename">extractPoseName</a></li><li><a href="#extractposetransforms">extractPoseTransforms</a></li><li><a href="#extracttransformheader">extractTransformHeader</a></li><li><a href="#extracttransformnode">extractTransformNode</a></li><li><a href="#extractposesetting">extractPoseSetting</a></li><li><a href="#extractposesettings">extractPoseSettings</a></li><li><a href="#extractpastesetting">extractPasteSetting</a></li><li><a href="#extractselectsetting">extractSelectSetting</a></li><li><a href="#extractmirrorsetting">extractMirrorSetting</a></li><li><a href="#extracttransformvalues">extractTransformValues</a></li><li><a href="#convertdataversion">convertDataVersion</a></li><li><a href="#resolvenamespace">resolveNamespace</a></li><li><a href="#gettransformattributevalues">getTransformAttributeValues</a></li><li><a href="#makeposetransforms">makePoseTransforms</a></li><li><a href="#settransformattributes">setTransformAttributes</a></li><li><a href="#asistransform">asIsTransform</a></li><li><a href="#mirrortransform">mirrorTransform</a></li><li><a href="#isvalidscriptnode">isValidScriptNode</a></li><li><a href="#createscriptnode">createScriptNode</a></li><li><a href="#getposestackdataattr">getPoseStackDataAttr</a></li><li><a href="#setposestackdataattr">setPoseStackDataAttr</a></li><li><a href="#mergescriptnodes">mergeScriptNodes</a></li><li><a href="#getscriptnodes">getScriptNodes</a></li><li><a href="#geteditablescriptnode">getEditableScriptNode</a></li><li><a href="#deletescriptnodes">deleteScriptNodes</a></li><li><a href="#isposereferenced">isPoseReferenced</a></li><li><a href="#readattrposes">readAttrPoses</a></li><li><a href="#appendattrposes">appendAttrPoses</a></li><li><a href="#writeattrposes">writeAttrPoses</a></li><li><a href="#makeeditableposes">makeEditablePoses</a></li><li><a href="#insertpose">insertPose</a></li><li><a href="#movepose">movePose</a></li><li><a href="#removepose">removePose</a></li><li><a href="#replacepose">replacePose</a></li><li><a href="#clearposes">clearPoses</a></li><li><a href="#openposes">openPoses</a></li><li><a href="#importposes">importPoses</a></li><li><a href="#saveposes">savePoses</a></li><li><a href="#getposenames">getPoseNames</a></li><li><a href="#addpose">addPose</a></li><li><a href="#editpose">editPose</a></li><li><a href="#duplicatepose">duplicatePose</a></li><li><a href="#updatepose">updatePose</a></li><li><a href="#deletepose">deletePose</a></li><li><a href="#moveprevpose">movePrevPose</a></li><li><a href="#movenextpose">moveNextPose</a></li><li><a href="#selectnodes">selectNodes</a></li><li><a href="#pastepose">pastePose</a></li><li><a href="#nkposestackscriptnodeids">$nkPoseStackScriptNodeIds</a></li><li><a href="#nkposestackscriptjobids">$nkPoseStackScriptJobIds</a></li><li><a href="#initializescriptjobvalues">initializeScriptJobValues</a></li><li><a href="#registereventjob">registerEventJob</a></li><li><a href="#unregistereventjob">unregisterEventJob</a></li><li><a href="#registernodejob">registerNodeJob</a></li><li><a href="#unregisternodejob">unregisterNodeJob</a></li><li><a href="#nkposestackeditorposeindex">$nkPoseStackEditorPoseIndex</a></li><li><a href="#nkposestackeditorposename">$nkPoseStackEditorPoseName</a></li><li><a href="#nkposestackeditornodes">$nkPoseStackEditorNodes</a></li><li><a href="#nkposestackeditorposesettings">$nkPoseStackEditorPoseSettings</a></li><li><a href="#nkposestackeditorselectpatterna">$nkPoseStackEditorSelectPatternA</a></li><li><a href="#nkposestackeditorselectpatternb">$nkPoseStackEditorSelectPatternB</a></li><li><a href="#nkposestackeditorisuiupdating">$nkPoseStackEditorIsUIUpdating</a></li><li><a href="#nkposestackneedupdateinitparameters">$nkPoseStackNeedUpdateInitParameters</a></li><li><a href="#initializeeditorparameters">initializeEditorParameters</a></li><li><a href="#sanitizetext">sanitizeText</a></li><li><a href="#makenodelistlabel">makeNodeListLabel</a></li><li><a href="#updatenodelist">updateNodeList</a></li><li><a href="#updateposesettings">updatePoseSettings</a></li><li><a href="#updatepastesettingui">updatePasteSettingUI</a></li><li><a href="#updateselectsettingui">updateSelectSettingUI</a></li><li><a href="#updatemirrorsettingui">updateMirrorSettingUI</a></li><li><a href="#getposelistselectedindex">getPoseListSelectedIndex</a></li><li><a href="#getposelistselecteditem">getPoseListSelectedItem</a></li><li><a href="#selectposelistbyindex">selectPoseListByIndex</a></li><li><a href="#selectposelistbyitem">selectPoseListByItem</a></li><li><a href="#updateposelist">updatePoseList</a></li><li><a href="#updateinitparameters">updateInitParameters</a></li><li><a href="#applypose">applyPose</a></li><li><a href="#makeposename">makePoseName</a></li><li><a href="#subscribeposesobservers">subscribePosesObservers</a></li><li><a href="#unsubscribeposesobservers">unsubscribePosesObservers</a></li><li><a href="#closeeditorwindow">closeEditorWindow</a></li><li><a href="#nkposestackeditorwindowclosed">nkPoseStackEditorWindowClosed</a></li><li><a href="#posenametextentered">poseNameTextEntered</a></li><li><a href="#nodelistselected">nodeListSelected</a></li><li><a href="#pasteattributescheckboxgrp1changed">pasteAttributesCheckBoxGrp1Changed</a></li><li><a href="#pasteattributescheckboxgrp2changed">pasteAttributesCheckBoxGrp2Changed</a></li><li><a href="#pasteattributescheckboxgrp3changed">pasteAttributesCheckBoxGrp3Changed</a></li><li><a href="#selectpatternatextentered">selectPatternATextEntered</a></li><li><a href="#selectpatternbtextentered">selectPatternBTextEntered</a></li><li><a href="#mirroraxisradiobuttonon">mirrorAxisRadioButtonOn</a></li><li><a href="#primaryaxisradiobuttonon">primaryAxisRadioButtonOn</a></li><li><a href="#secondaryaxisradiobuttonon">secondaryAxisRadioButtonOn</a></li><li><a href="#invertaxischeckboxgrp1changed">invertAxisCheckBoxGrp1Changed</a></li><li><a href="#invertaxischeckboxgrp2changed">invertAxisCheckBoxGrp2Changed</a></li><li><a href="#okbuttonpressed">okButtonPressed</a></li><li><a href="#applybuttonpressed">applyButtonPressed</a></li><li><a href="#cancelbuttonpressed">cancelButtonPressed</a></li><li><a href="#nkposestackwindowclosed">nkPoseStackWindowClosed</a></li><li><a href="#clearlistmenuitemselected">clearListMenuItemSelected</a></li><li><a href="#openlistmenuitemselected">openListMenuItemSelected</a></li><li><a href="#importlistmenuitemselected">importListMenuItemSelected</a></li><li><a href="#savelistasmenuitemselected">saveListAsMenuItemSelected</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#addposebuttonpressed">addPoseButtonPressed</a></li><li><a href="#editposebuttonpressed">editPoseButtonPressed</a></li><li><a href="#duplicateposebuttonpressed">duplicatePoseButtonPressed</a></li><li><a href="#updateposebuttonpressed">updatePoseButtonPressed</a></li><li><a href="#selectbuttonpressed">selectButtonPressed</a></li><li><a href="#pastebuttonpressed">pasteButtonPressed</a></li><li><a href="#poselistdoubleclicked">poseListDoubleClicked</a></li><li><a href="#deleteposebuttonpressed">deletePoseButtonPressed</a></li><li><a href="#moveupposebuttonpressed">moveUpPoseButtonPressed</a></li><li><a href="#movedownposebuttonpressed">moveDownPoseButtonPressed</a></li><li><a href="#buildeditorwindow">buildEditorWindow</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nkposestackeventcontroller">nkPoseStackEventController</a></li><li><a href="#nkposestackposeschanged">nkPoseStackPosesChanged</a></li><li><a href="#nkposestackscriptnodesretrieved">nkPoseStackScriptNodesRetrieved</a></li><li><a href="#nkposestacknewsceneopened">nkPoseStackNewSceneOpened</a></li><li><a href="#nkposestackpostsceneread">nkPoseStackPostSceneRead</a></li><li><a href="#nkposestackattributedeleted">nkPoseStackAttributeDeleted</a></li><li><a href="#nkposestackversion">nkPoseStackVersion</a></li><li><a href="#nkposestack">nkPoseStack</a></li><li><a href="#test0">test0</a></li><li><a href="#test1">test1</a></li><li><a href="#nkposestackscriptnodetestnodes">$nkPoseStackScriptNodeTestNodes</a></li><li><a href="#nkposestackscriptnodetestobserver">nkPoseStackScriptNodeTestObserver</a></li><li><a href="#test2">test2</a></li><li><a href="#test3">test3</a></li><li><a href="#nkposestackposeopstestselectionmode">$nkPoseStackPoseOpsTestSelectionMode</a></li><li><a href="#nkposestackposeopstestobserver">nkPoseStackPoseOpsTestObserver</a></li><li><a href="#test4">test4</a></li><li><a href="#test5">test5</a></li><li><a href="#nkposestacktest">nkPoseStackTest</a></li><li><a href="#nkposestackpasteposetest">nkPoseStackPastePoseTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="getposeversion">proc&nbsp;string&nbsp;getPoseVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkposestackinitpastesetting">global&nbsp;int[]&nbsp;$nkPoseStackInitPasteSetting</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+</dl>
+<h3 id="nkposestackinitselectsetting">global&nbsp;string[]&nbsp;$nkPoseStackInitSelectSetting</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[2]&gt;</code></dd>
+</dl>
+<h3 id="nkposestackinitmirrorsetting">global&nbsp;int[]&nbsp;$nkPoseStackInitMirrorSetting</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int[5]&gt;</code></dd>
+</dl>
+<h3 id="initializeinitvalues">proc&nbsp;initializeInitValues</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="serialize">proc&nbsp;string&nbsp;serialize</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="deserialize">proc&nbsp;string[]&nbsp;deserialize</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="makeposesetting">proc&nbsp;string&nbsp;makePoseSetting</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pasteSetting</code></dd>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectSetting</code></dd>
+<dd><code>&lt;string[2]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$mirrorSetting</code></dd>
+<dd><code>&lt;int[5]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="maketransformheader">proc&nbsp;string&nbsp;makeTransformHeader</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSetting</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="makeposetransform">proc&nbsp;string&nbsp;makePoseTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$header</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="makepose">proc&nbsp;string&nbsp;makePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseTransforms</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractposename">proc&nbsp;string&nbsp;extractPoseName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractposetransforms">proc&nbsp;string[]&nbsp;extractPoseTransforms</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="extracttransformheader">proc&nbsp;string[]&nbsp;extractTransformHeader</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseTransform</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[2]&gt;</code></dd>
+</dl>
+<h3 id="extracttransformnode">proc&nbsp;string&nbsp;extractTransformNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseTransform</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractposesetting">proc&nbsp;string&nbsp;extractPoseSetting</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseTransform</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractposesettings">proc&nbsp;string[]&nbsp;extractPoseSettings</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSetting</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[3]&gt;</code></dd>
+</dl>
+<h3 id="extractpastesetting">proc&nbsp;int[]&nbsp;extractPasteSetting</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSetting</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+</dl>
+<h3 id="extractselectsetting">proc&nbsp;string[]&nbsp;extractSelectSetting</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSetting</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[2]&gt;</code></dd>
+</dl>
+<h3 id="extractmirrorsetting">proc&nbsp;int[]&nbsp;extractMirrorSetting</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSetting</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[5]&gt;</code></dd>
+</dl>
+<h3 id="extracttransformvalues">proc&nbsp;float[]&nbsp;extractTransformValues</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseTransform</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[13]&gt;</code></dd>
+</dl>
+<h3 id="convertdataversion">proc&nbsp;string&nbsp;convertDataVersion</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>戻り値にポーズバージョンは含まれない。</p></dd>
+</dl>
+<h3 id="resolvenamespace">proc&nbsp;string[]&nbsp;resolveNamespace</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poses</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gettransformattributevalues">proc&nbsp;float[]&nbsp;getTransformAttributeValues</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[13]&gt;</code></dd>
+</dl>
+<h3 id="makeposetransforms">proc&nbsp;string[]&nbsp;makePoseTransforms</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSettings</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="settransformattributes">proc&nbsp;setTransformAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$m</code></dd>
+<dd><code>&lt;float[12]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetT</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetR</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetS</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="asistransform">proc&nbsp;float[]&nbsp;asIsTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$m</code></dd>
+<dd><code>&lt;float[13]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[12]&gt;</code></dd>
+</dl>
+<h3 id="mirrortransform">proc&nbsp;float[]&nbsp;mirrorTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$m</code></dd>
+<dd><code>&lt;float[13]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$hasCommonParent</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$mirrorAxis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$primaryAxis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$secondaryAxis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$invertPrimaryAxis</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$invertSecondaryAxis</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[12]&gt;</code></dd>
+</dl>
+<h3 id="isvalidscriptnode">proc&nbsp;int&nbsp;isValidScriptNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="createscriptnode">proc&nbsp;string&nbsp;createScriptNode</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getposestackdataattr">proc&nbsp;string&nbsp;getPoseStackDataAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="setposestackdataattr">proc&nbsp;setPoseStackDataAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="mergescriptnodes">proc&nbsp;string&nbsp;mergeScriptNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>全てのデータが空の場合はマージを行わずにノードを削除する。</p></dd>
+</dl>
+<h3 id="getscriptnodes">proc&nbsp;string[]&nbsp;getScriptNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="geteditablescriptnode">proc&nbsp;string&nbsp;getEditableScriptNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列の場合は<code>getScriptNodes</code>の結果を使用する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="deletescriptnodes">proc&nbsp;deleteScriptNodes</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="isposereferenced">proc&nbsp;int&nbsp;isPoseReferenced</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="readattrposes">proc&nbsp;string[]&nbsp;readAttrPoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>空配列の場合は<code>getScriptNodes</code>の結果を使用する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="appendattrposes">proc&nbsp;int&nbsp;appendAttrPoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poses</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="writeattrposes">proc&nbsp;int&nbsp;writeAttrPoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poses</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>空配列を渡した場合はスクリプトノードを削除して成功とする。</p></dd>
+</dl>
+<h3 id="makeeditableposes">proc&nbsp;int&nbsp;makeEditablePoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poses</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>編集可能なポーズを格納する配列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>編集可能なポーズの開始インデックス。基数は<code>0</code>。</p></dd>
+</dl>
+<h3 id="insertpose">proc&nbsp;int&nbsp;insertPose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="movepose">proc&nbsp;int&nbsp;movePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$fromIndex</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$destIndex</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="removepose">proc&nbsp;int&nbsp;removePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="replacepose">proc&nbsp;int&nbsp;replacePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pose</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="clearposes">proc&nbsp;int&nbsp;clearPoses</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="openposes">proc&nbsp;int&nbsp;openPoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="importposes">proc&nbsp;int&nbsp;importPoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="saveposes">proc&nbsp;int&nbsp;savePoses</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="getposenames">proc&nbsp;string[]&nbsp;getPoseNames</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="addpose">proc&nbsp;int&nbsp;addPose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSettings</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p><code>boolean,boolean,boolean/string,string/int,int,int,boolean,boolean</code>形式の文字列配列。</p>
+<table>
+<thead>
+<tr>
+<th>構文</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>paste_x</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>paste_y</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>paste_z</td>
+</tr>
+<tr>
+<td>string</td>
+<td>select_a</td>
+</tr>
+<tr>
+<td>string</td>
+<td>select_b</td>
+</tr>
+<tr>
+<td>int</td>
+<td>mirror_axis</td>
+</tr>
+<tr>
+<td>int</td>
+<td>primary_axis</td>
+</tr>
+<tr>
+<td>int</td>
+<td>secondary_axis</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>invertPrimary_axis</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>invertSecondary_axis</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="editpose">proc&nbsp;int&nbsp;editPose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$poseSettings</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p><code>addPose</code>の<code>poseSettings</code>と同様。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="duplicatepose">proc&nbsp;int&nbsp;duplicatePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>リファレンスポーズの場合はリストの最後に複製される。</p></dd>
+</dl>
+<h3 id="updatepose">proc&nbsp;int&nbsp;updatePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="deletepose">proc&nbsp;int&nbsp;deletePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="moveprevpose">proc&nbsp;int&nbsp;movePrevPose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="movenextpose">proc&nbsp;int&nbsp;moveNextPose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="selectnodes">proc&nbsp;int&nbsp;selectNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isOpposite</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$modifier</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>修飾キーの状態（<code>getModifiers</code>）により選択動作を指定する。<br />
+リストに無い値を指定した場合は置き換え動作になる。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>キー</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Nothing</td>
+<td>置き換え</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Shift</td>
+<td>トグル</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Ctrl</td>
+<td>選択解除</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>Shift + Ctrl</td>
+<td>追加選択</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>対象ノードが存在しない場合は空のリストで選択動作を行う。</p></dd>
+</dl>
+<h3 id="pastepose">proc&nbsp;int&nbsp;pastePose</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isOpposite</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$targetNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="nkposestackscriptnodeids">global&nbsp;string[]&nbsp;$nkPoseStackScriptNodeIds</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkposestackscriptjobids">global&nbsp;int[]&nbsp;$nkPoseStackScriptJobIds</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="initializescriptjobvalues">proc&nbsp;initializeScriptJobValues</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="registereventjob">proc&nbsp;registerEventJob</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unregistereventjob">proc&nbsp;unregisterEventJob</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="registernodejob">proc&nbsp;registerNodeJob</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unregisternodejob">proc&nbsp;unregisterNodeJob</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackeditorposeindex">global&nbsp;int&nbsp;$nkPoseStackEditorPoseIndex</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p><code>-1</code>ならポーズ追加。</p></dd>
+</dl>
+<h3 id="nkposestackeditorposename">global&nbsp;string&nbsp;$nkPoseStackEditorPoseName</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>設定UI用の一時変数。</p></dd>
+</dl>
+<h3 id="nkposestackeditornodes">global&nbsp;string[]&nbsp;$nkPoseStackEditorNodes</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>設定UI用の一時変数。</p></dd>
+</dl>
+<h3 id="nkposestackeditorposesettings">global&nbsp;string[]&nbsp;$nkPoseStackEditorPoseSettings</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>設定UI用の一時変数。</p></dd>
+</dl>
+<h3 id="nkposestackeditorselectpatterna">global&nbsp;string&nbsp;$nkPoseStackEditorSelectPatternA</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>設定UI用の一時変数。</p></dd>
+</dl>
+<h3 id="nkposestackeditorselectpatternb">global&nbsp;string&nbsp;$nkPoseStackEditorSelectPatternB</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>設定UI用の一時変数。</p></dd>
+</dl>
+<h3 id="nkposestackeditorisuiupdating">global&nbsp;int&nbsp;$nkPoseStackEditorIsUIUpdating</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>設定UIが更新中かどうか。</p></dd>
+</dl>
+<h3 id="nkposestackneedupdateinitparameters">global&nbsp;int[]&nbsp;$nkPoseStackNeedUpdateInitParameters</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean[3]&gt;</code></dd>
+<dd><p>プロンプトを閉じる際に初期化用の設定値を更新するかどうか。</p></dd>
+</dl>
+<h3 id="initializeeditorparameters">proc&nbsp;initializeEditorParameters</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="sanitizetext">proc&nbsp;string&nbsp;sanitizeText</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="makenodelistlabel">proc&nbsp;string&nbsp;makeNodeListLabel</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>基数<code>0</code>の整数。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="updatenodelist">proc&nbsp;updateNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$partial</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>選択した項目のみを更新するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateposesettings">proc&nbsp;updatePoseSettings</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$id</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatepastesettingui">proc&nbsp;updatePasteSettingUI</h3>
+<pre>/*-
+@param $pasteSetting &lt;boolean[0|3]&gt;
+@returns &lt;&gt;
+*/</pre>
+<h3 id="updateselectsettingui">proc&nbsp;updateSelectSettingUI</h3>
+<pre>/*-
+@param $selectSetting &lt;string[0|2]&gt;
+@returns &lt;&gt;
+*/</pre>
+<h3 id="updatemirrorsettingui">proc&nbsp;updateMirrorSettingUI</h3>
+<pre>/*-
+@param $mirrorSetting &lt;int[0|5]&gt;
+@returns &lt;&gt;
+*/</pre>
+<h3 id="getposelistselectedindex">proc&nbsp;int&nbsp;getPoseListSelectedIndex</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="getposelistselecteditem">proc&nbsp;string&nbsp;getPoseListSelectedItem</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="selectposelistbyindex">proc&nbsp;selectPoseListByIndex</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectposelistbyitem">proc&nbsp;selectPoseListByItem</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$item</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateposelist">proc&nbsp;updatePoseList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectionMode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>更新後の選択状態。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code></td>
+<td>選択無し</td>
+</tr>
+<tr>
+<td><code>keepIndex</code></td>
+<td>前回の選択インデックスを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>keepItem</code></td>
+<td>前回の選択アイテムを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>last</code></td>
+<td>末尾のアイテムを選択</td>
+</tr>
+<tr>
+<td><code>prev</code></td>
+<td>前に一つずらす</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>後に一つずらす</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateinitparameters">proc&nbsp;updateInitParameters</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="applypose">proc&nbsp;applyPose</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="makeposename">proc&nbsp;string&nbsp;makePoseName</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="subscribeposesobservers">proc&nbsp;subscribePosesObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unsubscribeposesobservers">proc&nbsp;unsubscribePosesObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="closeeditorwindow">proc&nbsp;closeEditorWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackeditorwindowclosed">proc&nbsp;nkPoseStackEditorWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="posenametextentered">proc&nbsp;poseNameTextEntered</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nodelistselected">proc&nbsp;nodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pasteattributescheckboxgrp1changed">proc&nbsp;pasteAttributesCheckBoxGrp1Changed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pasteattributescheckboxgrp2changed">proc&nbsp;pasteAttributesCheckBoxGrp2Changed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pasteattributescheckboxgrp3changed">proc&nbsp;pasteAttributesCheckBoxGrp3Changed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectpatternatextentered">proc&nbsp;selectPatternATextEntered</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectpatternbtextentered">proc&nbsp;selectPatternBTextEntered</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="mirroraxisradiobuttonon">proc&nbsp;mirrorAxisRadioButtonOn</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="primaryaxisradiobuttonon">proc&nbsp;primaryAxisRadioButtonOn</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="secondaryaxisradiobuttonon">proc&nbsp;secondaryAxisRadioButtonOn</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="invertaxischeckboxgrp1changed">proc&nbsp;invertAxisCheckBoxGrp1Changed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="invertaxischeckboxgrp2changed">proc&nbsp;invertAxisCheckBoxGrp2Changed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="okbuttonpressed">proc&nbsp;okButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="applybuttonpressed">proc&nbsp;applyButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="cancelbuttonpressed">proc&nbsp;cancelButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackwindowclosed">proc&nbsp;nkPoseStackWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="clearlistmenuitemselected">proc&nbsp;clearListMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="openlistmenuitemselected">proc&nbsp;openListMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="importlistmenuitemselected">proc&nbsp;importListMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="savelistasmenuitemselected">proc&nbsp;saveListAsMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="addposebuttonpressed">proc&nbsp;addPoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="editposebuttonpressed">proc&nbsp;editPoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="duplicateposebuttonpressed">proc&nbsp;duplicatePoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateposebuttonpressed">proc&nbsp;updatePoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectbuttonpressed">proc&nbsp;selectButtonPressed</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isOpposite</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pastebuttonpressed">proc&nbsp;pasteButtonPressed</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isOpposite</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="poselistdoubleclicked">proc&nbsp;poseListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="deleteposebuttonpressed">proc&nbsp;deletePoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="moveupposebuttonpressed">proc&nbsp;moveUpPoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="movedownposebuttonpressed">proc&nbsp;moveDownPoseButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildeditorwindow">proc&nbsp;buildEditorWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackeventcontroller">global&nbsp;proc&nbsp;nkPoseStackEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackposeschanged">global&nbsp;proc&nbsp;nkPoseStackPosesChanged</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectionMode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>更新後の選択状態。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code></td>
+<td>選択無し</td>
+</tr>
+<tr>
+<td><code>keepIndex</code></td>
+<td>前回の選択インデックスを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>keepItem</code></td>
+<td>前回の選択アイテムを引き継ぐ</td>
+</tr>
+<tr>
+<td><code>last</code></td>
+<td>末尾のアイテムを選択</td>
+</tr>
+<tr>
+<td><code>prev</code></td>
+<td>前に一つずらす</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>後に一つずらす</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackscriptnodesretrieved">global&nbsp;proc&nbsp;nkPoseStackScriptNodesRetrieved</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestacknewsceneopened">global&nbsp;proc&nbsp;nkPoseStackNewSceneOpened</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackpostsceneread">global&nbsp;proc&nbsp;nkPoseStackPostSceneRead</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackattributedeleted">global&nbsp;proc&nbsp;nkPoseStackAttributeDeleted</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackversion">global&nbsp;proc&nbsp;string&nbsp;nkPoseStackVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkposestack">global&nbsp;proc&nbsp;nkPoseStack</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>データ変換。</p></dd>
+</dl>
+<h3 id="test1">proc&nbsp;test1</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>トランスフォーム。</p></dd>
+</dl>
+<h3 id="nkposestackscriptnodetestnodes">global&nbsp;string[]&nbsp;$nkPoseStackScriptNodeTestNodes</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkposestackscriptnodetestobserver">global&nbsp;proc&nbsp;nkPoseStackScriptNodeTestObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test2">proc&nbsp;test2</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>スクリプトノード。</p></dd>
+</dl>
+<h3 id="test3">proc&nbsp;test3</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>スクリプトノードアトリビュート。</p></dd>
+</dl>
+<h3 id="nkposestackposeopstestselectionmode">global&nbsp;string&nbsp;$nkPoseStackPoseOpsTestSelectionMode</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkposestackposeopstestobserver">global&nbsp;proc&nbsp;nkPoseStackPoseOpsTestObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectionMode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test4">proc&nbsp;test4</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ポーズ操作。</p></dd>
+</dl>
+<h3 id="test5">proc&nbsp;test5</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ノード操作。</p></dd>
+</dl>
+<h3 id="nkposestacktest">global&nbsp;proc&nbsp;nkPoseStackTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkposestackpasteposetest">global&nbsp;proc&nbsp;nkPoseStackPastePoseTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$rotateOrder</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>回転順序。<code>0</code>から<code>5</code>の値。既定値は<code>0</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$isOpposite</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>ミラーするかどうか。既定値は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pasteSetting</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+<dd><p>貼り付け先アトリビュート。TRSの順。既定値は<code>{1, 1, 0}</code>。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ポーズ貼り付けテスト。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,2515 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkBdnEditor.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkBdnEditor.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#nkbdneditordefaultbdnattribute">$nkBdnEditorDefaultBdnAttribute</a></li><li><a href="#nkbdneditordefaultdynamicsdisplayattribute">$nkBdnEditorDefaultDynamicsDisplayAttribute</a></li><li><a href="#nkbdneditordefaulttargetdisplayattribute">$nkBdnEditorDefaultTargetDisplayAttribute</a></li><li><a href="#nkbdneditordefaultcolliderdisplayattribute">$nkBdnEditorDefaultColliderDisplayAttribute</a></li><li><a href="#nkbdneditordefaultcapsulecolliderattribute">$nkBdnEditorDefaultCapsuleColliderAttribute</a></li><li><a href="#nkbdneditordefaultinfiniteplanecolliderattribute">$nkBdnEditorDefaultInfinitePlaneColliderAttribute</a></li><li><a href="#nkbdneditordefaultspherecolliderattribute">$nkBdnEditorDefaultSphereColliderAttribute</a></li><li><a href="#nkbdneditordefaultdynamicsnodecolor">$nkBdnEditorDefaultDynamicsNodeColor</a></li><li><a href="#nkbdneditordefaulttargetnodecolor">$nkBdnEditorDefaultTargetNodeColor</a></li><li><a href="#nkbdneditordefaultcollidernodecolor">$nkBdnEditorDefaultColliderNodeColor</a></li><li><a href="#nkbdneditorbdnattributecache">$nkBdnEditorBdnAttributeCache</a></li><li><a href="#nkbdneditorcapsulecolliderattributecache">$nkBdnEditorCapsuleColliderAttributeCache</a></li><li><a href="#nkbdneditorinfiniteplanecolliderattributecache">$nkBdnEditorInfinitePlaneColliderAttributeCache</a></li><li><a href="#nkbdneditorspherecolliderattributecache">$nkBdnEditorSphereColliderAttributeCache</a></li><li><a href="#initializedefaultvalues">initializeDefaultValues</a></li><li><a href="#isbdnpluginloaded">isBdnPluginLoaded</a></li><li><a href="#loadbdnplugin">loadBdnPlugin</a></li><li><a href="#unloadbdnplugin">unloadBdnPlugin</a></li><li><a href="#getbdnpluginversion">getBdnPluginVersion</a></li><li><a href="#gettimenode">getTimeNode</a></li><li><a href="#unlocktransformattributes">unlockTransformAttributes</a></li><li><a href="#initgroupnode">initGroupNode</a></li><li><a href="#initspacenode">initSpaceNode</a></li><li><a href="#initaltnode">initAltNode</a></li><li><a href="#initjointnode">initJointNode</a></li><li><a href="#initradiusnode">initRadiusNode</a></li><li><a href="#initcollidernode">initColliderNode</a></li><li><a href="#initcollidercomponentnode">initColliderComponentNode</a></li><li><a href="#initforcenode">initForceNode</a></li><li><a href="#getbdntype">getBdnType</a></li><li><a href="#isbdntype">isBdnType</a></li><li><a href="#getgrouptype">getGroupType</a></li><li><a href="#isgrouptype">isGroupType</a></li><li><a href="#getspacetype">getSpaceType</a></li><li><a href="#isspacetype">isSpaceType</a></li><li><a href="#getjointkind">getJointKind</a></li><li><a href="#isjointkind">isJointKind</a></li><li><a href="#getjointtype">getJointType</a></li><li><a href="#isjointtype">isJointType</a></li><li><a href="#getcollidertype">getColliderType</a></li><li><a href="#iscollidertype">isColliderType</a></li><li><a href="#isbdnnode">isBdnNode</a></li><li><a href="#getbdngroupnodes">getBdnGroupNodes</a></li><li><a href="#geteditablebdngroupnode">getEditableBdnGroupNode</a></li><li><a href="#getdynamicsgroupnodes">getDynamicsGroupNodes</a></li><li><a href="#getcollidergroupnodes">getColliderGroupNodes</a></li><li><a href="#geteditablecollidergroupnode">getEditableColliderGroupNode</a></li><li><a href="#mergeeditablebdngroupnodes">mergeEditableBdnGroupNodes</a></li><li><a href="#gatherbdnnodes">gatherBdnNodes</a></li><li><a href="#gathercollidernodes">gatherColliderNodes</a></li><li><a href="#gathermeshnodes">gatherMeshNodes</a></li><li><a href="#bdnattributestodict">bdnAttributesToDict</a></li><li><a href="#applydicttobdnattributes">applyDictToBdnAttributes</a></li><li><a href="#setfloatbdnattribute">setFloatBdnAttribute</a></li><li><a href="#setintbdnattribute">setIntBdnAttribute</a></li><li><a href="#exportbdnattributes">exportBdnAttributes</a></li><li><a href="#importbdnattributes">importBdnAttributes</a></li><li><a href="#copybdnattributes">copyBdnAttributes</a></li><li><a href="#pastebdnattributes">pasteBdnAttributes</a></li><li><a href="#substitutebdnnodes">substituteBdnNodes</a></li><li><a href="#restorebdnnodes">restoreBdnNodes</a></li><li><a href="#nkbdneditorcreatedynamicsscript">nkBdnEditorCreateDynamicsScript</a></li><li><a href="#nkbdneditorcreatetargetscript">nkBdnEditorCreateTargetScript</a></li><li><a href="#splitskeletonbranch">splitSkeletonBranch</a></li><li><a href="#createendjoint">createEndJoint</a></li><li><a href="#constraintskeleton">constraintSkeleton</a></li><li><a href="#createbdnnodes">createBdnNodes</a></li><li><a href="#createradiussphere">createRadiusSphere</a></li><li><a href="#createtarget">createTarget</a></li><li><a href="#createdynamicsunit">createDynamicsUnit</a></li><li><a href="#dynamicsdisplayattributestodict">dynamicsDisplayAttributesToDict</a></li><li><a href="#targetdisplayattributestodict">targetDisplayAttributesToDict</a></li><li><a href="#applydicttodynamicsdisplayattributes">applyDictToDynamicsDisplayAttributes</a></li><li><a href="#applydicttotargetdisplayattributes">applyDictToTargetDisplayAttributes</a></li><li><a href="#setfloatdynamicsdisplayattribute">setFloatDynamicsDisplayAttribute</a></li><li><a href="#setcolordynamicsdisplayattribute">setColorDynamicsDisplayAttribute</a></li><li><a href="#setfloattargetdisplayattribute">setFloatTargetDisplayAttribute</a></li><li><a href="#setcolortargetdisplayattribute">setColorTargetDisplayAttribute</a></li><li><a href="#createcapsulecollider">createCapsuleCollider</a></li><li><a href="#createinfiniteplanecollider">createInfinitePlaneCollider</a></li><li><a href="#createspherecollider">createSphereCollider</a></li><li><a href="#connectcollider">connectCollider</a></li><li><a href="#appendcollider">appendCollider</a></li><li><a href="#removecollider">removeCollider</a></li><li><a href="#colliderdisplayattributestodict">colliderDisplayAttributesToDict</a></li><li><a href="#applydicttocolliderdisplayattributes">applyDictToColliderDisplayAttributes</a></li><li><a href="#setcolorcolliderdisplayattribute">setColorColliderDisplayAttribute</a></li><li><a href="#capsulecolliderattributestodict">capsuleColliderAttributesToDict</a></li><li><a href="#infiniteplanecolliderattributestodict">infinitePlaneColliderAttributesToDict</a></li><li><a href="#spherecolliderattributestodict">sphereColliderAttributesToDict</a></li><li><a href="#applydicttocapsulecolliderattributes">applyDictToCapsuleColliderAttributes</a></li><li><a href="#applydicttoinfiniteplanecolliderattributes">applyDictToInfinitePlaneColliderAttributes</a></li><li><a href="#applydicttospherecolliderattributes">applyDictToSphereColliderAttributes</a></li><li><a href="#setfloatcolliderattribute">setFloatColliderAttribute</a></li><li><a href="#setintcolliderattribute">setIntColliderAttribute</a></li><li><a href="#exportcolliders">exportColliders</a></li><li><a href="#importcolliders">importColliders</a></li><li><a href="#copycapsulecolliderattributes">copyCapsuleColliderAttributes</a></li><li><a href="#pastecapsulecolliderattributes">pasteCapsuleColliderAttributes</a></li><li><a href="#copyinfiniteplanecolliderattributes">copyInfinitePlaneColliderAttributes</a></li><li><a href="#pasteinfiniteplanecolliderattributes">pasteInfinitePlaneColliderAttributes</a></li><li><a href="#copyspherecolliderattributes">copySphereColliderAttributes</a></li><li><a href="#pastespherecolliderattributes">pasteSphereColliderAttributes</a></li><li><a href="#connectmesh">connectMesh</a></li><li><a href="#appendmesh">appendMesh</a></li><li><a href="#removemesh">removeMesh</a></li><li><a href="#getforcevectornodefromtransform">getForceVectorNodeFromTransform</a></li><li><a href="#getforcevectornodefrombdn">getForceVectorNodeFromBdn</a></li><li><a href="#getforcenodefrombdn">getForceNodeFromBdn</a></li><li><a href="#connectforce">connectForce</a></li><li><a href="#disconnectforce">disconnectForce</a></li><li><a href="#setforcevectorattribute">setForceVectorAttribute</a></li><li><a href="#connectoffset">connectOffset</a></li><li><a href="#disconnectoffset">disconnectOffset</a></li><li><a href="#bakebind">bakeBind</a></li><li><a href="#rebind">rebind</a></li><li><a href="#registereventjob">registerEventJob</a></li><li><a href="#unregistereventjob">unregisterEventJob</a></li><li><a href="#subscribemainwindowobservers">subscribeMainWindowObservers</a></li><li><a href="#unsubscribemainwindowobservers">unsubscribeMainWindowObservers</a></li><li><a href="#getselectedtags">getSelectedTags</a></li><li><a href="#selectlistitemsbytags">selectListItemsByTags</a></li><li><a href="#getselectedbdnnodes">getSelectedBdnNodes</a></li><li><a href="#getselecteddynamicsnodes">getSelectedDynamicsNodes</a></li><li><a href="#getselectedtargetnodes">getSelectedTargetNodes</a></li><li><a href="#getselectedinfluencedcollidernodes">getSelectedInfluencedColliderNodes</a></li><li><a href="#getselectedinfluencedcolliderspacenodes">getSelectedInfluencedColliderSpaceNodes</a></li><li><a href="#getselectedallcollidernodes">getSelectedAllColliderNodes</a></li><li><a href="#getselectedallcolliderspacenodes">getSelectedAllColliderSpaceNodes</a></li><li><a href="#getselectedmeshnodes">getSelectedMeshNodes</a></li><li><a href="#getselectedforcenodes">getSelectedForceNodes</a></li><li><a href="#getselectedforcevectornodes">getSelectedForceVectorNodes</a></li><li><a href="#getselectedoffsetnodes">getSelectedOffsetNodes</a></li><li><a href="#getselectedbindnodes">getSelectedBindNodes</a></li><li><a href="#getbaketimerange">getBakeTimeRange</a></li><li><a href="#updatebdnattributeui">updateBdnAttributeUI</a></li><li><a href="#updatedynamicsdisplayattributeui">updateDynamicsDisplayAttributeUI</a></li><li><a href="#updatetargetdisplayattributeui">updateTargetDisplayAttributeUI</a></li><li><a href="#updatecolliderdisplayattributeui">updateColliderDisplayAttributeUI</a></li><li><a href="#updatecolliderattributeui">updateColliderAttributeUI</a></li><li><a href="#updateforceattributeui">updateForceAttributeUI</a></li><li><a href="#makelistitemlabel">makeListItemLabel</a></li><li><a href="#updatedynamicsnodelist">updateDynamicsNodeList</a></li><li><a href="#updatetargetnodelist">updateTargetNodeList</a></li><li><a href="#updateinfluencedcollidernodelist">updateInfluencedColliderNodeList</a></li><li><a href="#updateallcollidernodelist">updateAllColliderNodeList</a></li><li><a href="#updatemeshnodelist">updateMeshNodeList</a></li><li><a href="#updateforcenodelist">updateForceNodeList</a></li><li><a href="#updateoffsetnodelist">updateOffsetNodeList</a></li><li><a href="#updatebindnodelist">updateBindNodeList</a></li><li><a href="#updatebdnrelatednodelist">updateBdnRelatedNodeList</a></li><li><a href="#updatebdnnodelist">updateBdnNodeList</a></li><li><a href="#nkbdneditorwindowclosed">nkBdnEditorWindowClosed</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#refreshmenuitemselected">refreshMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#togglebdnhierarchymodecheckboxchanged">toggleBdnHierarchyModeCheckBoxChanged</a></li><li><a href="#selectitemsfromselectedbdnnodesbuttonpressed">selectItemsFromSelectedBdnNodesButtonPressed</a></li><li><a href="#selectbdnnodesbuttonpressed">selectBdnNodesButtonPressed</a></li><li><a href="#bdnnodelistdoubleclicked">bdnNodeListDoubleClicked</a></li><li><a href="#bdnnodelistselected">bdnNodeListSelected</a></li><li><a href="#bdnattributeinitializebuttonpressed">bdnAttributeInitializeButtonPressed</a></li><li><a href="#bdnattributeexportbuttonpressed">bdnAttributeExportButtonPressed</a></li><li><a href="#bdnattributeimportbuttonpressed">bdnAttributeImportButtonPressed</a></li><li><a href="#bdnattributecopybuttonpressed">bdnAttributeCopyButtonPressed</a></li><li><a href="#bdnattributepastebuttonpressed">bdnAttributePasteButtonPressed</a></li><li><a href="#bdnenablecheckboxchanged">bdnEnableCheckBoxChanged</a></li><li><a href="#bdnresettimefieldchanged">bdnResetTimeFieldChanged</a></li><li><a href="#bdnfpsfieldchanged">bdnFpsFieldChanged</a></li><li><a href="#bdnoffsetmatrixweightfieldchanged">bdnOffsetMatrixWeightFieldChanged</a></li><li><a href="#bdndampingfieldchanged">bdnDampingFieldChanged</a></li><li><a href="#bdnelasticityfieldchanged">bdnElasticityFieldChanged</a></li><li><a href="#elasticforcefunctionmenugrpchanged">elasticForceFunctionMenuGrpChanged</a></li><li><a href="#bdnstiffnessfieldchanged">bdnStiffnessFieldChanged</a></li><li><a href="#bdnmassfieldchanged">bdnMassFieldChanged</a></li><li><a href="#bdngravityxfieldchanged">bdnGravityXFieldChanged</a></li><li><a href="#bdngravityyfieldchanged">bdnGravityYFieldChanged</a></li><li><a href="#bdngravityzfieldchanged">bdnGravityZFieldChanged</a></li><li><a href="#bdngravitymultiplyfieldchanged">bdnGravityMultiplyFieldChanged</a></li><li><a href="#bdnadditionalforcescalefieldchanged">bdnAdditionalForceScaleFieldChanged</a></li><li><a href="#bdnenableturbulencecheckboxchanged">bdnEnableTurbulenceCheckBoxChanged</a></li><li><a href="#bdnturbulenceseedfieldchanged">bdnTurbulenceSeedFieldChanged</a></li><li><a href="#bdnturbulencestrengthfieldchanged">bdnTurbulenceStrengthFieldChanged</a></li><li><a href="#bdnturbulencevectorchangescalefieldchanged">bdnTurbulenceVectorChangeScaleFieldChanged</a></li><li><a href="#bdnturbulencevectorchangemaxfieldchanged">bdnTurbulenceVectorChangeMaxFieldChanged</a></li><li><a href="#bdnenableanglelimitcheckboxchanged">bdnEnableAngleLimitCheckBoxChanged</a></li><li><a href="#bdnanglelimitfieldchanged">bdnAngleLimitFieldChanged</a></li><li><a href="#bdnradiusfieldchanged">bdnRadiusFieldChanged</a></li><li><a href="#bdniterationsfieldchanged">bdnIterationsFieldChanged</a></li><li><a href="#bdnenablegroundcolcheckboxchanged">bdnEnableGroundColCheckBoxChanged</a></li><li><a href="#bdngroundheightfieldchanged">bdnGroundHeightFieldChanged</a></li><li><a href="#bdnmeshcolcutofffieldchanged">bdnMeshColCutoffFieldChanged</a></li><li><a href="#bdnrelatednodetabchanged">bdnRelatedNodeTabChanged</a></li><li><a href="#createdynamicsunitbuttonpressed">createDynamicsUnitButtonPressed</a></li><li><a href="#selectitemsfromselecteddynamicsnodesbuttonpressed">selectItemsFromSelectedDynamicsNodesButtonPressed</a></li><li><a href="#showdynamicsnodesbuttonpressed">showDynamicsNodesButtonPressed</a></li><li><a href="#hidedynamicsnodesbuttonpressed">hideDynamicsNodesButtonPressed</a></li><li><a href="#selectdynamicsnodesbuttonpressed">selectDynamicsNodesButtonPressed</a></li><li><a href="#dynamicsnodelistdoubleclicked">dynamicsNodeListDoubleClicked</a></li><li><a href="#dynamicsnodelistselected">dynamicsNodeListSelected</a></li><li><a href="#dynamicsnodeinitializebuttonpressed">dynamicsNodeInitializeButtonPressed</a></li><li><a href="#dynamicsnoderadiusfieldchanged">dynamicsNodeRadiusFieldChanged</a></li><li><a href="#dynamicsnodecolorsliderchanged">dynamicsNodeColorSliderChanged</a></li><li><a href="#selectitemsfromselectedtargetnodesbuttonpressed">selectItemsFromSelectedTargetNodesButtonPressed</a></li><li><a href="#showtargetnodesbuttonpressed">showTargetNodesButtonPressed</a></li><li><a href="#hidetargetnodesbuttonpressed">hideTargetNodesButtonPressed</a></li><li><a href="#selecttargetnodesbuttonpressed">selectTargetNodesButtonPressed</a></li><li><a href="#targetnodelistdoubleclicked">targetNodeListDoubleClicked</a></li><li><a href="#targetnodelistselected">targetNodeListSelected</a></li><li><a href="#targetnodeinitializebuttonpressed">targetNodeInitializeButtonPressed</a></li><li><a href="#targetnoderadiusfieldchanged">targetNodeRadiusFieldChanged</a></li><li><a href="#targetnodecolorsliderchanged">targetNodeColorSliderChanged</a></li><li><a href="#createcollidercapsulebuttonpressed">createColliderCapsuleButtonPressed</a></li><li><a href="#createcolliderinfiniteplanebuttonpressed">createColliderInfinitePlaneButtonPressed</a></li><li><a href="#createcolliderspherebuttonpressed">createColliderSphereButtonPressed</a></li><li><a href="#selectitemsfromselectedinfluencedcollidernodesbuttonpressed">selectItemsFromSelectedInfluencedColliderNodesButtonPressed</a></li><li><a href="#showinfluencedcollidernodesbuttonpressed">showInfluencedColliderNodesButtonPressed</a></li><li><a href="#hideinfluencedcollidernodesbuttonpressed">hideInfluencedColliderNodesButtonPressed</a></li><li><a href="#selectinfluencedcolliderspcnodesbuttonpressed">selectInfluencedColliderSpcNodesButtonPressed</a></li><li><a href="#selectinfluencedcollidernodesbuttonpressed">selectInfluencedColliderNodesButtonPressed</a></li><li><a href="#influencedcollidernodelistdoubleclicked">influencedColliderNodeListDoubleClicked</a></li><li><a href="#influencedcollidernodelistselected">influencedColliderNodeListSelected</a></li><li><a href="#removecolliderbuttonpressed">removeColliderButtonPressed</a></li><li><a href="#selectitemsfromselectedallcollidernodesbuttonpressed">selectItemsFromSelectedAllColliderNodesButtonPressed</a></li><li><a href="#allcolliderexportbuttonpressed">allColliderExportButtonPressed</a></li><li><a href="#allcolliderimportbuttonpressed">allColliderImportButtonPressed</a></li><li><a href="#showallcollidernodesbuttonpressed">showAllColliderNodesButtonPressed</a></li><li><a href="#hideallcollidernodesbuttonpressed">hideAllColliderNodesButtonPressed</a></li><li><a href="#selectallcolliderspcnodesbuttonpressed">selectAllColliderSpcNodesButtonPressed</a></li><li><a href="#selectallcollidernodesbuttonpressed">selectAllColliderNodesButtonPressed</a></li><li><a href="#allcollidernodelistdoubleclicked">allColliderNodeListDoubleClicked</a></li><li><a href="#allcollidernodelistselected">allColliderNodeListSelected</a></li><li><a href="#appendcolliderbuttonpressed">appendColliderButtonPressed</a></li><li><a href="#colliderdisplayinitializebuttonpressed">colliderDisplayInitializeButtonPressed</a></li><li><a href="#colliderdisplaycolorsliderchanged">colliderDisplayColorSliderChanged</a></li><li><a href="#capsulecolliderinitializebuttonpressed">capsuleColliderInitializeButtonPressed</a></li><li><a href="#capsulecollidercopybuttonpressed">capsuleColliderCopyButtonPressed</a></li><li><a href="#capsulecolliderpastebuttonpressed">capsuleColliderPasteButtonPressed</a></li><li><a href="#capsulecolliderradiusafieldchanged">capsuleColliderRadiusAFieldChanged</a></li><li><a href="#capsulecolliderradiusbfieldchanged">capsuleColliderRadiusBFieldChanged</a></li><li><a href="#capsulecolliderlengthfieldchanged">capsuleColliderLengthFieldChanged</a></li><li><a href="#capsulecollideroffsetfieldchanged">capsuleColliderOffsetFieldChanged</a></li><li><a href="#capsulecolliderpivotmenugrpchanged">capsuleColliderPivotMenuGrpChanged</a></li><li><a href="#infiniteplanecolliderinitializebuttonpressed">infinitePlaneColliderInitializeButtonPressed</a></li><li><a href="#infiniteplanecollidercopybuttonpressed">infinitePlaneColliderCopyButtonPressed</a></li><li><a href="#infiniteplanecolliderpastebuttonpressed">infinitePlaneColliderPasteButtonPressed</a></li><li><a href="#infiniteplanecolliderwidthfieldchanged">infinitePlaneColliderWidthFieldChanged</a></li><li><a href="#infiniteplanecolliderheightfieldchanged">infinitePlaneColliderHeightFieldChanged</a></li><li><a href="#spherecolliderinitializebuttonpressed">sphereColliderInitializeButtonPressed</a></li><li><a href="#spherecollidercopybuttonpressed">sphereColliderCopyButtonPressed</a></li><li><a href="#spherecolliderpastebuttonpressed">sphereColliderPasteButtonPressed</a></li><li><a href="#spherecolliderradiusfieldchanged">sphereColliderRadiusFieldChanged</a></li><li><a href="#selectitemsfromselectedmeshnodesbuttonpressed">selectItemsFromSelectedMeshNodesButtonPressed</a></li><li><a href="#showmeshnodesbuttonpressed">showMeshNodesButtonPressed</a></li><li><a href="#hidemeshnodesbuttonpressed">hideMeshNodesButtonPressed</a></li><li><a href="#selectmeshnodesbuttonpressed">selectMeshNodesButtonPressed</a></li><li><a href="#meshnodelistdoubleclicked">meshNodeListDoubleClicked</a></li><li><a href="#meshnodelistselected">meshNodeListSelected</a></li><li><a href="#appendmeshnodesbuttonpressed">appendMeshNodesButtonPressed</a></li><li><a href="#removemeshnodesbuttonpressed">removeMeshNodesButtonPressed</a></li><li><a href="#selectitemsfromselectedforcenodesbuttonpressed">selectItemsFromSelectedForceNodesButtonPressed</a></li><li><a href="#showforcenodesbuttonpressed">showForceNodesButtonPressed</a></li><li><a href="#hideforcenodesbuttonpressed">hideForceNodesButtonPressed</a></li><li><a href="#selectforcenodesbuttonpressed">selectForceNodesButtonPressed</a></li><li><a href="#forcenodelistdoubleclicked">forceNodeListDoubleClicked</a></li><li><a href="#forcenodelistselected">forceNodeListSelected</a></li><li><a href="#connectforcenodebuttonpressed">connectForceNodeButtonPressed</a></li><li><a href="#disconnectforcenodebuttonpressed">disconnectForceNodeButtonPressed</a></li><li><a href="#forcevectorradiobuttononned">forceVectorRadioButtonOnned</a></li><li><a href="#invertforcevectorcheckboxchanged">invertForceVectorCheckBoxChanged</a></li><li><a href="#selectitemsfromselectedoffsetnodesbuttonpressed">selectItemsFromSelectedOffsetNodesButtonPressed</a></li><li><a href="#showoffsetnodesbuttonpressed">showOffsetNodesButtonPressed</a></li><li><a href="#hideoffsetnodesbuttonpressed">hideOffsetNodesButtonPressed</a></li><li><a href="#selectoffsetnodesbuttonpressed">selectOffsetNodesButtonPressed</a></li><li><a href="#offsetnodelistdoubleclicked">offsetNodeListDoubleClicked</a></li><li><a href="#offsetnodelistselected">offsetNodeListSelected</a></li><li><a href="#connectoffsetnodebuttonpressed">connectOffsetNodeButtonPressed</a></li><li><a href="#disconnectoffsetnodebuttonpressed">disconnectOffsetNodeButtonPressed</a></li><li><a href="#selectitemsfromselectedbindnodesbuttonpressed">selectItemsFromSelectedBindNodesButtonPressed</a></li><li><a href="#showbindnodesbuttonpressed">showBindNodesButtonPressed</a></li><li><a href="#hidebindnodesbuttonpressed">hideBindNodesButtonPressed</a></li><li><a href="#selectbindnodesbuttonpressed">selectBindNodesButtonPressed</a></li><li><a href="#bindnodelistdoubleclicked">bindNodeListDoubleClicked</a></li><li><a href="#bindnodelistselected">bindNodeListSelected</a></li><li><a href="#bakebuttonpressed">bakeButtonPressed</a></li><li><a href="#rebindbuttonpressed">rebindButtonPressed</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nkbdneditoreventcontroller">nkBdnEditorEventController</a></li><li><a href="#nkbdneditordynamicsnodecreated">nkBdnEditorDynamicsNodeCreated</a></li><li><a href="#nkbdneditorbdnattributechanged">nkBdnEditorBdnAttributeChanged</a></li><li><a href="#nkbdneditorbdncolliderconnectionchanged">nkBdnEditorBdnColliderConnectionChanged</a></li><li><a href="#nkbdneditorbdnmeshconnectionchanged">nkBdnEditorBdnMeshConnectionChanged</a></li><li><a href="#nkbdneditorbdnforceconnectionchanged">nkBdnEditorBdnForceConnectionChanged</a></li><li><a href="#nkbdneditorbdnoffsetconnectionchanged">nkBdnEditorBdnOffsetConnectionChanged</a></li><li><a href="#nkbdneditordynamicsdisplayattributechanged">nkBdnEditorDynamicsDisplayAttributeChanged</a></li><li><a href="#nkbdneditortargetdisplayattributechanged">nkBdnEditorTargetDisplayAttributeChanged</a></li><li><a href="#nkbdneditorcollidercreated">nkBdnEditorColliderCreated</a></li><li><a href="#nkbdneditorcolliderdisplayattributechanged">nkBdnEditorColliderDisplayAttributeChanged</a></li><li><a href="#nkbdneditorcolliderattributechanged">nkBdnEditorColliderAttributeChanged</a></li><li><a href="#nkbdneditorforceattributechanged">nkBdnEditorForceAttributeChanged</a></li><li><a href="#nkbdneditornewsceneopened">nkBdnEditorNewSceneOpened</a></li><li><a href="#nkbdneditorpostsceneread">nkBdnEditorPostSceneRead</a></li><li><a href="#nkbdneditortimechanged">nkBdnEditorTimeChanged</a></li><li><a href="#nkbdneditornoderemoved">nkBdnEditorNodeRemoved</a></li><li><a href="#nkbdneditorversion">nkBdnEditorVersion</a></li><li><a href="#nkbdneditor">nkBdnEditor</a></li><li><a href="#test0">test0</a></li><li><a href="#test1">test1</a></li><li><a href="#test2">test2</a></li><li><a href="#test3">test3</a></li><li><a href="#test4">test4</a></li><li><a href="#test5">test5</a></li><li><a href="#test6">test6</a></li><li><a href="#nkbdneditortest">nkBdnEditorTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="nkbdneditordefaultbdnattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultBdnAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>BDNアトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultdynamicsdisplayattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultDynamicsDisplayAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ダイナミクス表示アトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaulttargetdisplayattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultTargetDisplayAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ターゲット表示アトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultcolliderdisplayattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultColliderDisplayAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>コライダー表示アトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultcapsulecolliderattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultCapsuleColliderAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>カプセルコライダーアトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultinfiniteplanecolliderattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultInfinitePlaneColliderAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>無限平面コライダーアトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultspherecolliderattribute">global&nbsp;string&nbsp;$nkBdnEditorDefaultSphereColliderAttribute</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>球コライダーアトリビュートの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultdynamicsnodecolor">global&nbsp;float[]&nbsp;$nkBdnEditorDefaultDynamicsNodeColor</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ダイナミクスノードカラーの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaulttargetnodecolor">global&nbsp;float[]&nbsp;$nkBdnEditorDefaultTargetNodeColor</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ターゲットノードカラーの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditordefaultcollidernodecolor">global&nbsp;float[]&nbsp;$nkBdnEditorDefaultColliderNodeColor</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>コライダーノードカラーの既定値。</p></dd>
+</dl>
+<h3 id="nkbdneditorbdnattributecache">global&nbsp;string&nbsp;$nkBdnEditorBdnAttributeCache</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>BDNアトリビュートのキャッシュ。</p></dd>
+</dl>
+<h3 id="nkbdneditorcapsulecolliderattributecache">global&nbsp;string&nbsp;$nkBdnEditorCapsuleColliderAttributeCache</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>カプセルコライダーアトリビュートのキャッシュ。</p></dd>
+</dl>
+<h3 id="nkbdneditorinfiniteplanecolliderattributecache">global&nbsp;string&nbsp;$nkBdnEditorInfinitePlaneColliderAttributeCache</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>無限平面コライダーアトリビュートのキャッシュ。</p></dd>
+</dl>
+<h3 id="nkbdneditorspherecolliderattributecache">global&nbsp;string&nbsp;$nkBdnEditorSphereColliderAttributeCache</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>球コライダーアトリビュートのキャッシュ。</p></dd>
+</dl>
+<h3 id="initializedefaultvalues">proc&nbsp;initializeDefaultValues</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="isbdnpluginloaded">proc&nbsp;int&nbsp;isBdnPluginLoaded</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="loadbdnplugin">proc&nbsp;int&nbsp;loadBdnPlugin</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="unloadbdnplugin">proc&nbsp;int&nbsp;unloadBdnPlugin</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="getbdnpluginversion">proc&nbsp;string&nbsp;getBdnPluginVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="gettimenode">proc&nbsp;string&nbsp;getTimeNode</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="unlocktransformattributes">proc&nbsp;int&nbsp;unlockTransformAttributes</h3>
+<p>translateとrotateのロックを解除する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$tFlag</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>位置アトリビュートを処理に含めるかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$rFlag</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>回転アトリビュートを処理に含めるかどうか。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sFlag</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>スケールアトリビュートを処理に含めるかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>translateとrotateのロックが全て解除されているかどうか。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>リファレンスの場合は解除しない。</p></dd>
+</dl>
+<h3 id="initgroupnode">proc&nbsp;string&nbsp;initGroupNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$groupType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bdn</code></td>
+<td>BDNグループ</td>
+</tr>
+<tr>
+<td><code>dynamics</code></td>
+<td>ダイナミクスグループ</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>ターゲットグループ</td>
+</tr>
+<tr>
+<td><code>collider</code></td>
+<td>コライダーグループ</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initspacenode">proc&nbsp;string&nbsp;initSpaceNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$spaceType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dynamics</code></td>
+<td>ダイナミクス</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>ターゲット</td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td>ブランチ</td>
+</tr>
+<tr>
+<td><code>collider</code></td>
+<td>コライダー</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initaltnode">proc&nbsp;string&nbsp;initAltNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initjointnode">proc&nbsp;string&nbsp;initJointNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$jointKind</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dynamics</code></td>
+<td>ダイナミクス用</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>目標姿勢用</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$jointType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>normal</code></td>
+<td>通常</td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td>分岐</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>終端</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initradiusnode">proc&nbsp;string&nbsp;initRadiusNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initcollidernode">proc&nbsp;string&nbsp;initColliderNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>値</th>
+<th>種類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>capsule</code></td>
+<td>カプセル</td>
+</tr>
+<tr>
+<td><code>infinitePlane</code></td>
+<td>無限平面</td>
+</tr>
+<tr>
+<td><code>sphere</code></td>
+<td>球</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initcollidercomponentnode">proc&nbsp;string&nbsp;initColliderComponentNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="initforcenode">proc&nbsp;string&nbsp;initForceNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getbdntype">proc&nbsp;string&nbsp;getBdnType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="isbdntype">proc&nbsp;int&nbsp;isBdnType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getgrouptype">proc&nbsp;string&nbsp;getGroupType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="isgrouptype">proc&nbsp;int&nbsp;isGroupType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getspacetype">proc&nbsp;string&nbsp;getSpaceType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="isspacetype">proc&nbsp;int&nbsp;isSpaceType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getjointkind">proc&nbsp;string&nbsp;getJointKind</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="isjointkind">proc&nbsp;int&nbsp;isJointKind</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$kind</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getjointtype">proc&nbsp;string&nbsp;getJointType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="isjointtype">proc&nbsp;int&nbsp;isJointType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getcollidertype">proc&nbsp;string&nbsp;getColliderType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="iscollidertype">proc&nbsp;int&nbsp;isColliderType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isbdnnode">proc&nbsp;int&nbsp;isBdnNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$includeAlt</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getbdngroupnodes">proc&nbsp;string[]&nbsp;getBdnGroupNodes</h3>
+<p>シーン内の全てのBDNグループノードを取得する。</p>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="geteditablebdngroupnode">proc&nbsp;string&nbsp;getEditableBdnGroupNode</h3>
+<p>シーン内にあるBDNグループノードの内、最初に見つかった編集可能なBDNグループノードを取得する。</p>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getdynamicsgroupnodes">proc&nbsp;string[]&nbsp;getDynamicsGroupNodes</h3>
+<p>シーン内の全てのダイナミクスグループノードを取得する。</p>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getcollidergroupnodes">proc&nbsp;string[]&nbsp;getColliderGroupNodes</h3>
+<p>シーン内の全てのコライダーグループノードを取得する。</p>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="geteditablecollidergroupnode">proc&nbsp;string&nbsp;getEditableColliderGroupNode</h3>
+<p>シーン内にあるコライダーグループノードの内、最初に見つかった編集可能なコライダーグループノードを取得する。</p>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="mergeeditablebdngroupnodes">proc&nbsp;mergeEditableBdnGroupNodes</h3>
+<p>シーン内の全ての編集可能なBDNグループノードを統合する。</p>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="gatherbdnnodes">proc&nbsp;string[]&nbsp;gatherBdnNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectedOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gathercollidernodes">proc&nbsp;string[]&nbsp;gatherColliderNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectedOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gathermeshnodes">proc&nbsp;string[]&nbsp;gatherMeshNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$selectedOnly</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="bdnattributestodict">proc&nbsp;string&nbsp;bdnAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="applydicttobdnattributes">proc&nbsp;applyDictToBdnAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setfloatbdnattribute">proc&nbsp;setFloatBdnAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setintbdnattribute">proc&nbsp;setIntBdnAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="exportbdnattributes">proc&nbsp;exportBdnAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="importbdnattributes">proc&nbsp;importBdnAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="copybdnattributes">proc&nbsp;copyBdnAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pastebdnattributes">proc&nbsp;pasteBdnAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="substitutebdnnodes">proc&nbsp;string[]&nbsp;substituteBdnNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="restorebdnnodes">proc&nbsp;string[]&nbsp;restoreBdnNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$altNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkbdneditorcreatedynamicsscript">global&nbsp;proc&nbsp;string[]&nbsp;nkBdnEditorCreateDynamicsScript</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkbdneditorcreatetargetscript">global&nbsp;proc&nbsp;string[]&nbsp;nkBdnEditorCreateTargetScript</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$parentId</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="splitskeletonbranch">proc&nbsp;string[]&nbsp;splitSkeletonBranch</h3>
+<p>スケルトンの分岐を処理する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchAimVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchUpVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createendjoint">proc&nbsp;string[]&nbsp;createEndJoint</h3>
+<p>ジョイントチェーンの末端にジョイントを追加する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$endJointOffset</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="constraintskeleton">proc&nbsp;string[]&nbsp;constraintSkeleton</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createbdnnodes">proc&nbsp;string[]&nbsp;createBdnNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createradiussphere">proc&nbsp;string[]&nbsp;createRadiusSphere</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createtarget">proc&nbsp;string[]&nbsp;createTarget</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchAimVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchUpVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsGrpNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsSpcNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createdynamicsunit">proc&nbsp;string[]&nbsp;createDynamicsUnit</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchAimVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$branchUpVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$endJointOffset</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dynamicsdisplayattributestodict">proc&nbsp;string&nbsp;dynamicsDisplayAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="targetdisplayattributestodict">proc&nbsp;string&nbsp;targetDisplayAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$targetNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="applydicttodynamicsdisplayattributes">proc&nbsp;applyDictToDynamicsDisplayAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="applydicttotargetdisplayattributes">proc&nbsp;applyDictToTargetDisplayAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$targetNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setfloatdynamicsdisplayattribute">proc&nbsp;setFloatDynamicsDisplayAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcolordynamicsdisplayattribute">proc&nbsp;setColorDynamicsDisplayAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dynamicsNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setfloattargetdisplayattribute">proc&nbsp;setFloatTargetDisplayAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$targetNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcolortargetdisplayattribute">proc&nbsp;setColorTargetDisplayAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$targetNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createcapsulecollider">proc&nbsp;string[]&nbsp;createCapsuleCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldCreateEnd</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createinfiniteplanecollider">proc&nbsp;string[]&nbsp;createInfinitePlaneCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="createspherecollider">proc&nbsp;string[]&nbsp;createSphereCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="connectcollider">proc&nbsp;connectCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="appendcollider">proc&nbsp;appendCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="removecollider">proc&nbsp;removeCollider</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="colliderdisplayattributestodict">proc&nbsp;string&nbsp;colliderDisplayAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="applydicttocolliderdisplayattributes">proc&nbsp;applyDictToColliderDisplayAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setcolorcolliderdisplayattribute">proc&nbsp;setColorColliderDisplayAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderattributestodict">proc&nbsp;string&nbsp;capsuleColliderAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="infiniteplanecolliderattributestodict">proc&nbsp;string&nbsp;infinitePlaneColliderAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="spherecolliderattributestodict">proc&nbsp;string&nbsp;sphereColliderAttributesToDict</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="applydicttocapsulecolliderattributes">proc&nbsp;applyDictToCapsuleColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetPlacementAttributes</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="applydicttoinfiniteplanecolliderattributes">proc&nbsp;applyDictToInfinitePlaneColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="applydicttospherecolliderattributes">proc&nbsp;applyDictToSphereColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetPlacementAttributes</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setfloatcolliderattribute">proc&nbsp;setFloatColliderAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setintcolliderattribute">proc&nbsp;setIntColliderAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="exportcolliders">proc&nbsp;exportColliders</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="importcolliders">proc&nbsp;importColliders</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ファイル選択ダイアログを使用するには空文字列を渡す。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="copycapsulecolliderattributes">proc&nbsp;copyCapsuleColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pastecapsulecolliderattributes">proc&nbsp;pasteCapsuleColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldSetPlacementAttributes</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="copyinfiniteplanecolliderattributes">proc&nbsp;copyInfinitePlaneColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pasteinfiniteplanecolliderattributes">proc&nbsp;pasteInfinitePlaneColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="copyspherecolliderattributes">proc&nbsp;copySphereColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="pastespherecolliderattributes">proc&nbsp;pasteSphereColliderAttributes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="connectmesh">proc&nbsp;connectMesh</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$index</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$meshNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="appendmesh">proc&nbsp;appendMesh</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="removemesh">proc&nbsp;removeMesh</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getforcevectornodefromtransform">proc&nbsp;string&nbsp;getForceVectorNodeFromTransform</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$transformNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getforcevectornodefrombdn">proc&nbsp;string&nbsp;getForceVectorNodeFromBdn</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getforcenodefrombdn">proc&nbsp;string&nbsp;getForceNodeFromBdn</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNode</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="connectforce">proc&nbsp;connectForce</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$forceVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="disconnectforce">proc&nbsp;disconnectForce</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="setforcevectorattribute">proc&nbsp;setForceVectorAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$forceVectorNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$forceVector</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="connectoffset">proc&nbsp;connectOffset</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="disconnectoffset">proc&nbsp;disconnectOffset</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="bakebind">proc&nbsp;bakeBind</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$timeRange</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>int</code>または<code>float</code>で<code>&quot;start:end&quot;</code>の形式で指定する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="rebind">proc&nbsp;rebind</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="registereventjob">proc&nbsp;registerEventJob</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unregistereventjob">proc&nbsp;unregisterEventJob</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="subscribemainwindowobservers">proc&nbsp;subscribeMainWindowObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="unsubscribemainwindowobservers">proc&nbsp;unsubscribeMainWindowObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="getselectedtags">proc&nbsp;string[]&nbsp;getSelectedTags</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="selectlistitemsbytags">proc&nbsp;selectListItemsByTags</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$tags</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="getselectedbdnnodes">proc&nbsp;string[]&nbsp;getSelectedBdnNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselecteddynamicsnodes">proc&nbsp;string[]&nbsp;getSelectedDynamicsNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$includesEnd</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedtargetnodes">proc&nbsp;string[]&nbsp;getSelectedTargetNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$includesBranchRoot</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedinfluencedcollidernodes">proc&nbsp;string[]&nbsp;getSelectedInfluencedColliderNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedinfluencedcolliderspacenodes">proc&nbsp;string[]&nbsp;getSelectedInfluencedColliderSpaceNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedallcollidernodes">proc&nbsp;string[]&nbsp;getSelectedAllColliderNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>空文字列の場合は全て取得する。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$includesComponent</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedallcolliderspacenodes">proc&nbsp;string[]&nbsp;getSelectedAllColliderSpaceNodes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$colliderType</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>空文字列の場合は全て取得する。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedmeshnodes">proc&nbsp;string[]&nbsp;getSelectedMeshNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedforcenodes">proc&nbsp;string[]&nbsp;getSelectedForceNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedforcevectornodes">proc&nbsp;string[]&nbsp;getSelectedForceVectorNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedoffsetnodes">proc&nbsp;string[]&nbsp;getSelectedOffsetNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getselectedbindnodes">proc&nbsp;string[]&nbsp;getSelectedBindNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getbaketimerange">proc&nbsp;string&nbsp;getBakeTimeRange</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="updatebdnattributeui">proc&nbsp;updateBdnAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatedynamicsdisplayattributeui">proc&nbsp;updateDynamicsDisplayAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatetargetdisplayattributeui">proc&nbsp;updateTargetDisplayAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatecolliderdisplayattributeui">proc&nbsp;updateColliderDisplayAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatecolliderattributeui">proc&nbsp;updateColliderAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateforceattributeui">proc&nbsp;updateForceAttributeUI</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="makelistitemlabel">proc&nbsp;string&nbsp;makeListItemLabel</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="updatedynamicsnodelist">proc&nbsp;updateDynamicsNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatetargetnodelist">proc&nbsp;updateTargetNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateinfluencedcollidernodelist">proc&nbsp;updateInfluencedColliderNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateallcollidernodelist">proc&nbsp;updateAllColliderNodeList</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatemeshnodelist">proc&nbsp;updateMeshNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateforcenodelist">proc&nbsp;updateForceNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updateoffsetnodelist">proc&nbsp;updateOffsetNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatebindnodelist">proc&nbsp;updateBindNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$bdnNodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatebdnrelatednodelist">proc&nbsp;updateBdnRelatedNodeList</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$shouldUpdateAllColliderNodeList</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatebdnnodelist">proc&nbsp;updateBdnNodeList</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorwindowclosed">proc&nbsp;nkBdnEditorWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="refreshmenuitemselected">proc&nbsp;refreshMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="togglebdnhierarchymodecheckboxchanged">proc&nbsp;toggleBdnHierarchyModeCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedbdnnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedBdnNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectbdnnodesbuttonpressed">proc&nbsp;selectBdnNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnnodelistdoubleclicked">proc&nbsp;bdnNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnnodelistselected">proc&nbsp;bdnNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnattributeinitializebuttonpressed">proc&nbsp;bdnAttributeInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnattributeexportbuttonpressed">proc&nbsp;bdnAttributeExportButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnattributeimportbuttonpressed">proc&nbsp;bdnAttributeImportButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnattributecopybuttonpressed">proc&nbsp;bdnAttributeCopyButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnattributepastebuttonpressed">proc&nbsp;bdnAttributePasteButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnenablecheckboxchanged">proc&nbsp;bdnEnableCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnresettimefieldchanged">proc&nbsp;bdnResetTimeFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnfpsfieldchanged">proc&nbsp;bdnFpsFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnoffsetmatrixweightfieldchanged">proc&nbsp;bdnOffsetMatrixWeightFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdndampingfieldchanged">proc&nbsp;bdnDampingFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnelasticityfieldchanged">proc&nbsp;bdnElasticityFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="elasticforcefunctionmenugrpchanged">proc&nbsp;elasticForceFunctionMenuGrpChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnstiffnessfieldchanged">proc&nbsp;bdnStiffnessFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnmassfieldchanged">proc&nbsp;bdnMassFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdngravityxfieldchanged">proc&nbsp;bdnGravityXFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdngravityyfieldchanged">proc&nbsp;bdnGravityYFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdngravityzfieldchanged">proc&nbsp;bdnGravityZFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdngravitymultiplyfieldchanged">proc&nbsp;bdnGravityMultiplyFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnadditionalforcescalefieldchanged">proc&nbsp;bdnAdditionalForceScaleFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnenableturbulencecheckboxchanged">proc&nbsp;bdnEnableTurbulenceCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnturbulenceseedfieldchanged">proc&nbsp;bdnTurbulenceSeedFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnturbulencestrengthfieldchanged">proc&nbsp;bdnTurbulenceStrengthFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnturbulencevectorchangescalefieldchanged">proc&nbsp;bdnTurbulenceVectorChangeScaleFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnturbulencevectorchangemaxfieldchanged">proc&nbsp;bdnTurbulenceVectorChangeMaxFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnenableanglelimitcheckboxchanged">proc&nbsp;bdnEnableAngleLimitCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnanglelimitfieldchanged">proc&nbsp;bdnAngleLimitFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnradiusfieldchanged">proc&nbsp;bdnRadiusFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdniterationsfieldchanged">proc&nbsp;bdnIterationsFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnenablegroundcolcheckboxchanged">proc&nbsp;bdnEnableGroundColCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdngroundheightfieldchanged">proc&nbsp;bdnGroundHeightFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnmeshcolcutofffieldchanged">proc&nbsp;bdnMeshColCutoffFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bdnrelatednodetabchanged">proc&nbsp;bdnRelatedNodeTabChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createdynamicsunitbuttonpressed">proc&nbsp;createDynamicsUnitButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselecteddynamicsnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedDynamicsNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showdynamicsnodesbuttonpressed">proc&nbsp;showDynamicsNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hidedynamicsnodesbuttonpressed">proc&nbsp;hideDynamicsNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectdynamicsnodesbuttonpressed">proc&nbsp;selectDynamicsNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="dynamicsnodelistdoubleclicked">proc&nbsp;dynamicsNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="dynamicsnodelistselected">proc&nbsp;dynamicsNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="dynamicsnodeinitializebuttonpressed">proc&nbsp;dynamicsNodeInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="dynamicsnoderadiusfieldchanged">proc&nbsp;dynamicsNodeRadiusFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="dynamicsnodecolorsliderchanged">proc&nbsp;dynamicsNodeColorSliderChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedtargetnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedTargetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showtargetnodesbuttonpressed">proc&nbsp;showTargetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hidetargetnodesbuttonpressed">proc&nbsp;hideTargetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selecttargetnodesbuttonpressed">proc&nbsp;selectTargetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="targetnodelistdoubleclicked">proc&nbsp;targetNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="targetnodelistselected">proc&nbsp;targetNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="targetnodeinitializebuttonpressed">proc&nbsp;targetNodeInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="targetnoderadiusfieldchanged">proc&nbsp;targetNodeRadiusFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="targetnodecolorsliderchanged">proc&nbsp;targetNodeColorSliderChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createcollidercapsulebuttonpressed">proc&nbsp;createColliderCapsuleButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createcolliderinfiniteplanebuttonpressed">proc&nbsp;createColliderInfinitePlaneButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="createcolliderspherebuttonpressed">proc&nbsp;createColliderSphereButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedinfluencedcollidernodesbuttonpressed">proc&nbsp;selectItemsFromSelectedInfluencedColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showinfluencedcollidernodesbuttonpressed">proc&nbsp;showInfluencedColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hideinfluencedcollidernodesbuttonpressed">proc&nbsp;hideInfluencedColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectinfluencedcolliderspcnodesbuttonpressed">proc&nbsp;selectInfluencedColliderSpcNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectinfluencedcollidernodesbuttonpressed">proc&nbsp;selectInfluencedColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="influencedcollidernodelistdoubleclicked">proc&nbsp;influencedColliderNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="influencedcollidernodelistselected">proc&nbsp;influencedColliderNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="removecolliderbuttonpressed">proc&nbsp;removeColliderButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedallcollidernodesbuttonpressed">proc&nbsp;selectItemsFromSelectedAllColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="allcolliderexportbuttonpressed">proc&nbsp;allColliderExportButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="allcolliderimportbuttonpressed">proc&nbsp;allColliderImportButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showallcollidernodesbuttonpressed">proc&nbsp;showAllColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hideallcollidernodesbuttonpressed">proc&nbsp;hideAllColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectallcolliderspcnodesbuttonpressed">proc&nbsp;selectAllColliderSpcNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectallcollidernodesbuttonpressed">proc&nbsp;selectAllColliderNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="allcollidernodelistdoubleclicked">proc&nbsp;allColliderNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="allcollidernodelistselected">proc&nbsp;allColliderNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="appendcolliderbuttonpressed">proc&nbsp;appendColliderButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="colliderdisplayinitializebuttonpressed">proc&nbsp;colliderDisplayInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="colliderdisplaycolorsliderchanged">proc&nbsp;colliderDisplayColorSliderChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderinitializebuttonpressed">proc&nbsp;capsuleColliderInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecollidercopybuttonpressed">proc&nbsp;capsuleColliderCopyButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderpastebuttonpressed">proc&nbsp;capsuleColliderPasteButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderradiusafieldchanged">proc&nbsp;capsuleColliderRadiusAFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderradiusbfieldchanged">proc&nbsp;capsuleColliderRadiusBFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderlengthfieldchanged">proc&nbsp;capsuleColliderLengthFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecollideroffsetfieldchanged">proc&nbsp;capsuleColliderOffsetFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="capsulecolliderpivotmenugrpchanged">proc&nbsp;capsuleColliderPivotMenuGrpChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="infiniteplanecolliderinitializebuttonpressed">proc&nbsp;infinitePlaneColliderInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="infiniteplanecollidercopybuttonpressed">proc&nbsp;infinitePlaneColliderCopyButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="infiniteplanecolliderpastebuttonpressed">proc&nbsp;infinitePlaneColliderPasteButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="infiniteplanecolliderwidthfieldchanged">proc&nbsp;infinitePlaneColliderWidthFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="infiniteplanecolliderheightfieldchanged">proc&nbsp;infinitePlaneColliderHeightFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="spherecolliderinitializebuttonpressed">proc&nbsp;sphereColliderInitializeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="spherecollidercopybuttonpressed">proc&nbsp;sphereColliderCopyButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="spherecolliderpastebuttonpressed">proc&nbsp;sphereColliderPasteButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="spherecolliderradiusfieldchanged">proc&nbsp;sphereColliderRadiusFieldChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedmeshnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showmeshnodesbuttonpressed">proc&nbsp;showMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hidemeshnodesbuttonpressed">proc&nbsp;hideMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectmeshnodesbuttonpressed">proc&nbsp;selectMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="meshnodelistdoubleclicked">proc&nbsp;meshNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="meshnodelistselected">proc&nbsp;meshNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="appendmeshnodesbuttonpressed">proc&nbsp;appendMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="removemeshnodesbuttonpressed">proc&nbsp;removeMeshNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedforcenodesbuttonpressed">proc&nbsp;selectItemsFromSelectedForceNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showforcenodesbuttonpressed">proc&nbsp;showForceNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hideforcenodesbuttonpressed">proc&nbsp;hideForceNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectforcenodesbuttonpressed">proc&nbsp;selectForceNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="forcenodelistdoubleclicked">proc&nbsp;forceNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="forcenodelistselected">proc&nbsp;forceNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="connectforcenodebuttonpressed">proc&nbsp;connectForceNodeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="disconnectforcenodebuttonpressed">proc&nbsp;disconnectForceNodeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="forcevectorradiobuttononned">proc&nbsp;forceVectorRadioButtonOnned</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="invertforcevectorcheckboxchanged">proc&nbsp;invertForceVectorCheckBoxChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedoffsetnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedOffsetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showoffsetnodesbuttonpressed">proc&nbsp;showOffsetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hideoffsetnodesbuttonpressed">proc&nbsp;hideOffsetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectoffsetnodesbuttonpressed">proc&nbsp;selectOffsetNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="offsetnodelistdoubleclicked">proc&nbsp;offsetNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="offsetnodelistselected">proc&nbsp;offsetNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="connectoffsetnodebuttonpressed">proc&nbsp;connectOffsetNodeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="disconnectoffsetnodebuttonpressed">proc&nbsp;disconnectOffsetNodeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectitemsfromselectedbindnodesbuttonpressed">proc&nbsp;selectItemsFromSelectedBindNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="showbindnodesbuttonpressed">proc&nbsp;showBindNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="hidebindnodesbuttonpressed">proc&nbsp;hideBindNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="selectbindnodesbuttonpressed">proc&nbsp;selectBindNodesButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bindnodelistdoubleclicked">proc&nbsp;bindNodeListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bindnodelistselected">proc&nbsp;bindNodeListSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="bakebuttonpressed">proc&nbsp;bakeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="rebindbuttonpressed">proc&nbsp;rebindButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditoreventcontroller">global&nbsp;proc&nbsp;nkBdnEditorEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditordynamicsnodecreated">global&nbsp;proc&nbsp;nkBdnEditorDynamicsNodeCreated</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorbdnattributechanged">global&nbsp;proc&nbsp;nkBdnEditorBdnAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorbdncolliderconnectionchanged">global&nbsp;proc&nbsp;nkBdnEditorBdnColliderConnectionChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorbdnmeshconnectionchanged">global&nbsp;proc&nbsp;nkBdnEditorBdnMeshConnectionChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorbdnforceconnectionchanged">global&nbsp;proc&nbsp;nkBdnEditorBdnForceConnectionChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorbdnoffsetconnectionchanged">global&nbsp;proc&nbsp;nkBdnEditorBdnOffsetConnectionChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditordynamicsdisplayattributechanged">global&nbsp;proc&nbsp;nkBdnEditorDynamicsDisplayAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditortargetdisplayattributechanged">global&nbsp;proc&nbsp;nkBdnEditorTargetDisplayAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorcollidercreated">global&nbsp;proc&nbsp;nkBdnEditorColliderCreated</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorcolliderdisplayattributechanged">global&nbsp;proc&nbsp;nkBdnEditorColliderDisplayAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorcolliderattributechanged">global&nbsp;proc&nbsp;nkBdnEditorColliderAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorforceattributechanged">global&nbsp;proc&nbsp;nkBdnEditorForceAttributeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditornewsceneopened">global&nbsp;proc&nbsp;nkBdnEditorNewSceneOpened</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorpostsceneread">global&nbsp;proc&nbsp;nkBdnEditorPostSceneRead</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditortimechanged">global&nbsp;proc&nbsp;nkBdnEditorTimeChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditornoderemoved">global&nbsp;proc&nbsp;nkBdnEditorNodeRemoved</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodes</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkbdneditorversion">global&nbsp;proc&nbsp;string&nbsp;nkBdnEditorVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkbdneditor">global&nbsp;proc&nbsp;nkBdnEditor</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>プラグイン。</p></dd>
+</dl>
+<h3 id="test1">proc&nbsp;test1</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ノード。</p></dd>
+</dl>
+<h3 id="test2">proc&nbsp;test2</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>アトリビュート。</p></dd>
+</dl>
+<h3 id="test3">proc&nbsp;test3</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>BDNノード。</p></dd>
+</dl>
+<h3 id="test4">proc&nbsp;test4</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>BDNアトリビュート。</p></dd>
+</dl>
+<h3 id="test5">proc&nbsp;test5</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>代替ノード</p></dd>
+</dl>
+<h3 id="test6">proc&nbsp;test6</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>コライダーアトリビュート。</p></dd>
+</dl>
+<h3 id="nkbdneditortest">global&nbsp;proc&nbsp;nkBdnEditorTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

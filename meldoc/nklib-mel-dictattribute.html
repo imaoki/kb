@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.dictAttribute.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">dictAttribute.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#hasdictattribute">hasDictAttribute</a></li><li><a href="#lockdictattribute">lockDictAttribute</a></li><li><a href="#adddictattribute">addDictAttribute</a></li><li><a href="#getdictattribute">getDictAttribute</a></li><li><a href="#setdictattribute">setDictAttribute</a></li><li><a href="#addbooleantodictattr">addBooleanToDictAttr</a></li><li><a href="#addfloattodictattr">addFloatToDictAttr</a></li><li><a href="#addinttodictattr">addIntToDictAttr</a></li><li><a href="#addstringtodictattr">addStringToDictAttr</a></li><li><a href="#addbooleanarraytodictattr">addBooleanArrayToDictAttr</a></li><li><a href="#addfloatarraytodictattr">addFloatArrayToDictAttr</a></li><li><a href="#addintarraytodictattr">addIntArrayToDictAttr</a></li><li><a href="#addstringarraytodictattr">addStringArrayToDictAttr</a></li><li><a href="#getbooleanfromdictattr">getBooleanFromDictAttr</a></li><li><a href="#getfloatfromdictattr">getFloatFromDictAttr</a></li><li><a href="#getintfromdictattr">getIntFromDictAttr</a></li><li><a href="#getstringfromdictattr">getStringFromDictAttr</a></li><li><a href="#getbooleanarrayfromdictattr">getBooleanArrayFromDictAttr</a></li><li><a href="#getfloatarrayfromdictattr">getFloatArrayFromDictAttr</a></li><li><a href="#getintarrayfromdictattr">getIntArrayFromDictAttr</a></li><li><a href="#getstringarrayfromdictattr">getStringArrayFromDictAttr</a></li><li><a href="#removefromdictattr">removeFromDictAttr</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="hasdictattribute">proc&nbsp;int&nbsp;hasDictAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="lockdictattribute">proc&nbsp;int&nbsp;lockDictAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$state</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="adddictattribute">proc&nbsp;string&nbsp;addDictAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>追加されたアトリビュートのロングネーム。</p></dd>
+</dl>
+<h3 id="getdictattribute">proc&nbsp;string&nbsp;getDictAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="setdictattribute">proc&nbsp;int&nbsp;setDictAttribute</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addbooleantodictattr">proc&nbsp;int&nbsp;addBooleanToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addfloattodictattr">proc&nbsp;int&nbsp;addFloatToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addinttodictattr">proc&nbsp;int&nbsp;addIntToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addstringtodictattr">proc&nbsp;int&nbsp;addStringToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addbooleanarraytodictattr">proc&nbsp;int&nbsp;addBooleanArrayToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addfloatarraytodictattr">proc&nbsp;int&nbsp;addFloatArrayToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addintarraytodictattr">proc&nbsp;int&nbsp;addIntArrayToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="addstringarraytodictattr">proc&nbsp;int&nbsp;addStringArrayToDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="getbooleanfromdictattr">proc&nbsp;int&nbsp;getBooleanFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getfloatfromdictattr">proc&nbsp;float&nbsp;getFloatFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<h3 id="getintfromdictattr">proc&nbsp;int&nbsp;getIntFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="getstringfromdictattr">proc&nbsp;string&nbsp;getStringFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getbooleanarrayfromdictattr">proc&nbsp;int[]&nbsp;getBooleanArrayFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<h3 id="getfloatarrayfromdictattr">proc&nbsp;float[]&nbsp;getFloatArrayFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<h3 id="getintarrayfromdictattr">proc&nbsp;int[]&nbsp;getIntArrayFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="getstringarrayfromdictattr">proc&nbsp;string[]&nbsp;getStringArrayFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="removefromdictattr">proc&nbsp;int&nbsp;removeFromDictAttr</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$attribute</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>値の上書きに成功した場合は<code>true</code>、失敗した場合は<code>false</code>。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>キーの存在確認は行わない。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

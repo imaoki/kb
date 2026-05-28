@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkRigAnim.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkRigAnim.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#iskind">isKind</a></li><li><a href="#ismod">isMod</a></li><li><a href="#isctl">isCtl</a></li><li><a href="#isfunction">isFunction</a></li><li><a href="#getmoduletype">getModuleType</a></li><li><a href="#gatherikmodulenodes">gatherIkModuleNodes</a></li><li><a href="#matchiktofk">matchIkToFk</a></li><li><a href="#matchfktoik">matchFkToIk</a></li><li><a href="#nkriganimwindowclosed">nkRigAnimWindowClosed</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#iktofkbuttonpressed">ikToFkButtonPressed</a></li><li><a href="#fktoikbuttonpressed">fkToIkButtonPressed</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nkriganimeventcontroller">nkRigAnimEventController</a></li><li><a href="#nkriganimversion">nkRigAnimVersion</a></li><li><a href="#nkriganim">nkRigAnim</a></li><li><a href="#test0">test0</a></li><li><a href="#nkriganimtest">nkRigAnimTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="iskind">proc&nbsp;int&nbsp;isKind</h3>
+<p>nkRig.melからコピー。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$kind</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="ismod">proc&nbsp;int&nbsp;isMod</h3>
+<p>nkRig.melからコピー。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isctl">proc&nbsp;int&nbsp;isCtl</h3>
+<p>nkRig.melからコピー。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="isfunction">proc&nbsp;int&nbsp;isFunction</h3>
+<p>nkRig.melからコピー。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$function</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getmoduletype">proc&nbsp;string&nbsp;getModuleType</h3>
+<p>nkRig.melからコピー。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$n</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$lowerCase</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="gatherikmodulenodes">proc&nbsp;string[]&nbsp;gatherIkModuleNodes</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="matchiktofk">proc&nbsp;matchIkToFk</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="matchfktoik">proc&nbsp;matchFkToIk</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkriganimwindowclosed">proc&nbsp;nkRigAnimWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="iktofkbuttonpressed">proc&nbsp;ikToFkButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="fktoikbuttonpressed">proc&nbsp;fkToIkButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkriganimeventcontroller">global&nbsp;proc&nbsp;nkRigAnimEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkriganimversion">global&nbsp;proc&nbsp;string&nbsp;nkRigAnimVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkriganim">global&nbsp;proc&nbsp;nkRigAnim</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カテゴリ。</p></dd>
+</dl>
+<h3 id="nkriganimtest">global&nbsp;proc&nbsp;nkRigAnimTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

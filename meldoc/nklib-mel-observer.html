@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.observer.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">observer.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#nkobservers">$nkObservers</a></li><li><a href="#clearobservers">clearObservers</a></li><li><a href="#isvalidobserverevent">isValidObserverEvent</a></li><li><a href="#isvalidobserverproc">isValidObserverProc</a></li><li><a href="#isvalidobserver">isValidObserver</a></li><li><a href="#makeobserver">makeObserver</a></li><li><a href="#extractobserverevent">extractObserverEvent</a></li><li><a href="#extractobserverproc">extractObserverProc</a></li><li><a href="#findobserver">findObserver</a></li><li><a href="#existsobserver">existsObserver</a></li><li><a href="#getobserverprocs">getObserverProcs</a></li><li><a href="#subscribe">subscribe</a></li><li><a href="#unsubscribe">unsubscribe</a></li><li><a href="#notify">notify</a></li><li><a href="#notifyboolean">notifyBoolean</a></li><li><a href="#notifyfloat">notifyFloat</a></li><li><a href="#notifyint">notifyInt</a></li><li><a href="#notifystring">notifyString</a></li><li><a href="#notifypairboolean">notifyPairBoolean</a></li><li><a href="#notifypairfloat">notifyPairFloat</a></li><li><a href="#notifypairint">notifyPairInt</a></li><li><a href="#notifypairstring">notifyPairString</a></li><li><a href="#notifybooleanarray">notifyBooleanArray</a></li><li><a href="#notifyfloatarray">notifyFloatArray</a></li><li><a href="#notifyintarray">notifyIntArray</a></li><li><a href="#notifystringarray">notifyStringArray</a></li><li><a href="#notifypairbooleanarray">notifyPairBooleanArray</a></li><li><a href="#notifypairfloatarray">notifyPairFloatArray</a></li><li><a href="#notifypairintarray">notifyPairIntArray</a></li><li><a href="#notifypairstringarray">notifyPairStringArray</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="nkobservers">global&nbsp;string[]&nbsp;$nkObservers</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="clearobservers">proc&nbsp;clearObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="isvalidobserverevent">proc&nbsp;int&nbsp;isValidObserverEvent</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="isvalidobserverproc">proc&nbsp;int&nbsp;isValidObserverProc</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="isvalidobserver">proc&nbsp;int&nbsp;isValidObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="makeobserver">proc&nbsp;string&nbsp;makeObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractobserverevent">proc&nbsp;string&nbsp;extractObserverEvent</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractobserverproc">proc&nbsp;string&nbsp;extractObserverProc</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="findobserver">proc&nbsp;int&nbsp;findObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>見つからない場合は<code>-1</code>を返す。</p></dd>
+</dl>
+<h3 id="existsobserver">proc&nbsp;int&nbsp;existsObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>オブザーバが登録済みかどうか。</p></dd>
+</dl>
+<h3 id="getobserverprocs">proc&nbsp;string[]&nbsp;getObserverProcs</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="subscribe">proc&nbsp;int&nbsp;subscribe</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>グローバルプロシージャ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、名前が無効もしくは既に登録済みの場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="unsubscribe">proc&nbsp;int&nbsp;unsubscribe</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>グローバルプロシージャ名。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、名前が無効もしくは登録されていない場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="notify">proc&nbsp;notify</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifyboolean">proc&nbsp;notifyBoolean</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$param</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifyfloat">proc&nbsp;notifyFloat</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$param</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifyint">proc&nbsp;notifyInt</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$param</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifystring">proc&nbsp;notifyString</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$param</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairboolean">proc&nbsp;notifyPairBoolean</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramA</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramB</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairfloat">proc&nbsp;notifyPairFloat</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramA</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramB</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairint">proc&nbsp;notifyPairInt</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramA</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramB</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairstring">proc&nbsp;notifyPairString</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramA</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramB</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifybooleanarray">proc&nbsp;notifyBooleanArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$params</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifyfloatarray">proc&nbsp;notifyFloatArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$params</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifyintarray">proc&nbsp;notifyIntArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$params</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifystringarray">proc&nbsp;notifyStringArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$params</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairbooleanarray">proc&nbsp;notifyPairBooleanArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsA</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsB</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairfloatarray">proc&nbsp;notifyPairFloatArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsA</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsB</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairintarray">proc&nbsp;notifyPairIntArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsA</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsB</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="notifypairstringarray">proc&nbsp;notifyPairStringArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsA</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$paramsB</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

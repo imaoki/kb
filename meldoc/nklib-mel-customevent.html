@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.customEvent.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">customEvent.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#nkcustomeventisinitialized">$nkCustomEventIsInitialized</a></li><li><a href="#nkcustomeventobservers">$nkCustomEventObservers</a></li><li><a href="#nkcustomeventcallbackids">$nkCustomEventCallbackIds</a></li><li><a href="#nkcustomeventnodeaddedqueuenodes">$nkCustomEventNodeAddedQueueNodes</a></li><li><a href="#nkcustomeventnodeaddedjobid">$nkCustomEventNodeAddedJobId</a></li><li><a href="#nkcustomeventnodeaddedstarttime">$nkCustomEventNodeAddedStartTime</a></li><li><a href="#nkcustomeventnoderemovedqueuenodes">$nkCustomEventNodeRemovedQueueNodes</a></li><li><a href="#nkcustomeventnoderemovedjobid">$nkCustomEventNodeRemovedJobId</a></li><li><a href="#nkcustomeventnoderemovedstarttime">$nkCustomEventNodeRemovedStartTime</a></li><li><a href="#nkcustomeventinitializenodeaddedparameters">nkCustomEventInitializeNodeAddedParameters</a></li><li><a href="#nkcustomeventinitializenoderemovedparameters">nkCustomEventInitializeNodeRemovedParameters</a></li><li><a href="#nkcustomeventinitialize">nkCustomEventInitialize</a></li><li><a href="#nkcustomeventnodeaddeddeferred">nkCustomEventNodeAddedDeferred</a></li><li><a href="#nkcustomeventnoderemoveddeferred">nkCustomEventNodeRemovedDeferred</a></li><li><a href="#updatenodeaddeddeferred">updateNodeAddedDeferred</a></li><li><a href="#updatenoderemoveddeferred">updateNodeRemovedDeferred</a></li><li><a href="#nkcustomeventnodeadded">nkCustomEventNodeAdded</a></li><li><a href="#nkcustomeventnoderemoved">nkCustomEventNodeRemoved</a></li><li><a href="#clearnodeobservers">clearNodeObservers</a></li><li><a href="#isvalidnodeobservertype">isValidNodeObserverType</a></li><li><a href="#isvalidnodeobserver">isValidNodeObserver</a></li><li><a href="#makenodeobserver">makeNodeObserver</a></li><li><a href="#extractnodeobserverevent">extractNodeObserverEvent</a></li><li><a href="#extractnodeobserverproc">extractNodeObserverProc</a></li><li><a href="#extractnodeobservertype">extractNodeObserverType</a></li><li><a href="#findnodeobserver">findNodeObserver</a></li><li><a href="#existsnodeobserver">existsNodeObserver</a></li><li><a href="#subscribenode">subscribeNode</a></li><li><a href="#unsubscribenode">unsubscribeNode</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="nkcustomeventisinitialized">global&nbsp;int&nbsp;$nkCustomEventIsInitialized</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>グローバル変数を初期化したかどうか。</p></dd>
+</dl>
+<h3 id="nkcustomeventobservers">global&nbsp;string[]&nbsp;$nkCustomEventObservers</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkcustomeventcallbackids">global&nbsp;string[]&nbsp;$nkCustomEventCallbackIds</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkcustomeventnodeaddedqueuenodes">global&nbsp;string[]&nbsp;$nkCustomEventNodeAddedQueueNodes</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノード追加イベントの待機列。</p></dd>
+</dl>
+<h3 id="nkcustomeventnodeaddedjobid">global&nbsp;int&nbsp;$nkCustomEventNodeAddedJobId</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>ノード追加イベントのスクリプトジョブ番号。</p></dd>
+</dl>
+<h3 id="nkcustomeventnodeaddedstarttime">global&nbsp;float&nbsp;$nkCustomEventNodeAddedStartTime</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>ノード追加イベントの開始時間。</p></dd>
+</dl>
+<h3 id="nkcustomeventnoderemovedqueuenodes">global&nbsp;string[]&nbsp;$nkCustomEventNodeRemovedQueueNodes</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノード削除イベントの待機列。</p></dd>
+</dl>
+<h3 id="nkcustomeventnoderemovedjobid">global&nbsp;int&nbsp;$nkCustomEventNodeRemovedJobId</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>ノード削除イベントのスクリプトジョブ番号。</p></dd>
+</dl>
+<h3 id="nkcustomeventnoderemovedstarttime">global&nbsp;float&nbsp;$nkCustomEventNodeRemovedStartTime</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>ノード削除イベントの開始時間。</p></dd>
+</dl>
+<h3 id="nkcustomeventinitializenodeaddedparameters">proc&nbsp;nkCustomEventInitializeNodeAddedParameters</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventinitializenoderemovedparameters">proc&nbsp;nkCustomEventInitializeNodeRemovedParameters</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventinitialize">proc&nbsp;nkCustomEventInitialize</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$force</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventnodeaddeddeferred">global&nbsp;proc&nbsp;nkCustomEventNodeAddedDeferred</h3>
+<p>ノード追加の通知を遅延実行する。</p>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventnoderemoveddeferred">global&nbsp;proc&nbsp;nkCustomEventNodeRemovedDeferred</h3>
+<p>ノード削除の通知を遅延実行する。</p>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatenodeaddeddeferred">proc&nbsp;updateNodeAddedDeferred</h3>
+<p>ノード追加の遅延実行を管理する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードのフルパス。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatenoderemoveddeferred">proc&nbsp;updateNodeRemovedDeferred</h3>
+<p>ノード削除の遅延実行を管理する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードのフルパス。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventnodeadded">global&nbsp;proc&nbsp;nkCustomEventNodeAdded</h3>
+<p>DGにノードが追加された後で呼び出される。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードのフルパス。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$deferred</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>遅延評価するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkcustomeventnoderemoved">global&nbsp;proc&nbsp;nkCustomEventNodeRemoved</h3>
+<p>DGからノードが削除された後で呼び出される。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$node</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードのフルパス。削除後なので通常は空文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$deferred</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>遅延評価するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="clearnodeobservers">proc&nbsp;clearNodeObservers</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="isvalidnodeobservertype">proc&nbsp;int&nbsp;isValidNodeObserverType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="isvalidnodeobserver">proc&nbsp;int&nbsp;isValidNodeObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$observer</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="makenodeobserver">proc&nbsp;string&nbsp;makeNodeObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>イベント名。有効な値は<code>subscribeNode</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>グローバルプロシージャ名。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$type</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>ノードタイプ。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractnodeobserverevent">proc&nbsp;string&nbsp;extractNodeObserverEvent</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeObserver</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractnodeobserverproc">proc&nbsp;string&nbsp;extractNodeObserverProc</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeObserver</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="extractnodeobservertype">proc&nbsp;string&nbsp;extractNodeObserverType</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeObserver</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="findnodeobserver">proc&nbsp;int&nbsp;findNodeObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeObserver</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>見つからない場合は<code>-1</code>を返す。</p></dd>
+</dl>
+<h3 id="existsnodeobserver">proc&nbsp;int&nbsp;existsNodeObserver</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$nodeObserver</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>オブザーバが登録済みかどうか。</p></dd>
+</dl>
+<h3 id="subscribenode">proc&nbsp;int&nbsp;subscribeNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>イベント名。<br />
+有効な値は以下の通り。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>イベント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Added</code></td>
+<td>ノードが作成された後に発生する。</td>
+</tr>
+<tr>
+<td><code>Removed</code></td>
+<td>ノードが削除された後に発生する。</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>グローバルプロシージャ名。<br />
+<code>notifyStringArray</code>により呼び出され、ノードのフルパス配列を引数として一つ取る。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノードタイプの配列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$deferred</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>遅延評価するかどうか。通常は<code>true</code>を推奨。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、名前が無効もしくは既に登録済みの場合は<code>false</code>。</p></dd>
+</dl>
+<h3 id="unsubscribenode">proc&nbsp;int&nbsp;unsubscribeNode</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>イベント名。有効な値は<code>subscribeNode</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$proc</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>グローバルプロシージャ名。<br />
+<code>notifyStringArray</code>により呼び出され、ノードのフルパス配列を引数として一つ取る。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$types</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+<dd><p>ノードタイプの配列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>成功した場合は<code>true</code>、名前が無効もしくは登録されていない場合は<code>false</code>。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

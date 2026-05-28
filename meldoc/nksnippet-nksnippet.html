@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkSnippet.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkSnippet.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#loadscriptdirname">loadScriptDirname</a></li><li><a href="#savescriptdirname">saveScriptDirname</a></li><li><a href="#getscriptfilenames">getScriptFilenames</a></li><li><a href="#executescript">executeScript</a></li><li><a href="#sanitizetext">sanitizeText</a></li><li><a href="#trimendseparator">trimEndSeparator</a></li><li><a href="#updatefilenamelist">updateFilenameList</a></li><li><a href="#getscriptdirname">getScriptDirname</a></li><li><a href="#getselectedscriptfilename">getSelectedScriptFilename</a></li><li><a href="#nksnippetwindowclosed">nkSnippetWindowClosed</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#executebuttonpressed">executeButtonPressed</a></li><li><a href="#filenamelistdoubleclicked">filenameListDoubleClicked</a></li><li><a href="#scriptdirnametextentered">scriptDirnameTextEntered</a></li><li><a href="#refreshlistbuttonpressed">refreshListButtonPressed</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nksnippeteventcontroller">nkSnippetEventController</a></li><li><a href="#nksnippetversion">nkSnippetVersion</a></li><li><a href="#nksnippet">nkSnippet</a></li><li><a href="#test0">test0</a></li><li><a href="#nksnippettest">nkSnippetTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="loadscriptdirname">proc&nbsp;string&nbsp;loadScriptDirname</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="savescriptdirname">proc&nbsp;saveScriptDirname</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="getscriptfilenames">proc&nbsp;string[]&nbsp;getScriptFilenames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="executescript">proc&nbsp;executeScript</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="sanitizetext">proc&nbsp;string&nbsp;sanitizeText</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="trimendseparator">proc&nbsp;string&nbsp;trimEndSeparator</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="updatefilenamelist">proc&nbsp;updateFilenameList</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="getscriptdirname">proc&nbsp;string&nbsp;getScriptDirname</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getselectedscriptfilename">proc&nbsp;string&nbsp;getSelectedScriptFilename</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nksnippetwindowclosed">proc&nbsp;nkSnippetWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="executebuttonpressed">proc&nbsp;executeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="filenamelistdoubleclicked">proc&nbsp;filenameListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="scriptdirnametextentered">proc&nbsp;scriptDirnameTextEntered</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="refreshlistbuttonpressed">proc&nbsp;refreshListButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nksnippeteventcontroller">global&nbsp;proc&nbsp;nkSnippetEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nksnippetversion">global&nbsp;proc&nbsp;string&nbsp;nkSnippetVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nksnippet">global&nbsp;proc&nbsp;nkSnippet</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カテゴリ。</p></dd>
+</dl>
+<h3 id="nksnippettest">global&nbsp;proc&nbsp;nkSnippetTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

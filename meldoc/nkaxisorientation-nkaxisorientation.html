@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkAxisOrientation.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkAxisOrientation.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#getcurrentcontext">getCurrentContext</a></li><li><a href="#getcustomobject">getCustomObject</a></li><li><a href="#setcustomobject">setCustomObject</a></li><li><a href="#updatecustomorientaxes">updateCustomOrientAxes</a></li><li><a href="#settoselection">setToSelection</a></li><li><a href="#orientaxeschanged">orientAxesChanged</a></li><li><a href="#updatecontrol">updateControl</a></li><li><a href="#buildmoveorientmenu">buildMoveOrientMenu</a></li><li><a href="#buildrotateorientmenu">buildRotateOrientMenu</a></li><li><a href="#buildscaleorientmenu">buildScaleOrientMenu</a></li><li><a href="#buildorientmenu">buildOrientMenu</a></li><li><a href="#setorient">setOrient</a></li><li><a href="#buildmoveaxismenu">buildMoveAxisMenu</a></li><li><a href="#buildrotateaxismenu">buildRotateAxisMenu</a></li><li><a href="#buildscaleaxismenu">buildScaleAxisMenu</a></li><li><a href="#buildaxismenu">buildAxisMenu</a></li><li><a href="#setlastaxis">setLastAxis</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#registerscriptjob">registerScriptJob</a></li><li><a href="#initialize">initialize</a></li><li><a href="#nkaxisorientationtoolchanged">nkAxisOrientationToolChanged</a></li><li><a href="#nkaxisorientationtoolsettingschanged">nkAxisOrientationToolSettingsChanged</a></li><li><a href="#nkaxisorientationinvokeevent">nkAxisOrientationInvokeEvent</a></li><li><a href="#nkaxisorientationversion">nkAxisOrientationVersion</a></li><li><a href="#nkaxisorientation">nkAxisOrientation</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="getcurrentcontext">proc&nbsp;string&nbsp;getCurrentContext</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getcustomobject">proc&nbsp;string&nbsp;getCustomObject</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="setcustomobject">proc&nbsp;setCustomObject</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatecustomorientaxes">proc&nbsp;updateCustomOrientAxes</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="settoselection">proc&nbsp;setToSelection</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="orientaxeschanged">proc&nbsp;orientAxesChanged</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$axis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$field</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatecontrol">proc&nbsp;updateControl</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmoveorientmenu">proc&nbsp;buildMoveOrientMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildrotateorientmenu">proc&nbsp;buildRotateOrientMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildscaleorientmenu">proc&nbsp;buildScaleOrientMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildorientmenu">proc&nbsp;buildOrientMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setorient">proc&nbsp;setOrient</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$mode</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmoveaxismenu">proc&nbsp;buildMoveAxisMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildrotateaxismenu">proc&nbsp;buildRotateAxisMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildscaleaxismenu">proc&nbsp;buildScaleAxisMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildaxismenu">proc&nbsp;buildAxisMenu</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$menu</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="setlastaxis">proc&nbsp;setLastAxis</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="registerscriptjob">proc&nbsp;registerScriptJob</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="initialize">proc&nbsp;initialize</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkaxisorientationtoolchanged">global&nbsp;proc&nbsp;nkAxisOrientationToolChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkaxisorientationtoolsettingschanged">global&nbsp;proc&nbsp;nkAxisOrientationToolSettingsChanged</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkaxisorientationinvokeevent">global&nbsp;proc&nbsp;nkAxisOrientationInvokeEvent</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkaxisorientationversion">global&nbsp;proc&nbsp;string&nbsp;nkAxisOrientationVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkaxisorientation">global&nbsp;proc&nbsp;nkAxisOrientation</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

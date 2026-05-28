@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.nkDevRunner.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">nkDevRunner.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#getdevdirname">getDevDirname</a></li><li><a href="#gettoolnamebydirname">getToolnameByDirname</a></li><li><a href="#gettoolnamebyfilename">getToolnameByFilename</a></li><li><a href="#gettooldirnames">getToolDirnames</a></li><li><a href="#gettoolnames">getToolnames</a></li><li><a href="#maketoolfilename">makeToolFilename</a></li><li><a href="#maketoolfilenames">makeToolFilenames</a></li><li><a href="#executescript">executeScript</a></li><li><a href="#updatetoolnamelist">updateToolnameList</a></li><li><a href="#getselectedtoolfilenames">getSelectedToolFilenames</a></li><li><a href="#nkdevrunnerwindowclosed">nkDevRunnerWindowClosed</a></li><li><a href="#resetwindowmenuitemselected">resetWindowMenuItemSelected</a></li><li><a href="#quitmenuitemselected">quitMenuItemSelected</a></li><li><a href="#aboutmenuitemselected">aboutMenuItemSelected</a></li><li><a href="#executebuttonpressed">executeButtonPressed</a></li><li><a href="#toolnamelistdoubleclicked">toolnameListDoubleClicked</a></li><li><a href="#refreshlistbuttonpressed">refreshListButtonPressed</a></li><li><a href="#buildmainwindow">buildMainWindow</a></li><li><a href="#nkdevrunnereventcontroller">nkDevRunnerEventController</a></li><li><a href="#nkdevrunnerversion">nkDevRunnerVersion</a></li><li><a href="#nkdevrunner">nkDevRunner</a></li><li><a href="#test0">test0</a></li><li><a href="#nkdevrunnertest">nkDevRunnerTest</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="getdevdirname">proc&nbsp;string&nbsp;getDevDirname</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="gettoolnamebydirname">proc&nbsp;string&nbsp;getToolnameByDirname</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gettoolnamebyfilename">proc&nbsp;string&nbsp;getToolnameByFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gettooldirnames">proc&nbsp;string[]&nbsp;getToolDirnames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="gettoolnames">proc&nbsp;string[]&nbsp;getToolnames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="maketoolfilename">proc&nbsp;string&nbsp;makeToolFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$toolname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="maketoolfilenames">proc&nbsp;string[]&nbsp;makeToolFilenames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$toolnames</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="executescript">proc&nbsp;executeScript</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filenames</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="updatetoolnamelist">proc&nbsp;updateToolnameList</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="getselectedtoolfilenames">proc&nbsp;string[]&nbsp;getSelectedToolFilenames</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="nkdevrunnerwindowclosed">proc&nbsp;nkDevRunnerWindowClosed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="resetwindowmenuitemselected">proc&nbsp;resetWindowMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="quitmenuitemselected">proc&nbsp;quitMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="aboutmenuitemselected">proc&nbsp;aboutMenuItemSelected</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="executebuttonpressed">proc&nbsp;executeButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="toolnamelistdoubleclicked">proc&nbsp;toolnameListDoubleClicked</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="refreshlistbuttonpressed">proc&nbsp;refreshListButtonPressed</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="buildmainwindow">proc&nbsp;buildMainWindow</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkdevrunnereventcontroller">global&nbsp;proc&nbsp;nkDevRunnerEventController</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$window</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$event</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$control</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="nkdevrunnerversion">global&nbsp;proc&nbsp;string&nbsp;nkDevRunnerVersion</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="nkdevrunner">global&nbsp;proc&nbsp;nkDevRunner</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="test0">proc&nbsp;test0</h3>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>カテゴリ。</p></dd>
+</dl>
+<h3 id="nkdevrunnertest">global&nbsp;proc&nbsp;nkDevRunnerTest</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$num</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.file.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">file.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#isvalidfilename">isValidFilename</a></li><li><a href="#escapeinvalidfilenamechars">escapeInvalidFileNameChars</a></li><li><a href="#getsourcefilename">getSourceFilename</a></li><li><a href="#getsourcedirname">getSourceDirname</a></li><li><a href="#existsdirname">existsDirname</a></li><li><a href="#existsfilename">existsFilename</a></li><li><a href="#getdirnames">getDirnames</a></li><li><a href="#getfilenames">getFilenames</a></li><li><a href="#getopenfilename">getOpenFilename</a></li><li><a href="#getsavefilename">getSaveFilename</a></li><li><a href="#readalllines">readAllLines</a></li><li><a href="#readalltext">readAllText</a></li><li><a href="#writealltext">writeAllText</a></li><li><a href="#writealllines">writeAllLines</a></li><li><a href="#makedirs">makeDirs</a></li><li><a href="#movedir">moveDir</a></li><li><a href="#movefile">moveFile</a></li><li><a href="#deletedir">deleteDir</a></li><li><a href="#deletefile">deleteFile</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="isvalidfilename">proc&nbsp;int&nbsp;isValidFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="escapeinvalidfilenamechars">proc&nbsp;string&nbsp;escapeInvalidFileNameChars</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$replacement</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>禁則文字（<code>:</code>, <code>?</code>, <code>&quot;</code>, <code>*</code>, <code>/</code>, <code>\</code>, <code>&lt;</code>, <code>&gt;</code>, <code>|</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>）を<code>$replacement</code>に置換する。<br />
+<code>$replacement</code>に禁則文字が含まれる場合、それらは<code>_</code>に置換される。</p></dd>
+</dl>
+<h3 id="getsourcefilename">proc&nbsp;string&nbsp;getSourceFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$procName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getsourcedirname">proc&nbsp;string&nbsp;getSourceDirname</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$procName</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="existsdirname">proc&nbsp;int&nbsp;existsDirname</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="existsfilename">proc&nbsp;int&nbsp;existsFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="getdirnames">proc&nbsp;string[]&nbsp;getDirnames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getfilenames">proc&nbsp;string[]&nbsp;getFilenames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filenamePattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="getopenfilename">proc&nbsp;string&nbsp;getOpenFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$caption</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$fileFilter</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="getsavefilename">proc&nbsp;string&nbsp;getSaveFilename</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$caption</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$fileFilter</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="readalllines">proc&nbsp;string[]&nbsp;readAllLines</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>最後の行が空文字列の場合は最後の行を配列から除去する。</p></dd>
+</dl>
+<h3 id="readalltext">proc&nbsp;string&nbsp;readAllText</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>改行コードはLFに置き換えられる。</p></dd>
+</dl>
+<h3 id="writealltext">proc&nbsp;int&nbsp;writeAllText</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+<h3 id="writealllines">proc&nbsp;int&nbsp;writeAllLines</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$lines</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>1行以上ある場合は全体の末尾に改行を加えて書き込む。</p></dd>
+</dl>
+<h3 id="makedirs">proc&nbsp;int&nbsp;makeDirs</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。既に存在する場合は<code>true</code>を返す。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>中間ディレクトリも全て作成される。</p></dd>
+</dl>
+<h3 id="movedir">proc&nbsp;int&nbsp;moveDir</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceDirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$destDirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+<h3 id="movefile">proc&nbsp;int&nbsp;moveFile</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$sourceFilename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$destFilename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+<h3 id="deletedir">proc&nbsp;int&nbsp;deleteDir</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dirname</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>ディレクトリが存在し空でなければならない。</p></dd>
+</dl>
+<h3 id="deletefile">proc&nbsp;int&nbsp;deleteFile</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$filename</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>成功したかどうか。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

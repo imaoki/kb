@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.dictString.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">dictString.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#dictbooleanarraybuffer">$dictBooleanArrayBuffer</a></li><li><a href="#dictfloatarraybuffer">$dictFloatArrayBuffer</a></li><li><a href="#dictintarraybuffer">$dictIntArrayBuffer</a></li><li><a href="#dictstringarraybuffer">$dictStringArrayBuffer</a></li><li><a href="#dictsanitize">dictSanitize</a></li><li><a href="#dictsanitizearray">dictSanitizeArray</a></li><li><a href="#dictextractitems">dictExtractItems</a></li><li><a href="#dictdecomposekey">dictDecomposeKey</a></li><li><a href="#dictdecomposekeyname">dictDecomposeKeyName</a></li><li><a href="#dictdecomposekeytype">dictDecomposeKeyType</a></li><li><a href="#dictextractkey">dictExtractKey</a></li><li><a href="#dictextractvalue">dictExtractValue</a></li><li><a href="#dictiskeyequals">dictIsKeyEquals</a></li><li><a href="#dictgetvalue">dictGetValue</a></li><li><a href="#dictkeynames">dictKeyNames</a></li><li><a href="#dictkeytypes">dictKeyTypes</a></li><li><a href="#dictcontainskey">dictContainsKey</a></li><li><a href="#dictadditem">dictAddItem</a></li><li><a href="#dictaddboolean">dictAddBoolean</a></li><li><a href="#dictaddfloat">dictAddFloat</a></li><li><a href="#dictaddint">dictAddInt</a></li><li><a href="#dictaddstring">dictAddString</a></li><li><a href="#dictaddbooleanarray">dictAddBooleanArray</a></li><li><a href="#dictaddfloatarray">dictAddFloatArray</a></li><li><a href="#dictaddintarray">dictAddIntArray</a></li><li><a href="#dictaddstringarray">dictAddStringArray</a></li><li><a href="#dictgetboolean">dictGetBoolean</a></li><li><a href="#dictgetfloat">dictGetFloat</a></li><li><a href="#dictgetint">dictGetInt</a></li><li><a href="#dictgetstring">dictGetString</a></li><li><a href="#dictgetbooleanarray">dictGetBooleanArray</a></li><li><a href="#dictgetfloatarray">dictGetFloatArray</a></li><li><a href="#dictgetintarray">dictGetIntArray</a></li><li><a href="#dictgetstringarray">dictGetStringArray</a></li><li><a href="#dictremove">dictRemove</a></li><li><a href="#largenodearraydictasstringliteral">largeNodeArrayDictAsStringLiteral</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="dictbooleanarraybuffer">global&nbsp;int[]&nbsp;$dictBooleanArrayBuffer</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<h3 id="dictfloatarraybuffer">global&nbsp;float[]&nbsp;$dictFloatArrayBuffer</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<h3 id="dictintarraybuffer">global&nbsp;int[]&nbsp;$dictIntArrayBuffer</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="dictstringarraybuffer">global&nbsp;string[]&nbsp;$dictStringArrayBuffer</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictsanitize">proc&nbsp;string&nbsp;dictSanitize</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictsanitizearray">proc&nbsp;string[]&nbsp;dictSanitizeArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictextractitems">proc&nbsp;string[]&nbsp;dictExtractItems</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictdecomposekey">proc&nbsp;string[]&nbsp;dictDecomposeKey</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[2]&gt;</code></dd>
+<dd><p>1番目に型識別子を除いたキー文字列、2番目に型名が入った配列。<br />
+キーに型識別子が含まれていない場合の型名は <code>unknown</code> となる。<br />
+型識別子と型名の対応は以下の通り。</p>
+<table>
+<thead>
+<tr>
+<th>型識別子</th>
+<th>型名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b$</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>f$</code></td>
+<td><code>float</code></td>
+</tr>
+<tr>
+<td><code>i$</code></td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>s$</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>b@</code></td>
+<td><code>booleanarray</code></td>
+</tr>
+<tr>
+<td><code>f@</code></td>
+<td><code>floatarray</code></td>
+</tr>
+<tr>
+<td><code>i@</code></td>
+<td><code>intarray</code></td>
+</tr>
+<tr>
+<td><code>s@</code></td>
+<td><code>stringarray</code></td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>型情報を含んでいると分かっている辞書文字列にのみ使用すること。<br />
+キーを無理やり分割するため、例えば <code>bak</code> というキーは <code>k</code> というキー文字列と <code>booleanarray</code> という型名に分割される。</p></dd>
+</dl>
+<h3 id="dictdecomposekeyname">proc&nbsp;string&nbsp;dictDecomposeKeyName</h3>
+<p>キーを分解してキー名を取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictdecomposekeytype">proc&nbsp;string&nbsp;dictDecomposeKeyType</h3>
+<p>キーを分解してキーの型名を取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictextractkey">proc&nbsp;string&nbsp;dictExtractKey</h3>
+<p>文字列を <code>=</code> で分割して左辺のキーを取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictextractvalue">proc&nbsp;string&nbsp;dictExtractValue</h3>
+<p>文字列を <code>=</code> で分割して右辺の値を取得する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictiskeyequals">proc&nbsp;int&nbsp;dictIsKeyEquals</h3>
+<p>指定したキーと型情報を含むキーを比較する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>型情報を含まないキー文字列。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="dictgetvalue">proc&nbsp;string&nbsp;dictGetValue</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictkeynames">proc&nbsp;string[]&nbsp;dictKeyNames</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictkeytypes">proc&nbsp;string[]&nbsp;dictKeyTypes</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictcontainskey">proc&nbsp;int&nbsp;dictContainsKey</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="dictadditem">proc&nbsp;string&nbsp;dictAddItem</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddboolean">proc&nbsp;string&nbsp;dictAddBoolean</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddfloat">proc&nbsp;string&nbsp;dictAddFloat</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddint">proc&nbsp;string&nbsp;dictAddInt</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddstring">proc&nbsp;string&nbsp;dictAddString</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddbooleanarray">proc&nbsp;string&nbsp;dictAddBooleanArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddfloatarray">proc&nbsp;string&nbsp;dictAddFloatArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddintarray">proc&nbsp;string&nbsp;dictAddIntArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictaddstringarray">proc&nbsp;string&nbsp;dictAddStringArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictgetboolean">proc&nbsp;int&nbsp;dictGetBoolean</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="dictgetfloat">proc&nbsp;float&nbsp;dictGetFloat</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<h3 id="dictgetint">proc&nbsp;int&nbsp;dictGetInt</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<h3 id="dictgetstring">proc&nbsp;string&nbsp;dictGetString</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="dictgetbooleanarray">proc&nbsp;int[]&nbsp;dictGetBooleanArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="dictgetfloatarray">proc&nbsp;float[]&nbsp;dictGetFloatArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<h3 id="dictgetintarray">proc&nbsp;int[]&nbsp;dictGetIntArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="dictgetstringarray">proc&nbsp;string[]&nbsp;dictGetStringArray</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$default</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="dictremove">proc&nbsp;string&nbsp;dictRemove</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$key</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="largenodearraydictasstringliteral">proc&nbsp;string&nbsp;largeNodeArrayDictAsStringLiteral</h3>
+<p>巨大なノード配列を含んだ辞書を文字列リテラルに変換する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$dict</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>文字列配列のエスケープ処理は行わないので、ノード配列以外には使用しないこと。</p></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

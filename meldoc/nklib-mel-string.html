@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.string.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">string.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#nkstringisinitialized">$nkStringIsInitialized</a></li><li><a href="#nkstringinitialize">nkStringInitialize</a></li><li><a href="#escapestringforliteral">escapeStringForLiteral</a></li><li><a href="#booleanasstringliteral">booleanAsStringLiteral</a></li><li><a href="#floatasstringliteral">floatAsStringLiteral</a></li><li><a href="#intasstringliteral">intAsStringLiteral</a></li><li><a href="#stringasstringliteral">stringAsStringLiteral</a></li><li><a href="#booleanarrayasstringliteral">booleanArrayAsStringLiteral</a></li><li><a href="#floatarrayasstringliteral">floatArrayAsStringLiteral</a></li><li><a href="#intarrayasstringliteral">intArrayAsStringLiteral</a></li><li><a href="#stringarrayasstringliteral">stringArrayAsStringLiteral</a></li><li><a href="#join">join</a></li><li><a href="#strip">strip</a></li><li><a href="#regexsearchgroup">regexSearchGroup</a></li><li><a href="#regexsearchspan">regexSearchSpan</a></li><li><a href="#regexmatchgroups">regexMatchGroups</a></li><li><a href="#regexmatchsubgroups">regexMatchSubGroups</a></li><li><a href="#regexmatchspans">regexMatchSpans</a></li><li><a href="#regexismatch">regexIsMatch</a></li><li><a href="#regexsplit">regexSplit</a></li><li><a href="#regexreplace">regexReplace</a></li><li><a href="#getclipboardtext">getClipboardText</a></li><li><a href="#setclipboardtext">setClipboardText</a></li><li><a href="#generateuuid">generateUuid</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="nkstringisinitialized">global&nbsp;int&nbsp;$nkStringIsInitialized</h3>
+<dl>
+<dt>変数</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>グローバル変数を初期化したかどうか。</p></dd>
+</dl>
+<h3 id="nkstringinitialize">proc&nbsp;nkStringInitialize</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$force</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="escapestringforliteral">proc&nbsp;string&nbsp;escapeStringForLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="booleanasstringliteral">proc&nbsp;string&nbsp;booleanAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="floatasstringliteral">proc&nbsp;string&nbsp;floatAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="intasstringliteral">proc&nbsp;string&nbsp;intAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="stringasstringliteral">proc&nbsp;string&nbsp;stringAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$value</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="booleanarrayasstringliteral">proc&nbsp;string&nbsp;booleanArrayAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;boolean[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="floatarrayasstringliteral">proc&nbsp;string&nbsp;floatArrayAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;float[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="intarrayasstringliteral">proc&nbsp;string&nbsp;intArrayAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="stringarrayasstringliteral">proc&nbsp;string&nbsp;stringArrayAsStringLiteral</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$values</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="join">proc&nbsp;string&nbsp;join</h3>
+<p>配列内の文字列を結合する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$inputs</code></dd>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$separator</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>区切り文字列。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$ignoreEmpty</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>配列内の空文字列を無視するかどうか。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="strip">proc&nbsp;string&nbsp;strip</h3>
+<p>文字列の先頭および末尾の空白文字を除去する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="regexsearchgroup">proc&nbsp;string&nbsp;regexSearchGroup</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><table>
+<thead>
+<tr>
+<th>フラグ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td><code>\w</code>、<code>\W</code>、<code>\b</code>、<code>\B</code>、<code>\d</code>、<code>\D</code>、<code>\s</code>および<code>\S</code>がASCII文字だけにマッチするようになる。</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>大文字と小文字を区別しなくなる。</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td><code>\w</code>、<code>\W</code>、<code>\b</code>、<code>\B</code>および大文字と小文字を区別しないマッチングを現在のロケールに依存させる。</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>複数行モード。<code>^</code>や<code>$</code>が文字列の先頭と末尾だけでなく、各行の先頭と末尾にもマッチするようになる。</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td><code>.</code>が改行文字にもマッチするようになる。</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="regexsearchspan">proc&nbsp;int[]&nbsp;regexSearchSpan</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="regexmatchgroups">proc&nbsp;string[]&nbsp;regexMatchGroups</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="regexmatchsubgroups">proc&nbsp;string[]&nbsp;regexMatchSubGroups</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="regexmatchspans">proc&nbsp;int[]&nbsp;regexMatchSpans</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;int[]&gt;</code></dd>
+</dl>
+<h3 id="regexismatch">proc&nbsp;int&nbsp;regexIsMatch</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;boolean&gt;</code></dd>
+</dl>
+<h3 id="regexsplit">proc&nbsp;string[]&nbsp;regexSplit</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string[]&gt;</code></dd>
+</dl>
+<h3 id="regexreplace">proc&nbsp;string&nbsp;regexReplace</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$pattern</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p><code>\</code>はエスケープしておくこと。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$replacement</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$input</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$flags</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+<dd><p>詳細は<code>regexSearchGroup</code>を参照。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>キャプチャグループの指定は<code>\number</code>の形式なので注意。</p></dd>
+</dl>
+<h3 id="getclipboardtext">proc&nbsp;string&nbsp;getClipboardText</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<h3 id="setclipboardtext">proc&nbsp;setClipboardText</h3>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$text</code></dd>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+</dl>
+<h3 id="generateuuid">proc&nbsp;string&nbsp;generateUuid</h3>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;string&gt;</code></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>

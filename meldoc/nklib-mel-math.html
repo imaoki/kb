@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/modern-normalize.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/icon.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/dist/theme.css">
+<link rel="stylesheet" href="https://imaoki.github.io/kb/assets/css/sandcastle.css">
+<title>meldoc.math.mel</title>
+<script src="https://imaoki.github.io/kb/assets/js/highlight.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/bash.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/css.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/diff.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/dos.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/ebnf.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/javascript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/json.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/markdown.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/maxscript.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/mel.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/plaintext.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/powershell.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/properties.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/python.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/languages/xml.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/kb.min.js"></script>
+<script src="https://imaoki.github.io/kb/assets/js/init-main.min.js"></script>
+</head>
+<body class="page wrapper">
+<header class="page header">
+<h1 class="page title"><a class="static" href="index.html">meldoc</a></h1>
+<ul class="hlist page nav"></ul>
+</header>
+<main class="page main">
+<article class="post wrapper">
+<header class="post header">
+<h2 class="post title"><a class="static" href="">math.mel</a></h2>
+<ul class="hlist right post property">
+<li class="item"><time class="icon date updated">2026-05-28</time></li>
+</ul>
+</header>
+<div class="table-of-contents"><ul><li><a href="#getplanaraimmatrix">getPlanarAimMatrix</a></li></ul></div>
+<main class="post main" data-pswp>
+<h3 id="getplanaraimmatrix">proc&nbsp;float[]&nbsp;getPlanarAimMatrix</h3>
+<p>指定した2点（始点、終点）と中点行列の平面上で、始点-終点の線分と中点の最近接交点から中点方向へオフセットされたエイム行列を生成する。</p>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$start</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+<dd><p>始点。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$end</code></dd>
+<dd><code>&lt;float[3]&gt;</code></dd>
+<dd><p>終点。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$midMatrix</code></dd>
+<dd><code>&lt;float[16]&gt;</code></dd>
+<dd><p>中点のワールド行列（位置およびローカル軸の取得に使用）。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$aimAxis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>最近接交点から中点方向への軸。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$upAxis</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>3点の平面上にあるアップベクトル。<br />
+始点-終点-中点が直線状の場合は、<code>$aimAxis</code>に該当する中点のローカル軸方向にオフセットする。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$offsetMode</code></dd>
+<dd><code>&lt;int&gt;</code></dd>
+<dd><p>オフセット方式。</p>
+<table>
+<thead>
+<tr>
+<th>値</th>
+<th>方式</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>絶対値</td>
+<td>最近接交点から$offsetで指定した距離だけオフセットする。</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>比率</td>
+<td>最近接交点から始点-終点の距離に$offsetを乗じた距離だけオフセットする。</td>
+</tr>
+</tbody>
+</table></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$offsetBase</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>比率モードの基準長。<br />
+<code>-1</code>の場合は始点-終点の距離を基準にする。<br />
+正の値を指定した場合はその値を基準にする（例: 上腕＋前腕の全長）。<br />
+絶対値モードでは無視される。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$offset</code></dd>
+<dd><code>&lt;float&gt;</code></dd>
+<dd><p>オフセット量。<code>$offsetMode</code>により意味が変わる。</p></dd>
+</dl>
+<dl>
+<dt>戻り値</dt>
+<dd><code>&lt;float[16]&gt;</code></dd>
+</dl>
+<dl>
+<dt>補足</dt>
+<dd><p>取得した行列から位置、回転、スケールを抽出するには以下のようにする。</p>
+<pre><code class="language-mel">float $armLength = 30.0;
+float $start[] = `xform -q -t -ws $startNode`;
+float $end[] = `xform -q -t -ws $endNode`;
+float $tm[] = `xform -q -ws -m $midNode`;
+
+// 絶対値モード
+float $m[] = getPlanarAimMatrix($start, $end, $tm, 1, 0, 0, -1.0, 5.0);
+
+// 全長基準の比率モード
+float $m2[] = getPlanarAimMatrix($start, $end, $tm, 1, 0, 1, $armLength, 0.5);
+
+// 始点-終点距離を基準にした比率モード
+float $m3[] = getPlanarAimMatrix($start, $end, $tm, 1, 0, 1, -1.0, 0.5);
+
+float $t[] = `matrixUtil -q -t $m[0] $m[1] $m[2] $m[3] $m[4] $m[5] $m[6] $m[7] $m[8] $m[9] $m[10] $m[11] $m[12] $m[13] $m[14] $m[15]`;
+float $r[] = `matrixUtil -q -r $m[0] $m[1] $m[2] $m[3] $m[4] $m[5] $m[6] $m[7] $m[8] $m[9] $m[10] $m[11] $m[12] $m[13] $m[14] $m[15]`;
+float $s[] = `matrixUtil -q -s $m[0] $m[1] $m[2] $m[3] $m[4] $m[5] $m[6] $m[7] $m[8] $m[9] $m[10] $m[11] $m[12] $m[13] $m[14] $m[15]`;
+
+locator1.tx = $t[0];
+locator1.ty = $t[1];
+locator1.tz = $t[2];
+locator1.rx = rad_to_deg($r[0]);
+locator1.ry = rad_to_deg($r[1]);
+locator1.rz = rad_to_deg($r[2]);
+locator1.sx = $s[0];
+locator1.sy = $s[1];
+locator1.sz = $s[2];
+</code></pre></dd>
+</dl>
+</main>
+</article>
+</main>
+<footer class="page footer">
+<ul class="hlist"><li class="item"><p>Generated by nkDocGenerator</p></li></ul>
+</footer>
+</body>
+</html>
