@@ -1,7 +1,7 @@
 ---
 title: Python設定
 date: 2025-06-22 17:48:00 +09:00
-updated: 2025-06-27 02:14:00 +09:00
+updated: 2026-05-31 22:15:00 +09:00
 categories: note
 tags: maya python vscode
 toc: true
@@ -53,13 +53,6 @@ PowerShellを使用。
     pause
     ```
 
-#### コマンドのソース（場所）を確認
-{:#terminal-command-source}
-
-```powershell
-Get-Command python | Select-Object -ExpandProperty Source
-```
-
 ### 仮想環境の構築
 {:#virtual-environments}
 
@@ -72,6 +65,8 @@ Get-Command python | Select-Object -ExpandProperty Source
 cd my_project
 python -m venv .venv
 ```
+
+以下、`my_project`を現在のディレクトリとして進める。
 
 #### 有効化
 {:#virtual-environments-activate}
@@ -255,7 +250,7 @@ except Exception:
     pytest -v tests/example.py
     ```
 
-  フォルダ
+  ディレクトリ
   : ```powershell
     pytest -v tests
     ```
@@ -299,7 +294,7 @@ except Exception:
 ##### Pylance
 {:#vscode-user-settings-pylance}
 
-インレイヒント
+<!-- インレイヒント
 : ```json
   {
     "python.analysis.inlayHints.callArgumentNames": "partial",
@@ -307,49 +302,96 @@ except Exception:
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true
   }
-  ```
+  ``` -->
 
 型チェックのレベル
 : ```json
   {
-    "python.analysis.typeCheckingMode": "strict"
+    "python.analysis.typeCheckingMode": "standard"
   }
   ```
 
 #### ワークスペース設定
 {:#vscode-workspace-settings}
 
-```json
-{
-  "folders": [
-    {
-      "name": "foo/bar",
-      "path": "..\\foo\\bar"
-    },
-    {
-      "name": "Maya2022/scripts",
-      "path": "C:\\Program Files\\Autodesk\\Maya2022\\scripts"
+`*.code-workspace`
+: ワークスペース本体の設定
+
+  ```json
+  {
+    "folders": [
+      {
+        "name": "Maya/dev",
+        "path": "..\\Maya\\dev"
+      },
+      {
+        "name": "Maya2022/scripts",
+        "path": "C:\\Program Files\\Autodesk\\Maya2022\\scripts"
+      },
+      {
+        "name": "Python/dev",
+        "path": "..\\Python\\dev"
+      }
+    ],
+    "settings": {
+      "python.terminal.activateEnvInCurrentTerminal": true,
+      "python.terminal.activateEnvironment": true,
+      "terminal.integrated.cwd": "${workspaceFolder:Maya/dev}",
+      "terminal.integrated.persistentSessionReviveProcess": "never",
+      "terminal.integrated.profiles.windows": {
+        "Maya venv": {
+          "path": "powershell.exe",
+          "args": [
+            "-NoExit", "-Command",
+            "$p=(code --locate-shell-integration-path pwsh 2>$null | Select-Object -Last 1); if($p -and (Test-Path $p)){. $p}; Set-Location '${workspaceFolder:Maya/dev}'; & '${workspaceFolder:Maya/dev}\\.venv\\Scripts\\Activate.ps1'"
+          ],
+          "env": {
+            "PATH": "${workspaceFolder:Maya/dev}\\.venv\\Scripts;${env:LOCALAPPDATA}\\Programs\\Microsoft VS Code\\bin;${env:PATH}"
+          },
+          "overrideName": true
+        },
+        "Python venv": {
+          "path": "powershell.exe",
+          "args": [
+            "-NoExit", "-Command",
+            "$p=(code --locate-shell-integration-path pwsh 2>$null | Select-Object -Last 1); if($p -and (Test-Path $p)){. $p}; Set-Location '${workspaceFolder:Python/dev}'; & '${workspaceFolder:Python/dev}\\.venv\\Scripts\\Activate.ps1'"
+          ],
+          "env": {
+            "PATH": "${workspaceFolder:Python/dev}\\.venv\\Scripts;${env:LOCALAPPDATA}\\Programs\\Microsoft VS Code\\bin;${env:PATH}"
+          },
+          "overrideName": true
+        }
+      }
     }
-  ],
-  "settings": {
+  }
+  ```
+
+`Maya/dev/.vscode/settings.json`
+: Maya用の仮想環境を作成したディレクトリの設定
+
+  ```json
+  {
     "files.readonlyInclude": {
-      "C:\\Program Files\\Autodesk\\Maya2022\\scripts\\**": true
+      "C:\\Program Files\\Autodesk\\Maya2022\\scripts\\**\\*": true
     },
     "python.analysis.extraPaths": [
       "C:\\Program Files\\Autodesk\\Maya2022\\Python37\\Lib\\site-packages",
-      "${workspaceFolder:foo/bar}\\.venv\\Lib\\site-packages"
+      "${workspaceFolder}\\.venv\\Lib\\site-packages"
     ],
-    "python.defaultInterpreterPath": "${workspaceFolder:foo/bar}\\.venv\\Scripts\\python.exe",
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.terminal.activateEnvironment": true,
-    "terminal.integrated.cwd": "${workspaceFolder:foo/bar}",
-    "terminal.integrated.env.windows": {
-      "PATH": "${workspaceFolder:foo/bar}\\.venv\\Scripts;${env:PATH}"
-    },
-    "terminal.integrated.persistentSessionReviveProcess": "never"
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
   }
-}
-```
+  ```
+
+  `python.analysis.extraPaths`への`\\.venv\\Lib\\site-packages`の指定は不要らしいが、手元の環境では指定しないとコード補完が利かなかったので指定している。
+
+`Python/dev/.vscode/settings.json`
+: 通常のPython用の仮想環境を作成したディレクトリの設定
+
+  ```json
+  {
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
+  }
+  ```
 
 * パス形式
   `${workspaceFolder:foo/bar}`がVSCode内部で展開される際の形式に合わせてWindows形式で記述する。
@@ -375,7 +417,7 @@ VSCode内ターミナル
   : 手動でのコマンド実行、pip install、スクリプト実行など
 
   設定方法
-  : 環境変数（PATH）、アクティベーションスクリプト、`terminal.integrated.env.windows`によるPATH制御
+  : 環境変数（PATH）、アクティベーションスクリプト、`terminal.integrated.env.windows`によるPATH制御、または`terminal.integrated.profiles.windows`によるディレクトリ別設定
 
 **重要なポイント**
 {:.note}
