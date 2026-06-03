@@ -1,13 +1,32 @@
 ---
 title: Maya設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-05-20 20:58:00 +09:00
+updated: 2026-06-04 04:10:00 +09:00
 categories: note
 tags: maya
 toc: true
 published: true
 ---
 Mayaの設定。
+
+### PyMEL
+{:#pymel}
+
+2024以降は別途インストールする必要がある。
+管理者権限でコマンドプロンプトを起動し、以下のコマンドでインストールする。
+
+`mayapy.exe`の場所
+: `C:\Program Files\Autodesk\Maya<バージョン番号>\bin\`
+
+インストール
+: ```dos
+  mayapy.exe -m pip install pymel
+  ```
+
+確認
+: ```dos
+  mayapy.exe -m pip list
+  ```
 
 ### Preferences
 {:#preferences}
