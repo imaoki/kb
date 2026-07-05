@@ -1,7 +1,7 @@
 ---
 title: Maya設定
 date: 2023-04-06 01:27:00 +09:00
-updated: 2026-06-04 04:10:00 +09:00
+updated: 2026-07-06 02:52:00 +09:00
 categories: note
 tags: maya
 toc: true
@@ -187,3 +187,9 @@ XGen設定ファイルのパスを設定
 
 参考
 : [Wacomデバイスを使用したMayaおよび3ds Maxでは、マウスの右ボタンとホットキーが機能しない](https://www.autodesk.co.jp/support/technical/article/caas/sfdcarticles/sfdcarticles/JPN/In-Maya-2020-and-2022-the-right-mouse-button-on-a-Ciniq-tablet-is-not-working.html)
+
+#### スクリプト実行時に`UnicodeDecodeError`が発生する
+{:#troubleshooting-unicodedecodeerror-occurs-during-script-execution}
+
+環境変数`PYTHONUTF8`を設定する。
+詳細は[kb.Python設定#環境変数](.2025-06-22-python-settings/#environment-variable)を参照。
