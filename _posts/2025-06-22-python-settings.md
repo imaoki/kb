@@ -1,13 +1,24 @@
 ---
 title: Python設定
 date: 2025-06-22 17:48:00 +09:00
-updated: 2026-05-31 22:15:00 +09:00
+updated: 2026-07-06 02:44:00 +09:00
 categories: note
 tags: maya python vscode
 toc: true
 published: true
 ---
 Pythonの環境設定。
+
+### 環境変数
+{:#environment-variable}
+
+`PYTHONUTF8`
+: Pythonがファイル読み込みや標準入出力で使用するデフォルトの文字コードを`UTF-8`にするための変数。
+  *システムのプロパティ > 環境変数 > ユーザー環境変数 > 新規* をクリックし、以下の値で作成する。
+
+  | 変数名       | 値  |
+  | ------------ | --- |
+  | `PYTHONUTF8` | `1` |
 
 ### ターミナル
 {:#terminal}
