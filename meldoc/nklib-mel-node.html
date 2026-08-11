@@ -37,7 +37,7 @@
 <header class="post header">
 <h2 class="post title"><a class="static" href="">node.mel</a></h2>
 <ul class="hlist right post property">
-<li class="item"><time class="icon date updated">2026-05-28</time></li>
+<li class="item"><time class="icon date updated">2026-08-12</time></li>
 </ul>
 </header>
 <div class="table-of-contents"><ul><li><a href="#nodesexists">nodesExists</a></li><li><a href="#isselected">isSelected</a></li><li><a href="#getshapenodes">getShapeNodes</a></li><li><a href="#istype">isType</a></li><li><a href="#hastype">hasType</a></li><li><a href="#istypecontains">isTypeContains</a></li><li><a href="#isnodereferenced">isNodeReferenced</a></li><li><a href="#isconstraintnode">isConstraintNode</a></li><li><a href="#isdagnode">isDagNode</a></li><li><a href="#istransformnode">isTransformNode</a></li><li><a href="#isjointnode">isJointNode</a></li><li><a href="#isshapenode">isShapeNode</a></li><li><a href="#islocatornode">isLocatorNode</a></li><li><a href="#haslocatornode">hasLocatorNode</a></li><li><a href="#isnurbssurfacenode">isNurbsSurfaceNode</a></li><li><a href="#hasnurbssurfacenode">hasNurbsSurfaceNode</a></li><li><a href="#isnurbscurvenode">isNurbsCurveNode</a></li><li><a href="#hasnurbscurvenode">hasNurbsCurveNode</a></li><li><a href="#isbeziercurvenode">isBezierCurveNode</a></li><li><a href="#hasbeziercurvenode">hasBezierCurveNode</a></li><li><a href="#ismeshnode">isMeshNode</a></li><li><a href="#hasmeshnode">hasMeshNode</a></li><li><a href="#islightnode">isLightNode</a></li><li><a href="#haslightnode">hasLightNode</a></li><li><a href="#iscameranode">isCameraNode</a></li><li><a href="#hascameranode">hasCameraNode</a></li><li><a href="#isuuid">isUUID</a></li><li><a href="#toshortname">toShortName</a></li><li><a href="#touuid">toUUID</a></li><li><a href="#uuidtolongname">uuidToLongName</a></li><li><a href="#setnodename">setNodeName</a></li><li><a href="#getparentnode">getParentNode</a></li><li><a href="#setparentnode">setParentNode</a></li><li><a href="#getrootnode">getRootNode</a></li><li><a href="#collectrootnodes">collectRootNodes</a></li><li><a href="#collectchildnodes">collectChildNodes</a></li><li><a href="#collectdescendantnodes">collectDescendantNodes</a></li><li><a href="#collecthierarchynodes">collectHierarchyNodes</a></li><li><a href="#gathernodes">gatherNodes</a></li><li><a href="#nodesascsv">nodesAsCSV</a></li><li><a href="#csvasnodes">csvAsNodes</a></li><li><a href="#getsourceconnectionnodes">getSourceConnectionNodes</a></li><li><a href="#getdestconnectionnodes">getDestConnectionNodes</a></li><li><a href="#builddagnode">buildDagNode</a></li><li><a href="#createjoint">createJoint</a></li><li><a href="#createlocator">createLocator</a></li><li><a href="#createtransform">createTransform</a></li><li><a href="#gettoplevelnode">getTopLevelNode</a></li><li><a href="#getsecondlevelnode">getSecondLevelNode</a></li><li><a href="#getthirdlevelnode">getThirdLevelNode</a></li><li><a href="#freezetransform">freezeTransform</a></li><li><a href="#nodetestappendsuffix">nodeTestAppendSuffix</a></li><li><a href="#nodetestplot">nodeTestPlot</a></li></ul></div>
@@ -376,6 +376,12 @@
 <dd><code>$path</code></dd>
 <dd><code>&lt;string&gt;</code></dd>
 <dd><p>ノードが存在する必要はない。</p></dd>
+</dl>
+<dl>
+<dt>パラメータ</dt>
+<dd><code>$removeNamespace</code></dd>
+<dd><code>&lt;boolean&gt;</code></dd>
+<dd><p>名前空間を除去するかどうか。</p></dd>
 </dl>
 <dl>
 <dt>戻り値</dt>
